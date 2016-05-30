@@ -19,28 +19,65 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Rh-xn-PRm">
-                                <rect key="frame" x="103" y="20" width="394" height="415"/>
+                                <rect key="frame" x="186" y="20" width="394" height="415"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0rw-iZ-a28">
                                 <rect key="frame" x="20" y="452" width="560" height="128"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rsY-j8-eFZ">
+                                <rect key="frame" x="20" y="62" width="158" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kAN-f3-GMC">
+                                <rect key="frame" x="20" y="108" width="158" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8a-Zj-8Bx">
+                                <rect key="frame" x="80" y="156" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BJl-SC-iUF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXy-7Y-94y">
+                                <rect key="frame" x="20" y="197" width="158" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4Rh-xn-PRm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Yw-f6-Uj8"/>
+                            <constraint firstItem="M8a-Zj-8Bx" firstAttribute="top" secondItem="kAN-f3-GMC" secondAttribute="bottom" constant="18" id="1Th-1y-cEa"/>
+                            <constraint firstItem="BXy-7Y-94y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3ST-Li-KmC"/>
+                            <constraint firstItem="kAN-f3-GMC" firstAttribute="leading" secondItem="rsY-j8-eFZ" secondAttribute="leading" id="6Ce-gG-gnO"/>
+                            <constraint firstItem="4Rh-xn-PRm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="83" id="7Yw-f6-Uj8"/>
+                            <constraint firstItem="BXy-7Y-94y" firstAttribute="top" secondItem="M8a-Zj-8Bx" secondAttribute="bottom" constant="11" id="HiA-ct-s3n"/>
                             <constraint firstItem="0rw-iZ-a28" firstAttribute="top" secondItem="4Rh-xn-PRm" secondAttribute="bottom" constant="17" id="N16-dY-lZf"/>
                             <constraint firstItem="0rw-iZ-a28" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="RTh-hU-72S"/>
+                            <constraint firstItem="rsY-j8-eFZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="ZRI-p0-atT"/>
+                            <constraint firstItem="kAN-f3-GMC" firstAttribute="top" secondItem="rsY-j8-eFZ" secondAttribute="bottom" constant="16" id="Zmp-ab-823"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0rw-iZ-a28" secondAttribute="bottom" constant="20" id="chk-0w-6Pk"/>
-                            <constraint firstItem="4Rh-xn-PRm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="83" id="gcC-de-dyU"/>
+                            <constraint firstItem="kAN-f3-GMC" firstAttribute="trailing" secondItem="rsY-j8-eFZ" secondAttribute="trailing" id="cse-dw-eD4"/>
+                            <constraint firstItem="4Rh-xn-PRm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="166" id="gcC-de-dyU"/>
                             <constraint firstItem="4Rh-xn-PRm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-72.5" id="gza-R5-JjT"/>
+                            <constraint firstItem="rsY-j8-eFZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hDZ-Uo-Jgv"/>
+                            <constraint firstItem="4Rh-xn-PRm" firstAttribute="leading" secondItem="BXy-7Y-94y" secondAttribute="trailing" constant="8" id="nyf-Rj-HZM"/>
+                            <constraint firstItem="kAN-f3-GMC" firstAttribute="centerX" secondItem="M8a-Zj-8Bx" secondAttribute="centerX" id="pf8-QC-Qom"/>
                             <constraint firstItem="0rw-iZ-a28" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="se0-PK-usr"/>
+                            <constraint firstItem="4Rh-xn-PRm" firstAttribute="leading" secondItem="kAN-f3-GMC" secondAttribute="trailing" constant="8" symbolic="YES" id="seg-jv-zop"/>
                             <constraint firstItem="4Rh-xn-PRm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tfu-ba-Dkj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nameLabel" destination="BXy-7Y-94y" id="rva-MA-ntT"/>
                         <outlet property="nodeResponseView" destination="0rw-iZ-a28" id="3aN-hi-K2O"/>
+                        <outlet property="passwordTextfield" destination="kAN-f3-GMC" id="efB-7Z-eNW"/>
+                        <outlet property="usernameTextfield" destination="rsY-j8-eFZ" id="SGc-2H-RtE"/>
                         <outlet property="webView" destination="4Rh-xn-PRm" id="Kts-Gc-Bto"/>
                     </connections>
                 </viewController>

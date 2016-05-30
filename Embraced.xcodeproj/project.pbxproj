@@ -14,9 +14,11 @@
 		A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A48B4DCE1CF9E7C700878928 /* Assets.xcassets */; };
 		A48B4DD21CF9E7C700878928 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48B4DD01CF9E7C700878928 /* LaunchScreen.storyboard */; };
 		A48B4DDB1CF9EEBE00878928 /* LOGO.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A48B4DDA1CF9EEBE00878928 /* LOGO.jpg */; };
+		DD7D49BC9E47B49E27EB6157 /* Pods_Embraced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F375DDA1676C302A2C3E45B /* Pods-Embraced.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.debug.xcconfig"; sourceTree = "<group>"; };
 		A48B4DC11CF9E7C600878928 /* Embraced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embraced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48B4DC41CF9E7C700878928 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A48B4DC61CF9E7C700878928 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		A48B4DD11CF9E7C700878928 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A48B4DD31CF9E7C700878928 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A48B4DDA1CF9EEBE00878928 /* LOGO.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LOGO.jpg; sourceTree = "<group>"; };
+		B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.release.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.release.xcconfig"; sourceTree = "<group>"; };
+		EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Embraced.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD7D49BC9E47B49E27EB6157 /* Pods_Embraced.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F664F21C975BFC088CC91BB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F375DDA1676C302A2C3E45B /* Pods-Embraced.debug.xcconfig */,
+				B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A191B101E7F37A99531AAB47 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A48B4DB81CF9E7C600878928 = {
 			isa = PBXGroup;
 			children = (
 				A48B4DC31CF9E7C700878928 /* Embraced */,
 				A48B4DC21CF9E7C600878928 /* Products */,
+				9F664F21C975BFC088CC91BB /* Pods */,
+				A191B101E7F37A99531AAB47 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,9 +109,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A48B4DD61CF9E7C700878928 /* Build configuration list for PBXNativeTarget "Embraced" */;
 			buildPhases = (
+				5E743F95A972D997F54D05F4 /* 📦 Check Pods Manifest.lock */,
 				A48B4DBD1CF9E7C600878928 /* Sources */,
 				A48B4DBE1CF9E7C600878928 /* Frameworks */,
 				A48B4DBF1CF9E7C600878928 /* Resources */,
+				C90CDE91F5A86DBE2B374296 /* 📦 Embed Pods Frameworks */,
+				C7F38120F030A165D5C8C102 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E743F95A972D997F54D05F4 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C7F38120F030A165D5C8C102 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C90CDE91F5A86DBE2B374296 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A48B4DBD1CF9E7C600878928 /* Sources */ = {
@@ -265,6 +340,7 @@
 		};
 		A48B4DD71CF9E7C700878928 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F375DDA1676C302A2C3E45B /* Pods-Embraced.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Embraced/Info.plist;
@@ -276,6 +352,7 @@
 		};
 		A48B4DD81CF9E7C700878928 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Embraced/Info.plist;
@@ -304,6 +381,7 @@
 				A48B4DD81CF9E7C700878928 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

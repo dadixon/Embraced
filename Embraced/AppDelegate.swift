@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stormpath
 import CoreData
 
 @UIApplicationMain
@@ -16,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let APIURL = "http://localhost:3000"
+        Stormpath.sharedSession.configuration.APIURL = NSURL(string: APIURL)!
         return true
     }
 
