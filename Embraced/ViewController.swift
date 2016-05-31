@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     
     let url = "http://girlscouts.harryatwal.com"
-    var nodeUrl = "http://localhost:3000"
+//    var nodeUrl = "http://localhost:3000"
+    var nodeUrl = "http://54.201.210.104"
     
     
     override func viewDidLoad() {
@@ -55,7 +56,7 @@ class ViewController: UIViewController {
                 }
             }
             
-            let notesEndpoint = NSURL(string: "http://localhost:3000/secret")!
+            let notesEndpoint = NSURL(string: nodeUrl + "/secret")!
             let request = NSMutableURLRequest(URL: notesEndpoint)
             request.setValue("Bearer \(Stormpath.sharedSession.accessToken!)", forHTTPHeaderField: "Authorization")
 //            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
