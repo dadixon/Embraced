@@ -10,7 +10,7 @@ import UIKit
 import Stormpath
 
 class ViewController: UIViewController {
-
+ 
     @IBOutlet weak var usernameTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var webView: UIWebView!
