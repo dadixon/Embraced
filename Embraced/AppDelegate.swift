@@ -17,8 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let APIURL = "http://localhost:3000"
+//        let APIURL = "http://localhost:3000"
+        let APIURL = "http://54.201.210.104"
+
         Stormpath.sharedSession.configuration.APIURL = NSURL(string: APIURL)!
+        
         return true
     }
 
