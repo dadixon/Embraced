@@ -13,7 +13,7 @@ class ViewController: UIViewController {
  
     @IBOutlet weak var usernameTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var signInBtn: UIButton!
     
     let nodeUrl = "http://54.201.210.104"
@@ -25,16 +25,30 @@ class ViewController: UIViewController {
         
         Stormpath.sharedSession.me { (account, error) -> Void in
             if let account = account {
-                self.nameLabel.text = "Hello \(account.fullName)!"
+                self.errorLabel.text = "Hello \(account.fullName)!"
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        signInBtn.backgroundColor = UIColor.blackColor()
+        signInBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let border = CALayer()
+        let width = CGFloat(2.0)
+        border.borderColor = UIColor.darkGrayColor().CGColor
+        border.frame = CGRect(x: 0, y: usernameTextfield.frame.size.height - width, width:  usernameTextfield.frame.size.width, height: usernameTextfield.frame.size.height)
+        
+        border.borderWidth = width
+        usernameTextfield.layer.addSublayer(border)
+        usernameTextfield.layer.masksToBounds = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,14 +64,15 @@ class ViewController: UIViewController {
     
     func logResponse(success: Bool, error: NSError?) {
         if let error = error {
-            showAlert(withTitle: "Error", message: error.localizedDescription)
+//            showAlert(withTitle: "Error", message: error.localizedDescription)
+            self.errorLabel.text = error.localizedDescription
         }
         else {
-            showAlert(withTitle: "Success", message: "You logged in successfully")
+//            showAlert(withTitle: "Success", message: "You logged in successfully")
             
             Stormpath.sharedSession.me { (account, error) -> Void in
                 if let account = account {
-                    self.nameLabel.text = "Hello \(account.fullName)!"
+                    self.errorLabel.text = "Hello \(account.fullName)!"
                 }
             }
             
@@ -74,6 +89,10 @@ class ViewController: UIViewController {
 //                })
 //            }
 //            task.resume()
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let secondViewController = storyBoard.instantiateViewControllerWithIdentifier("UserInputViewController") as! UserInputViewController
+            
+            self.presentViewController(secondViewController, animated: true, completion: nil)
         }
     }
 
