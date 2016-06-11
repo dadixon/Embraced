@@ -191,13 +191,13 @@
                                         <exclude reference="p1h-0R-x2k"/>
                                         <exclude reference="ip4-7q-1mO"/>
                                         <exclude reference="yp0-Af-vxK"/>
-                                        <exclude reference="1Gc-0v-zTb"/>
-                                        <exclude reference="gkT-Ly-SAT"/>
                                         <exclude reference="0Ff-3w-6Mq"/>
                                         <exclude reference="7qf-Qz-GTR"/>
                                         <exclude reference="TFA-VN-wgu"/>
                                         <exclude reference="vDg-87-h2H"/>
                                         <exclude reference="DcB-JK-YMN"/>
+                                        <exclude reference="1Gc-0v-zTb"/>
+                                        <exclude reference="gkT-Ly-SAT"/>
                                         <exclude reference="6Ho-xO-2MJ"/>
                                         <exclude reference="Fk6-v2-uoR"/>
                                         <exclude reference="Gkj-Jb-mua"/>
@@ -220,13 +220,13 @@
                                         <include reference="p1h-0R-x2k"/>
                                         <include reference="ip4-7q-1mO"/>
                                         <include reference="yp0-Af-vxK"/>
-                                        <include reference="1Gc-0v-zTb"/>
-                                        <include reference="gkT-Ly-SAT"/>
                                         <exclude reference="0Ff-3w-6Mq"/>
                                         <exclude reference="7qf-Qz-GTR"/>
                                         <include reference="TFA-VN-wgu"/>
                                         <include reference="vDg-87-h2H"/>
                                         <include reference="DcB-JK-YMN"/>
+                                        <include reference="1Gc-0v-zTb"/>
+                                        <include reference="gkT-Ly-SAT"/>
                                         <include reference="6Ho-xO-2MJ"/>
                                         <include reference="Fk6-v2-uoR"/>
                                         <include reference="Gkj-Jb-mua"/>
@@ -283,6 +283,7 @@
                         <viewControllerLayoutGuide type="bottom" id="D79-k3-Xyj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hD9-Jq-2Ih">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8e-PE-S7n">
@@ -432,7 +433,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZVH-7q-P96" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1479" y="418.5"/>
+            <point key="canvasLocation" x="1470" y="418.5"/>
         </scene>
     </scenes>
     <resources>

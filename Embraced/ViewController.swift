@@ -17,11 +17,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var signInBtn: UIButton!
     
     let nodeUrl = "http://54.201.210.104"
-    let prefs = NSUserDefaults.standardUserDefaults()
-
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        print(Stormpath.sharedSession)
         
         Stormpath.sharedSession.me { (account, error) -> Void in
             if let account = account {
@@ -39,14 +39,8 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let border = CALayer()
-        let width = CGFloat(2.0)
-        border.borderColor = UIColor.darkGrayColor().CGColor
-        border.frame = CGRect(x: 0, y: usernameTextfield.frame.size.height - width, width:  usernameTextfield.frame.size.width, height: usernameTextfield.frame.size.height)
-        
-        border.borderWidth = width
-        usernameTextfield.layer.addSublayer(border)
-        usernameTextfield.layer.masksToBounds = true
+        setBottomBorder(usernameTextfield)
+        setBottomBorder(passwordTextfield)
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,6 +52,19 @@ class ViewController: UIViewController {
         return true
     }
 
+    private func setBottomBorder(textfield: UITextField) {
+        let border = CALayer()
+        let width = CGFloat(2.0)
+        let borderColor = UIColor.darkGrayColor().CGColor
+        
+        border.borderColor = borderColor
+        border.borderWidth = width
+        border.frame = CGRect(x: 0, y: textfield.frame.size.height, width:  textfield.frame.size.width, height: 1)
+        
+        textfield.layer.addSublayer(border)
+        textfield.layer.masksToBounds = true
+    }
+    
     @IBAction func login(sender: AnyObject) {
         Stormpath.sharedSession.login(usernameTextfield.text!, password: passwordTextfield.text!, completionHandler: logResponse)
     }
