@@ -17,6 +17,8 @@
 		A42AB5BE1D2DD563001387BB /* TrailMakingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5BD1D2DD563001387BB /* TrailMakingTestViewController.swift */; };
 		A42AB5C01D2DD92E001387BB /* MOCAMMSETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5BF1D2DD92E001387BB /* MOCAMMSETestViewController.swift */; };
 		A42AB5C31D2DE061001387BB /* ChildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */; };
+		A42AB5C71D2E776F001387BB /* ResidenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C61D2E776F001387BB /* ResidenceViewController.swift */; };
+		A42AB5C91D2E7C93001387BB /* OccupationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C81D2E7C93001387BB /* OccupationViewController.swift */; };
 		A43B8F751D2A1351001C4063 /* HandDominateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */; };
 		A44716B41D2C47BB0048CA0D /* EthnicityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44716B31D2C47BB0048CA0D /* EthnicityViewController.swift */; };
 		A4476ECC1D12710E002722B4 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */; };
@@ -58,6 +60,8 @@
 		A42AB5BD1D2DD563001387BB /* TrailMakingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailMakingTestViewController.swift; path = controllers/TrailMakingTestViewController.swift; sourceTree = "<group>"; };
 		A42AB5BF1D2DD92E001387BB /* MOCAMMSETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOCAMMSETestViewController.swift; path = controllers/MOCAMMSETestViewController.swift; sourceTree = "<group>"; };
 		A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildTableViewCell.swift; sourceTree = "<group>"; };
+		A42AB5C61D2E776F001387BB /* ResidenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResidenceViewController.swift; path = controllers/ResidenceViewController.swift; sourceTree = "<group>"; };
+		A42AB5C81D2E7C93001387BB /* OccupationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OccupationViewController.swift; path = controllers/OccupationViewController.swift; sourceTree = "<group>"; };
 		A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandDominateViewController.swift; path = controllers/HandDominateViewController.swift; sourceTree = "<group>"; };
 		A44716B31D2C47BB0048CA0D /* EthnicityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EthnicityViewController.swift; path = controllers/EthnicityViewController.swift; sourceTree = "<group>"; };
 		A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 				A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */,
 				A44716B31D2C47BB0048CA0D /* EthnicityViewController.swift */,
 				A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */,
+				A42AB5C61D2E776F001387BB /* ResidenceViewController.swift */,
+				A42AB5C81D2E7C93001387BB /* OccupationViewController.swift */,
 				A42AB5C51D2DE0F4001387BB /* Test */,
 			);
 			name = Controllers;
@@ -256,6 +262,7 @@
 				TargetAttributes = {
 					A48B4DC01CF9E7C600878928 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 32DZZ46N4K;
 					};
 				};
 			};
@@ -358,6 +365,8 @@
 			files = (
 				A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */,
 				A4476ECC1D12710E002722B4 /* QuestionnaireViewController.swift in Sources */,
+				A42AB5C71D2E776F001387BB /* ResidenceViewController.swift in Sources */,
+				A42AB5C91D2E7C93001387BB /* OccupationViewController.swift in Sources */,
 				A42AB5B71D2DD1E5001387BB /* EyeTestViewController.swift in Sources */,
 				A43B8F751D2A1351001C4063 /* HandDominateViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
@@ -491,10 +500,13 @@
 			baseConfigurationReference = 9F375DDA1676C302A2C3E45B /* Pods-Embraced.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Embraced/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced.Embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -503,10 +515,13 @@
 			baseConfigurationReference = B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Embraced/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced.Embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
