@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */ = {isa = PBXBuildFile; fileRef = A414247E1D02C3F60028933E /* LOGO_r1_c1.png */; };
+		A42AB5B11D2DACDE001387BB /* MartialStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */; };
+		A42AB5B31D2DC60C001387BB /* CPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B21D2DC60C001387BB /* CPTViewController.swift */; };
+		A42AB5B51D2DCF48001387BB /* CancellationTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B41D2DCF48001387BB /* CancellationTestViewController.swift */; };
+		A42AB5B71D2DD1E5001387BB /* EyeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B61D2DD1E5001387BB /* EyeTestViewController.swift */; };
+		A42AB5B91D2DD324001387BB /* ReyComplexFigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B81D2DD324001387BB /* ReyComplexFigureViewController.swift */; };
+		A42AB5BB1D2DD444001387BB /* ClockDrawingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5BA1D2DD444001387BB /* ClockDrawingTestViewController.swift */; };
+		A42AB5BE1D2DD563001387BB /* TrailMakingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5BD1D2DD563001387BB /* TrailMakingTestViewController.swift */; };
+		A42AB5C01D2DD92E001387BB /* MOCAMMSETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5BF1D2DD92E001387BB /* MOCAMMSETestViewController.swift */; };
+		A42AB5C31D2DE061001387BB /* ChildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */; };
+		A43B8F751D2A1351001C4063 /* HandDominateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */; };
+		A44716B41D2C47BB0048CA0D /* EthnicityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44716B31D2C47BB0048CA0D /* EthnicityViewController.swift */; };
 		A4476ECC1D12710E002722B4 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */; };
 		A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */; };
 		A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED91D13B1BA002722B4 /* UserInputs.swift */; };
@@ -38,6 +49,17 @@
 /* Begin PBXFileReference section */
 		9F375DDA1676C302A2C3E45B /* Pods-Embraced.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.debug.xcconfig"; sourceTree = "<group>"; };
 		A414247E1D02C3F60028933E /* LOGO_r1_c1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO_r1_c1.png; sourceTree = "<group>"; };
+		A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MartialStatusViewController.swift; path = controllers/MartialStatusViewController.swift; sourceTree = "<group>"; };
+		A42AB5B21D2DC60C001387BB /* CPTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPTViewController.swift; path = controllers/CPTViewController.swift; sourceTree = "<group>"; };
+		A42AB5B41D2DCF48001387BB /* CancellationTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CancellationTestViewController.swift; path = controllers/CancellationTestViewController.swift; sourceTree = "<group>"; };
+		A42AB5B61D2DD1E5001387BB /* EyeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EyeTestViewController.swift; path = controllers/EyeTestViewController.swift; sourceTree = "<group>"; };
+		A42AB5B81D2DD324001387BB /* ReyComplexFigureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigureViewController.swift; path = controllers/ReyComplexFigureViewController.swift; sourceTree = "<group>"; };
+		A42AB5BA1D2DD444001387BB /* ClockDrawingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockDrawingTestViewController.swift; path = controllers/ClockDrawingTestViewController.swift; sourceTree = "<group>"; };
+		A42AB5BD1D2DD563001387BB /* TrailMakingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailMakingTestViewController.swift; path = controllers/TrailMakingTestViewController.swift; sourceTree = "<group>"; };
+		A42AB5BF1D2DD92E001387BB /* MOCAMMSETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOCAMMSETestViewController.swift; path = controllers/MOCAMMSETestViewController.swift; sourceTree = "<group>"; };
+		A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildTableViewCell.swift; sourceTree = "<group>"; };
+		A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandDominateViewController.swift; path = controllers/HandDominateViewController.swift; sourceTree = "<group>"; };
+		A44716B31D2C47BB0048CA0D /* EthnicityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EthnicityViewController.swift; path = controllers/EthnicityViewController.swift; sourceTree = "<group>"; };
 		A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInputs+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A4476ED91D13B1BA002722B4 /* UserInputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputs.swift; sourceTree = "<group>"; };
@@ -95,6 +117,20 @@
 				EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A42AB5C51D2DE0F4001387BB /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				A42AB5B21D2DC60C001387BB /* CPTViewController.swift */,
+				A42AB5B41D2DCF48001387BB /* CancellationTestViewController.swift */,
+				A42AB5B61D2DD1E5001387BB /* EyeTestViewController.swift */,
+				A42AB5B81D2DD324001387BB /* ReyComplexFigureViewController.swift */,
+				A42AB5BA1D2DD444001387BB /* ClockDrawingTestViewController.swift */,
+				A42AB5BD1D2DD563001387BB /* TrailMakingTestViewController.swift */,
+				A42AB5BF1D2DD92E001387BB /* MOCAMMSETestViewController.swift */,
+			);
+			name = Test;
 			sourceTree = "<group>";
 		};
 		A4476ED71D13B1A5002722B4 /* Models */ = {
@@ -167,6 +203,10 @@
 				A48B4DC61CF9E7C700878928 /* ViewController.swift */,
 				A490D7C41D09162800D2B59D /* UserInputViewController.swift */,
 				A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */,
+				A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */,
+				A44716B31D2C47BB0048CA0D /* EthnicityViewController.swift */,
+				A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */,
+				A42AB5C51D2DE0F4001387BB /* Test */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -176,6 +216,7 @@
 			children = (
 				A4D9041D1D2380380092D6AA /* FrontViewController.swift */,
 				A4D904211D23810C0092D6AA /* EmbracedTextField.swift */,
+				A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */,
 			);
 			name = Customizations;
 			sourceTree = "<group>";
@@ -317,13 +358,24 @@
 			files = (
 				A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */,
 				A4476ECC1D12710E002722B4 /* QuestionnaireViewController.swift in Sources */,
+				A42AB5B71D2DD1E5001387BB /* EyeTestViewController.swift in Sources */,
+				A43B8F751D2A1351001C4063 /* HandDominateViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
 				A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */,
 				A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */,
 				A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */,
+				A42AB5B91D2DD324001387BB /* ReyComplexFigureViewController.swift in Sources */,
+				A42AB5B51D2DCF48001387BB /* CancellationTestViewController.swift in Sources */,
+				A42AB5B31D2DC60C001387BB /* CPTViewController.swift in Sources */,
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
+				A42AB5BB1D2DD444001387BB /* ClockDrawingTestViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
+				A44716B41D2C47BB0048CA0D /* EthnicityViewController.swift in Sources */,
 				A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */,
+				A42AB5C01D2DD92E001387BB /* MOCAMMSETestViewController.swift in Sources */,
+				A42AB5BE1D2DD563001387BB /* TrailMakingTestViewController.swift in Sources */,
+				A42AB5C31D2DE061001387BB /* ChildTableViewCell.swift in Sources */,
+				A42AB5B11D2DACDE001387BB /* MartialStatusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

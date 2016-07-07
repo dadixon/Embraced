@@ -10,7 +10,7 @@ import UIKit
 import Stormpath
 import CoreData
 
-class UserInputViewController: FrontViewController {
+class UserInputViewController: UIViewController {
 
 
     @IBOutlet weak var participantID: UILabel!
@@ -40,6 +40,8 @@ class UserInputViewController: FrontViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBarHidden = true
         
         Stormpath.sharedSession.me { (account, error) -> Void in
             if let account = account {
@@ -74,6 +76,10 @@ class UserInputViewController: FrontViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     @IBAction func submit(sender: AnyObject) {

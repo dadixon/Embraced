@@ -84,8 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/ISRadioButton/ISRadioButton.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Stormpath/Stormpath.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/ISRadioButton/ISRadioButton.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Stormpath/Stormpath.framework"
 fi

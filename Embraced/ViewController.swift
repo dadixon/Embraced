@@ -9,7 +9,7 @@
 import UIKit
 import Stormpath
 
-class ViewController: FrontViewController {
+class ViewController: UIViewController {
  
     @IBOutlet weak var usernameTextfield: EmbracedTextField!
     @IBOutlet weak var passwordTextfield: EmbracedTextField!
@@ -21,12 +21,12 @@ class ViewController: FrontViewController {
         
         signInBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
         
-        if (Stormpath.sharedSession.accessToken != nil) {
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let secondViewController = storyBoard.instantiateViewControllerWithIdentifier("UserInputViewController") as! UserInputViewController
-            
-            self.presentViewController(secondViewController, animated: true, completion: nil)
-        }
+//        if (Stormpath.sharedSession.accessToken != nil) {
+//            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//            let secondViewController = storyBoard.instantiateViewControllerWithIdentifier("UserInputViewController") as! UserInputViewController
+//            
+//            self.presentViewController(secondViewController, animated: true, completion: nil)
+//        }
     }
 
     override func viewDidLayoutSubviews() {
@@ -39,6 +39,10 @@ class ViewController: FrontViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     @IBAction func login(sender: AnyObject) {
         Stormpath.sharedSession.login(usernameTextfield.text!, password: passwordTextfield.text!, completionHandler: logResponse)
     }
@@ -77,13 +81,4 @@ class ViewController: FrontViewController {
         }
     }
 
-}
-
-// Helper extension to display alerts easily.
-extension UIViewController {
-    func showAlert(withTitle title: String, message: String?) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
 }

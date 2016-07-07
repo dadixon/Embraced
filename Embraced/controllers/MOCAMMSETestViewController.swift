@@ -1,25 +1,23 @@
 //
-//  FrontViewController.swift
+//  MOCAMMSETestViewController.swift
 //  Embraced
 //
-//  Created by Domonique Dixon on 6/29/16.
+//  Created by Domonique Dixon on 7/6/16.
 //  Copyright © 2016 Domonique Dixon. All rights reserved.
 //
 
 import UIKit
 
-class FrontViewController: UIViewController {
+class MOCAMMSETestViewController: FrontViewController {
 
-    @IBOutlet weak var backBtn: UIButton!
-    @IBOutlet weak var nextBtn: UIButton!
-    @IBOutlet weak var progressView: UIProgressView!
-    @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var myWebView: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        backBtn.backgroundColor = UIColor.blackColor()
-        nextBtn.backgroundColor = UIColor.blackColor()
+        
+        let url = NSURL (string: "http://girlscouts.harryatwal.com/MoCA_MMSE.php");
+        let requestObj = NSURLRequest(URL: url!);
+        myWebView.loadRequest(requestObj);
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,14 +25,7 @@ class FrontViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = true
-    }
-    
+
     /*
     // MARK: - Navigation
 
