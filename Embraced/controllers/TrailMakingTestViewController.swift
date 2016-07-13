@@ -29,7 +29,7 @@ class TrailMakingTestViewController: FrontViewController {
     
     // MARK: - Navigation
 
-    @IBAction func back(sender: AnyObject) {
+    @IBAction  func back(sender: AnyObject) {
         self.navigationController!.popViewControllerAnimated(true)
     }
     

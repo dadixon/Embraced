@@ -43,6 +43,7 @@
 		A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */; };
 		A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */; };
 		A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */; };
+		A4C71C0E1D33570100CD5FB1 /* Embraced_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */; };
 		A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9041D1D2380380092D6AA /* FrontViewController.swift */; };
 		A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D904211D23810C0092D6AA /* EmbracedTextField.swift */; };
 		DD7D49BC9E47B49E27EB6157 /* Pods_Embraced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */; };
@@ -88,6 +89,7 @@
 		A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Embraced_bg.png; sourceTree = "<group>"; };
 		A4D9041D1D2380380092D6AA /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		A4D904211D23810C0092D6AA /* EmbracedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbracedTextField.swift; sourceTree = "<group>"; };
 		B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.release.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		A48B4DD91CF9EEAB00878928 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */,
 				A490D7C61D0919CB00D2B59D /* Roboto-Black.ttf */,
 				A490D7C71D0919CB00D2B59D /* Roboto-BlackItalic.ttf */,
 				A490D7C81D0919CB00D2B59D /* Roboto-Bold.ttf */,
@@ -262,7 +265,6 @@
 				TargetAttributes = {
 					A48B4DC01CF9E7C600878928 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 32DZZ46N4K;
 					};
 				};
 			};
@@ -292,6 +294,7 @@
 				A490D7D41D0919CB00D2B59D /* Roboto-Bold.ttf in Resources */,
 				A490D7D81D0919CB00D2B59D /* Roboto-LightItalic.ttf in Resources */,
 				A490D7DA1D0919CB00D2B59D /* Roboto-MediumItalic.ttf in Resources */,
+				A4C71C0E1D33570100CD5FB1 /* Embraced_bg.png in Resources */,
 				A490D7D61D0919CB00D2B59D /* Roboto-Italic.ttf in Resources */,
 				A490D7D71D0919CB00D2B59D /* Roboto-Light.ttf in Resources */,
 				A48B4DD21CF9E7C700878928 /* LaunchScreen.storyboard in Resources */,

@@ -16,9 +16,10 @@ class QuestionnaireViewController: FrontViewController, UIPickerViewDataSource, 
     
     var pickOption = ["Male", "Female", "Other"]
     var step = 1
+    var totalSteps = 17
     var progress : Float {
         get {
-            return Float(step) / 17.0
+            return Float(step) / Float(totalSteps)
         }
     }
     let prefs = NSUserDefaults.standardUserDefaults()
@@ -27,7 +28,7 @@ class QuestionnaireViewController: FrontViewController, UIPickerViewDataSource, 
         super.viewDidLoad()
 
         progressView.progress = progress
-        progressLabel.text = "Progress (\(step)/17)"
+        progressLabel.text = "PROGRESS (\(step)/\(totalSteps))"
         
         let pickerView = UIPickerView()
         
@@ -49,6 +50,8 @@ class QuestionnaireViewController: FrontViewController, UIPickerViewDataSource, 
         
         genderTextField.inputView = pickerView
         genderTextField.inputAccessoryView = toolBar
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OccupationViewController: FrontViewController {
+class OccupationViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
@@ -16,9 +16,9 @@ class OccupationViewController: FrontViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        scrollView = UIScrollView(frame: view.bounds)
-        scrollView.backgroundColor = UIColor.blackColor()
-        scrollView.contentSize = contentView.bounds.size
+//        scrollView = UIScrollView(frame: view.bounds)
+//        scrollView.backgroundColor = UIColor.blackColor()
+//        scrollView.contentSize = contentView.bounds.size
 //        scrollView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
     }
 

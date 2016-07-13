@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         signInBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
         
 //        if (Stormpath.sharedSession.accessToken != nil) {
 //            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -44,7 +45,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func login(sender: AnyObject) {
-        Stormpath.sharedSession.login(usernameTextfield.text!, password: passwordTextfield.text!, completionHandler: logResponse)
+//        Stormpath.sharedSession.login(usernameTextfield.text!, password: passwordTextfield.text!, completionHandler: logResponse)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let secondViewController = storyBoard.instantiateViewControllerWithIdentifier("UserInputViewController") as! UserInputViewController
+//        let navController = UINavigationController(rootViewController: secondViewController)
+        self.presentViewController(secondViewController, animated: true, completion: nil)
     }
     
     func logResponse(success: Bool, error: NSError?) {
