@@ -14,6 +14,30 @@ class QuestionnaireViewController: FrontViewController, UIPickerViewDataSource, 
     @IBOutlet weak var dobTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
     
+    @IBOutlet weak var writingSegment: UISegmentedControl!
+    @IBOutlet weak var drawingSegment: UISegmentedControl!
+    @IBOutlet weak var throwing: UISegmentedControl!
+    @IBOutlet weak var scissorsSegment: UISegmentedControl!
+    @IBOutlet weak var toothbrushSegment: UISegmentedControl!
+    @IBOutlet weak var knifeSegment: UISegmentedControl!
+    @IBOutlet weak var spoonSegment: UISegmentedControl!
+    @IBOutlet weak var broomSegment: UISegmentedControl!
+    @IBOutlet weak var matchSegment: UISegmentedControl!
+    @IBOutlet weak var lidSegment: UISegmentedControl!
+    
+    @IBOutlet weak var childTableView: UITableView!
+    @IBOutlet weak var childAgeTextField: UITextField!
+    @IBOutlet weak var childGenderTextField: UITextField!
+    
+    @IBOutlet weak var marriedMonths: UITextField!
+    @IBOutlet weak var marriedYears: UITextField!
+    @IBOutlet weak var livingMonths: UITextField!
+    @IBOutlet weak var livingYears: UITextField!
+    @IBOutlet weak var separateMonths: UITextField!
+    @IBOutlet weak var separateYears: UITextField!
+    
+    @IBOutlet weak var childrenView: UIView!
+    
     var pickOption = ["Male", "Female", "Other"]
     var step = 1
     var totalSteps = 17
@@ -23,6 +47,14 @@ class QuestionnaireViewController: FrontViewController, UIPickerViewDataSource, 
         }
     }
     let prefs = NSUserDefaults.standardUserDefaults()
+    
+    var postValues = [String](count: 10, repeatedValue: "")
+    var strongHand = String()
+    var childPickOption = ["Male", "Female"]
+    var ages = [String]()
+    var sexes = [String]()
+    
+    let textCellIdentifier = "ChildTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +83,17 @@ class QuestionnaireViewController: FrontViewController, UIPickerViewDataSource, 
         genderTextField.inputView = pickerView
         genderTextField.inputAccessoryView = toolBar
         
-        
+        // Hand Dominate
+//        writingSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
+//        drawingSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
+//        throwing.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
+//        scissorsSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
+//        toothbrushSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
+//        knifeSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
+//        spoonSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
+//        broomSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
+//        matchSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
+//        lidSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,6 +123,102 @@ class QuestionnaireViewController: FrontViewController, UIPickerViewDataSource, 
         sender.inputAccessoryView = toolBar
         
         datePickerView.addTarget(self, action: #selector(datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    func segmentChanged(sender: UISegmentedControl) {
+        var hand = String()
+        
+        if(sender.selectedSegmentIndex == 0) {
+            hand = "L"
+        } else if(sender.selectedSegmentIndex == 1) {
+            hand = "R"
+        }
+        postValues.removeAtIndex(sender.tag)
+        postValues.insert(hand, atIndex: sender.tag)
+        
+        print(postValues)
+        
+        var lefty = 0
+        var righty = 0
+        
+        for hand in postValues {
+            if (hand == "L") {
+                lefty += 1
+            } else if (hand == "R") {
+                righty += 1
+            }
+        }
+        
+        if (lefty > righty) {
+            strongHand = "L"
+        } else {
+            strongHand = "R"
+        }
+        
+        print(strongHand)
+    }
+    
+    @IBAction func changeStatus(sender: AnyObject) {
+        switch sender.tag {
+        case 0, 3:
+            marriedMonths.hidden = true
+            marriedYears.hidden = true
+            livingMonths.hidden = true
+            livingYears.hidden = true
+            separateMonths.hidden = true
+            separateYears.hidden = true
+        case 1:
+            marriedMonths.hidden = false
+            marriedYears.hidden = false
+            livingMonths.hidden = true
+            livingYears.hidden = true
+            separateMonths.hidden = true
+            separateYears.hidden = true
+        case 2:
+            marriedMonths.hidden = true
+            marriedYears.hidden = true
+            livingMonths.hidden = false
+            livingYears.hidden = false
+            separateMonths.hidden = true
+            separateYears.hidden = true
+        case 4:
+            marriedMonths.hidden = true
+            marriedYears.hidden = true
+            livingMonths.hidden = true
+            livingYears.hidden = true
+            separateMonths.hidden = false
+            separateYears.hidden = false
+        default:
+            marriedMonths.hidden = true
+            marriedYears.hidden = true
+            livingMonths.hidden = true
+            livingYears.hidden = true
+            separateMonths.hidden = true
+            separateYears.hidden = true
+        }
+    }
+    
+    @IBAction func haveChildren(sender: AnyObject) {
+        if (sender.selectedSegmentIndex == 0) {
+            childrenView.hidden = false
+        } else if (sender.selectedSegmentIndex == 1) {
+            childrenView.hidden = true
+            ages.removeAll()
+            sexes.removeAll()
+            childTableView.reloadData()
+            childAgeTextField.text = ""
+            childGenderTextField.text = ""
+        }
+    }
+    
+    @IBAction func addChild(sender: AnyObject) {
+        ages.append(childAgeTextField.text!)
+        sexes.append(childGenderTextField.text!)
+        
+        childTableView.reloadData()
+        
+        childAgeTextField.text = ""
+        childGenderTextField.text = ""
     }
     
     @IBAction func back(sender: AnyObject) {
@@ -160,5 +298,32 @@ class QuestionnaireViewController: FrontViewController, UIPickerViewDataSource, 
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         genderTextField.text = pickOption[row]
+    }
+    
+    
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ages.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! ChildTableViewCell
+        
+        let row = indexPath.row
+        cell.ageLabel?.text = String(ages[row])
+        cell.sexLabel?.text = sexes[row]
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let row = indexPath.row
+        print(ages[row])
     }
 }
