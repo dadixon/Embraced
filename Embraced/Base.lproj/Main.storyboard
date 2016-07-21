@@ -7417,6 +7417,9 @@
                                                         <include reference="xHN-DG-XoN"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="next:" destination="7iO-FR-91N" eventType="touchUpInside" id="xhV-rm-rxi"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yu-Jw-zpD">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -7440,6 +7443,9 @@
                                                         <include reference="QuJ-eh-yyO"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="back:" destination="7iO-FR-91N" eventType="touchUpInside" id="HxA-BT-iXD"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -7736,6 +7742,9 @@
                                                         <include reference="ofJ-gK-lFd"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="next:" destination="72X-S3-R29" eventType="touchUpInside" id="Fti-ev-TsO"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qvn-ZB-NjD">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -7759,6 +7768,9 @@
                                                         <include reference="re2-ES-EKr"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="back:" destination="72X-S3-R29" eventType="touchUpInside" id="VCI-qa-16Z"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -8037,6 +8049,9 @@
                                                         <include reference="zVf-Bk-nQT"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="next:" destination="a5N-br-jhR" eventType="touchUpInside" id="Rif-YS-hM0"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjI-cv-VK0">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -8060,6 +8075,9 @@
                                                         <include reference="oIk-xL-bXe"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="back:" destination="a5N-br-jhR" eventType="touchUpInside" id="xxF-dr-PHS"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -8336,6 +8354,9 @@
                                                         <include reference="uVR-Cp-bF1"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="next:" destination="OiF-4g-tJU" eventType="touchUpInside" id="LwC-zg-vJe"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCf-Fa-1d7">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -8359,6 +8380,9 @@
                                                         <include reference="xBP-Rc-4yD"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="back:" destination="OiF-4g-tJU" eventType="touchUpInside" id="TLb-F2-Rzh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -8637,6 +8661,9 @@
                                                         <include reference="SOO-BA-2dr"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="next:" destination="T8Q-jo-3sX" eventType="touchUpInside" id="DKC-cD-DT1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="503-bX-OoH">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -8660,6 +8687,9 @@
                                                         <include reference="xBu-U2-Kb7"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="back:" destination="T8Q-jo-3sX" eventType="touchUpInside" id="jFt-Mg-GWd"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -8938,6 +8968,9 @@
                                                         <include reference="QJ3-0e-PsR"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="next:" destination="8Ct-FJ-UXK" eventType="touchUpInside" id="rwQ-Cp-7nz"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM8-ad-cvn">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -8961,6 +8994,9 @@
                                                         <include reference="Ti1-hw-Awh"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="back:" destination="8Ct-FJ-UXK" eventType="touchUpInside" id="wTV-I7-cne"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
