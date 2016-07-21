@@ -256,7 +256,7 @@ class QuestionnaireViewController: FrontViewController, UIPickerViewDataSource, 
 //            let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
 //            task.resume()
             
-            let VC1 = self.storyboard!.instantiateViewControllerWithIdentifier("HandDominateViewController") as! HandDominateViewController
+            let VC1 = self.storyboard!.instantiateViewControllerWithIdentifier("CPTViewController") as! CPTViewController
             self.navigationController!.pushViewController(VC1, animated: true)
         } else {
             let alert = UIAlertController(title: "Error", message: "Please fill all the fields.", preferredStyle: .Alert)
