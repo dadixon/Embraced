@@ -24,6 +24,7 @@
 		A4476ECC1D12710E002722B4 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */; };
 		A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */; };
 		A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED91D13B1BA002722B4 /* UserInputs.swift */; };
+		A47C359D1D4990450013C463 /* Questionnaire2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C359C1D4990450013C463 /* Questionnaire2ViewController.swift */; };
 		A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC41CF9E7C700878928 /* AppDelegate.swift */; };
 		A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC61CF9E7C700878928 /* ViewController.swift */; };
 		A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48B4DC81CF9E7C700878928 /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 		A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInputs+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A4476ED91D13B1BA002722B4 /* UserInputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputs.swift; sourceTree = "<group>"; };
+		A47C359C1D4990450013C463 /* Questionnaire2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questionnaire2ViewController.swift; sourceTree = "<group>"; };
 		A48B4DC11CF9E7C600878928 /* Embraced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embraced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48B4DC41CF9E7C700878928 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A48B4DC61CF9E7C700878928 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				A48B4DC61CF9E7C700878928 /* ViewController.swift */,
 				A490D7C41D09162800D2B59D /* UserInputViewController.swift */,
 				A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */,
+				A47C359C1D4990450013C463 /* Questionnaire2ViewController.swift */,
 				A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */,
 				A44716B31D2C47BB0048CA0D /* EthnicityViewController.swift */,
 				A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */,
@@ -382,6 +385,7 @@
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
 				A42AB5BB1D2DD444001387BB /* ClockDrawingTestViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
+				A47C359D1D4990450013C463 /* Questionnaire2ViewController.swift in Sources */,
 				A44716B41D2C47BB0048CA0D /* EthnicityViewController.swift in Sources */,
 				A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */,
 				A42AB5C01D2DD92E001387BB /* MOCAMMSETestViewController.swift in Sources */,
