@@ -10569,6 +10569,25 @@
                                             </mask>
                                         </variation>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iz-lu-UFs">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="296" id="Pas-cp-FsV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Pas-cp-FsV"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="Pas-cp-FsV"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -10578,9 +10597,13 @@
                                     <constraint firstAttribute="bottom" secondItem="FK0-IY-j0e" secondAttribute="bottom" constant="94" id="8oN-kI-A9N"/>
                                     <constraint firstItem="BRJ-5F-zFZ" firstAttribute="top" secondItem="FK0-IY-j0e" secondAttribute="bottom" constant="52" id="A7a-t4-yK1"/>
                                     <constraint firstItem="BRJ-5F-zFZ" firstAttribute="top" secondItem="FK0-IY-j0e" secondAttribute="bottom" constant="52" id="Cbf-t5-0Mz"/>
+                                    <constraint firstItem="9iz-lu-UFs" firstAttribute="centerX" secondItem="VVq-h4-7hY" secondAttribute="centerX" id="E1e-0c-7Y6">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-1"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="piV-5Y-xlv" secondAttribute="trailing" id="Ety-IJ-sfp"/>
                                     <constraint firstItem="piV-5Y-xlv" firstAttribute="top" secondItem="VVq-h4-7hY" secondAttribute="top" id="FyP-47-uHo"/>
                                     <constraint firstItem="Ayt-Qs-Vjo" firstAttribute="centerX" secondItem="VVq-h4-7hY" secondAttribute="centerX" id="KiC-Gm-aEQ"/>
+                                    <constraint firstItem="9iz-lu-UFs" firstAttribute="top" secondItem="BRJ-5F-zFZ" secondAttribute="bottom" constant="50" id="LqC-RF-saV"/>
                                     <constraint firstItem="piV-5Y-xlv" firstAttribute="centerX" secondItem="VVq-h4-7hY" secondAttribute="centerX" id="P8Y-fi-qLY">
                                         <variation key="heightClass=regular-widthClass=regular" constant="-1.5"/>
                                     </constraint>
@@ -10602,6 +10625,7 @@
                                         <exclude reference="FK0-IY-j0e"/>
                                         <exclude reference="BRJ-5F-zFZ"/>
                                         <exclude reference="Ayt-Qs-Vjo"/>
+                                        <exclude reference="9iz-lu-UFs"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="03b-oI-pnV"/>
@@ -10616,6 +10640,8 @@
                                         <exclude reference="8oN-kI-A9N"/>
                                         <exclude reference="Uwl-tu-5SZ"/>
                                         <exclude reference="jro-YR-k2D"/>
+                                        <exclude reference="E1e-0c-7Y6"/>
+                                        <exclude reference="LqC-RF-saV"/>
                                         <exclude reference="5y8-fC-4an"/>
                                         <exclude reference="A7a-t4-yK1"/>
                                         <exclude reference="Cbf-t5-0Mz"/>
@@ -10629,6 +10655,7 @@
                                         <include reference="FK0-IY-j0e"/>
                                         <include reference="BRJ-5F-zFZ"/>
                                         <include reference="Ayt-Qs-Vjo"/>
+                                        <include reference="9iz-lu-UFs"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="03b-oI-pnV"/>
@@ -10643,6 +10670,8 @@
                                         <include reference="8oN-kI-A9N"/>
                                         <include reference="Uwl-tu-5SZ"/>
                                         <include reference="jro-YR-k2D"/>
+                                        <include reference="E1e-0c-7Y6"/>
+                                        <include reference="LqC-RF-saV"/>
                                         <include reference="5y8-fC-4an"/>
                                         <exclude reference="A7a-t4-yK1"/>
                                         <exclude reference="Cbf-t5-0Mz"/>
@@ -10691,6 +10720,7 @@
                         <outlet property="progressLabel" destination="XfL-Fv-TL7" id="ArU-aW-J0A"/>
                         <outlet property="progressView" destination="8yG-aQ-F8I" id="f6F-UJ-4AV"/>
                         <outlet property="recordBtn" destination="FK0-IY-j0e" id="NaT-x7-NZh"/>
+                        <outlet property="timerCount" destination="9iz-lu-UFs" id="t0g-jS-WLG"/>
                     </connections>
                 </viewController>
                 <navigationItem id="gki-lj-iq6">

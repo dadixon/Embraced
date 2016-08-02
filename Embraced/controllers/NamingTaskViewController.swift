@@ -42,6 +42,14 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     ]
     var count = 0
     
+    let skipBtnDelay = 5.0 * Double(NSEC_PER_SEC)
+    
+    
+    @IBOutlet weak var timerCount: UILabel!
+    var startTime = NSTimeInterval()
+    var timer = NSTimer()
+    var isRunning = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +57,8 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         setupRecorder()
         
         imageView.image = UIImage(named: stimuli[count])
+        
+        startTimer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -95,9 +105,13 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
             soundRecorder.stop()
             sender.setTitle("Record", forState: .Normal)
             playBtn.enabled = false
+            resetTimer()
+            startTimer()
             
             count += 1
             imageView.image = UIImage(named: stimuli[count])
+            
+            // Save audio file to database
         }
     }
     
@@ -124,7 +138,57 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         }
     }
     
+    func updateTime() {
+        
+        let currentTime = NSDate.timeIntervalSinceReferenceDate()
+        
+        var elapsedTime : NSTimeInterval = currentTime - startTime
+        
+        //calculate the minutes in elapsed time
+        
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        
+        //calculate the seconds in elapsed time
+        
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= NSTimeInterval(seconds)
+        
+        
+        //fraction of milliseconds
+        
+        let fraction = UInt8(elapsedTime * 100)
+        
+        //add the leading zero for minutues, seconds and milliseconds, store
+        // as string constants
+        
+        let strMinutes = minutes > 9 ? String(minutes): "0" + String(minutes)
+        
+        let strSeconds = seconds > 9 ? String(seconds): "0" + String(seconds)
+        
+        let strFraction = fraction > 9 ? String(fraction): "0" + String(fraction)
+        
+        //concatonate mins, seoncds and milliseconds, assign to UILable timercount
+        
+        timerCount.text = "\(strMinutes):\(strSeconds):\(strFraction)"
+        
+    }
     
+    func startTimer() {
+        if !timer.valid {
+            
+            let aSelector : Selector = #selector(NamingTaskViewController.updateTime)
+            
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            
+            startTime = NSDate.timeIntervalSinceReferenceDate()
+        }
+    }
+    
+    func resetTimer() {
+        timer.invalidate()
+        timerCount.text = "00:00:00"
+    }
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         playBtn.enabled = true
