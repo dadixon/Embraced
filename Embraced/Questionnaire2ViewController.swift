@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Questionnaire2ViewController: UIViewController {
+class Questionnaire2ViewController: FrontViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +22,16 @@ class Questionnaire2ViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func back(sender: AnyObject) {
+        self.navigationController!.popViewControllerAnimated(true)
     }
-    */
+    
+    @IBAction func next(sender: AnyObject) {
+        let VC1 = self.storyboard!.instantiateViewControllerWithIdentifier("QuestionnaireViewController") as! QuestionnaireViewController
+        self.navigationController!.pushViewController(VC1, animated: true)
+    }
+ 
 
 }

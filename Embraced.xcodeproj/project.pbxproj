@@ -20,6 +20,22 @@
 		A42AB5C71D2E776F001387BB /* ResidenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C61D2E776F001387BB /* ResidenceViewController.swift */; };
 		A42AB5C91D2E7C93001387BB /* OccupationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C81D2E7C93001387BB /* OccupationViewController.swift */; };
 		A43B8F751D2A1351001C4063 /* HandDominateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */; };
+		A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */; };
+		A43E98C41D508627008F54C3 /* camel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98B51D508627008F54C3 /* camel.jpg */; };
+		A43E98C51D508627008F54C3 /* flag.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98B61D508627008F54C3 /* flag.jpg */; };
+		A43E98C61D508627008F54C3 /* funnel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98B71D508627008F54C3 /* funnel.jpg */; };
+		A43E98C71D508627008F54C3 /* giraffee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98B81D508627008F54C3 /* giraffee.jpg */; };
+		A43E98C81D508627008F54C3 /* guitar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98B91D508627008F54C3 /* guitar.jpg */; };
+		A43E98C91D508627008F54C3 /* hammer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98BA1D508627008F54C3 /* hammer.jpg */; };
+		A43E98CA1D508627008F54C3 /* helmet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98BB1D508627008F54C3 /* helmet.jpg */; };
+		A43E98CB1D508627008F54C3 /* key.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98BC1D508627008F54C3 /* key.jpg */; };
+		A43E98CC1D508627008F54C3 /* rake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98BD1D508627008F54C3 /* rake.jpg */; };
+		A43E98CD1D508627008F54C3 /* scissors.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98BE1D508627008F54C3 /* scissors.jpg */; };
+		A43E98CE1D508627008F54C3 /* thermometer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98BF1D508627008F54C3 /* thermometer.jpg */; };
+		A43E98CF1D508627008F54C3 /* tie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98C01D508627008F54C3 /* tie.jpg */; };
+		A43E98D01D508627008F54C3 /* tree.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98C11D508627008F54C3 /* tree.jpg */; };
+		A43E98D11D508627008F54C3 /* watch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98C21D508627008F54C3 /* watch.jpg */; };
+		A43E98D21D508627008F54C3 /* watermelon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98C31D508627008F54C3 /* watermelon.jpg */; };
 		A44716B41D2C47BB0048CA0D /* EthnicityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44716B31D2C47BB0048CA0D /* EthnicityViewController.swift */; };
 		A4476ECC1D12710E002722B4 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */; };
 		A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */; };
@@ -65,6 +81,22 @@
 		A42AB5C61D2E776F001387BB /* ResidenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResidenceViewController.swift; path = controllers/ResidenceViewController.swift; sourceTree = "<group>"; };
 		A42AB5C81D2E7C93001387BB /* OccupationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OccupationViewController.swift; path = controllers/OccupationViewController.swift; sourceTree = "<group>"; };
 		A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandDominateViewController.swift; path = controllers/HandDominateViewController.swift; sourceTree = "<group>"; };
+		A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NamingTaskViewController.swift; path = controllers/NamingTaskViewController.swift; sourceTree = "<group>"; };
+		A43E98B51D508627008F54C3 /* camel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camel.jpg; sourceTree = "<group>"; };
+		A43E98B61D508627008F54C3 /* flag.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flag.jpg; sourceTree = "<group>"; };
+		A43E98B71D508627008F54C3 /* funnel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = funnel.jpg; sourceTree = "<group>"; };
+		A43E98B81D508627008F54C3 /* giraffee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = giraffee.jpg; sourceTree = "<group>"; };
+		A43E98B91D508627008F54C3 /* guitar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guitar.jpg; sourceTree = "<group>"; };
+		A43E98BA1D508627008F54C3 /* hammer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hammer.jpg; sourceTree = "<group>"; };
+		A43E98BB1D508627008F54C3 /* helmet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = helmet.jpg; sourceTree = "<group>"; };
+		A43E98BC1D508627008F54C3 /* key.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = key.jpg; sourceTree = "<group>"; };
+		A43E98BD1D508627008F54C3 /* rake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rake.jpg; sourceTree = "<group>"; };
+		A43E98BE1D508627008F54C3 /* scissors.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = scissors.jpg; sourceTree = "<group>"; };
+		A43E98BF1D508627008F54C3 /* thermometer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thermometer.jpg; sourceTree = "<group>"; };
+		A43E98C01D508627008F54C3 /* tie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tie.jpg; sourceTree = "<group>"; };
+		A43E98C11D508627008F54C3 /* tree.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree.jpg; sourceTree = "<group>"; };
+		A43E98C21D508627008F54C3 /* watch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = watch.jpg; sourceTree = "<group>"; };
+		A43E98C31D508627008F54C3 /* watermelon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = watermelon.jpg; sourceTree = "<group>"; };
 		A44716B31D2C47BB0048CA0D /* EthnicityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EthnicityViewController.swift; path = controllers/EthnicityViewController.swift; sourceTree = "<group>"; };
 		A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInputs+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -130,6 +162,7 @@
 		A42AB5C51D2DE0F4001387BB /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */,
 				A42AB5B21D2DC60C001387BB /* CPTViewController.swift */,
 				A42AB5B41D2DCF48001387BB /* CancellationTestViewController.swift */,
 				A42AB5B61D2DD1E5001387BB /* EyeTestViewController.swift */,
@@ -186,6 +219,21 @@
 		A48B4DD91CF9EEAB00878928 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A43E98B51D508627008F54C3 /* camel.jpg */,
+				A43E98B61D508627008F54C3 /* flag.jpg */,
+				A43E98B71D508627008F54C3 /* funnel.jpg */,
+				A43E98B81D508627008F54C3 /* giraffee.jpg */,
+				A43E98B91D508627008F54C3 /* guitar.jpg */,
+				A43E98BA1D508627008F54C3 /* hammer.jpg */,
+				A43E98BB1D508627008F54C3 /* helmet.jpg */,
+				A43E98BC1D508627008F54C3 /* key.jpg */,
+				A43E98BD1D508627008F54C3 /* rake.jpg */,
+				A43E98BE1D508627008F54C3 /* scissors.jpg */,
+				A43E98BF1D508627008F54C3 /* thermometer.jpg */,
+				A43E98C01D508627008F54C3 /* tie.jpg */,
+				A43E98C11D508627008F54C3 /* tree.jpg */,
+				A43E98C21D508627008F54C3 /* watch.jpg */,
+				A43E98C31D508627008F54C3 /* watermelon.jpg */,
 				A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */,
 				A490D7C61D0919CB00D2B59D /* Roboto-Black.ttf */,
 				A490D7C71D0919CB00D2B59D /* Roboto-BlackItalic.ttf */,
@@ -295,21 +343,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				A490D7D41D0919CB00D2B59D /* Roboto-Bold.ttf in Resources */,
+				A43E98D01D508627008F54C3 /* tree.jpg in Resources */,
 				A490D7D81D0919CB00D2B59D /* Roboto-LightItalic.ttf in Resources */,
+				A43E98D11D508627008F54C3 /* watch.jpg in Resources */,
 				A490D7DA1D0919CB00D2B59D /* Roboto-MediumItalic.ttf in Resources */,
 				A4C71C0E1D33570100CD5FB1 /* Embraced_bg.png in Resources */,
 				A490D7D61D0919CB00D2B59D /* Roboto-Italic.ttf in Resources */,
+				A43E98C81D508627008F54C3 /* guitar.jpg in Resources */,
+				A43E98C61D508627008F54C3 /* funnel.jpg in Resources */,
 				A490D7D71D0919CB00D2B59D /* Roboto-Light.ttf in Resources */,
+				A43E98CF1D508627008F54C3 /* tie.jpg in Resources */,
+				A43E98CC1D508627008F54C3 /* rake.jpg in Resources */,
+				A43E98CA1D508627008F54C3 /* helmet.jpg in Resources */,
 				A48B4DD21CF9E7C700878928 /* LaunchScreen.storyboard in Resources */,
+				A43E98C51D508627008F54C3 /* flag.jpg in Resources */,
+				A43E98C91D508627008F54C3 /* hammer.jpg in Resources */,
 				A490D7D51D0919CB00D2B59D /* Roboto-BoldItalic.ttf in Resources */,
 				A490D7D31D0919CB00D2B59D /* Roboto-BlackItalic.ttf in Resources */,
 				A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */,
+				A43E98CD1D508627008F54C3 /* scissors.jpg in Resources */,
+				A43E98CB1D508627008F54C3 /* key.jpg in Resources */,
 				A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */,
 				A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */,
 				A490D7D91D0919CB00D2B59D /* Roboto-Medium.ttf in Resources */,
 				A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */,
+				A43E98CE1D508627008F54C3 /* thermometer.jpg in Resources */,
 				A490D7D21D0919CB00D2B59D /* Roboto-Black.ttf in Resources */,
+				A43E98D21D508627008F54C3 /* watermelon.jpg in Resources */,
 				A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */,
+				A43E98C41D508627008F54C3 /* camel.jpg in Resources */,
+				A43E98C71D508627008F54C3 /* giraffee.jpg in Resources */,
 				A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +437,7 @@
 				A42AB5C71D2E776F001387BB /* ResidenceViewController.swift in Sources */,
 				A42AB5C91D2E7C93001387BB /* OccupationViewController.swift in Sources */,
 				A42AB5B71D2DD1E5001387BB /* EyeTestViewController.swift in Sources */,
+				A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */,
 				A43B8F751D2A1351001C4063 /* HandDominateViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
 				A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */,
