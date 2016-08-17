@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A405A0E61D5ACEF300DA6691 /* Questionnaire3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A405A0E51D5ACEF300DA6691 /* Questionnaire3ViewController.swift */; };
 		A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */ = {isa = PBXBuildFile; fileRef = A414247E1D02C3F60028933E /* LOGO_r1_c1.png */; };
 		A42AB5B11D2DACDE001387BB /* MartialStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */; };
 		A42AB5B31D2DC60C001387BB /* CPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B21D2DC60C001387BB /* CPTViewController.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		9F375DDA1676C302A2C3E45B /* Pods-Embraced.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.debug.xcconfig"; sourceTree = "<group>"; };
+		A405A0E51D5ACEF300DA6691 /* Questionnaire3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questionnaire3ViewController.swift; sourceTree = "<group>"; };
 		A414247E1D02C3F60028933E /* LOGO_r1_c1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO_r1_c1.png; sourceTree = "<group>"; };
 		A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MartialStatusViewController.swift; path = controllers/MartialStatusViewController.swift; sourceTree = "<group>"; };
 		A42AB5B21D2DC60C001387BB /* CPTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPTViewController.swift; path = controllers/CPTViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				A42AB5C61D2E776F001387BB /* ResidenceViewController.swift */,
 				A42AB5C81D2E7C93001387BB /* OccupationViewController.swift */,
 				A42AB5C51D2DE0F4001387BB /* Test */,
+				A405A0E51D5ACEF300DA6691 /* Questionnaire3ViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
 				A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */,
 				A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */,
+				A405A0E61D5ACEF300DA6691 /* Questionnaire3ViewController.swift in Sources */,
 				A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */,
 				A42AB5B91D2DD324001387BB /* ReyComplexFigureViewController.swift in Sources */,
 				A42AB5B51D2DCF48001387BB /* CancellationTestViewController.swift in Sources */,

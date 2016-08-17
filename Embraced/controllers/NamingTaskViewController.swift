@@ -112,6 +112,8 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
             imageView.image = UIImage(named: stimuli[count])
             
             // Save audio file to database
+            let soundData = NSFileManager.defaultManager().contentsAtPath(getCacheDirectory().stringByAppendingPathComponent(fileName))
+            print("\(soundData)")
         }
     }
     
@@ -208,12 +210,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         // Pass the selected object to the new view controller.
     }
     */
-
-    func getDocumentsDirectory() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
-    }
 }
 
 extension String {
