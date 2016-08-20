@@ -29,7 +29,7 @@ class Questionnaire2ViewController: FrontViewController {
     }
     
     @IBAction func next(sender: AnyObject) {
-        let VC1 = self.storyboard!.instantiateViewControllerWithIdentifier("QuestionnaireViewController") as! QuestionnaireViewController
+        let VC1 = self.storyboard!.instantiateViewControllerWithIdentifier("Questionnaire3ViewController") as! Questionnaire3ViewController
         self.navigationController!.pushViewController(VC1, animated: true)
     }
  
