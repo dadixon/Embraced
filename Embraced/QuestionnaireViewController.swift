@@ -256,8 +256,11 @@ class QuestionnaireViewController: FrontViewController, UIPickerViewDataSource, 
 //            let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
 //            task.resume()
             
-            let VC1 = self.storyboard!.instantiateViewControllerWithIdentifier("Questionnaire2ViewController") as! Questionnaire2ViewController
-            self.navigationController!.pushViewController(VC1, animated: true)
+//            let VC1 = self.storyboard!.instantiateViewControllerWithIdentifier("Questionnaire2ViewController") as! Questionnaire2ViewController
+//            self.navigationController!.pushViewController(VC1, animated: true)
+            
+            let questionViewController:Question1ViewController = Question1ViewController()
+            self.navigationController!.pushViewController(questionViewController, animated: true)
         } else {
             let alert = UIAlertController(title: "Error", message: "Please fill all the fields.", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))

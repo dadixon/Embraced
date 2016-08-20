@@ -61,6 +61,14 @@
 		A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */; };
 		A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */; };
 		A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */; };
+		A4A794251D68CD1900305AB4 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A794231D68CD1900305AB4 /* TestViewController.swift */; };
+		A4A794261D68CD1900305AB4 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A794241D68CD1900305AB4 /* TestViewController.xib */; };
+		A4A7942B1D68E42200305AB4 /* Question1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A794291D68E42200305AB4 /* Question1ViewController.swift */; };
+		A4A7942C1D68E42200305AB4 /* Question1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A7942A1D68E42200305AB4 /* Question1ViewController.xib */; };
+		A4A7942F1D68E57F00305AB4 /* Question2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7942D1D68E57F00305AB4 /* Question2ViewController.swift */; };
+		A4A794301D68E57F00305AB4 /* Question2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A7942E1D68E57F00305AB4 /* Question2ViewController.xib */; };
+		A4A794331D68E5AC00305AB4 /* Question3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A794311D68E5AC00305AB4 /* Question3ViewController.swift */; };
+		A4A794341D68E5AC00305AB4 /* Question3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A794321D68E5AC00305AB4 /* Question3ViewController.xib */; };
 		A4C71C0E1D33570100CD5FB1 /* Embraced_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */; };
 		A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9041D1D2380380092D6AA /* FrontViewController.swift */; };
 		A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D904211D23810C0092D6AA /* EmbracedTextField.swift */; };
@@ -125,6 +133,14 @@
 		A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		A4A794231D68CD1900305AB4 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		A4A794241D68CD1900305AB4 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		A4A794291D68E42200305AB4 /* Question1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question1ViewController.swift; path = controllers/Question1ViewController.swift; sourceTree = "<group>"; };
+		A4A7942A1D68E42200305AB4 /* Question1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Question1ViewController.xib; path = controllers/Question1ViewController.xib; sourceTree = "<group>"; };
+		A4A7942D1D68E57F00305AB4 /* Question2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question2ViewController.swift; path = controllers/Question2ViewController.swift; sourceTree = "<group>"; };
+		A4A7942E1D68E57F00305AB4 /* Question2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Question2ViewController.xib; path = controllers/Question2ViewController.xib; sourceTree = "<group>"; };
+		A4A794311D68E5AC00305AB4 /* Question3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question3ViewController.swift; path = controllers/Question3ViewController.swift; sourceTree = "<group>"; };
+		A4A794321D68E5AC00305AB4 /* Question3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Question3ViewController.xib; path = controllers/Question3ViewController.xib; sourceTree = "<group>"; };
 		A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Embraced_bg.png; sourceTree = "<group>"; };
 		A4D9041D1D2380380092D6AA /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		A4D904211D23810C0092D6AA /* EmbracedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbracedTextField.swift; sourceTree = "<group>"; };
@@ -270,6 +286,14 @@
 				A42AB5C61D2E776F001387BB /* ResidenceViewController.swift */,
 				A42AB5C81D2E7C93001387BB /* OccupationViewController.swift */,
 				A42AB5C51D2DE0F4001387BB /* Test */,
+				A4A794231D68CD1900305AB4 /* TestViewController.swift */,
+				A4A794241D68CD1900305AB4 /* TestViewController.xib */,
+				A4A794291D68E42200305AB4 /* Question1ViewController.swift */,
+				A4A7942A1D68E42200305AB4 /* Question1ViewController.xib */,
+				A4A7942D1D68E57F00305AB4 /* Question2ViewController.swift */,
+				A4A7942E1D68E57F00305AB4 /* Question2ViewController.xib */,
+				A4A794311D68E5AC00305AB4 /* Question3ViewController.swift */,
+				A4A794321D68E5AC00305AB4 /* Question3ViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -291,12 +315,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A48B4DD61CF9E7C700878928 /* Build configuration list for PBXNativeTarget "Embraced" */;
 			buildPhases = (
+				6391EC2967FC335C4B260526 /* 📦 Check Pods Manifest.lock */,
 				5E743F95A972D997F54D05F4 /* [CP] Check Pods Manifest.lock */,
 				A48B4DBD1CF9E7C600878928 /* Sources */,
 				A48B4DBE1CF9E7C600878928 /* Frameworks */,
 				A48B4DBF1CF9E7C600878928 /* Resources */,
 				C90CDE91F5A86DBE2B374296 /* [CP] Embed Pods Frameworks */,
 				C7F38120F030A165D5C8C102 /* [CP] Copy Pods Resources */,
+				EC05DDA4DDE8CF52B4975F46 /* 📦 Embed Pods Frameworks */,
+				F2EE9097EA98D93B1AFC7A4A /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -347,6 +374,7 @@
 			files = (
 				A490D7D41D0919CB00D2B59D /* Roboto-Bold.ttf in Resources */,
 				A43E98D01D508627008F54C3 /* tree.jpg in Resources */,
+				A4A7942C1D68E42200305AB4 /* Question1ViewController.xib in Resources */,
 				A490D7D81D0919CB00D2B59D /* Roboto-LightItalic.ttf in Resources */,
 				A43E98D11D508627008F54C3 /* watch.jpg in Resources */,
 				A490D7DA1D0919CB00D2B59D /* Roboto-MediumItalic.ttf in Resources */,
@@ -356,11 +384,13 @@
 				A43E98C61D508627008F54C3 /* funnel.jpg in Resources */,
 				A490D7D71D0919CB00D2B59D /* Roboto-Light.ttf in Resources */,
 				A43E98CF1D508627008F54C3 /* tie.jpg in Resources */,
+				A4A794301D68E57F00305AB4 /* Question2ViewController.xib in Resources */,
 				A43E98CC1D508627008F54C3 /* rake.jpg in Resources */,
 				A43E98CA1D508627008F54C3 /* helmet.jpg in Resources */,
 				A48B4DD21CF9E7C700878928 /* LaunchScreen.storyboard in Resources */,
 				A43E98C51D508627008F54C3 /* flag.jpg in Resources */,
 				A43E98C91D508627008F54C3 /* hammer.jpg in Resources */,
+				A4A794341D68E5AC00305AB4 /* Question3ViewController.xib in Resources */,
 				A490D7D51D0919CB00D2B59D /* Roboto-BoldItalic.ttf in Resources */,
 				A490D7D31D0919CB00D2B59D /* Roboto-BlackItalic.ttf in Resources */,
 				A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */,
@@ -370,6 +400,7 @@
 				A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */,
 				A490D7D91D0919CB00D2B59D /* Roboto-Medium.ttf in Resources */,
 				A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */,
+				A4A794261D68CD1900305AB4 /* TestViewController.xib in Resources */,
 				A43E98CE1D508627008F54C3 /* thermometer.jpg in Resources */,
 				A490D7D21D0919CB00D2B59D /* Roboto-Black.ttf in Resources */,
 				A43E98D21D508627008F54C3 /* watermelon.jpg in Resources */,
@@ -391,6 +422,21 @@
 			inputPaths = (
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6391EC2967FC335C4B260526 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +474,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EC05DDA4DDE8CF52B4975F46 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2EE9097EA98D93B1AFC7A4A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -450,12 +526,16 @@
 				A42AB5B91D2DD324001387BB /* ReyComplexFigureViewController.swift in Sources */,
 				A42AB5B51D2DCF48001387BB /* CancellationTestViewController.swift in Sources */,
 				A42AB5B31D2DC60C001387BB /* CPTViewController.swift in Sources */,
+				A4A7942B1D68E42200305AB4 /* Question1ViewController.swift in Sources */,
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
+				A4A7942F1D68E57F00305AB4 /* Question2ViewController.swift in Sources */,
 				A42AB5BB1D2DD444001387BB /* ClockDrawingTestViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
+				A4A794251D68CD1900305AB4 /* TestViewController.swift in Sources */,
 				A47C359D1D4990450013C463 /* Questionnaire2ViewController.swift in Sources */,
 				A44716B41D2C47BB0048CA0D /* EthnicityViewController.swift in Sources */,
 				A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */,
+				A4A794331D68E5AC00305AB4 /* Question3ViewController.swift in Sources */,
 				A42AB5C01D2DD92E001387BB /* MOCAMMSETestViewController.swift in Sources */,
 				A42AB5BE1D2DD563001387BB /* TrailMakingTestViewController.swift in Sources */,
 				A42AB5C31D2DE061001387BB /* ChildTableViewCell.swift in Sources */,
