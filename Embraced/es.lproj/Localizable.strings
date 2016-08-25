@@ -6,8 +6,8 @@
   Copyright © 2016 Domonique Dixon. All rights reserved.
 */
 
-minutes = "minutes";
-Close = "Close";
+minutes = "minutos";
+Close = "cerca";
 Action = "Action";
 Drama = "Drama";
 War = "War";

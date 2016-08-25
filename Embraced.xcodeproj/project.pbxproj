@@ -69,6 +69,7 @@
 		A4A794301D68E57F00305AB4 /* Question2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A7942E1D68E57F00305AB4 /* Question2ViewController.xib */; };
 		A4A794331D68E5AC00305AB4 /* Question3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A794311D68E5AC00305AB4 /* Question3ViewController.swift */; };
 		A4A794341D68E5AC00305AB4 /* Question3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A794321D68E5AC00305AB4 /* Question3ViewController.xib */; };
+		A4A794381D68F62800305AB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4A7943A1D68F62800305AB4 /* Localizable.strings */; };
 		A4C71C0E1D33570100CD5FB1 /* Embraced_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */; };
 		A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9041D1D2380380092D6AA /* FrontViewController.swift */; };
 		A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D904211D23810C0092D6AA /* EmbracedTextField.swift */; };
@@ -141,6 +142,9 @@
 		A4A7942E1D68E57F00305AB4 /* Question2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Question2ViewController.xib; path = controllers/Question2ViewController.xib; sourceTree = "<group>"; };
 		A4A794311D68E5AC00305AB4 /* Question3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question3ViewController.swift; path = controllers/Question3ViewController.swift; sourceTree = "<group>"; };
 		A4A794321D68E5AC00305AB4 /* Question3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Question3ViewController.xib; path = controllers/Question3ViewController.xib; sourceTree = "<group>"; };
+		A4A794351D68F4F100305AB4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		A4A794391D68F62800305AB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A4A7943B1D68F63000305AB4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Embraced_bg.png; sourceTree = "<group>"; };
 		A4D9041D1D2380380092D6AA /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		A4D904211D23810C0092D6AA /* EmbracedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbracedTextField.swift; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 				A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */,
 				A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */,
 				A414247E1D02C3F60028933E /* LOGO_r1_c1.png */,
+				A4A7943A1D68F62800305AB4 /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = A48B4DB81CF9E7C600878928;
 			productRefGroup = A48B4DC21CF9E7C600878928 /* Products */;
@@ -396,6 +402,7 @@
 				A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */,
 				A43E98CD1D508627008F54C3 /* scissors.jpg in Resources */,
 				A43E98CB1D508627008F54C3 /* key.jpg in Resources */,
+				A4A794381D68F62800305AB4 /* Localizable.strings in Resources */,
 				A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */,
 				A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */,
 				A490D7D91D0919CB00D2B59D /* Roboto-Medium.ttf in Resources */,
@@ -550,6 +557,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A48B4DC91CF9E7C700878928 /* Base */,
+				A4A794351D68F4F100305AB4 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -560,6 +568,15 @@
 				A48B4DD11CF9E7C700878928 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A4A7943A1D68F62800305AB4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4A794391D68F62800305AB4 /* en */,
+				A4A7943B1D68F63000305AB4 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

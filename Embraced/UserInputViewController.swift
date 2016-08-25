@@ -92,9 +92,11 @@ class UserInputViewController: UIViewController {
         participant.setValue(locationTextField.text, forKey: "location")
         participant.setValue(floorTextField.text, forKey: "floor")
         
-        let VC1 = self.storyboard!.instantiateViewControllerWithIdentifier("QuestionnaireViewController") as! QuestionnaireViewController
-        let navController = UINavigationController(rootViewController: VC1)
+//        let VC1 = self.storyboard!.instantiateViewControllerWithIdentifier("QuestionnaireViewController") as! QuestionnaireViewController
+        let questionViewController:Question1ViewController = Question1ViewController()
+        let navController = UINavigationController(rootViewController: questionViewController)
         self.presentViewController(navController, animated: true, completion: nil)
+        
         
     }
     

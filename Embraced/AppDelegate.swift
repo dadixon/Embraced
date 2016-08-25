@@ -13,6 +13,7 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var navController: UINavigationController?
     var window: UIWindow?
 
 
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let APIURL = "http://54.201.210.104"
 
         Stormpath.sharedSession.configuration.APIURL = NSURL(string: APIURL)!
+        
+        navController = UINavigationController()
         
         return true
     }
