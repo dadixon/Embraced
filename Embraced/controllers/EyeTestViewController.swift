@@ -2,7 +2,7 @@
 //  EyeTestViewController.swift
 //  Embraced
 //
-//  Created by Domonique Dixon on 7/6/16.
+//  Created by Domonique Dixon on 9/2/16.
 //  Copyright © 2016 Domonique Dixon. All rights reserved.
 //
 
@@ -15,20 +15,22 @@ class EyeTestViewController: FrontViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(next))
+        
         let url = NSURL (string: "http://girlscouts.harryatwal.com/eyeTest.php");
         let requestObj = NSURLRequest(URL: url!);
         myWebView.loadRequest(requestObj);
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     @IBAction func back(sender: AnyObject) {
         self.navigationController!.popViewControllerAnimated(true)
     }
@@ -59,9 +61,14 @@ class EyeTestViewController: FrontViewController {
         //            let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
         //            task.resume()
         
-        let VC1 = self.storyboard!.instantiateViewControllerWithIdentifier("ReyComplexFigureViewController") as! ReyComplexFigureViewController
-        self.navigationController!.pushViewController(VC1, animated: true)
+        var navigationArray = self.navigationController?.viewControllers
         
+        navigationArray?.removeAtIndex(0)
+        
+        let reyComplexFigureViewController:ReyComplexFigureViewController = ReyComplexFigureViewController()
+        navigationArray?.append(reyComplexFigureViewController)
+        
+        self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }
 
 }

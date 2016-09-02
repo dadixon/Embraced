@@ -10,13 +10,6 @@
 		A405A0E61D5ACEF300DA6691 /* Questionnaire3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A405A0E51D5ACEF300DA6691 /* Questionnaire3ViewController.swift */; };
 		A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */ = {isa = PBXBuildFile; fileRef = A414247E1D02C3F60028933E /* LOGO_r1_c1.png */; };
 		A42AB5B11D2DACDE001387BB /* MartialStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */; };
-		A42AB5B31D2DC60C001387BB /* CPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B21D2DC60C001387BB /* CPTViewController.swift */; };
-		A42AB5B51D2DCF48001387BB /* CancellationTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B41D2DCF48001387BB /* CancellationTestViewController.swift */; };
-		A42AB5B71D2DD1E5001387BB /* EyeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B61D2DD1E5001387BB /* EyeTestViewController.swift */; };
-		A42AB5B91D2DD324001387BB /* ReyComplexFigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B81D2DD324001387BB /* ReyComplexFigureViewController.swift */; };
-		A42AB5BB1D2DD444001387BB /* ClockDrawingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5BA1D2DD444001387BB /* ClockDrawingTestViewController.swift */; };
-		A42AB5BE1D2DD563001387BB /* TrailMakingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5BD1D2DD563001387BB /* TrailMakingTestViewController.swift */; };
-		A42AB5C01D2DD92E001387BB /* MOCAMMSETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5BF1D2DD92E001387BB /* MOCAMMSETestViewController.swift */; };
 		A42AB5C31D2DE061001387BB /* ChildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */; };
 		A42AB5C71D2E776F001387BB /* ResidenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C61D2E776F001387BB /* ResidenceViewController.swift */; };
 		A42AB5C91D2E7C93001387BB /* OccupationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C81D2E7C93001387BB /* OccupationViewController.swift */; };
@@ -41,6 +34,20 @@
 		A4476ECC1D12710E002722B4 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */; };
 		A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */; };
 		A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED91D13B1BA002722B4 /* UserInputs.swift */; };
+		A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C140D1D798FC30066EF37 /* CPTViewController.swift */; };
+		A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C140E1D798FC30066EF37 /* CPTViewController.xib */; };
+		A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */; };
+		A46C14181D7999AF0066EF37 /* CancellationTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14161D7999AF0066EF37 /* CancellationTestViewController.xib */; };
+		A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14191D79A8870066EF37 /* EyeTestViewController.swift */; };
+		A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */; };
+		A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */; };
+		A46C14201D79AA110066EF37 /* ReyComplexFigureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C141E1D79AA110066EF37 /* ReyComplexFigureViewController.xib */; };
+		A46C14231D79AA7C0066EF37 /* ClockDrawingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14211D79AA7C0066EF37 /* ClockDrawingTestViewController.swift */; };
+		A46C14241D79AA7C0066EF37 /* ClockDrawingTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14221D79AA7C0066EF37 /* ClockDrawingTestViewController.xib */; };
+		A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */; };
+		A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */; };
+		A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */; };
+		A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */; };
 		A47C359D1D4990450013C463 /* Questionnaire2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C359C1D4990450013C463 /* Questionnaire2ViewController.swift */; };
 		A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC41CF9E7C700878928 /* AppDelegate.swift */; };
 		A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC61CF9E7C700878928 /* ViewController.swift */; };
@@ -81,13 +88,6 @@
 		A405A0E51D5ACEF300DA6691 /* Questionnaire3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questionnaire3ViewController.swift; sourceTree = "<group>"; };
 		A414247E1D02C3F60028933E /* LOGO_r1_c1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO_r1_c1.png; sourceTree = "<group>"; };
 		A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MartialStatusViewController.swift; path = controllers/MartialStatusViewController.swift; sourceTree = "<group>"; };
-		A42AB5B21D2DC60C001387BB /* CPTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPTViewController.swift; path = controllers/CPTViewController.swift; sourceTree = "<group>"; };
-		A42AB5B41D2DCF48001387BB /* CancellationTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CancellationTestViewController.swift; path = controllers/CancellationTestViewController.swift; sourceTree = "<group>"; };
-		A42AB5B61D2DD1E5001387BB /* EyeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EyeTestViewController.swift; path = controllers/EyeTestViewController.swift; sourceTree = "<group>"; };
-		A42AB5B81D2DD324001387BB /* ReyComplexFigureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigureViewController.swift; path = controllers/ReyComplexFigureViewController.swift; sourceTree = "<group>"; };
-		A42AB5BA1D2DD444001387BB /* ClockDrawingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockDrawingTestViewController.swift; path = controllers/ClockDrawingTestViewController.swift; sourceTree = "<group>"; };
-		A42AB5BD1D2DD563001387BB /* TrailMakingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailMakingTestViewController.swift; path = controllers/TrailMakingTestViewController.swift; sourceTree = "<group>"; };
-		A42AB5BF1D2DD92E001387BB /* MOCAMMSETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOCAMMSETestViewController.swift; path = controllers/MOCAMMSETestViewController.swift; sourceTree = "<group>"; };
 		A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildTableViewCell.swift; sourceTree = "<group>"; };
 		A42AB5C61D2E776F001387BB /* ResidenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResidenceViewController.swift; path = controllers/ResidenceViewController.swift; sourceTree = "<group>"; };
 		A42AB5C81D2E7C93001387BB /* OccupationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OccupationViewController.swift; path = controllers/OccupationViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +112,20 @@
 		A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInputs+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A4476ED91D13B1BA002722B4 /* UserInputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputs.swift; sourceTree = "<group>"; };
+		A46C140D1D798FC30066EF37 /* CPTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPTViewController.swift; path = controllers/CPTViewController.swift; sourceTree = "<group>"; };
+		A46C140E1D798FC30066EF37 /* CPTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPTViewController.xib; path = controllers/CPTViewController.xib; sourceTree = "<group>"; };
+		A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CancellationTestViewController.swift; path = controllers/CancellationTestViewController.swift; sourceTree = "<group>"; };
+		A46C14161D7999AF0066EF37 /* CancellationTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CancellationTestViewController.xib; path = controllers/CancellationTestViewController.xib; sourceTree = "<group>"; };
+		A46C14191D79A8870066EF37 /* EyeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EyeTestViewController.swift; path = controllers/EyeTestViewController.swift; sourceTree = "<group>"; };
+		A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EyeTestViewController.xib; path = controllers/EyeTestViewController.xib; sourceTree = "<group>"; };
+		A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigureViewController.swift; path = controllers/ReyComplexFigureViewController.swift; sourceTree = "<group>"; };
+		A46C141E1D79AA110066EF37 /* ReyComplexFigureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyComplexFigureViewController.xib; path = controllers/ReyComplexFigureViewController.xib; sourceTree = "<group>"; };
+		A46C14211D79AA7C0066EF37 /* ClockDrawingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockDrawingTestViewController.swift; path = controllers/ClockDrawingTestViewController.swift; sourceTree = "<group>"; };
+		A46C14221D79AA7C0066EF37 /* ClockDrawingTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClockDrawingTestViewController.xib; path = controllers/ClockDrawingTestViewController.xib; sourceTree = "<group>"; };
+		A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailMakingTestViewController.swift; path = controllers/TrailMakingTestViewController.swift; sourceTree = "<group>"; };
+		A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrailMakingTestViewController.xib; path = controllers/TrailMakingTestViewController.xib; sourceTree = "<group>"; };
+		A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOCAMMSETestViewController.swift; path = controllers/MOCAMMSETestViewController.swift; sourceTree = "<group>"; };
+		A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MOCAMMSETestViewController.xib; path = controllers/MOCAMMSETestViewController.xib; sourceTree = "<group>"; };
 		A47C359C1D4990450013C463 /* Questionnaire2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questionnaire2ViewController.swift; sourceTree = "<group>"; };
 		A48B4DC11CF9E7C600878928 /* Embraced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embraced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48B4DC41CF9E7C700878928 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -185,13 +199,20 @@
 			isa = PBXGroup;
 			children = (
 				A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */,
-				A42AB5B21D2DC60C001387BB /* CPTViewController.swift */,
-				A42AB5B41D2DCF48001387BB /* CancellationTestViewController.swift */,
-				A42AB5B61D2DD1E5001387BB /* EyeTestViewController.swift */,
-				A42AB5B81D2DD324001387BB /* ReyComplexFigureViewController.swift */,
-				A42AB5BA1D2DD444001387BB /* ClockDrawingTestViewController.swift */,
-				A42AB5BD1D2DD563001387BB /* TrailMakingTestViewController.swift */,
-				A42AB5BF1D2DD92E001387BB /* MOCAMMSETestViewController.swift */,
+				A46C140D1D798FC30066EF37 /* CPTViewController.swift */,
+				A46C140E1D798FC30066EF37 /* CPTViewController.xib */,
+				A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */,
+				A46C14161D7999AF0066EF37 /* CancellationTestViewController.xib */,
+				A46C14191D79A8870066EF37 /* EyeTestViewController.swift */,
+				A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */,
+				A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */,
+				A46C141E1D79AA110066EF37 /* ReyComplexFigureViewController.xib */,
+				A46C14211D79AA7C0066EF37 /* ClockDrawingTestViewController.swift */,
+				A46C14221D79AA7C0066EF37 /* ClockDrawingTestViewController.xib */,
+				A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */,
+				A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */,
+				A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */,
+				A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */,
 			);
 			name = Test;
 			sourceTree = "<group>";
@@ -351,6 +372,7 @@
 				TargetAttributes = {
 					A48B4DC01CF9E7C600878928 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = PUVE8AV9GJ;
 					};
 				};
 			};
@@ -382,13 +404,17 @@
 				A43E98D01D508627008F54C3 /* tree.jpg in Resources */,
 				A4A7942C1D68E42200305AB4 /* Question1ViewController.xib in Resources */,
 				A490D7D81D0919CB00D2B59D /* Roboto-LightItalic.ttf in Resources */,
+				A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */,
 				A43E98D11D508627008F54C3 /* watch.jpg in Resources */,
 				A490D7DA1D0919CB00D2B59D /* Roboto-MediumItalic.ttf in Resources */,
 				A4C71C0E1D33570100CD5FB1 /* Embraced_bg.png in Resources */,
 				A490D7D61D0919CB00D2B59D /* Roboto-Italic.ttf in Resources */,
 				A43E98C81D508627008F54C3 /* guitar.jpg in Resources */,
+				A46C14181D7999AF0066EF37 /* CancellationTestViewController.xib in Resources */,
 				A43E98C61D508627008F54C3 /* funnel.jpg in Resources */,
+				A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */,
 				A490D7D71D0919CB00D2B59D /* Roboto-Light.ttf in Resources */,
+				A46C14241D79AA7C0066EF37 /* ClockDrawingTestViewController.xib in Resources */,
 				A43E98CF1D508627008F54C3 /* tie.jpg in Resources */,
 				A4A794301D68E57F00305AB4 /* Question2ViewController.xib in Resources */,
 				A43E98CC1D508627008F54C3 /* rake.jpg in Resources */,
@@ -402,6 +428,7 @@
 				A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */,
 				A43E98CD1D508627008F54C3 /* scissors.jpg in Resources */,
 				A43E98CB1D508627008F54C3 /* key.jpg in Resources */,
+				A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */,
 				A4A794381D68F62800305AB4 /* Localizable.strings in Resources */,
 				A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */,
 				A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */,
@@ -409,6 +436,8 @@
 				A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */,
 				A4A794261D68CD1900305AB4 /* TestViewController.xib in Resources */,
 				A43E98CE1D508627008F54C3 /* thermometer.jpg in Resources */,
+				A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */,
+				A46C14201D79AA110066EF37 /* ReyComplexFigureViewController.xib in Resources */,
 				A490D7D21D0919CB00D2B59D /* Roboto-Black.ttf in Resources */,
 				A43E98D21D508627008F54C3 /* watermelon.jpg in Resources */,
 				A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */,
@@ -518,33 +547,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */,
 				A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */,
 				A4476ECC1D12710E002722B4 /* QuestionnaireViewController.swift in Sources */,
 				A42AB5C71D2E776F001387BB /* ResidenceViewController.swift in Sources */,
 				A42AB5C91D2E7C93001387BB /* OccupationViewController.swift in Sources */,
-				A42AB5B71D2DD1E5001387BB /* EyeTestViewController.swift in Sources */,
 				A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */,
 				A43B8F751D2A1351001C4063 /* HandDominateViewController.swift in Sources */,
+				A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
 				A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */,
 				A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */,
 				A405A0E61D5ACEF300DA6691 /* Questionnaire3ViewController.swift in Sources */,
+				A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */,
 				A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */,
-				A42AB5B91D2DD324001387BB /* ReyComplexFigureViewController.swift in Sources */,
-				A42AB5B51D2DCF48001387BB /* CancellationTestViewController.swift in Sources */,
-				A42AB5B31D2DC60C001387BB /* CPTViewController.swift in Sources */,
+				A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */,
 				A4A7942B1D68E42200305AB4 /* Question1ViewController.swift in Sources */,
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
 				A4A7942F1D68E57F00305AB4 /* Question2ViewController.swift in Sources */,
-				A42AB5BB1D2DD444001387BB /* ClockDrawingTestViewController.swift in Sources */,
+				A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
+				A46C14231D79AA7C0066EF37 /* ClockDrawingTestViewController.swift in Sources */,
 				A4A794251D68CD1900305AB4 /* TestViewController.swift in Sources */,
 				A47C359D1D4990450013C463 /* Questionnaire2ViewController.swift in Sources */,
 				A44716B41D2C47BB0048CA0D /* EthnicityViewController.swift in Sources */,
 				A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */,
+				A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */,
 				A4A794331D68E5AC00305AB4 /* Question3ViewController.swift in Sources */,
-				A42AB5C01D2DD92E001387BB /* MOCAMMSETestViewController.swift in Sources */,
-				A42AB5BE1D2DD563001387BB /* TrailMakingTestViewController.swift in Sources */,
 				A42AB5C31D2DE061001387BB /* ChildTableViewCell.swift in Sources */,
 				A42AB5B11D2DACDE001387BB /* MartialStatusViewController.swift in Sources */,
 			);
