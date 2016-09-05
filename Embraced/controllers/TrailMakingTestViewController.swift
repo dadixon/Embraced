@@ -28,12 +28,7 @@ class TrailMakingTestViewController: FrontViewController {
     }
     
     
-    
     // MARK: - Navigation
-    
-    @IBAction  func back(sender: AnyObject) {
-        self.navigationController!.popViewControllerAnimated(true)
-    }
     
     @IBAction func next(sender: AnyObject) {
         //        var jsonObject = [String: AnyObject]()
@@ -65,8 +60,8 @@ class TrailMakingTestViewController: FrontViewController {
         
         navigationArray?.removeAtIndex(0)
         
-        let mOCAMMSETestViewController:MOCAMMSETestViewController = MOCAMMSETestViewController()
-        navigationArray?.append(mOCAMMSETestViewController)
+        let stroopViewController:StroopViewController = StroopViewController()
+        navigationArray?.append(stroopViewController)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }

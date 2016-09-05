@@ -15,6 +15,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var timerCount: UILabel!
     
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
@@ -23,29 +24,11 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     var soundPlayer: AVAudioPlayer!
     var fileName = "audioFile.m4a"
     
-    let stimuli : [String] = [
-        "camel.jpg",
-        "flag.jpg",
-        "funnel.jpg",
-        "giraffee.jpg",
-        "guitar.jpg",
-        "hammer.jpg",
-        "helmet.jpg",
-        "key.jpg",
-        "rake.jpg",
-        "scissors.jpg",
-        "thermometer.jpg",
-        "tie.jpg",
-        "tree.jpg",
-        "watch.jpg",
-        "watermelon.jpg"
-    ]
+    var stimuli : [String] = []
     var count = 0
     
     let skipBtnDelay = 5.0 * Double(NSEC_PER_SEC)
     
-    
-    @IBOutlet weak var timerCount: UILabel!
     var startTime = NSTimeInterval()
     var timer = NSTimer()
     var isRunning = false
@@ -56,7 +39,28 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
 
         setupRecorder()
         
-        imageView.image = UIImage(named: stimuli[count])
+        let requestURL: NSURL = NSURL(string: "http://api.girlscouts.harryatwal.com/name_task")!
+        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL)
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(urlRequest) {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! NSHTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            if (statusCode == 200) {
+                print("Everyone is fine, file downloaded successfully.")
+                
+                do {
+                    self.stimuli = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments) as! [String]
+                    self.loadImageFromUrl(self.stimuli[0], view: self.imageView)
+                }catch {
+                    print("Error with Json: \(error)")
+                }
+            }
+        }
+        
+        task.resume()
         
         startTimer()
     }
@@ -64,6 +68,28 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadImageFromUrl(url: String, view: UIImageView){
+        
+        // Create Url from string
+        let url = NSURL(string: url)!
+        
+        // Download task:
+        // - sharedSession = global NSURLCache, NSHTTPCookieStorage and NSURLCredentialStorage objects.
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (responseData, responseUrl, error) -> Void in
+            // if responseData is not null...
+            if let data = responseData{
+                
+                // execute in UI thread
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    view.image = UIImage(data: data)
+                })
+            }
+        }
+        
+        // Run task
+        task.resume()
     }
     
     func setupRecorder() {
@@ -109,11 +135,11 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
             startTimer()
             
             count += 1
-            imageView.image = UIImage(named: stimuli[count])
+            loadImageFromUrl(stimuli[count], view: imageView)
+//            imageView.image = UIImage(named: stimuli[count])
             
             // Save audio file to database
-            let soundData = NSFileManager.defaultManager().contentsAtPath(getCacheDirectory().stringByAppendingPathComponent(fileName))
-            print("\(soundData)")
+//            let soundData = NSFileManager.defaultManager().contentsAtPath(getCacheDirectory().stringByAppendingPathComponent(fileName))
         }
     }
     

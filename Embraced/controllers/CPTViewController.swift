@@ -15,7 +15,6 @@ class CPTViewController: FrontViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(back))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(next))
         
         let url = NSURL (string: "http://girlscouts.harryatwal.com/cpt.php");
@@ -27,7 +26,6 @@ class CPTViewController: FrontViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     
     // MARK: - Navigation
@@ -62,8 +60,8 @@ class CPTViewController: FrontViewController {
 
         navigationArray?.removeAtIndex(0)
         
-        let cancellationTestViewController:CancellationTestViewController = CancellationTestViewController()
-        navigationArray?.append(cancellationTestViewController)
+        let eyeTestViewController:EyeTestViewController = EyeTestViewController()
+        navigationArray?.append(eyeTestViewController)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }

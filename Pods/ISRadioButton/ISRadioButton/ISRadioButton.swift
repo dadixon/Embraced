@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class  ISRadioButton: UIButton {
+public class  ISRadioButton: UIButton {
     
     var indexPath:NSIndexPath!
     

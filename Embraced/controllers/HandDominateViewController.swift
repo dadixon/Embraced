@@ -120,8 +120,7 @@ class HandDominateViewController: FrontViewController {
             //            let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
             //            task.resume()
             
-        let VC1 = self.storyboard!.instantiateViewControllerWithIdentifier("EthnicityViewController") as! EthnicityViewController
-        self.navigationController!.pushViewController(VC1, animated: true)
+
         
     }
 }

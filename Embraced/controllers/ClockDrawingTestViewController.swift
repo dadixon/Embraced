@@ -28,13 +28,8 @@ class ClockDrawingTestViewController: FrontViewController {
     }
     
     
-    
     // MARK: - Navigation
-    
-    @IBAction func back(sender: AnyObject) {
-        self.navigationController!.popViewControllerAnimated(true)
-    }
-    
+
     @IBAction func next(sender: AnyObject) {
         //        var jsonObject = [String: AnyObject]()
         //

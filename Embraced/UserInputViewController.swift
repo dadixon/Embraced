@@ -22,6 +22,9 @@ class UserInputViewController: UIViewController {
     @IBOutlet weak var floorTextField: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
     
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
 //    var userInputs = [NSManagedObject]()
     let participant = NSUserDefaults.standardUserDefaults()
     
@@ -58,19 +61,7 @@ class UserInputViewController: UIViewController {
         let uuid = NSUUID().UUIDString
         let index = uuid.endIndex.advancedBy(-28)
         participantID.text = uuid.substringToIndex(index)
-        
-//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        let managedContext = appDelegate.managedObjectContext
-//        let fetchRequest = NSFetchRequest(entityName: "UserInputs")
-//
-//        do {
-//            let results =
-//                try managedContext.executeFetchRequest(fetchRequest)
-//                    userInputs = results as! [NSManagedObject]
-//                    print(userInputs)
-//        } catch let error as NSError {
-//            print("Could not fetch \(error), \(error.userInfo)")
-//        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,34 +82,13 @@ class UserInputViewController: UIViewController {
         participant.setValue(cityTextField.text, forKey: "city")
         participant.setValue(locationTextField.text, forKey: "location")
         participant.setValue(floorTextField.text, forKey: "floor")
+
         
-//        let VC1 = self.storyboard!.instantiateViewControllerWithIdentifier("QuestionnaireViewController") as! QuestionnaireViewController
-        let mOCAMMSETestViewController:MOCAMMSETestViewController = MOCAMMSETestViewController()
-        let navController = UINavigationController(rootViewController: mOCAMMSETestViewController)
+        
+        let questionnaireViewController:Question1ViewController = Question1ViewController()
+        let navController = UINavigationController(rootViewController: questionnaireViewController)
         self.presentViewController(navController, animated: true, completion: nil)
         
         
     }
-    
-//    func saveUserInputs() {
-//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        let managedContext = appDelegate.managedObjectContext
-//        let entity =  NSEntityDescription.entityForName("UserInputs", inManagedObjectContext:managedContext)
-//        let userInput = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-//        
-//        userInput.setValue(dayOfTheWeekTextField.text, forKey: "day")
-//        userInput.setValue(countryTextField.text, forKey: "country")
-//        userInput.setValue(countyTextField.text, forKey: "county")
-//        userInput.setValue(cityTextField.text, forKey: "city")
-//        userInput.setValue(locationTextField.text, forKey: "location")
-//        userInput.setValue(floorTextField.text, forKey: "floor")
-//        
-//        do {
-//            try managedContext.save()
-//            userInputs.append(userInput)
-//        } catch let error as NSError  {
-//            print("Could not save \(error), \(error.userInfo)")
-//        }
-//    }
-
 }

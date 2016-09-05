@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReyComplexFigure2ViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReyComplexFigure2ViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
+                <outlet property="mainView" destination="H5N-y2-F3R" id="wNl-pU-7hi"/>
+                <outlet property="myWebView" destination="gYN-lK-JBt" id="7rZ-YQ-9mf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +16,43 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5N-y2-F3R">
+                    <rect key="frame" x="8" y="65" width="584" height="527"/>
+                    <subviews>
+                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYN-lK-JBt">
+                            <rect key="frame" x="0.0" y="0.0" width="584" height="527"/>
+                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                        </webView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="gYN-lK-JBt" secondAttribute="bottom" id="4cf-9Y-Xva"/>
+                        <constraint firstItem="gYN-lK-JBt" firstAttribute="top" secondItem="H5N-y2-F3R" secondAttribute="top" id="5Db-G0-pvx"/>
+                        <constraint firstAttribute="trailing" secondItem="gYN-lK-JBt" secondAttribute="trailing" id="FZL-ZD-64b"/>
+                        <constraint firstAttribute="trailing" secondItem="gYN-lK-JBt" secondAttribute="trailing" id="Llo-fY-Ygn"/>
+                        <constraint firstItem="gYN-lK-JBt" firstAttribute="leading" secondItem="H5N-y2-F3R" secondAttribute="leading" id="YNc-GA-XZT"/>
+                        <constraint firstItem="gYN-lK-JBt" firstAttribute="leading" secondItem="H5N-y2-F3R" secondAttribute="leading" id="ZnJ-wt-1MA"/>
+                        <constraint firstAttribute="bottom" secondItem="gYN-lK-JBt" secondAttribute="bottom" id="eg0-I5-C1s"/>
+                        <constraint firstItem="gYN-lK-JBt" firstAttribute="top" secondItem="H5N-y2-F3R" secondAttribute="top" id="uPT-7v-JzJ"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="5Db-G0-pvx"/>
+                            <exclude reference="FZL-ZD-64b"/>
+                            <exclude reference="YNc-GA-XZT"/>
+                            <exclude reference="eg0-I5-C1s"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="H5N-y2-F3R" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="FTK-2b-2aW"/>
+                <constraint firstAttribute="bottom" secondItem="H5N-y2-F3R" secondAttribute="bottom" constant="8" id="KaG-Th-EnY"/>
+                <constraint firstItem="H5N-y2-F3R" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Up9-d5-WiX"/>
+                <constraint firstAttribute="trailing" secondItem="H5N-y2-F3R" secondAttribute="trailing" constant="8" id="V8t-uG-ib6"/>
+            </constraints>
         </view>
     </objects>
 </document>

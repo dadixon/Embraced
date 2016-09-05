@@ -31,10 +31,6 @@ class EyeTestViewController: FrontViewController {
     
     // MARK: - Navigation
     
-    @IBAction func back(sender: AnyObject) {
-        self.navigationController!.popViewControllerAnimated(true)
-    }
-    
     @IBAction func next(sender: AnyObject) {
         //        var jsonObject = [String: AnyObject]()
         //
@@ -65,8 +61,8 @@ class EyeTestViewController: FrontViewController {
         
         navigationArray?.removeAtIndex(0)
         
-        let reyComplexFigureViewController:ReyComplexFigureViewController = ReyComplexFigureViewController()
-        navigationArray?.append(reyComplexFigureViewController)
+        let matricesViewController:MatricesViewController = MatricesViewController()
+        navigationArray?.append(matricesViewController)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }

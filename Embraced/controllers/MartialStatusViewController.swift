@@ -120,9 +120,7 @@ class MartialStatusViewController: FrontViewController, UITableViewDataSource, U
         //
         //            let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
         //            task.resume()
-        
-        let VC1 = self.storyboard!.instantiateViewControllerWithIdentifier("ResidenceViewController") as! ResidenceViewController
-        self.navigationController!.pushViewController(VC1, animated: true)
+
         
     }
     

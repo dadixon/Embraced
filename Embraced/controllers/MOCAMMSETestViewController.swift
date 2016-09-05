@@ -15,6 +15,8 @@ class MOCAMMSETestViewController: FrontViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(next))
+        
         let url = NSURL (string: "http://girlscouts.harryatwal.com/MoCA_MMSE.php");
         let requestObj = NSURLRequest(URL: url!);
         myWebView.loadRequest(requestObj);
@@ -25,11 +27,8 @@ class MOCAMMSETestViewController: FrontViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Navigation
     
-    @IBAction  func back(sender: AnyObject) {
-        self.navigationController!.popViewControllerAnimated(true)
-    }
+    // MARK: - Navigation
     
     @IBAction func next(sender: AnyObject) {
         //        var jsonObject = [String: AnyObject]()

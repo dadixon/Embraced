@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PegboardViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PegboardViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
+                <outlet property="mainView" destination="vqw-vc-az7" id="nNw-tx-rq7"/>
+                <outlet property="myWebView" destination="L9w-jG-bQb" id="4n0-TD-YEK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +16,31 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqw-vc-az7">
+                    <rect key="frame" x="8" y="65" width="584" height="527"/>
+                    <subviews>
+                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9w-jG-bQb">
+                            <rect key="frame" x="0.0" y="0.0" width="584" height="527"/>
+                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                        </webView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="L9w-jG-bQb" firstAttribute="top" secondItem="vqw-vc-az7" secondAttribute="top" id="FL6-fx-K9t"/>
+                        <constraint firstAttribute="trailing" secondItem="L9w-jG-bQb" secondAttribute="trailing" id="MLD-iK-e0w"/>
+                        <constraint firstItem="L9w-jG-bQb" firstAttribute="leading" secondItem="vqw-vc-az7" secondAttribute="leading" id="Npc-LL-dNC"/>
+                        <constraint firstAttribute="bottom" secondItem="L9w-jG-bQb" secondAttribute="bottom" id="eiu-2W-4gb"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="vqw-vc-az7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="5W7-mP-Ans"/>
+                <constraint firstAttribute="bottom" secondItem="vqw-vc-az7" secondAttribute="bottom" constant="8" id="9SQ-f1-yj7"/>
+                <constraint firstAttribute="trailing" secondItem="vqw-vc-az7" secondAttribute="trailing" constant="8" id="UQ0-1f-3uR"/>
+                <constraint firstItem="vqw-vc-az7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="wBl-te-hyA"/>
+            </constraints>
         </view>
     </objects>
 </document>
