@@ -1,14 +1,14 @@
 //
-//  Questionnaire3ViewController.swift
+//  DigitalSpanViewController.swift
 //  Embraced
 //
-//  Created by Domonique Dixon on 8/9/16.
+//  Created by Domonique Dixon on 9/3/16.
 //  Copyright © 2016 Domonique Dixon. All rights reserved.
 //
 
 import UIKit
 
-class Questionnaire3ViewController: FrontViewController {
+class DigitalSpanViewController: FrontViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

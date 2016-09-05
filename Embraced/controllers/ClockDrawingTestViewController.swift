@@ -65,8 +65,8 @@ class ClockDrawingTestViewController: FrontViewController {
         
         navigationArray?.removeAtIndex(0)
         
-        let trailMakingTestViewController:TrailMakingTestViewController = TrailMakingTestViewController()
-        navigationArray?.append(trailMakingTestViewController)
+        let reyComplexFigure2ViewController:ReyComplexFigure2ViewController = ReyComplexFigure2ViewController()
+        navigationArray?.append(reyComplexFigure2ViewController)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }

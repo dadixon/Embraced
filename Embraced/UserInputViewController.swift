@@ -93,8 +93,8 @@ class UserInputViewController: UIViewController {
         participant.setValue(floorTextField.text, forKey: "floor")
         
 //        let VC1 = self.storyboard!.instantiateViewControllerWithIdentifier("QuestionnaireViewController") as! QuestionnaireViewController
-        let questionViewController:CPTViewController = CPTViewController()
-        let navController = UINavigationController(rootViewController: questionViewController)
+        let mOCAMMSETestViewController:MOCAMMSETestViewController = MOCAMMSETestViewController()
+        let navController = UINavigationController(rootViewController: mOCAMMSETestViewController)
         self.presentViewController(navController, animated: true, completion: nil)
         
         

@@ -61,8 +61,8 @@ class MOCAMMSETestViewController: FrontViewController {
         
         navigationArray?.removeAtIndex(0)
         
-        let mOCAMMSETestViewController:MOCAMMSETestViewController = MOCAMMSETestViewController()
-        navigationArray?.append(mOCAMMSETestViewController)
+        let reyComplexFigureViewController:ReyComplexFigureViewController = ReyComplexFigureViewController()
+        navigationArray?.append(reyComplexFigureViewController)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }
