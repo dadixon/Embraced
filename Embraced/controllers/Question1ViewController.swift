@@ -25,8 +25,6 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
     @IBOutlet weak var matchSegment: UISegmentedControl!
     @IBOutlet weak var lidSegment: UISegmentedControl!
     
-    @IBOutlet weak var notHispanic: ISRadioButton!
-    
     var pickOption = ["Male", "Female", "Other"]
     var step = 1
     var totalSteps = 3
@@ -43,6 +41,8 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
     var childPickOption = ["Male", "Female"]
     var ages = [String]()
     var sexes = [String]()
+    
+    var nationality = [String]()
     
     let textCellIdentifier = "ChildTableViewCell"
     
@@ -105,7 +105,7 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
     }
     
     // MARK: Actions
-
+    
     @IBAction func next(sender: AnyObject) {
         if (!(dobTextField.text?.isEmpty)! && !(genderTextField.text?.isEmpty)!) {
             print("Good to go")
@@ -202,8 +202,8 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
         
     }
     
-    @IBAction func logSelectedButton(isRadioButton:ISRadioButton){
-        if isRadioButton.multipleSelectionEnabled{
+    @IBAction func nationality(isRadioButton:ISRadioButton){
+        if isRadioButton.multipleSelectionEnabled {
             for radioButton in isRadioButton.otherButtons! {
                 print("%@ is selected.\n", radioButton.titleLabel!.text);
             }
