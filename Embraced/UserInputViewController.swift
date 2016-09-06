@@ -85,7 +85,7 @@ class UserInputViewController: UIViewController {
 
         
         
-        let questionnaireViewController:Question1ViewController = Question1ViewController()
+        let questionnaireViewController:QuestionnaireViewController = QuestionnaireViewController()
         let navController = UINavigationController(rootViewController: questionnaireViewController)
         self.presentViewController(navController, animated: true, completion: nil)
         

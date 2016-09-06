@@ -50,7 +50,6 @@
 		A43E98D01D508627008F54C3 /* tree.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98C11D508627008F54C3 /* tree.jpg */; };
 		A43E98D11D508627008F54C3 /* watch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98C21D508627008F54C3 /* watch.jpg */; };
 		A43E98D21D508627008F54C3 /* watermelon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98C31D508627008F54C3 /* watermelon.jpg */; };
-		A4476ECC1D12710E002722B4 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */; };
 		A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */; };
 		A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED91D13B1BA002722B4 /* UserInputs.swift */; };
 		A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C140D1D798FC30066EF37 /* CPTViewController.swift */; };
@@ -95,6 +94,9 @@
 		A4A794331D68E5AC00305AB4 /* Question3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A794311D68E5AC00305AB4 /* Question3ViewController.swift */; };
 		A4A794341D68E5AC00305AB4 /* Question3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A794321D68E5AC00305AB4 /* Question3ViewController.xib */; };
 		A4A794381D68F62800305AB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4A7943A1D68F62800305AB4 /* Localizable.strings */; };
+		A4BB08E91D7EDDE600B76C64 /* ISRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB08E81D7EDDE600B76C64 /* ISRadioButton.swift */; };
+		A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */; };
+		A4BB08ED1D7EDFFA00B76C64 /* QuestionnaireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */; };
 		A4C71C0E1D33570100CD5FB1 /* Embraced_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */; };
 		A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9041D1D2380380092D6AA /* FrontViewController.swift */; };
 		A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D904211D23810C0092D6AA /* EmbracedTextField.swift */; };
@@ -146,7 +148,6 @@
 		A43E98C11D508627008F54C3 /* tree.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree.jpg; sourceTree = "<group>"; };
 		A43E98C21D508627008F54C3 /* watch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = watch.jpg; sourceTree = "<group>"; };
 		A43E98C31D508627008F54C3 /* watermelon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = watermelon.jpg; sourceTree = "<group>"; };
-		A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInputs+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A4476ED91D13B1BA002722B4 /* UserInputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputs.swift; sourceTree = "<group>"; };
 		A46C140D1D798FC30066EF37 /* CPTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPTViewController.swift; path = controllers/CPTViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +196,10 @@
 		A4A794351D68F4F100305AB4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		A4A794391D68F62800305AB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4A7943B1D68F63000305AB4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A4BB08E41D7EDB0900B76C64 /* ISRadioButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ISRadioButton.framework; path = "../../../Library/Developer/Xcode/DerivedData/Embraced-gpyewpmhwauogygclnkydouwsmur/Build/Products/Debug-iphonesimulator/ISRadioButton/ISRadioButton.framework"; sourceTree = "<group>"; };
+		A4BB08E81D7EDDE600B76C64 /* ISRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISRadioButton.swift; sourceTree = "<group>"; };
+		A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireViewController.swift; path = controllers/QuestionnaireViewController.swift; sourceTree = "<group>"; };
+		A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuestionnaireViewController.xib; path = controllers/QuestionnaireViewController.xib; sourceTree = "<group>"; };
 		A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Embraced_bg.png; sourceTree = "<group>"; };
 		A4D9041D1D2380380092D6AA /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		A4D904211D23810C0092D6AA /* EmbracedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbracedTextField.swift; sourceTree = "<group>"; };
@@ -226,6 +231,7 @@
 		A191B101E7F37A99531AAB47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A4BB08E41D7EDB0900B76C64 /* ISRadioButton.framework */,
 				EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */,
 			);
 			name = Frameworks;
@@ -362,7 +368,6 @@
 				A48B4DC41CF9E7C700878928 /* AppDelegate.swift */,
 				A48B4DC61CF9E7C700878928 /* ViewController.swift */,
 				A490D7C41D09162800D2B59D /* UserInputViewController.swift */,
-				A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */,
 				A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */,
 				A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */,
 				A42AB5C51D2DE0F4001387BB /* Test */,
@@ -374,6 +379,8 @@
 				A4A7942E1D68E57F00305AB4 /* Question2ViewController.xib */,
 				A4A794311D68E5AC00305AB4 /* Question3ViewController.swift */,
 				A4A794321D68E5AC00305AB4 /* Question3ViewController.xib */,
+				A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */,
+				A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -384,6 +391,7 @@
 				A4D9041D1D2380380092D6AA /* FrontViewController.swift */,
 				A4D904211D23810C0092D6AA /* EmbracedTextField.swift */,
 				A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */,
+				A4BB08E81D7EDDE600B76C64 /* ISRadioButton.swift */,
 			);
 			name = Customizations;
 			sourceTree = "<group>";
@@ -491,6 +499,7 @@
 				A4347FC21D7BC9E20033306A /* StroopViewController.xib in Resources */,
 				A4A794381D68F62800305AB4 /* Localizable.strings in Resources */,
 				A4347FE01D7BCB800033306A /* NamingTaskViewController.xib in Resources */,
+				A4BB08ED1D7EDFFA00B76C64 /* QuestionnaireViewController.xib in Resources */,
 				A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */,
 				A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */,
 				A490D7D91D0919CB00D2B59D /* Roboto-Medium.ttf in Resources */,
@@ -616,12 +625,12 @@
 				A4347FE71D7BCC4C0033306A /* ComprehensionViewController.swift in Sources */,
 				A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */,
 				A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */,
-				A4476ECC1D12710E002722B4 /* QuestionnaireViewController.swift in Sources */,
 				A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */,
 				A43B8F751D2A1351001C4063 /* HandDominateViewController.swift in Sources */,
 				A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
 				A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */,
+				A4BB08E91D7EDDE600B76C64 /* ISRadioButton.swift in Sources */,
 				A4347FE31D7BCC170033306A /* MultipleErrandsViewController.swift in Sources */,
 				A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */,
 				A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */,
@@ -643,6 +652,7 @@
 				A4A794251D68CD1900305AB4 /* TestViewController.swift in Sources */,
 				A4347FC91D7BCA280033306A /* DigitalSpanViewController.swift in Sources */,
 				A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */,
+				A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */,
 				A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */,
 				A4A794331D68E5AC00305AB4 /* Question3ViewController.swift in Sources */,
 				A42AB5C31D2DE061001387BB /* ChildTableViewCell.swift in Sources */,

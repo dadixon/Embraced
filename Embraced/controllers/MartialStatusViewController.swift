@@ -43,41 +43,41 @@ class MartialStatusViewController: FrontViewController, UITableViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        progressView.progress = progress
-        progressLabel.text = "Progress (\(step)/17)"
-        
-        marriedMonths.hidden = true
-        marriedYears.hidden = true
-        livingMonths.hidden = true
-        livingYears.hidden = true
-        separateMonths.hidden = true
-        separateYears.hidden = true
-        childrenView.hidden = true
-        
-        childTableView.delegate = self
-        childTableView.dataSource = self
-        childTableView.tableFooterView = UIView()
-        
-        let pickerView = UIPickerView()
-        
-        pickerView.delegate = self
-        
-        genderTextField.inputView = pickerView
-        
-        let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.Default
-        toolBar.translucent = true
-        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-        toolBar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(QuestionnaireViewController.donePicker))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
-        
-        toolBar.setItems([spaceButton, doneButton], animated: false)
-        toolBar.userInteractionEnabled = true
-        
-        genderTextField.inputView = pickerView
-        genderTextField.inputAccessoryView = toolBar
+//        progressView.progress = progress
+//        progressLabel.text = "Progress (\(step)/17)"
+//        
+//        marriedMonths.hidden = true
+//        marriedYears.hidden = true
+//        livingMonths.hidden = true
+//        livingYears.hidden = true
+//        separateMonths.hidden = true
+//        separateYears.hidden = true
+//        childrenView.hidden = true
+//        
+//        childTableView.delegate = self
+//        childTableView.dataSource = self
+//        childTableView.tableFooterView = UIView()
+//        
+//        let pickerView = UIPickerView()
+//        
+//        pickerView.delegate = self
+//        
+//        genderTextField.inputView = pickerView
+//        
+//        let toolBar = UIToolbar()
+//        toolBar.barStyle = UIBarStyle.Default
+//        toolBar.translucent = true
+//        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+//        toolBar.sizeToFit()
+//        
+//        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(QuestionnaireViewController.donePicker))
+//        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+//        
+//        toolBar.setItems([spaceButton, doneButton], animated: false)
+//        toolBar.userInteractionEnabled = true
+//        
+//        genderTextField.inputView = pickerView
+//        genderTextField.inputAccessoryView = toolBar
     }
 
     override func didReceiveMemoryWarning() {

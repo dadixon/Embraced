@@ -202,13 +202,13 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
         
     }
     
-    @IBAction func nationality(isRadioButton:ISRadioButton){
-        if isRadioButton.multipleSelectionEnabled {
-            for radioButton in isRadioButton.otherButtons! {
+    @IBAction func nationality(sender:ISRadioButton){
+        if sender.multipleSelectionEnabled {
+            for radioButton in sender.otherButtons! {
                 print("%@ is selected.\n", radioButton.titleLabel!.text);
             }
-        }else{
-            print("%@ is selected.\n", isRadioButton.titleLabel!.text);
+        } else{
+            print("%@ is selected.\n", sender.titleLabel!.text);
         }
     }
     
