@@ -1,14 +1,14 @@
 //
-//  EyeTestViewController.swift
+//  ReyComplexFigure3ViewController.swift
 //  Embraced
 //
-//  Created by Domonique Dixon on 9/2/16.
+//  Created by Domonique Dixon on 9/3/16.
 //  Copyright © 2016 Domonique Dixon. All rights reserved.
 //
 
 import UIKit
 
-class EyeTestViewController: FrontViewController {
+class ReyComplexFigure3ViewController: FrontViewController {
 
     @IBOutlet weak var myWebView: UIWebView!
     
@@ -17,7 +17,7 @@ class EyeTestViewController: FrontViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(next))
         
-        let url = NSURL (string: "http://girlscouts.harryatwal.com/eyeTest.php");
+        let url = NSURL (string: "http://girlscouts.harryatwal.com/reyComplexFigure.php");
         let requestObj = NSURLRequest(URL: url!);
         myWebView.loadRequest(requestObj);
     }
@@ -28,9 +28,8 @@ class EyeTestViewController: FrontViewController {
     }
     
     
-    
     // MARK: - Navigation
-    
+
     @IBAction func next(sender: AnyObject) {
         //        var jsonObject = [String: AnyObject]()
         //
@@ -61,8 +60,8 @@ class EyeTestViewController: FrontViewController {
         
         navigationArray?.removeAtIndex(0)
         
-        let matricesViewController:MatricesViewController = MatricesViewController()
-        navigationArray?.append(matricesViewController)
+        let reyComplexFigure4ViewController:ReyComplexFigure3ViewController = ReyComplexFigure3ViewController()
+        navigationArray?.append(reyComplexFigure4ViewController)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }

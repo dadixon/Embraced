@@ -1,25 +1,19 @@
 //
-//  OccupationViewController.swift
+//  ComprehensionViewController.swift
 //  Embraced
 //
-//  Created by Domonique Dixon on 7/7/16.
+//  Created by Domonique Dixon on 9/3/16.
 //  Copyright © 2016 Domonique Dixon. All rights reserved.
 //
 
 import UIKit
 
-class OccupationViewController: UIViewController {
+class ComprehensionViewController: FrontViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var contentView: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        scrollView = UIScrollView(frame: view.bounds)
-//        scrollView.backgroundColor = UIColor.blackColor()
-//        scrollView.contentSize = contentView.bounds.size
-//        scrollView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

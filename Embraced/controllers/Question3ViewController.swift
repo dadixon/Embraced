@@ -1,14 +1,14 @@
 //
-//  Questionnaire2ViewController.swift
+//  Question3ViewController.swift
 //  Embraced
 //
-//  Created by Domonique Dixon on 7/27/16.
+//  Created by Domonique Dixon on 8/20/16.
 //  Copyright © 2016 Domonique Dixon. All rights reserved.
 //
 
 import UIKit
 
-class Questionnaire2ViewController: UIViewController {
+class Question3ViewController: FrontViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,22 +9,47 @@
 /* Begin PBXBuildFile section */
 		A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */ = {isa = PBXBuildFile; fileRef = A414247E1D02C3F60028933E /* LOGO_r1_c1.png */; };
 		A42AB5B11D2DACDE001387BB /* MartialStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */; };
-		A42AB5B31D2DC60C001387BB /* CPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B21D2DC60C001387BB /* CPTViewController.swift */; };
-		A42AB5B51D2DCF48001387BB /* CancellationTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B41D2DCF48001387BB /* CancellationTestViewController.swift */; };
-		A42AB5B71D2DD1E5001387BB /* EyeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B61D2DD1E5001387BB /* EyeTestViewController.swift */; };
-		A42AB5B91D2DD324001387BB /* ReyComplexFigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B81D2DD324001387BB /* ReyComplexFigureViewController.swift */; };
-		A42AB5BB1D2DD444001387BB /* ClockDrawingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5BA1D2DD444001387BB /* ClockDrawingTestViewController.swift */; };
-		A42AB5BE1D2DD563001387BB /* TrailMakingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5BD1D2DD563001387BB /* TrailMakingTestViewController.swift */; };
-		A42AB5C01D2DD92E001387BB /* MOCAMMSETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5BF1D2DD92E001387BB /* MOCAMMSETestViewController.swift */; };
 		A42AB5C31D2DE061001387BB /* ChildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */; };
-		A42AB5C71D2E776F001387BB /* ResidenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C61D2E776F001387BB /* ResidenceViewController.swift */; };
-		A42AB5C91D2E7C93001387BB /* OccupationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C81D2E7C93001387BB /* OccupationViewController.swift */; };
-		A43B8F751D2A1351001C4063 /* HandDominateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */; };
-		A44716B41D2C47BB0048CA0D /* EthnicityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44716B31D2C47BB0048CA0D /* EthnicityViewController.swift */; };
-		A4476ECC1D12710E002722B4 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */; };
+		A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */; };
+		A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */; };
+		A4347FC11D7BC9E20033306A /* StroopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FBF1D7BC9E20033306A /* StroopViewController.swift */; };
+		A4347FC21D7BC9E20033306A /* StroopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FC01D7BC9E20033306A /* StroopViewController.xib */; };
+		A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FC31D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift */; };
+		A4347FC61D7BC9FC0033306A /* ReyComplexFigure3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FC41D7BC9FC0033306A /* ReyComplexFigure3ViewController.xib */; };
+		A4347FC91D7BCA280033306A /* DigitalSpanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FC71D7BCA280033306A /* DigitalSpanViewController.swift */; };
+		A4347FCA1D7BCA280033306A /* DigitalSpanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FC81D7BCA280033306A /* DigitalSpanViewController.xib */; };
+		A4347FCD1D7BCA570033306A /* ReyFigureComplex4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FCB1D7BCA570033306A /* ReyFigureComplex4ViewController.swift */; };
+		A4347FCE1D7BCA570033306A /* ReyFigureComplex4ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FCC1D7BCA570033306A /* ReyFigureComplex4ViewController.xib */; };
+		A4347FD11D7BCA950033306A /* MatricesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FCF1D7BCA950033306A /* MatricesViewController.swift */; };
+		A4347FD21D7BCA950033306A /* MatricesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FD01D7BCA950033306A /* MatricesViewController.xib */; };
+		A4347FD51D7BCABC0033306A /* PegboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FD31D7BCABC0033306A /* PegboardViewController.swift */; };
+		A4347FD61D7BCABC0033306A /* PegboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FD41D7BCABC0033306A /* PegboardViewController.xib */; };
+		A4347FD91D7BCAFB0033306A /* PitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FD71D7BCAFB0033306A /* PitchViewController.swift */; };
+		A4347FDA1D7BCAFB0033306A /* PitchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FD81D7BCAFB0033306A /* PitchViewController.xib */; };
+		A4347FDD1D7BCB260033306A /* WordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FDB1D7BCB260033306A /* WordListViewController.swift */; };
+		A4347FDE1D7BCB260033306A /* WordListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FDC1D7BCB260033306A /* WordListViewController.xib */; };
+		A4347FE01D7BCB800033306A /* NamingTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FDF1D7BCB800033306A /* NamingTaskViewController.xib */; };
+		A4347FE31D7BCC170033306A /* MultipleErrandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FE11D7BCC170033306A /* MultipleErrandsViewController.swift */; };
+		A4347FE41D7BCC170033306A /* MultipleErrandsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FE21D7BCC170033306A /* MultipleErrandsViewController.xib */; };
+		A4347FE71D7BCC4C0033306A /* ComprehensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FE51D7BCC4C0033306A /* ComprehensionViewController.swift */; };
+		A4347FE81D7BCC4C0033306A /* ComprehensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FE61D7BCC4C0033306A /* ComprehensionViewController.xib */; };
+		A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */; };
 		A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */; };
 		A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED91D13B1BA002722B4 /* UserInputs.swift */; };
-		A47C359D1D4990450013C463 /* Questionnaire2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C359C1D4990450013C463 /* Questionnaire2ViewController.swift */; };
+		A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C140D1D798FC30066EF37 /* CPTViewController.swift */; };
+		A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C140E1D798FC30066EF37 /* CPTViewController.xib */; };
+		A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */; };
+		A46C14181D7999AF0066EF37 /* CancellationTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14161D7999AF0066EF37 /* CancellationTestViewController.xib */; };
+		A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14191D79A8870066EF37 /* EyeTestViewController.swift */; };
+		A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */; };
+		A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */; };
+		A46C14201D79AA110066EF37 /* ReyComplexFigureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C141E1D79AA110066EF37 /* ReyComplexFigureViewController.xib */; };
+		A46C14231D79AA7C0066EF37 /* ClockDrawingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14211D79AA7C0066EF37 /* ClockDrawingTestViewController.swift */; };
+		A46C14241D79AA7C0066EF37 /* ClockDrawingTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14221D79AA7C0066EF37 /* ClockDrawingTestViewController.xib */; };
+		A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */; };
+		A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */; };
+		A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */; };
+		A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */; };
 		A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC41CF9E7C700878928 /* AppDelegate.swift */; };
 		A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC61CF9E7C700878928 /* ViewController.swift */; };
 		A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48B4DC81CF9E7C700878928 /* Main.storyboard */; };
@@ -44,6 +69,18 @@
 		A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */; };
 		A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */; };
 		A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */; };
+		A4A794251D68CD1900305AB4 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A794231D68CD1900305AB4 /* TestViewController.swift */; };
+		A4A794261D68CD1900305AB4 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A794241D68CD1900305AB4 /* TestViewController.xib */; };
+		A4A7942B1D68E42200305AB4 /* Question1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A794291D68E42200305AB4 /* Question1ViewController.swift */; };
+		A4A7942C1D68E42200305AB4 /* Question1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A7942A1D68E42200305AB4 /* Question1ViewController.xib */; };
+		A4A7942F1D68E57F00305AB4 /* Question2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7942D1D68E57F00305AB4 /* Question2ViewController.swift */; };
+		A4A794301D68E57F00305AB4 /* Question2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A7942E1D68E57F00305AB4 /* Question2ViewController.xib */; };
+		A4A794331D68E5AC00305AB4 /* Question3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A794311D68E5AC00305AB4 /* Question3ViewController.swift */; };
+		A4A794341D68E5AC00305AB4 /* Question3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A794321D68E5AC00305AB4 /* Question3ViewController.xib */; };
+		A4A794381D68F62800305AB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4A7943A1D68F62800305AB4 /* Localizable.strings */; };
+		A4BB08E91D7EDDE600B76C64 /* ISRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB08E81D7EDDE600B76C64 /* ISRadioButton.swift */; };
+		A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */; };
+		A4BB08ED1D7EDFFA00B76C64 /* QuestionnaireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */; };
 		A4C71C0E1D33570100CD5FB1 /* Embraced_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */; };
 		A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9041D1D2380380092D6AA /* FrontViewController.swift */; };
 		A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D904211D23810C0092D6AA /* EmbracedTextField.swift */; };
@@ -54,22 +91,47 @@
 		9F375DDA1676C302A2C3E45B /* Pods-Embraced.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.debug.xcconfig"; sourceTree = "<group>"; };
 		A414247E1D02C3F60028933E /* LOGO_r1_c1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO_r1_c1.png; sourceTree = "<group>"; };
 		A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MartialStatusViewController.swift; path = controllers/MartialStatusViewController.swift; sourceTree = "<group>"; };
-		A42AB5B21D2DC60C001387BB /* CPTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPTViewController.swift; path = controllers/CPTViewController.swift; sourceTree = "<group>"; };
-		A42AB5B41D2DCF48001387BB /* CancellationTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CancellationTestViewController.swift; path = controllers/CancellationTestViewController.swift; sourceTree = "<group>"; };
-		A42AB5B61D2DD1E5001387BB /* EyeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EyeTestViewController.swift; path = controllers/EyeTestViewController.swift; sourceTree = "<group>"; };
-		A42AB5B81D2DD324001387BB /* ReyComplexFigureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigureViewController.swift; path = controllers/ReyComplexFigureViewController.swift; sourceTree = "<group>"; };
-		A42AB5BA1D2DD444001387BB /* ClockDrawingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockDrawingTestViewController.swift; path = controllers/ClockDrawingTestViewController.swift; sourceTree = "<group>"; };
-		A42AB5BD1D2DD563001387BB /* TrailMakingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailMakingTestViewController.swift; path = controllers/TrailMakingTestViewController.swift; sourceTree = "<group>"; };
-		A42AB5BF1D2DD92E001387BB /* MOCAMMSETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOCAMMSETestViewController.swift; path = controllers/MOCAMMSETestViewController.swift; sourceTree = "<group>"; };
 		A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildTableViewCell.swift; sourceTree = "<group>"; };
-		A42AB5C61D2E776F001387BB /* ResidenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResidenceViewController.swift; path = controllers/ResidenceViewController.swift; sourceTree = "<group>"; };
-		A42AB5C81D2E7C93001387BB /* OccupationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OccupationViewController.swift; path = controllers/OccupationViewController.swift; sourceTree = "<group>"; };
-		A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandDominateViewController.swift; path = controllers/HandDominateViewController.swift; sourceTree = "<group>"; };
-		A44716B31D2C47BB0048CA0D /* EthnicityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EthnicityViewController.swift; path = controllers/EthnicityViewController.swift; sourceTree = "<group>"; };
-		A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireViewController.swift; sourceTree = "<group>"; };
+		A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigure2ViewController.swift; path = controllers/ReyComplexFigure2ViewController.swift; sourceTree = "<group>"; };
+		A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyComplexFigure2ViewController.xib; path = controllers/ReyComplexFigure2ViewController.xib; sourceTree = "<group>"; };
+		A4347FBF1D7BC9E20033306A /* StroopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StroopViewController.swift; path = controllers/StroopViewController.swift; sourceTree = "<group>"; };
+		A4347FC01D7BC9E20033306A /* StroopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StroopViewController.xib; path = controllers/StroopViewController.xib; sourceTree = "<group>"; };
+		A4347FC31D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigure3ViewController.swift; path = controllers/ReyComplexFigure3ViewController.swift; sourceTree = "<group>"; };
+		A4347FC41D7BC9FC0033306A /* ReyComplexFigure3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyComplexFigure3ViewController.xib; path = controllers/ReyComplexFigure3ViewController.xib; sourceTree = "<group>"; };
+		A4347FC71D7BCA280033306A /* DigitalSpanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DigitalSpanViewController.swift; path = controllers/DigitalSpanViewController.swift; sourceTree = "<group>"; };
+		A4347FC81D7BCA280033306A /* DigitalSpanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DigitalSpanViewController.xib; path = controllers/DigitalSpanViewController.xib; sourceTree = "<group>"; };
+		A4347FCB1D7BCA570033306A /* ReyFigureComplex4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyFigureComplex4ViewController.swift; path = controllers/ReyFigureComplex4ViewController.swift; sourceTree = "<group>"; };
+		A4347FCC1D7BCA570033306A /* ReyFigureComplex4ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyFigureComplex4ViewController.xib; path = controllers/ReyFigureComplex4ViewController.xib; sourceTree = "<group>"; };
+		A4347FCF1D7BCA950033306A /* MatricesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MatricesViewController.swift; path = controllers/MatricesViewController.swift; sourceTree = "<group>"; };
+		A4347FD01D7BCA950033306A /* MatricesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MatricesViewController.xib; path = controllers/MatricesViewController.xib; sourceTree = "<group>"; };
+		A4347FD31D7BCABC0033306A /* PegboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PegboardViewController.swift; path = controllers/PegboardViewController.swift; sourceTree = "<group>"; };
+		A4347FD41D7BCABC0033306A /* PegboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PegboardViewController.xib; path = controllers/PegboardViewController.xib; sourceTree = "<group>"; };
+		A4347FD71D7BCAFB0033306A /* PitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PitchViewController.swift; path = controllers/PitchViewController.swift; sourceTree = "<group>"; };
+		A4347FD81D7BCAFB0033306A /* PitchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PitchViewController.xib; path = controllers/PitchViewController.xib; sourceTree = "<group>"; };
+		A4347FDB1D7BCB260033306A /* WordListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordListViewController.swift; path = controllers/WordListViewController.swift; sourceTree = "<group>"; };
+		A4347FDC1D7BCB260033306A /* WordListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordListViewController.xib; path = controllers/WordListViewController.xib; sourceTree = "<group>"; };
+		A4347FDF1D7BCB800033306A /* NamingTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NamingTaskViewController.xib; path = controllers/NamingTaskViewController.xib; sourceTree = "<group>"; };
+		A4347FE11D7BCC170033306A /* MultipleErrandsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultipleErrandsViewController.swift; path = controllers/MultipleErrandsViewController.swift; sourceTree = "<group>"; };
+		A4347FE21D7BCC170033306A /* MultipleErrandsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MultipleErrandsViewController.xib; path = controllers/MultipleErrandsViewController.xib; sourceTree = "<group>"; };
+		A4347FE51D7BCC4C0033306A /* ComprehensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComprehensionViewController.swift; path = controllers/ComprehensionViewController.swift; sourceTree = "<group>"; };
+		A4347FE61D7BCC4C0033306A /* ComprehensionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComprehensionViewController.xib; path = controllers/ComprehensionViewController.xib; sourceTree = "<group>"; };
+		A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NamingTaskViewController.swift; path = controllers/NamingTaskViewController.swift; sourceTree = "<group>"; };
 		A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInputs+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A4476ED91D13B1BA002722B4 /* UserInputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputs.swift; sourceTree = "<group>"; };
-		A47C359C1D4990450013C463 /* Questionnaire2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questionnaire2ViewController.swift; sourceTree = "<group>"; };
+		A46C140D1D798FC30066EF37 /* CPTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPTViewController.swift; path = controllers/CPTViewController.swift; sourceTree = "<group>"; };
+		A46C140E1D798FC30066EF37 /* CPTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPTViewController.xib; path = controllers/CPTViewController.xib; sourceTree = "<group>"; };
+		A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CancellationTestViewController.swift; path = controllers/CancellationTestViewController.swift; sourceTree = "<group>"; };
+		A46C14161D7999AF0066EF37 /* CancellationTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CancellationTestViewController.xib; path = controllers/CancellationTestViewController.xib; sourceTree = "<group>"; };
+		A46C14191D79A8870066EF37 /* EyeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EyeTestViewController.swift; path = controllers/EyeTestViewController.swift; sourceTree = "<group>"; };
+		A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EyeTestViewController.xib; path = controllers/EyeTestViewController.xib; sourceTree = "<group>"; };
+		A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigureViewController.swift; path = controllers/ReyComplexFigureViewController.swift; sourceTree = "<group>"; };
+		A46C141E1D79AA110066EF37 /* ReyComplexFigureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyComplexFigureViewController.xib; path = controllers/ReyComplexFigureViewController.xib; sourceTree = "<group>"; };
+		A46C14211D79AA7C0066EF37 /* ClockDrawingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockDrawingTestViewController.swift; path = controllers/ClockDrawingTestViewController.swift; sourceTree = "<group>"; };
+		A46C14221D79AA7C0066EF37 /* ClockDrawingTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClockDrawingTestViewController.xib; path = controllers/ClockDrawingTestViewController.xib; sourceTree = "<group>"; };
+		A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailMakingTestViewController.swift; path = controllers/TrailMakingTestViewController.swift; sourceTree = "<group>"; };
+		A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrailMakingTestViewController.xib; path = controllers/TrailMakingTestViewController.xib; sourceTree = "<group>"; };
+		A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOCAMMSETestViewController.swift; path = controllers/MOCAMMSETestViewController.swift; sourceTree = "<group>"; };
+		A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MOCAMMSETestViewController.xib; path = controllers/MOCAMMSETestViewController.xib; sourceTree = "<group>"; };
 		A48B4DC11CF9E7C600878928 /* Embraced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embraced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48B4DC41CF9E7C700878928 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A48B4DC61CF9E7C700878928 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +153,21 @@
 		A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		A4A794231D68CD1900305AB4 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		A4A794241D68CD1900305AB4 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		A4A794291D68E42200305AB4 /* Question1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question1ViewController.swift; path = controllers/Question1ViewController.swift; sourceTree = "<group>"; };
+		A4A7942A1D68E42200305AB4 /* Question1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Question1ViewController.xib; path = controllers/Question1ViewController.xib; sourceTree = "<group>"; };
+		A4A7942D1D68E57F00305AB4 /* Question2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question2ViewController.swift; path = controllers/Question2ViewController.swift; sourceTree = "<group>"; };
+		A4A7942E1D68E57F00305AB4 /* Question2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Question2ViewController.xib; path = controllers/Question2ViewController.xib; sourceTree = "<group>"; };
+		A4A794311D68E5AC00305AB4 /* Question3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question3ViewController.swift; path = controllers/Question3ViewController.swift; sourceTree = "<group>"; };
+		A4A794321D68E5AC00305AB4 /* Question3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Question3ViewController.xib; path = controllers/Question3ViewController.xib; sourceTree = "<group>"; };
+		A4A794351D68F4F100305AB4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		A4A794391D68F62800305AB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A4A7943B1D68F63000305AB4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A4BB08E41D7EDB0900B76C64 /* ISRadioButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ISRadioButton.framework; path = "../../../Library/Developer/Xcode/DerivedData/Embraced-gpyewpmhwauogygclnkydouwsmur/Build/Products/Debug-iphonesimulator/ISRadioButton/ISRadioButton.framework"; sourceTree = "<group>"; };
+		A4BB08E81D7EDDE600B76C64 /* ISRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISRadioButton.swift; sourceTree = "<group>"; };
+		A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireViewController.swift; path = controllers/QuestionnaireViewController.swift; sourceTree = "<group>"; };
+		A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuestionnaireViewController.xib; path = controllers/QuestionnaireViewController.xib; sourceTree = "<group>"; };
 		A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Embraced_bg.png; sourceTree = "<group>"; };
 		A4D9041D1D2380380092D6AA /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		A4D904211D23810C0092D6AA /* EmbracedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbracedTextField.swift; sourceTree = "<group>"; };
@@ -122,6 +199,7 @@
 		A191B101E7F37A99531AAB47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A4BB08E41D7EDB0900B76C64 /* ISRadioButton.framework */,
 				EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */,
 			);
 			name = Frameworks;
@@ -130,13 +208,44 @@
 		A42AB5C51D2DE0F4001387BB /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				A42AB5B21D2DC60C001387BB /* CPTViewController.swift */,
-				A42AB5B41D2DCF48001387BB /* CancellationTestViewController.swift */,
-				A42AB5B61D2DD1E5001387BB /* EyeTestViewController.swift */,
-				A42AB5B81D2DD324001387BB /* ReyComplexFigureViewController.swift */,
-				A42AB5BA1D2DD444001387BB /* ClockDrawingTestViewController.swift */,
-				A42AB5BD1D2DD563001387BB /* TrailMakingTestViewController.swift */,
-				A42AB5BF1D2DD92E001387BB /* MOCAMMSETestViewController.swift */,
+				A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */,
+				A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */,
+				A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */,
+				A46C141E1D79AA110066EF37 /* ReyComplexFigureViewController.xib */,
+				A46C14211D79AA7C0066EF37 /* ClockDrawingTestViewController.swift */,
+				A46C14221D79AA7C0066EF37 /* ClockDrawingTestViewController.xib */,
+				A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */,
+				A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */,
+				A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */,
+				A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */,
+				A4347FBF1D7BC9E20033306A /* StroopViewController.swift */,
+				A4347FC01D7BC9E20033306A /* StroopViewController.xib */,
+				A4347FC71D7BCA280033306A /* DigitalSpanViewController.swift */,
+				A4347FC81D7BCA280033306A /* DigitalSpanViewController.xib */,
+				A4347FC31D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift */,
+				A4347FC41D7BC9FC0033306A /* ReyComplexFigure3ViewController.xib */,
+				A4347FCB1D7BCA570033306A /* ReyFigureComplex4ViewController.swift */,
+				A4347FCC1D7BCA570033306A /* ReyFigureComplex4ViewController.xib */,
+				A46C140D1D798FC30066EF37 /* CPTViewController.swift */,
+				A46C140E1D798FC30066EF37 /* CPTViewController.xib */,
+				A46C14191D79A8870066EF37 /* EyeTestViewController.swift */,
+				A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */,
+				A4347FCF1D7BCA950033306A /* MatricesViewController.swift */,
+				A4347FD01D7BCA950033306A /* MatricesViewController.xib */,
+				A4347FD31D7BCABC0033306A /* PegboardViewController.swift */,
+				A4347FD41D7BCABC0033306A /* PegboardViewController.xib */,
+				A4347FD71D7BCAFB0033306A /* PitchViewController.swift */,
+				A4347FD81D7BCAFB0033306A /* PitchViewController.xib */,
+				A4347FDB1D7BCB260033306A /* WordListViewController.swift */,
+				A4347FDC1D7BCB260033306A /* WordListViewController.xib */,
+				A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */,
+				A46C14161D7999AF0066EF37 /* CancellationTestViewController.xib */,
+				A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */,
+				A4347FDF1D7BCB800033306A /* NamingTaskViewController.xib */,
+				A4347FE11D7BCC170033306A /* MultipleErrandsViewController.swift */,
+				A4347FE21D7BCC170033306A /* MultipleErrandsViewController.xib */,
+				A4347FE51D7BCC4C0033306A /* ComprehensionViewController.swift */,
+				A4347FE61D7BCC4C0033306A /* ComprehensionViewController.xib */,
 			);
 			name = Test;
 			sourceTree = "<group>";
@@ -200,6 +309,7 @@
 				A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */,
 				A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */,
 				A414247E1D02C3F60028933E /* LOGO_r1_c1.png */,
+				A4A7943A1D68F62800305AB4 /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -211,14 +321,18 @@
 				A48B4DC41CF9E7C700878928 /* AppDelegate.swift */,
 				A48B4DC61CF9E7C700878928 /* ViewController.swift */,
 				A490D7C41D09162800D2B59D /* UserInputViewController.swift */,
-				A4476ECB1D12710E002722B4 /* QuestionnaireViewController.swift */,
-				A47C359C1D4990450013C463 /* Questionnaire2ViewController.swift */,
-				A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */,
-				A44716B31D2C47BB0048CA0D /* EthnicityViewController.swift */,
 				A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */,
-				A42AB5C61D2E776F001387BB /* ResidenceViewController.swift */,
-				A42AB5C81D2E7C93001387BB /* OccupationViewController.swift */,
 				A42AB5C51D2DE0F4001387BB /* Test */,
+				A4A794231D68CD1900305AB4 /* TestViewController.swift */,
+				A4A794241D68CD1900305AB4 /* TestViewController.xib */,
+				A4A794291D68E42200305AB4 /* Question1ViewController.swift */,
+				A4A7942A1D68E42200305AB4 /* Question1ViewController.xib */,
+				A4A7942D1D68E57F00305AB4 /* Question2ViewController.swift */,
+				A4A7942E1D68E57F00305AB4 /* Question2ViewController.xib */,
+				A4A794311D68E5AC00305AB4 /* Question3ViewController.swift */,
+				A4A794321D68E5AC00305AB4 /* Question3ViewController.xib */,
+				A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */,
+				A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -229,6 +343,7 @@
 				A4D9041D1D2380380092D6AA /* FrontViewController.swift */,
 				A4D904211D23810C0092D6AA /* EmbracedTextField.swift */,
 				A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */,
+				A4BB08E81D7EDDE600B76C64 /* ISRadioButton.swift */,
 			);
 			name = Customizations;
 			sourceTree = "<group>";
@@ -240,12 +355,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A48B4DD61CF9E7C700878928 /* Build configuration list for PBXNativeTarget "Embraced" */;
 			buildPhases = (
-				5E743F95A972D997F54D05F4 /* 📦 Check Pods Manifest.lock */,
+				6391EC2967FC335C4B260526 /* 📦 Check Pods Manifest.lock */,
+				5E743F95A972D997F54D05F4 /* [CP] Check Pods Manifest.lock */,
 				A48B4DBD1CF9E7C600878928 /* Sources */,
 				A48B4DBE1CF9E7C600878928 /* Frameworks */,
 				A48B4DBF1CF9E7C600878928 /* Resources */,
-				C90CDE91F5A86DBE2B374296 /* 📦 Embed Pods Frameworks */,
-				C7F38120F030A165D5C8C102 /* 📦 Copy Pods Resources */,
+				C90CDE91F5A86DBE2B374296 /* [CP] Embed Pods Frameworks */,
+				C7F38120F030A165D5C8C102 /* [CP] Copy Pods Resources */,
+				EC05DDA4DDE8CF52B4975F46 /* 📦 Embed Pods Frameworks */,
+				F2EE9097EA98D93B1AFC7A4A /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,6 +386,7 @@
 				TargetAttributes = {
 					A48B4DC01CF9E7C600878928 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = PUVE8AV9GJ;
 					};
 				};
 			};
@@ -278,6 +397,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = A48B4DB81CF9E7C600878928;
 			productRefGroup = A48B4DC21CF9E7C600878928 /* Products */;
@@ -295,29 +415,69 @@
 			buildActionMask = 2147483647;
 			files = (
 				A490D7D41D0919CB00D2B59D /* Roboto-Bold.ttf in Resources */,
+				A4A7942C1D68E42200305AB4 /* Question1ViewController.xib in Resources */,
 				A490D7D81D0919CB00D2B59D /* Roboto-LightItalic.ttf in Resources */,
+				A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */,
+				A4347FD21D7BCA950033306A /* MatricesViewController.xib in Resources */,
 				A490D7DA1D0919CB00D2B59D /* Roboto-MediumItalic.ttf in Resources */,
 				A4C71C0E1D33570100CD5FB1 /* Embraced_bg.png in Resources */,
 				A490D7D61D0919CB00D2B59D /* Roboto-Italic.ttf in Resources */,
+				A4347FE41D7BCC170033306A /* MultipleErrandsViewController.xib in Resources */,
+				A46C14181D7999AF0066EF37 /* CancellationTestViewController.xib in Resources */,
+				A4347FD61D7BCABC0033306A /* PegboardViewController.xib in Resources */,
+				A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */,
 				A490D7D71D0919CB00D2B59D /* Roboto-Light.ttf in Resources */,
+				A4347FCE1D7BCA570033306A /* ReyFigureComplex4ViewController.xib in Resources */,
+				A46C14241D79AA7C0066EF37 /* ClockDrawingTestViewController.xib in Resources */,
+				A4A794301D68E57F00305AB4 /* Question2ViewController.xib in Resources */,
 				A48B4DD21CF9E7C700878928 /* LaunchScreen.storyboard in Resources */,
+				A4A794341D68E5AC00305AB4 /* Question3ViewController.xib in Resources */,
+				A4347FC61D7BC9FC0033306A /* ReyComplexFigure3ViewController.xib in Resources */,
 				A490D7D51D0919CB00D2B59D /* Roboto-BoldItalic.ttf in Resources */,
 				A490D7D31D0919CB00D2B59D /* Roboto-BlackItalic.ttf in Resources */,
 				A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */,
+				A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */,
+				A4347FC21D7BC9E20033306A /* StroopViewController.xib in Resources */,
+				A4A794381D68F62800305AB4 /* Localizable.strings in Resources */,
+				A4347FE01D7BCB800033306A /* NamingTaskViewController.xib in Resources */,
+				A4BB08ED1D7EDFFA00B76C64 /* QuestionnaireViewController.xib in Resources */,
 				A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */,
 				A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */,
 				A490D7D91D0919CB00D2B59D /* Roboto-Medium.ttf in Resources */,
 				A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */,
+				A4347FE81D7BCC4C0033306A /* ComprehensionViewController.xib in Resources */,
+				A4A794261D68CD1900305AB4 /* TestViewController.xib in Resources */,
+				A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */,
+				A46C14201D79AA110066EF37 /* ReyComplexFigureViewController.xib in Resources */,
+				A4347FDA1D7BCAFB0033306A /* PitchViewController.xib in Resources */,
 				A490D7D21D0919CB00D2B59D /* Roboto-Black.ttf in Resources */,
+				A4347FDE1D7BCB260033306A /* WordListViewController.xib in Resources */,
 				A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */,
+				A4347FCA1D7BCA280033306A /* DigitalSpanViewController.xib in Resources */,
 				A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */,
+				A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5E743F95A972D997F54D05F4 /* 📦 Check Pods Manifest.lock */ = {
+		5E743F95A972D997F54D05F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6391EC2967FC335C4B260526 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -332,14 +492,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C7F38120F030A165D5C8C102 /* 📦 Copy Pods Resources */ = {
+		C7F38120F030A165D5C8C102 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +507,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C90CDE91F5A86DBE2B374296 /* 📦 Embed Pods Frameworks */ = {
+		C90CDE91F5A86DBE2B374296 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC05DDA4DDE8CF52B4975F46 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -362,6 +537,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F2EE9097EA98D93B1AFC7A4A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -369,29 +559,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4347FE71D7BCC4C0033306A /* ComprehensionViewController.swift in Sources */,
+				A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */,
 				A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */,
-				A4476ECC1D12710E002722B4 /* QuestionnaireViewController.swift in Sources */,
-				A42AB5C71D2E776F001387BB /* ResidenceViewController.swift in Sources */,
-				A42AB5C91D2E7C93001387BB /* OccupationViewController.swift in Sources */,
-				A42AB5B71D2DD1E5001387BB /* EyeTestViewController.swift in Sources */,
-				A43B8F751D2A1351001C4063 /* HandDominateViewController.swift in Sources */,
+				A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */,
+				A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
 				A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */,
+				A4BB08E91D7EDDE600B76C64 /* ISRadioButton.swift in Sources */,
+				A4347FE31D7BCC170033306A /* MultipleErrandsViewController.swift in Sources */,
 				A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */,
+				A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */,
+				A4347FD51D7BCABC0033306A /* PegboardViewController.swift in Sources */,
+				A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */,
 				A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */,
-				A42AB5B91D2DD324001387BB /* ReyComplexFigureViewController.swift in Sources */,
-				A42AB5B51D2DCF48001387BB /* CancellationTestViewController.swift in Sources */,
-				A42AB5B31D2DC60C001387BB /* CPTViewController.swift in Sources */,
+				A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */,
+				A4347FD11D7BCA950033306A /* MatricesViewController.swift in Sources */,
+				A4347FCD1D7BCA570033306A /* ReyFigureComplex4ViewController.swift in Sources */,
+				A4347FDD1D7BCB260033306A /* WordListViewController.swift in Sources */,
+				A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */,
+				A4A7942B1D68E42200305AB4 /* Question1ViewController.swift in Sources */,
+				A4347FD91D7BCAFB0033306A /* PitchViewController.swift in Sources */,
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
-				A42AB5BB1D2DD444001387BB /* ClockDrawingTestViewController.swift in Sources */,
+				A4A7942F1D68E57F00305AB4 /* Question2ViewController.swift in Sources */,
+				A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
-				A47C359D1D4990450013C463 /* Questionnaire2ViewController.swift in Sources */,
-				A44716B41D2C47BB0048CA0D /* EthnicityViewController.swift in Sources */,
+				A46C14231D79AA7C0066EF37 /* ClockDrawingTestViewController.swift in Sources */,
+				A4A794251D68CD1900305AB4 /* TestViewController.swift in Sources */,
+				A4347FC91D7BCA280033306A /* DigitalSpanViewController.swift in Sources */,
 				A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */,
-				A42AB5C01D2DD92E001387BB /* MOCAMMSETestViewController.swift in Sources */,
-				A42AB5BE1D2DD563001387BB /* TrailMakingTestViewController.swift in Sources */,
+				A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */,
+				A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */,
+				A4A794331D68E5AC00305AB4 /* Question3ViewController.swift in Sources */,
 				A42AB5C31D2DE061001387BB /* ChildTableViewCell.swift in Sources */,
 				A42AB5B11D2DACDE001387BB /* MartialStatusViewController.swift in Sources */,
+				A4347FC11D7BC9E20033306A /* StroopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +604,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A48B4DC91CF9E7C700878928 /* Base */,
+				A4A794351D68F4F100305AB4 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -412,6 +615,15 @@
 				A48B4DD11CF9E7C700878928 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A4A7943A1D68F62800305AB4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4A794391D68F62800305AB4 /* en */,
+				A4A7943B1D68F63000305AB4 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

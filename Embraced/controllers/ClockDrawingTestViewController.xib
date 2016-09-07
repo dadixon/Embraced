@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClockDrawingTestViewController" customModule="Embraced" customModuleProvider="target">
+            <connections>
+                <outlet property="mainView" destination="8bI-Cq-9ez" id="suZ-P4-t2W"/>
+                <outlet property="myWebView" destination="oDi-F7-mnI" id="ii9-X4-UOm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bI-Cq-9ez">
+                    <rect key="frame" x="8" y="65" width="584" height="527"/>
+                    <subviews>
+                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDi-F7-mnI">
+                            <rect key="frame" x="0.0" y="0.0" width="584" height="527"/>
+                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                        </webView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="oDi-F7-mnI" secondAttribute="trailing" id="9Qn-oZ-PGM"/>
+                        <constraint firstItem="oDi-F7-mnI" firstAttribute="leading" secondItem="8bI-Cq-9ez" secondAttribute="leading" id="EGg-GH-Z6C"/>
+                        <constraint firstAttribute="bottom" secondItem="oDi-F7-mnI" secondAttribute="bottom" id="NZq-cs-zxB"/>
+                        <constraint firstItem="oDi-F7-mnI" firstAttribute="top" secondItem="8bI-Cq-9ez" secondAttribute="top" id="aXV-y1-toU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8bI-Cq-9ez" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="IBK-Sw-KMm"/>
+                <constraint firstItem="8bI-Cq-9ez" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="VkL-SC-Jyk"/>
+                <constraint firstAttribute="trailing" secondItem="8bI-Cq-9ez" secondAttribute="trailing" constant="8" id="aBw-tm-J8i"/>
+                <constraint firstAttribute="bottom" secondItem="8bI-Cq-9ez" secondAttribute="bottom" constant="8" id="cuw-eK-LLU"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

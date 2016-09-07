@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrailMakingTestViewController" customModule="Embraced" customModuleProvider="target">
+            <connections>
+                <outlet property="mainView" destination="sai-z0-d48" id="fFu-wE-dBq"/>
+                <outlet property="myWebView" destination="9Qb-g8-oFR" id="rbV-8j-WEc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sai-z0-d48">
+                    <rect key="frame" x="8" y="65" width="584" height="527"/>
+                    <subviews>
+                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Qb-g8-oFR">
+                            <rect key="frame" x="0.0" y="0.0" width="584" height="527"/>
+                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                        </webView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="9Qb-g8-oFR" firstAttribute="top" secondItem="sai-z0-d48" secondAttribute="top" id="0rB-A6-azv"/>
+                        <constraint firstAttribute="trailing" secondItem="9Qb-g8-oFR" secondAttribute="trailing" id="JWb-pO-lLq"/>
+                        <constraint firstItem="9Qb-g8-oFR" firstAttribute="leading" secondItem="sai-z0-d48" secondAttribute="leading" id="NWZ-dR-iLd"/>
+                        <constraint firstAttribute="bottom" secondItem="9Qb-g8-oFR" secondAttribute="bottom" id="WoR-VY-Q3h"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="sai-z0-d48" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="0Hn-DH-6Aq"/>
+                <constraint firstAttribute="bottom" secondItem="sai-z0-d48" secondAttribute="bottom" constant="8" id="5pw-m8-Rvt"/>
+                <constraint firstAttribute="trailing" secondItem="sai-z0-d48" secondAttribute="trailing" constant="8" id="lOB-zn-yMI"/>
+                <constraint firstItem="sai-z0-d48" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="lfw-N4-9EV"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

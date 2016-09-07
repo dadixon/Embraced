@@ -1,14 +1,14 @@
 //
-//  EyeTestViewController.swift
+//  QuestionnaireViewController.swift
 //  Embraced
 //
-//  Created by Domonique Dixon on 9/2/16.
+//  Created by Domonique Dixon on 9/6/16.
 //  Copyright © 2016 Domonique Dixon. All rights reserved.
 //
 
 import UIKit
 
-class EyeTestViewController: FrontViewController {
+class QuestionnaireViewController: FrontViewController {
 
     @IBOutlet weak var myWebView: UIWebView!
     
@@ -17,7 +17,7 @@ class EyeTestViewController: FrontViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(next))
         
-        let url = NSURL (string: "http://girlscouts.harryatwal.com/eyeTest.php");
+        let url = NSURL (string: "http://girlscouts.harryatwal.com/initial.php");
         let requestObj = NSURLRequest(URL: url!);
         myWebView.loadRequest(requestObj);
     }
@@ -26,7 +26,6 @@ class EyeTestViewController: FrontViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     
     // MARK: - Navigation
@@ -61,10 +60,9 @@ class EyeTestViewController: FrontViewController {
         
         navigationArray?.removeAtIndex(0)
         
-        let matricesViewController:MatricesViewController = MatricesViewController()
-        navigationArray?.append(matricesViewController)
+        let mOCAMMSETestViewController:MOCAMMSETestViewController = MOCAMMSETestViewController()
+        navigationArray?.append(mOCAMMSETestViewController)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }
-
 }

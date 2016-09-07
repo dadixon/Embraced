@@ -2,7 +2,7 @@
 //  MOCAMMSETestViewController.swift
 //  Embraced
 //
-//  Created by Domonique Dixon on 7/6/16.
+//  Created by Domonique Dixon on 9/2/16.
 //  Copyright © 2016 Domonique Dixon. All rights reserved.
 //
 
@@ -15,25 +15,55 @@ class MOCAMMSETestViewController: FrontViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(next))
+        
         let url = NSURL (string: "http://girlscouts.harryatwal.com/MoCA_MMSE.php");
         let requestObj = NSURLRequest(URL: url!);
         myWebView.loadRequest(requestObj);
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func next(sender: AnyObject) {
+        //        var jsonObject = [String: AnyObject]()
+        //
+        //        // Gather data for post
+        //        if let id = prefs.stringForKey("pid") {
+        //            print("PID: " + id)
+        //
+        //            jsonObject = [
+        //                "id": id,
+        //                "hand": postValues
+        //            ]
+        //        }
+        //
+        //        print(jsonObject)
+        
+        
+        // Push to API
+        //            let notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/insert_hand_dominate")!
+        //            let request = NSMutableURLRequest(URL: notesEndpoint)
+        //            request.HTTPMethod = "POST"
+        //            request.HTTPBody = try? NSJSONSerialization.dataWithJSONObject(jsonObject, options: [])
+        //            request.setValue("application/json" ?? "", forHTTPHeaderField: "Content-Type")
+        //
+        //            let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
+        //            task.resume()
+        
+        var navigationArray = self.navigationController?.viewControllers
+        
+        navigationArray?.removeAtIndex(0)
+        
+        let reyComplexFigureViewController:ReyComplexFigureViewController = ReyComplexFigureViewController()
+        navigationArray?.append(reyComplexFigureViewController)
+        
+        self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }
-    */
 
 }
