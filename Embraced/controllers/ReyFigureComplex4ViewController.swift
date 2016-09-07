@@ -17,7 +17,7 @@ class ReyFigureComplex4ViewController: FrontViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(next))
         
-        let url = NSURL (string: "http://girlscouts.harryatwal.com/trailMaking.php");
+        let url = NSURL (string: "http://girlscouts.harryatwal.com/reyComplexFigure.php");
         let requestObj = NSURLRequest(URL: url!);
         myWebView.loadRequest(requestObj);
     }
