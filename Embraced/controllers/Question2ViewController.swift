@@ -39,10 +39,6 @@ class Question2ViewController: FrontViewController {
     
     // MARK: Actions
     
-    @IBAction func back(sender: AnyObject) {
-        self.navigationController!.popViewControllerAnimated(true)
-    }
-    
     @IBAction func next(sender: AnyObject) {
         let question3ViewController:Question3ViewController = Question3ViewController()
         self.navigationController!.pushViewController(question3ViewController, animated: true)

@@ -33,7 +33,6 @@
 		A4347FE41D7BCC170033306A /* MultipleErrandsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FE21D7BCC170033306A /* MultipleErrandsViewController.xib */; };
 		A4347FE71D7BCC4C0033306A /* ComprehensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FE51D7BCC4C0033306A /* ComprehensionViewController.swift */; };
 		A4347FE81D7BCC4C0033306A /* ComprehensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FE61D7BCC4C0033306A /* ComprehensionViewController.xib */; };
-		A43B8F751D2A1351001C4063 /* HandDominateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */; };
 		A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */; };
 		A43E98C41D508627008F54C3 /* camel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98B51D508627008F54C3 /* camel.jpg */; };
 		A43E98C51D508627008F54C3 /* flag.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A43E98B61D508627008F54C3 /* flag.jpg */; };
@@ -131,7 +130,6 @@
 		A4347FE21D7BCC170033306A /* MultipleErrandsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MultipleErrandsViewController.xib; path = controllers/MultipleErrandsViewController.xib; sourceTree = "<group>"; };
 		A4347FE51D7BCC4C0033306A /* ComprehensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComprehensionViewController.swift; path = controllers/ComprehensionViewController.swift; sourceTree = "<group>"; };
 		A4347FE61D7BCC4C0033306A /* ComprehensionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComprehensionViewController.xib; path = controllers/ComprehensionViewController.xib; sourceTree = "<group>"; };
-		A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandDominateViewController.swift; path = controllers/HandDominateViewController.swift; sourceTree = "<group>"; };
 		A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NamingTaskViewController.swift; path = controllers/NamingTaskViewController.swift; sourceTree = "<group>"; };
 		A43E98B51D508627008F54C3 /* camel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camel.jpg; sourceTree = "<group>"; };
 		A43E98B61D508627008F54C3 /* flag.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flag.jpg; sourceTree = "<group>"; };
@@ -368,7 +366,6 @@
 				A48B4DC41CF9E7C700878928 /* AppDelegate.swift */,
 				A48B4DC61CF9E7C700878928 /* ViewController.swift */,
 				A490D7C41D09162800D2B59D /* UserInputViewController.swift */,
-				A43B8F731D2A1351001C4063 /* HandDominateViewController.swift */,
 				A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */,
 				A42AB5C51D2DE0F4001387BB /* Test */,
 				A4A794231D68CD1900305AB4 /* TestViewController.swift */,
@@ -626,7 +623,6 @@
 				A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */,
 				A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */,
 				A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */,
-				A43B8F751D2A1351001C4063 /* HandDominateViewController.swift in Sources */,
 				A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
 				A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */,
