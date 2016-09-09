@@ -279,7 +279,7 @@ public class  ISRadioButton: UIButton {
             unSelectedButtons .addObject(self)
         }
         for isRadioButton in self.otherButtons!  {
-            if isRadioButton.selected {
+            if !isRadioButton.selected {
                 unSelectedButtons .addObject(self)
             }
         }

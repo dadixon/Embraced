@@ -46,10 +46,13 @@ class ViewController: UIViewController {
     
     @IBAction func login(sender: AnyObject) {
 //        Stormpath.sharedSession.login(usernameTextfield.text!, password: passwordTextfield.text!, completionHandler: logResponse)
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let secondViewController = storyBoard.instantiateViewControllerWithIdentifier("UserInputViewController") as! UserInputViewController
-//        let navController = UINavigationController(rootViewController: secondViewController)
-        self.presentViewController(secondViewController, animated: true, completion: nil)
+        showModal()
+    }
+    
+    func showModal() {
+        let modalViewController = UserInputViewController()
+        modalViewController.modalPresentationStyle = .OverCurrentContext
+        presentViewController(modalViewController, animated: true, completion: nil)
     }
     
     func logResponse(success: Bool, error: NSError?) {

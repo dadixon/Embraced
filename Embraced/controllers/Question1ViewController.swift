@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ISRadioButton
 
 class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -24,6 +23,21 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
     @IBOutlet weak var broomSegment: UISegmentedControl!
     @IBOutlet weak var matchSegment: UISegmentedControl!
     @IBOutlet weak var lidSegment: UISegmentedControl!
+    
+    @IBOutlet weak var notHispanicSwitch: UISwitch!
+    @IBOutlet weak var mexicanSwitch: UISwitch!
+    @IBOutlet weak var puertoRicanSwitch: UISwitch!
+    @IBOutlet weak var cubanSwitch: UISwitch!
+    @IBOutlet weak var centralAmericaSwitch: UISwitch!
+    @IBOutlet weak var otherSpanishSwitch: UISwitch!
+    
+    @IBOutlet weak var indianSwitch: UISwitch!
+    @IBOutlet weak var asianSwitch: UISwitch!
+    @IBOutlet weak var blackSwitch: UISwitch!
+    @IBOutlet weak var hawaiiSwitch: UISwitch!
+    @IBOutlet weak var whiteSwitch: UISwitch!
+    
+    @IBOutlet weak var ethnicitySpecifics: UITextField!
     
     var pickOption = ["Male", "Female", "Other"]
     var step = 1
@@ -43,6 +57,8 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
     var sexes = [String]()
     
     var nationality = [String]()
+    var ethnicity = String()
+    var race = [String]()
     
     let textCellIdentifier = "ChildTableViewCell"
     
@@ -107,7 +123,7 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
     // MARK: Actions
     
     @IBAction func next(sender: AnyObject) {
-        if (!(dobTextField.text?.isEmpty)! && !(genderTextField.text?.isEmpty)!) {
+//        if (!(dobTextField.text?.isEmpty)! && !(genderTextField.text?.isEmpty)!) {
             print("Good to go")
             var jsonObject = [String: AnyObject]()
             
@@ -147,11 +163,14 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
 //            navigationArray?.append(question2ViewController)
 //            
 //            self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        } else {
-            let alert = UIAlertController(title: "Error", message: "Please fill all the required fields.", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
+            
+            
+        
+//        } else {
+//            let alert = UIAlertController(title: "Error", message: "Please fill all the required fields.", preferredStyle: .Alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+//            self.presentViewController(alert, animated: true, completion: nil)
+//        }
         
         
     }
@@ -199,19 +218,86 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
             genderTextField.inputView = pickerView
             genderTextField.inputAccessoryView = toolBar
         }
+    }
+    
+    
+    @IBAction func ethnicityChange(sender: UISwitch) {
+        ethnicitySpecifics.hidden = true
+        ethnicity = ""
+        
+        switch sender.tag {
+        case 0:
+            if sender.on {
+                ethnicity = "No"
+                
+                mexicanSwitch.setOn(false, animated: true)
+                puertoRicanSwitch.setOn(false, animated: true)
+                cubanSwitch.setOn(false, animated: true)
+                centralAmericaSwitch.setOn(false, animated: true)
+                otherSpanishSwitch.setOn(false, animated: true)
+            }
+        case 1:
+            if sender.on {
+                ethnicity = "Mexican, Mexican American, Chicano"
+                
+                notHispanicSwitch.setOn(false, animated: true)
+                puertoRicanSwitch.setOn(false, animated: true)
+                cubanSwitch.setOn(false, animated: true)
+                centralAmericaSwitch.setOn(false, animated: true)
+                otherSpanishSwitch.setOn(false, animated: true)
+            }
+        case 2:
+            if sender.on {
+                ethnicity = "Puerto Rican"
+                
+                mexicanSwitch.setOn(false, animated: true)
+                notHispanicSwitch.setOn(false, animated: true)
+                cubanSwitch.setOn(false, animated: true)
+                centralAmericaSwitch.setOn(false, animated: true)
+                otherSpanishSwitch.setOn(false, animated: true)
+            }
+        case 3:
+            if sender.on {
+                ethnicity = "Cuban"
+                
+                mexicanSwitch.setOn(false, animated: true)
+                puertoRicanSwitch.setOn(false, animated: true)
+                notHispanicSwitch.setOn(false, animated: true)
+                centralAmericaSwitch.setOn(false, animated: true)
+                otherSpanishSwitch.setOn(false, animated: true)
+            }
+        case 4:
+            if sender.on {
+                ethnicity = "Central America"
+                
+                mexicanSwitch.setOn(false, animated: true)
+                puertoRicanSwitch.setOn(false, animated: true)
+                cubanSwitch.setOn(false, animated: true)
+                notHispanicSwitch.setOn(false, animated: true)
+                otherSpanishSwitch.setOn(false, animated: true)
+            }
+        case 5:
+            if sender.on {
+                ethnicity = "other"
+                
+                mexicanSwitch.setOn(false, animated: true)
+                puertoRicanSwitch.setOn(false, animated: true)
+                cubanSwitch.setOn(false, animated: true)
+                centralAmericaSwitch.setOn(false, animated: true)
+                notHispanicSwitch.setOn(false, animated: true)
+            }
+            ethnicitySpecifics.hidden = false
+        default:
+            ethnicity = ""
+            ethnicitySpecifics.hidden = true
+        }
+        
+        print("\(ethnicity)")
+    }
+    
+    @IBAction func raceChange(sender: UISwitch) {
         
     }
-    
-    @IBAction func nationality(sender:ISRadioButton){
-        if sender.multipleSelectionEnabled {
-            for radioButton in sender.otherButtons! {
-                print("%@ is selected.\n", radioButton.titleLabel!.text);
-            }
-        } else{
-            print("%@ is selected.\n", sender.titleLabel!.text);
-        }
-    }
-    
     
     // Mark: Delegate
     

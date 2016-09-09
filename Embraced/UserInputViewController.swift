@@ -22,10 +22,6 @@ class UserInputViewController: UIViewController {
     @IBOutlet weak var floorTextField: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
     
-    @IBOutlet weak var imageView: UIImageView!
-    
-    
-//    var userInputs = [NSManagedObject]()
     let participant = NSUserDefaults.standardUserDefaults()
     
     private func setBottomBorder(textfield: UITextField) {
@@ -55,7 +51,7 @@ class UserInputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         submitBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
         
         let uuid = NSUUID().UUIDString
@@ -85,7 +81,7 @@ class UserInputViewController: UIViewController {
 
         
         
-        let questionnaireViewController:QuestionnaireViewController = QuestionnaireViewController()
+        let questionnaireViewController:Question1ViewController = Question1ViewController()
         let navController = UINavigationController(rootViewController: questionnaireViewController)
         self.presentViewController(navController, animated: true, completion: nil)
         
