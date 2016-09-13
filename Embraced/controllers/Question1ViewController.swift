@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var dobTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
@@ -39,6 +39,27 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
     
     @IBOutlet weak var ethnicitySpecifics: UITextField!
     
+    @IBOutlet weak var singleSwitch: UISwitch!
+    @IBOutlet weak var marriedSwitch: UISwitch!
+    @IBOutlet weak var partnerSwitch: UISwitch!
+    @IBOutlet weak var widowSwitch: UISwitch!
+    @IBOutlet weak var separatedSwitch: UISwitch!
+    @IBOutlet weak var childrenTopHighConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var togetherPartner: UIView!
+    @IBOutlet weak var separatedPartner: UIView!
+    
+    @IBOutlet weak var childView: UIView!
+    @IBOutlet weak var childrenTableView: UITableView!
+    @IBOutlet weak var childAgeTextField: UITextField!
+    @IBOutlet weak var childGenderTextField: UITextField!
+    @IBOutlet weak var martialStatusHeightConstriant: NSLayoutConstraint!
+    
+    
+    
+    
+    
+    
     var pickOption = ["Male", "Female", "Other"]
     var step = 1
     var totalSteps = 3
@@ -59,8 +80,19 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
     var nationality = [String]()
     var ethnicity = String()
     var race = [String]()
+    var martialStatus = String()
+    
     
     let textCellIdentifier = "ChildTableViewCell"
+
+    var isSubMartialStatus = false
+    var isHasChildren = false
+    let martialStatusSubHeight = CGFloat(65.0)
+    let martialStatusChildrenHeight = CGFloat(248.0)
+    let martialStatusInitHeight = CGFloat(290.0)
+    let martialStatusMediumHeight = CGFloat(355.0)
+    let martialStatusMaxHeight = CGFloat(603.0)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +112,20 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
         broomSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
         matchSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
         lidSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
+        
+        self.childrenTopHighConstraint.constant = 8.0
+        
+        togetherPartner.hidden = true
+        separatedPartner.hidden = true
+        childView.hidden = true
+        
+        childrenTableView.delegate = self
+        childrenTableView.dataSource = self
+        
+        let nib = UINib(nibName: "ChildTableViewCell", bundle: nil)
+        childrenTableView.registerNib(nib, forCellReuseIdentifier: "ChildTableViewCell")
+        
+        self.martialStatusHeightConstriant.constant = martialStatusInitHeight
     }
     
     override func didReceiveMemoryWarning() {
@@ -296,8 +342,219 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
     }
     
     @IBAction func raceChange(sender: UISwitch) {
+        var name = ""
         
+        switch sender.tag {
+        case 0:
+            name = "American Indian"
+            
+            raceArrayEdits(name, switchObject: sender)
+        case 1:
+            name = "Asian"
+            
+            raceArrayEdits(name, switchObject: sender)
+        case 2:
+            name = "Black"
+            
+            raceArrayEdits(name, switchObject: sender)
+        case 3:
+            name = "Native Hawaiian"
+            
+            raceArrayEdits(name, switchObject: sender)
+        case 4:
+            name = "White"
+            
+            raceArrayEdits(name, switchObject: sender)
+        default:
+            race = [String]()
+        }
+        
+        print("\(race)")
     }
+    
+    func raceArrayEdits(name: String, switchObject: UISwitch) {
+        if switchObject.on {
+            race.append(name)
+        } else {
+            if race.contains(name) {
+                race.removeAtIndex(race.indexOf(name)!)
+            }
+        }
+    }
+    
+    @IBAction func martialStatusChange(sender: UISwitch) {
+        martialStatus = ""
+        togetherPartner.hidden = true
+        separatedPartner.hidden = true
+        
+        switch sender.tag {
+        case 0:
+            if sender.on {
+                martialStatus = "Single"
+                
+                marriedSwitch.setOn(false, animated: true)
+                partnerSwitch.setOn(false, animated: true)
+                widowSwitch.setOn(false, animated: true)
+                separatedSwitch.setOn(false, animated: true)
+                
+                isSubMartialStatus = false
+                
+                self.childrenTopHighConstraint.constant = 8.0
+                
+                if isHasChildren {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight + martialStatusChildrenHeight
+                } else {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight
+                }
+            }
+        case 1:
+            if sender.on {
+                martialStatus = "Married"
+                togetherPartner.hidden = false
+                
+                singleSwitch.setOn(false, animated: true)
+                partnerSwitch.setOn(false, animated: true)
+                widowSwitch.setOn(false, animated: true)
+                separatedSwitch.setOn(false, animated: true)
+                
+                isSubMartialStatus = true
+                
+                self.childrenTopHighConstraint.constant = 81.0
+                
+                if isHasChildren {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight + martialStatusSubHeight + martialStatusChildrenHeight
+                } else {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight + martialStatusSubHeight
+                }
+                
+            } else {
+                self.childrenTopHighConstraint.constant = 8.0
+                
+                if isHasChildren {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight + martialStatusChildrenHeight
+                } else {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight
+                }
+            }
+        case 2:
+            if sender.on {
+                martialStatus = "Partner"
+                togetherPartner.hidden = false
+                
+                marriedSwitch.setOn(false, animated: true)
+                singleSwitch.setOn(false, animated: true)
+                widowSwitch.setOn(false, animated: true)
+                separatedSwitch.setOn(false, animated: true)
+                
+                isSubMartialStatus = true
+                
+                self.childrenTopHighConstraint.constant = 81.0
+                
+                if isHasChildren {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight + martialStatusSubHeight + martialStatusChildrenHeight
+                } else {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight + martialStatusSubHeight
+                }
+                
+            } else {
+                self.childrenTopHighConstraint.constant = 8.0
+                
+                if isHasChildren {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight + martialStatusChildrenHeight
+                } else {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight
+                }
+            }
+        case 3:
+            if sender.on {
+                martialStatus = "Widow"
+                
+                marriedSwitch.setOn(false, animated: true)
+                partnerSwitch.setOn(false, animated: true)
+                singleSwitch.setOn(false, animated: true)
+                separatedSwitch.setOn(false, animated: true)
+                
+                isSubMartialStatus = false
+                
+                self.childrenTopHighConstraint.constant = 8.0
+                
+                if isHasChildren {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight + martialStatusChildrenHeight
+                } else {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight
+                }
+            }
+        case 4:
+            if sender.on {
+                martialStatus = "Separated"
+                separatedPartner.hidden = false
+                
+                marriedSwitch.setOn(false, animated: true)
+                partnerSwitch.setOn(false, animated: true)
+                widowSwitch.setOn(false, animated: true)
+                singleSwitch.setOn(false, animated: true)
+                
+                isSubMartialStatus = true
+                
+                self.childrenTopHighConstraint.constant = 81.0
+                
+                if isHasChildren {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight + martialStatusSubHeight + martialStatusChildrenHeight
+                } else {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight + martialStatusSubHeight
+                }
+                
+            } else {
+                self.childrenTopHighConstraint.constant = 8.0
+                
+                if isHasChildren {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight + martialStatusChildrenHeight
+                } else {
+                    self.martialStatusHeightConstriant.constant = martialStatusInitHeight
+                }
+            }
+        default:
+            martialStatus = ""
+            togetherPartner.hidden = true
+            separatedPartner.hidden = true
+        }
+    }
+    
+    @IBAction func addChild(sender: AnyObject) {
+        ages.append(childAgeTextField.text!)
+        sexes.append(childGenderTextField.text!)
+        
+        childrenTableView.reloadData()
+        
+        childAgeTextField.text = ""
+        childGenderTextField.text = ""
+    }
+    
+    @IBAction func haveChildren(sender: UISegmentedControl) {
+        if(sender.selectedSegmentIndex == 0) {
+            self.childView.hidden = false
+            isHasChildren = true
+            
+            if isSubMartialStatus {
+                self.martialStatusHeightConstriant.constant = martialStatusInitHeight + martialStatusSubHeight + martialStatusChildrenHeight
+            } else {
+                self.martialStatusHeightConstriant.constant = martialStatusInitHeight + martialStatusChildrenHeight
+            }
+            
+        } else if(sender.selectedSegmentIndex == 1) {
+            self.childView.hidden = true
+            isHasChildren = false
+            
+            if isSubMartialStatus {
+                self.martialStatusHeightConstriant.constant = martialStatusInitHeight + martialStatusSubHeight
+            } else {
+                self.martialStatusHeightConstriant.constant = martialStatusInitHeight
+            }
+        }
+    }
+    
+    
+    
     
     // Mark: Delegate
     
@@ -333,5 +590,30 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         genderTextField.text = pickOption[row]
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ages.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! ChildTableViewCell
+        
+        let row = indexPath.row
+        cell.ageLabel?.text = String(ages[row])
+        cell.sexLabel?.text = sexes[row]
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let row = indexPath.row
+        print(ages[row])
     }
 }
