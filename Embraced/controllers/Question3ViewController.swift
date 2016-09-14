@@ -11,7 +11,7 @@ import UIKit
 class Question3ViewController: FrontViewController {
 
     
-    var step = 2
+    var step = 3
     var totalSteps = 3
     var progress : Float {
         get {
