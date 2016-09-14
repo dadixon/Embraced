@@ -5,5 +5,4 @@ use_frameworks!
  
 target ‘Embraced’ do
     pod 'Stormpath', '~> 1.2'
-    pod 'ISRadioButton', '~> 0.1'
 end
