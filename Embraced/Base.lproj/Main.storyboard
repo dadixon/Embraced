@@ -10445,7 +10445,7 @@
                                                                     </mask>
                                                                 </variation>
                                                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                                                    <rect key="frame" x="-60" y="-14" width="122" height="29"/>
+                                                                    <rect key="frame" x="-60" y="-14" width="122" height="30"/>
                                                                     <mask key="constraints">
                                                                         <include reference="OvG-DK-pwd"/>
                                                                     </mask>
@@ -11020,7 +11020,7 @@
                                                                     </mask>
                                                                 </variation>
                                                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                                                    <rect key="frame" x="-60" y="-14" width="122" height="36"/>
+                                                                    <rect key="frame" x="-60" y="-14" width="122" height="29"/>
                                                                     <mask key="constraints">
                                                                         <include reference="dzW-pZ-CBa"/>
                                                                     </mask>

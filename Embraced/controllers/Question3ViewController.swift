@@ -10,10 +10,22 @@ import UIKit
 
 class Question3ViewController: FrontViewController {
 
+    
+    var step = 2
+    var totalSteps = 3
+    var progress : Float {
+        get {
+            return Float(step) / Float(totalSteps)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        progressView.progress = progress
+        progressLabel.text = "Progress (\(step)/\(totalSteps))"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(next))
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +34,17 @@ class Question3ViewController: FrontViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: Actions
+    
+    @IBAction func next(sender: AnyObject) {
+        var navigationArray = self.navigationController?.viewControllers
+        
+        navigationArray?.removeAtIndex(0)
+        
+        let mOCAMMSETestViewController:MOCAMMSETestViewController = MOCAMMSETestViewController()
+        navigationArray?.append(mOCAMMSETestViewController)
+        
+        self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }
-    */
 
 }

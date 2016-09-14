@@ -201,15 +201,15 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
             //            task.resume()
             
             
-//            var navigationArray = self.navigationController?.viewControllers
-//            
-//            navigationArray?.removeAtIndex(0)
-//            
-//            let question2ViewController:Question2ViewController = Question2ViewController()
-//            navigationArray?.append(question2ViewController)
-//            
-//            self.navigationController?.setViewControllers(navigationArray!, animated: true)
+            var navigationArray = self.navigationController?.viewControllers
             
+            navigationArray?.removeAtIndex(0)
+            
+            let question2ViewController:Question2ViewController = Question2ViewController()
+            navigationArray?.append(question2ViewController)
+            
+            self.navigationController?.setViewControllers(navigationArray!, animated: true)
+        
             
         
 //        } else {
