@@ -2,7 +2,11 @@
 # platform :ios, '8.0'
 # Uncomment this line if you're using Swift
 use_frameworks!
+
+def pods
+pod 'Stormpath', '~> 2.0'
+end
  
 target ‘Embraced’ do
-    pod 'Stormpath', '~> 1.2'
+pods
 end
