@@ -40,22 +40,22 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
-    @IBAction func login(sender: AnyObject) {
+    @IBAction func login(_ sender: AnyObject) {
 //        Stormpath.sharedSession.login(usernameTextfield.text!, password: passwordTextfield.text!, completionHandler: logResponse)
         showModal()
     }
     
     func showModal() {
         let modalViewController = UserInputViewController()
-        modalViewController.modalPresentationStyle = .OverCurrentContext
-        presentViewController(modalViewController, animated: true, completion: nil)
+        modalViewController.modalPresentationStyle = .overCurrentContext
+        present(modalViewController, animated: true, completion: nil)
     }
     
-    func logResponse(success: Bool, error: NSError?) {
+    func logResponse(_ success: Bool, error: NSError?) {
         if let error = error {
 //            showAlert(withTitle: "Error", message: error.localizedDescription)
             self.errorLabel.text = error.localizedDescription
@@ -69,8 +69,8 @@ class ViewController: UIViewController {
                 }
             }
             
-            let notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/secret")!
-            let request = NSMutableURLRequest(URL: notesEndpoint)
+            let notesEndpoint = URL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/secret")!
+            let request = NSMutableURLRequest(url: notesEndpoint)
             request.setValue("Bearer \(Stormpath.sharedSession.accessToken!)", forHTTPHeaderField: "Authorization")
 //            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
 //                guard let data = data, json = try? NSJSONSerialization.JSONObjectWithData(data, options: []), notes = json["notes"] as? String else {
@@ -83,9 +83,9 @@ class ViewController: UIViewController {
 //            }
 //            task.resume()
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let secondViewController = storyBoard.instantiateViewControllerWithIdentifier("UserInputViewController") as! UserInputViewController
+            let secondViewController = storyBoard.instantiateViewController(withIdentifier: "UserInputViewController") as! UserInputViewController
             let navController = UINavigationController(rootViewController: secondViewController)
-            self.presentViewController(navController, animated: true, completion: nil)
+            self.present(navController, animated: true, completion: nil)
         }
     }
 

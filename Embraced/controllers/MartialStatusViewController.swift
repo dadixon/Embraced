@@ -30,8 +30,8 @@ class MartialStatusViewController: FrontViewController, UITableViewDataSource, U
         }
     }
     
-    var postValues = [String](count: 10, repeatedValue: "")
-    let prefs = NSUserDefaults.standardUserDefaults()
+    var postValues = [String](repeating: "", count: 10)
+    let prefs = UserDefaults.standard
     
     var pickOption = ["Male", "Female"]
     var ages = [String]()
@@ -85,17 +85,17 @@ class MartialStatusViewController: FrontViewController, UITableViewDataSource, U
         // Dispose of any resources that can be recreated.
     }
     
-    func donePicker(sender: UIPickerView) {
+    func donePicker(_ sender: UIPickerView) {
         genderTextField.resignFirstResponder()
     }
     
     // MARK: - Navigation
 
-    @IBAction func back(sender: AnyObject) {
-        self.navigationController!.popViewControllerAnimated(true)
+    @IBAction func back(_ sender: AnyObject) {
+        self.navigationController!.popViewController(animated: true)
     }
     
-    @IBAction func next(sender: AnyObject) {
+    @IBAction func next(_ sender: AnyObject) {
 //        var jsonObject = [String: AnyObject]()
 //        
 //        // Gather data for post
@@ -124,51 +124,51 @@ class MartialStatusViewController: FrontViewController, UITableViewDataSource, U
         
     }
     
-    @IBAction func changeStatus(sender: AnyObject) {
+    @IBAction func changeStatus(_ sender: AnyObject) {
         switch sender.tag {
         case 0, 3:
-            marriedMonths.hidden = true
-            marriedYears.hidden = true
-            livingMonths.hidden = true
-            livingYears.hidden = true
-            separateMonths.hidden = true
-            separateYears.hidden = true
+            marriedMonths.isHidden = true
+            marriedYears.isHidden = true
+            livingMonths.isHidden = true
+            livingYears.isHidden = true
+            separateMonths.isHidden = true
+            separateYears.isHidden = true
         case 1:
-            marriedMonths.hidden = false
-            marriedYears.hidden = false
-            livingMonths.hidden = true
-            livingYears.hidden = true
-            separateMonths.hidden = true
-            separateYears.hidden = true
+            marriedMonths.isHidden = false
+            marriedYears.isHidden = false
+            livingMonths.isHidden = true
+            livingYears.isHidden = true
+            separateMonths.isHidden = true
+            separateYears.isHidden = true
         case 2:
-            marriedMonths.hidden = true
-            marriedYears.hidden = true
-            livingMonths.hidden = false
-            livingYears.hidden = false
-            separateMonths.hidden = true
-            separateYears.hidden = true
+            marriedMonths.isHidden = true
+            marriedYears.isHidden = true
+            livingMonths.isHidden = false
+            livingYears.isHidden = false
+            separateMonths.isHidden = true
+            separateYears.isHidden = true
         case 4:
-            marriedMonths.hidden = true
-            marriedYears.hidden = true
-            livingMonths.hidden = true
-            livingYears.hidden = true
-            separateMonths.hidden = false
-            separateYears.hidden = false
+            marriedMonths.isHidden = true
+            marriedYears.isHidden = true
+            livingMonths.isHidden = true
+            livingYears.isHidden = true
+            separateMonths.isHidden = false
+            separateYears.isHidden = false
         default:
-            marriedMonths.hidden = true
-            marriedYears.hidden = true
-            livingMonths.hidden = true
-            livingYears.hidden = true
-            separateMonths.hidden = true
-            separateYears.hidden = true
+            marriedMonths.isHidden = true
+            marriedYears.isHidden = true
+            livingMonths.isHidden = true
+            livingYears.isHidden = true
+            separateMonths.isHidden = true
+            separateYears.isHidden = true
         }
     }
     
-    @IBAction func haveChildren(sender: AnyObject) {
+    @IBAction func haveChildren(_ sender: AnyObject) {
         if (sender.selectedSegmentIndex == 0) {
-            childrenView.hidden = false
+            childrenView.isHidden = false
         } else if (sender.selectedSegmentIndex == 1) {
-            childrenView.hidden = true
+            childrenView.isHidden = true
             ages.removeAll()
             sexes.removeAll()
             childTableView.reloadData()
@@ -177,7 +177,7 @@ class MartialStatusViewController: FrontViewController, UITableViewDataSource, U
         }
     }
     
-    @IBAction func addChild(sender: AnyObject) {
+    @IBAction func addChild(_ sender: AnyObject) {
         ages.append(ageTextField.text!)
         sexes.append(genderTextField.text!)
         
@@ -190,45 +190,45 @@ class MartialStatusViewController: FrontViewController, UITableViewDataSource, U
     
     // MARK: Delegate
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ages.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! ChildTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath) as! ChildTableViewCell
         
-        let row = indexPath.row
+        let row = (indexPath as NSIndexPath).row
         cell.ageLabel?.text = String(ages[row])
         cell.sexLabel?.text = sexes[row]
         
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
-        let row = indexPath.row
+        let row = (indexPath as NSIndexPath).row
         print(ages[row])
     }
     
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickOption.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickOption[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         genderTextField.text = pickOption[row]
     }
 }

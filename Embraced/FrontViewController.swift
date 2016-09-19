@@ -24,7 +24,7 @@ class FrontViewController: UIViewController {
 //        backBtn.action = #selector(back)
 //        nextBtn.action = #selector(next)
         
-        mainView.layer.shadowColor = UIColor.blackColor().CGColor
+        mainView.layer.shadowColor = UIColor.black.cgColor
         mainView.layer.shadowOpacity = 0.7
         mainView.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
         mainView.layer.shadowRadius = 10
@@ -37,7 +37,7 @@ class FrontViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     

@@ -25,7 +25,7 @@ class EmbracedTextField: UITextField, UITextFieldDelegate {
     func createBorder(){
         let border = CALayer()
         let width = CGFloat(2.0)
-        let borderColor = UIColor.darkGrayColor().CGColor
+        let borderColor = UIColor.darkGray.cgColor
         
         border.borderColor = borderColor
         border.borderWidth = width

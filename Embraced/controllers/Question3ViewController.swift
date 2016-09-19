@@ -25,7 +25,7 @@ class Question3ViewController: FrontViewController {
         progressView.progress = progress
         progressLabel.text = "Progress (\(step)/\(totalSteps))"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(next))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(getter: next))
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,10 +36,10 @@ class Question3ViewController: FrontViewController {
 
     // MARK: Actions
     
-    @IBAction func next(sender: AnyObject) {
+    @IBAction func next(_ sender: AnyObject) {
         var navigationArray = self.navigationController?.viewControllers
         
-        navigationArray?.removeAtIndex(0)
+        navigationArray?.remove(at: 0)
         
         let mOCAMMSETestViewController:MOCAMMSETestViewController = MOCAMMSETestViewController()
         navigationArray?.append(mOCAMMSETestViewController)

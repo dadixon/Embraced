@@ -69,9 +69,9 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
         }
     }
     
-    let prefs = NSUserDefaults.standardUserDefaults()
+    let prefs = UserDefaults.standard
     
-    var postValues = [String](count: 10, repeatedValue: "")
+    var postValues = [String](repeating: "", count: 10)
     var strongHand = String()
     var childPickOption = ["Male", "Female"]
     var ages = [String]()
@@ -100,30 +100,30 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
         progressView.progress = progress
         progressLabel.text = "Progress (\(step)/\(totalSteps))"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(next))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(getter: next))
         
-        writingSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
-        drawingSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
-        throwing.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
-        scissorsSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
-        toothbrushSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
-        knifeSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
-        spoonSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
-        broomSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
-        matchSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
-        lidSegment.addTarget(self, action: #selector(segmentChanged), forControlEvents: UIControlEvents.ValueChanged)
+        writingSegment.addTarget(self, action: #selector(segmentChanged), for: UIControlEvents.valueChanged)
+        drawingSegment.addTarget(self, action: #selector(segmentChanged), for: UIControlEvents.valueChanged)
+        throwing.addTarget(self, action: #selector(segmentChanged), for: UIControlEvents.valueChanged)
+        scissorsSegment.addTarget(self, action: #selector(segmentChanged), for: UIControlEvents.valueChanged)
+        toothbrushSegment.addTarget(self, action: #selector(segmentChanged), for: UIControlEvents.valueChanged)
+        knifeSegment.addTarget(self, action: #selector(segmentChanged), for: UIControlEvents.valueChanged)
+        spoonSegment.addTarget(self, action: #selector(segmentChanged), for: UIControlEvents.valueChanged)
+        broomSegment.addTarget(self, action: #selector(segmentChanged), for: UIControlEvents.valueChanged)
+        matchSegment.addTarget(self, action: #selector(segmentChanged), for: UIControlEvents.valueChanged)
+        lidSegment.addTarget(self, action: #selector(segmentChanged), for: UIControlEvents.valueChanged)
         
         self.childrenTopHighConstraint.constant = 8.0
         
-        togetherPartner.hidden = true
-        separatedPartner.hidden = true
-        childView.hidden = true
+        togetherPartner.isHidden = true
+        separatedPartner.isHidden = true
+        childView.isHidden = true
         
         childrenTableView.delegate = self
         childrenTableView.dataSource = self
         
         let nib = UINib(nibName: "ChildTableViewCell", bundle: nil)
-        childrenTableView.registerNib(nib, forCellReuseIdentifier: "ChildTableViewCell")
+        childrenTableView.register(nib, forCellReuseIdentifier: "ChildTableViewCell")
         
         self.martialStatusHeightConstriant.constant = martialStatusInitHeight
     }
@@ -133,7 +133,7 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
         // Dispose of any resources that can be recreated.
     }
     
-    func segmentChanged(sender: UISegmentedControl) {
+    func segmentChanged(_ sender: UISegmentedControl) {
         var hand = String()
         
         if(sender.selectedSegmentIndex == 0) {
@@ -141,8 +141,8 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
         } else if(sender.selectedSegmentIndex == 1) {
             hand = "R"
         }
-        postValues.removeAtIndex(sender.tag)
-        postValues.insert(hand, atIndex: sender.tag)
+        postValues.remove(at: sender.tag)
+        postValues.insert(hand, at: sender.tag)
         
         print(postValues)
         
@@ -168,20 +168,20 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
     
     // MARK: Actions
     
-    @IBAction func next(sender: AnyObject) {
+    @IBAction func next(_ sender: AnyObject) {
 //        if (!(dobTextField.text?.isEmpty)! && !(genderTextField.text?.isEmpty)!) {
             print("Good to go")
             var jsonObject = [String: AnyObject]()
             
             // Gather data for post
-            if let id = prefs.stringForKey("pid") {
+            if let id = prefs.string(forKey: "pid") {
                 print("PID: " + id)
                 
                 jsonObject = [
-                    "id": id,
-                    "dob": dobTextField.text!,
-                    "gender": genderTextField.text!,
-                    "hand_dominate": postValues
+                    "id": id as AnyObject,
+                    "dob": dobTextField.text! as AnyObject,
+                    "gender": genderTextField.text! as AnyObject,
+                    "hand_dominate": postValues as AnyObject
                 ]
             } else {
                 // Nothing stored in NSUserDefaults yet. Set a value.
@@ -203,7 +203,7 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
             
             var navigationArray = self.navigationController?.viewControllers
             
-            navigationArray?.removeAtIndex(0)
+            navigationArray?.remove(at: 0)
             
             let question2ViewController:Question2ViewController = Question2ViewController()
             navigationArray?.append(question2ViewController)
@@ -221,27 +221,27 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
         
     }
 
-    @IBAction func textFieldEditing(sender: UITextField) {
+    @IBAction func textFieldEditing(_ sender: UITextField) {
         if (sender.isEqual(dobTextField)) {
             let datePickerView:UIDatePicker = UIDatePicker()
-            datePickerView.datePickerMode = UIDatePickerMode.Date
+            datePickerView.datePickerMode = UIDatePickerMode.date
             
             let toolBar = UIToolbar()
-            toolBar.barStyle = UIBarStyle.Default
-            toolBar.translucent = true
+            toolBar.barStyle = UIBarStyle.default
+            toolBar.isTranslucent = true
             toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
             toolBar.sizeToFit()
             
-            let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(Question1ViewController.doneDatePicker))
-            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+            let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(Question1ViewController.doneDatePicker))
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
             
             toolBar.setItems([spaceButton, doneButton], animated: false)
-            toolBar.userInteractionEnabled = true
+            toolBar.isUserInteractionEnabled = true
             
             sender.inputView = datePickerView
             sender.inputAccessoryView = toolBar
             
-            datePickerView.addTarget(self, action: #selector(datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+            datePickerView.addTarget(self, action: #selector(datePickerValueChanged), for: UIControlEvents.valueChanged)
         } else if (sender.isEqual(genderTextField)) {
             let pickerView = UIPickerView()
             
@@ -250,16 +250,16 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
             genderTextField.inputView = pickerView
             
             let toolBar = UIToolbar()
-            toolBar.barStyle = UIBarStyle.Default
-            toolBar.translucent = true
+            toolBar.barStyle = UIBarStyle.default
+            toolBar.isTranslucent = true
             toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
             toolBar.sizeToFit()
             
-            let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(Question1ViewController.donePicker))
-            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+            let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(Question1ViewController.donePicker))
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
             
             toolBar.setItems([spaceButton, doneButton], animated: false)
-            toolBar.userInteractionEnabled = true
+            toolBar.isUserInteractionEnabled = true
             
             genderTextField.inputView = pickerView
             genderTextField.inputAccessoryView = toolBar
@@ -267,13 +267,13 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
     }
     
     
-    @IBAction func ethnicityChange(sender: UISwitch) {
-        ethnicitySpecifics.hidden = true
+    @IBAction func ethnicityChange(_ sender: UISwitch) {
+        ethnicitySpecifics.isHidden = true
         ethnicity = ""
         
         switch sender.tag {
         case 0:
-            if sender.on {
+            if sender.isOn {
                 ethnicity = "No"
                 
                 mexicanSwitch.setOn(false, animated: true)
@@ -283,7 +283,7 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
                 otherSpanishSwitch.setOn(false, animated: true)
             }
         case 1:
-            if sender.on {
+            if sender.isOn {
                 ethnicity = "Mexican, Mexican American, Chicano"
                 
                 notHispanicSwitch.setOn(false, animated: true)
@@ -293,7 +293,7 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
                 otherSpanishSwitch.setOn(false, animated: true)
             }
         case 2:
-            if sender.on {
+            if sender.isOn {
                 ethnicity = "Puerto Rican"
                 
                 mexicanSwitch.setOn(false, animated: true)
@@ -303,7 +303,7 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
                 otherSpanishSwitch.setOn(false, animated: true)
             }
         case 3:
-            if sender.on {
+            if sender.isOn {
                 ethnicity = "Cuban"
                 
                 mexicanSwitch.setOn(false, animated: true)
@@ -313,7 +313,7 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
                 otherSpanishSwitch.setOn(false, animated: true)
             }
         case 4:
-            if sender.on {
+            if sender.isOn {
                 ethnicity = "Central America"
                 
                 mexicanSwitch.setOn(false, animated: true)
@@ -323,7 +323,7 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
                 otherSpanishSwitch.setOn(false, animated: true)
             }
         case 5:
-            if sender.on {
+            if sender.isOn {
                 ethnicity = "other"
                 
                 mexicanSwitch.setOn(false, animated: true)
@@ -332,16 +332,16 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
                 centralAmericaSwitch.setOn(false, animated: true)
                 notHispanicSwitch.setOn(false, animated: true)
             }
-            ethnicitySpecifics.hidden = false
+            ethnicitySpecifics.isHidden = false
         default:
             ethnicity = ""
-            ethnicitySpecifics.hidden = true
+            ethnicitySpecifics.isHidden = true
         }
         
         print("\(ethnicity)")
     }
     
-    @IBAction func raceChange(sender: UISwitch) {
+    @IBAction func raceChange(_ sender: UISwitch) {
         var name = ""
         
         switch sender.tag {
@@ -372,24 +372,24 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
         print("\(race)")
     }
     
-    func raceArrayEdits(name: String, switchObject: UISwitch) {
-        if switchObject.on {
+    func raceArrayEdits(_ name: String, switchObject: UISwitch) {
+        if switchObject.isOn {
             race.append(name)
         } else {
             if race.contains(name) {
-                race.removeAtIndex(race.indexOf(name)!)
+                race.remove(at: race.index(of: name)!)
             }
         }
     }
     
-    @IBAction func martialStatusChange(sender: UISwitch) {
+    @IBAction func martialStatusChange(_ sender: UISwitch) {
         martialStatus = ""
-        togetherPartner.hidden = true
-        separatedPartner.hidden = true
+        togetherPartner.isHidden = true
+        separatedPartner.isHidden = true
         
         switch sender.tag {
         case 0:
-            if sender.on {
+            if sender.isOn {
                 martialStatus = "Single"
                 
                 marriedSwitch.setOn(false, animated: true)
@@ -408,9 +408,9 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
                 }
             }
         case 1:
-            if sender.on {
+            if sender.isOn {
                 martialStatus = "Married"
-                togetherPartner.hidden = false
+                togetherPartner.isHidden = false
                 
                 singleSwitch.setOn(false, animated: true)
                 partnerSwitch.setOn(false, animated: true)
@@ -437,9 +437,9 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
                 }
             }
         case 2:
-            if sender.on {
+            if sender.isOn {
                 martialStatus = "Partner"
-                togetherPartner.hidden = false
+                togetherPartner.isHidden = false
                 
                 marriedSwitch.setOn(false, animated: true)
                 singleSwitch.setOn(false, animated: true)
@@ -466,7 +466,7 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
                 }
             }
         case 3:
-            if sender.on {
+            if sender.isOn {
                 martialStatus = "Widow"
                 
                 marriedSwitch.setOn(false, animated: true)
@@ -485,9 +485,9 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
                 }
             }
         case 4:
-            if sender.on {
+            if sender.isOn {
                 martialStatus = "Separated"
-                separatedPartner.hidden = false
+                separatedPartner.isHidden = false
                 
                 marriedSwitch.setOn(false, animated: true)
                 partnerSwitch.setOn(false, animated: true)
@@ -515,12 +515,12 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
             }
         default:
             martialStatus = ""
-            togetherPartner.hidden = true
-            separatedPartner.hidden = true
+            togetherPartner.isHidden = true
+            separatedPartner.isHidden = true
         }
     }
     
-    @IBAction func addChild(sender: AnyObject) {
+    @IBAction func addChild(_ sender: AnyObject) {
         ages.append(childAgeTextField.text!)
         sexes.append(childGenderTextField.text!)
         
@@ -530,9 +530,9 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
         childGenderTextField.text = ""
     }
     
-    @IBAction func haveChildren(sender: UISegmentedControl) {
+    @IBAction func haveChildren(_ sender: UISegmentedControl) {
         if(sender.selectedSegmentIndex == 0) {
-            self.childView.hidden = false
+            self.childView.isHidden = false
             isHasChildren = true
             
             if isSubMartialStatus {
@@ -542,7 +542,7 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
             }
             
         } else if(sender.selectedSegmentIndex == 1) {
-            self.childView.hidden = true
+            self.childView.isHidden = true
             isHasChildren = false
             
             if isSubMartialStatus {
@@ -558,62 +558,62 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
     
     // Mark: Delegate
     
-    func doneDatePicker(sender: UIDatePicker) {
+    func doneDatePicker(_ sender: UIDatePicker) {
         dobTextField.resignFirstResponder()
     }
     
-    func donePicker(sender: UIPickerView) {
+    func donePicker(_ sender: UIPickerView) {
         genderTextField.resignFirstResponder()
     }
     
-    func datePickerValueChanged(sender:UIDatePicker) {
+    func datePickerValueChanged(_ sender:UIDatePicker) {
         
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         
         dateFormatter.dateFormat = "MM-dd-yyyy"
         
-        dobTextField.text = dateFormatter.stringFromDate(sender.date)
+        dobTextField.text = dateFormatter.string(from: sender.date)
         
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickOption.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickOption[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         genderTextField.text = pickOption[row]
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ages.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! ChildTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath) as! ChildTableViewCell
         
-        let row = indexPath.row
+        let row = (indexPath as NSIndexPath).row
         cell.ageLabel?.text = String(ages[row])
         cell.sexLabel?.text = sexes[row]
         
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
-        let row = indexPath.row
+        let row = (indexPath as NSIndexPath).row
         print(ages[row])
     }
 }

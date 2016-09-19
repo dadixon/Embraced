@@ -18,9 +18,9 @@ class TestViewController: FrontViewController {
             return Float(step) / Float(totalSteps)
         }
     }
-    let prefs = NSUserDefaults.standardUserDefaults()
+    let prefs = UserDefaults.standard
     
-    var postValues = [String](count: 10, repeatedValue: "")
+    var postValues = [String](repeating: "", count: 10)
     var strongHand = String()
     var childPickOption = ["Male", "Female"]
     var ages = [String]()
@@ -39,11 +39,11 @@ class TestViewController: FrontViewController {
     
     // MARK: Actions
     
-    @IBAction func back(sender: AnyObject) {
-        self.navigationController!.popViewControllerAnimated(true)
+    @IBAction func back(_ sender: AnyObject) {
+        self.navigationController!.popViewController(animated: true)
     }
     
-    @IBAction func next(sender: AnyObject) {
+    @IBAction func next(_ sender: AnyObject) {
         let testViewController:TestViewController = TestViewController()
         self.navigationController!.pushViewController(testViewController, animated: true)
     }

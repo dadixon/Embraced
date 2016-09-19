@@ -19,9 +19,9 @@ class Question2ViewController: FrontViewController {
         }
     }
     
-    let prefs = NSUserDefaults.standardUserDefaults()
+    let prefs = UserDefaults.standard
     
-    var postValues = [String](count: 10, repeatedValue: "")
+    var postValues = [String](repeating: "", count: 10)
     var strongHand = String()
     var childPickOption = ["Male", "Female"]
     var ages = [String]()
@@ -35,7 +35,7 @@ class Question2ViewController: FrontViewController {
         progressView.progress = progress
         progressLabel.text = "Progress (\(step)/\(totalSteps))"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(next))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(getter: next))
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,10 +45,10 @@ class Question2ViewController: FrontViewController {
     
     // MARK: Actions
     
-    @IBAction func next(sender: AnyObject) {
+    @IBAction func next(_ sender: AnyObject) {
         var navigationArray = self.navigationController?.viewControllers
         
-        navigationArray?.removeAtIndex(0)
+        navigationArray?.remove(at: 0)
         
         let question3ViewController:Question3ViewController = Question3ViewController()
         navigationArray?.append(question3ViewController)

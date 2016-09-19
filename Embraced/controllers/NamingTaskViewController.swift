@@ -29,8 +29,8 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     
     let skipBtnDelay = 5.0 * Double(NSEC_PER_SEC)
     
-    var startTime = NSTimeInterval()
-    var timer = NSTimer()
+    var startTime = TimeInterval()
+    var timer = Timer()
     var isRunning = false
     
     
@@ -39,26 +39,26 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
 
         setupRecorder()
         
-        let requestURL: NSURL = NSURL(string: "http://api.girlscouts.harryatwal.com/name_task")!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL)
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(urlRequest) {
+        let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/name_task")!
+        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
             (data, response, error) -> Void in
             
-            let httpResponse = response as! NSHTTPURLResponse
+            let httpResponse = response as! HTTPURLResponse
             let statusCode = httpResponse.statusCode
             
             if (statusCode == 200) {
                 print("Everyone is fine, file downloaded successfully.")
                 
                 do {
-                    self.stimuli = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments) as! [String]
+                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String]
                     self.loadImageFromUrl(self.stimuli[0], view: self.imageView)
                 }catch {
                     print("Error with Json: \(error)")
                 }
             }
-        }
+        }) 
         
         task.resume()
         
@@ -70,37 +70,37 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         // Dispose of any resources that can be recreated.
     }
     
-    func loadImageFromUrl(url: String, view: UIImageView){
+    func loadImageFromUrl(_ url: String, view: UIImageView){
         
         // Create Url from string
-        let url = NSURL(string: url)!
+        let url = URL(string: url)!
         
         // Download task:
         // - sharedSession = global NSURLCache, NSHTTPCookieStorage and NSURLCredentialStorage objects.
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (responseData, responseUrl, error) -> Void in
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { (responseData, responseUrl, error) -> Void in
             // if responseData is not null...
             if let data = responseData{
                 
                 // execute in UI thread
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                DispatchQueue.main.async(execute: { () -> Void in
                     view.image = UIImage(data: data)
                 })
             }
-        }
+        }) 
         
         // Run task
         task.resume()
     }
     
     func setupRecorder() {
-        let recordSettings : [String:AnyObject] = [AVFormatIDKey: NSNumber(int: Int32(kAudioFormatAppleLossless)),
-                              AVEncoderAudioQualityKey: NSNumber(int: Int32(AVAudioQuality.Max.rawValue)),
-                              AVEncoderBitRateKey: NSNumber(int: Int32(320000)),
-                              AVNumberOfChannelsKey: NSNumber(int: 2),
-                              AVSampleRateKey: NSNumber(float: Float(44100.0))]
+        let recordSettings : [String:AnyObject] = [AVFormatIDKey: NSNumber(value: Int32(kAudioFormatAppleLossless) as Int32),
+                              AVEncoderAudioQualityKey: NSNumber(value: Int32(AVAudioQuality.max.rawValue) as Int32),
+                              AVEncoderBitRateKey: NSNumber(value: Int32(320000) as Int32),
+                              AVNumberOfChannelsKey: NSNumber(value: 2 as Int32),
+                              AVSampleRateKey: NSNumber(value: Float(44100.0) as Float)]
         
         do {
-            soundRecorder = try AVAudioRecorder(URL: getFileURL(), settings: recordSettings)
+            soundRecorder = try AVAudioRecorder(url: getFileURL(), settings: recordSettings)
             soundRecorder.delegate = self
             soundRecorder.prepareToRecord()
         } catch {
@@ -110,27 +110,27 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     }
 
     func getCacheDirectory() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true) 
+        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true) 
         
         return paths[0]
     }
     
-    func getFileURL() -> NSURL {
+    func getFileURL() -> URL {
         let path = getCacheDirectory().stringByAppendingPathComponent(fileName)
-        let filePath = NSURL(fileURLWithPath: path)
+        let filePath = URL(fileURLWithPath: path)
         
         return filePath
     }
     
-    @IBAction func record(sender: UIButton) {
+    @IBAction func record(_ sender: UIButton) {
         if sender.titleLabel!.text == "Record" {
             soundRecorder.record()
-            sender.setTitle("Stop", forState: .Normal)
-            playBtn.enabled = false
+            sender.setTitle("Stop", for: UIControlState())
+            playBtn.isEnabled = false
         } else {
             soundRecorder.stop()
-            sender.setTitle("Record", forState: .Normal)
-            playBtn.enabled = false
+            sender.setTitle("Record", for: UIControlState())
+            playBtn.isEnabled = false
             resetTimer()
             startTimer()
             
@@ -143,21 +143,21 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         }
     }
     
-    @IBAction func playSound(sender: UIButton) {
+    @IBAction func playSound(_ sender: UIButton) {
         if sender.titleLabel!.text == "Play" {
-            recordBtn.enabled = false
-            sender.setTitle("Stop", forState: .Normal)
+            recordBtn.isEnabled = false
+            sender.setTitle("Stop", for: UIControlState())
             preparePlayer()
             soundPlayer.play()
         } else {
             soundPlayer.stop()
-            sender.setTitle("Play", forState: .Normal)
+            sender.setTitle("Play", for: UIControlState())
         }
     }
     
     func preparePlayer() {
         do {
-            soundPlayer = try AVAudioPlayer(contentsOfURL: getFileURL())
+            soundPlayer = try AVAudioPlayer(contentsOf: getFileURL())
             soundPlayer.delegate = self
             soundPlayer.prepareToPlay()
             soundPlayer.volume = 1.0
@@ -168,19 +168,19 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     
     func updateTime() {
         
-        let currentTime = NSDate.timeIntervalSinceReferenceDate()
+        let currentTime = Date.timeIntervalSinceReferenceDate
         
-        var elapsedTime : NSTimeInterval = currentTime - startTime
+        var elapsedTime : TimeInterval = currentTime - startTime
         
         //calculate the minutes in elapsed time
         
         let minutes = UInt8(elapsedTime / 60.0)
-        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        elapsedTime -= (TimeInterval(minutes) * 60)
         
         //calculate the seconds in elapsed time
         
         let seconds = UInt8(elapsedTime)
-        elapsedTime -= NSTimeInterval(seconds)
+        elapsedTime -= TimeInterval(seconds)
         
         
         //fraction of milliseconds
@@ -203,13 +203,13 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     }
     
     func startTimer() {
-        if !timer.valid {
+        if !timer.isValid {
             
             let aSelector : Selector = #selector(NamingTaskViewController.updateTime)
             
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
             
-            startTime = NSDate.timeIntervalSinceReferenceDate()
+            startTime = Date.timeIntervalSinceReferenceDate
         }
     }
     
@@ -218,13 +218,13 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         timerCount.text = "00:00:00"
     }
     
-    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
-        playBtn.enabled = true
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        playBtn.isEnabled = true
     }
     
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
-        recordBtn.enabled = true
-        playBtn.setTitle("Play", forState: .Normal)
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        recordBtn.isEnabled = true
+        playBtn.setTitle("Play", for: UIControlState())
     }
     
     /*
@@ -239,7 +239,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
 }
 
 extension String {
-    func stringByAppendingPathComponent(pathComponent: String) -> String {
-        return (self as NSString).stringByAppendingPathComponent(pathComponent)
+    func stringByAppendingPathComponent(_ pathComponent: String) -> String {
+        return (self as NSString).appendingPathComponent(pathComponent)
     }
 }

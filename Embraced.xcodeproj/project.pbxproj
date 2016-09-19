@@ -390,6 +390,7 @@
 					A48B4DC01CF9E7C600878928 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = PUVE8AV9GJ;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -738,6 +739,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced.Embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -754,6 +756,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced.Embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

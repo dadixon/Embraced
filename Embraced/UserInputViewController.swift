@@ -22,12 +22,12 @@ class UserInputViewController: UIViewController {
     @IBOutlet weak var floorTextField: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
     
-    let participant = NSUserDefaults.standardUserDefaults()
+    let participant = UserDefaults.standard
     
-    private func setBottomBorder(textfield: UITextField) {
+    fileprivate func setBottomBorder(_ textfield: UITextField) {
         let border = CALayer()
         let width = CGFloat(2.0)
-        let borderColor = UIColor.darkGrayColor().CGColor
+        let borderColor = UIColor.darkGray.cgColor
         
         border.borderColor = borderColor
         border.borderWidth = width
@@ -37,10 +37,10 @@ class UserInputViewController: UIViewController {
         textfield.layer.masksToBounds = true
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
         
         Stormpath.sharedSession.me { (account, error) -> Void in
             if let account = account {
@@ -54,9 +54,9 @@ class UserInputViewController: UIViewController {
         
         submitBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
         
-        let uuid = NSUUID().UUIDString
-        let index = uuid.endIndex.advancedBy(-28)
-        participantID.text = uuid.substringToIndex(index)
+        let uuid = UUID().uuidString
+        let index = uuid.characters.index(uuid.endIndex, offsetBy: -28)
+        participantID.text = uuid.substring(to: index)
 
     }
 
@@ -65,11 +65,11 @@ class UserInputViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
-    @IBAction func submit(sender: AnyObject) {
+    @IBAction func submit(_ sender: AnyObject) {
 //        self.saveUserInputs()
         participant.setValue(participantID.text, forKey: "pid")
         participant.setValue(dayOfTheWeekTextField.text, forKey: "dayOfTheWeek")
@@ -83,7 +83,7 @@ class UserInputViewController: UIViewController {
         
         let questionnaireViewController:Question1ViewController = Question1ViewController()
         let navController = UINavigationController(rootViewController: questionnaireViewController)
-        self.presentViewController(navController, animated: true, completion: nil)
+        self.present(navController, animated: true, completion: nil)
         
         
     }

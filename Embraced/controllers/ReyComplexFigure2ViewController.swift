@@ -15,10 +15,10 @@ class ReyComplexFigure2ViewController: FrontViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(next))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(getter: next))
         
-        let url = NSURL (string: "http://girlscouts.harryatwal.com/reyComplexFigure.php");
-        let requestObj = NSURLRequest(URL: url!);
+        let url = URL (string: "http://girlscouts.harryatwal.com/reyComplexFigure.php");
+        let requestObj = URLRequest(url: url!);
         myWebView.loadRequest(requestObj);
     }
     
@@ -30,7 +30,7 @@ class ReyComplexFigure2ViewController: FrontViewController {
     
     // MARK: - Navigation
     
-    @IBAction func next(sender: AnyObject) {
+    @IBAction func next(_ sender: AnyObject) {
         //        var jsonObject = [String: AnyObject]()
         //
         //        // Gather data for post
@@ -58,7 +58,7 @@ class ReyComplexFigure2ViewController: FrontViewController {
         
         var navigationArray = self.navigationController?.viewControllers
         
-        navigationArray?.removeAtIndex(0)
+        navigationArray?.remove(at: 0)
         
         let trailMakingTestViewController:TrailMakingTestViewController = TrailMakingTestViewController()
         navigationArray?.append(trailMakingTestViewController)
