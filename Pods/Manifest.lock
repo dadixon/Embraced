@@ -1,15 +1,12 @@
 PODS:
-  - ISRadioButton (0.1.0)
   - Stormpath (1.2)
 
 DEPENDENCIES:
-  - ISRadioButton (~> 0.1)
   - Stormpath (~> 1.2)
 
 SPEC CHECKSUMS:
-  ISRadioButton: 5d54cd73c4dc996c69a63c82e91c13433273cf14
   Stormpath: 2cc5b19d774d6fe3d33b542019ca906b89391ea5
 
-PODFILE CHECKSUM: 95e45aedb845c0dac2d4506c9b51e52908def8f4
+PODFILE CHECKSUM: 7bf3601d6c7eada3bbff0405e46b368c6194b3fc
 
 COCOAPODS: 1.0.0
