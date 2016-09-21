@@ -25,7 +25,7 @@ class Question3ViewController: FrontViewController {
         progressView.progress = progress
         progressLabel.text = "Progress (\(step)/\(totalSteps))"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(getter: next))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(Question3ViewController.next(_:)))
     }
 
     override func didReceiveMemoryWarning() {

@@ -100,7 +100,7 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
         progressView.progress = progress
         progressLabel.text = "Progress (\(step)/\(totalSteps))"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(getter: next))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(Question1ViewController.next(_:)))
         
         writingSegment.addTarget(self, action: #selector(segmentChanged), for: UIControlEvents.valueChanged)
         drawingSegment.addTarget(self, action: #selector(segmentChanged), for: UIControlEvents.valueChanged)
@@ -113,19 +113,19 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
         matchSegment.addTarget(self, action: #selector(segmentChanged), for: UIControlEvents.valueChanged)
         lidSegment.addTarget(self, action: #selector(segmentChanged), for: UIControlEvents.valueChanged)
         
-        self.childrenTopHighConstraint.constant = 8.0
+//        self.childrenTopHighConstraint.constant = 8.0
         
-        togetherPartner.isHidden = true
-        separatedPartner.isHidden = true
-        childView.isHidden = true
+//        togetherPartner.isHidden = true
+//        separatedPartner.isHidden = true
+//        childView.isHidden = true
+//        
+//        childrenTableView.delegate = self
+//        childrenTableView.dataSource = self
         
-        childrenTableView.delegate = self
-        childrenTableView.dataSource = self
-        
-        let nib = UINib(nibName: "ChildTableViewCell", bundle: nil)
-        childrenTableView.register(nib, forCellReuseIdentifier: "ChildTableViewCell")
-        
-        self.martialStatusHeightConstriant.constant = martialStatusInitHeight
+//        let nib = UINib(nibName: "ChildTableViewCell", bundle: nil)
+//        childrenTableView.register(nib, forCellReuseIdentifier: "ChildTableViewCell")
+//        
+//        self.martialStatusHeightConstriant.constant = martialStatusInitHeight
     }
     
     override func didReceiveMemoryWarning() {

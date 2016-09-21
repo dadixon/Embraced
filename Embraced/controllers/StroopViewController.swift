@@ -15,7 +15,7 @@ class StroopViewController: FrontViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(getter: next))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(StroopViewController.next(_:)))
         
         let url = URL (string: "http://girlscouts.harryatwal.com/stroop.php");
         let requestObj = URLRequest(url: url!);

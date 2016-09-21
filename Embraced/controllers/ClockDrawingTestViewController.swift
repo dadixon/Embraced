@@ -15,7 +15,7 @@ class ClockDrawingTestViewController: FrontViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(getter: next))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ClockDrawingTestViewController.next(_:)))
         
         let url = URL (string: "http://girlscouts.harryatwal.com/clockDrawing.php");
         let requestObj = URLRequest(url: url!);
