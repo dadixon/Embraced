@@ -331,8 +331,11 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
                 cubanSwitch.setOn(false, animated: true)
                 centralAmericaSwitch.setOn(false, animated: true)
                 notHispanicSwitch.setOn(false, animated: true)
+                ethnicitySpecifics.isHidden = false
+            } else {
+                ethnicitySpecifics.isHidden = true
             }
-            ethnicitySpecifics.isHidden = false
+            
         default:
             ethnicity = ""
             ethnicitySpecifics.isHidden = true
