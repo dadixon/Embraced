@@ -37,6 +37,8 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(NamingTaskViewController.next(_:)))
+        
         setupRecorder()
         
         let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/name_task")!
@@ -227,15 +229,18 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         playBtn.setTitle("Play", for: UIControlState())
     }
     
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func next(_ sender: AnyObject) {
+        var navigationArray = self.navigationController?.viewControllers
+        
+        navigationArray?.remove(at: 0)
+        
+        let multipleErrandsViewController:MultipleErrandsViewController = MultipleErrandsViewController()
+        navigationArray?.append(multipleErrandsViewController)
+        
+        self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }
-    */
 }
 
 extension String {

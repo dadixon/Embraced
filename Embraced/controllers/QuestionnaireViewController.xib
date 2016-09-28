@@ -1,101 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
-        </mutableArray>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionnaireViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
-                <outlet property="mainView" destination="PaM-u1-uvU" id="oFy-RH-BPW"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="mainView" destination="XZG-ZL-cZS" id="rgk-az-Qnw"/>
+                <outlet property="myWebView" destination="g6o-Us-yZn" id="LT9-LG-Hxu"/>
+                <outlet property="view" destination="J3q-W3-s7m" id="w7z-fF-E2e"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="J3q-W3-s7m">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PaM-u1-uvU">
-                    <rect key="frame" x="8" y="65" width="584" height="527"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZG-ZL-cZS">
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hkI-aj-lZ3">
-                            <rect key="frame" x="-183" y="240" width="950" height="47"/>
-                            <subviews>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kA6-oD-wUt">
-                                    <rect key="frame" x="304" y="32" width="342" height="2"/>
-                                </progressView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpl-lq-k5b">
-                                    <rect key="frame" x="454" y="8" width="42" height="21"/>
-                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="47" id="Von-gW-rzU"/>
-                            </constraints>
-                        </view>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRm-rM-KAy">
-                            <rect key="frame" x="-183" y="-2558" width="950" height="5644"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UFh-9X-X0w">
-                                    <rect key="frame" x="280" y="0.0" width="436" height="5644"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwN-xr-Dr6">
-                                            <rect key="frame" x="174" y="22" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEH-rP-Bv9">
-                                            <rect key="frame" x="167" y="5611" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.91764705879999997" green="0.92549019610000005" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="5644" id="LZ7-lr-IX5"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="UFh-9X-X0w" secondAttribute="trailing" id="0bk-I6-KaW"/>
-                                <constraint firstItem="UFh-9X-X0w" firstAttribute="top" secondItem="uRm-rM-KAy" secondAttribute="top" id="8l9-W0-uEW"/>
-                                <constraint firstItem="UFh-9X-X0w" firstAttribute="top" secondItem="uRm-rM-KAy" secondAttribute="top" id="9ca-F2-AFg"/>
-                                <constraint firstAttribute="bottom" secondItem="UFh-9X-X0w" secondAttribute="bottom" id="AWX-jZ-vcL"/>
-                                <constraint firstItem="UFh-9X-X0w" firstAttribute="top" secondItem="uRm-rM-KAy" secondAttribute="top" id="c5n-yt-RsR"/>
-                                <constraint firstItem="UFh-9X-X0w" firstAttribute="leading" secondItem="uRm-rM-KAy" secondAttribute="leading" id="lHe-Qs-Fdq"/>
-                                <constraint firstItem="UFh-9X-X0w" firstAttribute="centerY" secondItem="uRm-rM-KAy" secondAttribute="centerY" id="xpR-0J-qsW"/>
-                            </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="9ca-F2-AFg"/>
-                                    <exclude reference="8l9-W0-uEW"/>
-                                    <exclude reference="xpR-0J-qsW"/>
-                                </mask>
-                            </variation>
-                        </scrollView>
+                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6o-Us-yZn">
+                            <color key="backgroundColor" red="0.28958413" green="0.31462949509999999" blue="0.32950475810000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </webView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="g6o-Us-yZn" firstAttribute="leading" secondItem="XZG-ZL-cZS" secondAttribute="leading" id="2Wj-7v-EMV"/>
+                        <constraint firstAttribute="bottom" secondItem="g6o-Us-yZn" secondAttribute="bottom" id="kGv-5y-LlJ"/>
+                        <constraint firstAttribute="trailing" secondItem="g6o-Us-yZn" secondAttribute="trailing" id="spV-hs-ddA"/>
+                        <constraint firstItem="g6o-Us-yZn" firstAttribute="top" secondItem="XZG-ZL-cZS" secondAttribute="top" id="zgv-6v-M86"/>
+                    </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="PaM-u1-uvU" secondAttribute="trailing" constant="8" id="5k3-en-C56"/>
-                <constraint firstItem="PaM-u1-uvU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="lbk-xr-njv"/>
-                <constraint firstAttribute="bottom" secondItem="PaM-u1-uvU" secondAttribute="bottom" constant="8" id="nVw-tJ-MpU"/>
-                <constraint firstItem="PaM-u1-uvU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="twW-TI-LV4"/>
+                <constraint firstItem="XZG-ZL-cZS" firstAttribute="leading" secondItem="J3q-W3-s7m" secondAttribute="leading" constant="8" id="HhG-UW-k33"/>
+                <constraint firstAttribute="bottom" secondItem="XZG-ZL-cZS" secondAttribute="bottom" constant="8" id="Lb1-P2-5EC"/>
+                <constraint firstAttribute="trailing" secondItem="XZG-ZL-cZS" secondAttribute="trailing" constant="8" id="kcC-do-4FF"/>
+                <constraint firstItem="XZG-ZL-cZS" firstAttribute="top" secondItem="J3q-W3-s7m" secondAttribute="top" constant="65" id="mEO-tA-SEC"/>
             </constraints>
-            <point key="canvasLocation" x="221" y="455"/>
         </view>
     </objects>
 </document>

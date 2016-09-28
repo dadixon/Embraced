@@ -15,7 +15,7 @@ class DigitalSpanViewController: FrontViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(getter: next))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(DigitalSpanViewController.next(_:)))
         
         let url = URL (string: "http://girlscouts.harryatwal.com/trailMaking.php");
         let requestObj = URLRequest(url: url!);
