@@ -60,7 +60,7 @@ class ReyComplexFigure3ViewController: FrontViewController {
         
         navigationArray?.remove(at: 0)
         
-        let reyComplexFigure4ViewController:ReyComplexFigure3ViewController = ReyComplexFigure3ViewController()
+        let reyComplexFigure4ViewController:ReyFigureComplex4ViewController = ReyFigureComplex4ViewController()
         navigationArray?.append(reyComplexFigure4ViewController)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)

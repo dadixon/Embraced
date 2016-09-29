@@ -61,7 +61,7 @@ class CancellationTestViewController: FrontViewController {
         
         navigationArray?.remove(at: 0)
         
-        let eyeTestViewController:EyeTestViewController = EyeTestViewController()
+        let eyeTestViewController:NamingTaskViewController = NamingTaskViewController()
         navigationArray?.append(eyeTestViewController)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)

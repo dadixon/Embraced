@@ -61,7 +61,7 @@ class MatricesViewController: FrontViewController {
         
         navigationArray?.remove(at: 0)
         
-        let mOCAMMSETestViewController:MOCAMMSETestViewController = MOCAMMSETestViewController()
+        let mOCAMMSETestViewController:PegboardViewController = PegboardViewController()
         navigationArray?.append(mOCAMMSETestViewController)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)

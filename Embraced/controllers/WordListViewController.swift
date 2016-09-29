@@ -61,7 +61,7 @@ class WordListViewController: FrontViewController {
         
         navigationArray?.remove(at: 0)
         
-        let mOCAMMSETestViewController:MOCAMMSETestViewController = MOCAMMSETestViewController()
+        let mOCAMMSETestViewController:CancellationTestViewController = CancellationTestViewController()
         navigationArray?.append(mOCAMMSETestViewController)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
