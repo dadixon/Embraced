@@ -54,6 +54,9 @@
 		A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */; };
 		A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */; };
 		A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */; };
+		A4773D051D9D5D1A00E5CCEE /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773D041D9D5D1A00E5CCEE /* record.png */; };
+		A4773D071D9D5D3C00E5CCEE /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773D061D9D5D3C00E5CCEE /* play.png */; };
+		A4773D091D9D5D6D00E5CCEE /* listen.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773D081D9D5D6D00E5CCEE /* listen.png */; };
 		A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC41CF9E7C700878928 /* AppDelegate.swift */; };
 		A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC61CF9E7C700878928 /* ViewController.swift */; };
 		A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48B4DC81CF9E7C700878928 /* Main.storyboard */; };
@@ -140,6 +143,9 @@
 		A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrailMakingTestViewController.xib; path = controllers/TrailMakingTestViewController.xib; sourceTree = "<group>"; };
 		A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOCAMMSETestViewController.swift; path = controllers/MOCAMMSETestViewController.swift; sourceTree = "<group>"; };
 		A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MOCAMMSETestViewController.xib; path = controllers/MOCAMMSETestViewController.xib; sourceTree = "<group>"; };
+		A4773D041D9D5D1A00E5CCEE /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = record.png; path = ../../../Downloads/record.png; sourceTree = "<group>"; };
+		A4773D061D9D5D3C00E5CCEE /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = ../../../Downloads/play.png; sourceTree = "<group>"; };
+		A4773D081D9D5D6D00E5CCEE /* listen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = listen.png; path = ../../../Downloads/listen.png; sourceTree = "<group>"; };
 		A48B4DC11CF9E7C600878928 /* Embraced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embraced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48B4DC41CF9E7C700878928 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A48B4DC61CF9E7C700878928 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -303,6 +309,9 @@
 		A48B4DD91CF9EEAB00878928 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A4773D081D9D5D6D00E5CCEE /* listen.png */,
+				A4773D061D9D5D3C00E5CCEE /* play.png */,
+				A4773D041D9D5D1A00E5CCEE /* record.png */,
 				A42530181D9CC49200AEE7F8 /* listen.png */,
 				A42530161D9CB49B00AEE7F8 /* play.png */,
 				A42530141D9CB30000AEE7F8 /* record.png */,
@@ -367,7 +376,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A48B4DD61CF9E7C700878928 /* Build configuration list for PBXNativeTarget "Embraced" */;
 			buildPhases = (
-				6391EC2967FC335C4B260526 /* 📦 Check Pods Manifest.lock */,
+				6391EC2967FC335C4B260526 /* [CP] Check Pods Manifest.lock */,
 				5E743F95A972D997F54D05F4 /* [CP] Check Pods Manifest.lock */,
 				A48B4DBD1CF9E7C600878928 /* Sources */,
 				A48B4DBE1CF9E7C600878928 /* Frameworks */,
@@ -427,6 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4773D091D9D5D6D00E5CCEE /* listen.png in Resources */,
 				A490D7D41D0919CB00D2B59D /* Roboto-Bold.ttf in Resources */,
 				A4A7942C1D68E42200305AB4 /* Question1ViewController.xib in Resources */,
 				A490D7D81D0919CB00D2B59D /* Roboto-LightItalic.ttf in Resources */,
@@ -441,6 +451,7 @@
 				A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */,
 				A42530191D9CC49200AEE7F8 /* listen.png in Resources */,
 				A490D7D71D0919CB00D2B59D /* Roboto-Light.ttf in Resources */,
+				A4773D071D9D5D3C00E5CCEE /* play.png in Resources */,
 				A4347FCE1D7BCA570033306A /* ReyFigureComplex4ViewController.xib in Resources */,
 				A46C14241D79AA7C0066EF37 /* ClockDrawingTestViewController.xib in Resources */,
 				A4A794301D68E57F00305AB4 /* Question2ViewController.xib in Resources */,
@@ -455,6 +466,7 @@
 				A4A794381D68F62800305AB4 /* Localizable.strings in Resources */,
 				A4347FE01D7BCB800033306A /* NamingTaskViewController.xib in Resources */,
 				A4BB08ED1D7EDFFA00B76C64 /* QuestionnaireViewController.xib in Resources */,
+				A4773D051D9D5D1A00E5CCEE /* record.png in Resources */,
 				A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */,
 				A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */,
 				A490D7D91D0919CB00D2B59D /* Roboto-Medium.ttf in Resources */,
@@ -495,14 +507,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6391EC2967FC335C4B260526 /* 📦 Check Pods Manifest.lock */ = {
+		6391EC2967FC335C4B260526 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,7 +760,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Embraced/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.embraced.Embraced;
+				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
@@ -765,7 +777,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Embraced/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.embraced.Embraced;
+				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
