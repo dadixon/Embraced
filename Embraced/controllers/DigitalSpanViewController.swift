@@ -15,13 +15,13 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     @IBOutlet weak var instructionsView: UIView!
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var recordBtn: UIButton!
+    var recordButton: UIButton!
     
     @IBOutlet weak var listenView: UIView!
     
     @IBOutlet weak var forwardSpanView: UIView!
     
     var recordingSession: AVAudioSession!
-    var audioRecorder: AVAudioRecorder!
     
     var soundRecorder: AVAudioRecorder!
     var soundPlayer: AVAudioPlayer!
@@ -32,9 +32,74 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(DigitalSpanViewController.next(_:)))
         
-        setupRecorder()
+        recordingSession = AVAudioSession.sharedInstance()
+
+        do {
+            try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try recordingSession.setActive(true)
+            recordingSession.requestRecordPermission() { [unowned self] allowed in
+                DispatchQueue.main.async {
+                    if allowed {
+                        self.recordBtn.isEnabled = true
+                    } else {
+                        // failed to record!
+                    }
+                }
+            }
+        } catch {
+            // failed to record!
+        }
 
     }
+
+    
+    func startRecording() {
+        let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName)
+        
+        let settings = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 12000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+        
+        do {
+            soundRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            soundRecorder.delegate = self
+            soundRecorder.record()
+            
+            recordBtn.setTitle("Stop", for: .normal)
+        } catch {
+            finishRecording(success: false)
+        }
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
+    func finishRecording(success: Bool) {
+        soundRecorder.stop()
+        soundRecorder = nil
+        
+        if success {
+            recordBtn.setTitle("Re-record", for: .normal)
+        } else {
+            recordBtn.setTitle("Record", for: .normal)
+            // recording failed :(
+        }
+    }
+    
+    
+    
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if !flag {
+            finishRecording(success: false)
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -43,6 +108,15 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     
     
     // MARK: - Navigation
+    
+    @IBAction func recordTapped() {
+        if soundRecorder == nil {
+            startRecording()
+        } else {
+            finishRecording(success: true)
+        }
+    }
+    
     
     @IBAction func next(_ sender: AnyObject) {
         var navigationArray = self.navigationController?.viewControllers
@@ -54,45 +128,15 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }
-
-    func setupRecorder() {
-        let recordSettings : [String:AnyObject] = [AVFormatIDKey: NSNumber(value: Int32(kAudioFormatAppleLossless) as Int32),
-                                                   AVEncoderAudioQualityKey: NSNumber(value: Int32(AVAudioQuality.max.rawValue) as Int32),
-                                                   AVEncoderBitRateKey: NSNumber(value: Int32(320000) as Int32),
-                                                   AVNumberOfChannelsKey: NSNumber(value: 2 as Int32),
-                                                   AVSampleRateKey: NSNumber(value: Float(44100.0) as Float)]
-        
-        do {
-            soundRecorder = try AVAudioRecorder(url: getFileURL(), settings: recordSettings)
-            soundRecorder.delegate = self
-            soundRecorder.prepareToRecord()
-        } catch {
-            NSLog("Something went wrong")
-        }
-        
-    }
-    
-    func getCacheDirectory() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        
-        return paths[0]
-    }
-    
-    func getFileURL() -> URL {
-        let path = getCacheDirectory().stringByAppendingPathComponent(fileName)
-        let filePath = URL(fileURLWithPath: path)
-        
-        return filePath
-    }
     
     func preparePlayer() {
         do {
-            soundPlayer = try AVAudioPlayer(contentsOf: getFileURL())
+            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName))
             soundPlayer.delegate = self
             soundPlayer.prepareToPlay()
             soundPlayer.volume = 1.0
         } catch {
-            NSLog("Something went wrong")
+            log(logMessage: "Something went wrong")
         }
     }
     
@@ -123,6 +167,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         
         downloadTask.resume()
         
+    }
+    
+    func log(logMessage: String, functionName: String = #function) {
+        print("\(functionName): \(logMessage)")
     }
     
     
@@ -175,12 +223,12 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     
     // MARK: - Delegate
     
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        playBtn.isEnabled = true
-    }
-    
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        recordBtn.isEnabled = true
-        playBtn.setTitle("Play", for: UIControlState())
-    }
+//    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+//        playBtn.isEnabled = true
+//    }
+//    
+//    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+//        recordBtn.isEnabled = true
+//        playBtn.setTitle("Play", for: UIControlState())
+//    }
 }

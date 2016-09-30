@@ -51,7 +51,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTw-bW-qZh">
+                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="rTw-bW-qZh">
                                     <constraints>
                                         <constraint firstAttribute="width" constant="156" id="n4U-LE-OaF"/>
                                     </constraints>
@@ -59,7 +59,7 @@
                                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="record:" destination="-1" eventType="touchUpInside" id="ZPu-LK-V97"/>
+                                        <action selector="recordTapped" destination="-1" eventType="touchUpInside" id="Bav-3b-mZX"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9s-dV-4o3">
@@ -101,7 +101,7 @@
                                 <constraint firstItem="q0o-KB-c3W" firstAttribute="leading" secondItem="5S2-iy-AAu" secondAttribute="leading" id="wL7-9P-4SP"/>
                             </constraints>
                         </view>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fb-au-ugw">
+                        <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fb-au-ugw">
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will have a practice round before starting with the series." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayu-V1-Na3">
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -144,7 +144,7 @@
                                 <constraint firstItem="d6i-yE-O5O" firstAttribute="top" secondItem="D9Z-N7-hGq" secondAttribute="bottom" constant="56" id="u2R-tt-n6I"/>
                             </constraints>
                         </view>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6OV-6J-tRc">
+                        <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6OV-6J-tRc">
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now we will start with the task." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDb-cm-tH4">
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
