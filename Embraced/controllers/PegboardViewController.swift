@@ -16,6 +16,7 @@ class PegboardViewController: FrontViewController {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PegboardViewController.next(_:)))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(PegboardViewController.back(_:)))
         
         let url = URL (string: "http://girlscouts.harryatwal.com/motorTask.php");
         let requestObj = URLRequest(url: url!);
@@ -32,39 +33,18 @@ class PegboardViewController: FrontViewController {
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        //        var jsonObject = [String: AnyObject]()
-        //
-        //        // Gather data for post
-        //        if let id = prefs.stringForKey("pid") {
-        //            print("PID: " + id)
-        //
-        //            jsonObject = [
-        //                "id": id,
-        //                "hand": postValues
-        //            ]
-        //        }
-        //
-        //        print(jsonObject)
-        
-        
-        // Push to API
-        //            let notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/insert_hand_dominate")!
-        //            let request = NSMutableURLRequest(URL: notesEndpoint)
-        //            request.HTTPMethod = "POST"
-        //            request.HTTPBody = try? NSJSONSerialization.dataWithJSONObject(jsonObject, options: [])
-        //            request.setValue("application/json" ?? "", forHTTPHeaderField: "Content-Type")
-        //
-        //            let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
-        //            task.resume()
-        
-        var navigationArray = self.navigationController?.viewControllers
-        
-        navigationArray?.remove(at: 0)
+//        var navigationArray = self.navigationController?.viewControllers
+//        
+//        navigationArray?.remove(at: 0)
         
         let mOCAMMSETestViewController:PitchViewController = PitchViewController()
-        navigationArray?.append(mOCAMMSETestViewController)
-        
-        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+//        navigationArray?.append(mOCAMMSETestViewController)
+//        
+//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+        self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
     }
 
+    @IBAction func back(_ sender: AnyObject) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
 }

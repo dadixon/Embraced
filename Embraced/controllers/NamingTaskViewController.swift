@@ -38,6 +38,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         super.viewDidLoad()
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(NamingTaskViewController.next(_:)))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ReyComplexFigureViewController.back(_:)))
         
         setupRecorder()
         
@@ -232,14 +233,19 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        var navigationArray = self.navigationController?.viewControllers
-        
-        navigationArray?.remove(at: 0)
+//        var navigationArray = self.navigationController?.viewControllers
+//        
+//        navigationArray?.remove(at: 0)
         
         let multipleErrandsViewController:MultipleErrandsViewController = MultipleErrandsViewController()
-        navigationArray?.append(multipleErrandsViewController)
-        
-        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+//        navigationArray?.append(multipleErrandsViewController)
+//        
+//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+        self.navigationController?.pushViewController(multipleErrandsViewController, animated: true)
+    }
+    
+    @IBAction func back(_ sender: AnyObject) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
 }
 

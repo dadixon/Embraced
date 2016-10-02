@@ -15,11 +15,12 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     @IBOutlet weak var instructionsView: UIView!
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var recordBtn: UIButton!
-    var recordButton: UIButton!
     
     @IBOutlet weak var listenView: UIView!
     
     @IBOutlet weak var forwardSpanView: UIView!
+    
+    @IBOutlet var doneView: UIView!
     
     var recordingSession: AVAudioSession!
     
@@ -27,10 +28,15 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     var soundPlayer: AVAudioPlayer!
     var fileName = "testAudioFile.m4a"
     
+    var stimuli : [String] = []
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(DigitalSpanViewController.next(_:)))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(DigitalSpanViewController.back(_:)))
         
         recordingSession = AVAudioSession.sharedInstance()
 
@@ -50,6 +56,27 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
             // failed to record!
         }
 
+        let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/digital_span")!
+        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            if (statusCode == 200) {
+                print("Everyone is fine, file downloaded successfully.")
+                
+                do {
+                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String]
+                }catch {
+                    print("Error with Json: \(error)")
+                }
+            }
+        })
+        
+        task.resume()
     }
 
     
@@ -119,15 +146,22 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     
     
     @IBAction func next(_ sender: AnyObject) {
-        var navigationArray = self.navigationController?.viewControllers
-        
-        navigationArray?.remove(at: 0)
+//        var navigationArray = self.navigationController?.viewControllers
+//        
+//        navigationArray?.remove(at: 0)
         
         let reyComplexFigure3ViewController:ReyComplexFigure3ViewController = ReyComplexFigure3ViewController()
-        navigationArray?.append(reyComplexFigure3ViewController)
-        
-        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+//        navigationArray?.append(reyComplexFigure3ViewController)
+//        
+//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+        self.navigationController?.pushViewController(reyComplexFigure3ViewController, animated: true)
     }
+    
+    @IBAction func back(_ sender: AnyObject) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     
     func preparePlayer() {
         do {
@@ -202,7 +236,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     }
     
     @IBAction func listenToSound(_ sender: AnyObject) {
-        let urlstring = "http://radio.spainmedia.es/wp-content/uploads/2015/12/tailtoddle_lo4.mp3"
+        let urlstring = stimuli[0]
         let url = NSURL(string: urlstring)
         print("the url = \(url!)")
         downloadFileFromURL(url: url!)
@@ -218,6 +252,9 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         forwardSpanView.isHidden = false
     }
     
+    @IBAction func nextSound(_ sender: AnyObject) {
+        
+    }
     
     
     

@@ -16,6 +16,7 @@ class ClockDrawingTestViewController: FrontViewController {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ClockDrawingTestViewController.next(_:)))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ClockDrawingTestViewController.back(_:)))
         
         let url = URL (string: "http://girlscouts.harryatwal.com/clockDrawing.php");
         let requestObj = URLRequest(url: url!);
@@ -30,40 +31,20 @@ class ClockDrawingTestViewController: FrontViewController {
     
     // MARK: - Navigation
 
-    @IBAction func next(_ sender: AnyObject) {
-        //        var jsonObject = [String: AnyObject]()
-        //
-        //        // Gather data for post
-        //        if let id = prefs.stringForKey("pid") {
-        //            print("PID: " + id)
-        //
-        //            jsonObject = [
-        //                "id": id,
-        //                "hand": postValues
-        //            ]
-        //        }
-        //
-        //        print(jsonObject)
-        
-        
-        // Push to API
-        //            let notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/insert_hand_dominate")!
-        //            let request = NSMutableURLRequest(URL: notesEndpoint)
-        //            request.HTTPMethod = "POST"
-        //            request.HTTPBody = try? NSJSONSerialization.dataWithJSONObject(jsonObject, options: [])
-        //            request.setValue("application/json" ?? "", forHTTPHeaderField: "Content-Type")
-        //
-        //            let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
-        //            task.resume()
-        
-        var navigationArray = self.navigationController?.viewControllers
-        
-        navigationArray?.remove(at: 0)
+    @IBAction func next(_ sender: AnyObject) {       
+//        var navigationArray = self.navigationController?.viewControllers
+//        
+//        navigationArray?.remove(at: 0)
         
         let reyComplexFigure2ViewController:ReyComplexFigure2ViewController = ReyComplexFigure2ViewController()
-        navigationArray?.append(reyComplexFigure2ViewController)
-        
-        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+//        navigationArray?.append(reyComplexFigure2ViewController)
+//        
+//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+        self.navigationController?.pushViewController(reyComplexFigure2ViewController, animated: true)
+    }
+    
+    @IBAction func back(_ sender: AnyObject) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
 
 }
