@@ -11,6 +11,9 @@ import AVFoundation
 
 class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
+    @IBOutlet weak var containerView: UIView!
+    
+    @IBOutlet var introView: UIView!
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
     
@@ -20,11 +23,32 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     var soundPlayer: AVAudioPlayer!
     var fileName = "testAudioFile.m4a"
     
+    var step = 1
+    var totalSteps = 3
+    var progress : Float {
+        get {
+            return Float(step) / Float(totalSteps)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        progressView.progress = progress
+        progressLabel.text = "Progress (\(step)/\(totalSteps))"
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(StroopViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(StroopViewController.back(_:)))
+        
+        introView.translatesAutoresizingMaskIntoConstraints = false
+        
+        containerView.addSubview(introView)
+        
+        let leftConstraint = introView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
+        let topConstraint = introView.topAnchor.constraint(equalTo: containerView.topAnchor)
+        let rightConstraint = introView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        let bottomConstraint = introView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
         
         recordingSession = AVAudioSession.sharedInstance()
         
@@ -89,36 +113,12 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         }
     }
     
-    
-    
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if !flag {
-            finishRecording(success: false)
-        }
-    }
-    
-    
-    
-    // MARK: - Navigation
-    
-    @IBAction func next(_ sender: AnyObject) {
-//        var navigationArray = self.navigationController?.viewControllers
-//        
-//        navigationArray?.remove(at: 0)
+    func finishPlaying() {
+        soundPlayer.stop()
+        soundPlayer = nil
         
-        let digitalSpanViewController:DigitalSpanViewController = DigitalSpanViewController()
-//        navigationArray?.append(digitalSpanViewController)
-//        
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        self.navigationController?.pushViewController(digitalSpanViewController, animated: true)
+        playBtn.setTitle("Play", for: .normal)
     }
-    
-    @IBAction func back(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
-    
-    
-    
     
     func preparePlayer() {
         do {
@@ -165,17 +165,32 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     }
     
     
-    // MARK: - Action
+    // MARK: - Navigation
     
-    @IBAction func record(_ sender: UIButton) {
-        if sender.titleLabel!.text == "Start" {
-            soundRecorder.record()
-            sender.setTitle("Stop", for: UIControlState())
-            playBtn.isEnabled = false
+    @IBAction func next(_ sender: AnyObject) {
+//        var navigationArray = self.navigationController?.viewControllers
+//        
+//        navigationArray?.remove(at: 0)
+        
+        let digitalSpanViewController:DigitalSpanViewController = DigitalSpanViewController()
+//        navigationArray?.append(digitalSpanViewController)
+//        
+//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+        self.navigationController?.pushViewController(digitalSpanViewController, animated: true)
+    }
+    
+    @IBAction func back(_ sender: AnyObject) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    // MARK: - Actions
+    
+    @IBAction func recordTapped() {
+        if soundRecorder == nil {
+            startRecording()
         } else {
-            soundRecorder.stop()
-            sender.setTitle("Start", for: UIControlState())
-            playBtn.isEnabled = false
+            finishRecording(success: true)
         }
     }
     
@@ -191,4 +206,17 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         }
     }
 
+    
+    // MARK: - Delegate
+    
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if !flag {
+            finishRecording(success: false)
+        }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        NSLog("finished playing")
+        finishPlaying()
+    }
 }

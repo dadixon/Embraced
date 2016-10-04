@@ -36,7 +36,7 @@ class TrailMakingTestViewController: FrontViewController {
 //        
 //        navigationArray?.remove(at: 0)
         
-        let stroopViewController:DigitalSpanViewController = DigitalSpanViewController()
+        let stroopViewController:StroopViewController = StroopViewController()
 //        navigationArray?.append(stroopViewController)
 //        
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)
