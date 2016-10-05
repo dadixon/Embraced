@@ -17,11 +17,18 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
     
+    @IBOutlet var instructionsView: UIView!
+    
+    @IBOutlet var preTask1View: UIView!
+    @IBOutlet var task1View: UIView!
+    @IBOutlet weak var task1ImageView: UIImageView!
     var recordingSession: AVAudioSession!
     
     var soundRecorder: AVAudioRecorder!
     var soundPlayer: AVAudioPlayer!
     var fileName = "testAudioFile.m4a"
+    
+    var stimuli : [String] = []
     
     var step = 1
     var totalSteps = 3
@@ -35,7 +42,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         super.viewDidLoad()
         
         progressView.progress = progress
-        progressLabel.text = "Progress (\(step)/\(totalSteps))"
+        progressLabel.text = "Progress"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(StroopViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(StroopViewController.back(_:)))
@@ -67,11 +74,56 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         } catch {
             // failed to record!
         }
+        
+        // Grab images from the api
+        let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/stroop")!
+        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
+        let session = URLSession.shared
+        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            if (statusCode == 200) {
+                print("Everyone is fine, file downloaded successfully.")
+                
+                do {
+                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String]
+                }catch {
+                    print("Error with Json: \(error)")
+                }
+            }
+        })
+        
+        task.resume()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadImageFromUrl(_ url: String, view: UIImageView){
+        
+        // Create Url from string
+        let url = URL(string: url)!
+        
+        // Download task:
+        // - sharedSession = global NSURLCache, NSHTTPCookieStorage and NSURLCredentialStorage objects.
+        let task = URLSession.shared.dataTask(with: url, completionHandler: { (responseData, responseUrl, error) -> Void in
+            // if responseData is not null...
+            if let data = responseData{
+                
+                // execute in UI thread
+                DispatchQueue.main.async(execute: { () -> Void in
+                    view.image = UIImage(data: data)
+                })
+            }
+        })
+        
+        // Run task
+        task.resume()
     }
     
     func startRecording() {
@@ -206,6 +258,50 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         }
     }
 
+    @IBAction func moveToInstructions(_ sender: AnyObject) {
+        instructionsView.translatesAutoresizingMaskIntoConstraints = false
+        
+        introView.removeFromSuperview()
+        containerView.addSubview(instructionsView)
+        
+        let leftConstraint = instructionsView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
+        let topConstraint = instructionsView.topAnchor.constraint(equalTo: containerView.topAnchor)
+        let rightConstraint = instructionsView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        let bottomConstraint = instructionsView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
+    }
+    
+    @IBAction func moveToPreTask1(_ sender: AnyObject) {
+        preTask1View.translatesAutoresizingMaskIntoConstraints = false
+        
+        instructionsView.removeFromSuperview()
+        containerView.addSubview(preTask1View)
+        
+        let leftConstraint = preTask1View.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
+        let topConstraint = preTask1View.topAnchor.constraint(equalTo: containerView.topAnchor)
+        let rightConstraint = preTask1View.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        let bottomConstraint = preTask1View.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
+    }
+    
+    
+    @IBAction func moveToTask1(_ sender: AnyObject) {
+        task1View.translatesAutoresizingMaskIntoConstraints = false
+        
+        preTask1View.removeFromSuperview()
+        containerView.addSubview(task1View)
+        
+        let leftConstraint = task1View.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
+        let topConstraint = task1View.topAnchor.constraint(equalTo: containerView.topAnchor)
+        let rightConstraint = task1View.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        let bottomConstraint = task1View.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
+        
+        self.loadImageFromUrl(self.stimuli[0], view: self.task1ImageView)
+    }
+    
+    
+    
     
     // MARK: - Delegate
     
