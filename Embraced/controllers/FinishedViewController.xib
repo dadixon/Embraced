@@ -56,6 +56,9 @@
                                         <constraint firstAttribute="width" constant="169" id="UlP-Om-FK0"/>
                                     </constraints>
                                     <state key="normal" title="Start Over"/>
+                                    <connections>
+                                        <action selector="startOver:" destination="-1" eventType="touchUpInside" id="mH5-a5-FSf"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pym-My-f87">
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
