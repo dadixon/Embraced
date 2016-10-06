@@ -31,6 +31,37 @@ class QuestionnaireViewController: FrontViewController {
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
+//        var jsonObject = [String: AnyObject]()
+//        
+//        // Gather data for post
+//        if let id = prefs.string(forKey: "pid") {
+//            print("PID: " + id)
+//            
+//            jsonObject = [
+//                "id": id as AnyObject,
+//                "dob": dobTextField.text! as AnyObject,
+//                "gender": genderTextField.text! as AnyObject,
+//                "hand_dominate": postValues as AnyObject
+//            ]
+//        } else {
+//            // Nothing stored in NSUserDefaults yet. Set a value.
+//            prefs.setValue("pid", forKey: "pid")
+//        }
+//        
+//        print(jsonObject)
+//        
+//        // Push to API
+//        let notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/insert_participant")!
+//        let request = NSMutableURLRequest(url: notesEndpoint as URL)
+//        
+//        request.httpMethod = "POST"
+//        request.httpBody = try? JSONSerialization.data(withJSONObject: jsonObject, options: [])
+//        request.setValue("application/json" , forHTTPHeaderField: "Content-Type")
+//        
+//        let task = URLSession.shared.dataTask(with: request as URLRequest)
+//        
+//        task.resume()
+        
         var navigationArray = self.navigationController?.viewControllers
         
         navigationArray?.remove(at: 0)

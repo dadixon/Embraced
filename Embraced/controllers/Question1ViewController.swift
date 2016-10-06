@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stormpath
 
 class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
@@ -169,56 +170,45 @@ class Question1ViewController: FrontViewController, UIPickerViewDataSource, UIPi
     // MARK: Actions
     
     @IBAction func next(_ sender: AnyObject) {
-//        if (!(dobTextField.text?.isEmpty)! && !(genderTextField.text?.isEmpty)!) {
-            print("Good to go")
-            var jsonObject = [String: AnyObject]()
+        var jsonObject = [String: AnyObject]()
             
-            // Gather data for post
-            if let id = prefs.string(forKey: "pid") {
-                print("PID: " + id)
+        // Gather data for post
+        if let id = prefs.string(forKey: "pid") {
+            print("PID: " + id)
                 
-                jsonObject = [
-                    "id": id as AnyObject,
-                    "dob": dobTextField.text! as AnyObject,
-                    "gender": genderTextField.text! as AnyObject,
-                    "hand_dominate": postValues as AnyObject
-                ]
-            } else {
-                // Nothing stored in NSUserDefaults yet. Set a value.
-                prefs.setValue("pid", forKey: "pid")
-            }
+            jsonObject = [
+                "id": id as AnyObject,
+                "dob": dobTextField.text! as AnyObject,
+                "gender": genderTextField.text! as AnyObject,
+                "hand_dominate": postValues as AnyObject
+            ]
+        } else {
+            // Nothing stored in NSUserDefaults yet. Set a value.
+            prefs.setValue("pid", forKey: "pid")
+        }
             
-            print(jsonObject)
-            
-            // Push to API
-            //            let notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/insert_participant")!
-            //            let request = NSMutableURLRequest(URL: notesEndpoint)
-            //            request.HTTPMethod = "POST"
-            //            request.HTTPBody = try? NSJSONSerialization.dataWithJSONObject(jsonObject, options: [])
-            //            request.setValue("application/json" ?? "", forHTTPHeaderField: "Content-Type")
-            //
-            //            let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
-            //            task.resume()
-            
-            
-            var navigationArray = self.navigationController?.viewControllers
-            
-            navigationArray?.remove(at: 0)
-            
-            let question2ViewController:Question2ViewController = Question2ViewController()
-            navigationArray?.append(question2ViewController)
-            
-            self.navigationController?.setViewControllers(navigationArray!, animated: true)
+        print(jsonObject)
         
+        // Push to API
+        let notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/insert_participant")!
+        let request = NSMutableURLRequest(url: notesEndpoint as URL)
+        
+        request.httpMethod = "POST"
+        request.httpBody = try? JSONSerialization.data(withJSONObject: jsonObject, options: [])
+        request.setValue("application/json" , forHTTPHeaderField: "Content-Type")
             
+        let task = URLSession.shared.dataTask(with: request as URLRequest)
         
-//        } else {
-//            let alert = UIAlertController(title: "Error", message: "Please fill all the required fields.", preferredStyle: .Alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-//            self.presentViewController(alert, animated: true, completion: nil)
-//        }
-        
-        
+        task.resume()
+            
+        var navigationArray = self.navigationController?.viewControllers
+            
+        navigationArray?.remove(at: 0)
+            
+        let question2ViewController:Question2ViewController = Question2ViewController()
+        navigationArray?.append(question2ViewController)
+            
+        self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }
 
     @IBAction func textFieldEditing(_ sender: UITextField) {

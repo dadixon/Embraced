@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -182,14 +182,12 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="We will provide instructions for each of them." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ka6-0j-Pz0">
-                    <frame key="frameInset" minX="20" minY="90" width="345" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will provide instructions for each of them." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ka6-0j-Pz0">
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is a timed task so remember to do it as fast as possible, but without committing errors." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JC5-rV-b0i">
-                    <frame key="frameInset" minX="20" minY="119" width="697" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a timed task so remember to do it as fast as possible, but without committing errors." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JC5-rV-b0i">
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -202,6 +200,7 @@
                 <constraint firstItem="JC5-rV-b0i" firstAttribute="leading" secondItem="W9B-BG-USC" secondAttribute="leading" constant="20" id="ML1-Hv-Mkt"/>
                 <constraint firstItem="JC5-rV-b0i" firstAttribute="top" secondItem="Ka6-0j-Pz0" secondAttribute="bottom" constant="8" id="Mhc-qE-uU5"/>
                 <constraint firstItem="Ka6-0j-Pz0" firstAttribute="top" secondItem="W4p-Hf-hHl" secondAttribute="bottom" constant="8" id="TTU-jq-wfx"/>
+                <constraint firstAttribute="trailing" secondItem="W4p-Hf-hHl" secondAttribute="trailing" constant="8" id="XfC-br-5xI"/>
                 <constraint firstItem="W4p-Hf-hHl" firstAttribute="top" secondItem="W9B-BG-USC" secondAttribute="top" constant="61" id="abR-ye-jQZ"/>
                 <constraint firstItem="MC7-Pi-QYe" firstAttribute="centerX" secondItem="W9B-BG-USC" secondAttribute="centerX" id="gIt-zx-TtU"/>
                 <constraint firstAttribute="bottom" secondItem="MC7-Pi-QYe" secondAttribute="bottom" constant="20" id="gSh-JA-vkQ"/>
