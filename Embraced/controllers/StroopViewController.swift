@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import AVKit
 
 class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
@@ -42,7 +43,9 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     var soundPlayer: AVAudioPlayer!
     var fileName : [String] = ["testAudioFile.m4a", "task1.m4a", "task2.m4a", "task3.m4a", "task4.m4a"]
     
-    var stimuli : [String] = []
+    var stimuli = [String: Any]()
+    var images = Array<String>()
+    var videos = Array<String>()
     
     var step = 1
     var totalSteps = 3
@@ -59,6 +62,22 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     var timer = Timer()
     var isRunning = false
     var reactionTime = ""
+    
+    
+    // MARK: - Private
+    
+    private func setSubview(_ current: UIView, next: UIView) {
+        current.removeFromSuperview()
+        containerView.addSubview(next)
+        
+        let leftConstraint = next.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
+        let topConstraint = next.topAnchor.constraint(equalTo: containerView.topAnchor)
+        let rightConstraint = next.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        let bottomConstraint = next.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,7 +139,9 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
                 print("Everyone is fine, file downloaded successfully.")
                 
                 do {
-                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String]
+                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String:Any]
+                    self.images = self.stimuli["images"] as! Array<String>
+                    self.videos = self.stimuli["videos"] as! Array<String>
                 }catch {
                     print("Error with Json: \(error)")
                 }
@@ -321,17 +342,6 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         }
     }
 
-    private func setSubview(_ current: UIView, next: UIView) {
-        current.removeFromSuperview()
-        containerView.addSubview(next)
-        
-        let leftConstraint = next.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
-        let topConstraint = next.topAnchor.constraint(equalTo: containerView.topAnchor)
-        let rightConstraint = next.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
-        let bottomConstraint = next.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
-    }
-    
     @IBAction func moveToInstructions(_ sender: AnyObject) {
         setSubview(introView, next: instructionsView)
     }
@@ -342,7 +352,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     @IBAction func moveToTask1(_ sender: AnyObject) {
         setSubview(preTask1View, next: task1View)
-        self.loadImageFromUrl(self.stimuli[0], view: self.task1ImageView)
+        self.loadImageFromUrl(images[0], view: self.task1ImageView)
     }
     
     @IBAction func moveToPreTask2(_ sender: AnyObject) {
@@ -351,7 +361,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     @IBAction func moveToTask2(_ sender: AnyObject) {
         setSubview(preTask2View, next: task2View)
-        self.loadImageFromUrl(self.stimuli[1], view: self.task2ImageView)
+        self.loadImageFromUrl(images[1], view: self.task2ImageView)
     }
     
     @IBAction func moveToPreTask3(_ sender: AnyObject) {
@@ -360,7 +370,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     @IBAction func moveToTask3(_ sender: AnyObject) {
         setSubview(preTask3View, next: task3View)
-        self.loadImageFromUrl(self.stimuli[2], view: self.task3ImageView)
+        self.loadImageFromUrl(images[2], view: self.task3ImageView)
     }
     
     @IBAction func moveToPreTask4(_ sender: AnyObject) {
@@ -373,10 +383,25 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     @IBAction func moveToTask4(_ sender: AnyObject) {
         setSubview(preTask4View, next: task4View)
-        self.loadImageFromUrl(self.stimuli[1], view: self.task4ImageView)
+        self.loadImageFromUrl(images[1], view: self.task4ImageView)
     }
     
+    @IBAction func playVideo(_ sender: AnyObject) {
+        let fileURL = NSURL(string: "http://api.girlscouts.harryatwal.com/static_videos/stroop/english/STROOP_ENG_TASK1.mp4")!
+        playVideoFile(url: fileURL)
+    }
     
+    func playVideoFile(url: NSURL){
+        let player = AVPlayer(url: url as URL)
+        let playerController = AVPlayerViewController()
+        
+        playerController.player = player
+        self.addChildViewController(playerController)
+        self.view.addSubview(playerController.view)
+        playerController.view.frame = self.view.frame
+        
+        player.play()
+    }
     
     // MARK: - Delegate
     

@@ -235,37 +235,22 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="In this task you have to read the words presented on the screen." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfW-tn-mK9">
-                            <frame key="frameInset" minX="8" minY="8" width="368" height="48"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In this task you have to read the words presented on the screen." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfW-tn-mK9">
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Try to do it as fast as you can, from left to right in each row." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7D-hI-DmD">
-                            <frame key="frameInset" minX="8" minY="64" width="368" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try to do it as fast as you can, from left to right in each row." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7D-hI-DmD">
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="When you are ready press START and read the words out loud as fast as you can." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5R-cy-fRH">
-                            <frame key="frameInset" minX="8" minY="237" width="368" height="42"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready press START and read the words out loud as fast as you can." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5R-cy-fRH">
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwf-8e-7HF">
-                            <frame key="frameInset" minX="8" minY="287" width="368" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VIDEO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2M5-cS-3e9">
-                            <frame key="frameInset" minX="167" minY="153" width="50" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwf-8e-7HF">
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -279,15 +264,42 @@
                                 <action selector="moveToTask1:" destination="-1" eventType="touchUpInside" id="rXK-2t-P6a"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLu-R7-gQI" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="74" id="Icc-aB-Wr2"/>
+                            </constraints>
+                            <state key="normal" title="Preview"/>
+                            <connections>
+                                <action selector="playVideo:" destination="-1" eventType="touchUpInside" id="5ck-23-4Rd"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="XfW-tn-mK9" secondAttribute="trailing" constant="8" id="1E5-bP-qcg"/>
+                        <constraint firstAttribute="trailing" secondItem="Mwf-8e-7HF" secondAttribute="trailing" constant="8" id="3dR-NF-45W"/>
+                        <constraint firstItem="DLu-R7-gQI" firstAttribute="top" secondItem="Z7D-hI-DmD" secondAttribute="bottom" constant="45" id="4PY-nM-nxQ"/>
+                        <constraint firstItem="O5R-cy-fRH" firstAttribute="top" secondItem="DLu-R7-gQI" secondAttribute="bottom" constant="53" id="4lQ-Tk-AAW"/>
+                        <constraint firstItem="DLu-R7-gQI" firstAttribute="centerX" secondItem="NnA-te-eAp" secondAttribute="centerX" id="6Lo-TP-OTq"/>
                         <constraint firstItem="Cxh-OH-H09" firstAttribute="centerX" secondItem="NnA-te-eAp" secondAttribute="centerX" id="7ua-3X-C2n"/>
                         <constraint firstAttribute="width" constant="384" id="FIH-w9-t1E"/>
+                        <constraint firstItem="Mwf-8e-7HF" firstAttribute="top" secondItem="O5R-cy-fRH" secondAttribute="bottom" constant="8" id="HPK-WU-1vh"/>
                         <constraint firstAttribute="bottom" secondItem="reJ-7z-FZJ" secondAttribute="bottom" constant="20" id="JHs-c7-qHj"/>
+                        <constraint firstItem="XfW-tn-mK9" firstAttribute="leading" secondItem="NnA-te-eAp" secondAttribute="leading" constant="8" id="LRz-k9-u2s"/>
+                        <constraint firstAttribute="trailing" secondItem="O5R-cy-fRH" secondAttribute="trailing" constant="8" id="Lj3-Xw-f7K"/>
+                        <constraint firstItem="Z7D-hI-DmD" firstAttribute="leading" secondItem="NnA-te-eAp" secondAttribute="leading" constant="8" id="OL4-D0-f2L"/>
                         <constraint firstAttribute="height" constant="419" id="OnC-kN-kUl"/>
                         <constraint firstItem="reJ-7z-FZJ" firstAttribute="centerX" secondItem="NnA-te-eAp" secondAttribute="centerX" id="Qh9-wu-dPL"/>
+                        <constraint firstItem="Z7D-hI-DmD" firstAttribute="top" secondItem="XfW-tn-mK9" secondAttribute="bottom" constant="8" id="c8x-tl-SXS"/>
+                        <constraint firstAttribute="trailing" secondItem="Z7D-hI-DmD" secondAttribute="trailing" constant="8" id="cyk-hm-Gzv"/>
+                        <constraint firstItem="XfW-tn-mK9" firstAttribute="top" secondItem="NnA-te-eAp" secondAttribute="top" constant="8" id="d2u-wZ-XVf"/>
+                        <constraint firstItem="O5R-cy-fRH" firstAttribute="leading" secondItem="NnA-te-eAp" secondAttribute="leading" constant="8" id="eOE-LW-YxP"/>
+                        <constraint firstItem="DLu-R7-gQI" firstAttribute="top" secondItem="Z7D-hI-DmD" secondAttribute="bottom" constant="45" id="ha0-kv-T5z"/>
                         <constraint firstAttribute="bottom" secondItem="Cxh-OH-H09" secondAttribute="bottom" constant="8" id="mEg-We-rXm"/>
+                        <constraint firstItem="O5R-cy-fRH" firstAttribute="top" secondItem="DLu-R7-gQI" secondAttribute="bottom" constant="53" id="pUH-40-gOi"/>
+                        <constraint firstItem="Mwf-8e-7HF" firstAttribute="leading" secondItem="NnA-te-eAp" secondAttribute="leading" constant="8" id="r8f-SP-Aaa"/>
+                        <constraint firstItem="Z7D-hI-DmD" firstAttribute="top" secondItem="XfW-tn-mK9" secondAttribute="bottom" constant="8" id="rDx-hl-dgh"/>
+                        <constraint firstItem="Mwf-8e-7HF" firstAttribute="top" secondItem="O5R-cy-fRH" secondAttribute="bottom" constant="8" id="y7n-1J-v3y"/>
                     </constraints>
                 </view>
             </subviews>
