@@ -11,16 +11,17 @@ import UIKit
 class Question2ViewController: FrontViewController {
 
     var pickOption = ["Male", "Female", "Other"]
-    var step = 1
-    var totalSteps = 17
+    var step = 2
+    var totalSteps = 3
     var progress : Float {
         get {
             return Float(step) / Float(totalSteps)
         }
     }
-    let prefs = NSUserDefaults.standardUserDefaults()
     
-    var postValues = [String](count: 10, repeatedValue: "")
+    let prefs = UserDefaults.standard
+    
+    var postValues = [String](repeating: "", count: 10)
     var strongHand = String()
     var childPickOption = ["Male", "Female"]
     var ages = [String]()
@@ -30,6 +31,11 @@ class Question2ViewController: FrontViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        progressView.progress = progress
+        progressLabel.text = "Progress (\(step)/\(totalSteps))"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(Question2ViewController.next(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,9 +45,15 @@ class Question2ViewController: FrontViewController {
     
     // MARK: Actions
     
-    @IBAction func next(sender: AnyObject) {
+    @IBAction func next(_ sender: AnyObject) {
+        var navigationArray = self.navigationController?.viewControllers
+        
+        navigationArray?.remove(at: 0)
+        
         let question3ViewController:Question3ViewController = Question3ViewController()
-        self.navigationController!.pushViewController(question3ViewController, animated: true)
+        navigationArray?.append(question3ViewController)
+        
+        self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }
 
 }

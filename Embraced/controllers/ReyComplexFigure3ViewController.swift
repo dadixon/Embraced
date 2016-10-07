@@ -12,13 +12,26 @@ class ReyComplexFigure3ViewController: FrontViewController {
 
     @IBOutlet weak var myWebView: UIWebView!
     
+    var step = 1
+    var totalSteps = 3
+    var progress : Float {
+        get {
+            return Float(step) / Float(totalSteps)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(next))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ReyComplexFigure3ViewController.next(_:)))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(StroopViewController.back(_:)))
         
-        let url = NSURL (string: "http://girlscouts.harryatwal.com/reyComplexFigure.php");
-        let requestObj = NSURLRequest(URL: url!);
+        progressView.progress = progress
+        progressLabel.text = "Progress (\(step)/\(totalSteps))"
+        
+        let url = URL (string: "http://girlscouts.harryatwal.com/reyComplexFigure3.php");
+
+        let requestObj = URLRequest(url: url!);
         myWebView.loadRequest(requestObj);
     }
     
@@ -30,40 +43,20 @@ class ReyComplexFigure3ViewController: FrontViewController {
     
     // MARK: - Navigation
 
-    @IBAction func next(sender: AnyObject) {
-        //        var jsonObject = [String: AnyObject]()
-        //
-        //        // Gather data for post
-        //        if let id = prefs.stringForKey("pid") {
-        //            print("PID: " + id)
-        //
-        //            jsonObject = [
-        //                "id": id,
-        //                "hand": postValues
-        //            ]
-        //        }
-        //
-        //        print(jsonObject)
+    @IBAction func next(_ sender: AnyObject) {
+//        var navigationArray = self.navigationController?.viewControllers
+//        
+//        navigationArray?.remove(at: 0)
         
-        
-        // Push to API
-        //            let notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/insert_hand_dominate")!
-        //            let request = NSMutableURLRequest(URL: notesEndpoint)
-        //            request.HTTPMethod = "POST"
-        //            request.HTTPBody = try? NSJSONSerialization.dataWithJSONObject(jsonObject, options: [])
-        //            request.setValue("application/json" ?? "", forHTTPHeaderField: "Content-Type")
-        //
-        //            let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
-        //            task.resume()
-        
-        var navigationArray = self.navigationController?.viewControllers
-        
-        navigationArray?.removeAtIndex(0)
-        
-        let reyComplexFigure4ViewController:ReyComplexFigure3ViewController = ReyComplexFigure3ViewController()
-        navigationArray?.append(reyComplexFigure4ViewController)
-        
-        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+        let reyComplexFigure4ViewController:ReyFigureComplex4ViewController = ReyFigureComplex4ViewController()
+//        navigationArray?.append(reyComplexFigure4ViewController)
+//        
+//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+        self.navigationController?.pushViewController(reyComplexFigure4ViewController, animated: true)
     }
 
+    @IBAction func back(_ sender: AnyObject) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
 }

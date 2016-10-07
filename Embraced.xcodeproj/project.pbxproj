@@ -33,6 +33,7 @@
 		A4347FE41D7BCC170033306A /* MultipleErrandsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FE21D7BCC170033306A /* MultipleErrandsViewController.xib */; };
 		A4347FE71D7BCC4C0033306A /* ComprehensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FE51D7BCC4C0033306A /* ComprehensionViewController.swift */; };
 		A4347FE81D7BCC4C0033306A /* ComprehensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FE61D7BCC4C0033306A /* ComprehensionViewController.xib */; };
+		A4349D871D88058E00750070 /* ChildTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4349D861D88058E00750070 /* ChildTableViewCell.xib */; };
 		A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */; };
 		A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */; };
 		A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED91D13B1BA002722B4 /* UserInputs.swift */; };
@@ -50,6 +51,11 @@
 		A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */; };
 		A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */; };
 		A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */; };
+		A4773D0B1D9D849100E5CCEE /* listen.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773D0A1D9D849100E5CCEE /* listen.png */; };
+		A4773D0D1D9D84A900E5CCEE /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773D0C1D9D84A900E5CCEE /* play.png */; };
+		A4773D0F1D9D84B200E5CCEE /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773D0E1D9D84B200E5CCEE /* record.png */; };
+		A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */; };
+		A47EB6E41DA65FFB00A68AF6 /* FinishedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */; };
 		A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC41CF9E7C700878928 /* AppDelegate.swift */; };
 		A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC61CF9E7C700878928 /* ViewController.swift */; };
 		A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48B4DC81CF9E7C700878928 /* Main.storyboard */; };
@@ -78,9 +84,10 @@
 		A4A794331D68E5AC00305AB4 /* Question3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A794311D68E5AC00305AB4 /* Question3ViewController.swift */; };
 		A4A794341D68E5AC00305AB4 /* Question3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A794321D68E5AC00305AB4 /* Question3ViewController.xib */; };
 		A4A794381D68F62800305AB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4A7943A1D68F62800305AB4 /* Localizable.strings */; };
-		A4BB08E91D7EDDE600B76C64 /* ISRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB08E81D7EDDE600B76C64 /* ISRadioButton.swift */; };
+		A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */; };
 		A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */; };
 		A4BB08ED1D7EDFFA00B76C64 /* QuestionnaireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */; };
+		A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */; };
 		A4C71C0E1D33570100CD5FB1 /* Embraced_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */; };
 		A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9041D1D2380380092D6AA /* FrontViewController.swift */; };
 		A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D904211D23810C0092D6AA /* EmbracedTextField.swift */; };
@@ -115,6 +122,7 @@
 		A4347FE21D7BCC170033306A /* MultipleErrandsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MultipleErrandsViewController.xib; path = controllers/MultipleErrandsViewController.xib; sourceTree = "<group>"; };
 		A4347FE51D7BCC4C0033306A /* ComprehensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComprehensionViewController.swift; path = controllers/ComprehensionViewController.swift; sourceTree = "<group>"; };
 		A4347FE61D7BCC4C0033306A /* ComprehensionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComprehensionViewController.xib; path = controllers/ComprehensionViewController.xib; sourceTree = "<group>"; };
+		A4349D861D88058E00750070 /* ChildTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChildTableViewCell.xib; sourceTree = "<group>"; };
 		A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NamingTaskViewController.swift; path = controllers/NamingTaskViewController.swift; sourceTree = "<group>"; };
 		A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInputs+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A4476ED91D13B1BA002722B4 /* UserInputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputs.swift; sourceTree = "<group>"; };
@@ -132,6 +140,11 @@
 		A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrailMakingTestViewController.xib; path = controllers/TrailMakingTestViewController.xib; sourceTree = "<group>"; };
 		A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOCAMMSETestViewController.swift; path = controllers/MOCAMMSETestViewController.swift; sourceTree = "<group>"; };
 		A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MOCAMMSETestViewController.xib; path = controllers/MOCAMMSETestViewController.xib; sourceTree = "<group>"; };
+		A4773D0A1D9D849100E5CCEE /* listen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listen.png; sourceTree = "<group>"; };
+		A4773D0C1D9D84A900E5CCEE /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		A4773D0E1D9D84B200E5CCEE /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
+		A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishedViewController.swift; path = controllers/FinishedViewController.swift; sourceTree = "<group>"; };
+		A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinishedViewController.xib; path = controllers/FinishedViewController.xib; sourceTree = "<group>"; };
 		A48B4DC11CF9E7C600878928 /* Embraced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embraced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48B4DC41CF9E7C700878928 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A48B4DC61CF9E7C700878928 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -164,10 +177,11 @@
 		A4A794351D68F4F100305AB4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		A4A794391D68F62800305AB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4A7943B1D68F63000305AB4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		A4BB08E41D7EDB0900B76C64 /* ISRadioButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ISRadioButton.framework; path = "../../../Library/Developer/Xcode/DerivedData/Embraced-gpyewpmhwauogygclnkydouwsmur/Build/Products/Debug-iphonesimulator/ISRadioButton/ISRadioButton.framework"; sourceTree = "<group>"; };
-		A4BB08E81D7EDDE600B76C64 /* ISRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISRadioButton.swift; sourceTree = "<group>"; };
 		A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireViewController.swift; path = controllers/QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuestionnaireViewController.xib; path = controllers/QuestionnaireViewController.xib; sourceTree = "<group>"; };
+		A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInputViewController.xib; sourceTree = "<group>"; };
 		A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Embraced_bg.png; sourceTree = "<group>"; };
 		A4D9041D1D2380380092D6AA /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		A4D904211D23810C0092D6AA /* EmbracedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbracedTextField.swift; sourceTree = "<group>"; };
@@ -295,6 +309,9 @@
 		A48B4DD91CF9EEAB00878928 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A4773D0A1D9D849100E5CCEE /* listen.png */,
+				A4773D0C1D9D84A900E5CCEE /* play.png */,
+				A4773D0E1D9D84B200E5CCEE /* record.png */,
 				A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */,
 				A490D7C61D0919CB00D2B59D /* Roboto-Black.ttf */,
 				A490D7C71D0919CB00D2B59D /* Roboto-BlackItalic.ttf */,
@@ -321,6 +338,7 @@
 				A48B4DC41CF9E7C700878928 /* AppDelegate.swift */,
 				A48B4DC61CF9E7C700878928 /* ViewController.swift */,
 				A490D7C41D09162800D2B59D /* UserInputViewController.swift */,
+				A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */,
 				A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */,
 				A42AB5C51D2DE0F4001387BB /* Test */,
 				A4A794231D68CD1900305AB4 /* TestViewController.swift */,
@@ -333,6 +351,8 @@
 				A4A794321D68E5AC00305AB4 /* Question3ViewController.xib */,
 				A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */,
 				A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */,
+				A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */,
+				A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -343,7 +363,8 @@
 				A4D9041D1D2380380092D6AA /* FrontViewController.swift */,
 				A4D904211D23810C0092D6AA /* EmbracedTextField.swift */,
 				A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */,
-				A4BB08E81D7EDDE600B76C64 /* ISRadioButton.swift */,
+				A4349D861D88058E00750070 /* ChildTableViewCell.xib */,
+				A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */,
 			);
 			name = Customizations;
 			sourceTree = "<group>";
@@ -355,7 +376,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A48B4DD61CF9E7C700878928 /* Build configuration list for PBXNativeTarget "Embraced" */;
 			buildPhases = (
-				6391EC2967FC335C4B260526 /* 📦 Check Pods Manifest.lock */,
+				6391EC2967FC335C4B260526 /* [CP] Check Pods Manifest.lock */,
 				5E743F95A972D997F54D05F4 /* [CP] Check Pods Manifest.lock */,
 				A48B4DBD1CF9E7C600878928 /* Sources */,
 				A48B4DBE1CF9E7C600878928 /* Frameworks */,
@@ -381,12 +402,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Domonique Dixon";
 				TargetAttributes = {
 					A48B4DC01CF9E7C600878928 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = PUVE8AV9GJ;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -434,26 +456,32 @@
 				A4A794341D68E5AC00305AB4 /* Question3ViewController.xib in Resources */,
 				A4347FC61D7BC9FC0033306A /* ReyComplexFigure3ViewController.xib in Resources */,
 				A490D7D51D0919CB00D2B59D /* Roboto-BoldItalic.ttf in Resources */,
+				A47EB6E41DA65FFB00A68AF6 /* FinishedViewController.xib in Resources */,
 				A490D7D31D0919CB00D2B59D /* Roboto-BlackItalic.ttf in Resources */,
 				A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */,
 				A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */,
 				A4347FC21D7BC9E20033306A /* StroopViewController.xib in Resources */,
+				A4773D0B1D9D849100E5CCEE /* listen.png in Resources */,
 				A4A794381D68F62800305AB4 /* Localizable.strings in Resources */,
+				A4773D0F1D9D84B200E5CCEE /* record.png in Resources */,
 				A4347FE01D7BCB800033306A /* NamingTaskViewController.xib in Resources */,
 				A4BB08ED1D7EDFFA00B76C64 /* QuestionnaireViewController.xib in Resources */,
 				A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */,
 				A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */,
 				A490D7D91D0919CB00D2B59D /* Roboto-Medium.ttf in Resources */,
 				A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */,
+				A4773D0D1D9D84A900E5CCEE /* play.png in Resources */,
 				A4347FE81D7BCC4C0033306A /* ComprehensionViewController.xib in Resources */,
 				A4A794261D68CD1900305AB4 /* TestViewController.xib in Resources */,
 				A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */,
+				A4349D871D88058E00750070 /* ChildTableViewCell.xib in Resources */,
 				A46C14201D79AA110066EF37 /* ReyComplexFigureViewController.xib in Resources */,
 				A4347FDA1D7BCAFB0033306A /* PitchViewController.xib in Resources */,
 				A490D7D21D0919CB00D2B59D /* Roboto-Black.ttf in Resources */,
 				A4347FDE1D7BCB260033306A /* WordListViewController.xib in Resources */,
 				A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */,
 				A4347FCA1D7BCA280033306A /* DigitalSpanViewController.xib in Resources */,
+				A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */,
 				A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */,
 				A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */,
 			);
@@ -477,14 +505,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6391EC2967FC335C4B260526 /* 📦 Check Pods Manifest.lock */ = {
+		6391EC2967FC335C4B260526 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,12 +594,12 @@
 				A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
 				A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */,
-				A4BB08E91D7EDDE600B76C64 /* ISRadioButton.swift in Sources */,
 				A4347FE31D7BCC170033306A /* MultipleErrandsViewController.swift in Sources */,
 				A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */,
 				A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */,
 				A4347FD51D7BCABC0033306A /* PegboardViewController.swift in Sources */,
 				A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */,
+				A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */,
 				A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */,
 				A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */,
 				A4347FD11D7BCA950033306A /* MatricesViewController.swift in Sources */,
@@ -588,6 +616,7 @@
 				A4A794251D68CD1900305AB4 /* TestViewController.swift in Sources */,
 				A4347FC91D7BCA280033306A /* DigitalSpanViewController.swift in Sources */,
 				A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */,
+				A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */,
 				A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */,
 				A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */,
 				A4A794331D68E5AC00305AB4 /* Question3ViewController.swift in Sources */,
@@ -633,6 +662,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -643,8 +673,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -666,7 +698,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -679,6 +711,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -689,8 +722,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -706,9 +741,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -718,14 +754,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F375DDA1676C302A2C3E45B /* Pods-Embraced.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Embraced/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.embraced.Embraced;
+				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -733,14 +771,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Embraced/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.embraced.Embraced;
+				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

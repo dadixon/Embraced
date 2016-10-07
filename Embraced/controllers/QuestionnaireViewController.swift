@@ -15,10 +15,10 @@ class QuestionnaireViewController: FrontViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(next))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(QuestionnaireViewController.next(_:)))
         
-        let url = NSURL (string: "http://girlscouts.harryatwal.com/initial.php");
-        let requestObj = NSURLRequest(URL: url!);
+        let url = URL (string: "http://girlscouts.harryatwal.com/initial.php");
+        let requestObj = URLRequest(url: url!);
         myWebView.loadRequest(requestObj);
     }
     
@@ -30,35 +30,41 @@ class QuestionnaireViewController: FrontViewController {
     
     // MARK: - Navigation
     
-    @IBAction func next(sender: AnyObject) {
-        //        var jsonObject = [String: AnyObject]()
-        //
-        //        // Gather data for post
-        //        if let id = prefs.stringForKey("pid") {
-        //            print("PID: " + id)
-        //
-        //            jsonObject = [
-        //                "id": id,
-        //                "hand": postValues
-        //            ]
-        //        }
-        //
-        //        print(jsonObject)
-        
-        
-        // Push to API
-        //            let notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/insert_hand_dominate")!
-        //            let request = NSMutableURLRequest(URL: notesEndpoint)
-        //            request.HTTPMethod = "POST"
-        //            request.HTTPBody = try? NSJSONSerialization.dataWithJSONObject(jsonObject, options: [])
-        //            request.setValue("application/json" ?? "", forHTTPHeaderField: "Content-Type")
-        //
-        //            let task = NSURLSession.sharedSession().dataTaskWithRequest(request)
-        //            task.resume()
+    @IBAction func next(_ sender: AnyObject) {
+//        var jsonObject = [String: AnyObject]()
+//        
+//        // Gather data for post
+//        if let id = prefs.string(forKey: "pid") {
+//            print("PID: " + id)
+//            
+//            jsonObject = [
+//                "id": id as AnyObject,
+//                "dob": dobTextField.text! as AnyObject,
+//                "gender": genderTextField.text! as AnyObject,
+//                "hand_dominate": postValues as AnyObject
+//            ]
+//        } else {
+//            // Nothing stored in NSUserDefaults yet. Set a value.
+//            prefs.setValue("pid", forKey: "pid")
+//        }
+//        
+//        print(jsonObject)
+//        
+//        // Push to API
+//        let notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/insert_participant")!
+//        let request = NSMutableURLRequest(url: notesEndpoint as URL)
+//        
+//        request.httpMethod = "POST"
+//        request.httpBody = try? JSONSerialization.data(withJSONObject: jsonObject, options: [])
+//        request.setValue("application/json" , forHTTPHeaderField: "Content-Type")
+//        
+//        let task = URLSession.shared.dataTask(with: request as URLRequest)
+//        
+//        task.resume()
         
         var navigationArray = self.navigationController?.viewControllers
         
-        navigationArray?.removeAtIndex(0)
+        navigationArray?.remove(at: 0)
         
         let mOCAMMSETestViewController:MOCAMMSETestViewController = MOCAMMSETestViewController()
         navigationArray?.append(mOCAMMSETestViewController)
