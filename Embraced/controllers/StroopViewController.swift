@@ -40,7 +40,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     var soundRecorder: AVAudioRecorder!
     var soundPlayer: AVAudioPlayer!
-    var fileName = "testAudioFile.m4a"
+    var fileName : [String] = ["testAudioFile.m4a", "task1.m4a", "task2.m4a", "task3.m4a", "task4.m4a"]
     
     var stimuli : [String] = []
     
@@ -51,6 +51,14 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
             return Float(step) / Float(totalSteps)
         }
     }
+    
+    let myString: String = "For example, for the word: “blue”, which is written in red, you have to say “red”."
+    var myMutableString = NSMutableAttributedString()
+    
+    var startTime = TimeInterval()
+    var timer = Timer()
+    var isRunning = false
+    var reactionTime = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -149,8 +157,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         task.resume()
     }
     
-    func startRecording() {
-        let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName)
+    func startRecording(_ button: UIButton) {
+        let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName[button.tag])
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -164,9 +172,10 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
             soundRecorder.delegate = self
             soundRecorder.record()
             
-            recordBtn.setTitle("Stop", for: .normal)
+            button.setTitle("Stop", for: .normal)
+            startTimer()
         } catch {
-            finishRecording(success: false)
+            finishRecording(button: button, success: false)
         }
     }
     
@@ -176,16 +185,20 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         return documentsDirectory
     }
     
-    func finishRecording(success: Bool) {
+    func finishRecording(button: UIButton, success: Bool) {
         soundRecorder.stop()
         soundRecorder = nil
         
         if success {
-            recordBtn.setTitle("Re-record", for: .normal)
+            button.setTitle("Re-record", for: .normal)
         } else {
-            recordBtn.setTitle("Record", for: .normal)
+            button.setTitle("Record", for: .normal)
             // recording failed :(
         }
+        
+        stopTime()
+        resetTimer()
+        startTimer()
     }
     
     func finishPlaying() {
@@ -193,11 +206,12 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         soundPlayer = nil
         
         playBtn.setTitle("Play", for: .normal)
+        recordBtn.isEnabled = true
     }
     
     func preparePlayer() {
         do {
-            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName))
+            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName[0]))
             soundPlayer.delegate = self
             soundPlayer.prepareToPlay()
             soundPlayer.volume = 1.0
@@ -226,13 +240,39 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     func downloadFileFromURL(url:NSURL){
         var downloadTask:URLSessionDownloadTask
         downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
-            
             self.play(URL! as NSURL)
-            
         })
         
         downloadTask.resume()
         
+    }
+    
+    func stopTime() {
+        
+        let currentTime = Date.timeIntervalSinceReferenceDate
+        
+        var elapsedTime : TimeInterval = currentTime - startTime
+        
+        //calculate the seconds in elapsed time
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= TimeInterval(seconds)
+
+        let strSeconds = seconds > 9 ? String(seconds): "0" + String(seconds)
+        
+        reactionTime = "\(strSeconds)"
+        
+        print(reactionTime)
+        
+    }
+    
+    func startTimer() {
+        if !timer.isValid {
+            startTime = Date.timeIntervalSinceReferenceDate
+        }
+    }
+    
+    func resetTimer() {
+        timer.invalidate()
     }
     
     func log(logMessage: String, functionName: String = #function) {
@@ -261,11 +301,11 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     // MARK: - Actions
     
-    @IBAction func recordTapped() {
+    @IBAction func recordTapped(_ sender: UIButton) {
         if soundRecorder == nil {
-            startRecording()
+            startRecording(sender)
         } else {
-            finishRecording(success: true)
+            finishRecording(button: sender, success: true)
         }
     }
     
@@ -300,89 +340,39 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         setSubview(instructionsView, next: preTask1View)
     }
     
-    
     @IBAction func moveToTask1(_ sender: AnyObject) {
-        preTask1View.removeFromSuperview()
-        containerView.addSubview(task1View)
-        
-        let leftConstraint = task1View.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
-        let topConstraint = task1View.topAnchor.constraint(equalTo: containerView.topAnchor)
-        let rightConstraint = task1View.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
-        let bottomConstraint = task1View.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
-        
+        setSubview(preTask1View, next: task1View)
         self.loadImageFromUrl(self.stimuli[0], view: self.task1ImageView)
     }
     
     @IBAction func moveToPreTask2(_ sender: AnyObject) {
-        task1View.removeFromSuperview()
-        containerView.addSubview(preTask2View)
-        
-        let leftConstraint = preTask2View.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
-        let topConstraint = preTask2View.topAnchor.constraint(equalTo: containerView.topAnchor)
-        let rightConstraint = preTask2View.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
-        let bottomConstraint = preTask2View.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
+        setSubview(task1View, next: preTask2View)
     }
     
     @IBAction func moveToTask2(_ sender: AnyObject) {
-        preTask2View.removeFromSuperview()
-        containerView.addSubview(task2View)
-        
-        let leftConstraint = task2View.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
-        let topConstraint = task2View.topAnchor.constraint(equalTo: containerView.topAnchor)
-        let rightConstraint = task2View.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
-        let bottomConstraint = task2View.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
-        
+        setSubview(preTask2View, next: task2View)
         self.loadImageFromUrl(self.stimuli[1], view: self.task2ImageView)
     }
     
     @IBAction func moveToPreTask3(_ sender: AnyObject) {
-        task2View.removeFromSuperview()
-        containerView.addSubview(preTask3View)
-        
-        let leftConstraint = preTask3View.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
-        let topConstraint = preTask3View.topAnchor.constraint(equalTo: containerView.topAnchor)
-        let rightConstraint = preTask3View.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
-        let bottomConstraint = preTask3View.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
+        setSubview(task2View, next: preTask3View)
     }
     
     @IBAction func moveToTask3(_ sender: AnyObject) {
-        preTask3View.removeFromSuperview()
-        containerView.addSubview(task3View)
-        
-        let leftConstraint = task3View.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
-        let topConstraint = task3View.topAnchor.constraint(equalTo: containerView.topAnchor)
-        let rightConstraint = task3View.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
-        let bottomConstraint = task3View.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
-        
+        setSubview(preTask3View, next: task3View)
         self.loadImageFromUrl(self.stimuli[2], view: self.task3ImageView)
     }
     
     @IBAction func moveToPreTask4(_ sender: AnyObject) {
-        task3View.removeFromSuperview()
-        containerView.addSubview(preTask4View)
+        setSubview(task3View, next: preTask4View)
         
-        let leftConstraint = preTask4View.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
-        let topConstraint = preTask4View.topAnchor.constraint(equalTo: containerView.topAnchor)
-        let rightConstraint = preTask4View.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
-        let bottomConstraint = preTask4View.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
+        myMutableString = NSMutableAttributedString(string: myString, attributes: [NSFontAttributeName:UIFont(name: "HelveticaNeue", size: 17.0)!])
+        myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange(location:28,length:4))
+        specialText.attributedText = myMutableString
     }
     
     @IBAction func moveToTask4(_ sender: AnyObject) {
-        preTask4View.removeFromSuperview()
-        containerView.addSubview(task4View)
-        
-        let leftConstraint = task4View.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
-        let topConstraint = task4View.topAnchor.constraint(equalTo: containerView.topAnchor)
-        let rightConstraint = task4View.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
-        let bottomConstraint = task4View.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
-        
+        setSubview(preTask4View, next: task4View)
         self.loadImageFromUrl(self.stimuli[1], view: self.task4ImageView)
     }
     
@@ -390,11 +380,11 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     // MARK: - Delegate
     
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if !flag {
-            finishRecording(success: false)
-        }
-    }
+//    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+//        if !flag {
+//            finishRecording(success: false)
+//        }
+//    }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         NSLog("finished playing")

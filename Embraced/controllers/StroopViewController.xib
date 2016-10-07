@@ -130,7 +130,7 @@
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
-                                <action selector="recordTapped" destination="-1" eventType="touchUpInside" id="KM1-zM-vF1"/>
+                                <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="WgV-B1-2hI"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmH-ny-Rcf">
@@ -316,7 +316,7 @@
                         <constraint firstAttribute="height" constant="517" id="xen-MM-naa"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hdM-ym-uKi">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hdM-ym-uKi">
                     <constraints>
                         <constraint firstAttribute="width" constant="162" id="Aod-iq-LiK"/>
                     </constraints>
@@ -324,7 +324,7 @@
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="recordTapped" destination="-1" eventType="touchUpInside" id="U2B-uT-Mc2"/>
+                        <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="Cot-dM-HH3"/>
                     </connections>
                 </button>
             </subviews>
@@ -435,7 +435,7 @@
                         <constraint firstAttribute="height" constant="517" id="mxR-1A-e51"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="a70-FQ-fTG">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="a70-FQ-fTG">
                     <constraints>
                         <constraint firstAttribute="width" constant="162" id="ydS-f7-SKu"/>
                     </constraints>
@@ -443,7 +443,7 @@
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="recordTapped" destination="-1" eventType="touchUpInside" id="aHp-Wq-Llu"/>
+                        <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="IuJ-j3-Tel"/>
                     </connections>
                 </button>
             </subviews>
@@ -554,7 +554,7 @@
                         <constraint firstAttribute="height" constant="517" id="1J0-XT-45x"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="G2J-F8-ClE">
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="G2J-F8-ClE">
                     <constraints>
                         <constraint firstAttribute="width" constant="162" id="gtg-i1-kbN"/>
                     </constraints>
@@ -562,7 +562,7 @@
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="recordTapped" destination="-1" eventType="touchUpInside" id="qZI-52-4CG"/>
+                        <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="aJ0-7d-ufU"/>
                     </connections>
                 </button>
             </subviews>
@@ -585,11 +585,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fmy-7s-v0P">
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In this task you have to name the colors in which the words are written, DO NOT READ the word." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUj-jI-HF5">
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try to do it as fast as you can, from left to right in each row." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AY-IX-2Yf">
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -624,19 +619,34 @@
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not pay attention to the word itself, just name the color in which it is written." lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szt-MK-FCu">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIDEO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no2-ta-G78">
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try to do it as fast as you can, from left to right in each row." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AY-IX-2Yf">
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="szt-MK-FCu" secondAttribute="trailing" constant="8" id="3Dk-Bp-8nL"/>
                         <constraint firstAttribute="trailing" secondItem="1Cu-Be-Wye" secondAttribute="trailing" constant="8" id="3Iz-YU-K19"/>
                         <constraint firstItem="ApH-Mp-Al7" firstAttribute="leading" secondItem="Fmy-7s-v0P" secondAttribute="leading" constant="8" id="Cbs-QR-Gq8"/>
-                        <constraint firstAttribute="height" constant="419" id="F6h-Cr-dzk"/>
+                        <constraint firstAttribute="height" constant="466" id="F6h-Cr-dzk"/>
                         <constraint firstItem="tUj-jI-HF5" firstAttribute="top" secondItem="Fmy-7s-v0P" secondAttribute="top" constant="8" id="Huk-zK-J3d"/>
+                        <constraint firstItem="szt-MK-FCu" firstAttribute="top" secondItem="ApH-Mp-Al7" secondAttribute="bottom" constant="8" id="Pfe-Eq-e5v"/>
+                        <constraint firstItem="4AY-IX-2Yf" firstAttribute="top" secondItem="szt-MK-FCu" secondAttribute="bottom" constant="8" id="PxN-et-RRC"/>
                         <constraint firstItem="tUj-jI-HF5" firstAttribute="leading" secondItem="Fmy-7s-v0P" secondAttribute="leading" constant="8" id="R9T-hF-AdR"/>
+                        <constraint firstItem="szt-MK-FCu" firstAttribute="leading" secondItem="Fmy-7s-v0P" secondAttribute="leading" constant="8" id="Sl3-bF-Ec7"/>
+                        <constraint firstItem="szt-MK-FCu" firstAttribute="top" secondItem="ApH-Mp-Al7" secondAttribute="bottom" constant="8" id="TKX-gM-rlt"/>
                         <constraint firstItem="no2-ta-G78" firstAttribute="top" secondItem="4AY-IX-2Yf" secondAttribute="bottom" constant="21" id="TMy-7e-Wt4"/>
                         <constraint firstAttribute="trailing" secondItem="tUj-jI-HF5" secondAttribute="trailing" constant="8" id="UoZ-aj-6Ke"/>
                         <constraint firstAttribute="trailing" secondItem="4AY-IX-2Yf" secondAttribute="trailing" constant="8" id="V9Q-Ms-0nZ"/>
@@ -644,14 +654,13 @@
                         <constraint firstItem="1Cu-Be-Wye" firstAttribute="leading" secondItem="Fmy-7s-v0P" secondAttribute="leading" constant="8" id="Wb5-ec-Mob"/>
                         <constraint firstItem="4AY-IX-2Yf" firstAttribute="leading" secondItem="Fmy-7s-v0P" secondAttribute="leading" constant="8" id="Z6E-xJ-xFd"/>
                         <constraint firstItem="ApH-Mp-Al7" firstAttribute="top" secondItem="tUj-jI-HF5" secondAttribute="bottom" constant="8" id="ZOU-GO-PLj"/>
-                        <constraint firstItem="4AY-IX-2Yf" firstAttribute="top" secondItem="ApH-Mp-Al7" secondAttribute="bottom" constant="8" id="a0A-3o-FMq"/>
                         <constraint firstAttribute="trailing" secondItem="ApH-Mp-Al7" secondAttribute="trailing" constant="8" id="ecI-Xo-Aur"/>
                         <constraint firstItem="bJo-dp-QvJ" firstAttribute="leading" secondItem="Fmy-7s-v0P" secondAttribute="leading" constant="8" id="nA9-Vg-ozd"/>
                         <constraint firstAttribute="width" constant="384" id="qqe-ew-oc5"/>
                         <constraint firstAttribute="trailing" secondItem="bJo-dp-QvJ" secondAttribute="trailing" constant="8" id="rig-TK-PZj"/>
                         <constraint firstItem="no2-ta-G78" firstAttribute="centerX" secondItem="Fmy-7s-v0P" secondAttribute="centerX" id="vI9-k9-R22"/>
                         <constraint firstItem="1Cu-Be-Wye" firstAttribute="top" secondItem="no2-ta-G78" secondAttribute="bottom" constant="35" id="xQY-hH-5ZI"/>
-                        <constraint firstAttribute="bottom" secondItem="1sW-E1-6jp" secondAttribute="bottom" constant="20" id="xyX-Vz-hz3"/>
+                        <constraint firstAttribute="bottom" secondItem="1sW-E1-6jp" secondAttribute="bottom" constant="8" id="xyX-Vz-hz3"/>
                         <constraint firstItem="bJo-dp-QvJ" firstAttribute="top" secondItem="1Cu-Be-Wye" secondAttribute="bottom" constant="8" id="yOu-k1-spw"/>
                     </constraints>
                 </view>
@@ -659,7 +668,7 @@
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Fmy-7s-v0P" firstAttribute="centerX" secondItem="HyN-rS-BNA" secondAttribute="centerX" id="Axd-63-9hD"/>
-                <constraint firstItem="Fmy-7s-v0P" firstAttribute="centerY" secondItem="HyN-rS-BNA" secondAttribute="centerY" id="MVz-Vf-CTg"/>
+                <constraint firstItem="Fmy-7s-v0P" firstAttribute="centerY" secondItem="HyN-rS-BNA" secondAttribute="centerY" constant="-23" id="MVz-Vf-CTg"/>
             </constraints>
             <point key="canvasLocation" x="1321" y="2584"/>
         </view>
@@ -681,7 +690,7 @@
                         <constraint firstAttribute="height" constant="517" id="HXc-oD-lu5"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wcJ-R5-Ove">
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wcJ-R5-Ove">
                     <constraints>
                         <constraint firstAttribute="width" constant="162" id="twq-Rl-vOp"/>
                     </constraints>
@@ -689,7 +698,7 @@
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="recordTapped" destination="-1" eventType="touchUpInside" id="9sh-MZ-5iY"/>
+                        <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="z0C-Mg-bdz"/>
                     </connections>
                 </button>
             </subviews>
