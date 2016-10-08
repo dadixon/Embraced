@@ -387,7 +387,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     }
     
     @IBAction func playVideo(_ sender: AnyObject) {
-        let fileURL = NSURL(string: "http://api.girlscouts.harryatwal.com/static_videos/stroop/english/STROOP_ENG_TASK1.mp4")!
+        let fileURL = NSURL(string: videos[sender.tag])!
         playVideoFile(url: fileURL)
     }
     
@@ -396,9 +396,9 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         let playerController = AVPlayerViewController()
         
         playerController.player = player
-        self.addChildViewController(playerController)
-        self.view.addSubview(playerController.view)
-        playerController.view.frame = self.view.frame
+        playerController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+        
+        self.present(playerController, animated: true, completion: nil)
         
         player.play()
     }
