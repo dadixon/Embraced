@@ -81,7 +81,7 @@ class UserInputViewController: UIViewController {
 
         
         
-        let questionnaireViewController:StroopViewController = StroopViewController()
+        let questionnaireViewController:DigitalSpanViewController = DigitalSpanViewController()
         let navController = UINavigationController(rootViewController: questionnaireViewController)
         self.present(navController, animated: true, completion: nil)
         

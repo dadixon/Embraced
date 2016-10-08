@@ -12,15 +12,16 @@ import AVFoundation
 class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
     
-    @IBOutlet weak var instructionsView: UIView!
-    @IBOutlet weak var playBtn: UIButton!
+    @IBOutlet weak var containerView: UIView!
+    
+    @IBOutlet var introView: UIView!
     @IBOutlet weak var recordBtn: UIButton!
+    @IBOutlet weak var playBtn: UIButton!
     
-    @IBOutlet weak var listenView: UIView!
-    
-    @IBOutlet weak var forwardSpanView: UIView!
-    
-    @IBOutlet var doneView: UIView!
+    @IBOutlet var preTask1View: UIView!
+    @IBOutlet var task1View: UIView!
+    @IBOutlet var preTask2View: UIView!
+    @IBOutlet var task2View: UIView!
     
     var recordingSession: AVAudioSession!
     
@@ -28,15 +29,57 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     var soundPlayer: AVAudioPlayer!
     var fileName = "testAudioFile.m4a"
     
-    var stimuli : [String] = []
+    var stimuli = [String: Any]()
+    var forward = Array<String>()
+    var backward = Array<String>()
+    
+    var step = 1
+    var totalSteps = 3
+    var progress : Float {
+        get {
+            return Float(step) / Float(totalSteps)
+        }
+    }
+    
+    
+    // MARK: - Private
+    
+    private func setSubview(_ current: UIView, next: UIView) {
+        current.removeFromSuperview()
+        containerView.addSubview(next)
+        
+        let leftConstraint = next.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
+        let topConstraint = next.topAnchor.constraint(equalTo: containerView.topAnchor)
+        let rightConstraint = next.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        let bottomConstraint = next.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
+    }
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        progressView.progress = progress
+        progressLabel.text = "Progress"
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(DigitalSpanViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(DigitalSpanViewController.back(_:)))
+        
+        introView.translatesAutoresizingMaskIntoConstraints = false
+        preTask1View.translatesAutoresizingMaskIntoConstraints = false
+        preTask2View.translatesAutoresizingMaskIntoConstraints = false
+        task1View.translatesAutoresizingMaskIntoConstraints = false
+        task2View.translatesAutoresizingMaskIntoConstraints = false
+        
+        containerView.addSubview(introView)
+        
+        let leftConstraint = introView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
+        let topConstraint = introView.topAnchor.constraint(equalTo: containerView.topAnchor)
+        let rightConstraint = introView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        let bottomConstraint = introView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
+
         
         recordingSession = AVAudioSession.sharedInstance()
 
@@ -69,7 +112,9 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
                 print("Everyone is fine, file downloaded successfully.")
                 
                 do {
-                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String]
+                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String:Any]
+                    self.forward = self.stimuli["forward"] as! Array<String>
+                    self.backward = self.stimuli["backward"] as! Array<String>
                 }catch {
                     print("Error with Json: \(error)")
                 }
@@ -133,36 +178,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         // Dispose of any resources that can be recreated.
     }
     
-    
-    // MARK: - Navigation
-    
-    @IBAction func recordTapped() {
-        if soundRecorder == nil {
-            startRecording()
-        } else {
-            finishRecording(success: true)
-        }
-    }
-    
-    
-    @IBAction func next(_ sender: AnyObject) {
-//        var navigationArray = self.navigationController?.viewControllers
-//        
-//        navigationArray?.remove(at: 0)
-        
-        let reyComplexFigure3ViewController:ReyComplexFigure3ViewController = ReyComplexFigure3ViewController()
-//        navigationArray?.append(reyComplexFigure3ViewController)
-//        
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        self.navigationController?.pushViewController(reyComplexFigure3ViewController, animated: true)
-    }
-    
-    @IBAction func back(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
-    
-    
-    
     func preparePlayer() {
         do {
             soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName))
@@ -194,18 +209,48 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     func downloadFileFromURL(url:NSURL){
         var downloadTask:URLSessionDownloadTask
         downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
-            
             self.play(URL! as NSURL)
-            
         })
         
         downloadTask.resume()
-        
     }
     
     func log(logMessage: String, functionName: String = #function) {
         print("\(functionName): \(logMessage)")
     }
+    
+    
+    
+    // MARK: - Navigation
+    
+    @IBAction func recordTapped() {
+        if soundRecorder == nil {
+            startRecording()
+        } else {
+            finishRecording(success: true)
+        }
+    }
+    
+    
+    @IBAction func next(_ sender: AnyObject) {
+//        var navigationArray = self.navigationController?.viewControllers
+//        
+//        navigationArray?.remove(at: 0)
+        
+        let reyComplexFigure3ViewController:ReyComplexFigure3ViewController = ReyComplexFigure3ViewController()
+//        navigationArray?.append(reyComplexFigure3ViewController)
+//        
+//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+        self.navigationController?.pushViewController(reyComplexFigure3ViewController, animated: true)
+    }
+    
+    @IBAction func back(_ sender: AnyObject) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
+    
     
     
     // MARK: - Actions
@@ -243,13 +288,11 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     }
     
     @IBAction func moveToListen(_ sender: AnyObject) {
-        instructionsView.isHidden = true
-        listenView.isHidden = false
+        setSubview(introView, next: preTask1View)
     }
     
     @IBAction func moveToForward(_ sender: AnyObject) {
-        listenView.isHidden = true
-        forwardSpanView.isHidden = false
+        setSubview(preTask1View, next: task1View)
     }
     
     @IBAction func nextSound(_ sender: AnyObject) {

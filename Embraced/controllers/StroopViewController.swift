@@ -403,14 +403,10 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         player.play()
     }
     
+    
+    
     // MARK: - Delegate
-    
-//    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-//        if !flag {
-//            finishRecording(success: false)
-//        }
-//    }
-    
+
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         NSLog("finished playing")
         finishPlaying()
