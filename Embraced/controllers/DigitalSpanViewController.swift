@@ -134,7 +134,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     }
 
     
-    func startRecording() {
+    func startRecording(_ button: UIButton, fileName: String) {
         let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName)
         
         let settings = [
@@ -149,9 +149,9 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
             soundRecorder.delegate = self
             soundRecorder.record()
             
-            recordBtn.setTitle("Stop", for: .normal)
+            button.setTitle("Stop", for: .normal)
         } catch {
-            finishRecording(success: false)
+            finishRecording(button, success: false)
         }
     }
     
@@ -161,23 +161,12 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         return documentsDirectory
     }
     
-    func finishRecording(success: Bool) {
+    func finishRecording(_ button: UIButton, success: Bool) {
         soundRecorder.stop()
         soundRecorder = nil
         
         if success {
-            recordBtn.setTitle("Re-record", for: .normal)
-        } else {
-            recordBtn.setTitle("Record", for: .normal)
-            // recording failed :(
-        }
-    }
-    
-    
-    
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if !flag {
-            finishRecording(success: false)
+            button.setTitle("Start", for: .normal)
         }
     }
     
@@ -243,15 +232,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     
     // MARK: - Navigation
     
-    @IBAction func recordTapped() {
-        if soundRecorder == nil {
-            startRecording()
-        } else {
-            finishRecording(success: true)
-        }
-    }
-    
-    
     @IBAction func next(_ sender: AnyObject) {
 //        var navigationArray = self.navigationController?.viewControllers
 //        
@@ -275,18 +255,42 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     
     // MARK: - Actions
     
-    
-    @IBAction func record(_ sender: UIButton) {
-        if sender.titleLabel!.text == "Record" {
-            soundRecorder.record()
-            sender.setTitle("Stop", for: UIControlState())
-            playBtn.isEnabled = false
+    @IBAction func recordTapped(_ sender: UIButton) {
+        if soundRecorder == nil {
+            startRecording(sender, fileName: fileName)
         } else {
-            soundRecorder.stop()
-            sender.setTitle("Record", for: UIControlState())
-            playBtn.isEnabled = false
+            finishRecording(sender, success: true)
         }
     }
+    
+    @IBAction func recordForward(_ sender: AnyObject) {
+        if soundRecorder == nil {
+            startRecording(sender as! UIButton, fileName: "forward\(forwardCount)")
+        } else {
+            finishRecording(sender as! UIButton, success: true)
+        }
+    }
+    
+    @IBAction func recordBackward(_ sender: AnyObject) {
+        if soundRecorder == nil {
+            startRecording(sender as! UIButton, fileName: "backward\(backwardCount)")
+        } else {
+            finishRecording(sender as! UIButton, success: true)
+        }
+    }
+    
+    
+//    @IBAction func record(_ sender: UIButton) {
+//        if sender.titleLabel!.text == "Start" {
+//            soundRecorder.record()
+//            sender.setTitle("Stop", for: UIControlState())
+//            playBtn.isEnabled = false
+//        } else {
+//            soundRecorder.stop()
+//            sender.setTitle("Record", for: UIControlState())
+//            playBtn.isEnabled = false
+//        }
+//    }
     
     @IBAction func playSound(_ sender: UIButton) {
         if sender.titleLabel!.text == "Play" {
@@ -353,8 +357,8 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
 //        playBtn.isEnabled = true
 //    }
 //    
-//    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-//        recordBtn.isEnabled = true
-//        playBtn.setTitle("Play", for: UIControlState())
-//    }
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        recordBtn.isEnabled = true
+        playBtn.setTitle("Play", for: UIControlState())
+    }
 }
