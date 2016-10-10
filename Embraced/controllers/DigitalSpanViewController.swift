@@ -178,6 +178,17 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         // Dispose of any resources that can be recreated.
     }
     
+    override func rotated() {
+        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
+            let alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     func preparePlayer() {
         do {
             soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName))
@@ -281,10 +292,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     }
     
     @IBAction func listenToSound(_ sender: AnyObject) {
-        let urlstring = stimuli[0]
-        let url = NSURL(string: urlstring)
-        print("the url = \(url!)")
-        downloadFileFromURL(url: url!)
+//        let urlstring = stimuli[0]
+//        let url = NSURL(string: urlstring)
+//        print("the url = \(url!)")
+//        downloadFileFromURL(url: url!)
     }
     
     @IBAction func moveToListen(_ sender: AnyObject) {

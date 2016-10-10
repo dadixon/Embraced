@@ -19,6 +19,8 @@
                 <outlet property="playBtn" destination="EKM-0V-z7N" id="I8l-Kf-lQl"/>
                 <outlet property="preTask1View" destination="Ep8-qV-Cvv" id="H7a-ND-yl8"/>
                 <outlet property="preTask2View" destination="mo0-Ba-4sC" id="eqP-Pc-hmz"/>
+                <outlet property="progressLabel" destination="g24-df-W8H" id="72K-xQ-UCG"/>
+                <outlet property="progressView" destination="DLd-be-qs1" id="S5a-0U-B5H"/>
                 <outlet property="recordBtn" destination="p7l-UL-1Cg" id="Y1J-7q-XLp"/>
                 <outlet property="task1View" destination="7iD-ap-k0X" id="xxV-BB-ApT"/>
                 <outlet property="task2View" destination="TeY-My-cQ3" id="1jR-wZ-6A7"/>

@@ -28,6 +28,17 @@ class ReyComplexFigure2ViewController: FrontViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func rotated() {
+        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
+            let alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     
     // MARK: - Navigation
     
