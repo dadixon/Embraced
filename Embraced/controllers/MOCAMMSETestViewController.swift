@@ -27,6 +27,17 @@ class MOCAMMSETestViewController: FrontViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func rotated() {
+        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
+            let alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to portrait orientation", preferredStyle: UIAlertControllerStyle.alert)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
+        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     
     // MARK: - Navigation
     
@@ -41,5 +52,4 @@ class MOCAMMSETestViewController: FrontViewController {
         self.navigationController?.pushViewController(reyComplexFigureViewController, animated: true)
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }
-
 }
