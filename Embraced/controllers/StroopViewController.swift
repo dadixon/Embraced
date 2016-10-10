@@ -63,6 +63,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     var isRunning = false
     var reactionTime = ""
     
+    var alertController = UIAlertController()
+    
     
     // MARK: - Private
     
@@ -82,6 +84,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        rotated()
         progressView.progress = progress
         progressLabel.text = "Progress"
         
@@ -158,11 +161,11 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     override func rotated() {
         if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
-            self.dismiss(animated: true, completion: nil)
+            alertController.dismiss(animated: true, completion: nil)
         }
         
         if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
-            let alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
+            alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
             self.present(alertController, animated: true, completion: nil)
         }
     }

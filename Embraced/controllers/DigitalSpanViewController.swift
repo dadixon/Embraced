@@ -23,6 +23,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     @IBOutlet var preTask2View: UIView!
     @IBOutlet var task2View: UIView!
     
+    @IBOutlet weak var rounds: UILabel!
+    @IBOutlet weak var bRounds: UILabel!
+    
+    
     var recordingSession: AVAudioSession!
     
     var soundRecorder: AVAudioRecorder!
@@ -41,6 +45,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         }
     }
     
+    var forwardCount = 0
+    var backwardCount = 0
+
+    var alertController = UIAlertController()
     
     // MARK: - Private
     
@@ -60,6 +68,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        rotated()
         progressView.progress = progress
         progressLabel.text = "Progress"
         
@@ -180,11 +189,11 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     
     override func rotated() {
         if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
-            self.dismiss(animated: true, completion: nil)
+            alertController.dismiss(animated: true, completion: nil)
         }
         
         if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
-            let alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
+            alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
             self.present(alertController, animated: true, completion: nil)
         }
     }
@@ -292,10 +301,19 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     }
     
     @IBAction func listenToSound(_ sender: AnyObject) {
-//        let urlstring = stimuli[0]
-//        let url = NSURL(string: urlstring)
-//        print("the url = \(url!)")
-//        downloadFileFromURL(url: url!)
+        if sender.tag == 0 {
+            let url = NSURL(string: forward[forward.count - 1])
+            downloadFileFromURL(url: url!)
+        } else if sender.tag == 1 {
+            let url = NSURL(string: forward[forwardCount])
+            downloadFileFromURL(url: url!)
+        } else if sender.tag == 2 {
+            let url = NSURL(string: backward[backward.count - 1])
+            downloadFileFromURL(url: url!)
+        } else if sender.tag == 3 {
+            let url = NSURL(string: backward[backwardCount])
+            downloadFileFromURL(url: url!)
+        }
     }
     
     @IBAction func moveToListen(_ sender: AnyObject) {
@@ -307,10 +325,27 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     }
     
     @IBAction func nextSound(_ sender: AnyObject) {
-        
+        if (forwardCount < forward.count - 2) {
+            forwardCount += 1
+            rounds.text = "Round \(forwardCount+1)"
+        } else {
+            setSubview(task1View, next: preTask2View)
+        }
     }
     
+    @IBAction func moveToBackward(_ sender: AnyObject) {
+        setSubview(preTask2View, next: task2View)
+        bRounds.text = "Round \(backwardCount+1)"
+    }
     
+    @IBAction func nextBSound(_ sender: AnyObject) {
+        if (backwardCount < backward.count - 2) {
+            backwardCount += 1
+            bRounds.text = "Round \(backwardCount+1)"
+        } else {
+            setSubview(task1View, next: preTask2View)
+        }
+    }
     
     // MARK: - Delegate
     

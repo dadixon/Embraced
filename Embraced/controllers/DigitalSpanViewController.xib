@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DigitalSpanViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
+                <outlet property="bRounds" destination="KBF-ll-4we" id="Nnk-o6-4P7"/>
                 <outlet property="containerView" destination="bru-dk-i0h" id="1T5-ce-Yb5"/>
                 <outlet property="introView" destination="cVi-fu-JAH" id="ZYh-t5-glv"/>
                 <outlet property="mainView" destination="PpR-IV-LmM" id="qir-ei-Fte"/>
@@ -22,6 +23,7 @@
                 <outlet property="progressLabel" destination="g24-df-W8H" id="72K-xQ-UCG"/>
                 <outlet property="progressView" destination="DLd-be-qs1" id="S5a-0U-B5H"/>
                 <outlet property="recordBtn" destination="p7l-UL-1Cg" id="Y1J-7q-XLp"/>
+                <outlet property="rounds" destination="YZd-IO-sAI" id="DAf-8k-YaP"/>
                 <outlet property="task1View" destination="7iD-ap-k0X" id="xxV-BB-ApT"/>
                 <outlet property="task2View" destination="TeY-My-cQ3" id="1jR-wZ-6A7"/>
                 <outlet property="view" destination="sx6-SJ-Dkr" id="okO-BJ-XzA"/>
@@ -185,6 +187,9 @@ Please click LISTEN button when you are ready.</string>
                             <state key="normal" title="Listen" image="listen.png">
                                 <color key="titleColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="listenToSound:" destination="-1" eventType="touchUpInside" id="7iq-ns-Szu"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="AOr-uP-wO7">
                             <constraints>
@@ -242,7 +247,39 @@ You will have a practice round before starting with the series.</string>
                         <constraint firstAttribute="width" constant="126" id="3ah-Oe-p6I"/>
                     </constraints>
                     <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="moveToBackward:" destination="-1" eventType="touchUpInside" id="OkU-hp-nHC"/>
+                    </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPq-37-0ei">
+                    <subviews>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhN-gL-hFd">
+                            <state key="normal" title="Listen" image="listen.png">
+                                <color key="titleColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="listenToSound:" destination="-1" eventType="touchUpInside" id="A0F-3n-pGy"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sHy-8l-Oqs">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="162" id="mpN-is-nDD"/>
+                            </constraints>
+                            <state key="normal" title="Start" image="record.png">
+                                <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="WhN-gL-hFd" firstAttribute="centerY" secondItem="sHy-8l-Oqs" secondAttribute="centerY" id="DVM-Ku-WCo"/>
+                        <constraint firstAttribute="width" constant="544" id="EHM-tQ-BSt"/>
+                        <constraint firstAttribute="height" constant="247" id="IKQ-Zx-psc"/>
+                        <constraint firstItem="WhN-gL-hFd" firstAttribute="leading" secondItem="DPq-37-0ei" secondAttribute="leading" constant="8" id="Ta2-7n-7xy"/>
+                        <constraint firstAttribute="trailing" secondItem="sHy-8l-Oqs" secondAttribute="trailing" constant="8" id="b1d-zM-ypA"/>
+                        <constraint firstItem="sHy-8l-Oqs" firstAttribute="centerY" secondItem="DPq-37-0ei" secondAttribute="centerY" id="tus-lI-1eb"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -251,8 +288,10 @@ You will have a practice round before starting with the series.</string>
                 <constraint firstAttribute="trailing" secondItem="8Q1-nt-Lvd" secondAttribute="trailing" constant="20" id="6A4-T7-41p"/>
                 <constraint firstItem="NYE-DH-iub" firstAttribute="leading" secondItem="mo0-Ba-4sC" secondAttribute="leading" constant="20" id="CoE-5O-1b5"/>
                 <constraint firstItem="NYE-DH-iub" firstAttribute="top" secondItem="mo0-Ba-4sC" secondAttribute="top" constant="20" id="GGG-vL-C7K"/>
+                <constraint firstItem="DPq-37-0ei" firstAttribute="centerY" secondItem="mo0-Ba-4sC" secondAttribute="centerY" id="HV2-Hi-rkj"/>
                 <constraint firstItem="I6d-eY-aPO" firstAttribute="centerX" secondItem="mo0-Ba-4sC" secondAttribute="centerX" id="Iqm-dp-hVX"/>
                 <constraint firstItem="8Q1-nt-Lvd" firstAttribute="top" secondItem="NYE-DH-iub" secondAttribute="bottom" constant="8" id="Pcd-Wb-7b3"/>
+                <constraint firstItem="DPq-37-0ei" firstAttribute="centerX" secondItem="mo0-Ba-4sC" secondAttribute="centerX" id="XAq-dy-yfe"/>
             </constraints>
             <point key="canvasLocation" x="2435" y="-1030"/>
         </view>
@@ -260,25 +299,24 @@ You will have a practice round before starting with the series.</string>
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmM-P0-4MJ">
-                    <string key="text">Now we will start with the task.
-Click on LISTEN button when you are ready.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnC-0d-Zfp">
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="iKM-gP-dfX"/>
                     </constraints>
                     <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="nextSound:" destination="-1" eventType="touchUpInside" id="dec-eO-i7c"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPl-Ho-F0E">
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3b-f4-6b3">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3b-f4-6b3">
                             <state key="normal" title="Listen" image="listen.png">
                                 <color key="titleColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="listenToSound:" destination="-1" eventType="touchUpInside" id="VK5-iG-NpC"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HcA-UX-jfn">
                             <constraints>
@@ -299,13 +337,27 @@ Click on LISTEN button when you are ready.</string>
                         <constraint firstAttribute="trailing" secondItem="HcA-UX-jfn" secondAttribute="trailing" constant="8" id="mbS-zs-Bpa"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZd-IO-sAI">
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmM-P0-4MJ">
+                    <string key="text">Now we will start with the task.
+Click on LISTEN button when you are ready.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="dmM-P0-4MJ" firstAttribute="leading" secondItem="7iD-ap-k0X" secondAttribute="leading" constant="20" id="Gbg-ya-qcJ"/>
-                <constraint firstItem="dmM-P0-4MJ" firstAttribute="top" secondItem="7iD-ap-k0X" secondAttribute="top" constant="55" id="MP8-Dm-ju2"/>
+                <constraint firstItem="dmM-P0-4MJ" firstAttribute="top" secondItem="YZd-IO-sAI" secondAttribute="bottom" constant="8" id="NpI-7x-S4y"/>
                 <constraint firstAttribute="trailing" secondItem="dmM-P0-4MJ" secondAttribute="trailing" constant="20" id="S5O-lW-rBO"/>
                 <constraint firstItem="hPl-Ho-F0E" firstAttribute="centerY" secondItem="7iD-ap-k0X" secondAttribute="centerY" id="ZHk-na-9f1"/>
+                <constraint firstItem="YZd-IO-sAI" firstAttribute="top" secondItem="7iD-ap-k0X" secondAttribute="top" constant="55" id="ejL-p7-bGL"/>
+                <constraint firstItem="YZd-IO-sAI" firstAttribute="centerX" secondItem="7iD-ap-k0X" secondAttribute="centerX" id="fXE-cK-7as"/>
                 <constraint firstAttribute="bottom" secondItem="BnC-0d-Zfp" secondAttribute="bottom" constant="20" id="o2R-2C-JWW"/>
                 <constraint firstItem="hPl-Ho-F0E" firstAttribute="centerX" secondItem="7iD-ap-k0X" secondAttribute="centerX" id="wI0-6l-4zC"/>
                 <constraint firstItem="BnC-0d-Zfp" firstAttribute="centerX" secondItem="7iD-ap-k0X" secondAttribute="centerX" id="z4a-GI-Koa"/>
@@ -316,25 +368,24 @@ Click on LISTEN button when you are ready.</string>
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5d-aU-YUb">
-                    <string key="text">Now we will start with the task.
-Click on LISTEN button when you are ready.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihh-pk-YgS">
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="SY5-69-zOL"/>
                     </constraints>
                     <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="nextBSound:" destination="-1" eventType="touchUpInside" id="Z83-8d-0U1"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGI-1Q-T42">
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOM-Oj-VlA">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOM-Oj-VlA">
                             <state key="normal" title="Listen" image="listen.png">
                                 <color key="titleColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="listenToSound:" destination="-1" eventType="touchUpInside" id="fil-cH-EM2"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wIt-um-Ncc">
                             <constraints>
@@ -355,16 +406,30 @@ Click on LISTEN button when you are ready.</string>
                         <constraint firstAttribute="trailing" secondItem="wIt-um-Ncc" secondAttribute="trailing" constant="8" id="eTo-43-yAM"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBF-ll-4we">
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5d-aU-YUb">
+                    <string key="text">Now we will start with the task.
+Click on LISTEN button when you are ready.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="W5d-aU-YUb" firstAttribute="top" secondItem="KBF-ll-4we" secondAttribute="bottom" constant="8" id="7nr-fj-kEb"/>
                 <constraint firstItem="EGI-1Q-T42" firstAttribute="centerY" secondItem="TeY-My-cQ3" secondAttribute="centerY" id="9aQ-9o-8Jw"/>
                 <constraint firstAttribute="trailing" secondItem="W5d-aU-YUb" secondAttribute="trailing" constant="20" id="Bgf-Jb-Zft"/>
-                <constraint firstItem="W5d-aU-YUb" firstAttribute="top" secondItem="TeY-My-cQ3" secondAttribute="top" constant="55" id="CnD-bQ-4Kr"/>
                 <constraint firstItem="W5d-aU-YUb" firstAttribute="leading" secondItem="TeY-My-cQ3" secondAttribute="leading" constant="20" id="HXS-et-9b1"/>
                 <constraint firstAttribute="bottom" secondItem="ihh-pk-YgS" secondAttribute="bottom" constant="20" id="LHz-Sx-nHM"/>
+                <constraint firstItem="KBF-ll-4we" firstAttribute="top" secondItem="TeY-My-cQ3" secondAttribute="top" constant="55" id="OWK-og-SIw"/>
                 <constraint firstItem="EGI-1Q-T42" firstAttribute="centerX" secondItem="TeY-My-cQ3" secondAttribute="centerX" id="Zyc-KM-SL3"/>
                 <constraint firstItem="ihh-pk-YgS" firstAttribute="centerX" secondItem="TeY-My-cQ3" secondAttribute="centerX" id="eZr-f3-m8R"/>
+                <constraint firstItem="KBF-ll-4we" firstAttribute="centerX" secondItem="TeY-My-cQ3" secondAttribute="centerX" id="r5T-ke-co3"/>
             </constraints>
             <point key="canvasLocation" x="3271" y="-1030"/>
         </view>
