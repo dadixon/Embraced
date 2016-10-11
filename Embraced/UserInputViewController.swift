@@ -80,7 +80,7 @@ class UserInputViewController: UIViewController {
 
         
         
-        let questionnaireViewController:QuestionnaireViewController = QuestionnaireViewController()
+        let questionnaireViewController:PitchViewController = PitchViewController()
         let navController = UINavigationController(rootViewController: questionnaireViewController)
         self.present(navController, animated: true, completion: nil)
         
