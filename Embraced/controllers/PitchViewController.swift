@@ -26,6 +26,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var example1Label: UILabel!
     @IBOutlet weak var example2Label: UILabel!
+    @IBOutlet weak var example3Label: UILabel!
     
     
     
@@ -194,6 +195,25 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         downloadFileFromURL(url: url!)
         soundLabel = example2Label
     }
+    
+    @IBAction func moveToExample3(_ sender: AnyObject) {
+        setSubview(example2View, next: example3View)
+        
+        if examples[2].count > 1 {
+            firstSound = examples[2][0]
+            secondSound = examples[2][1]
+        } else if examples[2].count == 1 {
+            firstSound = examples[2][0]
+            secondSound = examples[2][0]
+        }
+        
+        let url = NSURL(string: firstSound)
+        downloadFileFromURL(url: url!)
+        soundLabel = example3Label
+    }
+    
+    
+    
     
     
     // MARK: - Delegate

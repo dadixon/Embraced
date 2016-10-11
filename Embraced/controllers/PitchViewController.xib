@@ -18,6 +18,7 @@
                 <outlet property="example1View" destination="baQ-Rn-Gp2" id="F2L-ru-c2C"/>
                 <outlet property="example2Label" destination="6IV-bi-xXS" id="xLF-8f-N04"/>
                 <outlet property="example2View" destination="YBG-GS-vvZ" id="XYf-Sc-7uj"/>
+                <outlet property="example3Label" destination="sTY-n4-wSH" id="1ef-ok-CGy"/>
                 <outlet property="example3View" destination="7y3-ol-fQa" id="PNH-nB-ICT"/>
                 <outlet property="introView" destination="bsX-3k-iZX" id="nXk-TY-aUV"/>
                 <outlet property="mainView" destination="63N-dC-I4a" id="AsM-Iq-Trg"/>
@@ -358,6 +359,9 @@ We will now continue to an example where the melodies are different.</string>
                         <constraint firstAttribute="width" constant="126" id="LDK-5W-zyj"/>
                     </constraints>
                     <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="moveToExample3:" destination="-1" eventType="touchUpInside" id="kOc-Qn-XzR"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQa-ic-LCF">
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
@@ -412,27 +416,59 @@ We will now continue to an example where the difference between the melodies is 
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiU-8p-po8" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <frame key="frameInset" minX="321" minY="974" width="126" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiU-8p-po8" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="126" id="gEn-wb-PLS"/>
+                    </constraints>
                     <state key="normal" title="Next"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Example 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BW8-4r-SHC">
-                    <frame key="frameInset" minX="20" minY="39" width="113" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BW8-4r-SHC">
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTY-n4-wSH">
-                    <frame key="frameInset" minX="363" minY="358" width="42" height="180"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTY-n4-wSH">
                     <fontDescription key="fontDescription" type="system" pointSize="74"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-bI-cFW">
+                    <string key="text">In this example, the difference between the melodies is more subtle.
+
+To hear the melodies again tap on the “SPEAKER BUTTON”
+
+Tap on the button “DIFFERENT” to indicate that the melodies are different. 
+
+Now you will practice on your own.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-8L-wog">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="271" id="5ql-7D-IIy"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Same"/>
+                        <segment title="Different"/>
+                    </segments>
+                    <color key="tintColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="BW8-4r-SHC" firstAttribute="leading" secondItem="7y3-ol-fQa" secondAttribute="leading" constant="20" id="0tu-FB-Rhb"/>
+                <constraint firstItem="BW8-4r-SHC" firstAttribute="top" secondItem="7y3-ol-fQa" secondAttribute="top" constant="55" id="2wh-5I-4h4"/>
+                <constraint firstItem="iiU-8p-po8" firstAttribute="top" secondItem="cWh-8L-wog" secondAttribute="bottom" constant="119" id="6Bu-wg-Nex"/>
+                <constraint firstItem="cWh-8L-wog" firstAttribute="centerX" secondItem="7y3-ol-fQa" secondAttribute="centerX" id="7gY-Au-xCj"/>
+                <constraint firstItem="vVO-bI-cFW" firstAttribute="top" secondItem="BW8-4r-SHC" secondAttribute="bottom" constant="8" id="PRl-m9-t2E"/>
+                <constraint firstItem="iiU-8p-po8" firstAttribute="centerX" secondItem="7y3-ol-fQa" secondAttribute="centerX" id="PZC-gV-VRK"/>
+                <constraint firstItem="sTY-n4-wSH" firstAttribute="centerY" secondItem="7y3-ol-fQa" secondAttribute="centerY" id="esQ-il-lMQ"/>
+                <constraint firstItem="vVO-bI-cFW" firstAttribute="leading" secondItem="7y3-ol-fQa" secondAttribute="leading" constant="20" id="qMx-kK-Af8"/>
+                <constraint firstItem="sTY-n4-wSH" firstAttribute="centerX" secondItem="7y3-ol-fQa" secondAttribute="centerX" id="t00-1P-a4U"/>
+                <constraint firstAttribute="bottom" secondItem="iiU-8p-po8" secondAttribute="bottom" constant="20" id="wve-y2-6ag"/>
+                <constraint firstAttribute="trailing" secondItem="vVO-bI-cFW" secondAttribute="trailing" constant="20" id="xaH-9T-3SM"/>
+            </constraints>
             <point key="canvasLocation" x="-256" y="924"/>
         </view>
     </objects>
