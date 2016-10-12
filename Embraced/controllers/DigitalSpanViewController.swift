@@ -133,6 +133,22 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         task.resume()
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func rotated() {
+        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        
+        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
+            alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     
     func startRecording(_ button: UIButton, fileName: String) {
         let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName)
@@ -170,22 +186,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         }
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func rotated() {
-        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
-            alertController.dismiss(animated: true, completion: nil)
-        }
-        
-        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
-            alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
-            self.present(alertController, animated: true, completion: nil)
-        }
-    }
     
     func preparePlayer() {
         do {
@@ -278,19 +278,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
             finishRecording(sender as! UIButton, success: true)
         }
     }
-    
-    
-//    @IBAction func record(_ sender: UIButton) {
-//        if sender.titleLabel!.text == "Start" {
-//            soundRecorder.record()
-//            sender.setTitle("Stop", for: UIControlState())
-//            playBtn.isEnabled = false
-//        } else {
-//            soundRecorder.stop()
-//            sender.setTitle("Record", for: UIControlState())
-//            playBtn.isEnabled = false
-//        }
-//    }
+
     
     @IBAction func playSound(_ sender: UIButton) {
         if sender.titleLabel!.text == "Play" {

@@ -45,4 +45,5 @@ class FrontViewController: UIViewController {
     func rotated() {
         
     }
+    
 }
