@@ -39,6 +39,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     var firstSound = String()
     var secondSound = String()
     var soundLabel = UILabel()
+    var played = false
     
     var trialCount = 0
     var tasksCount = 0
@@ -145,6 +146,12 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     }
     
     private func setupSounds(_ soundArray: Array<Array<String>>, iterator: Int, label: UILabel) {
+        if soundPlayer != nil {
+            soundPlayer.stop()
+        }
+        
+        played = false
+        
         if soundArray[iterator].count > 1 {
             firstSound = soundArray[iterator][0]
             secondSound = soundArray[iterator][1]
@@ -156,6 +163,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         let url = NSURL(string: firstSound)
         downloadFileFromURL(url: url!)
         soundLabel = label
+        
+        print("Sound url \(firstSound)")
     }
     
     
@@ -179,27 +188,30 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func moveToExample2(_ sender: AnyObject) {
-        soundPlayer.stop()
         setSubview(example1View, next: example2View)
         setupSounds(examples, iterator: 1, label: example2Label)
     }
     
+    @IBAction func replay(_ sender: AnyObject) {
+        played = false
+        let url = NSURL(string: firstSound)
+        downloadFileFromURL(url: url!)
+        soundLabel.text = "1"
+    }
+    
     @IBAction func moveToExample3(_ sender: AnyObject) {
-        soundPlayer.stop()
         setSubview(example2View, next: example3View)
         setupSounds(examples, iterator: 2, label: example3Label)
     }
     
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
-        soundPlayer.stop()
         setSubview(example3View, next: trial1View)
         setupSounds(trials, iterator: trialCount, label: trialLabel)
         trialCount += 1
     }
     
     @IBAction func nextTrial(_ sender: AnyObject) {
-        soundPlayer.stop()
         if trialCount < trials.count {
             // Save answer
         
@@ -223,7 +235,6 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     
     @IBAction func nextTask(_ sender: AnyObject) {
-        soundPlayer.stop()
         if tasksCount < tasks.count {
             // Save answer
             
@@ -250,13 +261,13 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         print("finished")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            if self.firstSound != "" {
+            if self.played == false {
                 self.soundLabel.text = "2"
                 let url = NSURL(string: self.secondSound)
                 self.downloadFileFromURL(url: url!)
             }
         
-            self.firstSound = ""
+            self.played = true
         }
     }
     

@@ -366,6 +366,13 @@ We will now continue to an example where the difference between the melodies is 
                     </segments>
                     <color key="tintColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3o-lN-Zg6">
+                    <frame key="frameInset" minX="699" minY="822" width="49" height="38"/>
+                    <state key="normal" image="speaker.png"/>
+                    <connections>
+                        <action selector="replay:" destination="-1" eventType="touchUpInside" id="Jyp-WV-lVm"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -376,7 +383,9 @@ We will now continue to an example where the difference between the melodies is 
                 <constraint firstAttribute="bottom" secondItem="IT5-SX-vUy" secondAttribute="bottom" constant="20" id="S4w-yt-smh"/>
                 <constraint firstItem="dQa-ic-LCF" firstAttribute="top" secondItem="YBG-GS-vvZ" secondAttribute="top" constant="55" id="UTl-NJ-sUG"/>
                 <constraint firstItem="6IV-bi-xXS" firstAttribute="centerY" secondItem="YBG-GS-vvZ" secondAttribute="centerY" id="VRH-ig-gkz"/>
+                <constraint firstAttribute="trailing" secondItem="C3o-lN-Zg6" secondAttribute="trailing" constant="20" id="WrY-oi-YGa"/>
                 <constraint firstItem="3rt-x4-rLw" firstAttribute="top" secondItem="dQa-ic-LCF" secondAttribute="bottom" constant="8" id="iT3-o8-Ncb"/>
+                <constraint firstItem="C3o-lN-Zg6" firstAttribute="centerY" secondItem="4sf-vH-XsI" secondAttribute="centerY" id="kJS-oo-Te9"/>
                 <constraint firstItem="4sf-vH-XsI" firstAttribute="centerX" secondItem="YBG-GS-vvZ" secondAttribute="centerX" id="lbY-sS-YH0"/>
                 <constraint firstItem="6IV-bi-xXS" firstAttribute="centerX" secondItem="YBG-GS-vvZ" secondAttribute="centerX" id="lhg-fN-Xhj"/>
                 <constraint firstItem="dQa-ic-LCF" firstAttribute="leading" secondItem="YBG-GS-vvZ" secondAttribute="leading" constant="20" id="rhf-3Q-Gpt"/>
@@ -446,4 +455,7 @@ Now you will practice on your own.</string>
             <point key="canvasLocation" x="-256" y="924"/>
         </view>
     </objects>
+    <resources>
+        <image name="speaker.png" width="84" height="68"/>
+    </resources>
 </document>
