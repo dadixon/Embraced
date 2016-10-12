@@ -18,16 +18,15 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     @IBOutlet var example2View: UIView!
     @IBOutlet var example3View: UIView!
     @IBOutlet var trial1View: UIView!
-    @IBOutlet var trial2View: UIView!
-    @IBOutlet var trial3View: UIView!
-    @IBOutlet var trial4View: UIView!
-    @IBOutlet var trial5View: UIView!
+    @IBOutlet var preTaskView: UIView!
     @IBOutlet var taskView: UIView!
     
     @IBOutlet weak var example1Label: UILabel!
     @IBOutlet weak var example2Label: UILabel!
     @IBOutlet weak var example3Label: UILabel!
     
+    @IBOutlet weak var trialLabel: UILabel!
+    @IBOutlet weak var tasksLabel: UILabel!
     
     
     var soundPlayer: AVAudioPlayer!
@@ -41,7 +40,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     var secondSound = String()
     var soundLabel = UILabel()
     
-    
+    var trialCount = 0
+    var tasksCount = 0
     
     
     
@@ -71,10 +71,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         example2View.translatesAutoresizingMaskIntoConstraints = false
         example3View.translatesAutoresizingMaskIntoConstraints = false
         trial1View.translatesAutoresizingMaskIntoConstraints = false
-        trial2View.translatesAutoresizingMaskIntoConstraints = false
-        trial3View.translatesAutoresizingMaskIntoConstraints = false
-        trial4View.translatesAutoresizingMaskIntoConstraints = false
-        trial5View.translatesAutoresizingMaskIntoConstraints = false
+        preTaskView.translatesAutoresizingMaskIntoConstraints = false
         taskView.translatesAutoresizingMaskIntoConstraints = false
 
         containerView.addSubview(introView)
@@ -147,7 +144,19 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         downloadTask.resume()
     }
     
-    
+    private func setupSounds(_ soundArray: Array<Array<String>>, iterator: Int, label: UILabel) {
+        if soundArray[iterator].count > 1 {
+            firstSound = soundArray[iterator][0]
+            secondSound = soundArray[iterator][1]
+        } else if soundArray[iterator].count == 1 {
+            firstSound = soundArray[iterator][0]
+            secondSound = soundArray[iterator][0]
+        }
+        
+        let url = NSURL(string: firstSound)
+        downloadFileFromURL(url: url!)
+        soundLabel = label
+    }
     
     
     // MARK: - Navigation
@@ -166,50 +175,69 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     @IBAction func moveToExample(_ sender: AnyObject) {
         setSubview(introView, next: example1View)
-        
-        if examples[0].count > 1 {
-            firstSound = examples[0][0]
-            secondSound = examples[0][1]
-        } else if examples[0].count == 1 {
-            firstSound = examples[0][0]
-            secondSound = examples[0][0]
-        }
-        
-        let url = NSURL(string: firstSound)
-        downloadFileFromURL(url: url!)
-        soundLabel = example1Label
+        setupSounds(examples, iterator: 0, label: example1Label)
     }
     
     @IBAction func moveToExample2(_ sender: AnyObject) {
+        soundPlayer.stop()
         setSubview(example1View, next: example2View)
-        
-        if examples[1].count > 1 {
-            firstSound = examples[1][0]
-            secondSound = examples[1][1]
-        } else if examples[1].count == 1 {
-            firstSound = examples[1][0]
-            secondSound = examples[1][0]
-        }
-        
-        let url = NSURL(string: firstSound)
-        downloadFileFromURL(url: url!)
-        soundLabel = example2Label
+        setupSounds(examples, iterator: 1, label: example2Label)
     }
     
     @IBAction func moveToExample3(_ sender: AnyObject) {
+        soundPlayer.stop()
         setSubview(example2View, next: example3View)
+        setupSounds(examples, iterator: 2, label: example3Label)
+    }
+    
+    
+    @IBAction func moveToTrial1(_ sender: AnyObject) {
+        soundPlayer.stop()
+        setSubview(example3View, next: trial1View)
+        setupSounds(trials, iterator: trialCount, label: trialLabel)
+        trialCount += 1
+    }
+    
+    @IBAction func nextTrial(_ sender: AnyObject) {
+        soundPlayer.stop()
+        if trialCount < trials.count {
+            // Save answer
         
-        if examples[2].count > 1 {
-            firstSound = examples[2][0]
-            secondSound = examples[2][1]
-        } else if examples[2].count == 1 {
-            firstSound = examples[2][0]
-            secondSound = examples[2][0]
+            // Which label back to 1
+            trialLabel.text = "1"
+        
+            // Set sounds to play
+            setupSounds(trials, iterator: trialCount, label: trialLabel)
+        
+            trialCount += 1
+        } else {
+            setSubview(trial1View, next: preTaskView)
         }
-        
-        let url = NSURL(string: firstSound)
-        downloadFileFromURL(url: url!)
-        soundLabel = example3Label
+    }
+    
+    @IBAction func moveToTask(_ sender: AnyObject) {
+        setSubview(preTaskView, next: taskView)
+        setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
+        tasksCount += 1
+    }
+    
+    
+    @IBAction func nextTask(_ sender: AnyObject) {
+        soundPlayer.stop()
+        if tasksCount < tasks.count {
+            // Save answer
+            
+            // Which label back to 1
+            tasksLabel.text = "1"
+            
+            // Set sounds to play
+            setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
+            
+            tasksCount += 1
+        } else {
+            let mOCAMMSETestViewController:WordListViewController = WordListViewController()
+            self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
+        }
     }
     
     

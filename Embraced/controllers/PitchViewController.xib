@@ -22,12 +22,11 @@
                 <outlet property="example3View" destination="7y3-ol-fQa" id="PNH-nB-ICT"/>
                 <outlet property="introView" destination="bsX-3k-iZX" id="nXk-TY-aUV"/>
                 <outlet property="mainView" destination="63N-dC-I4a" id="AsM-Iq-Trg"/>
-                <outlet property="taskView" destination="kdq-YS-zKr" id="O8N-Ie-8ky"/>
-                <outlet property="trial1View" destination="hBT-b0-W23" id="dIh-yi-GDI"/>
-                <outlet property="trial2View" destination="AM3-nu-Byw" id="MAt-XJ-smN"/>
-                <outlet property="trial3View" destination="q8h-Qe-EBW" id="w7z-0i-VwR"/>
-                <outlet property="trial4View" destination="8ZH-z9-PfW" id="zSi-V7-gDj"/>
-                <outlet property="trial5View" destination="8Qx-yz-w1K" id="Szq-tI-rKz"/>
+                <outlet property="preTaskView" destination="hBT-b0-W23" id="PR8-NU-zWL"/>
+                <outlet property="taskView" destination="o0A-36-t90" id="Zey-9k-AyI"/>
+                <outlet property="tasksLabel" destination="w1r-WS-ZBd" id="fMs-tA-627"/>
+                <outlet property="trial1View" destination="E4u-Jf-GIt" id="3qb-eq-lg1"/>
+                <outlet property="trialLabel" destination="XIU-ev-8c4" id="jMd-Tp-st8"/>
                 <outlet property="view" destination="8Cu-e9-YQX" id="X7o-oT-sMb"/>
             </connections>
         </placeholder>
@@ -192,163 +191,135 @@ We will now continue to an example where the melodies are different.</string>
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HS-Uf-iq0" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <frame key="frameInset" minX="321" minY="974" width="126" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Next"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HS-Uf-iq0" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="126" id="6JZ-Zy-6MW"/>
+                    </constraints>
+                    <state key="normal" title="Start"/>
+                    <connections>
+                        <action selector="moveToTask:" destination="-1" eventType="touchUpInside" id="ud2-dP-HsY"/>
+                    </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Example 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jr-22-Q8X">
-                    <frame key="frameInset" minX="20" minY="39" width="106" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJF-ua-4gM">
-                    <frame key="frameInset" minX="363" minY="358" width="42" height="180"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="74"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2K-68-LWS">
+                    <string key="text">You have completed the practice trials. 
+
+“During this task, the screen will show numbers 1 and 2 to help you differentiate the two melodies. Also, it will show the buttons “SAME” and “DIFFERENT” and information on whether your response was correct or not.”
+
+This task contains 24 trials and will take about 5 minutes to complete. 
+
+Please, tap the START button when you are ready to start.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="666" y="-1287"/>
+            <constraints>
+                <constraint firstItem="2HS-Uf-iq0" firstAttribute="centerX" secondItem="hBT-b0-W23" secondAttribute="centerX" id="99r-RU-gNM"/>
+                <constraint firstAttribute="bottom" secondItem="2HS-Uf-iq0" secondAttribute="bottom" constant="20" id="dix-gX-UPt"/>
+                <constraint firstAttribute="trailing" secondItem="X2K-68-LWS" secondAttribute="trailing" constant="20" id="jAc-qP-Zdk"/>
+                <constraint firstItem="X2K-68-LWS" firstAttribute="top" secondItem="hBT-b0-W23" secondAttribute="top" constant="55" id="kfA-0C-zzk"/>
+                <constraint firstItem="X2K-68-LWS" firstAttribute="leading" secondItem="hBT-b0-W23" secondAttribute="leading" constant="20" id="kpk-Fz-CTm"/>
+            </constraints>
+            <point key="canvasLocation" x="1477" y="-1287"/>
         </view>
-        <view contentMode="scaleToFill" id="8ZH-z9-PfW">
+        <view contentMode="scaleToFill" id="E4u-Jf-GIt">
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p40-hG-p26" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <frame key="frameInset" minX="321" minY="974" width="126" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lud-Lr-EWg" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="126" id="aiL-bo-Kru"/>
+                    </constraints>
                     <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="nextTrial:" destination="-1" eventType="touchUpInside" id="erK-Am-1x2"/>
+                    </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Example 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dJ-8y-lav">
-                    <frame key="frameInset" minX="20" minY="39" width="106" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pracitce" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMW-sL-Lrf">
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQH-88-lve">
-                    <frame key="frameInset" minX="363" minY="358" width="42" height="180"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIU-ev-8c4">
                     <fontDescription key="fontDescription" type="system" pointSize="74"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="ItZ-Vj-dpA">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="271" id="qqs-st-q9g"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Same"/>
+                        <segment title="Different"/>
+                    </segments>
+                    <color key="tintColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </segmentedControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t1-nG-okL">
+                    <string key="text">Remember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.
+There will be 5 pairs of melodies for you to practice.
+When you are ready, tap on START button.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="666" y="2048"/>
+            <constraints>
+                <constraint firstItem="XIU-ev-8c4" firstAttribute="centerX" secondItem="E4u-Jf-GIt" secondAttribute="centerX" id="6og-QF-3U3"/>
+                <constraint firstAttribute="trailing" secondItem="4t1-nG-okL" secondAttribute="trailing" constant="20" id="8O5-K0-2ae"/>
+                <constraint firstItem="Lud-Lr-EWg" firstAttribute="centerX" secondItem="E4u-Jf-GIt" secondAttribute="centerX" id="BSn-Nr-lk3"/>
+                <constraint firstItem="tMW-sL-Lrf" firstAttribute="top" secondItem="E4u-Jf-GIt" secondAttribute="top" constant="55" id="LDL-Ub-O74"/>
+                <constraint firstItem="4t1-nG-okL" firstAttribute="top" secondItem="tMW-sL-Lrf" secondAttribute="bottom" constant="8" id="PRZ-qI-Qyo"/>
+                <constraint firstItem="4t1-nG-okL" firstAttribute="leading" secondItem="E4u-Jf-GIt" secondAttribute="leading" constant="20" id="WHR-2D-A5F"/>
+                <constraint firstItem="ItZ-Vj-dpA" firstAttribute="centerX" secondItem="E4u-Jf-GIt" secondAttribute="centerX" id="cRf-R0-wUi"/>
+                <constraint firstItem="tMW-sL-Lrf" firstAttribute="leading" secondItem="E4u-Jf-GIt" secondAttribute="leading" constant="20" id="fwO-cK-wwH"/>
+                <constraint firstAttribute="bottom" secondItem="Lud-Lr-EWg" secondAttribute="bottom" constant="20" id="u6K-9v-vGC"/>
+                <constraint firstItem="Lud-Lr-EWg" firstAttribute="top" secondItem="ItZ-Vj-dpA" secondAttribute="bottom" constant="119" id="xjC-vg-388"/>
+                <constraint firstItem="XIU-ev-8c4" firstAttribute="centerY" secondItem="E4u-Jf-GIt" secondAttribute="centerY" id="z9C-eV-Vyg"/>
+            </constraints>
+            <point key="canvasLocation" x="590" y="-1287"/>
         </view>
-        <view contentMode="scaleToFill" id="8Qx-yz-w1K">
+        <view contentMode="scaleToFill" id="o0A-36-t90">
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IN2-7w-PZd" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <frame key="frameInset" minX="321" minY="974" width="126" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ5-4c-8Op" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="126" id="OJL-8h-wOD"/>
+                    </constraints>
                     <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="nextTask:" destination="-1" eventType="touchUpInside" id="aiL-r1-KmT"/>
+                    </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Example 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUf-iK-w2f">
-                    <frame key="frameInset" minX="20" minY="39" width="106" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GU3-pF-qZl">
-                    <frame key="frameInset" minX="363" minY="358" width="42" height="180"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1r-WS-ZBd">
                     <fontDescription key="fontDescription" type="system" pointSize="74"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Y38-Zx-0cO">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="271" id="qxz-1U-Zfo"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Same"/>
+                        <segment title="Different"/>
+                    </segments>
+                    <color key="tintColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="666" y="3153"/>
-        </view>
-        <view contentMode="scaleToFill" id="kdq-YS-zKr">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gep-8J-ZhV" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <frame key="frameInset" minX="321" minY="974" width="126" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Next"/>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Example 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztw-9e-18c">
-                    <frame key="frameInset" minX="20" minY="39" width="106" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6M-JC-1z7">
-                    <frame key="frameInset" minX="363" minY="358" width="42" height="180"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="74"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="1570" y="-1287"/>
-        </view>
-        <view contentMode="scaleToFill" id="q8h-Qe-EBW">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZP-HP-im5" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <frame key="frameInset" minX="321" minY="974" width="126" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Next"/>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Example 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dV-c6-uWg">
-                    <frame key="frameInset" minX="20" minY="39" width="106" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8c7-Hw-BqZ">
-                    <frame key="frameInset" minX="363" minY="358" width="42" height="180"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="74"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="666" y="924"/>
-        </view>
-        <view contentMode="scaleToFill" id="AM3-nu-Byw">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfD-T7-dIx" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <frame key="frameInset" minX="321" minY="974" width="126" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Next"/>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Example 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6u-dE-cwt">
-                    <frame key="frameInset" minX="20" minY="39" width="106" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFp-ir-aUu">
-                    <frame key="frameInset" minX="363" minY="358" width="42" height="180"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="74"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="666" y="-196"/>
+            <constraints>
+                <constraint firstItem="sJ5-4c-8Op" firstAttribute="top" secondItem="Y38-Zx-0cO" secondAttribute="bottom" constant="119" id="5UT-Bg-NYG"/>
+                <constraint firstItem="w1r-WS-ZBd" firstAttribute="centerX" secondItem="o0A-36-t90" secondAttribute="centerX" id="BU1-v1-eob"/>
+                <constraint firstItem="w1r-WS-ZBd" firstAttribute="centerY" secondItem="o0A-36-t90" secondAttribute="centerY" id="EAH-fK-IqN"/>
+                <constraint firstItem="Y38-Zx-0cO" firstAttribute="centerX" secondItem="o0A-36-t90" secondAttribute="centerX" id="W3m-fv-k6y"/>
+                <constraint firstAttribute="bottom" secondItem="sJ5-4c-8Op" secondAttribute="bottom" constant="20" id="jtU-hD-V25"/>
+                <constraint firstItem="sJ5-4c-8Op" firstAttribute="centerX" secondItem="o0A-36-t90" secondAttribute="centerX" id="rZM-lF-XJY"/>
+            </constraints>
+            <point key="canvasLocation" x="2438" y="-1287"/>
         </view>
         <view contentMode="scaleToFill" id="YBG-GS-vvZ">
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -421,6 +392,9 @@ We will now continue to an example where the difference between the melodies is 
                         <constraint firstAttribute="width" constant="126" id="gEn-wb-PLS"/>
                     </constraints>
                     <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="moveToTrial1:" destination="-1" eventType="touchUpInside" id="Zvi-yB-7Py"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BW8-4r-SHC">
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
