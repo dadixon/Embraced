@@ -28,6 +28,11 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var trialLabel: UILabel!
     @IBOutlet weak var tasksLabel: UILabel!
     
+    @IBOutlet weak var practiceResponse: UILabel!
+    @IBOutlet weak var taskResponse: UILabel!
+    
+    @IBOutlet weak var practiceSegment: UISegmentedControl!
+    @IBOutlet weak var taskSegment: UISegmentedControl!
     
     var soundPlayer: AVAudioPlayer!
     var stimuli = [String: Any]()
@@ -35,6 +40,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     var trials = Array<Array<String>>()
     var tasks = Array<Array<String>>()
     
+    let practiceAnswers = ["D", "D", "S", "D", "D"]
+    let taskAnswers = ["S", "D", "S", "D", "D", "S", "D", "S", "D", "D", "S", "S", "S", "S", "D", "D", "D", "D", "D", "S", "S", "S", "S", "D"]
     
     var firstSound = String()
     var secondSound = String()
@@ -153,8 +160,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         played = false
         
         if soundArray[iterator].count > 1 {
-            firstSound = soundArray[iterator][0]
-            secondSound = soundArray[iterator][1]
+            firstSound = soundArray[iterator][1]
+            secondSound = soundArray[iterator][0]
         } else if soundArray[iterator].count == 1 {
             firstSound = soundArray[iterator][0]
             secondSound = soundArray[iterator][0]
@@ -163,6 +170,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         let url = NSURL(string: firstSound)
         downloadFileFromURL(url: url!)
         soundLabel = label
+        soundLabel.text = "1"
         
         print("Sound url \(firstSound)")
     }
@@ -193,6 +201,10 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func replay(_ sender: AnyObject) {
+        if soundPlayer != nil {
+            soundPlayer.stop()
+        }
+        
         played = false
         let url = NSURL(string: firstSound)
         downloadFileFromURL(url: url!)
@@ -211,18 +223,47 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         trialCount += 1
     }
     
+    @IBAction func practiceAnswered(_ sender: AnyObject) {
+        if ((sender.selectedSegmentIndex == 0 && practiceAnswers[trialCount] == "S") || (sender.selectedSegmentIndex == 1 && practiceAnswers[trialCount] == "D")) {
+            practiceResponse.text = "Correct!"
+        } else {
+            practiceResponse.text = "Sorry, that was an incorrect response. You can try again."
+        }
+    }
+    
+    @IBAction func taskAnswered(_ sender: AnyObject) {
+        if ((sender.selectedSegmentIndex == 0 && taskAnswers[tasksCount - 1] == "S") || (sender.selectedSegmentIndex == 1 && taskAnswers[tasksCount - 1] == "D")) {
+            taskResponse.text = "Correct!"
+        } else {
+            taskResponse.text = "Incorrect"
+        }
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            taskSegment.setEnabled(false, forSegmentAt: 1)
+        default:
+            taskSegment.setEnabled(false, forSegmentAt: 0)
+        }
+    }
+    
     @IBAction func nextTrial(_ sender: AnyObject) {
         if trialCount < trials.count {
             // Save answer
         
             // Which label back to 1
             trialLabel.text = "1"
-        
+            practiceResponse.text = ""
+            practiceSegment.selectedSegmentIndex = -1
+            
             // Set sounds to play
             setupSounds(trials, iterator: trialCount, label: trialLabel)
         
             trialCount += 1
         } else {
+//            if soundPlayer != nil {
+                soundPlayer.stop()
+//            }
+            
             setSubview(trial1View, next: preTaskView)
         }
     }
@@ -240,6 +281,10 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
             
             // Which label back to 1
             tasksLabel.text = "1"
+            taskResponse.text = ""
+            taskSegment.setEnabled(true, forSegmentAt: 0)
+            taskSegment.setEnabled(true, forSegmentAt: 1)
+            taskSegment.selectedSegmentIndex = -1
             
             // Set sounds to play
             setupSounds(tasks, iterator: tasksCount, label: tasksLabel)

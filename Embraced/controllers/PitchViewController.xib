@@ -22,7 +22,11 @@
                 <outlet property="example3View" destination="7y3-ol-fQa" id="PNH-nB-ICT"/>
                 <outlet property="introView" destination="bsX-3k-iZX" id="nXk-TY-aUV"/>
                 <outlet property="mainView" destination="63N-dC-I4a" id="AsM-Iq-Trg"/>
+                <outlet property="practiceResponse" destination="Bi7-4I-Qtx" id="EXE-5Q-kTa"/>
+                <outlet property="practiceSegment" destination="ItZ-Vj-dpA" id="Q5f-Zs-xex"/>
                 <outlet property="preTaskView" destination="hBT-b0-W23" id="PR8-NU-zWL"/>
+                <outlet property="taskResponse" destination="qB8-xk-w7x" id="nt5-CD-8b5"/>
+                <outlet property="taskSegment" destination="Y38-Zx-0cO" id="yzR-Uh-Tju"/>
                 <outlet property="taskView" destination="o0A-36-t90" id="Zey-9k-AyI"/>
                 <outlet property="tasksLabel" destination="w1r-WS-ZBd" id="fMs-tA-627"/>
                 <outlet property="trial1View" destination="E4u-Jf-GIt" id="3qb-eq-lg1"/>
@@ -255,6 +259,9 @@ Please, tap the START button when you are ready to start.</string>
                         <segment title="Different"/>
                     </segments>
                     <color key="tintColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="practiceAnswered:" destination="-1" eventType="valueChanged" id="c9q-Vf-Lno"/>
+                    </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t1-nG-okL">
                     <string key="text">Remember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.
@@ -264,16 +271,37 @@ When you are ready, tap on START button.</string>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJc-ET-pl0">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="N8b-KX-gig"/>
+                        <constraint firstAttribute="width" constant="49" id="bZM-bj-oYJ"/>
+                    </constraints>
+                    <state key="normal" image="speaker.png"/>
+                    <connections>
+                        <action selector="replay:" destination="-1" eventType="touchUpInside" id="twb-gi-gcN"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi7-4I-Qtx">
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="UJc-ET-pl0" firstAttribute="centerY" secondItem="ItZ-Vj-dpA" secondAttribute="centerY" id="13o-YZ-GP4"/>
                 <constraint firstItem="XIU-ev-8c4" firstAttribute="centerX" secondItem="E4u-Jf-GIt" secondAttribute="centerX" id="6og-QF-3U3"/>
                 <constraint firstAttribute="trailing" secondItem="4t1-nG-okL" secondAttribute="trailing" constant="20" id="8O5-K0-2ae"/>
+                <constraint firstItem="ItZ-Vj-dpA" firstAttribute="top" secondItem="Bi7-4I-Qtx" secondAttribute="bottom" constant="142" id="AuC-ao-YJa"/>
                 <constraint firstItem="Lud-Lr-EWg" firstAttribute="centerX" secondItem="E4u-Jf-GIt" secondAttribute="centerX" id="BSn-Nr-lk3"/>
+                <constraint firstAttribute="trailing" secondItem="Bi7-4I-Qtx" secondAttribute="trailing" constant="20" id="DA0-Vc-C0k"/>
+                <constraint firstItem="Bi7-4I-Qtx" firstAttribute="leading" secondItem="E4u-Jf-GIt" secondAttribute="leading" constant="20" id="EKW-rh-dq1"/>
                 <constraint firstItem="tMW-sL-Lrf" firstAttribute="top" secondItem="E4u-Jf-GIt" secondAttribute="top" constant="55" id="LDL-Ub-O74"/>
                 <constraint firstItem="4t1-nG-okL" firstAttribute="top" secondItem="tMW-sL-Lrf" secondAttribute="bottom" constant="8" id="PRZ-qI-Qyo"/>
+                <constraint firstItem="Bi7-4I-Qtx" firstAttribute="centerX" secondItem="E4u-Jf-GIt" secondAttribute="centerX" id="Rq9-sG-uGC"/>
                 <constraint firstItem="4t1-nG-okL" firstAttribute="leading" secondItem="E4u-Jf-GIt" secondAttribute="leading" constant="20" id="WHR-2D-A5F"/>
                 <constraint firstItem="ItZ-Vj-dpA" firstAttribute="centerX" secondItem="E4u-Jf-GIt" secondAttribute="centerX" id="cRf-R0-wUi"/>
+                <constraint firstAttribute="trailing" secondItem="UJc-ET-pl0" secondAttribute="trailing" constant="20" id="eIu-AS-Btr"/>
                 <constraint firstItem="tMW-sL-Lrf" firstAttribute="leading" secondItem="E4u-Jf-GIt" secondAttribute="leading" constant="20" id="fwO-cK-wwH"/>
                 <constraint firstAttribute="bottom" secondItem="Lud-Lr-EWg" secondAttribute="bottom" constant="20" id="u6K-9v-vGC"/>
                 <constraint firstItem="Lud-Lr-EWg" firstAttribute="top" secondItem="ItZ-Vj-dpA" secondAttribute="bottom" constant="119" id="xjC-vg-388"/>
@@ -308,16 +336,39 @@ When you are ready, tap on START button.</string>
                         <segment title="Different"/>
                     </segments>
                     <color key="tintColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="taskAnswered:" destination="-1" eventType="valueChanged" id="ROH-CU-N4P"/>
+                    </connections>
                 </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eni-wv-gVC">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="2w3-vN-OG3"/>
+                        <constraint firstAttribute="width" constant="49" id="Tjv-8k-sOK"/>
+                    </constraints>
+                    <state key="normal" image="speaker.png"/>
+                    <connections>
+                        <action selector="replay:" destination="-1" eventType="touchUpInside" id="yqm-om-Z3t"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qB8-xk-w7x">
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="qB8-xk-w7x" firstAttribute="leading" secondItem="o0A-36-t90" secondAttribute="leading" constant="20" id="1ID-S7-Hm8"/>
                 <constraint firstItem="sJ5-4c-8Op" firstAttribute="top" secondItem="Y38-Zx-0cO" secondAttribute="bottom" constant="119" id="5UT-Bg-NYG"/>
+                <constraint firstItem="qB8-xk-w7x" firstAttribute="top" secondItem="w1r-WS-ZBd" secondAttribute="bottom" constant="142" id="7tb-hh-n8M"/>
                 <constraint firstItem="w1r-WS-ZBd" firstAttribute="centerX" secondItem="o0A-36-t90" secondAttribute="centerX" id="BU1-v1-eob"/>
                 <constraint firstItem="w1r-WS-ZBd" firstAttribute="centerY" secondItem="o0A-36-t90" secondAttribute="centerY" id="EAH-fK-IqN"/>
                 <constraint firstItem="Y38-Zx-0cO" firstAttribute="centerX" secondItem="o0A-36-t90" secondAttribute="centerX" id="W3m-fv-k6y"/>
                 <constraint firstAttribute="bottom" secondItem="sJ5-4c-8Op" secondAttribute="bottom" constant="20" id="jtU-hD-V25"/>
+                <constraint firstItem="Eni-wv-gVC" firstAttribute="centerY" secondItem="Y38-Zx-0cO" secondAttribute="centerY" id="rFN-7b-qCv"/>
                 <constraint firstItem="sJ5-4c-8Op" firstAttribute="centerX" secondItem="o0A-36-t90" secondAttribute="centerX" id="rZM-lF-XJY"/>
+                <constraint firstAttribute="trailing" secondItem="qB8-xk-w7x" secondAttribute="trailing" constant="20" id="xeY-01-fV4"/>
+                <constraint firstAttribute="trailing" secondItem="Eni-wv-gVC" secondAttribute="trailing" constant="20" id="zT9-Oe-YAH"/>
             </constraints>
             <point key="canvasLocation" x="2438" y="-1287"/>
         </view>
@@ -366,8 +417,11 @@ We will now continue to an example where the difference between the melodies is 
                     </segments>
                     <color key="tintColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </segmentedControl>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3o-lN-Zg6">
-                    <frame key="frameInset" minX="699" minY="822" width="49" height="38"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3o-lN-Zg6">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="OO7-4k-MX9"/>
+                        <constraint firstAttribute="width" constant="49" id="TyA-0D-0sh"/>
+                    </constraints>
                     <state key="normal" image="speaker.png"/>
                     <connections>
                         <action selector="replay:" destination="-1" eventType="touchUpInside" id="Jyp-WV-lVm"/>
@@ -437,6 +491,16 @@ Now you will practice on your own.</string>
                     </segments>
                     <color key="tintColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79G-ld-NPH">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="gfM-l2-hMP"/>
+                        <constraint firstAttribute="width" constant="49" id="t4K-MS-DkF"/>
+                    </constraints>
+                    <state key="normal" image="speaker.png"/>
+                    <connections>
+                        <action selector="replay:" destination="-1" eventType="touchUpInside" id="CTk-pb-oIV"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -444,8 +508,10 @@ Now you will practice on your own.</string>
                 <constraint firstItem="BW8-4r-SHC" firstAttribute="top" secondItem="7y3-ol-fQa" secondAttribute="top" constant="55" id="2wh-5I-4h4"/>
                 <constraint firstItem="iiU-8p-po8" firstAttribute="top" secondItem="cWh-8L-wog" secondAttribute="bottom" constant="119" id="6Bu-wg-Nex"/>
                 <constraint firstItem="cWh-8L-wog" firstAttribute="centerX" secondItem="7y3-ol-fQa" secondAttribute="centerX" id="7gY-Au-xCj"/>
+                <constraint firstAttribute="trailing" secondItem="79G-ld-NPH" secondAttribute="trailing" constant="20" id="BGg-yI-cTO"/>
                 <constraint firstItem="vVO-bI-cFW" firstAttribute="top" secondItem="BW8-4r-SHC" secondAttribute="bottom" constant="8" id="PRl-m9-t2E"/>
                 <constraint firstItem="iiU-8p-po8" firstAttribute="centerX" secondItem="7y3-ol-fQa" secondAttribute="centerX" id="PZC-gV-VRK"/>
+                <constraint firstItem="79G-ld-NPH" firstAttribute="centerY" secondItem="cWh-8L-wog" secondAttribute="centerY" id="c4P-dE-Mdb"/>
                 <constraint firstItem="sTY-n4-wSH" firstAttribute="centerY" secondItem="7y3-ol-fQa" secondAttribute="centerY" id="esQ-il-lMQ"/>
                 <constraint firstItem="vVO-bI-cFW" firstAttribute="leading" secondItem="7y3-ol-fQa" secondAttribute="leading" constant="20" id="qMx-kK-Af8"/>
                 <constraint firstItem="sTY-n4-wSH" firstAttribute="centerX" secondItem="7y3-ol-fQa" secondAttribute="centerX" id="t00-1P-a4U"/>
