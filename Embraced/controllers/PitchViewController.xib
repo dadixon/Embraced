@@ -94,7 +94,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chI-tk-VV9">
-                    <mutableString key="text">Next, you will hear pairs of melodies. 
+                    <string key="text">Next, you will hear pairs of melodies. 
 In some trials, the second one will be altered. 
 This change may be subtle or obvious. 
 
@@ -105,7 +105,7 @@ If they are different, you will tap the button “DIFFERENT”
 To aid you differentiate the two melodies, numbers 1 and 2 will be shown in the screen when playing the first and second melody respectively
 
 We will start with some examples.
-Please tap on START when you are ready.</mutableString>
+Please tap on START when you are ready.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
