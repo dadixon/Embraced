@@ -16,6 +16,10 @@ class FrontViewController: UIViewController {
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var mainView: UIView!
     
+    var alertController = UIAlertController()
+    
+    var orientation = "portrait"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,7 +47,25 @@ class FrontViewController: UIViewController {
     }
     
     func rotated() {
+        if orientation == "landscape" {
+            if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
+                alertController.dismiss(animated: true, completion: nil)
+            }
         
+            if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
+                alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        } else if orientation == "portrait" {
+            if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
+                alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to portrait orientation", preferredStyle: UIAlertControllerStyle.alert)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            
+            if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
+                alertController.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
 }

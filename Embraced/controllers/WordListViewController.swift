@@ -20,6 +20,13 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
     
+    @IBOutlet weak var trialRecordBtn: UIButton!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var InstructionsLabel: UILabel!
+    
+    
     var recordingSession: AVAudioSession!
     
     var soundRecorder: AVAudioRecorder!
@@ -32,6 +39,15 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     var stimuli = [String: Any]()
     var trials = Array<String>()
     var sound = String()
+    var practice = true
+    var position = 0
+    var instructions : [String] = ["There will be a 3 second countdown before the list starts. \nPlease tap the LISTEN button when you are ready to start",
+                                   "Now say out loud all the words you can remember from the list. \nTap the microphone button to start recording",
+                                   "Now say out loud all the words you can remember from the list, including the ones you said before. \nTap the microphone button to start recording",
+                                   "Now say out loud all the words you can remember from the list, including the ones you said before. \nTap the microphone button to start recording",
+                                   "Now say out loud all the words you can remember from the list, including the ones you said before. \nTap the microphone button to start recording",
+                                   "Now say out loud all the words you can remember from the list, including the ones you said before. \nTap the microphone button to start recording"]
+    
     
     
     // MARK: - Private
@@ -54,6 +70,9 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(WordListViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(WordListViewController.back(_:)))
+        
+        orientation = "landscape"
+        rotated()
         
         practiceView.translatesAutoresizingMaskIntoConstraints = false
         trial1View.translatesAutoresizingMaskIntoConstraints = false
@@ -84,6 +103,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
             // failed to record!
         }
         
+        
+        
         // Fetch audios
         let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/wordlist")!
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
@@ -113,6 +134,12 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setup() {
+        titleLabel.text = "Trial \(position + 1)"
+        InstructionsLabel.text = instructions[position]
+        trialRecordBtn.isEnabled = false
     }
     
     
@@ -159,8 +186,12 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         soundPlayer.stop()
         soundPlayer = nil
         
-        playBtn.setTitle("Play", for: .normal)
-        recordBtn.isEnabled = true
+        if practice {
+            playBtn.setTitle("Play", for: .normal)
+            recordBtn.isEnabled = true
+        } else {
+            trialRecordBtn.isEnabled = true
+        }
     }
     
     func preparePlayer() {
@@ -179,6 +210,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         
         do {
             soundPlayer = try AVAudioPlayer(contentsOf: url as URL)
+            soundPlayer.delegate = self
             soundPlayer.prepareToPlay()
             soundPlayer.volume = 1.0
             soundPlayer.play()
@@ -201,34 +233,6 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         
     }
     
-//    func stopTime() {
-//        
-//        let currentTime = Date.timeIntervalSinceReferenceDate
-//        
-//        var elapsedTime : TimeInterval = currentTime - startTime
-//        
-//        //calculate the seconds in elapsed time
-//        let seconds = UInt8(elapsedTime)
-//        elapsedTime -= TimeInterval(seconds)
-//        
-//        let strSeconds = seconds > 9 ? String(seconds): "0" + String(seconds)
-//        
-//        reactionTime = "\(strSeconds)"
-//        
-//        print(reactionTime)
-//        
-//    }
-//    
-//    func startTimer() {
-//        if !timer.isValid {
-//            startTime = Date.timeIntervalSinceReferenceDate
-//        }
-//    }
-//    
-//    func resetTimer() {
-//        timer.invalidate()
-//    }
-    
     func log(logMessage: String, functionName: String = #function) {
         print("\(functionName): \(logMessage)")
     }
@@ -243,6 +247,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
             
             let url = NSURL(string: "http://api.girlscouts.harryatwal.com/static_audios/word_list/english/trials/List_A_ENG.mp3")
             print(url)
+            preparePlayer()
             downloadFileFromURL(url: url!)
         }
     }
@@ -254,7 +259,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
 //        
 //        navigationArray?.remove(at: 0)
         
-        let mOCAMMSETestViewController:CancellationTestViewController = CancellationTestViewController()
+        let mOCAMMSETestViewController:NamingTaskViewController = NamingTaskViewController()
 //        navigationArray?.append(mOCAMMSETestViewController)
 //        
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)
@@ -267,7 +272,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
         setSubview(practiceView, next: trial1View)
-        print("Move to Trial 1")
+        setup()
+        practice = false
     }
     
     
@@ -296,6 +302,18 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     @IBAction func listen(_ sender: AnyObject) {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(UIMenuController.update), userInfo: nil, repeats: true)
     }
+    
+    @IBAction func nextTrial(_ sender: AnyObject) {
+        position += 1
+        
+        if position < instructions.count {
+            setup()
+        } else {
+            next(self)
+        }
+    }
+    
+    
     
     // MARK: - Delegate
     

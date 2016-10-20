@@ -40,6 +40,9 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(NamingTaskViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ReyComplexFigureViewController.back(_:)))
         
+        orientation = "landscape"
+        rotated()
+        
         setupRecorder()
         
         let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/name_task")!

@@ -74,6 +74,9 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PitchViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(PitchViewController.back(_:)))
         
+        orientation = "landscape"
+        rotated()
+        
         introView.translatesAutoresizingMaskIntoConstraints = false
         example1View.translatesAutoresizingMaskIntoConstraints = false
         example2View.translatesAutoresizingMaskIntoConstraints = false

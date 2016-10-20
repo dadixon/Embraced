@@ -11,12 +11,11 @@ import UIKit
 class ClockDrawingTestViewController: FrontViewController {
 
     @IBOutlet weak var myWebView: UIWebView!
-    
-    var alertController = UIAlertController()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        orientation = "portrait"
         rotated()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ClockDrawingTestViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ClockDrawingTestViewController.back(_:)))
@@ -29,17 +28,6 @@ class ClockDrawingTestViewController: FrontViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func rotated() {
-        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
-            alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to portrait orientation", preferredStyle: UIAlertControllerStyle.alert)
-            self.present(alertController, animated: true, completion: nil)
-        }
-        
-        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
-            alertController.dismiss(animated: true, completion: nil)
-        }
     }
     
     

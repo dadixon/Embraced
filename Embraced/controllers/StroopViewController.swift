@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import AVKit
 
-class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate, AVPlayerViewControllerDelegate {
 
     @IBOutlet weak var containerView: UIView!
     
@@ -41,6 +41,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     var soundRecorder: AVAudioRecorder!
     var soundPlayer: AVAudioPlayer!
+    var playerController = AVPlayerViewController()
     var fileName : [String] = ["testAudioFile.m4a", "task1.m4a", "task2.m4a", "task3.m4a", "task4.m4a"]
     
     var stimuli = [String: Any]()
@@ -62,9 +63,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     var timer = Timer()
     var isRunning = false
     var reactionTime = ""
-    
-    var alertController = UIAlertController()
-    
+    var position = 0
     
     // MARK: - Private
     
@@ -84,6 +83,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        orientation = "portrait"
         rotated()
         progressView.progress = progress
         progressLabel.text = "Progress"
@@ -157,17 +157,6 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func rotated() {
-        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
-            alertController.dismiss(animated: true, completion: nil)
-        }
-        
-        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
-            alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
-            self.present(alertController, animated: true, completion: nil)
-        }
     }
     
     func loadImageFromUrl(_ url: String, view: UIImageView){
@@ -366,7 +355,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     @IBAction func moveToTask1(_ sender: AnyObject) {
         setSubview(preTask1View, next: task1View)
-        self.loadImageFromUrl(images[0], view: self.task1ImageView)
+        self.loadImageFromUrl(images[position], view: self.task1ImageView)
+        position += 1
     }
     
     @IBAction func moveToPreTask2(_ sender: AnyObject) {
@@ -375,7 +365,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     @IBAction func moveToTask2(_ sender: AnyObject) {
         setSubview(preTask2View, next: task2View)
-        self.loadImageFromUrl(images[1], view: self.task2ImageView)
+        self.loadImageFromUrl(images[position], view: self.task2ImageView)
+        position += 1
     }
     
     @IBAction func moveToPreTask3(_ sender: AnyObject) {
@@ -384,7 +375,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     @IBAction func moveToTask3(_ sender: AnyObject) {
         setSubview(preTask3View, next: task3View)
-        self.loadImageFromUrl(images[2], view: self.task3ImageView)
+        self.loadImageFromUrl(images[position], view: self.task3ImageView)
+        position += 1
     }
     
     @IBAction func moveToPreTask4(_ sender: AnyObject) {
@@ -398,6 +390,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     @IBAction func moveToTask4(_ sender: AnyObject) {
         setSubview(preTask4View, next: task4View)
         self.loadImageFromUrl(images[1], view: self.task4ImageView)
+        position += 1
     }
     
     @IBAction func playVideo(_ sender: AnyObject) {
@@ -407,10 +400,12 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     func playVideoFile(url: NSURL){
         let player = AVPlayer(url: url as URL)
-        let playerController = AVPlayerViewController()
         
+        playerController.delegate = self
         playerController.player = player
         playerController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(StroopViewController.playerDidFinishPlaying(note:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
         
         self.present(playerController, animated: true, completion: nil)
         
@@ -424,5 +419,22 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         NSLog("finished playing")
         finishPlaying()
+    }
+    
+    func playerDidFinishPlaying(note: NSNotification){
+        print("Video Finished")
+        self.dismiss(animated: true, completion: nil)
+        print(position)
+        switch position {
+            case 0: moveToTask1(self)
+            case 1: moveToTask2(self)
+            case 2: moveToTask3(self)
+            case 3: moveToTask4(self)
+            default: moveToTask1(self)
+        }
+    }
+    
+    func playerViewControllerDidStopPictureInPicture(_ playerViewController: AVPlayerViewController) {
+        NSLog("video stopped")
     }
 }

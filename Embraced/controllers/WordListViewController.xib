@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WordListViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
+                <outlet property="InstructionsLabel" destination="USc-zK-X47" id="DQb-dB-AJ6"/>
                 <outlet property="containerView" destination="hSf-IR-Jn9" id="3s7-8e-R3g"/>
                 <outlet property="countLabel" destination="tqr-Jd-rZ5" id="PMa-px-Atj"/>
                 <outlet property="mainView" destination="2nr-Ul-KqZ" id="ZLK-XQ-aXa"/>
@@ -20,7 +21,9 @@
                 <outlet property="practiceView" destination="Vr4-Mj-e6s" id="t6i-0l-y7M"/>
                 <outlet property="progressLabel" destination="iE3-Lm-HGr" id="5Dr-Xy-nhs"/>
                 <outlet property="recordBtn" destination="zCn-Eg-qyk" id="8Ax-B6-JPe"/>
+                <outlet property="titleLabel" destination="mMB-hw-R1N" id="G9d-bI-qyG"/>
                 <outlet property="trial1View" destination="kSe-9b-lPj" id="oDI-IU-pTp"/>
+                <outlet property="trialRecordBtn" destination="bic-uz-Yoc" id="Kkd-mE-8Br"/>
                 <outlet property="view" destination="15h-3k-CVI" id="nhf-sG-fEg"/>
             </connections>
         </placeholder>
@@ -169,15 +172,17 @@ Please practice recording your voice with the microphone button below</string>
                         <constraint firstAttribute="width" constant="126" id="iEs-CV-BEu"/>
                     </constraints>
                     <state key="normal" title="Done"/>
+                    <connections>
+                        <action selector="nextTrial:" destination="-1" eventType="touchUpInside" id="xdE-rK-yBN"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trial 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMB-hw-R1N">
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USc-zK-X47">
-                    <string key="text">There will be a 3 second countdown before the list starts.
-Please tap the LISTEN button when you are ready to start</string>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USc-zK-X47">
+                    <frame key="frameInset" minX="20" minY="55" width="728" height="142"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -212,6 +217,17 @@ Please tap the LISTEN button when you are ready to start</string>
                         <constraint firstItem="1xb-Ik-dhP" firstAttribute="centerY" secondItem="Y3c-xw-nEW" secondAttribute="centerY" id="vHU-0X-7nt"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bic-uz-Yoc">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="162" id="akS-PY-LCq"/>
+                    </constraints>
+                    <state key="normal" title="Start" image="record.png">
+                        <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="jiT-Hq-2nW"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -221,10 +237,12 @@ Please tap the LISTEN button when you are ready to start</string>
                 <constraint firstAttribute="bottom" secondItem="GMh-oC-tsK" secondAttribute="bottom" constant="20" id="QW7-vX-v8V"/>
                 <constraint firstItem="mMB-hw-R1N" firstAttribute="leading" secondItem="kSe-9b-lPj" secondAttribute="leading" constant="20" id="hss-Ft-cqx"/>
                 <constraint firstAttribute="trailing" secondItem="USc-zK-X47" secondAttribute="trailing" constant="20" id="lFd-2N-7pt"/>
+                <constraint firstItem="bic-uz-Yoc" firstAttribute="centerX" secondItem="kSe-9b-lPj" secondAttribute="centerX" id="lWa-Al-dW5"/>
                 <constraint firstItem="USc-zK-X47" firstAttribute="top" secondItem="mMB-hw-R1N" secondAttribute="bottom" constant="8" id="lh8-22-O5U"/>
                 <constraint firstItem="USc-zK-X47" firstAttribute="top" secondItem="mMB-hw-R1N" secondAttribute="bottom" constant="8" id="ssH-hU-i7m"/>
                 <constraint firstItem="mMB-hw-R1N" firstAttribute="top" secondItem="kSe-9b-lPj" secondAttribute="top" constant="20" id="twt-vs-LaN"/>
                 <constraint firstItem="USc-zK-X47" firstAttribute="leading" secondItem="kSe-9b-lPj" secondAttribute="leading" constant="20" id="x4s-BJ-c4v"/>
+                <constraint firstItem="bic-uz-Yoc" firstAttribute="top" secondItem="Y3c-xw-nEW" secondAttribute="bottom" constant="8" id="xpO-oe-BLa"/>
             </constraints>
             <point key="canvasLocation" x="1289" y="-791"/>
         </view>

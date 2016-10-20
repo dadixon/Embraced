@@ -47,8 +47,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     
     var forwardCount = 0
     var backwardCount = 0
-
-    var alertController = UIAlertController()
     
     // MARK: - Private
     
@@ -68,6 +66,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        orientation = "portrait"
         rotated()
         progressView.progress = progress
         progressLabel.text = "Progress"
@@ -136,17 +135,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func rotated() {
-        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
-            alertController.dismiss(animated: true, completion: nil)
-        }
-        
-        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
-            alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
-            self.present(alertController, animated: true, completion: nil)
-        }
     }
     
     

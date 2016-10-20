@@ -12,11 +12,10 @@ class PegboardViewController: FrontViewController {
 
     @IBOutlet weak var myWebView: UIWebView!
     
-    var alertController = UIAlertController()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        orientation = "portrait"
         rotated()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PegboardViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(PegboardViewController.back(_:)))
@@ -31,17 +30,6 @@ class PegboardViewController: FrontViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func rotated() {
-        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
-            alertController.dismiss(animated: true, completion: nil)
-        }
-        
-        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
-            alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
-            self.present(alertController, animated: true, completion: nil)
-        }
-    }
-    
     
     // MARK: - Navigation
     
@@ -50,7 +38,7 @@ class PegboardViewController: FrontViewController {
 //        
 //        navigationArray?.remove(at: 0)
         
-        let mOCAMMSETestViewController:PitchViewController = PitchViewController()
+        let mOCAMMSETestViewController:CancellationTestViewController = CancellationTestViewController()
 //        navigationArray?.append(mOCAMMSETestViewController)
 //        
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)
