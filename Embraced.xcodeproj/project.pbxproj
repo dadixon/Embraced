@@ -37,6 +37,7 @@
 		A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */; };
 		A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */; };
 		A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED91D13B1BA002722B4 /* UserInputs.swift */; };
+		A4632C731DAE4629004B71BD /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = A4632C721DAE4629004B71BD /* speaker.png */; };
 		A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C140D1D798FC30066EF37 /* CPTViewController.swift */; };
 		A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C140E1D798FC30066EF37 /* CPTViewController.xib */; };
 		A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */; };
@@ -126,6 +127,7 @@
 		A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NamingTaskViewController.swift; path = controllers/NamingTaskViewController.swift; sourceTree = "<group>"; };
 		A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInputs+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A4476ED91D13B1BA002722B4 /* UserInputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputs.swift; sourceTree = "<group>"; };
+		A4632C721DAE4629004B71BD /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
 		A46C140D1D798FC30066EF37 /* CPTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPTViewController.swift; path = controllers/CPTViewController.swift; sourceTree = "<group>"; };
 		A46C140E1D798FC30066EF37 /* CPTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPTViewController.xib; path = controllers/CPTViewController.xib; sourceTree = "<group>"; };
 		A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CancellationTestViewController.swift; path = controllers/CancellationTestViewController.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 		A48B4DD91CF9EEAB00878928 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A4632C721DAE4629004B71BD /* speaker.png */,
 				A4773D0A1D9D849100E5CCEE /* listen.png */,
 				A4773D0C1D9D84A900E5CCEE /* play.png */,
 				A4773D0E1D9D84B200E5CCEE /* record.png */,
@@ -446,6 +449,7 @@
 				A490D7D61D0919CB00D2B59D /* Roboto-Italic.ttf in Resources */,
 				A4347FE41D7BCC170033306A /* MultipleErrandsViewController.xib in Resources */,
 				A46C14181D7999AF0066EF37 /* CancellationTestViewController.xib in Resources */,
+				A4632C731DAE4629004B71BD /* speaker.png in Resources */,
 				A4347FD61D7BCABC0033306A /* PegboardViewController.xib in Resources */,
 				A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */,
 				A490D7D71D0919CB00D2B59D /* Roboto-Light.ttf in Resources */,

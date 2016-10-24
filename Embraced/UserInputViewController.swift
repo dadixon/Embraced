@@ -12,7 +12,6 @@ import CoreData
 
 class UserInputViewController: UIViewController {
 
-
     @IBOutlet weak var participantID: UILabel!
     @IBOutlet weak var dayOfTheWeekTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
@@ -81,7 +80,7 @@ class UserInputViewController: UIViewController {
 
         
         
-        let questionnaireViewController:StroopViewController = StroopViewController()
+        let questionnaireViewController:PitchViewController = PitchViewController()
         let navController = UINavigationController(rootViewController: questionnaireViewController)
         self.present(navController, animated: true, completion: nil)
         

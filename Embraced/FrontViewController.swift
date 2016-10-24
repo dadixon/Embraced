@@ -29,6 +29,8 @@ class FrontViewController: UIViewController {
         mainView.layer.shouldRasterize = true
         
         self.automaticallyAdjustsScrollViewInsets = false
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(FrontViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,4 +41,9 @@ class FrontViewController: UIViewController {
     override var prefersStatusBarHidden : Bool {
         return true
     }
+    
+    func rotated() {
+        
+    }
+    
 }
