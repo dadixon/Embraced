@@ -13,6 +13,8 @@ class CPTViewController: FrontViewController {
     @IBOutlet weak var myWebView: UIWebView!
     
     override func viewDidLoad() {
+        step = 11
+        
         super.viewDidLoad()
         
         orientation = "portrait"

@@ -13,6 +13,8 @@ class CancellationTestViewController: FrontViewController {
     @IBOutlet weak var myWebView: UIWebView!
         
     override func viewDidLoad() {
+        step = 17
+        
         super.viewDidLoad()
         
         orientation = "portrait"

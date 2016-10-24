@@ -13,6 +13,8 @@ class PegboardViewController: FrontViewController {
     @IBOutlet weak var myWebView: UIWebView!
     
     override func viewDidLoad() {
+        step = 14
+        
         super.viewDidLoad()
         
         orientation = "portrait"

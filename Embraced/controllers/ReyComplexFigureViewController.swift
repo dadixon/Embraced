@@ -13,6 +13,8 @@ class ReyComplexFigureViewController: FrontViewController {
     @IBOutlet weak var myWebView: UIWebView!
     
     override func viewDidLoad() {
+        step = 3
+        
         super.viewDidLoad()
         
         orientation = "portrait"

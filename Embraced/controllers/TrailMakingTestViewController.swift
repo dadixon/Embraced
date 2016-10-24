@@ -13,6 +13,8 @@ class TrailMakingTestViewController: FrontViewController {
     @IBOutlet weak var myWebView: UIWebView!
         
     override func viewDidLoad() {
+        step = 6
+        
         super.viewDidLoad()
         
         orientation = "portrait"
@@ -38,7 +40,7 @@ class TrailMakingTestViewController: FrontViewController {
 //        
 //        navigationArray?.remove(at: 0)
         
-        let stroopViewController:StroopViewController = StroopViewController()
+        let stroopViewController:PitchViewController = PitchViewController()
 //        navigationArray?.append(stroopViewController)
 //        
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)

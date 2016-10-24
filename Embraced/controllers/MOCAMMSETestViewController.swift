@@ -11,8 +11,10 @@ import UIKit
 class MOCAMMSETestViewController: FrontViewController {
 
     @IBOutlet weak var myWebView: UIWebView!
-        
+    
     override func viewDidLoad() {
+        step += 1
+        
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(MOCAMMSETestViewController.next(_:)))

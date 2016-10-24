@@ -15,16 +15,21 @@
             <connections>
                 <outlet property="containerView" destination="yOa-m6-D7o" id="r17-Yh-3VX"/>
                 <outlet property="example1Label" destination="dLv-Vx-Wwx" id="1dg-67-Kiv"/>
+                <outlet property="example1Response" destination="8uU-dm-nhl" id="ODj-vW-0tS"/>
                 <outlet property="example1View" destination="baQ-Rn-Gp2" id="F2L-ru-c2C"/>
                 <outlet property="example2Label" destination="6IV-bi-xXS" id="xLF-8f-N04"/>
+                <outlet property="example2Response" destination="63d-zm-zEy" id="ZPI-Nf-3qe"/>
                 <outlet property="example2View" destination="YBG-GS-vvZ" id="XYf-Sc-7uj"/>
                 <outlet property="example3Label" destination="sTY-n4-wSH" id="1ef-ok-CGy"/>
+                <outlet property="example3Response" destination="phw-l0-Pfh" id="0Nq-zS-pN7"/>
                 <outlet property="example3View" destination="7y3-ol-fQa" id="PNH-nB-ICT"/>
                 <outlet property="introView" destination="bsX-3k-iZX" id="nXk-TY-aUV"/>
                 <outlet property="mainView" destination="63N-dC-I4a" id="AsM-Iq-Trg"/>
                 <outlet property="practiceResponse" destination="Bi7-4I-Qtx" id="EXE-5Q-kTa"/>
                 <outlet property="practiceSegment" destination="ItZ-Vj-dpA" id="Q5f-Zs-xex"/>
                 <outlet property="preTaskView" destination="hBT-b0-W23" id="PR8-NU-zWL"/>
+                <outlet property="progressLabel" destination="XPp-9X-HUS" id="CGL-MY-6Np"/>
+                <outlet property="progressView" destination="A91-h5-NVq" id="ufk-Yo-D1y"/>
                 <outlet property="taskResponse" destination="qB8-xk-w7x" id="nt5-CD-8b5"/>
                 <outlet property="taskSegment" destination="Y38-Zx-0cO" id="yzR-Uh-Tju"/>
                 <outlet property="taskView" destination="o0A-36-t90" id="Zey-9k-AyI"/>
@@ -106,7 +111,7 @@ To aid you differentiate the two melodies, numbers 1 and 2 will be shown in the 
 
 We will start with some examples.
 Please tap on START when you are ready.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -162,14 +167,20 @@ Please tap on START when you are ready.</string>
                         <segment title="Different"/>
                     </segments>
                     <color key="tintColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="exampleAnswered:" destination="-1" eventType="valueChanged" id="5w7-er-dA6"/>
+                    </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cW5-WD-PVT">
                     <string key="text">In this pair of melodies the second melody is identical to the first.
 When both melodies are the same, you should tap the button “SAME”
-Tap on the button “SAME” to indicate that the melodies are the same.
-
-We will now continue to an example where the melodies are different.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+Tap on the button “SAME” to indicate that the melodies are the same.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uU-dm-nhl">
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -177,17 +188,21 @@ We will now continue to an example where the melodies are different.</string>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="cW5-WD-PVT" firstAttribute="top" secondItem="ubv-xk-DX9" secondAttribute="bottom" constant="8" id="3xB-ns-1SX"/>
+                <constraint firstItem="dLv-Vx-Wwx" firstAttribute="top" secondItem="8uU-dm-nhl" secondAttribute="bottom" constant="107" id="6Dn-Ai-7jn"/>
                 <constraint firstItem="Pah-DV-82L" firstAttribute="top" secondItem="t9g-wb-MrD" secondAttribute="bottom" constant="119" id="6Sy-9Q-gag"/>
                 <constraint firstItem="ubv-xk-DX9" firstAttribute="leading" secondItem="baQ-Rn-Gp2" secondAttribute="leading" constant="20" id="B98-QW-xwe"/>
+                <constraint firstAttribute="trailing" secondItem="8uU-dm-nhl" secondAttribute="trailing" constant="20" id="HHU-uQ-bHz"/>
                 <constraint firstItem="cW5-WD-PVT" firstAttribute="leading" secondItem="baQ-Rn-Gp2" secondAttribute="leading" constant="20" id="IaT-iE-bxW"/>
                 <constraint firstAttribute="trailing" secondItem="cW5-WD-PVT" secondAttribute="trailing" constant="20" id="Ljr-j2-xYL"/>
                 <constraint firstAttribute="trailing" secondItem="ubv-xk-DX9" secondAttribute="trailing" constant="20" id="S7w-fX-1Oi"/>
                 <constraint firstItem="ubv-xk-DX9" firstAttribute="top" secondItem="baQ-Rn-Gp2" secondAttribute="top" constant="55" id="aFQ-0r-fPN"/>
                 <constraint firstAttribute="bottom" secondItem="Pah-DV-82L" secondAttribute="bottom" constant="20" id="cGh-4M-iNW"/>
+                <constraint firstItem="8uU-dm-nhl" firstAttribute="leading" secondItem="baQ-Rn-Gp2" secondAttribute="leading" constant="20" id="dSK-vj-pog"/>
                 <constraint firstItem="Pah-DV-82L" firstAttribute="centerX" secondItem="baQ-Rn-Gp2" secondAttribute="centerX" id="mro-Rl-yAF"/>
                 <constraint firstItem="dLv-Vx-Wwx" firstAttribute="centerY" secondItem="baQ-Rn-Gp2" secondAttribute="centerY" id="qge-Ks-dQq"/>
                 <constraint firstItem="t9g-wb-MrD" firstAttribute="centerX" secondItem="baQ-Rn-Gp2" secondAttribute="centerX" id="xx4-Zr-meC"/>
                 <constraint firstItem="dLv-Vx-Wwx" firstAttribute="centerX" secondItem="baQ-Rn-Gp2" secondAttribute="centerX" id="yBm-d4-GTd"/>
+                <constraint firstItem="8uU-dm-nhl" firstAttribute="centerX" secondItem="baQ-Rn-Gp2" secondAttribute="centerX" id="ySZ-BM-XRJ"/>
             </constraints>
             <point key="canvasLocation" x="-256" y="-1287"/>
         </view>
@@ -212,7 +227,7 @@ We will now continue to an example where the melodies are different.</string>
 This task contains 24 trials and will take about 5 minutes to complete. 
 
 Please, tap the START button when you are ready to start.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -240,7 +255,7 @@ Please, tap the START button when you are ready to start.</string>
                         <action selector="nextTrial:" destination="-1" eventType="touchUpInside" id="erK-Am-1x2"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pracitce" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMW-sL-Lrf">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMW-sL-Lrf">
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -263,11 +278,11 @@ Please, tap the START button when you are ready to start.</string>
                         <action selector="practiceAnswered:" destination="-1" eventType="valueChanged" id="c9q-Vf-Lno"/>
                     </connections>
                 </segmentedControl>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t1-nG-okL">
-                    <string key="text">Remember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t1-nG-okL">
+                    <string key="text">Now you will practice on your own.  Remember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.
 There will be 5 pairs of melodies for you to practice.
 When you are ready, tap on START button.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -282,7 +297,7 @@ When you are ready, tap on START button.</string>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi7-4I-Qtx">
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -292,10 +307,10 @@ When you are ready, tap on START button.</string>
                 <constraint firstItem="UJc-ET-pl0" firstAttribute="centerY" secondItem="ItZ-Vj-dpA" secondAttribute="centerY" id="13o-YZ-GP4"/>
                 <constraint firstItem="XIU-ev-8c4" firstAttribute="centerX" secondItem="E4u-Jf-GIt" secondAttribute="centerX" id="6og-QF-3U3"/>
                 <constraint firstAttribute="trailing" secondItem="4t1-nG-okL" secondAttribute="trailing" constant="20" id="8O5-K0-2ae"/>
-                <constraint firstItem="ItZ-Vj-dpA" firstAttribute="top" secondItem="Bi7-4I-Qtx" secondAttribute="bottom" constant="142" id="AuC-ao-YJa"/>
                 <constraint firstItem="Lud-Lr-EWg" firstAttribute="centerX" secondItem="E4u-Jf-GIt" secondAttribute="centerX" id="BSn-Nr-lk3"/>
                 <constraint firstAttribute="trailing" secondItem="Bi7-4I-Qtx" secondAttribute="trailing" constant="20" id="DA0-Vc-C0k"/>
                 <constraint firstItem="Bi7-4I-Qtx" firstAttribute="leading" secondItem="E4u-Jf-GIt" secondAttribute="leading" constant="20" id="EKW-rh-dq1"/>
+                <constraint firstItem="XIU-ev-8c4" firstAttribute="top" secondItem="Bi7-4I-Qtx" secondAttribute="bottom" constant="100" id="J8f-VA-7hr"/>
                 <constraint firstItem="tMW-sL-Lrf" firstAttribute="top" secondItem="E4u-Jf-GIt" secondAttribute="top" constant="55" id="LDL-Ub-O74"/>
                 <constraint firstItem="4t1-nG-okL" firstAttribute="top" secondItem="tMW-sL-Lrf" secondAttribute="bottom" constant="8" id="PRZ-qI-Qyo"/>
                 <constraint firstItem="Bi7-4I-Qtx" firstAttribute="centerX" secondItem="E4u-Jf-GIt" secondAttribute="centerX" id="Rq9-sG-uGC"/>
@@ -351,7 +366,7 @@ When you are ready, tap on START button.</string>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qB8-xk-w7x">
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -360,10 +375,10 @@ When you are ready, tap on START button.</string>
             <constraints>
                 <constraint firstItem="qB8-xk-w7x" firstAttribute="leading" secondItem="o0A-36-t90" secondAttribute="leading" constant="20" id="1ID-S7-Hm8"/>
                 <constraint firstItem="sJ5-4c-8Op" firstAttribute="top" secondItem="Y38-Zx-0cO" secondAttribute="bottom" constant="119" id="5UT-Bg-NYG"/>
-                <constraint firstItem="qB8-xk-w7x" firstAttribute="top" secondItem="w1r-WS-ZBd" secondAttribute="bottom" constant="142" id="7tb-hh-n8M"/>
                 <constraint firstItem="w1r-WS-ZBd" firstAttribute="centerX" secondItem="o0A-36-t90" secondAttribute="centerX" id="BU1-v1-eob"/>
                 <constraint firstItem="w1r-WS-ZBd" firstAttribute="centerY" secondItem="o0A-36-t90" secondAttribute="centerY" id="EAH-fK-IqN"/>
                 <constraint firstItem="Y38-Zx-0cO" firstAttribute="centerX" secondItem="o0A-36-t90" secondAttribute="centerX" id="W3m-fv-k6y"/>
+                <constraint firstItem="w1r-WS-ZBd" firstAttribute="top" secondItem="qB8-xk-w7x" secondAttribute="bottom" constant="100" id="afu-lF-CnD"/>
                 <constraint firstAttribute="bottom" secondItem="sJ5-4c-8Op" secondAttribute="bottom" constant="20" id="jtU-hD-V25"/>
                 <constraint firstItem="Eni-wv-gVC" firstAttribute="centerY" secondItem="Y38-Zx-0cO" secondAttribute="centerY" id="rFN-7b-qCv"/>
                 <constraint firstItem="sJ5-4c-8Op" firstAttribute="centerX" secondItem="o0A-36-t90" secondAttribute="centerX" id="rZM-lF-XJY"/>
@@ -395,15 +410,15 @@ When you are ready, tap on START button.</string>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rt-x4-rLw">
-                    <string key="text">This example uses the same melody as in Example 1, but now the second melody has been altered. 
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rt-x4-rLw">
+                    <string key="text">We will now continue to an example where the melodies are different. 
+
+This example uses the same melody as in Example 1, but now the second melody has been altered. 
 
 To hear the melodies again tap on the “SPEAKER BUTTON”
 When both melodies are different, you should tap the button “DIFFERENT”. 
-Tap on the button “DIFFERENT” to indicate that the melodies are different. 
-
-We will now continue to an example where the difference between the melodies is more subtle.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+Tap on the button “DIFFERENT” to indicate that the melodies are different.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -416,6 +431,9 @@ We will now continue to an example where the difference between the melodies is 
                         <segment title="Different"/>
                     </segments>
                     <color key="tintColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="exampleAnswered:" destination="-1" eventType="valueChanged" id="hI4-x5-jJn"/>
+                    </connections>
                 </segmentedControl>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3o-lN-Zg6">
                     <constraints>
@@ -427,15 +445,22 @@ We will now continue to an example where the difference between the melodies is 
                         <action selector="replay:" destination="-1" eventType="touchUpInside" id="Jyp-WV-lVm"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63d-zm-zEy">
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="3rt-x4-rLw" firstAttribute="leading" secondItem="YBG-GS-vvZ" secondAttribute="leading" constant="20" id="1LF-gl-Atw"/>
+                <constraint firstItem="6IV-bi-xXS" firstAttribute="top" secondItem="63d-zm-zEy" secondAttribute="bottom" constant="107" id="Krr-r4-X7I"/>
                 <constraint firstItem="IT5-SX-vUy" firstAttribute="centerX" secondItem="YBG-GS-vvZ" secondAttribute="centerX" id="LCx-Oa-Pxo"/>
                 <constraint firstItem="IT5-SX-vUy" firstAttribute="top" secondItem="4sf-vH-XsI" secondAttribute="bottom" constant="119" id="N0Y-xw-hYF"/>
                 <constraint firstAttribute="trailing" secondItem="3rt-x4-rLw" secondAttribute="trailing" constant="20" id="QUR-L4-9t4"/>
                 <constraint firstAttribute="bottom" secondItem="IT5-SX-vUy" secondAttribute="bottom" constant="20" id="S4w-yt-smh"/>
                 <constraint firstItem="dQa-ic-LCF" firstAttribute="top" secondItem="YBG-GS-vvZ" secondAttribute="top" constant="55" id="UTl-NJ-sUG"/>
+                <constraint firstAttribute="trailing" secondItem="63d-zm-zEy" secondAttribute="trailing" constant="20" id="Uoc-oh-mhf"/>
                 <constraint firstItem="6IV-bi-xXS" firstAttribute="centerY" secondItem="YBG-GS-vvZ" secondAttribute="centerY" id="VRH-ig-gkz"/>
                 <constraint firstAttribute="trailing" secondItem="C3o-lN-Zg6" secondAttribute="trailing" constant="20" id="WrY-oi-YGa"/>
                 <constraint firstItem="3rt-x4-rLw" firstAttribute="top" secondItem="dQa-ic-LCF" secondAttribute="bottom" constant="8" id="iT3-o8-Ncb"/>
@@ -443,6 +468,7 @@ We will now continue to an example where the difference between the melodies is 
                 <constraint firstItem="4sf-vH-XsI" firstAttribute="centerX" secondItem="YBG-GS-vvZ" secondAttribute="centerX" id="lbY-sS-YH0"/>
                 <constraint firstItem="6IV-bi-xXS" firstAttribute="centerX" secondItem="YBG-GS-vvZ" secondAttribute="centerX" id="lhg-fN-Xhj"/>
                 <constraint firstItem="dQa-ic-LCF" firstAttribute="leading" secondItem="YBG-GS-vvZ" secondAttribute="leading" constant="20" id="rhf-3Q-Gpt"/>
+                <constraint firstItem="63d-zm-zEy" firstAttribute="leading" secondItem="YBG-GS-vvZ" secondAttribute="leading" constant="20" id="ytP-nH-ANd"/>
             </constraints>
             <point key="canvasLocation" x="-256" y="-196"/>
         </view>
@@ -470,14 +496,14 @@ We will now continue to an example where the difference between the melodies is 
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-bI-cFW">
-                    <string key="text">In this example, the difference between the melodies is more subtle.
+                    <string key="text">We will now continue to an example where the difference between the melodies is more subtle.
+
+In this example, the difference between the melodies is more subtle.
 
 To hear the melodies again tap on the “SPEAKER BUTTON”
 
-Tap on the button “DIFFERENT” to indicate that the melodies are different. 
-
-Now you will practice on your own.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+Tap on the button “DIFFERENT” to indicate that the melodies are different.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -490,6 +516,9 @@ Now you will practice on your own.</string>
                         <segment title="Different"/>
                     </segments>
                     <color key="tintColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="exampleAnswered:" destination="-1" eventType="valueChanged" id="GeW-PD-LGo"/>
+                    </connections>
                 </segmentedControl>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79G-ld-NPH">
                     <constraints>
@@ -501,6 +530,11 @@ Now you will practice on your own.</string>
                         <action selector="replay:" destination="-1" eventType="touchUpInside" id="CTk-pb-oIV"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phw-l0-Pfh">
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -509,10 +543,13 @@ Now you will practice on your own.</string>
                 <constraint firstItem="iiU-8p-po8" firstAttribute="top" secondItem="cWh-8L-wog" secondAttribute="bottom" constant="119" id="6Bu-wg-Nex"/>
                 <constraint firstItem="cWh-8L-wog" firstAttribute="centerX" secondItem="7y3-ol-fQa" secondAttribute="centerX" id="7gY-Au-xCj"/>
                 <constraint firstAttribute="trailing" secondItem="79G-ld-NPH" secondAttribute="trailing" constant="20" id="BGg-yI-cTO"/>
+                <constraint firstItem="sTY-n4-wSH" firstAttribute="top" secondItem="phw-l0-Pfh" secondAttribute="bottom" constant="107" id="IJI-hB-o6o"/>
+                <constraint firstItem="phw-l0-Pfh" firstAttribute="leading" secondItem="7y3-ol-fQa" secondAttribute="leading" constant="20" id="OLP-Fd-h7v"/>
                 <constraint firstItem="vVO-bI-cFW" firstAttribute="top" secondItem="BW8-4r-SHC" secondAttribute="bottom" constant="8" id="PRl-m9-t2E"/>
                 <constraint firstItem="iiU-8p-po8" firstAttribute="centerX" secondItem="7y3-ol-fQa" secondAttribute="centerX" id="PZC-gV-VRK"/>
                 <constraint firstItem="79G-ld-NPH" firstAttribute="centerY" secondItem="cWh-8L-wog" secondAttribute="centerY" id="c4P-dE-Mdb"/>
                 <constraint firstItem="sTY-n4-wSH" firstAttribute="centerY" secondItem="7y3-ol-fQa" secondAttribute="centerY" id="esQ-il-lMQ"/>
+                <constraint firstAttribute="trailing" secondItem="phw-l0-Pfh" secondAttribute="trailing" constant="20" id="nql-Zo-6AU"/>
                 <constraint firstItem="vVO-bI-cFW" firstAttribute="leading" secondItem="7y3-ol-fQa" secondAttribute="leading" constant="20" id="qMx-kK-Af8"/>
                 <constraint firstItem="sTY-n4-wSH" firstAttribute="centerX" secondItem="7y3-ol-fQa" secondAttribute="centerX" id="t00-1P-a4U"/>
                 <constraint firstAttribute="bottom" secondItem="iiU-8p-po8" secondAttribute="bottom" constant="20" id="wve-y2-6ag"/>

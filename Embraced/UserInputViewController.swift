@@ -52,10 +52,6 @@ class UserInputViewController: UIViewController {
         super.viewDidLoad()
         
         submitBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
-        
-        let uuid = UUID().uuidString
-        let index = uuid.characters.index(uuid.endIndex, offsetBy: -28)
-        participantID.text = uuid.substring(to: index)
 
     }
 
@@ -69,8 +65,10 @@ class UserInputViewController: UIViewController {
     }
     
     @IBAction func submit(_ sender: AnyObject) {
-//        self.saveUserInputs()
-        participant.setValue(participantID.text, forKey: "pid")
+        let uuid = UUID().uuidString
+        let index = uuid.characters.index(uuid.endIndex, offsetBy: -15)
+        
+        participant.setValue(uuid.substring(to: index), forKey: "pid")
         participant.setValue(dayOfTheWeekTextField.text, forKey: "dayOfTheWeek")
         participant.setValue(countryTextField.text, forKey: "country")
         participant.setValue(countyTextField.text, forKey: "county")
@@ -78,9 +76,30 @@ class UserInputViewController: UIViewController {
         participant.setValue(locationTextField.text, forKey: "location")
         participant.setValue(floorTextField.text, forKey: "floor")
 
+        var jsonObject = [String: AnyObject]()
         
+        // Gather data for post
+        jsonObject = [
+            "id": uuid.substring(to: index) as AnyObject
+        ]
+
         
-        let questionnaireViewController:WordListViewController = WordListViewController()
+        print(jsonObject)
+        
+        // Push to API
+        let notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/participant")!
+        let request = NSMutableURLRequest(url: notesEndpoint as URL)
+        
+        request.httpMethod = "POST"
+        request.httpBody = try? JSONSerialization.data(withJSONObject: jsonObject, options: [])
+        request.setValue("application/json" , forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest)
+        
+        task.resume()
+
+        
+        let questionnaireViewController:StroopViewController = StroopViewController()
         let navController = UINavigationController(rootViewController: questionnaireViewController)
         self.present(navController, animated: true, completion: nil)
         

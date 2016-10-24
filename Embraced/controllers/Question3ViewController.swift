@@ -11,19 +11,8 @@ import UIKit
 class Question3ViewController: FrontViewController {
 
     
-    var step = 3
-    var totalSteps = 3
-    var progress : Float {
-        get {
-            return Float(step) / Float(totalSteps)
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        progressView.progress = progress
-        progressLabel.text = "Progress (\(step)/\(totalSteps))"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(Question3ViewController.next(_:)))
     }

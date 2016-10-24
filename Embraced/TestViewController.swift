@@ -11,13 +11,6 @@ import UIKit
 class TestViewController: FrontViewController {
     
     var pickOption = ["Male", "Female", "Other"]
-    var step = 1
-    var totalSteps = 17
-    var progress : Float {
-        get {
-            return Float(step) / Float(totalSteps)
-        }
-    }
     let prefs = UserDefaults.standard
     
     var postValues = [String](repeating: "", count: 10)

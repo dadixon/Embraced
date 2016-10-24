@@ -28,6 +28,9 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var trialLabel: UILabel!
     @IBOutlet weak var tasksLabel: UILabel!
     
+    @IBOutlet weak var example1Response: UILabel!
+    @IBOutlet weak var example2Response: UILabel!
+    @IBOutlet weak var example3Response: UILabel!
     @IBOutlet weak var practiceResponse: UILabel!
     @IBOutlet weak var taskResponse: UILabel!
     
@@ -40,6 +43,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     var trials = Array<Array<String>>()
     var tasks = Array<Array<String>>()
     
+    let exampleAnswers = ["S", "D", "D"]
     let practiceAnswers = ["D", "D", "S", "D", "D"]
     let taskAnswers = ["S", "D", "S", "D", "D", "S", "D", "S", "D", "D", "S", "S", "S", "S", "D", "D", "D", "D", "D", "S", "S", "S", "S", "D"]
     
@@ -48,7 +52,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     var soundLabel = UILabel()
     var played = false
     
-    var trialCount = 0
+    var exampleCount = 0
+    var trialCount = -1
     var tasksCount = 0
     
     
@@ -69,12 +74,14 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     
     override func viewDidLoad() {
+        step = 7
+        
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PitchViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(PitchViewController.back(_:)))
         
-        orientation = "landscape"
+        orientation = "portrait"
         rotated()
         
         introView.translatesAutoresizingMaskIntoConstraints = false
@@ -182,7 +189,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        let mOCAMMSETestViewController:WordListViewController = WordListViewController()
+        let mOCAMMSETestViewController:DigitalSpanViewController = DigitalSpanViewController()
         self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
     }
 
@@ -201,6 +208,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     @IBAction func moveToExample2(_ sender: AnyObject) {
         setSubview(example1View, next: example2View)
         setupSounds(examples, iterator: 1, label: example2Label)
+        exampleCount += 1
     }
     
     @IBAction func replay(_ sender: AnyObject) {
@@ -217,13 +225,34 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     @IBAction func moveToExample3(_ sender: AnyObject) {
         setSubview(example2View, next: example3View)
         setupSounds(examples, iterator: 2, label: example3Label)
+        exampleCount += 1
     }
     
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
+        trialCount += 1
         setSubview(example3View, next: trial1View)
         setupSounds(trials, iterator: trialCount, label: trialLabel)
-        trialCount += 1
+    }
+    
+    @IBAction func exampleAnswered(_ sender: AnyObject) {
+        if ((sender.selectedSegmentIndex == 0 && exampleAnswers[exampleCount] == "S") || (sender.selectedSegmentIndex == 1 && exampleAnswers[exampleCount] == "D")) {
+            if exampleCount == 0 {
+                example1Response.text = "Correct!"
+            } else if exampleCount == 1 {
+                example2Response.text = "Correct!"
+            } else if exampleCount == 2 {
+                example3Response.text = "Correct!"
+            }
+        } else {
+            if exampleCount == 0 {
+                example1Response.text = "Sorry, that was an incorrect response. You can try again."
+            } else if exampleCount == 1 {
+                example2Response.text = "Sorry, that was an incorrect response. You can try again."
+            } else if exampleCount == 2 {
+                example3Response.text = "Sorry, that was an incorrect response. You can try again."
+            }
+        }
     }
     
     @IBAction func practiceAnswered(_ sender: AnyObject) {
@@ -250,7 +279,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func nextTrial(_ sender: AnyObject) {
-        if trialCount < trials.count {
+        if trialCount < trials.count - 1 {
             // Save answer
         
             // Which label back to 1

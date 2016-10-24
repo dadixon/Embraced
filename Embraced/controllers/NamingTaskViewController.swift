@@ -35,6 +35,8 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     
     
     override func viewDidLoad() {
+        step = 18
+        
         super.viewDidLoad()
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(NamingTaskViewController.next(_:)))

@@ -23,13 +23,6 @@ class MartialStatusViewController: FrontViewController, UITableViewDataSource, U
     
     @IBOutlet weak var childrenView: UIView!
     
-    var step = 4
-    var progress : Float {
-        get {
-            return Float(step) / 17.0
-        }
-    }
-    
     var postValues = [String](repeating: "", count: 10)
     let prefs = UserDefaults.standard
     

@@ -37,13 +37,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     var forward = Array<String>()
     var backward = Array<String>()
     
-    var step = 1
-    var totalSteps = 3
-    var progress : Float {
-        get {
-            return Float(step) / Float(totalSteps)
-        }
-    }
     
     var forwardCount = 0
     var backwardCount = 0
@@ -64,6 +57,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     
     
     override func viewDidLoad() {
+        step = 8
         super.viewDidLoad()
         
         orientation = "portrait"

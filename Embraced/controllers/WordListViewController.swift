@@ -66,6 +66,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     
     
     override func viewDidLoad() {
+        step = 16
+        
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(WordListViewController.next(_:)))

@@ -13,6 +13,7 @@ class ClockDrawingTestViewController: FrontViewController {
     @IBOutlet weak var myWebView: UIWebView!
         
     override func viewDidLoad() {
+        step = 4
         super.viewDidLoad()
         
         orientation = "portrait"

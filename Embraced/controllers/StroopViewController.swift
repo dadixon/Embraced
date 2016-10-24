@@ -37,6 +37,13 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     @IBOutlet weak var task4ImageView: UIImageView!
     @IBOutlet weak var specialText: UILabel!
     
+    @IBOutlet weak var video1View: UIView!
+    @IBOutlet weak var video2View: UIView!
+    @IBOutlet weak var video3View: UIView!
+    @IBOutlet weak var video4View: UIView!
+
+    @IBOutlet weak var practiceText: UILabel!
+    
     var recordingSession: AVAudioSession!
     
     var soundRecorder: AVAudioRecorder!
@@ -48,22 +55,20 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     var images = Array<String>()
     var videos = Array<String>()
     
-    var step = 1
-    var totalSteps = 3
-    var progress : Float {
-        get {
-            return Float(step) / Float(totalSteps)
-        }
-    }
+    
     
     let myString: String = "For example, for the word: “blue”, which is written in red, you have to say “red”."
+    let myString2: String = "Please practice how to record your voice using the Start and Play buttons below. \nClick done when you are finished."
     var myMutableString = NSMutableAttributedString()
+    var myMutableString2 = NSMutableAttributedString()
     
     var startTime = TimeInterval()
     var timer = Timer()
     var isRunning = false
     var reactionTime = ""
     var position = 0
+    
+    var player = AVPlayer()
     
     // MARK: - Private
     
@@ -81,12 +86,11 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     
     override func viewDidLoad() {
+        step = 15
         super.viewDidLoad()
         
-        orientation = "portrait"
+        orientation = "landscape"
         rotated()
-        progressView.progress = progress
-        progressLabel.text = "Progress"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(StroopViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(StroopViewController.back(_:)))
@@ -152,6 +156,11 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         })
         
         task.resume()
+        
+        myMutableString2 = NSMutableAttributedString(string: myString2, attributes: [NSFontAttributeName:UIFont(name: "HelveticaNeue", size: 17.0)!])
+        myMutableString2.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 18), range: NSRange(location:51,length:5))
+        myMutableString2.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 18), range: NSRange(location:61,length:4))
+        practiceText.attributedText = myMutableString2
     }
     
     override func didReceiveMemoryWarning() {
@@ -354,6 +363,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     }
     
     @IBAction func moveToTask1(_ sender: AnyObject) {
+        player.pause()
         setSubview(preTask1View, next: task1View)
         self.loadImageFromUrl(images[position], view: self.task1ImageView)
         position += 1
@@ -364,6 +374,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     }
     
     @IBAction func moveToTask2(_ sender: AnyObject) {
+        player.pause()
         setSubview(preTask2View, next: task2View)
         self.loadImageFromUrl(images[position], view: self.task2ImageView)
         position += 1
@@ -374,6 +385,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     }
     
     @IBAction func moveToTask3(_ sender: AnyObject) {
+        player.pause()
         setSubview(preTask3View, next: task3View)
         self.loadImageFromUrl(images[position], view: self.task3ImageView)
         position += 1
@@ -388,6 +400,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     }
     
     @IBAction func moveToTask4(_ sender: AnyObject) {
+        player.pause()
         setSubview(preTask4View, next: task4View)
         self.loadImageFromUrl(images[1], view: self.task4ImageView)
         position += 1
@@ -395,20 +408,29 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     @IBAction func playVideo(_ sender: AnyObject) {
         let fileURL = NSURL(string: videos[sender.tag])!
-        playVideoFile(url: fileURL)
+        playVideoFile(url: fileURL, index: sender.tag)
     }
     
-    func playVideoFile(url: NSURL){
-        let player = AVPlayer(url: url as URL)
+    func playVideoFile(url: NSURL, index: Int){
+        player = AVPlayer(url: url as URL)
         
         playerController.delegate = self
         playerController.player = player
-        playerController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+        let videoLayer = AVPlayerLayer(player: player)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(StroopViewController.playerDidFinishPlaying(note:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
-        
-        self.present(playerController, animated: true, completion: nil)
-        
+        if index == 0 {
+            videoLayer.frame = video1View.bounds
+            video1View.layer.addSublayer(videoLayer)
+        } else if index == 1 {
+            videoLayer.frame = video2View.bounds
+            video2View.layer.addSublayer(videoLayer)
+        } else if index == 2 {
+            videoLayer.frame = video3View.bounds
+            video3View.layer.addSublayer(videoLayer)
+        } else if index == 3 {
+            videoLayer.frame = video4View.bounds
+            video4View.layer.addSublayer(videoLayer)
+        }
         player.play()
     }
     

@@ -189,14 +189,6 @@ Please click LISTEN button when you are ready.</string>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPE-Zq-5xF">
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNY-6U-ssG">
-                            <state key="normal" title="Listen" image="listen.png">
-                                <color key="titleColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="listenToSound:" destination="-1" eventType="touchUpInside" id="7iq-ns-Szu"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="AOr-uP-wO7">
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="MTj-0O-Ias"/>
@@ -208,15 +200,26 @@ Please click LISTEN button when you are ready.</string>
                                 <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="wtd-PF-VfW"/>
                             </connections>
                         </button>
+                        <button opaque="NO" tag="1" contentMode="bottomLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pba-QZ-kRp">
+                            <inset key="titleEdgeInsets" minX="-95" minY="0.0" maxX="0.0" maxY="-135"/>
+                            <inset key="imageEdgeInsets" minX="-6" minY="-24" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Listen" image="listen.png">
+                                <color key="titleColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="listenToSound:" destination="-1" eventType="touchUpInside" id="hqe-ZY-mKG"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="AOr-uP-wO7" firstAttribute="centerY" secondItem="tPE-Zq-5xF" secondAttribute="centerY" id="1Ge-Z1-8A9"/>
-                        <constraint firstItem="SNY-6U-ssG" firstAttribute="centerY" secondItem="AOr-uP-wO7" secondAttribute="centerY" id="J9T-Wa-cDy"/>
+                        <constraint firstItem="Pba-QZ-kRp" firstAttribute="centerY" secondItem="tPE-Zq-5xF" secondAttribute="centerY" id="CSY-4y-BxJ"/>
+                        <constraint firstItem="Pba-QZ-kRp" firstAttribute="leading" secondItem="tPE-Zq-5xF" secondAttribute="leading" constant="8" id="O2E-os-mQT"/>
                         <constraint firstAttribute="trailing" secondItem="AOr-uP-wO7" secondAttribute="trailing" constant="8" id="YW1-Is-Iif"/>
-                        <constraint firstItem="SNY-6U-ssG" firstAttribute="leading" secondItem="tPE-Zq-5xF" secondAttribute="leading" constant="8" id="aG9-tR-t11"/>
                         <constraint firstAttribute="width" constant="544" id="iwm-QS-0Sj"/>
                         <constraint firstAttribute="height" constant="247" id="jHv-LL-xKX"/>
+                        <constraint firstItem="AOr-uP-wO7" firstAttribute="centerY" secondItem="Pba-QZ-kRp" secondAttribute="centerY" id="yyv-e6-BVk"/>
                     </constraints>
                 </view>
             </subviews>
@@ -322,7 +325,9 @@ You will have a practice round before starting with the series.</string>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPl-Ho-F0E">
                     <subviews>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3b-f4-6b3">
+                        <button opaque="NO" tag="1" contentMode="bottomLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3b-f4-6b3">
+                            <inset key="titleEdgeInsets" minX="-95" minY="0.0" maxX="0.0" maxY="-135"/>
+                            <inset key="imageEdgeInsets" minX="-6" minY="-24" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="Listen" image="listen.png">
                                 <color key="titleColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>

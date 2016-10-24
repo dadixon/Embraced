@@ -11,13 +11,6 @@ import UIKit
 class Question2ViewController: FrontViewController {
 
     var pickOption = ["Male", "Female", "Other"]
-    var step = 2
-    var totalSteps = 3
-    var progress : Float {
-        get {
-            return Float(step) / Float(totalSteps)
-        }
-    }
     
     let prefs = UserDefaults.standard
     
@@ -30,10 +23,8 @@ class Question2ViewController: FrontViewController {
     let textCellIdentifier = "ChildTableViewCell"
     
     override func viewDidLoad() {
+        step = 2
         super.viewDidLoad()
-        
-        progressView.progress = progress
-        progressLabel.text = "Progress (\(step)/\(totalSteps))"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(Question2ViewController.next(_:)))
     }

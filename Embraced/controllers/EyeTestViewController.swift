@@ -13,6 +13,8 @@ class EyeTestViewController: FrontViewController {
     @IBOutlet weak var myWebView: UIWebView!
     
     override func viewDidLoad() {
+        step = 12
+        
         super.viewDidLoad()
         
         orientation = "portrait"

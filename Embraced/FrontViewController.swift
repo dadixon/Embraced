@@ -16,13 +16,26 @@ class FrontViewController: UIViewController {
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var mainView: UIView!
     
+    let participant = UserDefaults.standard
+    
     var alertController = UIAlertController()
     
     var orientation = "portrait"
     
+    var step = 1
+    var totalSteps = 19
+    var progress : Float {
+        get {
+            return Float(step) / Float(totalSteps)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        progressView.progress = progress
+        progressLabel.text = "Progress (\(step)/\(totalSteps))"
+        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
         
         mainView.layer.shadowColor = UIColor.black.cgColor

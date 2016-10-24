@@ -12,24 +12,15 @@ class ReyComplexFigure3ViewController: FrontViewController {
 
     @IBOutlet weak var myWebView: UIWebView!
     
-    var step = 1
-    var totalSteps = 3
-    var progress : Float {
-        get {
-            return Float(step) / Float(totalSteps)
-        }
-    }
     
     override func viewDidLoad() {
+        step = 9
         super.viewDidLoad()
         
         orientation = "portrait"
         rotated()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ReyComplexFigure3ViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(StroopViewController.back(_:)))
-        
-        progressView.progress = progress
-        progressLabel.text = "Progress (\(step)/\(totalSteps))"
         
         let url = URL (string: "http://girlscouts.harryatwal.com/reyComplexFigure3.php");
 

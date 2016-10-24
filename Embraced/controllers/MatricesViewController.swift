@@ -13,6 +13,8 @@ class MatricesViewController: FrontViewController {
     @IBOutlet weak var myWebView: UIWebView!
     
     override func viewDidLoad() {
+        step = 13
+        
         super.viewDidLoad()
         
         orientation = "portrait"

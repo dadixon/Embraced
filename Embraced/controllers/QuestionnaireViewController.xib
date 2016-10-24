@@ -1,15 +1,22 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionnaireViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
                 <outlet property="mainView" destination="XZG-ZL-cZS" id="rgk-az-Qnw"/>
                 <outlet property="myWebView" destination="g6o-Us-yZn" id="LT9-LG-Hxu"/>
+                <outlet property="progressLabel" destination="Tvd-sE-plK" id="qk6-Yx-XU5"/>
+                <outlet property="progressView" destination="OyK-Y5-dOa" id="3ZR-xG-KMX"/>
                 <outlet property="view" destination="J3q-W3-s7m" id="w7z-fF-E2e"/>
             </connections>
         </placeholder>
@@ -20,6 +27,30 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZG-ZL-cZS">
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghg-R8-L4S">
+                            <subviews>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OyK-Y5-dOa">
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="342" id="dme-7f-Gjf"/>
+                                    </constraints>
+                                </progressView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvd-sE-plK">
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="OyK-Y5-dOa" secondAttribute="bottom" constant="13" id="KLS-5M-clI"/>
+                                <constraint firstItem="Tvd-sE-plK" firstAttribute="top" secondItem="ghg-R8-L4S" secondAttribute="top" constant="8" id="b8f-UP-pIW"/>
+                                <constraint firstItem="OyK-Y5-dOa" firstAttribute="centerX" secondItem="ghg-R8-L4S" secondAttribute="centerX" id="bnx-L1-PjE"/>
+                                <constraint firstItem="Tvd-sE-plK" firstAttribute="centerX" secondItem="ghg-R8-L4S" secondAttribute="centerX" id="eSi-ZL-edc"/>
+                                <constraint firstAttribute="height" constant="47" id="pZi-b1-N39"/>
+                                <constraint firstItem="OyK-Y5-dOa" firstAttribute="top" secondItem="Tvd-sE-plK" secondAttribute="bottom" constant="3" id="zha-qb-l0T"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="47" id="zqS-1e-sld"/>
+                            </constraints>
+                        </view>
                         <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6o-Us-yZn">
                             <color key="backgroundColor" red="0.28958413" green="0.31462949509999999" blue="0.32950475810000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </webView>
@@ -27,9 +58,12 @@
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="g6o-Us-yZn" firstAttribute="leading" secondItem="XZG-ZL-cZS" secondAttribute="leading" id="2Wj-7v-EMV"/>
+                        <constraint firstAttribute="trailing" secondItem="ghg-R8-L4S" secondAttribute="trailing" id="Afn-Oy-Pr3"/>
+                        <constraint firstItem="ghg-R8-L4S" firstAttribute="top" secondItem="XZG-ZL-cZS" secondAttribute="top" id="a0E-Pb-z2o"/>
                         <constraint firstAttribute="bottom" secondItem="g6o-Us-yZn" secondAttribute="bottom" id="kGv-5y-LlJ"/>
+                        <constraint firstItem="ghg-R8-L4S" firstAttribute="leading" secondItem="XZG-ZL-cZS" secondAttribute="leading" id="kZ9-ag-125"/>
+                        <constraint firstItem="g6o-Us-yZn" firstAttribute="top" secondItem="ghg-R8-L4S" secondAttribute="bottom" id="leP-hb-c63"/>
                         <constraint firstAttribute="trailing" secondItem="g6o-Us-yZn" secondAttribute="trailing" id="spV-hs-ddA"/>
-                        <constraint firstItem="g6o-Us-yZn" firstAttribute="top" secondItem="XZG-ZL-cZS" secondAttribute="top" id="zgv-6v-M86"/>
                     </constraints>
                 </view>
             </subviews>
