@@ -20,6 +20,7 @@
                 <outlet property="playBtn" destination="GS2-EV-A6d" id="qDt-bt-gi6"/>
                 <outlet property="practiceView" destination="Vr4-Mj-e6s" id="t6i-0l-y7M"/>
                 <outlet property="progressLabel" destination="iE3-Lm-HGr" id="5Dr-Xy-nhs"/>
+                <outlet property="progressView" destination="2kb-dD-wcT" id="PLc-mu-eV3"/>
                 <outlet property="recordBtn" destination="zCn-Eg-qyk" id="8Ax-B6-JPe"/>
                 <outlet property="titleLabel" destination="mMB-hw-R1N" id="G9d-bI-qyG"/>
                 <outlet property="trial1View" destination="kSe-9b-lPj" id="oDI-IU-pTp"/>

@@ -1,21 +1,82 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NamingTaskViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
                 <outlet property="imageView" destination="ZHo-0n-pBn" id="gP9-uf-CfB"/>
-                <outlet property="mainView" destination="G9S-64-f7F" id="iAB-l1-aRi"/>
+                <outlet property="mainView" destination="0Ah-2e-thL" id="CgC-Bp-HGV"/>
                 <outlet property="playBtn" destination="cad-2J-6YU" id="iJ6-8y-D7M"/>
+                <outlet property="progressLabel" destination="vcd-Q1-m8h" id="OxJ-UC-TfX"/>
+                <outlet property="progressView" destination="0QO-s1-gak" id="YYt-M7-hIA"/>
                 <outlet property="recordBtn" destination="wba-iB-DN4" id="qTq-rF-ULl"/>
                 <outlet property="timerCount" destination="urg-aA-Vcr" id="TVY-qZ-9cp"/>
-                <outlet property="view" destination="iN0-l3-epB" id="My8-Yj-Ajx"/>
+                <outlet property="view" destination="kOd-oI-dBf" id="caA-jj-hIL"/>
             </connections>
         </placeholder>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="kOd-oI-dBf">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ah-2e-thL">
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-Yj-qhH">
+                            <subviews>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0QO-s1-gak">
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="342" id="F9J-az-ZdZ"/>
+                                    </constraints>
+                                </progressView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcd-Q1-m8h">
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="47" id="HDe-bN-Ay3"/>
+                                <constraint firstItem="vcd-Q1-m8h" firstAttribute="top" secondItem="cHx-Yj-qhH" secondAttribute="top" constant="8" id="IXC-HI-Iqf"/>
+                                <constraint firstItem="vcd-Q1-m8h" firstAttribute="centerX" secondItem="cHx-Yj-qhH" secondAttribute="centerX" id="a0i-HO-XTo"/>
+                                <constraint firstItem="0QO-s1-gak" firstAttribute="centerX" secondItem="cHx-Yj-qhH" secondAttribute="centerX" id="b1V-im-Ebt"/>
+                                <constraint firstAttribute="bottom" secondItem="0QO-s1-gak" secondAttribute="bottom" constant="13" id="eM2-ge-rEt"/>
+                                <constraint firstItem="0QO-s1-gak" firstAttribute="top" secondItem="vcd-Q1-m8h" secondAttribute="bottom" constant="3" id="xYa-vS-e3c"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5c-HD-6pZ">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="cHx-Yj-qhH" secondAttribute="trailing" id="CyH-4z-441"/>
+                        <constraint firstItem="s5c-HD-6pZ" firstAttribute="leading" secondItem="0Ah-2e-thL" secondAttribute="leading" id="Ij7-1e-fuY"/>
+                        <constraint firstItem="cHx-Yj-qhH" firstAttribute="top" secondItem="0Ah-2e-thL" secondAttribute="top" id="L9z-TS-yIi"/>
+                        <constraint firstAttribute="bottom" secondItem="s5c-HD-6pZ" secondAttribute="bottom" id="Xwa-uE-WEQ"/>
+                        <constraint firstItem="s5c-HD-6pZ" firstAttribute="top" secondItem="cHx-Yj-qhH" secondAttribute="bottom" id="ZDK-CC-pMA"/>
+                        <constraint firstItem="cHx-Yj-qhH" firstAttribute="leading" secondItem="0Ah-2e-thL" secondAttribute="leading" id="aaC-WV-xBb"/>
+                        <constraint firstAttribute="trailing" secondItem="s5c-HD-6pZ" secondAttribute="trailing" id="eVQ-GC-yyO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0Ah-2e-thL" firstAttribute="leading" secondItem="kOd-oI-dBf" secondAttribute="leading" constant="8" id="0rT-Hj-env"/>
+                <constraint firstItem="0Ah-2e-thL" firstAttribute="top" secondItem="kOd-oI-dBf" secondAttribute="top" constant="65" id="SeT-Tt-TzM"/>
+                <constraint firstAttribute="bottom" secondItem="0Ah-2e-thL" secondAttribute="bottom" constant="8" id="pXo-hh-J7F"/>
+                <constraint firstAttribute="trailing" secondItem="0Ah-2e-thL" secondAttribute="trailing" constant="8" id="vK7-hK-hpg"/>
+            </constraints>
+            <point key="canvasLocation" x="-1492" y="-1024"/>
+        </view>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -67,7 +128,89 @@
                 <constraint firstAttribute="bottom" secondItem="G9S-64-f7F" secondAttribute="bottom" constant="8" id="SVY-iz-ouv"/>
                 <constraint firstItem="G9S-64-f7F" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="V0M-IV-vSN"/>
             </constraints>
-            <point key="canvasLocation" x="348" y="624"/>
+            <point key="canvasLocation" x="520" y="-1024"/>
+        </view>
+        <view contentMode="scaleToFill" id="Z25-ue-BeG">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzz-et-J2E" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="126" id="xfg-vI-arg"/>
+                    </constraints>
+                    <state key="normal" title="Start"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggb-un-w6P">
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cav-Wv-kGZ">
+                    <string key="text">Next you will be shown a series of pictures and will have to recognize and name each picture out loud. 
+You will record your answer in this device. 
+Please practice recording your voice with the microphone button below</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIl-jy-6i2">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIW-rw-DBu">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="187" id="G55-G3-s9a"/>
+                            </constraints>
+                            <state key="normal" title="Play" image="play.png">
+                                <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eEM-s5-AXo">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="162" id="gdk-6M-XvV"/>
+                            </constraints>
+                            <state key="normal" title="Start" image="record.png">
+                                <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="eEM-s5-AXo" firstAttribute="centerY" secondItem="iIl-jy-6i2" secondAttribute="centerY" id="GLr-qq-wQr"/>
+                        <constraint firstItem="oIW-rw-DBu" firstAttribute="centerY" secondItem="iIl-jy-6i2" secondAttribute="centerY" id="VcA-7H-chF"/>
+                        <constraint firstAttribute="width" constant="544" id="Y40-8x-gpg"/>
+                        <constraint firstAttribute="trailing" secondItem="oIW-rw-DBu" secondAttribute="trailing" constant="8" id="rNv-tr-vvH"/>
+                        <constraint firstAttribute="height" constant="247" id="wgp-V6-iBd"/>
+                        <constraint firstItem="eEM-s5-AXo" firstAttribute="leading" secondItem="iIl-jy-6i2" secondAttribute="leading" constant="8" id="zn8-DO-Ruc"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edd-p9-w5c">
+                    <frame key="frameInset" minX="20" minY="667" width="728" height="143"/>
+                    <string key="text">You will be shown each picture one at a time. If you cannot come up with the answer after the allowed time, you will have the option of skipping to the next picture.  We will start with some examples.
+Click START when you are ready.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cav-Wv-kGZ" firstAttribute="leading" secondItem="Z25-ue-BeG" secondAttribute="leading" constant="20" id="1hw-u2-JUa"/>
+                <constraint firstItem="Mzz-et-J2E" firstAttribute="centerX" secondItem="Z25-ue-BeG" secondAttribute="centerX" id="5A2-R3-WtY"/>
+                <constraint firstItem="iIl-jy-6i2" firstAttribute="centerX" secondItem="Z25-ue-BeG" secondAttribute="centerX" id="7nI-2J-aCb"/>
+                <constraint firstAttribute="bottom" secondItem="Mzz-et-J2E" secondAttribute="bottom" constant="20" id="EaM-kH-uMk"/>
+                <constraint firstAttribute="trailing" secondItem="cav-Wv-kGZ" secondAttribute="trailing" constant="20" id="EaV-mV-JI1"/>
+                <constraint firstItem="edd-p9-w5c" firstAttribute="leading" secondItem="Z25-ue-BeG" secondAttribute="leading" constant="20" id="JRq-lN-lhd"/>
+                <constraint firstItem="cav-Wv-kGZ" firstAttribute="top" secondItem="Ggb-un-w6P" secondAttribute="bottom" constant="8" id="OBN-qJ-Bgy"/>
+                <constraint firstItem="iIl-jy-6i2" firstAttribute="centerY" secondItem="Z25-ue-BeG" secondAttribute="centerY" id="Y8v-iF-krd"/>
+                <constraint firstAttribute="trailing" secondItem="edd-p9-w5c" secondAttribute="trailing" constant="20" id="gWX-ui-qWd"/>
+                <constraint firstItem="Ggb-un-w6P" firstAttribute="top" secondItem="Z25-ue-BeG" secondAttribute="top" constant="20" id="l4n-rH-P2d"/>
+                <constraint firstItem="edd-p9-w5c" firstAttribute="top" secondItem="iIl-jy-6i2" secondAttribute="bottom" constant="31" id="qSd-it-pbW"/>
+                <constraint firstItem="Ggb-un-w6P" firstAttribute="leading" secondItem="Z25-ue-BeG" secondAttribute="leading" constant="20" id="tf3-qp-tbw"/>
+            </constraints>
+            <point key="canvasLocation" x="-503" y="-1024"/>
         </view>
     </objects>
+    <resources>
+        <image name="play.png" width="128" height="128"/>
+        <image name="record.png" width="88" height="128"/>
+    </resources>
 </document>

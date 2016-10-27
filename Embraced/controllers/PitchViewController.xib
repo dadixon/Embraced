@@ -179,7 +179,7 @@ Tap on the button “SAME” to indicate that the melodies are the same.</string
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uU-dm-nhl">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uU-dm-nhl">
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -188,7 +188,7 @@ Tap on the button “SAME” to indicate that the melodies are the same.</string
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="cW5-WD-PVT" firstAttribute="top" secondItem="ubv-xk-DX9" secondAttribute="bottom" constant="8" id="3xB-ns-1SX"/>
-                <constraint firstItem="dLv-Vx-Wwx" firstAttribute="top" secondItem="8uU-dm-nhl" secondAttribute="bottom" constant="107" id="6Dn-Ai-7jn"/>
+                <constraint firstItem="dLv-Vx-Wwx" firstAttribute="top" secondItem="8uU-dm-nhl" secondAttribute="bottom" constant="50" id="6Dn-Ai-7jn"/>
                 <constraint firstItem="Pah-DV-82L" firstAttribute="top" secondItem="t9g-wb-MrD" secondAttribute="bottom" constant="119" id="6Sy-9Q-gag"/>
                 <constraint firstItem="ubv-xk-DX9" firstAttribute="leading" secondItem="baQ-Rn-Gp2" secondAttribute="leading" constant="20" id="B98-QW-xwe"/>
                 <constraint firstAttribute="trailing" secondItem="8uU-dm-nhl" secondAttribute="trailing" constant="20" id="HHU-uQ-bHz"/>
@@ -296,7 +296,7 @@ When you are ready, tap on START button.</string>
                         <action selector="replay:" destination="-1" eventType="touchUpInside" id="twb-gi-gcN"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi7-4I-Qtx">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi7-4I-Qtx">
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -355,16 +355,6 @@ When you are ready, tap on START button.</string>
                         <action selector="taskAnswered:" destination="-1" eventType="valueChanged" id="ROH-CU-N4P"/>
                     </connections>
                 </segmentedControl>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eni-wv-gVC">
-                    <constraints>
-                        <constraint firstAttribute="height" constant="38" id="2w3-vN-OG3"/>
-                        <constraint firstAttribute="width" constant="49" id="Tjv-8k-sOK"/>
-                    </constraints>
-                    <state key="normal" image="speaker.png"/>
-                    <connections>
-                        <action selector="replay:" destination="-1" eventType="touchUpInside" id="yqm-om-Z3t"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qB8-xk-w7x">
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
@@ -380,10 +370,8 @@ When you are ready, tap on START button.</string>
                 <constraint firstItem="Y38-Zx-0cO" firstAttribute="centerX" secondItem="o0A-36-t90" secondAttribute="centerX" id="W3m-fv-k6y"/>
                 <constraint firstItem="w1r-WS-ZBd" firstAttribute="top" secondItem="qB8-xk-w7x" secondAttribute="bottom" constant="100" id="afu-lF-CnD"/>
                 <constraint firstAttribute="bottom" secondItem="sJ5-4c-8Op" secondAttribute="bottom" constant="20" id="jtU-hD-V25"/>
-                <constraint firstItem="Eni-wv-gVC" firstAttribute="centerY" secondItem="Y38-Zx-0cO" secondAttribute="centerY" id="rFN-7b-qCv"/>
                 <constraint firstItem="sJ5-4c-8Op" firstAttribute="centerX" secondItem="o0A-36-t90" secondAttribute="centerX" id="rZM-lF-XJY"/>
                 <constraint firstAttribute="trailing" secondItem="qB8-xk-w7x" secondAttribute="trailing" constant="20" id="xeY-01-fV4"/>
-                <constraint firstAttribute="trailing" secondItem="Eni-wv-gVC" secondAttribute="trailing" constant="20" id="zT9-Oe-YAH"/>
             </constraints>
             <point key="canvasLocation" x="2438" y="-1287"/>
         </view>
@@ -445,7 +433,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                         <action selector="replay:" destination="-1" eventType="touchUpInside" id="Jyp-WV-lVm"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63d-zm-zEy">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63d-zm-zEy">
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -454,7 +442,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="3rt-x4-rLw" firstAttribute="leading" secondItem="YBG-GS-vvZ" secondAttribute="leading" constant="20" id="1LF-gl-Atw"/>
-                <constraint firstItem="6IV-bi-xXS" firstAttribute="top" secondItem="63d-zm-zEy" secondAttribute="bottom" constant="107" id="Krr-r4-X7I"/>
+                <constraint firstItem="6IV-bi-xXS" firstAttribute="top" secondItem="63d-zm-zEy" secondAttribute="bottom" constant="50" id="Krr-r4-X7I"/>
                 <constraint firstItem="IT5-SX-vUy" firstAttribute="centerX" secondItem="YBG-GS-vvZ" secondAttribute="centerX" id="LCx-Oa-Pxo"/>
                 <constraint firstItem="IT5-SX-vUy" firstAttribute="top" secondItem="4sf-vH-XsI" secondAttribute="bottom" constant="119" id="N0Y-xw-hYF"/>
                 <constraint firstAttribute="trailing" secondItem="3rt-x4-rLw" secondAttribute="trailing" constant="20" id="QUR-L4-9t4"/>
@@ -530,7 +518,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                         <action selector="replay:" destination="-1" eventType="touchUpInside" id="CTk-pb-oIV"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phw-l0-Pfh">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phw-l0-Pfh">
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -543,7 +531,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                 <constraint firstItem="iiU-8p-po8" firstAttribute="top" secondItem="cWh-8L-wog" secondAttribute="bottom" constant="119" id="6Bu-wg-Nex"/>
                 <constraint firstItem="cWh-8L-wog" firstAttribute="centerX" secondItem="7y3-ol-fQa" secondAttribute="centerX" id="7gY-Au-xCj"/>
                 <constraint firstAttribute="trailing" secondItem="79G-ld-NPH" secondAttribute="trailing" constant="20" id="BGg-yI-cTO"/>
-                <constraint firstItem="sTY-n4-wSH" firstAttribute="top" secondItem="phw-l0-Pfh" secondAttribute="bottom" constant="107" id="IJI-hB-o6o"/>
+                <constraint firstItem="sTY-n4-wSH" firstAttribute="top" secondItem="phw-l0-Pfh" secondAttribute="bottom" constant="50" id="IJI-hB-o6o"/>
                 <constraint firstItem="phw-l0-Pfh" firstAttribute="leading" secondItem="7y3-ol-fQa" secondAttribute="leading" constant="20" id="OLP-Fd-h7v"/>
                 <constraint firstItem="vVO-bI-cFW" firstAttribute="top" secondItem="BW8-4r-SHC" secondAttribute="bottom" constant="8" id="PRl-m9-t2E"/>
                 <constraint firstItem="iiU-8p-po8" firstAttribute="centerX" secondItem="7y3-ol-fQa" secondAttribute="centerX" id="PZC-gV-VRK"/>

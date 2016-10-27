@@ -242,7 +242,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
 //        
 //        navigationArray?.remove(at: 0)
         
-        let multipleErrandsViewController:FinishedViewController = FinishedViewController()
+        let multipleErrandsViewController:ComprehensionViewController = ComprehensionViewController()
 //        navigationArray?.append(multipleErrandsViewController)
 //        
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)

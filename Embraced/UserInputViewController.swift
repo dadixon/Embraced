@@ -99,7 +99,7 @@ class UserInputViewController: UIViewController {
         task.resume()
 
         
-        let questionnaireViewController:StroopViewController = StroopViewController()
+        let questionnaireViewController:PitchViewController = PitchViewController()
         let navController = UINavigationController(rootViewController: questionnaireViewController)
         self.present(navController, animated: true, completion: nil)
         

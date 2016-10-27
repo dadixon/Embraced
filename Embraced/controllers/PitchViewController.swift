@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
-
+    
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet var introView: UIView!
@@ -53,7 +53,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     var played = false
     
     var exampleCount = 0
-    var trialCount = -1
+    var trialCount = 0
     var tasksCount = 0
     
     
@@ -91,7 +91,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         trial1View.translatesAutoresizingMaskIntoConstraints = false
         preTaskView.translatesAutoresizingMaskIntoConstraints = false
         taskView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         containerView.addSubview(introView)
         
         let leftConstraint = introView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
@@ -135,8 +135,6 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     
     func play(_ url:NSURL) {
-        print("playing \(url)")
-        
         do {
             soundPlayer = try AVAudioPlayer(contentsOf: url as URL)
             soundPlayer.delegate = self
@@ -177,12 +175,12 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
             secondSound = soundArray[iterator][0]
         }
         
+        print(firstSound)
+        print(secondSound)
         let url = NSURL(string: firstSound)
         downloadFileFromURL(url: url!)
         soundLabel = label
         soundLabel.text = "1"
-        
-        print("Sound url \(firstSound)")
     }
     
     
@@ -192,7 +190,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         let mOCAMMSETestViewController:DigitalSpanViewController = DigitalSpanViewController()
         self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
     }
-
+    
     @IBAction func back(_ sender: AnyObject) {
         _ = self.navigationController?.popViewController(animated: true)
     }
@@ -230,9 +228,9 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
-        trialCount += 1
         setSubview(example3View, next: trial1View)
         setupSounds(trials, iterator: trialCount, label: trialLabel)
+        print(trials)
     }
     
     @IBAction func exampleAnswered(_ sender: AnyObject) {
@@ -279,9 +277,11 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func nextTrial(_ sender: AnyObject) {
-        if trialCount < trials.count - 1 {
-            // Save answer
+        trialCount += 1
         
+        if trialCount < trials.count {
+            // Save answer
+            
             // Which label back to 1
             trialLabel.text = "1"
             practiceResponse.text = ""
@@ -289,12 +289,10 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
             
             // Set sounds to play
             setupSounds(trials, iterator: trialCount, label: trialLabel)
-        
-            trialCount += 1
         } else {
-//            if soundPlayer != nil {
-                soundPlayer.stop()
-//            }
+            //            if soundPlayer != nil {
+            soundPlayer.stop()
+            //            }
             
             setSubview(trial1View, next: preTaskView)
         }
@@ -323,7 +321,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
             
             tasksCount += 1
         } else {
-            let mOCAMMSETestViewController:WordListViewController = WordListViewController()
+            let mOCAMMSETestViewController:DigitalSpanViewController = DigitalSpanViewController()
             self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
         }
     }
@@ -343,7 +341,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
                 let url = NSURL(string: self.secondSound)
                 self.downloadFileFromURL(url: url!)
             }
-        
+            
             self.played = true
         }
     }
