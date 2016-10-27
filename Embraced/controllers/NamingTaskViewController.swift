@@ -17,6 +17,13 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var timerCount: UILabel!
     
+    @IBOutlet weak var containerView: UIView!
+    
+    @IBOutlet var initialView: UIView!
+    @IBOutlet var trialView: UIView!
+    @IBOutlet var preTaskView: UIView!
+    @IBOutlet var taskView: UIView!
+
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     
@@ -34,6 +41,18 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     var isRunning = false
     
     
+    private func setSubview(_ current: UIView, next: UIView) {
+        current.removeFromSuperview()
+        containerView.addSubview(next)
+        
+        let leftConstraint = next.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
+        let topConstraint = next.topAnchor.constraint(equalTo: containerView.topAnchor)
+        let rightConstraint = next.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        let bottomConstraint = next.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
+    }
+    
+    
     override func viewDidLoad() {
         step = 18
         
@@ -45,7 +64,21 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         orientation = "landscape"
         rotated()
         
-        setupRecorder()
+        initialView.translatesAutoresizingMaskIntoConstraints = false
+        trialView.translatesAutoresizingMaskIntoConstraints = false
+        preTaskView.translatesAutoresizingMaskIntoConstraints = false
+        taskView.translatesAutoresizingMaskIntoConstraints = false
+        
+        containerView.addSubview(initialView)
+        
+        let leftConstraint = initialView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
+        let topConstraint = initialView.topAnchor.constraint(equalTo: containerView.topAnchor)
+        let rightConstraint = initialView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+        let bottomConstraint = initialView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
+        
+        recordingSession = AVAudioSession.sharedInstance()
+        
         
         let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/name_task")!
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
@@ -61,7 +94,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
                 
                 do {
                     self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String]
-                    self.loadImageFromUrl(self.stimuli[0], view: self.imageView)
                 }catch {
                     print("Error with Json: \(error)")
                 }
@@ -70,7 +102,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         
         task.resume()
         
-        startTimer()
+//        startTimer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -251,6 +283,14 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     
     @IBAction func back(_ sender: AnyObject) {
         _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    // MARK: - Actions
+    
+    
+    @IBAction func initialToTrial(_ sender: AnyObject) {
+        setSubview(initialView, next: trialView)
     }
 }
 

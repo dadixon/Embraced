@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StroopViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
-                <outlet property="containerView" destination="dPI-mb-XRS" id="PoH-hd-gfq"/>
+                <outlet property="containerView" destination="dPI-mb-XRS" id="kWx-3P-Hv6"/>
                 <outlet property="instructionsView" destination="W9B-BG-USC" id="zYj-sK-SJd"/>
                 <outlet property="introView" destination="Moa-ZS-BgY" id="x5l-Db-NiV"/>
                 <outlet property="mainView" destination="8Rr-JW-3tU" id="Czu-xH-X0T"/>
