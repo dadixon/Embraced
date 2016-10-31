@@ -17,6 +17,8 @@ class QuestionnaireViewController: FrontViewController {
         
         super.viewDidLoad()
         
+        self.navigationController?.isNavigationBarHidden = false
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(QuestionnaireViewController.next(_:)))
         
         print("some url \(participant.string(forKey: "pid")!)")

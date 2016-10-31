@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -15,12 +15,14 @@
             <connections>
                 <outlet property="bRounds" destination="KBF-ll-4we" id="Nnk-o6-4P7"/>
                 <outlet property="containerView" destination="bru-dk-i0h" id="1T5-ce-Yb5"/>
+                <outlet property="instructions" destination="W5d-aU-YUb" id="D8J-wH-4d0"/>
+                <outlet property="instructionsA" destination="dmM-P0-4MJ" id="FXX-6i-2Mw"/>
                 <outlet property="introView" destination="cVi-fu-JAH" id="ZYh-t5-glv"/>
                 <outlet property="mainView" destination="PpR-IV-LmM" id="qir-ei-Fte"/>
                 <outlet property="playBtn" destination="EKM-0V-z7N" id="I8l-Kf-lQl"/>
                 <outlet property="preTask1View" destination="Ep8-qV-Cvv" id="H7a-ND-yl8"/>
                 <outlet property="preTask2View" destination="mo0-Ba-4sC" id="eqP-Pc-hmz"/>
-                <outlet property="progressLabel" destination="g24-df-W8H" id="72K-xQ-UCG"/>
+                <outlet property="progressLabel" destination="g24-df-W8H" id="6Bo-m2-xJp"/>
                 <outlet property="progressView" destination="DLd-be-qs1" id="S5a-0U-B5H"/>
                 <outlet property="recordBtn" destination="p7l-UL-1Cg" id="Y1J-7q-XLp"/>
                 <outlet property="rounds" destination="YZd-IO-sAI" id="DAf-8k-YaP"/>
@@ -200,7 +202,7 @@ Please click LISTEN button when you are ready.</string>
                                 <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="wtd-PF-VfW"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="1" contentMode="bottomLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pba-QZ-kRp">
+                        <button opaque="NO" contentMode="bottomLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pba-QZ-kRp">
                             <inset key="titleEdgeInsets" minX="-95" minY="0.0" maxX="0.0" maxY="-135"/>
                             <inset key="imageEdgeInsets" minX="-6" minY="-24" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="Listen" image="listen.png">

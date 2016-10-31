@@ -26,6 +26,8 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     @IBOutlet weak var rounds: UILabel!
     @IBOutlet weak var bRounds: UILabel!
     
+    @IBOutlet weak var instructionsA: UILabel!
+    @IBOutlet weak var instructions: UILabel!
     
     var recordingSession: AVAudioSession!
     
@@ -62,8 +64,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         
         orientation = "portrait"
         rotated()
-        progressView.progress = progress
-        progressLabel.text = "Progress"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(DigitalSpanViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(DigitalSpanViewController.back(_:)))
@@ -101,29 +101,32 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
             // failed to record!
         }
 
-        let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/digital_span")!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
-        let session = URLSession.shared
-        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-            (data, response, error) -> Void in
-            
-            let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            if (statusCode == 200) {
-                print("Everyone is fine, file downloaded successfully.")
-                
-                do {
-                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String:Any]
-                    self.forward = self.stimuli["forward"] as! Array<String>
-                    self.backward = self.stimuli["backward"] as! Array<String>
-                }catch {
-                    print("Error with Json: \(error)")
-                }
-            }
-        })
+        forward = appDelegate.digitalSpanStimuli["forward"] as! Array<String>
+        backward = appDelegate.digitalSpanStimuli["backward"] as! Array<String>
         
-        task.resume()
+//        let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/digital_span")!
+//        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
+//        let session = URLSession.shared
+//        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
+//            (data, response, error) -> Void in
+//            
+//            let httpResponse = response as! HTTPURLResponse
+//            let statusCode = httpResponse.statusCode
+//            
+//            if (statusCode == 200) {
+//                print("Everyone is fine, file downloaded successfully.")
+//                
+//                do {
+//                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String:Any]
+//                    self.forward = self.stimuli["forward"] as! Array<String>
+//                    self.backward = self.stimuli["backward"] as! Array<String>
+//                }catch {
+//                    print("Error with Json: \(error)")
+//                }
+//            }
+//        })
+//        
+//        task.resume()
     }
 
     override func didReceiveMemoryWarning() {
@@ -299,6 +302,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     }
     
     @IBAction func nextSound(_ sender: AnyObject) {
+        instructionsA.text = "Click on LISTEN button when you are ready."
         if (forwardCount < forward.count - 2) {
             forwardCount += 1
             rounds.text = "Round \(forwardCount+1)"
@@ -313,6 +317,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     }
     
     @IBAction func nextBSound(_ sender: AnyObject) {
+        instructions.text = "Click on LISTEN button when you are ready."
         if (backwardCount < backward.count - 2) {
             backwardCount += 1
             bRounds.text = "Round \(backwardCount+1)"

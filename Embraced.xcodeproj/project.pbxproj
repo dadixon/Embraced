@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */ = {isa = PBXBuildFile; fileRef = A414247E1D02C3F60028933E /* LOGO_r1_c1.png */; };
-		A42AB5B11D2DACDE001387BB /* MartialStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */; };
 		A42AB5C31D2DE061001387BB /* ChildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */; };
 		A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */; };
 		A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */; };
@@ -92,13 +91,14 @@
 		A4C71C0E1D33570100CD5FB1 /* Embraced_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */; };
 		A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9041D1D2380380092D6AA /* FrontViewController.swift */; };
 		A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D904211D23810C0092D6AA /* EmbracedTextField.swift */; };
+		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
+		A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */; };
 		DD7D49BC9E47B49E27EB6157 /* Pods_Embraced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9F375DDA1676C302A2C3E45B /* Pods-Embraced.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.debug.xcconfig"; sourceTree = "<group>"; };
 		A414247E1D02C3F60028933E /* LOGO_r1_c1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO_r1_c1.png; sourceTree = "<group>"; };
-		A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MartialStatusViewController.swift; path = controllers/MartialStatusViewController.swift; sourceTree = "<group>"; };
 		A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildTableViewCell.swift; sourceTree = "<group>"; };
 		A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigure2ViewController.swift; path = controllers/ReyComplexFigure2ViewController.swift; sourceTree = "<group>"; };
 		A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyComplexFigure2ViewController.xib; path = controllers/ReyComplexFigure2ViewController.xib; sourceTree = "<group>"; };
@@ -187,6 +187,8 @@
 		A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Embraced_bg.png; sourceTree = "<group>"; };
 		A4D9041D1D2380380092D6AA /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		A4D904211D23810C0092D6AA /* EmbracedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbracedTextField.swift; sourceTree = "<group>"; };
+		A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.release.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.release.xcconfig"; sourceTree = "<group>"; };
 		EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Embraced.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -342,7 +344,8 @@
 				A48B4DC61CF9E7C700878928 /* ViewController.swift */,
 				A490D7C41D09162800D2B59D /* UserInputViewController.swift */,
 				A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */,
-				A42AB5B01D2DACDE001387BB /* MartialStatusViewController.swift */,
+				A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */,
+				A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */,
 				A42AB5C51D2DE0F4001387BB /* Test */,
 				A4A794231D68CD1900305AB4 /* TestViewController.swift */,
 				A4A794241D68CD1900305AB4 /* TestViewController.xib */,
@@ -488,6 +491,7 @@
 				A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */,
 				A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */,
 				A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */,
+				A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +609,7 @@
 				A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */,
 				A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */,
 				A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */,
+				A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */,
 				A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */,
 				A4347FD11D7BCA950033306A /* MatricesViewController.swift in Sources */,
 				A4347FCD1D7BCA570033306A /* ReyFigureComplex4ViewController.swift in Sources */,
@@ -625,7 +630,6 @@
 				A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */,
 				A4A794331D68E5AC00305AB4 /* Question3ViewController.swift in Sources */,
 				A42AB5C31D2DE061001387BB /* ChildTableViewCell.swift in Sources */,
-				A42AB5B11D2DACDE001387BB /* MartialStatusViewController.swift in Sources */,
 				A4347FC11D7BC9E20033306A /* StroopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

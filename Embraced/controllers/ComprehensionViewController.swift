@@ -13,11 +13,11 @@ class ComprehensionViewController: FrontViewController {
     @IBOutlet weak var myWebView: UIWebView!
     
     override func viewDidLoad() {
-        step = 17
+        step = 19
         
         super.viewDidLoad()
         
-        orientation = "portrait"
+        orientation = "landscape"
         rotated()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(CancellationTestViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(CancellationTestViewController.back(_:)))

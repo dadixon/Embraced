@@ -133,29 +133,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         }
         
         // Grab images from the api
-        let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/stroop")!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
-        let session = URLSession.shared
-        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-            (data, response, error) -> Void in
-            
-            let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            if (statusCode == 200) {
-                print("Everyone is fine, file downloaded successfully.")
-                
-                do {
-                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String:Any]
-                    self.images = self.stimuli["images"] as! Array<String>
-                    self.videos = self.stimuli["videos"] as! Array<String>
-                }catch {
-                    print("Error with Json: \(error)")
-                }
-            }
-        })
-        
-        task.resume()
+        images = appDelegate.stroopStimuli["images"] as! Array<String>
+        videos = appDelegate.stroopStimuli["videos"] as! Array<String>
         
         myMutableString2 = NSMutableAttributedString(string: myString2, attributes: [NSFontAttributeName:UIFont(name: "HelveticaNeue", size: 17.0)!])
         myMutableString2.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 18), range: NSRange(location:51,length:5))

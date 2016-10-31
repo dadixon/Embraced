@@ -56,8 +56,6 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     var trialCount = 0
     var tasksCount = 0
     
-    
-    
     // MARK: - Private
     
     private func setSubview(_ current: UIView, next: UIView) {
@@ -100,31 +98,12 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         let bottomConstraint = introView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
         
-        // Fetch audios
-        let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/pitch")!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
-        let session = URLSession.shared
-        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-            (data, response, error) -> Void in
-            
-            let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            if (statusCode == 200) {
-                print("Everyone is fine, file downloaded successfully.")
-                
-                do {
-                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String:Any]
-                    self.examples = self.stimuli["examples"] as! Array<Array<String>>
-                    self.trials = self.stimuli["trials"] as! Array<Array<String>>
-                    self.tasks = self.stimuli["tasks"] as! Array<Array<String>>
-                } catch {
-                    print("Error with Json: \(error)")
-                }
-            }
-        })
         
-        task.resume()
+        // Fetch audios
+        examples = appDelegate.pitchStimuli["examples"] as! Array<Array<String>>
+        trials = appDelegate.pitchStimuli["trials"] as! Array<Array<String>>
+        tasks = appDelegate.pitchStimuli["tasks"] as! Array<Array<String>>
+
     }
     
     override func didReceiveMemoryWarning() {

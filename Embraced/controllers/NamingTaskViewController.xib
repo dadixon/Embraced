@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -14,13 +14,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NamingTaskViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="s5c-HD-6pZ" id="iwO-jF-oxN"/>
-                <outlet property="imageView" destination="ZHo-0n-pBn" id="gP9-uf-CfB"/>
+                <outlet property="imageView" destination="zsK-61-qEx" id="mp9-jW-gFd"/>
                 <outlet property="initialView" destination="Z25-ue-BeG" id="Xl8-9R-zXQ"/>
                 <outlet property="mainView" destination="0Ah-2e-thL" id="CgC-Bp-HGV"/>
+                <outlet property="playBtn" destination="oIW-rw-DBu" id="xMw-FG-wBL"/>
                 <outlet property="preTaskView" destination="XNy-vN-REo" id="9NW-0t-9LT"/>
                 <outlet property="progressLabel" destination="vcd-Q1-m8h" id="OxJ-UC-TfX"/>
                 <outlet property="progressView" destination="0QO-s1-gak" id="YYt-M7-hIA"/>
+                <outlet property="recordBtn" destination="eEM-s5-AXo" id="dUH-fj-5Yk"/>
+                <outlet property="taskImageView" destination="ZHo-0n-pBn" id="Ghu-K3-ZwU"/>
                 <outlet property="taskView" destination="iN0-l3-epB" id="nbQ-Wn-SDF"/>
+                <outlet property="timerCount" destination="2ML-XT-THC" id="O5D-pO-Rg8"/>
                 <outlet property="trialView" destination="CJE-6r-gv2" id="wea-WF-bdE"/>
                 <outlet property="view" destination="kOd-oI-dBf" id="caA-jj-hIL"/>
             </connections>
@@ -84,33 +88,48 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cV6-7H-qw8">
-                    <constraints>
-                        <constraint firstAttribute="width" constant="162" id="0Oq-Uk-5E1"/>
-                    </constraints>
-                    <state key="normal" title="Start" image="record.png">
-                        <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jT-6e-0CQ" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="loW-Da-Mue"/>
                     </constraints>
                     <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="nextTask:" destination="-1" eventType="touchUpInside" id="5im-YO-hzd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="obM-9q-grX">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="140" id="2Xx-bA-qKf"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="73g-6c-XNw"/>
+                        <constraint firstAttribute="height" constant="94" id="vcr-pm-B0Y"/>
+                    </constraints>
+                    <state key="normal" title="Start" image="record.png">
+                        <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="L0v-ie-2vU"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZHo-0n-pBn">
                     <constraints>
-                        <constraint firstAttribute="height" constant="490" id="V01-QB-d2z"/>
+                        <constraint firstAttribute="height" constant="408" id="V01-QB-d2z"/>
                         <constraint firstAttribute="width" constant="584" id="zJM-E6-Mpd"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ML-XT-THC">
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ZHo-0n-pBn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="105" id="7oj-4f-rgZ"/>
-                <constraint firstItem="cV6-7H-qw8" firstAttribute="top" secondItem="ZHo-0n-pBn" secondAttribute="bottom" constant="83" id="Rd1-uO-y9W"/>
+                <constraint firstAttribute="trailing" secondItem="2ML-XT-THC" secondAttribute="trailing" constant="92" id="5Ew-tU-XwN"/>
+                <constraint firstItem="2ML-XT-THC" firstAttribute="centerY" secondItem="obM-9q-grX" secondAttribute="centerY" id="6ji-wB-62u"/>
+                <constraint firstItem="ZHo-0n-pBn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="55" id="7oj-4f-rgZ"/>
                 <constraint firstItem="3jT-6e-0CQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Vdb-xQ-yS0"/>
-                <constraint firstItem="cV6-7H-qw8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="iNN-UA-XNS"/>
+                <constraint firstItem="obM-9q-grX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dHw-p8-On8"/>
+                <constraint firstItem="3jT-6e-0CQ" firstAttribute="top" secondItem="obM-9q-grX" secondAttribute="bottom" constant="8" id="iOH-cc-vo3"/>
                 <constraint firstItem="ZHo-0n-pBn" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="khT-DJ-Bo2"/>
                 <constraint firstAttribute="bottom" secondItem="3jT-6e-0CQ" secondAttribute="bottom" constant="20" id="sV7-dX-fd8"/>
             </constraints>
@@ -130,21 +149,27 @@
                         <constraint firstAttribute="width" constant="126" id="e2U-th-ZtW"/>
                     </constraints>
                     <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="nextExample:" destination="-1" eventType="touchUpInside" id="rok-w3-mBn"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zsK-61-qEx">
                     <constraints>
-                        <constraint firstAttribute="height" constant="490" id="51Z-8I-Lki"/>
                         <constraint firstAttribute="width" constant="584" id="Rnx-e0-EQr"/>
+                        <constraint firstAttribute="height" constant="408" id="aey-Wf-KEL"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0rl-Bp-A5D">
-                    <frame key="frameInset" minX="321" minY="872" width="140" height="94"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="0rl-Bp-A5D">
                     <constraints>
+                        <constraint firstAttribute="height" constant="94" id="KuV-l1-Swg"/>
                         <constraint firstAttribute="width" constant="140" id="QeE-J8-2VB"/>
                     </constraints>
                     <state key="normal" title="Start" image="record.png">
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="pVM-91-Saz"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -188,13 +213,16 @@ Please practice recording your voice with the microphone button below</string>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIl-jy-6i2">
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIW-rw-DBu">
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIW-rw-DBu">
                             <constraints>
                                 <constraint firstAttribute="width" constant="187" id="G55-G3-s9a"/>
                             </constraints>
                             <state key="normal" title="Play" image="play.png">
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="playSound:" destination="-1" eventType="touchUpInside" id="Da9-rm-CoX"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="eEM-s5-AXo">
                             <constraints>
@@ -203,6 +231,9 @@ Please practice recording your voice with the microphone button below</string>
                             <state key="normal" title="Start" image="record.png">
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="4i5-Nf-bDe"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -249,6 +280,9 @@ Click START when you are ready.</string>
                         <constraint firstAttribute="width" constant="126" id="fg5-kg-0Pu"/>
                     </constraints>
                     <state key="normal" title="Start"/>
+                    <connections>
+                        <action selector="toTask:" destination="-1" eventType="touchUpInside" id="sqW-4M-NzT"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEK-9p-R7D">
                     <string key="text">Now we will start with the task.

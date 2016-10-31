@@ -17,6 +17,9 @@ class MOCAMMSETestViewController: FrontViewController {
         
         super.viewDidLoad()
         
+        orientation = "portrait"
+        rotated()
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(MOCAMMSETestViewController.next(_:)))
         
         let url = URL (string: "http://girlscouts.harryatwal.com/MoCA_MMSE.php");

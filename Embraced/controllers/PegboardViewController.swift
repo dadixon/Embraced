@@ -40,7 +40,7 @@ class PegboardViewController: FrontViewController {
 //        
 //        navigationArray?.remove(at: 0)
         
-        let mOCAMMSETestViewController:CancellationTestViewController = CancellationTestViewController()
+        let mOCAMMSETestViewController:StroopViewController = StroopViewController()
 //        navigationArray?.append(mOCAMMSETestViewController)
 //        
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)
