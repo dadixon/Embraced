@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ComprehensionViewController: FrontViewController {
+class ComprehensionViewController: FrontViewController, UIWebViewDelegate {
 
     @IBOutlet weak var myWebView: UIWebView!
     
@@ -19,6 +19,7 @@ class ComprehensionViewController: FrontViewController {
         
         orientation = "landscape"
         rotated()
+        myWebView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(CancellationTestViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(CancellationTestViewController.back(_:)))
         
@@ -51,4 +52,9 @@ class ComprehensionViewController: FrontViewController {
         _ = self.navigationController?.popViewController(animated: true)
     }
 
+    
+    // MARK: - Delegate
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        loadingView.stopAnimating()
+    }
 }

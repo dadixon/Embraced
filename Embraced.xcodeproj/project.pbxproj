@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */ = {isa = PBXBuildFile; fileRef = A414247E1D02C3F60028933E /* LOGO_r1_c1.png */; };
+		A41AE3C11DCA57150089231D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A41AE3C01DCA57150089231D /* Images.xcassets */; };
 		A42AB5C31D2DE061001387BB /* ChildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */; };
 		A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */; };
 		A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */; };
@@ -99,6 +100,7 @@
 /* Begin PBXFileReference section */
 		9F375DDA1676C302A2C3E45B /* Pods-Embraced.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.debug.xcconfig"; sourceTree = "<group>"; };
 		A414247E1D02C3F60028933E /* LOGO_r1_c1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO_r1_c1.png; sourceTree = "<group>"; };
+		A41AE3C01DCA57150089231D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildTableViewCell.swift; sourceTree = "<group>"; };
 		A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigure2ViewController.swift; path = controllers/ReyComplexFigure2ViewController.swift; sourceTree = "<group>"; };
 		A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyComplexFigure2ViewController.xib; path = controllers/ReyComplexFigure2ViewController.xib; sourceTree = "<group>"; };
@@ -250,12 +252,12 @@
 				A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */,
 				A4347FCF1D7BCA950033306A /* MatricesViewController.swift */,
 				A4347FD01D7BCA950033306A /* MatricesViewController.xib */,
+				A4347FDB1D7BCB260033306A /* WordListViewController.swift */,
+				A4347FDC1D7BCB260033306A /* WordListViewController.xib */,
 				A4347FD31D7BCABC0033306A /* PegboardViewController.swift */,
 				A4347FD41D7BCABC0033306A /* PegboardViewController.xib */,
 				A4347FBF1D7BC9E20033306A /* StroopViewController.swift */,
 				A4347FC01D7BC9E20033306A /* StroopViewController.xib */,
-				A4347FDB1D7BCB260033306A /* WordListViewController.swift */,
-				A4347FDC1D7BCB260033306A /* WordListViewController.xib */,
 				A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */,
 				A46C14161D7999AF0066EF37 /* CancellationTestViewController.xib */,
 				A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */,
@@ -306,6 +308,7 @@
 				A48B4DD01CF9E7C700878928 /* LaunchScreen.storyboard */,
 				A48B4DD31CF9E7C700878928 /* Info.plist */,
 				A48B4DCB1CF9E7C700878928 /* Embraced.xcdatamodeld */,
+				A41AE3C01DCA57150089231D /* Images.xcassets */,
 			);
 			path = Embraced;
 			sourceTree = "<group>";
@@ -408,7 +411,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Domonique Dixon";
 				TargetAttributes = {
 					A48B4DC01CF9E7C600878928 = {
@@ -487,6 +490,7 @@
 				A490D7D21D0919CB00D2B59D /* Roboto-Black.ttf in Resources */,
 				A4347FDE1D7BCB260033306A /* WordListViewController.xib in Resources */,
 				A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */,
+				A41AE3C11DCA57150089231D /* Images.xcassets in Resources */,
 				A4347FCA1D7BCA280033306A /* DigitalSpanViewController.xib in Resources */,
 				A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */,
 				A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClockDrawingTestViewController: FrontViewController {
+class ClockDrawingTestViewController: FrontViewController, UIWebViewDelegate {
 
     @IBOutlet weak var myWebView: UIWebView!
         
@@ -18,6 +18,8 @@ class ClockDrawingTestViewController: FrontViewController {
         
         orientation = "portrait"
         rotated()
+        
+        myWebView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ClockDrawingTestViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ClockDrawingTestViewController.back(_:)))
         
@@ -50,4 +52,9 @@ class ClockDrawingTestViewController: FrontViewController {
         _ = self.navigationController?.popViewController(animated: true)
     }
 
+    
+    // MARK: - Delegate
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        loadingView.stopAnimating()
+    }
 }

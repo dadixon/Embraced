@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReyComplexFigure3ViewController: FrontViewController {
+class ReyComplexFigure3ViewController: FrontViewController, UIWebViewDelegate {
 
     @IBOutlet weak var myWebView: UIWebView!
     
@@ -19,6 +19,8 @@ class ReyComplexFigure3ViewController: FrontViewController {
         
         orientation = "portrait"
         rotated()
+        
+        myWebView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ReyComplexFigure3ViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(StroopViewController.back(_:)))
         
@@ -51,4 +53,9 @@ class ReyComplexFigure3ViewController: FrontViewController {
         _ = self.navigationController?.popViewController(animated: true)
     }
     
+    
+    // MARK: - Delegate
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        loadingView.stopAnimating()
+    }
 }

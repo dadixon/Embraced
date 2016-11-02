@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CPTViewController: FrontViewController {
+class CPTViewController: FrontViewController, UIWebViewDelegate {
 
     @IBOutlet weak var myWebView: UIWebView!
     
@@ -17,8 +17,16 @@ class CPTViewController: FrontViewController {
         
         super.viewDidLoad()
         
+        alertController = UIAlertController(title: "Orientation", message: "Please turn the device to landscape orientation and do not turn until stated.", preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController?.addAction(defaultAction)
+        
         orientation = "portrait"
         rotated()
+        
+        myWebView.delegate = self
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(CPTViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(CPTViewController.back(_:)))
         
@@ -49,5 +57,10 @@ class CPTViewController: FrontViewController {
 
     @IBAction func back(_ sender: AnyObject) {
         _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - Delegate
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        loadingView.stopAnimating()
     }
 }

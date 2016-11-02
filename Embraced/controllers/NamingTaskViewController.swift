@@ -85,6 +85,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         
         recordingSession = AVAudioSession.sharedInstance()
         
+        loadingView.stopAnimating()
     }
 
     override func didReceiveMemoryWarning() {

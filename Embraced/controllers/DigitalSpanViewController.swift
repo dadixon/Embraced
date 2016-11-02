@@ -104,29 +104,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         forward = appDelegate.digitalSpanStimuli["forward"] as! Array<String>
         backward = appDelegate.digitalSpanStimuli["backward"] as! Array<String>
         
-//        let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/digital_span")!
-//        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
-//        let session = URLSession.shared
-//        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-//            (data, response, error) -> Void in
-//            
-//            let httpResponse = response as! HTTPURLResponse
-//            let statusCode = httpResponse.statusCode
-//            
-//            if (statusCode == 200) {
-//                print("Everyone is fine, file downloaded successfully.")
-//                
-//                do {
-//                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String:Any]
-//                    self.forward = self.stimuli["forward"] as! Array<String>
-//                    self.backward = self.stimuli["backward"] as! Array<String>
-//                }catch {
-//                    print("Error with Json: \(error)")
-//                }
-//            }
-//        })
-//        
-//        task.resume()
+        loadingView.stopAnimating()
     }
 
     override func didReceiveMemoryWarning() {

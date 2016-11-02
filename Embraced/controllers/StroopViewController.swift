@@ -86,11 +86,14 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     
     override func viewDidLoad() {
-        step = 15
+        step = 16
         super.viewDidLoad()
         
         orientation = "landscape"
         rotated()
+        
+        
+        self.present(alertController!, animated: true, completion: nil)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(StroopViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(StroopViewController.back(_:)))
@@ -140,6 +143,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         myMutableString2.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 18), range: NSRange(location:51,length:5))
         myMutableString2.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 18), range: NSRange(location:61,length:4))
         practiceText.attributedText = myMutableString2
+        
+        loadingView.stopAnimating()
     }
     
     override func didReceiveMemoryWarning() {

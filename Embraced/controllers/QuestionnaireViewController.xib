@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -13,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionnaireViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
+                <outlet property="loadingView" destination="RRg-a3-HCC" id="ttE-8E-LsJ"/>
                 <outlet property="mainView" destination="XZG-ZL-cZS" id="rgk-az-Qnw"/>
                 <outlet property="myWebView" destination="g6o-Us-yZn" id="LT9-LG-Hxu"/>
                 <outlet property="progressLabel" destination="Tvd-sE-plK" id="qk6-Yx-XU5"/>
@@ -26,15 +30,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZG-ZL-cZS">
+                    <rect key="frame" x="8" y="65" width="752" height="951"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghg-R8-L4S">
+                            <rect key="frame" x="0.0" y="0.0" width="752" height="47"/>
                             <subviews>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OyK-Y5-dOa">
+                                    <rect key="frame" x="205" y="32" width="342" height="2"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="342" id="dme-7f-Gjf"/>
                                     </constraints>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvd-sE-plK">
+                                    <rect key="frame" x="362" y="8" width="29" height="21"/>
                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -52,8 +60,13 @@
                             </constraints>
                         </view>
                         <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6o-Us-yZn">
+                            <rect key="frame" x="0.0" y="47" width="752" height="904"/>
                             <color key="backgroundColor" red="0.28958413" green="0.31462949509999999" blue="0.32950475810000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </webView>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="RRg-a3-HCC">
+                            <rect key="frame" x="366" y="489" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -74,6 +87,7 @@
                 <constraint firstAttribute="trailing" secondItem="XZG-ZL-cZS" secondAttribute="trailing" constant="8" id="kcC-do-4FF"/>
                 <constraint firstItem="XZG-ZL-cZS" firstAttribute="top" secondItem="J3q-W3-s7m" secondAttribute="top" constant="65" id="mEO-tA-SEC"/>
             </constraints>
+            <point key="canvasLocation" x="132" y="-1137"/>
         </view>
     </objects>
 </document>

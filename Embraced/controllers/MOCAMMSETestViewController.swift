@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MOCAMMSETestViewController: FrontViewController {
+class MOCAMMSETestViewController: FrontViewController, UIWebViewDelegate {
 
     @IBOutlet weak var myWebView: UIWebView!
     
@@ -20,6 +20,7 @@ class MOCAMMSETestViewController: FrontViewController {
         orientation = "portrait"
         rotated()
         
+        myWebView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(MOCAMMSETestViewController.next(_:)))
         
         let url = URL (string: "http://girlscouts.harryatwal.com/MoCA_MMSE.php");
@@ -45,5 +46,10 @@ class MOCAMMSETestViewController: FrontViewController {
         
         self.navigationController?.pushViewController(reyComplexFigureViewController, animated: true)
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+    }
+    
+    // MARK: - Delegate
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        loadingView.stopAnimating()
     }
 }

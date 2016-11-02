@@ -8,17 +8,18 @@
 
 import UIKit
 
-class PegboardViewController: FrontViewController {
+class PegboardViewController: FrontViewController, UIWebViewDelegate {
 
     @IBOutlet weak var myWebView: UIWebView!
     
     override func viewDidLoad() {
-        step = 14
+        step = 15
         
         super.viewDidLoad()
         
         orientation = "portrait"
         rotated()
+        myWebView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PegboardViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(PegboardViewController.back(_:)))
         
@@ -49,5 +50,10 @@ class PegboardViewController: FrontViewController {
 
     @IBAction func back(_ sender: AnyObject) {
         _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - Delegate
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        loadingView.stopAnimating()
     }
 }

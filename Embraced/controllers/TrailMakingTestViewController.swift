@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TrailMakingTestViewController: FrontViewController {
+class TrailMakingTestViewController: FrontViewController, UIWebViewDelegate {
 
     @IBOutlet weak var myWebView: UIWebView!
         
@@ -19,6 +19,8 @@ class TrailMakingTestViewController: FrontViewController {
         
         orientation = "portrait"
         rotated()
+        
+        myWebView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(TrailMakingTestViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(TrailMakingTestViewController.back(_:)))
         
@@ -49,5 +51,10 @@ class TrailMakingTestViewController: FrontViewController {
 
     @IBAction func back(_ sender: AnyObject) {
         _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - Delegate
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        loadingView.stopAnimating()
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MatricesViewController: FrontViewController {
+class MatricesViewController: FrontViewController, UIWebViewDelegate {
 
     @IBOutlet weak var myWebView: UIWebView!
     
@@ -19,6 +19,7 @@ class MatricesViewController: FrontViewController {
         
         orientation = "portrait"
         rotated()
+        myWebView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(MatricesViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(MatricesViewController.back(_:)))
         
@@ -40,7 +41,7 @@ class MatricesViewController: FrontViewController {
 //        
 //        navigationArray?.remove(at: 0)
         
-        let mOCAMMSETestViewController:PegboardViewController = PegboardViewController()
+        let mOCAMMSETestViewController:WordListViewController = WordListViewController()
 //        navigationArray?.append(mOCAMMSETestViewController)
 //        
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)
@@ -49,5 +50,10 @@ class MatricesViewController: FrontViewController {
 
     @IBAction func back(_ sender: AnyObject) {
         _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - Delegate
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        loadingView.stopAnimating()
     }
 }

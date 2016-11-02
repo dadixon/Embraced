@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EyeTestViewController: FrontViewController {
+class EyeTestViewController: FrontViewController, UIWebViewDelegate {
 
     @IBOutlet weak var myWebView: UIWebView!
     
@@ -19,6 +19,7 @@ class EyeTestViewController: FrontViewController {
         
         orientation = "portrait"
         rotated()
+        myWebView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(EyeTestViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(EyeTestViewController.back(_:)))
         
@@ -49,5 +50,10 @@ class EyeTestViewController: FrontViewController {
 
     @IBAction func back(_ sender: AnyObject) {
         _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - Delegate
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        loadingView.stopAnimating()
     }
 }

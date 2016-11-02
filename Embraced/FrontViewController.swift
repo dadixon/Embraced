@@ -15,6 +15,7 @@ class FrontViewController: UIViewController {
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var loadingView: UIActivityIndicatorView!
     
     let participant = UserDefaults.standard
     
@@ -31,6 +32,11 @@ class FrontViewController: UIViewController {
     }
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadingView.center = mainView.center
+        loadingView.startAnimating()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

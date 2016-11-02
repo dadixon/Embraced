@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CancellationTestViewController: FrontViewController {
+class CancellationTestViewController: FrontViewController, UIWebViewDelegate {
 
     @IBOutlet weak var myWebView: UIWebView!
         
@@ -17,8 +17,10 @@ class CancellationTestViewController: FrontViewController {
         
         super.viewDidLoad()
         
-        orientation = "portrait"
+        orientation = "landscape"
         rotated()
+        
+        myWebView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(CancellationTestViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(CancellationTestViewController.back(_:)))
         
@@ -49,5 +51,10 @@ class CancellationTestViewController: FrontViewController {
 
     @IBAction func back(_ sender: AnyObject) {
         _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - Delegate
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        loadingView.stopAnimating()
     }
 }

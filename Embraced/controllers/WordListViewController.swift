@@ -66,7 +66,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     
     
     override func viewDidLoad() {
-        step = 16
+        step = 14
         
         super.viewDidLoad()
         
@@ -131,6 +131,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         })
         
         task.resume()
+        
+        loadingView.stopAnimating()
     }
     
     override func didReceiveMemoryWarning() {
@@ -248,7 +250,6 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
             countLabel.text = ""
             
             let url = NSURL(string: "http://api.girlscouts.harryatwal.com/static_audios/word_list/english/trials/List_A_ENG.mp3")
-            print(url)
             preparePlayer()
             downloadFileFromURL(url: url!)
         }
@@ -261,7 +262,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
 //        
 //        navigationArray?.remove(at: 0)
         
-        let mOCAMMSETestViewController:NamingTaskViewController = NamingTaskViewController()
+        let mOCAMMSETestViewController:PegboardViewController = PegboardViewController()
 //        navigationArray?.append(mOCAMMSETestViewController)
 //        
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)

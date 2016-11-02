@@ -103,7 +103,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         examples = appDelegate.pitchStimuli["examples"] as! Array<Array<String>>
         trials = appDelegate.pitchStimuli["trials"] as! Array<Array<String>>
         tasks = appDelegate.pitchStimuli["tasks"] as! Array<Array<String>>
-
+        
+        loadingView.stopAnimating()
     }
     
     override func didReceiveMemoryWarning() {
