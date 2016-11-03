@@ -17,7 +17,7 @@ class QuestionnaireViewController: FrontViewController, UIWebViewDelegate {
         alertController?.addAction(defaultAction)
         self.present(alertController!, animated: true, completion: nil)
         
-        let url = URL (string: "http://girlscouts.harryatwal.com/initial.php?id=" + participant.string(forKey: "pid")!);
+        let url = URL (string: "http://girlscouts.harryatwal.com/initial.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!);
         let requestObj = URLRequest(url: url!);
         myWebView.loadRequest(requestObj);
     }

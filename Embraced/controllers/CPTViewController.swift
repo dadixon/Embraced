@@ -30,7 +30,7 @@ class CPTViewController: FrontViewController, UIWebViewDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(CPTViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(CPTViewController.back(_:)))
         
-        let url = URL (string: "http://girlscouts.harryatwal.com/cpt.php");
+        let url = URL (string: "http://girlscouts.harryatwal.com/cpt.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!);
         let requestObj = URLRequest(url: url!);
         myWebView.loadRequest(requestObj);
     }

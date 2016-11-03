@@ -23,7 +23,7 @@ class ReyComplexFigure2ViewController: FrontViewController, UIWebViewDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ReyComplexFigure2ViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ReyComplexFigure2ViewController.back(_:)))
         
-        let url = URL (string: "http://girlscouts.harryatwal.com/reyComplexFigure2.php");
+        let url = URL (string: "http://girlscouts.harryatwal.com/reyComplexFigure2.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!);
         let requestObj = URLRequest(url: url!);
         myWebView.loadRequest(requestObj);
     }

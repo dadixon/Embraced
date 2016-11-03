@@ -10,6 +10,8 @@ import UIKit
 
 class StartViewController: UIViewController {
 
+    let participant = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +33,12 @@ class StartViewController: UIViewController {
     
     // MARK: - Navigation
     @IBAction func chooseLanguage(_ sender: AnyObject) {
+        if sender.tag == 0 {
+            participant.set("en-us", forKey: "language")
+        } else if sender.tag == 1 {
+            participant.set("sp", forKey: "langauge")
+        }
+        
         let questionnaireViewController:QuestionnaireViewController = QuestionnaireViewController()
         self.navigationController?.pushViewController(questionnaireViewController, animated: true)
     }

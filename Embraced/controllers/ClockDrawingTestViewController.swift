@@ -23,7 +23,7 @@ class ClockDrawingTestViewController: FrontViewController, UIWebViewDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ClockDrawingTestViewController.next(_:)))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ClockDrawingTestViewController.back(_:)))
         
-        let url = URL (string: "http://girlscouts.harryatwal.com/clockDrawing.php");
+        let url = URL (string: "http://girlscouts.harryatwal.com/clockDrawing.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!);
         let requestObj = URLRequest(url: url!);
         myWebView.loadRequest(requestObj);
     }

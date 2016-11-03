@@ -23,7 +23,7 @@ class MOCAMMSETestViewController: FrontViewController, UIWebViewDelegate {
         myWebView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(MOCAMMSETestViewController.next(_:)))
         
-        let url = URL (string: "http://girlscouts.harryatwal.com/MoCA_MMSE.php");
+        let url = URL (string: "http://girlscouts.harryatwal.com/MoCA_MMSE.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!);
         let requestObj = URLRequest(url: url!);
         myWebView.loadRequest(requestObj);
     }
