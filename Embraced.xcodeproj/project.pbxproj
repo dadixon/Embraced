@@ -78,12 +78,6 @@
 		A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */; };
 		A4A794251D68CD1900305AB4 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A794231D68CD1900305AB4 /* TestViewController.swift */; };
 		A4A794261D68CD1900305AB4 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A794241D68CD1900305AB4 /* TestViewController.xib */; };
-		A4A7942B1D68E42200305AB4 /* Question1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A794291D68E42200305AB4 /* Question1ViewController.swift */; };
-		A4A7942C1D68E42200305AB4 /* Question1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A7942A1D68E42200305AB4 /* Question1ViewController.xib */; };
-		A4A7942F1D68E57F00305AB4 /* Question2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A7942D1D68E57F00305AB4 /* Question2ViewController.swift */; };
-		A4A794301D68E57F00305AB4 /* Question2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A7942E1D68E57F00305AB4 /* Question2ViewController.xib */; };
-		A4A794331D68E5AC00305AB4 /* Question3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A794311D68E5AC00305AB4 /* Question3ViewController.swift */; };
-		A4A794341D68E5AC00305AB4 /* Question3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A794321D68E5AC00305AB4 /* Question3ViewController.xib */; };
 		A4A794381D68F62800305AB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4A7943A1D68F62800305AB4 /* Localizable.strings */; };
 		A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */; };
 		A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */; };
@@ -94,6 +88,8 @@
 		A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D904211D23810C0092D6AA /* EmbracedTextField.swift */; };
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
 		A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */; };
+		A4FC1E991DD2BE4500F19D95 /* WordList2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */; };
+		A4FC1E9A1DD2BE4500F19D95 /* WordList2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */; };
 		DD7D49BC9E47B49E27EB6157 /* Pods_Embraced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */; };
 /* End PBXBuildFile section */
 
@@ -172,12 +168,6 @@
 		A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		A4A794231D68CD1900305AB4 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		A4A794241D68CD1900305AB4 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
-		A4A794291D68E42200305AB4 /* Question1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question1ViewController.swift; path = controllers/Question1ViewController.swift; sourceTree = "<group>"; };
-		A4A7942A1D68E42200305AB4 /* Question1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Question1ViewController.xib; path = controllers/Question1ViewController.xib; sourceTree = "<group>"; };
-		A4A7942D1D68E57F00305AB4 /* Question2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question2ViewController.swift; path = controllers/Question2ViewController.swift; sourceTree = "<group>"; };
-		A4A7942E1D68E57F00305AB4 /* Question2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Question2ViewController.xib; path = controllers/Question2ViewController.xib; sourceTree = "<group>"; };
-		A4A794311D68E5AC00305AB4 /* Question3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question3ViewController.swift; path = controllers/Question3ViewController.swift; sourceTree = "<group>"; };
-		A4A794321D68E5AC00305AB4 /* Question3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Question3ViewController.xib; path = controllers/Question3ViewController.xib; sourceTree = "<group>"; };
 		A4A794351D68F4F100305AB4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		A4A794391D68F62800305AB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4A7943B1D68F63000305AB4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -191,6 +181,8 @@
 		A4D904211D23810C0092D6AA /* EmbracedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbracedTextField.swift; sourceTree = "<group>"; };
 		A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordList2ViewController.swift; path = controllers/WordList2ViewController.swift; sourceTree = "<group>"; };
+		A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordList2ViewController.xib; path = controllers/WordList2ViewController.xib; sourceTree = "<group>"; };
 		B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.release.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.release.xcconfig"; sourceTree = "<group>"; };
 		EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Embraced.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -248,24 +240,26 @@
 				A4347FCC1D7BCA570033306A /* ReyFigureComplex4ViewController.xib */,
 				A46C140D1D798FC30066EF37 /* CPTViewController.swift */,
 				A46C140E1D798FC30066EF37 /* CPTViewController.xib */,
-				A46C14191D79A8870066EF37 /* EyeTestViewController.swift */,
-				A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */,
 				A4347FCF1D7BCA950033306A /* MatricesViewController.swift */,
 				A4347FD01D7BCA950033306A /* MatricesViewController.xib */,
-				A4347FDB1D7BCB260033306A /* WordListViewController.swift */,
-				A4347FDC1D7BCB260033306A /* WordListViewController.xib */,
 				A4347FD31D7BCABC0033306A /* PegboardViewController.swift */,
 				A4347FD41D7BCABC0033306A /* PegboardViewController.xib */,
+				A4347FDB1D7BCB260033306A /* WordListViewController.swift */,
+				A4347FDC1D7BCB260033306A /* WordListViewController.xib */,
 				A4347FBF1D7BC9E20033306A /* StroopViewController.swift */,
 				A4347FC01D7BC9E20033306A /* StroopViewController.xib */,
 				A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */,
 				A46C14161D7999AF0066EF37 /* CancellationTestViewController.xib */,
+				A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */,
+				A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */,
 				A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */,
 				A4347FDF1D7BCB800033306A /* NamingTaskViewController.xib */,
 				A4347FE11D7BCC170033306A /* MultipleErrandsViewController.swift */,
 				A4347FE21D7BCC170033306A /* MultipleErrandsViewController.xib */,
 				A4347FE51D7BCC4C0033306A /* ComprehensionViewController.swift */,
 				A4347FE61D7BCC4C0033306A /* ComprehensionViewController.xib */,
+				A46C14191D79A8870066EF37 /* EyeTestViewController.swift */,
+				A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */,
 			);
 			name = Test;
 			sourceTree = "<group>";
@@ -349,17 +343,11 @@
 				A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */,
 				A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */,
 				A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */,
+				A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */,
+				A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */,
 				A42AB5C51D2DE0F4001387BB /* Test */,
 				A4A794231D68CD1900305AB4 /* TestViewController.swift */,
 				A4A794241D68CD1900305AB4 /* TestViewController.xib */,
-				A4A794291D68E42200305AB4 /* Question1ViewController.swift */,
-				A4A7942A1D68E42200305AB4 /* Question1ViewController.xib */,
-				A4A7942D1D68E57F00305AB4 /* Question2ViewController.swift */,
-				A4A7942E1D68E57F00305AB4 /* Question2ViewController.xib */,
-				A4A794311D68E5AC00305AB4 /* Question3ViewController.swift */,
-				A4A794321D68E5AC00305AB4 /* Question3ViewController.xib */,
-				A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */,
-				A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */,
 				A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */,
 				A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */,
 			);
@@ -446,7 +434,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A490D7D41D0919CB00D2B59D /* Roboto-Bold.ttf in Resources */,
-				A4A7942C1D68E42200305AB4 /* Question1ViewController.xib in Resources */,
 				A490D7D81D0919CB00D2B59D /* Roboto-LightItalic.ttf in Resources */,
 				A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */,
 				A4347FD21D7BCA950033306A /* MatricesViewController.xib in Resources */,
@@ -461,13 +448,12 @@
 				A490D7D71D0919CB00D2B59D /* Roboto-Light.ttf in Resources */,
 				A4347FCE1D7BCA570033306A /* ReyFigureComplex4ViewController.xib in Resources */,
 				A46C14241D79AA7C0066EF37 /* ClockDrawingTestViewController.xib in Resources */,
-				A4A794301D68E57F00305AB4 /* Question2ViewController.xib in Resources */,
 				A48B4DD21CF9E7C700878928 /* LaunchScreen.storyboard in Resources */,
-				A4A794341D68E5AC00305AB4 /* Question3ViewController.xib in Resources */,
 				A4347FC61D7BC9FC0033306A /* ReyComplexFigure3ViewController.xib in Resources */,
 				A490D7D51D0919CB00D2B59D /* Roboto-BoldItalic.ttf in Resources */,
 				A47EB6E41DA65FFB00A68AF6 /* FinishedViewController.xib in Resources */,
 				A490D7D31D0919CB00D2B59D /* Roboto-BlackItalic.ttf in Resources */,
+				A4FC1E9A1DD2BE4500F19D95 /* WordList2ViewController.xib in Resources */,
 				A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */,
 				A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */,
 				A4347FC21D7BC9E20033306A /* StroopViewController.xib in Resources */,
@@ -606,6 +592,7 @@
 				A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
 				A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */,
+				A4FC1E991DD2BE4500F19D95 /* WordList2ViewController.swift in Sources */,
 				A4347FE31D7BCC170033306A /* MultipleErrandsViewController.swift in Sources */,
 				A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */,
 				A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */,
@@ -619,10 +606,8 @@
 				A4347FCD1D7BCA570033306A /* ReyFigureComplex4ViewController.swift in Sources */,
 				A4347FDD1D7BCB260033306A /* WordListViewController.swift in Sources */,
 				A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */,
-				A4A7942B1D68E42200305AB4 /* Question1ViewController.swift in Sources */,
 				A4347FD91D7BCAFB0033306A /* PitchViewController.swift in Sources */,
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
-				A4A7942F1D68E57F00305AB4 /* Question2ViewController.swift in Sources */,
 				A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
 				A46C14231D79AA7C0066EF37 /* ClockDrawingTestViewController.swift in Sources */,
@@ -632,7 +617,6 @@
 				A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */,
 				A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */,
 				A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */,
-				A4A794331D68E5AC00305AB4 /* Question3ViewController.swift in Sources */,
 				A42AB5C31D2DE061001387BB /* ChildTableViewCell.swift in Sources */,
 				A4347FC11D7BC9E20033306A /* StroopViewController.swift in Sources */,
 			);

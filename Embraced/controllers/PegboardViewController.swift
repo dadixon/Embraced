@@ -41,7 +41,7 @@ class PegboardViewController: FrontViewController, UIWebViewDelegate {
 //        
 //        navigationArray?.remove(at: 0)
         
-        let mOCAMMSETestViewController:StroopViewController = StroopViewController()
+        let mOCAMMSETestViewController:WordListViewController = WordListViewController()
 //        navigationArray?.append(mOCAMMSETestViewController)
 //        
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)

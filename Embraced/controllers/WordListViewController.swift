@@ -262,7 +262,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
 //        
 //        navigationArray?.remove(at: 0)
         
-        let mOCAMMSETestViewController:PegboardViewController = PegboardViewController()
+        let mOCAMMSETestViewController:StroopViewController = StroopViewController()
 //        navigationArray?.append(mOCAMMSETestViewController)
 //        
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)

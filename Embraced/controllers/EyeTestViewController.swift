@@ -41,7 +41,7 @@ class EyeTestViewController: FrontViewController, UIWebViewDelegate {
 //        
 //        navigationArray?.remove(at: 0)
         
-        let matricesViewController:MatricesViewController = MatricesViewController()
+        let matricesViewController:FinishedViewController = FinishedViewController()
 //        navigationArray?.append(matricesViewController)
 //        
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)

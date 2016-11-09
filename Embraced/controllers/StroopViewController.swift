@@ -304,7 +304,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
 //        
 //        navigationArray?.remove(at: 0)
         
-        let digitalSpanViewController:DigitalSpanViewController = DigitalSpanViewController()
+        let digitalSpanViewController:CancellationTestViewController = CancellationTestViewController()
 //        navigationArray?.append(digitalSpanViewController)
 //        
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)

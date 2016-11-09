@@ -41,7 +41,7 @@ class MatricesViewController: FrontViewController, UIWebViewDelegate {
 //        
 //        navigationArray?.remove(at: 0)
         
-        let mOCAMMSETestViewController:WordListViewController = WordListViewController()
+        let mOCAMMSETestViewController:PegboardViewController = PegboardViewController()
 //        navigationArray?.append(mOCAMMSETestViewController)
 //        
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)

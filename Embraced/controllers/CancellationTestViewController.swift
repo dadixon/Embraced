@@ -42,7 +42,7 @@ class CancellationTestViewController: FrontViewController, UIWebViewDelegate {
 //        
 //        navigationArray?.remove(at: 0)
         
-        let eyeTestViewController:NamingTaskViewController = NamingTaskViewController()
+        let eyeTestViewController:WordList2ViewController = WordList2ViewController()
 //        navigationArray?.append(eyeTestViewController)
 //        
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)

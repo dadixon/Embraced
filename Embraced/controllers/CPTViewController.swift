@@ -48,7 +48,7 @@ class CPTViewController: FrontViewController, UIWebViewDelegate {
 //
 //        navigationArray?.remove(at: 0)
         
-        let eyeTestViewController:EyeTestViewController = EyeTestViewController()
+        let eyeTestViewController:MatricesViewController = MatricesViewController()
 //        navigationArray?.append(eyeTestViewController)
 //        
 //        self.navigationController?.setViewControllers(navigationArray!, animated: true)

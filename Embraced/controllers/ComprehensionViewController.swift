@@ -41,7 +41,7 @@ class ComprehensionViewController: FrontViewController, UIWebViewDelegate {
         //
         //        navigationArray?.remove(at: 0)
         
-        let eyeTestViewController:FinishedViewController = FinishedViewController()
+        let eyeTestViewController:EyeTestViewController = EyeTestViewController()
         //        navigationArray?.append(eyeTestViewController)
         //
         //        self.navigationController?.setViewControllers(navigationArray!, animated: true)
