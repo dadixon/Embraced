@@ -31,23 +31,18 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rxg-G6-8Ig">
-                                <rect key="frame" x="423.5" y="682" width="177" height="48.5"/>
+                                <rect key="frame" x="452" y="682" width="121" height="49"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="H8L-Vp-9AF">
-                                        <rect key="frame" x="120" y="7" width="37" height="37"/>
-                                    </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGI-Ad-u39">
-                                        <rect key="frame" x="8" y="12" width="104" height="26.5"/>
+                                        <rect key="frame" x="8" y="12" width="104" height="27"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="H8L-Vp-9AF" secondAttribute="trailing" constant="20" id="6eW-rZ-cpJ"/>
-                                    <constraint firstItem="H8L-Vp-9AF" firstAttribute="centerY" secondItem="gGI-Ad-u39" secondAttribute="centerY" id="AlM-zJ-YdS"/>
+                                    <constraint firstAttribute="trailing" secondItem="gGI-Ad-u39" secondAttribute="trailing" constant="9" id="CHX-Ed-Q2J"/>
                                     <constraint firstAttribute="bottom" secondItem="gGI-Ad-u39" secondAttribute="bottom" constant="10" id="N4e-gw-imb"/>
-                                    <constraint firstItem="H8L-Vp-9AF" firstAttribute="leading" secondItem="gGI-Ad-u39" secondAttribute="trailing" constant="8" id="RAi-er-xwI"/>
                                     <constraint firstItem="gGI-Ad-u39" firstAttribute="leading" secondItem="Rxg-G6-8Ig" secondAttribute="leading" constant="8" id="VIC-Uq-9tl"/>
                                     <constraint firstItem="gGI-Ad-u39" firstAttribute="top" secondItem="Rxg-G6-8Ig" secondAttribute="top" constant="12" id="rKM-o5-pgF"/>
                                 </constraints>

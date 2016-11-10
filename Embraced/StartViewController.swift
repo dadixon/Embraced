@@ -39,8 +39,18 @@ class StartViewController: UIViewController {
             participant.set("sp", forKey: "langauge")
         }
         
-        let questionnaireViewController:QuestionnaireViewController = QuestionnaireViewController()
-        self.navigationController?.pushViewController(questionnaireViewController, animated: true)
+        var navigationArray = self.navigationController?.viewControllers
+        
+        navigationArray?.remove(at: 0)
+        
+//        let questionnaireViewController:QuestionnaireViewController = QuestionnaireViewController()
+        let questionnaireViewController:WordList2ViewController = WordList2ViewController()
+        navigationArray?.append(questionnaireViewController)
+        
+        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+        
+//        let questionnaireViewController:QuestionnaireViewController = QuestionnaireViewController()
+//        self.navigationController?.pushViewController(questionnaireViewController, animated: true)
     }
     
  

@@ -12,6 +12,8 @@ class CPTViewController: FrontViewController, UIWebViewDelegate {
 
     @IBOutlet weak var myWebView: UIWebView!
     
+    var alertController : UIAlertController?
+    
     override func viewDidLoad() {
         step = 11
         
@@ -28,7 +30,7 @@ class CPTViewController: FrontViewController, UIWebViewDelegate {
         myWebView.delegate = self
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(CPTViewController.next(_:)))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(CPTViewController.back(_:)))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(CPTViewController.back(_:)))
         
         let url = URL (string: "http://girlscouts.harryatwal.com/cpt.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!);
         let requestObj = URLRequest(url: url!);
@@ -55,9 +57,9 @@ class CPTViewController: FrontViewController, UIWebViewDelegate {
         self.navigationController?.pushViewController(eyeTestViewController, animated: true)
     }
 
-    @IBAction func back(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func back(_ sender: AnyObject) {
+//        _ = self.navigationController?.popViewController(animated: true)
+//    }
     
     // MARK: - Delegate
     func webViewDidFinishLoad(_ webView: UIWebView) {

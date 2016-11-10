@@ -86,17 +86,17 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     
     override func viewDidLoad() {
-        step = 16
+        step = 15
         super.viewDidLoad()
         
         orientation = "landscape"
         rotated()
         
         
-        self.present(alertController!, animated: true, completion: nil)
+//        self.present(alertController!, animated: true, completion: nil)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(StroopViewController.next(_:)))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(StroopViewController.back(_:)))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(StroopViewController.back(_:)))
         
         introView.translatesAutoresizingMaskIntoConstraints = false
         instructionsView.translatesAutoresizingMaskIntoConstraints = false
@@ -311,9 +311,9 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         self.navigationController?.pushViewController(digitalSpanViewController, animated: true)
     }
     
-    @IBAction func back(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func back(_ sender: AnyObject) {
+//        _ = self.navigationController?.popViewController(animated: true)
+//    }
     
     
     // MARK: - Actions

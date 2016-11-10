@@ -19,6 +19,8 @@
                 <outlet property="InstructionsLabel" destination="USc-zK-X47" id="DQb-dB-AJ6"/>
                 <outlet property="containerView" destination="hSf-IR-Jn9" id="3s7-8e-R3g"/>
                 <outlet property="countLabel" destination="tqr-Jd-rZ5" id="PMa-px-Atj"/>
+                <outlet property="instructions2Label" destination="kSd-Ri-ZDi" id="Gt0-eN-4rV"/>
+                <outlet property="listenBtn" destination="1xb-Ik-dhP" id="YZD-gf-3aq"/>
                 <outlet property="mainView" destination="2nr-Ul-KqZ" id="ZLK-XQ-aXa"/>
                 <outlet property="playBtn" destination="GS2-EV-A6d" id="qDt-bt-gi6"/>
                 <outlet property="practiceView" destination="Vr4-Mj-e6s" id="t6i-0l-y7M"/>
@@ -198,14 +200,16 @@ Please practice recording your voice with the microphone button below</string>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USc-zK-X47">
-                    <rect key="frame" x="20" y="54.5" width="728" height="0.0"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USc-zK-X47">
+                    <rect key="frame" x="20" y="54.5" width="728" height="41"/>
+                    <string key="text">There will be a 3 second countdown before the list starts.
+Please tap the LISTEN button when you are ready to start</string>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3c-xw-nEW">
-                    <rect key="frame" x="112" y="388.5" width="544" height="247"/>
+                    <rect key="frame" x="112" y="190" width="544" height="247"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1xb-Ik-dhP">
                             <rect key="frame" x="8" y="59.5" width="200" height="128"/>
@@ -238,7 +242,7 @@ Please practice recording your voice with the microphone button below</string>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bic-uz-Yoc">
-                    <rect key="frame" x="303" y="643.5" width="162" height="128"/>
+                    <rect key="frame" x="303" y="823" width="162" height="128"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="162" id="akS-PY-LCq"/>
                     </constraints>
@@ -249,21 +253,31 @@ Please practice recording your voice with the microphone button below</string>
                         <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="jiT-Hq-2nW"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now say out loud all the words you can remember from the list. Tap the microphone button to start recording." lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSd-Ri-ZDi">
+                    <rect key="frame" x="20" y="492" width="728" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Y3c-xw-nEW" firstAttribute="centerX" secondItem="kSe-9b-lPj" secondAttribute="centerX" id="2aE-XR-b3a"/>
-                <constraint firstItem="Y3c-xw-nEW" firstAttribute="centerY" secondItem="kSe-9b-lPj" secondAttribute="centerY" id="AHG-UY-tVs"/>
+                <constraint firstAttribute="trailing" secondItem="kSd-Ri-ZDi" secondAttribute="trailing" constant="20" id="2jI-Gj-1bI"/>
+                <constraint firstItem="kSd-Ri-ZDi" firstAttribute="centerY" secondItem="kSe-9b-lPj" secondAttribute="centerY" id="5YV-Fq-T9f"/>
+                <constraint firstItem="Y3c-xw-nEW" firstAttribute="centerY" secondItem="kSe-9b-lPj" secondAttribute="centerY" constant="-198.5" id="AHG-UY-tVs"/>
                 <constraint firstItem="GMh-oC-tsK" firstAttribute="centerX" secondItem="kSe-9b-lPj" secondAttribute="centerX" id="Gey-v9-bQi"/>
                 <constraint firstAttribute="bottom" secondItem="GMh-oC-tsK" secondAttribute="bottom" constant="20" id="QW7-vX-v8V"/>
+                <constraint firstItem="GMh-oC-tsK" firstAttribute="top" secondItem="bic-uz-Yoc" secondAttribute="bottom" constant="23" id="V47-2l-hkT"/>
+                <constraint firstItem="kSd-Ri-ZDi" firstAttribute="leading" secondItem="kSe-9b-lPj" secondAttribute="leading" constant="20" id="XI5-3K-dhw"/>
                 <constraint firstItem="mMB-hw-R1N" firstAttribute="leading" secondItem="kSe-9b-lPj" secondAttribute="leading" constant="20" id="hss-Ft-cqx"/>
                 <constraint firstAttribute="trailing" secondItem="USc-zK-X47" secondAttribute="trailing" constant="20" id="lFd-2N-7pt"/>
                 <constraint firstItem="bic-uz-Yoc" firstAttribute="centerX" secondItem="kSe-9b-lPj" secondAttribute="centerX" id="lWa-Al-dW5"/>
                 <constraint firstItem="USc-zK-X47" firstAttribute="top" secondItem="mMB-hw-R1N" secondAttribute="bottom" constant="8" id="lh8-22-O5U"/>
+                <constraint firstItem="kSd-Ri-ZDi" firstAttribute="centerX" secondItem="kSe-9b-lPj" secondAttribute="centerX" id="p87-rN-MhJ"/>
                 <constraint firstItem="USc-zK-X47" firstAttribute="top" secondItem="mMB-hw-R1N" secondAttribute="bottom" constant="8" id="ssH-hU-i7m"/>
                 <constraint firstItem="mMB-hw-R1N" firstAttribute="top" secondItem="kSe-9b-lPj" secondAttribute="top" constant="20" id="twt-vs-LaN"/>
                 <constraint firstItem="USc-zK-X47" firstAttribute="leading" secondItem="kSe-9b-lPj" secondAttribute="leading" constant="20" id="x4s-BJ-c4v"/>
-                <constraint firstItem="bic-uz-Yoc" firstAttribute="top" secondItem="Y3c-xw-nEW" secondAttribute="bottom" constant="8" id="xpO-oe-BLa"/>
             </constraints>
             <point key="canvasLocation" x="1289" y="-791"/>
         </view>

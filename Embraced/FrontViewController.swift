@@ -15,16 +15,15 @@ class FrontViewController: UIViewController {
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var loadingView: UIActivityIndicatorView!
+    
+    var loadingView = UIActivityIndicatorView()
     
     let participant = UserDefaults.standard
-    
-    var alertController : UIAlertController?
     
     var orientation = "portrait"
     
     var step = 1
-    var totalSteps = 19
+    var totalSteps = 20
     var progress : Float {
         get {
             return Float(step) / Float(totalSteps)
@@ -55,7 +54,7 @@ class FrontViewController: UIViewController {
         
         self.automaticallyAdjustsScrollViewInsets = false
         
-        NotificationCenter.default.addObserver(self, selector: #selector(FrontViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(FrontViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
 
     override func didReceiveMemoryWarning() {

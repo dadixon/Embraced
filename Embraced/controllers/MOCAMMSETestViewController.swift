@@ -13,7 +13,7 @@ class MOCAMMSETestViewController: FrontViewController, UIWebViewDelegate {
     @IBOutlet weak var myWebView: UIWebView!
     
     override func viewDidLoad() {
-        step += 1
+        step = 2
         
         super.viewDidLoad()
         
@@ -37,15 +37,15 @@ class MOCAMMSETestViewController: FrontViewController, UIWebViewDelegate {
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-//        var navigationArray = self.navigationController?.viewControllers
+        var navigationArray = self.navigationController?.viewControllers
         
-//        navigationArray?.remove(at: 0)
+        navigationArray?.remove(at: 0)
         
         let reyComplexFigureViewController:ReyComplexFigureViewController = ReyComplexFigureViewController()
-//        navigationArray?.append(reyComplexFigureViewController)
+        navigationArray?.append(reyComplexFigureViewController)
         
-        self.navigationController?.pushViewController(reyComplexFigureViewController, animated: true)
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+//        self.navigationController?.pushViewController(reyComplexFigureViewController, animated: true)
+        self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }
     
     // MARK: - Delegate

@@ -12,6 +12,8 @@ class QuestionnaireViewController: FrontViewController, UIWebViewDelegate {
 
     @IBOutlet weak var myWebView: UIWebView!
     
+    var alertController : UIAlertController?
+    
     override func viewWillAppear(_ animated: Bool) {
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController?.addAction(defaultAction)

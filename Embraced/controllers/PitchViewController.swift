@@ -77,7 +77,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PitchViewController.next(_:)))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(PitchViewController.back(_:)))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(PitchViewController.back(_:)))
         
         orientation = "portrait"
         rotated()
@@ -171,9 +171,9 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
     }
     
-    @IBAction func back(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func back(_ sender: AnyObject) {
+//        _ = self.navigationController?.popViewController(animated: true)
+//    }
     
     
     // MARK: - Actions

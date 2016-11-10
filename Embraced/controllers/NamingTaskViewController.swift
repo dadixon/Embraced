@@ -65,7 +65,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         task = appDelegate.namingTaskStimuli["tasks"] as! Array<String>
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(NamingTaskViewController.next(_:)))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ReyComplexFigureViewController.back(_:)))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ReyComplexFigureViewController.back(_:)))
         
         orientation = "landscape"
         rotated()
@@ -272,9 +272,9 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         self.navigationController?.pushViewController(multipleErrandsViewController, animated: true)
     }
     
-    @IBAction func back(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func back(_ sender: AnyObject) {
+//        _ = self.navigationController?.popViewController(animated: true)
+//    }
     
     
     // MARK: - Actions

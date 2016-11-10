@@ -13,7 +13,7 @@ class EyeTestViewController: FrontViewController, UIWebViewDelegate {
     @IBOutlet weak var myWebView: UIWebView!
     
     override func viewDidLoad() {
-        step = 12
+        step = 20
         
         super.viewDidLoad()
         
@@ -21,7 +21,7 @@ class EyeTestViewController: FrontViewController, UIWebViewDelegate {
         rotated()
         myWebView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(EyeTestViewController.next(_:)))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(EyeTestViewController.back(_:)))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(EyeTestViewController.back(_:)))
         
         let url = URL (string: "http://girlscouts.harryatwal.com/eyeTest.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!);
         let requestObj = URLRequest(url: url!);
@@ -48,9 +48,9 @@ class EyeTestViewController: FrontViewController, UIWebViewDelegate {
         self.navigationController?.pushViewController(matricesViewController, animated: true)
     }
 
-    @IBAction func back(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func back(_ sender: AnyObject) {
+//        _ = self.navigationController?.popViewController(animated: true)
+//    }
     
     // MARK: - Delegate
     func webViewDidFinishLoad(_ webView: UIWebView) {

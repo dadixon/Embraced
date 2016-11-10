@@ -21,7 +21,7 @@ class ClockDrawingTestViewController: FrontViewController, UIWebViewDelegate {
         
         myWebView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ClockDrawingTestViewController.next(_:)))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ClockDrawingTestViewController.back(_:)))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ClockDrawingTestViewController.back(_:)))
         
         let url = URL (string: "http://girlscouts.harryatwal.com/clockDrawing.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!);
         let requestObj = URLRequest(url: url!);
@@ -37,20 +37,20 @@ class ClockDrawingTestViewController: FrontViewController, UIWebViewDelegate {
     // MARK: - Navigation
 
     @IBAction func next(_ sender: AnyObject) {       
-//        var navigationArray = self.navigationController?.viewControllers
-//        
-//        navigationArray?.remove(at: 0)
+        var navigationArray = self.navigationController?.viewControllers
+        
+        navigationArray?.remove(at: 0)
         
         let reyComplexFigure2ViewController:ReyComplexFigure2ViewController = ReyComplexFigure2ViewController()
-//        navigationArray?.append(reyComplexFigure2ViewController)
-//        
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        self.navigationController?.pushViewController(reyComplexFigure2ViewController, animated: true)
+        navigationArray?.append(reyComplexFigure2ViewController)
+        
+        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+//        self.navigationController?.pushViewController(reyComplexFigure2ViewController, animated: true)
     }
     
-    @IBAction func back(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func back(_ sender: AnyObject) {
+//        _ = self.navigationController?.popViewController(animated: true)
+//    }
 
     
     // MARK: - Delegate

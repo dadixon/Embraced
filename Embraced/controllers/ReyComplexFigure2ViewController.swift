@@ -21,7 +21,7 @@ class ReyComplexFigure2ViewController: FrontViewController, UIWebViewDelegate {
         rotated()
         myWebView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ReyComplexFigure2ViewController.next(_:)))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ReyComplexFigure2ViewController.back(_:)))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ReyComplexFigure2ViewController.back(_:)))
         
         let url = URL (string: "http://girlscouts.harryatwal.com/reyComplexFigure2.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!);
         let requestObj = URLRequest(url: url!);
@@ -48,9 +48,9 @@ class ReyComplexFigure2ViewController: FrontViewController, UIWebViewDelegate {
         self.navigationController?.pushViewController(trailMakingTestViewController, animated: true)
     }
 
-    @IBAction func back(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func back(_ sender: AnyObject) {
+//        _ = self.navigationController?.popViewController(animated: true)
+//    }
     
     // MARK: - Delegate
     func webViewDidFinishLoad(_ webView: UIWebView) {

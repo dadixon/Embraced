@@ -22,7 +22,7 @@ class TrailMakingTestViewController: FrontViewController, UIWebViewDelegate {
         
         myWebView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(TrailMakingTestViewController.next(_:)))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(TrailMakingTestViewController.back(_:)))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(TrailMakingTestViewController.back(_:)))
         
         let url = URL (string: "http://girlscouts.harryatwal.com/trailMaking.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!);
         let requestObj = URLRequest(url: url!);
@@ -49,9 +49,9 @@ class TrailMakingTestViewController: FrontViewController, UIWebViewDelegate {
         self.navigationController?.pushViewController(stroopViewController, animated: true)
     }
 
-    @IBAction func back(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func back(_ sender: AnyObject) {
+//        _ = self.navigationController?.popViewController(animated: true)
+//    }
     
     // MARK: - Delegate
     func webViewDidFinishLoad(_ webView: UIWebView) {

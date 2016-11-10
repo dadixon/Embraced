@@ -15,16 +15,14 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var practiceView: UIView!
     @IBOutlet var trial1View: UIView!
-    
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
-    
     @IBOutlet weak var trialRecordBtn: UIButton!
-    
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var InstructionsLabel: UILabel!
+    @IBOutlet weak var instructions2Label: UILabel!
+    @IBOutlet weak var listenBtn: UIButton!
     
     
     var recordingSession: AVAudioSession!
@@ -36,14 +34,19 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     var startTime = TimeInterval()
     var timer = Timer()
     var count = 3
-    var stimuli = [String: Any]()
     var trials = Array<String>()
     var sound = String()
     var practice = true
     var position = 0
     var instructions : [String] = ["There will be a 3 second countdown before the list starts. \nPlease tap the LISTEN button when you are ready to start",
-                                   "Now say out loud all the words you can remember from the list. \nTap the microphone button to start recording",
-                                   "Now say out loud all the words you can remember from the list, including the ones you said before. \nTap the microphone button to start recording",
+                                   "Tap the LISTEN button to listen to the list again",
+                                   "Tap the LISTEN button to listen to the list again",
+                                   "Tap the LISTEN button to listen to the list again",
+                                   "This is the last time that you are going to listen to this list. Tap the screen to listen to the list again",
+                                   "Now you are going to listen to a different list of words. Again, once the list is finished say out loud all the words you can remember from this second list.\nTap the screen to listen to this new list"]
+    var instructions2 : [String] = ["Now say out loud all the words you can remember from the list. Tap the microphone button to start recording",
+                                    "Now say out loud all the words you can remember from the list, including the ones you said before.\nTap the microphone button to start recording.",
+                                   "Now say out loud all the words you can remember from the list, including the ones you said before.\nTap the microphone button to start recording.",
                                    "Now say out loud all the words you can remember from the list, including the ones you said before. \nTap the microphone button to start recording",
                                    "Now say out loud all the words you can remember from the list, including the ones you said before. \nTap the microphone button to start recording",
                                    "Now say out loud all the words you can remember from the list, including the ones you said before. \nTap the microphone button to start recording"]
@@ -71,7 +74,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(WordListViewController.next(_:)))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(WordListViewController.back(_:)))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(WordListViewController.back(_:)))
         
         orientation = "landscape"
         rotated()
@@ -108,29 +111,30 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         
         
         // Fetch audios
-        let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/wordlist")!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
-        let session = URLSession.shared
-        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-            (data, response, error) -> Void in
-            
-            let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            if (statusCode == 200) {
-                print("Everyone is fine, file downloaded successfully.")
-                
-                do {
-                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String:Any]
-                    self.trials = self.stimuli["trials"] as! Array<String>
-                    print("\(self.trials[0])")
-                } catch {
-                    print("Error with Json: \(error)")
-                }
-            }
-        })
-        
-        task.resume()
+        trials = appDelegate.wordlistStimuli["trials"] as! Array<String>
+//        let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/wordlist")!
+//        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
+//        let session = URLSession.shared
+//        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
+//            (data, response, error) -> Void in
+//            
+//            let httpResponse = response as! HTTPURLResponse
+//            let statusCode = httpResponse.statusCode
+//            
+//            if (statusCode == 200) {
+//                print("Everyone is fine, file downloaded successfully.")
+//                
+//                do {
+//                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String:Any]
+//                    self.trials = self.stimuli["trials"] as! Array<String>
+//                    print("\(self.trials[0])")
+//                } catch {
+//                    print("Error with Json: \(error)")
+//                }
+//            }
+//        })
+//        
+//        task.resume()
         
         loadingView.stopAnimating()
     }
@@ -141,9 +145,18 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     }
     
     func setup() {
-        titleLabel.text = "Trial \(position + 1)"
+        instructions2Label.isHidden = true
+        
+        if position < 5 {
+            titleLabel.text = "Trial \(position + 1)"
+        } else {
+            titleLabel.text = "Interference list"
+        }
+        
         InstructionsLabel.text = instructions[position]
+        instructions2Label.text = instructions2[position]
         trialRecordBtn.isEnabled = false
+        listenBtn.isEnabled = true
     }
     
     
@@ -194,7 +207,9 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
             playBtn.setTitle("Play", for: .normal)
             recordBtn.isEnabled = true
         } else {
+            instructions2Label.isHidden = false
             trialRecordBtn.isEnabled = true
+            listenBtn.isEnabled = false
         }
     }
     
@@ -241,37 +256,55 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         print("\(functionName): \(logMessage)")
     }
     
+    func startTimer() {
+        if !timer.isValid {
+            
+            let aSelector : Selector = #selector(UIMenuController.update)
+            
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            
+            startTime = Date.timeIntervalSinceReferenceDate
+        }
+    }
+    
     func update() {
         if(count > 0) {
             countLabel.text = String(count)
             count -= 1
         } else {
-            timer.invalidate()
+            resetTimer()
             countLabel.text = ""
             
-            let url = NSURL(string: "http://api.girlscouts.harryatwal.com/static_audios/word_list/english/trials/List_A_ENG.mp3")
-            preparePlayer()
-            downloadFileFromURL(url: url!)
+            var url = NSURL()
+            
+            if position < 5 {
+                url = NSURL(string: trials[0])!
+            } else {
+                url = NSURL(string: trials[1])!
+            }
+            
+            downloadFileFromURL(url: url)
         }
+    }
+    
+    func resetTimer() {
+        timer.invalidate()
     }
     
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-//        var navigationArray = self.navigationController?.viewControllers
-//        
-//        navigationArray?.remove(at: 0)
+        var navigationArray = self.navigationController?.viewControllers
+        
+        navigationArray?.remove(at: 0)
         
         let mOCAMMSETestViewController:StroopViewController = StroopViewController()
-//        navigationArray?.append(mOCAMMSETestViewController)
-//        
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
+        navigationArray?.append(mOCAMMSETestViewController)
+//
+        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+//        self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
     }
 
-    @IBAction func back(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
         setSubview(practiceView, next: trial1View)
@@ -303,11 +336,17 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     }
     
     @IBAction func listen(_ sender: AnyObject) {
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(UIMenuController.update), userInfo: nil, repeats: true)
+        count = 3
+        startTimer()
+        listenBtn.isEnabled = false
     }
     
     @IBAction func nextTrial(_ sender: AnyObject) {
         position += 1
+        
+        if soundPlayer != nil {
+            soundPlayer.stop()
+        }
         
         if position < instructions.count {
             setup()
