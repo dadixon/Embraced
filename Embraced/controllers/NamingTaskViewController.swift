@@ -338,12 +338,13 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         print(dataStr! as String)
             
             
-            
+        
         var jsonObject = [String: AnyObject]()
-            
+        
         // Gather data for post
         jsonObject = [
             "id": participant.string(forKey: "pid")! as AnyObject,
+            "name": "naming_task\(count)" as AnyObject,
             "soundByte": dataStr as AnyObject
         ]
             
