@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stormpath
 
 class FrontViewController: UIViewController {
 

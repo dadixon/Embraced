@@ -9,6 +9,8 @@
 import UIKit
 import Stormpath
 import CoreData
+import SystemConfiguration
+import ReachabilitySwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,45 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var practice = Array<String>()
     var task = Array<String>()
     
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let APIURL = "http://api.girlscouts.harryatwal.com"
-
+        
         Stormpath.sharedSession.configuration.APIURL = URL(string: APIURL)!
         
         navController = UINavigationController()
-        
-        
-        
-        /* Preloading data  */
-        // Naming Task Images
-        let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/stimuli")!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
-        let session = URLSession.shared
-        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-            (data, response, error) -> Void in
-            
-            let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            if (statusCode == 200) {
-                print("Everyone is fine, file downloaded successfully.")
-                
-                do {
-                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String: Any]
-                    self.namingTaskStimuli = self.stimuli["naming_task"] as! [String: Any]
-                    self.digitalSpanStimuli = self.stimuli["digital_span"] as! [String: Any]
-                    self.pitchStimuli = self.stimuli["pitch"] as! [String: Any]
-                    self.stroopStimuli = self.stimuli["stroop"] as! [String: Any]
-                    self.wordlistStimuli = self.stimuli["wordlist"] as! [String: Any]
-//                    self.practice = self.returnStimuli["practice"] as! Array<String>
-//                    self.task = self.returnStimuli["task"] as! Array<String>
-                }catch {
-                    print("Error with Json: \(error)")
-                }
-            }
-        })
-        
-        task.resume()
         
         return true
     }
@@ -93,6 +63,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
 
+//    func isInternetAvailable() -> Bool {
+//        var zeroAddress = sockaddr_in()
+//        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+//        zeroAddress.sin_family = sa_family_t(AF_INET)
+//        
+//        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+//            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+//                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+//            }
+//        }
+//        
+//        var flags = SCNetworkReachabilityFlags()
+//        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+//            return false
+//        }
+//        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+//        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+//        return (isReachable && !needsConnection)
+//    }
+    
+    
     // MARK: - Core Data stack
 
     lazy var applicationDocumentsDirectory: URL = {

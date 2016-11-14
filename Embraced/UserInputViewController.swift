@@ -22,6 +22,7 @@ class UserInputViewController: UIViewController {
     @IBOutlet weak var submitBtn: UIButton!
     
     let participant = UserDefaults.standard
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     fileprivate func setBottomBorder(_ textfield: UITextField) {
         let border = CALayer()
@@ -52,6 +53,39 @@ class UserInputViewController: UIViewController {
         super.viewDidLoad()
         
         submitBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+        
+        if Reachability.isConnectedToNetwork() == true {
+            /* Preloading data  */
+            // Naming Task Images
+            let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/stimuli")!
+            let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
+            let session = URLSession.shared
+            let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
+                (data, response, error) -> Void in
+                
+                let httpResponse = response as! HTTPURLResponse
+                let statusCode = httpResponse.statusCode
+                
+                if (statusCode == 200) {
+                    print("Everyone is fine, file downloaded successfully.")
+                    
+                    do {
+                        self.appDelegate.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String: Any]
+                        self.appDelegate.namingTaskStimuli = self.appDelegate.stimuli["naming_task"] as! [String: Any]
+                        self.appDelegate.digitalSpanStimuli = self.appDelegate.stimuli["digital_span"] as! [String: Any]
+                        self.appDelegate.pitchStimuli = self.appDelegate.stimuli["pitch"] as! [String: Any]
+                        self.appDelegate.stroopStimuli = self.appDelegate.stimuli["stroop"] as! [String: Any]
+                        self.appDelegate.wordlistStimuli = self.appDelegate.stimuli["wordlist"] as! [String: Any]
+                        //                    self.practice = self.returnStimuli["practice"] as! Array<String>
+                        //                    self.task = self.returnStimuli["task"] as! Array<String>
+                    }catch {
+                        print("Error with Json: \(error)")
+                    }
+                }
+            })
+            
+            task.resume()
+        }
 
     }
 
@@ -84,19 +118,20 @@ class UserInputViewController: UIViewController {
         ]
 
         
-        print(jsonObject)
+//        print(jsonObject)
         
         // Push to API
-        let notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/participant")!
-        let request = NSMutableURLRequest(url: notesEndpoint as URL)
-        
-        request.httpMethod = "POST"
-        request.httpBody = try? JSONSerialization.data(withJSONObject: jsonObject, options: [])
-        request.setValue("application/json" , forHTTPHeaderField: "Content-Type")
-        
-        let task = URLSession.shared.dataTask(with: request as URLRequest)
-        
-        task.resume()
+        APIWrapper.post(id: "", test: "", data: jsonObject)
+//        let notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/participant")!
+//        let request = NSMutableURLRequest(url: notesEndpoint as URL)
+//        
+//        request.httpMethod = "POST"
+//        request.httpBody = try? JSONSerialization.data(withJSONObject: jsonObject, options: [])
+//        request.setValue("application/json" , forHTTPHeaderField: "Content-Type")
+//        
+//        let task = URLSession.shared.dataTask(with: request as URLRequest)
+//        
+//        task.resume()
 
         
         let questionnaireViewController:StartViewController = StartViewController()

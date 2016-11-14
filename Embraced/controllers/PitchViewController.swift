@@ -47,6 +47,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     let practiceAnswers = ["D", "D", "S", "D", "D"]
     let taskAnswers = ["S", "D", "S", "D", "D", "S", "D", "S", "D", "D", "S", "S", "S", "S", "D", "D", "D", "D", "D", "S", "S", "S", "S", "D"]
     
+    var userAnswers = Array<String>()
+    
     var firstSound = String()
     var secondSound = String()
     var soundLabel = UILabel()
@@ -171,10 +173,6 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
     }
     
-//    @IBAction func back(_ sender: AnyObject) {
-//        _ = self.navigationController?.popViewController(animated: true)
-//    }
-    
     
     // MARK: - Actions
     
@@ -244,8 +242,10 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     @IBAction func taskAnswered(_ sender: AnyObject) {
         if ((sender.selectedSegmentIndex == 0 && taskAnswers[tasksCount - 1] == "S") || (sender.selectedSegmentIndex == 1 && taskAnswers[tasksCount - 1] == "D")) {
             taskResponse.text = "Correct!"
+            userAnswers[tasksCount - 1] = "c"
         } else {
             taskResponse.text = "Incorrect"
+            userAnswers[tasksCount - 1] = "i"
         }
         
         switch sender.selectedSegmentIndex {

@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Stormpath
 
 class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
@@ -42,7 +43,8 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     var startTime = TimeInterval()
     var timer = Timer()
     var isRunning = false
-        
+    var isTask = false
+    
     
     private func setSubview(_ current: UIView, next: UIView) {
         current.removeFromSuperview()
@@ -140,6 +142,12 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
         return documentsDirectory
+    }
+    
+    func getCacheDirectory() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        
+        return paths[0]
     }
     
     func finishRecording(_ button: UIButton, success: Bool) {
@@ -313,6 +321,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     }
     
     @IBAction func toTask(_ sender: AnyObject) {
+        isTask = true
         setSubview(preTaskView, next: taskView)
         count = 0
         loadImageFromUrl(task[count], view: taskImageView)
@@ -321,6 +330,38 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     
     @IBAction func nextTask(_ sender: AnyObject) {
         count += 1
+        
+        // Send post audio to API
+        let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent(fileName))
+        print(soundData! as NSData)
+        let dataStr = soundData?.base64EncodedString(options: [])
+        print(dataStr! as String)
+            
+            
+            
+        var jsonObject = [String: AnyObject]()
+            
+        // Gather data for post
+        jsonObject = [
+            "id": participant.string(forKey: "pid")! as AnyObject,
+            "soundByte": dataStr as AnyObject
+        ]
+            
+            
+        print(jsonObject)
+            
+        // Push to API
+        let notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/participant/" + participant.string(forKey: "pid")! + "/naming_task")!
+        let request = NSMutableURLRequest(url: notesEndpoint as URL)
+            
+        request.httpMethod = "POST"
+        request.httpBody = try? JSONSerialization.data(withJSONObject: jsonObject, options: [])
+        request.setValue("application/json" , forHTTPHeaderField: "Content-Type")
+            
+        let taskSession = URLSession.shared.dataTask(with: request as URLRequest)
+            
+        taskSession.resume()
+        
         if count < task.count {
             loadImageFromUrl(task[count], view: taskImageView)
             resetTimer()

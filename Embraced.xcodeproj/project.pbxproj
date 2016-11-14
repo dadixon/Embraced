@@ -38,6 +38,9 @@
 		A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */; };
 		A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4476ED91D13B1BA002722B4 /* UserInputs.swift */; };
 		A4632C731DAE4629004B71BD /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = A4632C721DAE4629004B71BD /* speaker.png */; };
+		A46A2C641DD66108000AC66C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46A2C631DD66108000AC66C /* SystemConfiguration.framework */; };
+		A46A2C661DD7AB91000AC66C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A2C651DD7AB91000AC66C /* Reachability.swift */; };
+		A46A2C681DD96FF0000AC66C /* APIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A2C671DD96FF0000AC66C /* APIWrapper.swift */; };
 		A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C140D1D798FC30066EF37 /* CPTViewController.swift */; };
 		A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C140E1D798FC30066EF37 /* CPTViewController.xib */; };
 		A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */; };
@@ -124,6 +127,9 @@
 		A4476ED81D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserInputs+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A4476ED91D13B1BA002722B4 /* UserInputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputs.swift; sourceTree = "<group>"; };
 		A4632C721DAE4629004B71BD /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
+		A46A2C631DD66108000AC66C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A46A2C651DD7AB91000AC66C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		A46A2C671DD96FF0000AC66C /* APIWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIWrapper.swift; sourceTree = "<group>"; };
 		A46C140D1D798FC30066EF37 /* CPTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPTViewController.swift; path = controllers/CPTViewController.swift; sourceTree = "<group>"; };
 		A46C140E1D798FC30066EF37 /* CPTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPTViewController.xib; path = controllers/CPTViewController.xib; sourceTree = "<group>"; };
 		A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CancellationTestViewController.swift; path = controllers/CancellationTestViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A46A2C641DD66108000AC66C /* SystemConfiguration.framework in Frameworks */,
 				DD7D49BC9E47B49E27EB6157 /* Pods_Embraced.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +214,7 @@
 		A191B101E7F37A99531AAB47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A46A2C631DD66108000AC66C /* SystemConfiguration.framework */,
 				A4BB08E41D7EDB0900B76C64 /* ISRadioButton.framework */,
 				EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */,
 			);
@@ -356,6 +364,8 @@
 				A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */,
 				A4349D861D88058E00750070 /* ChildTableViewCell.xib */,
 				A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */,
+				A46A2C651DD7AB91000AC66C /* Reachability.swift */,
+				A46A2C671DD96FF0000AC66C /* APIWrapper.swift */,
 			);
 			name = Customizations;
 			sourceTree = "<group>";
@@ -367,6 +377,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A48B4DD61CF9E7C700878928 /* Build configuration list for PBXNativeTarget "Embraced" */;
 			buildPhases = (
+				91A8D96E5C9DBBC358E1F54D /* 📦 Check Pods Manifest.lock */,
 				6391EC2967FC335C4B260526 /* [CP] Check Pods Manifest.lock */,
 				5E743F95A972D997F54D05F4 /* [CP] Check Pods Manifest.lock */,
 				A48B4DBD1CF9E7C600878928 /* Sources */,
@@ -511,6 +522,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		91A8D96E5C9DBBC358E1F54D /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		C7F38120F030A165D5C8C102 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -584,6 +610,7 @@
 				A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */,
 				A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
+				A46A2C661DD7AB91000AC66C /* Reachability.swift in Sources */,
 				A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */,
 				A4FC1E991DD2BE4500F19D95 /* WordList2ViewController.swift in Sources */,
 				A4347FE31D7BCC170033306A /* MultipleErrandsViewController.swift in Sources */,
@@ -603,6 +630,7 @@
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
 				A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
+				A46A2C681DD96FF0000AC66C /* APIWrapper.swift in Sources */,
 				A46C14231D79AA7C0066EF37 /* ClockDrawingTestViewController.swift in Sources */,
 				A4347FC91D7BCA280033306A /* DigitalSpanViewController.swift in Sources */,
 				A4476EDA1D13B1BA002722B4 /* UserInputs+CoreDataProperties.swift in Sources */,

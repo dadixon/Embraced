@@ -5,6 +5,7 @@ use_frameworks!
 
 def pods
 pod 'Stormpath', '~> 2.0'
+pod 'ReachabilitySwift', '~>3'
 end
  
 target ‘Embraced’ do

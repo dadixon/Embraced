@@ -44,7 +44,7 @@ class StartViewController: UIViewController {
         navigationArray?.remove(at: 0)
         
 //        let questionnaireViewController:QuestionnaireViewController = QuestionnaireViewController()
-        let questionnaireViewController:WordList2ViewController = WordList2ViewController()
+        let questionnaireViewController:NamingTaskViewController = NamingTaskViewController()
         navigationArray?.append(questionnaireViewController)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
