@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ReachabilitySwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Stormpath.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6DA2E28420B89395425C68F15B4BCF5F</key>
+		<key>6F3727D4991F8325A441A772D08696BC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CB43D175BED342721615EF828182ADA2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EC33CBF963F4A85BF1026E6F1B3FFA9A</key>
+		<key>B39134DD8288052EAC797FA5C8A643AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

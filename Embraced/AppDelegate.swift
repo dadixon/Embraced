@@ -10,7 +10,6 @@ import UIKit
 import Stormpath
 import CoreData
 import SystemConfiguration
-import ReachabilitySwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

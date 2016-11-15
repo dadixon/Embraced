@@ -30,7 +30,6 @@ class ViewController: UIViewController {
 //                
 //                self.presentViewController(secondViewController, animated: true, completion: nil)
 //            }
-            
         } else {
             print("Offline")
             let alertController = UIAlertController(title: "Unable to download content", message: "The content is having trouble downloading.\nPlease try again with a stronger internet connection.", preferredStyle: .alert)

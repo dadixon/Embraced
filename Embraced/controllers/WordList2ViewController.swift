@@ -251,14 +251,19 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
         answer = sender.titleForSegment(at: sender.selectedSegmentIndex)!
     }
 
-    @IBAction func nextQuestion(_ sender: Any) {
+    @IBAction func nextQuestion(_ sender: UISegmentedControl) {
         answers.insert(answer, at: position)
         print(answers)
         position += 1
-        listenBtn.isEnabled = true
-        firstListLabel.isHidden = true
-        answerSegment.isHidden = true
-        answerSegment.selectedSegmentIndex = -1
+        
+        if position == tasks.count {
+            next(self)
+        } else {
+            listenBtn.isEnabled = true
+            firstListLabel.isHidden = true
+            answerSegment.isHidden = true
+            answerSegment.selectedSegmentIndex = -1
+        }
     }
     
     

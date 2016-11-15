@@ -42,21 +42,8 @@ class UserInputViewController: UIViewController {
         
         self.navigationController?.isNavigationBarHidden = true
         
-        Stormpath.sharedSession.me { (account, error) -> Void in
-            if let account = account {
-                print("Hello \(account.fullName)!")
-            }
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        submitBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
-        
         if Reachability.isConnectedToNetwork() == true {
             /* Preloading data  */
-            // Naming Task Images
             let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/stimuli")!
             let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
             let session = URLSession.shared
@@ -86,6 +73,12 @@ class UserInputViewController: UIViewController {
             
             task.resume()
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        submitBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
 
     }
 

@@ -1,15 +1,12 @@
 PODS:
-  - ReachabilitySwift (3)
   - Stormpath (2.0.1)
 
 DEPENDENCIES:
-  - ReachabilitySwift (~> 3)
   - Stormpath (~> 2.0)
 
 SPEC CHECKSUMS:
-  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   Stormpath: df23f5ed9837f84091015287680c41110b1f8f1c
 
-PODFILE CHECKSUM: cf7bb53872a5954fc33cbef7881bd9d4294b24fd
+PODFILE CHECKSUM: bf1815abedbd044fe8856046d213b82ec5b58f8c
 
 COCOAPODS: 1.0.0

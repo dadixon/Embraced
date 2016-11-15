@@ -108,33 +108,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
             // failed to record!
         }
         
-        
-        
         // Fetch audios
         trials = appDelegate.wordlistStimuli["trials"] as! Array<String>
-//        let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/wordlist")!
-//        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
-//        let session = URLSession.shared
-//        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-//            (data, response, error) -> Void in
-//            
-//            let httpResponse = response as! HTTPURLResponse
-//            let statusCode = httpResponse.statusCode
-//            
-//            if (statusCode == 200) {
-//                print("Everyone is fine, file downloaded successfully.")
-//                
-//                do {
-//                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String:Any]
-//                    self.trials = self.stimuli["trials"] as! Array<String>
-//                    print("\(self.trials[0])")
-//                } catch {
-//                    print("Error with Json: \(error)")
-//                }
-//            }
-//        })
-//        
-//        task.resume()
         
         loadingView.stopAnimating()
     }
