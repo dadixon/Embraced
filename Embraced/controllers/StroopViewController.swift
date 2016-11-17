@@ -139,7 +139,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         images = appDelegate.stroopStimuli["images"] as! Array<String>
         videos = appDelegate.stroopStimuli["videos"] as! Array<String>
         
-        myMutableString2 = NSMutableAttributedString(string: myString2, attributes: [NSFontAttributeName:UIFont(name: "HelveticaNeue", size: 17.0)!])
+        myMutableString2 = NSMutableAttributedString(string: myString2, attributes: [NSFontAttributeName:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
         myMutableString2.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 18), range: NSRange(location:51,length:5))
         myMutableString2.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 18), range: NSRange(location:61,length:4))
         practiceText.attributedText = myMutableString2
@@ -378,7 +378,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     @IBAction func moveToPreTask4(_ sender: AnyObject) {
         setSubview(task3View, next: preTask4View)
         
-        myMutableString = NSMutableAttributedString(string: myString, attributes: [NSFontAttributeName:UIFont(name: "HelveticaNeue", size: 17.0)!])
+        myMutableString = NSMutableAttributedString(string: myString, attributes: [NSFontAttributeName:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
         myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange(location:28,length:4))
         specialText.attributedText = myMutableString
     }

@@ -47,7 +47,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     let practiceAnswers = ["D", "D", "S", "D", "D"]
     let taskAnswers = ["S", "D", "S", "D", "D", "S", "D", "S", "D", "D", "S", "S", "S", "S", "D", "D", "D", "D", "D", "S", "S", "S", "S", "D"]
     
-    var userAnswers = Array<String>()
+    var userAnswers = [String]()
+    var score = Int()
     
     var firstSound = String()
     var secondSound = String()
@@ -199,6 +200,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func moveToExample3(_ sender: AnyObject) {
+        soundPlayer.stop()
         setSubview(example2View, next: example3View)
         setupSounds(examples, iterator: 2, label: example3Label)
         exampleCount += 1
@@ -206,9 +208,9 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
+        soundPlayer.stop()
         setSubview(example3View, next: trial1View)
         setupSounds(trials, iterator: trialCount, label: trialLabel)
-        print(trials)
     }
     
     @IBAction func exampleAnswered(_ sender: AnyObject) {
@@ -242,10 +244,12 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     @IBAction func taskAnswered(_ sender: AnyObject) {
         if ((sender.selectedSegmentIndex == 0 && taskAnswers[tasksCount - 1] == "S") || (sender.selectedSegmentIndex == 1 && taskAnswers[tasksCount - 1] == "D")) {
             taskResponse.text = "Correct!"
-            userAnswers[tasksCount - 1] = "c"
+            userAnswers.insert("c", at: tasksCount - 1)
+            score += 1
         } else {
             taskResponse.text = "Incorrect"
-            userAnswers[tasksCount - 1] = "i"
+            userAnswers.insert("i", at: tasksCount - 1)
+            score -= 1
         }
         
         switch sender.selectedSegmentIndex {
@@ -301,6 +305,18 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
             
             tasksCount += 1
         } else {
+            soundPlayer.stop()
+            print(userAnswers)
+            var jsonObject = [String: AnyObject]()
+            
+            // Gather data for post
+            jsonObject = [
+                "answers": userAnswers as AnyObject,
+                "score": score as AnyObject
+            ]
+            
+            APIWrapper.post(id: participant.string(forKey: "pid")!, test: "pitch", data: jsonObject)
+            
             let mOCAMMSETestViewController:DigitalSpanViewController = DigitalSpanViewController()
             self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
         }
