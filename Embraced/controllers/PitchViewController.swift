@@ -59,6 +59,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     var trialCount = 0
     var tasksCount = 0
     
+    var timer = Timer()
+    
     // MARK: - Private
     
     private func setSubview(_ current: UIView, next: UIView) {
@@ -119,6 +121,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     func play(_ url:NSURL) {
         do {
+//            let url = Bundle.main.url(forResource: "melodies_320ms_orig(16)", withExtension: "wav")
             soundPlayer = try AVAudioPlayer(contentsOf: url as URL)
             soundPlayer.delegate = self
             soundPlayer.prepareToPlay()
@@ -137,6 +140,10 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     func downloadFileFromURL(url:NSURL){
         var downloadTask:URLSessionDownloadTask
         downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            print(URL! as NSURL)
             self.play(URL! as NSURL)
         })
         
@@ -160,7 +167,9 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         
         print(firstSound)
         print(secondSound)
+        
         let url = NSURL(string: firstSound)
+//        self.play(url!)
         downloadFileFromURL(url: url!)
         soundLabel = label
         soundLabel.text = "1"
@@ -323,23 +332,75 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     }
     
     
+    func updateTime() {
+        if self.played == false {
+            self.soundLabel.text = "2"
+            let url = NSURL(string: self.secondSound)
+            self.downloadFileFromURL(url: url!)
+        }
+        
+        self.played = true
+        
+//        let currentTime = Date.timeIntervalSinceReferenceDate
+//        
+//        var elapsedTime : TimeInterval = currentTime - startTime
+//        
+//        //calculate the minutes in elapsed time
+//        
+//        let minutes = UInt8(elapsedTime / 60.0)
+//        elapsedTime -= (TimeInterval(minutes) * 60)
+//        
+//        //calculate the seconds in elapsed time
+//        
+//        let seconds = UInt8(elapsedTime)
+//        elapsedTime -= TimeInterval(seconds)
+//        
+//        if seconds >= 15 {
+//            timerCount.text = String(timeCount)
+//            
+//            if timeCount == 0 {
+//                nextTask(self)
+//                resetTimer()
+//                startTimer()
+//                timeCount = 5
+//                timerCount.text = ""
+//            } else {
+//                timeCount -= 1
+//            }
+//        }
+        
+    }
     
+    func startTimer() {
+        if !timer.isValid {
+            
+            let aSelector : Selector = #selector(NamingTaskViewController.updateTime)
+            
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            
+//            startTime = Date.timeIntervalSinceReferenceDate
+        }
+    }
+    
+    func resetTimer() {
+        timer.invalidate()
+    }
     
     
     // MARK: - Delegate
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("finished")
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            if self.played == false {
-                self.soundLabel.text = "2"
-                let url = NSURL(string: self.secondSound)
-                self.downloadFileFromURL(url: url!)
-            }
-            
-            self.played = true
-        }
+        startTimer()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//            if self.played == false {
+//                self.soundLabel.text = "2"
+//                let url = NSURL(string: self.secondSound)
+//                self.downloadFileFromURL(url: url!)
+//            }
+//            
+//            self.played = true
+//        }
     }
     
 }

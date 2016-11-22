@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A401C7FC1DE29DD5009C4B66 /* melodies_320ms_orig(16).wav in Resources */ = {isa = PBXBuildFile; fileRef = A401C7FB1DE29DD5009C4B66 /* melodies_320ms_orig(16).wav */; };
 		A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */ = {isa = PBXBuildFile; fileRef = A414247E1D02C3F60028933E /* LOGO_r1_c1.png */; };
 		A41AE3C11DCA57150089231D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A41AE3C01DCA57150089231D /* Images.xcassets */; };
 		A42AB5C31D2DE061001387BB /* ChildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */; };
@@ -96,6 +97,7 @@
 
 /* Begin PBXFileReference section */
 		9F375DDA1676C302A2C3E45B /* Pods-Embraced.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.debug.xcconfig"; sourceTree = "<group>"; };
+		A401C7FB1DE29DD5009C4B66 /* melodies_320ms_orig(16).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "melodies_320ms_orig(16).wav"; path = "../../../Downloads/melodies_320ms_orig(16).wav"; sourceTree = "<group>"; };
 		A414247E1D02C3F60028933E /* LOGO_r1_c1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO_r1_c1.png; sourceTree = "<group>"; };
 		A41AE3C01DCA57150089231D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildTableViewCell.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 		A48B4DD91CF9EEAB00878928 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A401C7FB1DE29DD5009C4B66 /* melodies_320ms_orig(16).wav */,
 				A4632C721DAE4629004B71BD /* speaker.png */,
 				A4773D0A1D9D849100E5CCEE /* listen.png */,
 				A4773D0C1D9D84A900E5CCEE /* play.png */,
@@ -484,6 +487,7 @@
 				A4347FCA1D7BCA280033306A /* DigitalSpanViewController.xib in Resources */,
 				A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */,
 				A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */,
+				A401C7FC1DE29DD5009C4B66 /* melodies_320ms_orig(16).wav in Resources */,
 				A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */,
 				A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */,
 			);

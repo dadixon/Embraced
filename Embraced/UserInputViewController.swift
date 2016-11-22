@@ -24,6 +24,13 @@ class UserInputViewController: UIViewController {
     let participant = UserDefaults.standard
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    var examples = Array<Array<String>>()
+    var examples2 = Array<Array<URL>>()
+
+    var trials = Array<Array<String>>()
+    var tasks = Array<Array<String>>()
+    
+    
     fileprivate func setBottomBorder(_ textfield: UITextField) {
         let border = CALayer()
         let width = CGFloat(2.0)
@@ -63,8 +70,22 @@ class UserInputViewController: UIViewController {
                         self.appDelegate.pitchStimuli = self.appDelegate.stimuli["pitch"] as! [String: Any]
                         self.appDelegate.stroopStimuli = self.appDelegate.stimuli["stroop"] as! [String: Any]
                         self.appDelegate.wordlistStimuli = self.appDelegate.stimuli["wordlist"] as! [String: Any]
-                        //                    self.practice = self.returnStimuli["practice"] as! Array<String>
-                        //                    self.task = self.returnStimuli["task"] as! Array<String>
+                        
+                        
+                        // Download audio files
+                        self.examples = self.appDelegate.pitchStimuli["examples"] as! Array<Array<String>>
+                        self.trials = self.appDelegate.pitchStimuli["trials"] as! Array<Array<String>>
+                        self.tasks = self.appDelegate.pitchStimuli["tasks"] as! Array<Array<String>>
+                        
+                        print(self.examples)
+                        for index in 0...self.examples.count-1 {
+                            for audio in 0...self.examples[index].count-1 {
+//                                print("Index: \(index) Audio: \(audio)")
+                                print(self.examples[index][audio])
+                                self.downloadFileFromURL(url: NSURL(string:self.examples[index][audio])!, x: index, y: audio)
+                            }
+                        }
+                        
                     }catch {
                         print("Error with Json: \(error)")
                     }
@@ -72,6 +93,10 @@ class UserInputViewController: UIViewController {
             })
             
             task.resume()
+            
+            
+            
+            
         }
     }
     
@@ -130,7 +155,20 @@ class UserInputViewController: UIViewController {
         let questionnaireViewController:StartViewController = StartViewController()
         let navController = UINavigationController(rootViewController: questionnaireViewController)
         self.present(navController, animated: true, completion: nil)
+    }
+    
+    
+    func downloadFileFromURL(url:NSURL, x: Int, y: Int){
+        var downloadTask:URLSessionDownloadTask
+        downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            print(URL! as NSURL)
+            print(x)
+            self.examples2[x][y] = URL! as URL
+        })
         
-        
+        downloadTask.resume()
     }
 }
