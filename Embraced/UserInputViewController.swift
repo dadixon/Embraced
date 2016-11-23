@@ -30,6 +30,8 @@ class UserInputViewController: UIViewController {
     var trials = Array<Array<String>>()
     var tasks = Array<Array<String>>()
     
+    let downloadManager = DownloadManager()
+    
     
     fileprivate func setBottomBorder(_ textfield: UITextField) {
         let border = CALayer()
@@ -77,14 +79,66 @@ class UserInputViewController: UIViewController {
                         self.trials = self.appDelegate.pitchStimuli["trials"] as! Array<Array<String>>
                         self.tasks = self.appDelegate.pitchStimuli["tasks"] as! Array<Array<String>>
                         
-                        print(self.examples)
+//                        let queue = OperationQueue()
+//                        queue.name = "Download queue"
+//                        queue.maxConcurrentOperationCount = 1
+                        
+//                        for index in 0...self.examples.count-1 {
+//                            for audio in 0...self.examples[index].count-1 {
+//                                print(self.examples[index][audio])
+//                                let url = URL(fileURLWithPath: self.examples[index][audio])
+//                                queue.addOperation(DownloadOperation(session: URLSession.shared, URL: NSURL(string:self.examples[index][audio]) as! URL))
+//                                self.examples[index][audio] = url.lastPathComponent
+//                            }
+//                        }
+//                        
+//                        for index in 0...self.trials.count-1 {
+//                            for audio in 0...self.trials[index].count-1 {
+//                                print(self.trials[index][audio])
+//                                let url = URL(fileURLWithPath: self.trials[index][audio])
+//                                queue.addOperation(DownloadOperation(session: URLSession.shared, URL: NSURL(string:self.trials[index][audio]) as! URL))
+//                                self.trials[index][audio] = url.lastPathComponent
+//                            }
+//                        }
+//                        
+//                        for index in 0...self.tasks.count-1 {
+//                            for audio in 0...self.tasks[index].count-1 {
+//                                print(self.trials[index][audio])
+//                                let url = URL(fileURLWithPath: self.tasks[index][audio])
+//                                queue.addOperation(DownloadOperation(session: URLSession.shared, URL: NSURL(string:self.tasks[index][audio]) as! URL))
+//                                self.tasks[index][audio] = url.lastPathComponent
+//                            }
+//                        }
+                        
                         for index in 0...self.examples.count-1 {
                             for audio in 0...self.examples[index].count-1 {
-//                                print("Index: \(index) Audio: \(audio)")
-                                print(self.examples[index][audio])
-                                self.downloadFileFromURL(url: NSURL(string:self.examples[index][audio])!, x: index, y: audio)
+                                let nsurl = NSURL(string: self.examples[index][audio])
+                                let _ = self.downloadManager.addDownload(URL: nsurl!)
+                                let url = URL(fileURLWithPath: self.examples[index][audio])
+                                self.examples[index][audio] = url.lastPathComponent
                             }
                         }
+                        
+                        for index in 0...self.trials.count-1 {
+                            for audio in 0...self.trials[index].count-1 {
+                                let nsurl = NSURL(string: self.trials[index][audio])
+                                let _ = self.downloadManager.addDownload(URL: nsurl!)
+                                let url = URL(fileURLWithPath: self.trials[index][audio])
+                                self.trials[index][audio] = url.lastPathComponent
+                            }
+                        }
+                        
+                        for index in 0...self.tasks.count-1 {
+                            for audio in 0...self.tasks[index].count-1 {
+                                let nsurl = NSURL(string: self.tasks[index][audio])
+                                let _ = self.downloadManager.addDownload(URL: nsurl!)
+                                let url = URL(fileURLWithPath: self.tasks[index][audio])
+                                self.tasks[index][audio] = url.lastPathComponent
+                            }
+                        }
+                        
+                        print(self.examples)
+                        self.appDelegate.pitchExamples = self.examples
                         
                     }catch {
                         print("Error with Json: \(error)")

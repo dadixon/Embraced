@@ -25,7 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var wordlistStimuli = [String: Any]()
     var practice = Array<String>()
     var task = Array<String>()
-    
+    var pitchExamples = Array<Array<String>>()
+    var pitchTrials = Array<Array<String>>()
+    var pitchTasks = Array<Array<String>>()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let APIURL = "http://api.girlscouts.harryatwal.com"

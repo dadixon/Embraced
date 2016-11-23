@@ -105,7 +105,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         
         
         // Fetch audios
-        examples = appDelegate.pitchStimuli["examples"] as! Array<Array<String>>
+//        examples = appDelegate.pitchStimuli["examples"] as! Array<Array<String>>
+        examples = appDelegate.pitchExamples
         trials = appDelegate.pitchStimuli["trials"] as! Array<Array<String>>
         tasks = appDelegate.pitchStimuli["tasks"] as! Array<Array<String>>
         
@@ -119,10 +120,12 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     
     
-    func play(_ url:NSURL) {
+    func play(_ filename:String) {
         do {
-//            let url = Bundle.main.url(forResource: "melodies_320ms_orig(16)", withExtension: "wav")
-            soundPlayer = try AVAudioPlayer(contentsOf: url as URL)
+//            let filename = "melodies-320ms-orig(16).wav"
+//            let path = Bundle.main.path(forResource: "melodies-320ms-orig(16).wav", ofType: nil)
+//            let url = URL(fileURLWithPath: path!)
+            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(filename))
             soundPlayer.delegate = self
             soundPlayer.prepareToPlay()
             soundPlayer.volume = 1.0
@@ -136,19 +139,24 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         
     }
     
-    
-    func downloadFileFromURL(url:NSURL){
-        var downloadTask:URLSessionDownloadTask
-        downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-            print(URL! as NSURL)
-            self.play(URL! as NSURL)
-        })
-        
-        downloadTask.resume()
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
     }
+    
+//    func downloadFileFromURL(url:NSURL){
+//        var downloadTask:URLSessionDownloadTask
+//        downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
+//            if error != nil {
+//                print(error!.localizedDescription)
+//            }
+//            print(URL! as NSURL)
+//            self.play(URL! as NSURL)
+//        })
+//        
+//        downloadTask.resume()
+//    }
     
     private func setupSounds(_ soundArray: Array<Array<String>>, iterator: Int, label: UILabel) {
         if soundPlayer != nil {
@@ -168,9 +176,9 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         print(firstSound)
         print(secondSound)
         
-        let url = NSURL(string: firstSound)
-//        self.play(url!)
-        downloadFileFromURL(url: url!)
+//        let url = NSURL(string: firstSound)
+        self.play(firstSound)
+//        downloadFileFromURL(url: url!)
         soundLabel = label
         soundLabel.text = "1"
     }
@@ -203,8 +211,9 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         }
         
         played = false
-        let url = NSURL(string: firstSound)
-        downloadFileFromURL(url: url!)
+        play(firstSound)
+//        let url = NSURL(string: firstSound)
+//        downloadFileFromURL(url: url!)
         soundLabel.text = "1"
     }
     
@@ -335,8 +344,9 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     func updateTime() {
         if self.played == false {
             self.soundLabel.text = "2"
-            let url = NSURL(string: self.secondSound)
-            self.downloadFileFromURL(url: url!)
+//            let url = NSURL(string: self.secondSound)
+//            self.downloadFileFromURL(url: url!)
+            play(secondSound)
         }
         
         self.played = true
@@ -392,15 +402,6 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("finished")
         startTimer()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//            if self.played == false {
-//                self.soundLabel.text = "2"
-//                let url = NSURL(string: self.secondSound)
-//                self.downloadFileFromURL(url: url!)
-//            }
-//            
-//            self.played = true
-//        }
     }
     
 }
