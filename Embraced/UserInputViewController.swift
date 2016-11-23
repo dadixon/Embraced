@@ -112,8 +112,8 @@ class UserInputViewController: UIViewController {
                         
                         for index in 0...self.examples.count-1 {
                             for audio in 0...self.examples[index].count-1 {
-                                let nsurl = NSURL(string: self.examples[index][audio])
-                                let _ = self.downloadManager.addDownload(URL: nsurl!)
+//                                let nsurl = NSURL(string: self.examples[index][audio])
+//                                let _ = self.downloadManager.addDownload(URL: nsurl!)
                                 let url = URL(fileURLWithPath: self.examples[index][audio])
                                 self.examples[index][audio] = url.lastPathComponent
                             }
@@ -121,8 +121,8 @@ class UserInputViewController: UIViewController {
                         
                         for index in 0...self.trials.count-1 {
                             for audio in 0...self.trials[index].count-1 {
-                                let nsurl = NSURL(string: self.trials[index][audio])
-                                let _ = self.downloadManager.addDownload(URL: nsurl!)
+//                                let nsurl = NSURL(string: self.trials[index][audio])
+//                                let _ = self.downloadManager.addDownload(URL: nsurl!)
                                 let url = URL(fileURLWithPath: self.trials[index][audio])
                                 self.trials[index][audio] = url.lastPathComponent
                             }
@@ -130,8 +130,8 @@ class UserInputViewController: UIViewController {
                         
                         for index in 0...self.tasks.count-1 {
                             for audio in 0...self.tasks[index].count-1 {
-                                let nsurl = NSURL(string: self.tasks[index][audio])
-                                let _ = self.downloadManager.addDownload(URL: nsurl!)
+//                                let nsurl = NSURL(string: self.tasks[index][audio])
+//                                let _ = self.downloadManager.addDownload(URL: nsurl!)
                                 let url = URL(fileURLWithPath: self.tasks[index][audio])
                                 self.tasks[index][audio] = url.lastPathComponent
                             }
@@ -139,6 +139,8 @@ class UserInputViewController: UIViewController {
                         
                         print(self.examples)
                         self.appDelegate.pitchExamples = self.examples
+                        self.appDelegate.pitchTrials = self.trials
+                        self.appDelegate.pitchTasks = self.tasks
                         
                     }catch {
                         print("Error with Json: \(error)")

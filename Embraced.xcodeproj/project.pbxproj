@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A401C7FC1DE29DD5009C4B66 /* melodies_320ms_orig(16).wav in Resources */ = {isa = PBXBuildFile; fileRef = A401C7FB1DE29DD5009C4B66 /* melodies_320ms_orig(16).wav */; };
 		A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */ = {isa = PBXBuildFile; fileRef = A414247E1D02C3F60028933E /* LOGO_r1_c1.png */; };
 		A41AE3C11DCA57150089231D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A41AE3C01DCA57150089231D /* Images.xcassets */; };
 		A42AB5C31D2DE061001387BB /* ChildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */; };
@@ -92,6 +91,55 @@
 		A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D904211D23810C0092D6AA /* EmbracedTextField.swift */; };
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
 		A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */; };
+		A4E3388C1DE6098B0010FC45 /* melodies 320ms diff(06).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3385B1DE6098B0010FC45 /* melodies 320ms diff(06).wav */; };
+		A4E3388D1DE6098B0010FC45 /* melodies 320ms diff(07).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3385C1DE6098B0010FC45 /* melodies 320ms diff(07).wav */; };
+		A4E3388E1DE6098B0010FC45 /* melodies 320ms diff(16).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3385D1DE6098B0010FC45 /* melodies 320ms diff(16).wav */; };
+		A4E3388F1DE6098B0010FC45 /* melodies 320ms diff(21).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3385E1DE6098B0010FC45 /* melodies 320ms diff(21).wav */; };
+		A4E338901DE6098B0010FC45 /* melodies 320ms diff(24).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3385F1DE6098B0010FC45 /* melodies 320ms diff(24).wav */; };
+		A4E338911DE6098B0010FC45 /* melodies 320ms diff(32).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338601DE6098B0010FC45 /* melodies 320ms diff(32).wav */; };
+		A4E338921DE6098B0010FC45 /* melodies 320ms diff(40).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338611DE6098B0010FC45 /* melodies 320ms diff(40).wav */; };
+		A4E338931DE6098B0010FC45 /* melodies 320ms diff(44).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338621DE6098B0010FC45 /* melodies 320ms diff(44).wav */; };
+		A4E338941DE6098B0010FC45 /* melodies 320ms diff(45).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338631DE6098B0010FC45 /* melodies 320ms diff(45).wav */; };
+		A4E338951DE6098B0010FC45 /* melodies 320ms diff(51).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338641DE6098B0010FC45 /* melodies 320ms diff(51).wav */; };
+		A4E338961DE6098B0010FC45 /* melodies 320ms diff(52).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338651DE6098B0010FC45 /* melodies 320ms diff(52).wav */; };
+		A4E338971DE6098C0010FC45 /* melodies 320ms diff(54).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338661DE6098B0010FC45 /* melodies 320ms diff(54).wav */; };
+		A4E338981DE6098C0010FC45 /* melodies 320ms diff(61).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338671DE6098B0010FC45 /* melodies 320ms diff(61).wav */; };
+		A4E338991DE6098C0010FC45 /* melodies 320ms diff(62).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338681DE6098B0010FC45 /* melodies 320ms diff(62).wav */; };
+		A4E3389A1DE6098C0010FC45 /* melodies 320ms diff(66).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338691DE6098B0010FC45 /* melodies 320ms diff(66).wav */; };
+		A4E3389B1DE6098C0010FC45 /* melodies 320ms diff(68).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3386A1DE6098B0010FC45 /* melodies 320ms diff(68).wav */; };
+		A4E3389C1DE6098C0010FC45 /* melodies 320ms diff(74).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3386B1DE6098B0010FC45 /* melodies 320ms diff(74).wav */; };
+		A4E3389D1DE6098C0010FC45 /* melodies 320ms diff(85).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3386C1DE6098B0010FC45 /* melodies 320ms diff(85).wav */; };
+		A4E3389E1DE6098C0010FC45 /* melodies 320ms orig(01).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3386D1DE6098B0010FC45 /* melodies 320ms orig(01).wav */; };
+		A4E3389F1DE6098C0010FC45 /* melodies 320ms orig(05).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3386E1DE6098B0010FC45 /* melodies 320ms orig(05).wav */; };
+		A4E338A01DE6098C0010FC45 /* melodies 320ms orig(06).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3386F1DE6098B0010FC45 /* melodies 320ms orig(06).wav */; };
+		A4E338A11DE6098C0010FC45 /* melodies 320ms orig(07).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338701DE6098B0010FC45 /* melodies 320ms orig(07).wav */; };
+		A4E338A21DE6098C0010FC45 /* melodies 320ms orig(16).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338711DE6098B0010FC45 /* melodies 320ms orig(16).wav */; };
+		A4E338A31DE6098C0010FC45 /* melodies 320ms orig(17).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338721DE6098B0010FC45 /* melodies 320ms orig(17).wav */; };
+		A4E338A41DE6098C0010FC45 /* melodies 320ms orig(21).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338731DE6098B0010FC45 /* melodies 320ms orig(21).wav */; };
+		A4E338A51DE6098C0010FC45 /* melodies 320ms orig(24).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338741DE6098B0010FC45 /* melodies 320ms orig(24).wav */; };
+		A4E338A61DE6098C0010FC45 /* melodies 320ms orig(26).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338751DE6098B0010FC45 /* melodies 320ms orig(26).wav */; };
+		A4E338A71DE6098C0010FC45 /* melodies 320ms orig(27).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338761DE6098B0010FC45 /* melodies 320ms orig(27).wav */; };
+		A4E338A81DE6098C0010FC45 /* melodies 320ms orig(32).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338771DE6098B0010FC45 /* melodies 320ms orig(32).wav */; };
+		A4E338A91DE6098C0010FC45 /* melodies 320ms orig(33).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338781DE6098B0010FC45 /* melodies 320ms orig(33).wav */; };
+		A4E338AA1DE6098C0010FC45 /* melodies 320ms orig(40).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338791DE6098B0010FC45 /* melodies 320ms orig(40).wav */; };
+		A4E338AB1DE6098C0010FC45 /* melodies 320ms orig(44).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3387A1DE6098B0010FC45 /* melodies 320ms orig(44).wav */; };
+		A4E338AC1DE6098C0010FC45 /* melodies 320ms orig(45).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3387B1DE6098B0010FC45 /* melodies 320ms orig(45).wav */; };
+		A4E338AD1DE6098C0010FC45 /* melodies 320ms orig(46).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3387C1DE6098B0010FC45 /* melodies 320ms orig(46).wav */; };
+		A4E338AE1DE6098C0010FC45 /* melodies 320ms orig(49).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3387D1DE6098B0010FC45 /* melodies 320ms orig(49).wav */; };
+		A4E338AF1DE6098C0010FC45 /* melodies 320ms orig(51).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3387E1DE6098B0010FC45 /* melodies 320ms orig(51).wav */; };
+		A4E338B01DE6098C0010FC45 /* melodies 320ms orig(52).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3387F1DE6098B0010FC45 /* melodies 320ms orig(52).wav */; };
+		A4E338B11DE6098C0010FC45 /* melodies 320ms orig(54).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338801DE6098B0010FC45 /* melodies 320ms orig(54).wav */; };
+		A4E338B21DE6098C0010FC45 /* melodies 320ms orig(60).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338811DE6098B0010FC45 /* melodies 320ms orig(60).wav */; };
+		A4E338B31DE6098C0010FC45 /* melodies 320ms orig(61).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338821DE6098B0010FC45 /* melodies 320ms orig(61).wav */; };
+		A4E338B41DE6098C0010FC45 /* melodies 320ms orig(62).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338831DE6098B0010FC45 /* melodies 320ms orig(62).wav */; };
+		A4E338B51DE6098C0010FC45 /* melodies 320ms orig(66).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338841DE6098B0010FC45 /* melodies 320ms orig(66).wav */; };
+		A4E338B61DE6098C0010FC45 /* melodies 320ms orig(68).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338851DE6098B0010FC45 /* melodies 320ms orig(68).wav */; };
+		A4E338B71DE6098C0010FC45 /* melodies 320ms orig(74).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338861DE6098B0010FC45 /* melodies 320ms orig(74).wav */; };
+		A4E338B81DE6098C0010FC45 /* melodies 320ms orig(82).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338871DE6098B0010FC45 /* melodies 320ms orig(82).wav */; };
+		A4E338B91DE6098C0010FC45 /* melodies 320ms orig(85).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338881DE6098B0010FC45 /* melodies 320ms orig(85).wav */; };
+		A4E338BA1DE6098C0010FC45 /* melodies 320ms orig(89).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E338891DE6098B0010FC45 /* melodies 320ms orig(89).wav */; };
+		A4E338BB1DE6098C0010FC45 /* melodies 320ms orig(90).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3388A1DE6098B0010FC45 /* melodies 320ms orig(90).wav */; };
+		A4E338BC1DE6098C0010FC45 /* melodies 320ms orig(91).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3388B1DE6098B0010FC45 /* melodies 320ms orig(91).wav */; };
 		A4FC1E991DD2BE4500F19D95 /* WordList2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */; };
 		A4FC1E9A1DD2BE4500F19D95 /* WordList2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */; };
 		DD7D49BC9E47B49E27EB6157 /* Pods_Embraced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */; };
@@ -99,7 +147,6 @@
 
 /* Begin PBXFileReference section */
 		9F375DDA1676C302A2C3E45B /* Pods-Embraced.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.debug.xcconfig"; sourceTree = "<group>"; };
-		A401C7FB1DE29DD5009C4B66 /* melodies_320ms_orig(16).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "melodies_320ms_orig(16).wav"; path = "../../../Downloads/melodies_320ms_orig(16).wav"; sourceTree = "<group>"; };
 		A414247E1D02C3F60028933E /* LOGO_r1_c1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO_r1_c1.png; sourceTree = "<group>"; };
 		A41AE3C01DCA57150089231D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildTableViewCell.swift; sourceTree = "<group>"; };
@@ -189,6 +236,55 @@
 		A4D904211D23810C0092D6AA /* EmbracedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbracedTextField.swift; sourceTree = "<group>"; };
 		A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		A4E3385B1DE6098B0010FC45 /* melodies 320ms diff(06).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(06).wav"; sourceTree = "<group>"; };
+		A4E3385C1DE6098B0010FC45 /* melodies 320ms diff(07).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(07).wav"; sourceTree = "<group>"; };
+		A4E3385D1DE6098B0010FC45 /* melodies 320ms diff(16).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(16).wav"; sourceTree = "<group>"; };
+		A4E3385E1DE6098B0010FC45 /* melodies 320ms diff(21).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(21).wav"; sourceTree = "<group>"; };
+		A4E3385F1DE6098B0010FC45 /* melodies 320ms diff(24).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(24).wav"; sourceTree = "<group>"; };
+		A4E338601DE6098B0010FC45 /* melodies 320ms diff(32).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(32).wav"; sourceTree = "<group>"; };
+		A4E338611DE6098B0010FC45 /* melodies 320ms diff(40).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(40).wav"; sourceTree = "<group>"; };
+		A4E338621DE6098B0010FC45 /* melodies 320ms diff(44).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(44).wav"; sourceTree = "<group>"; };
+		A4E338631DE6098B0010FC45 /* melodies 320ms diff(45).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(45).wav"; sourceTree = "<group>"; };
+		A4E338641DE6098B0010FC45 /* melodies 320ms diff(51).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(51).wav"; sourceTree = "<group>"; };
+		A4E338651DE6098B0010FC45 /* melodies 320ms diff(52).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(52).wav"; sourceTree = "<group>"; };
+		A4E338661DE6098B0010FC45 /* melodies 320ms diff(54).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(54).wav"; sourceTree = "<group>"; };
+		A4E338671DE6098B0010FC45 /* melodies 320ms diff(61).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(61).wav"; sourceTree = "<group>"; };
+		A4E338681DE6098B0010FC45 /* melodies 320ms diff(62).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(62).wav"; sourceTree = "<group>"; };
+		A4E338691DE6098B0010FC45 /* melodies 320ms diff(66).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(66).wav"; sourceTree = "<group>"; };
+		A4E3386A1DE6098B0010FC45 /* melodies 320ms diff(68).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(68).wav"; sourceTree = "<group>"; };
+		A4E3386B1DE6098B0010FC45 /* melodies 320ms diff(74).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(74).wav"; sourceTree = "<group>"; };
+		A4E3386C1DE6098B0010FC45 /* melodies 320ms diff(85).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(85).wav"; sourceTree = "<group>"; };
+		A4E3386D1DE6098B0010FC45 /* melodies 320ms orig(01).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(01).wav"; sourceTree = "<group>"; };
+		A4E3386E1DE6098B0010FC45 /* melodies 320ms orig(05).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(05).wav"; sourceTree = "<group>"; };
+		A4E3386F1DE6098B0010FC45 /* melodies 320ms orig(06).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(06).wav"; sourceTree = "<group>"; };
+		A4E338701DE6098B0010FC45 /* melodies 320ms orig(07).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(07).wav"; sourceTree = "<group>"; };
+		A4E338711DE6098B0010FC45 /* melodies 320ms orig(16).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(16).wav"; sourceTree = "<group>"; };
+		A4E338721DE6098B0010FC45 /* melodies 320ms orig(17).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(17).wav"; sourceTree = "<group>"; };
+		A4E338731DE6098B0010FC45 /* melodies 320ms orig(21).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(21).wav"; sourceTree = "<group>"; };
+		A4E338741DE6098B0010FC45 /* melodies 320ms orig(24).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(24).wav"; sourceTree = "<group>"; };
+		A4E338751DE6098B0010FC45 /* melodies 320ms orig(26).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(26).wav"; sourceTree = "<group>"; };
+		A4E338761DE6098B0010FC45 /* melodies 320ms orig(27).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(27).wav"; sourceTree = "<group>"; };
+		A4E338771DE6098B0010FC45 /* melodies 320ms orig(32).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(32).wav"; sourceTree = "<group>"; };
+		A4E338781DE6098B0010FC45 /* melodies 320ms orig(33).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(33).wav"; sourceTree = "<group>"; };
+		A4E338791DE6098B0010FC45 /* melodies 320ms orig(40).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(40).wav"; sourceTree = "<group>"; };
+		A4E3387A1DE6098B0010FC45 /* melodies 320ms orig(44).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(44).wav"; sourceTree = "<group>"; };
+		A4E3387B1DE6098B0010FC45 /* melodies 320ms orig(45).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(45).wav"; sourceTree = "<group>"; };
+		A4E3387C1DE6098B0010FC45 /* melodies 320ms orig(46).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(46).wav"; sourceTree = "<group>"; };
+		A4E3387D1DE6098B0010FC45 /* melodies 320ms orig(49).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(49).wav"; sourceTree = "<group>"; };
+		A4E3387E1DE6098B0010FC45 /* melodies 320ms orig(51).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(51).wav"; sourceTree = "<group>"; };
+		A4E3387F1DE6098B0010FC45 /* melodies 320ms orig(52).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(52).wav"; sourceTree = "<group>"; };
+		A4E338801DE6098B0010FC45 /* melodies 320ms orig(54).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(54).wav"; sourceTree = "<group>"; };
+		A4E338811DE6098B0010FC45 /* melodies 320ms orig(60).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(60).wav"; sourceTree = "<group>"; };
+		A4E338821DE6098B0010FC45 /* melodies 320ms orig(61).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(61).wav"; sourceTree = "<group>"; };
+		A4E338831DE6098B0010FC45 /* melodies 320ms orig(62).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(62).wav"; sourceTree = "<group>"; };
+		A4E338841DE6098B0010FC45 /* melodies 320ms orig(66).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(66).wav"; sourceTree = "<group>"; };
+		A4E338851DE6098B0010FC45 /* melodies 320ms orig(68).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(68).wav"; sourceTree = "<group>"; };
+		A4E338861DE6098B0010FC45 /* melodies 320ms orig(74).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(74).wav"; sourceTree = "<group>"; };
+		A4E338871DE6098B0010FC45 /* melodies 320ms orig(82).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(82).wav"; sourceTree = "<group>"; };
+		A4E338881DE6098B0010FC45 /* melodies 320ms orig(85).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(85).wav"; sourceTree = "<group>"; };
+		A4E338891DE6098B0010FC45 /* melodies 320ms orig(89).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(89).wav"; sourceTree = "<group>"; };
+		A4E3388A1DE6098B0010FC45 /* melodies 320ms orig(90).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(90).wav"; sourceTree = "<group>"; };
+		A4E3388B1DE6098B0010FC45 /* melodies 320ms orig(91).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(91).wav"; sourceTree = "<group>"; };
 		A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordList2ViewController.swift; path = controllers/WordList2ViewController.swift; sourceTree = "<group>"; };
 		A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordList2ViewController.xib; path = controllers/WordList2ViewController.xib; sourceTree = "<group>"; };
 		B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.release.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.release.xcconfig"; sourceTree = "<group>"; };
@@ -320,7 +416,7 @@
 		A48B4DD91CF9EEAB00878928 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A401C7FB1DE29DD5009C4B66 /* melodies_320ms_orig(16).wav */,
+				A4E337F61DE5FE5B0010FC45 /* pitchAudio */,
 				A4632C721DAE4629004B71BD /* speaker.png */,
 				A4773D0A1D9D849100E5CCEE /* listen.png */,
 				A4773D0C1D9D84A900E5CCEE /* play.png */,
@@ -377,6 +473,62 @@
 				A4AB688C1DE4D4730009808D /* DownloadMangager.swift */,
 			);
 			name = Customizations;
+			sourceTree = "<group>";
+		};
+		A4E337F61DE5FE5B0010FC45 /* pitchAudio */ = {
+			isa = PBXGroup;
+			children = (
+				A4E3385B1DE6098B0010FC45 /* melodies 320ms diff(06).wav */,
+				A4E3385C1DE6098B0010FC45 /* melodies 320ms diff(07).wav */,
+				A4E3385D1DE6098B0010FC45 /* melodies 320ms diff(16).wav */,
+				A4E3385E1DE6098B0010FC45 /* melodies 320ms diff(21).wav */,
+				A4E3385F1DE6098B0010FC45 /* melodies 320ms diff(24).wav */,
+				A4E338601DE6098B0010FC45 /* melodies 320ms diff(32).wav */,
+				A4E338611DE6098B0010FC45 /* melodies 320ms diff(40).wav */,
+				A4E338621DE6098B0010FC45 /* melodies 320ms diff(44).wav */,
+				A4E338631DE6098B0010FC45 /* melodies 320ms diff(45).wav */,
+				A4E338641DE6098B0010FC45 /* melodies 320ms diff(51).wav */,
+				A4E338651DE6098B0010FC45 /* melodies 320ms diff(52).wav */,
+				A4E338661DE6098B0010FC45 /* melodies 320ms diff(54).wav */,
+				A4E338671DE6098B0010FC45 /* melodies 320ms diff(61).wav */,
+				A4E338681DE6098B0010FC45 /* melodies 320ms diff(62).wav */,
+				A4E338691DE6098B0010FC45 /* melodies 320ms diff(66).wav */,
+				A4E3386A1DE6098B0010FC45 /* melodies 320ms diff(68).wav */,
+				A4E3386B1DE6098B0010FC45 /* melodies 320ms diff(74).wav */,
+				A4E3386C1DE6098B0010FC45 /* melodies 320ms diff(85).wav */,
+				A4E3386D1DE6098B0010FC45 /* melodies 320ms orig(01).wav */,
+				A4E3386E1DE6098B0010FC45 /* melodies 320ms orig(05).wav */,
+				A4E3386F1DE6098B0010FC45 /* melodies 320ms orig(06).wav */,
+				A4E338701DE6098B0010FC45 /* melodies 320ms orig(07).wav */,
+				A4E338711DE6098B0010FC45 /* melodies 320ms orig(16).wav */,
+				A4E338721DE6098B0010FC45 /* melodies 320ms orig(17).wav */,
+				A4E338731DE6098B0010FC45 /* melodies 320ms orig(21).wav */,
+				A4E338741DE6098B0010FC45 /* melodies 320ms orig(24).wav */,
+				A4E338751DE6098B0010FC45 /* melodies 320ms orig(26).wav */,
+				A4E338761DE6098B0010FC45 /* melodies 320ms orig(27).wav */,
+				A4E338771DE6098B0010FC45 /* melodies 320ms orig(32).wav */,
+				A4E338781DE6098B0010FC45 /* melodies 320ms orig(33).wav */,
+				A4E338791DE6098B0010FC45 /* melodies 320ms orig(40).wav */,
+				A4E3387A1DE6098B0010FC45 /* melodies 320ms orig(44).wav */,
+				A4E3387B1DE6098B0010FC45 /* melodies 320ms orig(45).wav */,
+				A4E3387C1DE6098B0010FC45 /* melodies 320ms orig(46).wav */,
+				A4E3387D1DE6098B0010FC45 /* melodies 320ms orig(49).wav */,
+				A4E3387E1DE6098B0010FC45 /* melodies 320ms orig(51).wav */,
+				A4E3387F1DE6098B0010FC45 /* melodies 320ms orig(52).wav */,
+				A4E338801DE6098B0010FC45 /* melodies 320ms orig(54).wav */,
+				A4E338811DE6098B0010FC45 /* melodies 320ms orig(60).wav */,
+				A4E338821DE6098B0010FC45 /* melodies 320ms orig(61).wav */,
+				A4E338831DE6098B0010FC45 /* melodies 320ms orig(62).wav */,
+				A4E338841DE6098B0010FC45 /* melodies 320ms orig(66).wav */,
+				A4E338851DE6098B0010FC45 /* melodies 320ms orig(68).wav */,
+				A4E338861DE6098B0010FC45 /* melodies 320ms orig(74).wav */,
+				A4E338871DE6098B0010FC45 /* melodies 320ms orig(82).wav */,
+				A4E338881DE6098B0010FC45 /* melodies 320ms orig(85).wav */,
+				A4E338891DE6098B0010FC45 /* melodies 320ms orig(89).wav */,
+				A4E3388A1DE6098B0010FC45 /* melodies 320ms orig(90).wav */,
+				A4E3388B1DE6098B0010FC45 /* melodies 320ms orig(91).wav */,
+			);
+			name = pitchAudio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,37 +601,81 @@
 			files = (
 				A490D7D41D0919CB00D2B59D /* Roboto-Bold.ttf in Resources */,
 				A490D7D81D0919CB00D2B59D /* Roboto-LightItalic.ttf in Resources */,
+				A4E338AF1DE6098C0010FC45 /* melodies 320ms orig(51).wav in Resources */,
+				A4E338B91DE6098C0010FC45 /* melodies 320ms orig(85).wav in Resources */,
+				A4E338A51DE6098C0010FC45 /* melodies 320ms orig(24).wav in Resources */,
+				A4E338991DE6098C0010FC45 /* melodies 320ms diff(62).wav in Resources */,
 				A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */,
+				A4E3388F1DE6098B0010FC45 /* melodies 320ms diff(21).wav in Resources */,
 				A4347FD21D7BCA950033306A /* MatricesViewController.xib in Resources */,
+				A4E338BB1DE6098C0010FC45 /* melodies 320ms orig(90).wav in Resources */,
 				A490D7DA1D0919CB00D2B59D /* Roboto-MediumItalic.ttf in Resources */,
+				A4E338951DE6098B0010FC45 /* melodies 320ms diff(51).wav in Resources */,
+				A4E338A31DE6098C0010FC45 /* melodies 320ms orig(17).wav in Resources */,
 				A4C71C0E1D33570100CD5FB1 /* Embraced_bg.png in Resources */,
 				A490D7D61D0919CB00D2B59D /* Roboto-Italic.ttf in Resources */,
+				A4E338941DE6098B0010FC45 /* melodies 320ms diff(45).wav in Resources */,
+				A4E3388D1DE6098B0010FC45 /* melodies 320ms diff(07).wav in Resources */,
+				A4E338B31DE6098C0010FC45 /* melodies 320ms orig(61).wav in Resources */,
 				A4347FE41D7BCC170033306A /* MultipleErrandsViewController.xib in Resources */,
 				A46C14181D7999AF0066EF37 /* CancellationTestViewController.xib in Resources */,
 				A4632C731DAE4629004B71BD /* speaker.png in Resources */,
 				A4347FD61D7BCABC0033306A /* PegboardViewController.xib in Resources */,
 				A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */,
+				A4E3388E1DE6098B0010FC45 /* melodies 320ms diff(16).wav in Resources */,
 				A490D7D71D0919CB00D2B59D /* Roboto-Light.ttf in Resources */,
+				A4E3389D1DE6098C0010FC45 /* melodies 320ms diff(85).wav in Resources */,
+				A4E338931DE6098B0010FC45 /* melodies 320ms diff(44).wav in Resources */,
+				A4E3389C1DE6098C0010FC45 /* melodies 320ms diff(74).wav in Resources */,
+				A4E338AD1DE6098C0010FC45 /* melodies 320ms orig(46).wav in Resources */,
+				A4E338BA1DE6098C0010FC45 /* melodies 320ms orig(89).wav in Resources */,
+				A4E338A01DE6098C0010FC45 /* melodies 320ms orig(06).wav in Resources */,
+				A4E338901DE6098B0010FC45 /* melodies 320ms diff(24).wav in Resources */,
 				A4347FCE1D7BCA570033306A /* ReyFigureComplex4ViewController.xib in Resources */,
 				A46C14241D79AA7C0066EF37 /* ClockDrawingTestViewController.xib in Resources */,
 				A48B4DD21CF9E7C700878928 /* LaunchScreen.storyboard in Resources */,
+				A4E3388C1DE6098B0010FC45 /* melodies 320ms diff(06).wav in Resources */,
 				A4347FC61D7BC9FC0033306A /* ReyComplexFigure3ViewController.xib in Resources */,
 				A490D7D51D0919CB00D2B59D /* Roboto-BoldItalic.ttf in Resources */,
+				A4E338B71DE6098C0010FC45 /* melodies 320ms orig(74).wav in Resources */,
+				A4E338A61DE6098C0010FC45 /* melodies 320ms orig(26).wav in Resources */,
+				A4E338B11DE6098C0010FC45 /* melodies 320ms orig(54).wav in Resources */,
 				A47EB6E41DA65FFB00A68AF6 /* FinishedViewController.xib in Resources */,
+				A4E338B61DE6098C0010FC45 /* melodies 320ms orig(68).wav in Resources */,
+				A4E3389A1DE6098C0010FC45 /* melodies 320ms diff(66).wav in Resources */,
 				A490D7D31D0919CB00D2B59D /* Roboto-BlackItalic.ttf in Resources */,
+				A4E338B51DE6098C0010FC45 /* melodies 320ms orig(66).wav in Resources */,
+				A4E338A91DE6098C0010FC45 /* melodies 320ms orig(33).wav in Resources */,
 				A4FC1E9A1DD2BE4500F19D95 /* WordList2ViewController.xib in Resources */,
+				A4E338A81DE6098C0010FC45 /* melodies 320ms orig(32).wav in Resources */,
+				A4E338AE1DE6098C0010FC45 /* melodies 320ms orig(49).wav in Resources */,
 				A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */,
+				A4E338981DE6098C0010FC45 /* melodies 320ms diff(61).wav in Resources */,
+				A4E338AA1DE6098C0010FC45 /* melodies 320ms orig(40).wav in Resources */,
 				A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */,
+				A4E338961DE6098B0010FC45 /* melodies 320ms diff(52).wav in Resources */,
+				A4E338A21DE6098C0010FC45 /* melodies 320ms orig(16).wav in Resources */,
+				A4E3389F1DE6098C0010FC45 /* melodies 320ms orig(05).wav in Resources */,
 				A4347FC21D7BC9E20033306A /* StroopViewController.xib in Resources */,
 				A4773D0B1D9D849100E5CCEE /* listen.png in Resources */,
 				A4A794381D68F62800305AB4 /* Localizable.strings in Resources */,
+				A4E3389E1DE6098C0010FC45 /* melodies 320ms orig(01).wav in Resources */,
+				A4E338A11DE6098C0010FC45 /* melodies 320ms orig(07).wav in Resources */,
 				A4773D0F1D9D84B200E5CCEE /* record.png in Resources */,
+				A4E338A71DE6098C0010FC45 /* melodies 320ms orig(27).wav in Resources */,
+				A4E338A41DE6098C0010FC45 /* melodies 320ms orig(21).wav in Resources */,
+				A4E338921DE6098B0010FC45 /* melodies 320ms diff(40).wav in Resources */,
 				A4347FE01D7BCB800033306A /* NamingTaskViewController.xib in Resources */,
+				A4E338AB1DE6098C0010FC45 /* melodies 320ms orig(44).wav in Resources */,
 				A4BB08ED1D7EDFFA00B76C64 /* QuestionnaireViewController.xib in Resources */,
+				A4E338BC1DE6098C0010FC45 /* melodies 320ms orig(91).wav in Resources */,
+				A4E338B01DE6098C0010FC45 /* melodies 320ms orig(52).wav in Resources */,
 				A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */,
 				A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */,
+				A4E338971DE6098C0010FC45 /* melodies 320ms diff(54).wav in Resources */,
 				A490D7D91D0919CB00D2B59D /* Roboto-Medium.ttf in Resources */,
 				A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */,
+				A4E338B41DE6098C0010FC45 /* melodies 320ms orig(62).wav in Resources */,
 				A4773D0D1D9D84A900E5CCEE /* play.png in Resources */,
 				A4347FE81D7BCC4C0033306A /* ComprehensionViewController.xib in Resources */,
 				A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */,
@@ -487,15 +683,19 @@
 				A46C14201D79AA110066EF37 /* ReyComplexFigureViewController.xib in Resources */,
 				A4347FDA1D7BCAFB0033306A /* PitchViewController.xib in Resources */,
 				A490D7D21D0919CB00D2B59D /* Roboto-Black.ttf in Resources */,
+				A4E338B81DE6098C0010FC45 /* melodies 320ms orig(82).wav in Resources */,
+				A4E3389B1DE6098C0010FC45 /* melodies 320ms diff(68).wav in Resources */,
 				A4347FDE1D7BCB260033306A /* WordListViewController.xib in Resources */,
 				A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */,
+				A4E338911DE6098B0010FC45 /* melodies 320ms diff(32).wav in Resources */,
 				A41AE3C11DCA57150089231D /* Images.xcassets in Resources */,
 				A4347FCA1D7BCA280033306A /* DigitalSpanViewController.xib in Resources */,
 				A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */,
 				A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */,
-				A401C7FC1DE29DD5009C4B66 /* melodies_320ms_orig(16).wav in Resources */,
+				A4E338B21DE6098C0010FC45 /* melodies 320ms orig(60).wav in Resources */,
 				A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */,
 				A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */,
+				A4E338AC1DE6098C0010FC45 /* melodies 320ms orig(45).wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

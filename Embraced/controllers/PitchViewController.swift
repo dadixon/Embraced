@@ -107,8 +107,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         // Fetch audios
 //        examples = appDelegate.pitchStimuli["examples"] as! Array<Array<String>>
         examples = appDelegate.pitchExamples
-        trials = appDelegate.pitchStimuli["trials"] as! Array<Array<String>>
-        tasks = appDelegate.pitchStimuli["tasks"] as! Array<Array<String>>
+        trials = appDelegate.pitchTrials
+        tasks = appDelegate.pitchTasks
         
         loadingView.stopAnimating()
     }
@@ -122,10 +122,10 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     func play(_ filename:String) {
         do {
-//            let filename = "melodies-320ms-orig(16).wav"
-//            let path = Bundle.main.path(forResource: "melodies-320ms-orig(16).wav", ofType: nil)
-//            let url = URL(fileURLWithPath: path!)
-            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(filename))
+            let path = Bundle.main.path(forResource: "melodies 320ms orig(16).wav", ofType: nil)
+            let url = URL(fileURLWithPath: path!)
+            soundPlayer = try AVAudioPlayer(contentsOf: url)
+//            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(url!))
             soundPlayer.delegate = self
             soundPlayer.prepareToPlay()
             soundPlayer.volume = 1.0
