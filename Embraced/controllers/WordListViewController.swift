@@ -109,7 +109,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         }
         
         // Fetch audios
-        trials = appDelegate.wordlistStimuli["trials"] as! Array<String>
+        trials = appDelegate.wordListTrials
         
         loadingView.stopAnimating()
     }
@@ -199,11 +199,11 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         }
     }
     
-    func play(_ url:NSURL) {
-        print("playing \(url)")
-        
+    func play(_ filename:String) {
         do {
-            soundPlayer = try AVAudioPlayer(contentsOf: url as URL)
+            let path = Bundle.main.path(forResource: filename, ofType: nil)
+            let url = URL(fileURLWithPath: path!)
+            soundPlayer = try AVAudioPlayer(contentsOf: url)
             soundPlayer.delegate = self
             soundPlayer.prepareToPlay()
             soundPlayer.volume = 1.0
@@ -217,15 +217,6 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         
     }
     
-    func downloadFileFromURL(url:NSURL){
-        var downloadTask:URLSessionDownloadTask
-        downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
-            self.play(URL! as NSURL)
-        })
-        
-        downloadTask.resume()
-        
-    }
     
     func log(logMessage: String, functionName: String = #function) {
         print("\(functionName): \(logMessage)")
@@ -253,12 +244,10 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
             var url = NSURL()
             
             if position < 5 {
-                url = NSURL(string: trials[0])!
+                self.play(trials[0])
             } else {
-                url = NSURL(string: trials[1])!
+                self.play(trials[1])
             }
-            
-            downloadFileFromURL(url: url)
         }
     }
     

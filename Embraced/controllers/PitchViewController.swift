@@ -105,7 +105,6 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         
         
         // Fetch audios
-//        examples = appDelegate.pitchStimuli["examples"] as! Array<Array<String>>
         examples = appDelegate.pitchExamples
         trials = appDelegate.pitchTrials
         tasks = appDelegate.pitchTasks
@@ -122,10 +121,9 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     func play(_ filename:String) {
         do {
-            let path = Bundle.main.path(forResource: "melodies 320ms orig(16).wav", ofType: nil)
+            let path = Bundle.main.path(forResource: filename, ofType: nil)
             let url = URL(fileURLWithPath: path!)
             soundPlayer = try AVAudioPlayer(contentsOf: url)
-//            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(url!))
             soundPlayer.delegate = self
             soundPlayer.prepareToPlay()
             soundPlayer.volume = 1.0
@@ -139,31 +137,13 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         
     }
     
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
-    }
-    
-//    func downloadFileFromURL(url:NSURL){
-//        var downloadTask:URLSessionDownloadTask
-//        downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
-//            if error != nil {
-//                print(error!.localizedDescription)
-//            }
-//            print(URL! as NSURL)
-//            self.play(URL! as NSURL)
-//        })
-//        
-//        downloadTask.resume()
-//    }
-    
     private func setupSounds(_ soundArray: Array<Array<String>>, iterator: Int, label: UILabel) {
         if soundPlayer != nil {
             soundPlayer.stop()
         }
         
         played = false
+        resetTimer()
         
         if soundArray[iterator].count > 1 {
             firstSound = soundArray[iterator][1]
@@ -176,9 +156,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         print(firstSound)
         print(secondSound)
         
-//        let url = NSURL(string: firstSound)
         self.play(firstSound)
-//        downloadFileFromURL(url: url!)
         soundLabel = label
         soundLabel.text = "1"
     }
@@ -210,10 +188,9 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
             soundPlayer.stop()
         }
         
+        resetTimer()
         played = false
-        play(firstSound)
-//        let url = NSURL(string: firstSound)
-//        downloadFileFromURL(url: url!)
+        self.play(firstSound)
         soundLabel.text = "1"
     }
     
@@ -344,41 +321,10 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     func updateTime() {
         if self.played == false {
             self.soundLabel.text = "2"
-//            let url = NSURL(string: self.secondSound)
-//            self.downloadFileFromURL(url: url!)
             play(secondSound)
         }
         
         self.played = true
-        
-//        let currentTime = Date.timeIntervalSinceReferenceDate
-//        
-//        var elapsedTime : TimeInterval = currentTime - startTime
-//        
-//        //calculate the minutes in elapsed time
-//        
-//        let minutes = UInt8(elapsedTime / 60.0)
-//        elapsedTime -= (TimeInterval(minutes) * 60)
-//        
-//        //calculate the seconds in elapsed time
-//        
-//        let seconds = UInt8(elapsedTime)
-//        elapsedTime -= TimeInterval(seconds)
-//        
-//        if seconds >= 15 {
-//            timerCount.text = String(timeCount)
-//            
-//            if timeCount == 0 {
-//                nextTask(self)
-//                resetTimer()
-//                startTimer()
-//                timeCount = 5
-//                timerCount.text = ""
-//            } else {
-//                timeCount -= 1
-//            }
-//        }
-        
     }
     
     func startTimer() {
@@ -387,8 +333,6 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
             let aSelector : Selector = #selector(NamingTaskViewController.updateTime)
             
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
-            
-//            startTime = Date.timeIntervalSinceReferenceDate
         }
     }
     

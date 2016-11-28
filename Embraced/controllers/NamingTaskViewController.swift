@@ -63,8 +63,8 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         
         super.viewDidLoad()
 
-        practice = appDelegate.namingTaskStimuli["practice"] as! Array<String>
-        task = appDelegate.namingTaskStimuli["tasks"] as! Array<String>
+        practice = appDelegate.namingTaskPractice
+        task = appDelegate.namingTaskTask
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(NamingTaskViewController.next(_:)))
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ReyComplexFigureViewController.back(_:)))
@@ -95,26 +95,8 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         // Dispose of any resources that can be recreated.
     }
     
-    func loadImageFromUrl(_ url: String, view: UIImageView){
-        
-        // Create Url from string
-        let url = URL(string: url)!
-        
-        // Download task:
-        // - sharedSession = global NSURLCache, NSHTTPCookieStorage and NSURLCredentialStorage objects.
-        let task = URLSession.shared.dataTask(with: url, completionHandler: { (responseData, responseUrl, error) -> Void in
-            // if responseData is not null...
-            if let data = responseData{
-                
-                // execute in UI thread
-                DispatchQueue.main.async(execute: { () -> Void in
-                    view.image = UIImage(data: data)
-                })
-            }
-        }) 
-        
-        // Run task
-        task.resume()
+    func loadImageFromUrl(_ filename: String, view: UIImageView) {
+        view.image = UIImage(named: filename)
     }
     
     func startRecording(_ button: UIButton, fileName: String) {
@@ -170,22 +152,22 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         }
     }
     
-    func play(_ url:NSURL) {
-        print("playing \(url)")
-        
-        do {
-            soundPlayer = try AVAudioPlayer(contentsOf: url as URL)
-            soundPlayer.prepareToPlay()
-            soundPlayer.volume = 1.0
-            soundPlayer.play()
-        } catch let error as NSError {
-            //self.player = nil
-            print(error.localizedDescription)
-        } catch {
-            print("AVAudioPlayer init failed")
-        }
-        
-    }
+//    func play(_ url:NSURL) {
+//        print("playing \(url)")
+//        
+//        do {
+//            soundPlayer = try AVAudioPlayer(contentsOf: url as URL)
+//            soundPlayer.prepareToPlay()
+//            soundPlayer.volume = 1.0
+//            soundPlayer.play()
+//        } catch let error as NSError {
+//            //self.player = nil
+//            print(error.localizedDescription)
+//        } catch {
+//            print("AVAudioPlayer init failed")
+//        }
+//        
+//    }
     
     func log(logMessage: String, functionName: String = #function) {
         print("\(functionName): \(logMessage)")
@@ -294,6 +276,14 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         }
     }
     
+    @IBAction func recordTask(_ sender: AnyObject) {
+        if soundRecorder == nil {
+            startRecording(sender as! UIButton, fileName: "namingTask\(count).m4a")
+        } else {
+            finishRecording(sender as! UIButton, success: true)
+        }
+    }
+    
     @IBAction func playSound(_ sender: UIButton) {
         if sender.titleLabel!.text == "Play" {
             recordBtn.isEnabled = false
@@ -331,46 +321,43 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     @IBAction func nextTask(_ sender: AnyObject) {
         count += 1
         
-        // Send post audio to API
-        let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent(fileName))
-        print(soundData! as NSData)
-        let dataStr = soundData?.base64EncodedString(options: [])
-        print(dataStr! as String)
-            
-            
-        
-        var jsonObject = [String: AnyObject]()
-        
-        // Gather data for post
-        jsonObject = [
-            "id": participant.string(forKey: "pid")! as AnyObject,
-            "name": "naming_task\(count)" as AnyObject,
-            "soundByte": dataStr as AnyObject
-        ]
-            
-            
-        print(jsonObject)
-            
-        // Push to API
-        let notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/participant/" + participant.string(forKey: "pid")! + "/naming_task")!
-        let request = NSMutableURLRequest(url: notesEndpoint as URL)
-            
-        request.httpMethod = "POST"
-        request.httpBody = try? JSONSerialization.data(withJSONObject: jsonObject, options: [])
-        request.setValue("application/json" , forHTTPHeaderField: "Content-Type")
-            
-        let taskSession = URLSession.shared.dataTask(with: request as URLRequest)
-            
-        taskSession.resume()
-        
         if count < task.count {
             loadImageFromUrl(task[count], view: taskImageView)
             resetTimer()
             startTimer()
         } else {
-            let multipleErrandsViewController:ComprehensionViewController = ComprehensionViewController()
-            self.navigationController?.pushViewController(multipleErrandsViewController, animated: true)
+            resetTimer()
+            APIWrapper.post(id: participant.string(forKey: "pid")!, test: "naming_task", data: createPostObject())
+//            let multipleErrandsViewController:ComprehensionViewController = ComprehensionViewController()
+//            self.navigationController?.pushViewController(multipleErrandsViewController, animated: true)
         }
+    }
+    
+    func createPostObject() -> [String: AnyObject] {
+        var jsonObject = [String: AnyObject]()
+        var jsonTask = [AnyObject]()
+        var jsonTaskObject = [String: AnyObject]()
+        
+        for i in 0...count {
+            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("namingTask\(i).m4a"))
+            let dataStr = soundData?.base64EncodedString(options: [])
+            
+            jsonTaskObject = [
+                "name": "task\(i+1)" as AnyObject,
+                "soundByte": dataStr as AnyObject
+            ]
+            
+            jsonTask.append(jsonTaskObject as AnyObject)
+        }
+        
+        
+        // Gather data for post
+        jsonObject = [
+            "id": participant.string(forKey: "pid")! as AnyObject,
+            "task": jsonTask as AnyObject
+        ]
+        
+        return jsonObject
     }
 }
 

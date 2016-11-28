@@ -90,7 +90,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
         
         
         // Fetch audios
-        tasks = appDelegate.wordlistStimuli["tasks"] as! Array<String>
+        tasks = appDelegate.wordListTasks
         
         loadingView.stopAnimating()
     }
@@ -159,9 +159,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
             resetTimer()
             countLabel.text = ""
             
-            let url = NSURL(string: tasks[position])!
-            
-            downloadFileFromURL(url: url)
+            self.play(tasks[position])
         }
     }
     
@@ -169,21 +167,12 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
         timer.invalidate()
     }
     
-    func downloadFileFromURL(url:NSURL){
-        var downloadTask:URLSessionDownloadTask
-        downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
-            self.play(URL! as NSURL)
-        })
-        
-        downloadTask.resume()
-        
-    }
     
-    func play(_ url:NSURL) {
-        print("playing \(url)")
-        
+    func play(_ filename:String) {
         do {
-            soundPlayer = try AVAudioPlayer(contentsOf: url as URL)
+            let path = Bundle.main.path(forResource: filename, ofType: nil)
+            let url = URL(fileURLWithPath: path!)
+            soundPlayer = try AVAudioPlayer(contentsOf: url)
             soundPlayer.delegate = self
             soundPlayer.prepareToPlay()
             soundPlayer.volume = 1.0

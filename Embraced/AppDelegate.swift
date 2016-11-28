@@ -17,17 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var navController: UINavigationController?
     var window: UIWindow?
 
-    var stimuli = [String: Any]()
-    var namingTaskStimuli = [String: Any]()
-    var digitalSpanStimuli = [String: Any]()
-    var pitchStimuli = [String: Any]()
-    var stroopStimuli = [String: Any]()
-    var wordlistStimuli = [String: Any]()
-    var practice = Array<String>()
-    var task = Array<String>()
+    
     var pitchExamples = Array<Array<String>>()
     var pitchTrials = Array<Array<String>>()
     var pitchTasks = Array<Array<String>>()
+    var digitalSpanForward = Array<String>()
+    var digitalSpanBackward = Array<String>()
+    var wordListTrials = Array<String>()
+    var wordListTasks = Array<String>()
+    var stroopImages = Array<String>()
+    var stroopVideos = Array<String>()
+    var namingTaskPractice = Array<String>()
+    var namingTaskTask = Array<String>()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let APIURL = "http://api.girlscouts.harryatwal.com"

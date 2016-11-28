@@ -21,6 +21,15 @@ class UserInputViewController: UIViewController {
     @IBOutlet weak var floorTextField: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
     
+    var stimuli = [String: Any]()
+    var namingTaskStimuli = [String: Any]()
+    var digitalSpanStimuli = [String: Any]()
+    var pitchStimuli = [String: Any]()
+    var stroopStimuli = [String: Any]()
+    var wordlistStimuli = [String: Any]()
+    var practice = Array<String>()
+    var task = Array<String>()
+    
     let participant = UserDefaults.standard
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -53,7 +62,7 @@ class UserInputViewController: UIViewController {
         
         if Reachability.isConnectedToNetwork() == true {
             /* Preloading data  */
-            let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/stimuli")!
+            let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/stimuliNames")!
             let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
             let session = URLSession.shared
             let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
@@ -66,81 +75,33 @@ class UserInputViewController: UIViewController {
                     print("Everyone is fine, file downloaded successfully.")
                     
                     do {
-                        self.appDelegate.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String: Any]
-                        self.appDelegate.namingTaskStimuli = self.appDelegate.stimuli["naming_task"] as! [String: Any]
-                        self.appDelegate.digitalSpanStimuli = self.appDelegate.stimuli["digital_span"] as! [String: Any]
-                        self.appDelegate.pitchStimuli = self.appDelegate.stimuli["pitch"] as! [String: Any]
-                        self.appDelegate.stroopStimuli = self.appDelegate.stimuli["stroop"] as! [String: Any]
-                        self.appDelegate.wordlistStimuli = self.appDelegate.stimuli["wordlist"] as! [String: Any]
+                        self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String: Any]
+                        self.namingTaskStimuli = self.stimuli["naming_task"] as! [String: Any]
+                        self.digitalSpanStimuli = self.stimuli["digital_span"] as! [String: Any]
+                        self.pitchStimuli = self.stimuli["pitch"] as! [String: Any]
+                        self.stroopStimuli = self.stimuli["stroop"] as! [String: Any]
+                        self.wordlistStimuli = self.stimuli["wordlist"] as! [String: Any]
                         
+                        // Pitch
+                        self.appDelegate.pitchExamples = self.pitchStimuli["examples"] as! Array<Array<String>>
+                        self.appDelegate.pitchTrials = self.pitchStimuli["trials"] as! Array<Array<String>>
+                        self.appDelegate.pitchTasks = self.pitchStimuli["tasks"] as! Array<Array<String>>
                         
-                        // Download audio files
-                        self.examples = self.appDelegate.pitchStimuli["examples"] as! Array<Array<String>>
-                        self.trials = self.appDelegate.pitchStimuli["trials"] as! Array<Array<String>>
-                        self.tasks = self.appDelegate.pitchStimuli["tasks"] as! Array<Array<String>>
+                        // Digital Span
+                        self.appDelegate.digitalSpanForward = self.digitalSpanStimuli["forward"] as! Array<String>
+                        self.appDelegate.digitalSpanBackward = self.digitalSpanStimuli["backward"] as! Array<String>
                         
-//                        let queue = OperationQueue()
-//                        queue.name = "Download queue"
-//                        queue.maxConcurrentOperationCount = 1
+                        // Word List
+                        self.appDelegate.wordListTrials = self.wordlistStimuli["trials"] as! Array<String>
+                        self.appDelegate.wordListTasks = self.wordlistStimuli["tasks"] as! Array<String>
                         
-//                        for index in 0...self.examples.count-1 {
-//                            for audio in 0...self.examples[index].count-1 {
-//                                print(self.examples[index][audio])
-//                                let url = URL(fileURLWithPath: self.examples[index][audio])
-//                                queue.addOperation(DownloadOperation(session: URLSession.shared, URL: NSURL(string:self.examples[index][audio]) as! URL))
-//                                self.examples[index][audio] = url.lastPathComponent
-//                            }
-//                        }
-//                        
-//                        for index in 0...self.trials.count-1 {
-//                            for audio in 0...self.trials[index].count-1 {
-//                                print(self.trials[index][audio])
-//                                let url = URL(fileURLWithPath: self.trials[index][audio])
-//                                queue.addOperation(DownloadOperation(session: URLSession.shared, URL: NSURL(string:self.trials[index][audio]) as! URL))
-//                                self.trials[index][audio] = url.lastPathComponent
-//                            }
-//                        }
-//                        
-//                        for index in 0...self.tasks.count-1 {
-//                            for audio in 0...self.tasks[index].count-1 {
-//                                print(self.trials[index][audio])
-//                                let url = URL(fileURLWithPath: self.tasks[index][audio])
-//                                queue.addOperation(DownloadOperation(session: URLSession.shared, URL: NSURL(string:self.tasks[index][audio]) as! URL))
-//                                self.tasks[index][audio] = url.lastPathComponent
-//                            }
-//                        }
+                        // Stroop
+                        self.appDelegate.stroopImages = self.stroopStimuli["images"] as! Array<String>
+                        self.appDelegate.stroopVideos = self.stroopStimuli["videos"] as! Array<String>
                         
-                        for index in 0...self.examples.count-1 {
-                            for audio in 0...self.examples[index].count-1 {
-//                                let nsurl = NSURL(string: self.examples[index][audio])
-//                                let _ = self.downloadManager.addDownload(URL: nsurl!)
-                                let url = URL(fileURLWithPath: self.examples[index][audio])
-                                self.examples[index][audio] = url.lastPathComponent
-                            }
-                        }
-                        
-                        for index in 0...self.trials.count-1 {
-                            for audio in 0...self.trials[index].count-1 {
-//                                let nsurl = NSURL(string: self.trials[index][audio])
-//                                let _ = self.downloadManager.addDownload(URL: nsurl!)
-                                let url = URL(fileURLWithPath: self.trials[index][audio])
-                                self.trials[index][audio] = url.lastPathComponent
-                            }
-                        }
-                        
-                        for index in 0...self.tasks.count-1 {
-                            for audio in 0...self.tasks[index].count-1 {
-//                                let nsurl = NSURL(string: self.tasks[index][audio])
-//                                let _ = self.downloadManager.addDownload(URL: nsurl!)
-                                let url = URL(fileURLWithPath: self.tasks[index][audio])
-                                self.tasks[index][audio] = url.lastPathComponent
-                            }
-                        }
-                        
-                        print(self.examples)
-                        self.appDelegate.pitchExamples = self.examples
-                        self.appDelegate.pitchTrials = self.trials
-                        self.appDelegate.pitchTasks = self.tasks
+                        // Naming Task
+                        self.appDelegate.namingTaskPractice = self.namingTaskStimuli["practice"] as! Array<String>
+                        self.appDelegate.namingTaskTask = self.namingTaskStimuli["tasks"] as! Array<String>
                         
                     }catch {
                         print("Error with Json: \(error)")
@@ -149,10 +110,6 @@ class UserInputViewController: UIViewController {
             })
             
             task.resume()
-            
-            
-            
-            
         }
     }
     

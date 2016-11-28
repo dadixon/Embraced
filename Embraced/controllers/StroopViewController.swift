@@ -136,8 +136,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         }
         
         // Grab images from the api
-        images = appDelegate.stroopStimuli["images"] as! Array<String>
-        videos = appDelegate.stroopStimuli["videos"] as! Array<String>
+        images = appDelegate.stroopImages
+        videos = appDelegate.stroopVideos
         
         myMutableString2 = NSMutableAttributedString(string: myString2, attributes: [NSFontAttributeName:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
         myMutableString2.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 18), range: NSRange(location:51,length:5))
@@ -237,11 +237,12 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         }
     }
     
-    func play(_ url:NSURL) {
-        print("playing \(url)")
-        
+    func play(_ filename:String) {
         do {
-            soundPlayer = try AVAudioPlayer(contentsOf: url as URL)
+            let path = Bundle.main.path(forResource: filename, ofType: nil)
+            let url = URL(fileURLWithPath: path!)
+            soundPlayer = try AVAudioPlayer(contentsOf: url)
+            soundPlayer.delegate = self
             soundPlayer.prepareToPlay()
             soundPlayer.volume = 1.0
             soundPlayer.play()
@@ -251,16 +252,6 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         } catch {
             print("AVAudioPlayer init failed")
         }
-        
-    }
-    
-    func downloadFileFromURL(url:NSURL){
-        var downloadTask:URLSessionDownloadTask
-        downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
-            self.play(URL! as NSURL)
-        })
-        
-        downloadTask.resume()
         
     }
     
@@ -391,11 +382,14 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     }
     
     @IBAction func playVideo(_ sender: AnyObject) {
-        let fileURL = NSURL(string: videos[sender.tag])!
-        playVideoFile(url: fileURL, index: sender.tag)
+//        let fileURL = NSURL(string: videos[sender.tag])!
+        playVideoFile(filename: videos[sender.tag], index: sender.tag)
     }
     
-    func playVideoFile(url: NSURL, index: Int){
+    func playVideoFile(filename: String, index: Int) {
+        let path = Bundle.main.path(forResource: filename, ofType: nil)
+        let url = URL(fileURLWithPath: path!)
+        
         player = AVPlayer(url: url as URL)
         
         playerController.delegate = self
