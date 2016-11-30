@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -48,15 +51,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Rr-JW-3tU">
+                    <rect key="frame" x="8" y="65" width="752" height="951"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Acm-Bs-6gP">
+                            <rect key="frame" x="0.0" y="0.0" width="752" height="47"/>
                             <subviews>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BKW-zQ-Z7p">
+                                    <rect key="frame" x="205" y="32" width="342" height="2"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="342" id="haW-2t-c7y"/>
                                     </constraints>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZr-Wq-fH0">
+                                    <rect key="frame" x="362" y="8" width="29" height="21"/>
                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -73,6 +80,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPI-mb-XRS">
+                            <rect key="frame" x="0.0" y="47" width="752" height="904"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
@@ -102,6 +110,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SxJ-HE-Nus" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="QwP-0s-mtY"/>
                     </constraints>
@@ -111,13 +120,16 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJN-IB-tBK">
+                    <rect key="frame" x="20" y="20" width="88" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91N-7D-5VX">
+                    <rect key="frame" x="112" y="389" width="544" height="247"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6QZ-wG-oUW">
+                            <rect key="frame" x="8" y="59" width="162" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="twk-AT-Sfd"/>
                             </constraints>
@@ -130,6 +142,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmH-ny-Rcf">
+                            <rect key="frame" x="406" y="60" width="130" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="130" id="quf-z4-wrZ"/>
                             </constraints>
@@ -153,6 +166,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please, practice how to record your voice using the START and DONE buttons below." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDi-Ht-a0M">
+                    <rect key="frame" x="20" y="55" width="728" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -177,6 +191,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MC7-Pi-QYe" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="wAC-f5-9Qm"/>
                     </constraints>
@@ -186,16 +201,19 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This task has 4 different parts." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4p-Hf-hHl">
+                    <rect key="frame" x="20" y="61" width="740" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will provide instructions for each of them." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ka6-0j-Pz0">
+                    <rect key="frame" x="20" y="91" width="728" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a timed task so remember to do it as fast as possible, but without committing errors." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JC5-rV-b0i">
+                    <rect key="frame" x="20" y="121" width="728" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -224,6 +242,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLu-R7-gQI" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="347" y="463" width="74" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="74" id="Icc-aB-Wr2"/>
                     </constraints>
@@ -233,18 +252,21 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnA-te-eAp">
+                    <rect key="frame" x="20" y="120" width="728" height="335"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="335" id="OnC-kN-kUl"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfW-tn-mK9">
+                    <rect key="frame" x="20" y="49" width="728" height="43"/>
                     <string key="text">In this task you have to read the words presented on the screen. Try to do it as fast as you can, from left to right in each row.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reJ-7z-FZJ" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="dBT-2c-Pix"/>
                     </constraints>
@@ -254,6 +276,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready press START and read the words out loud as fast as you can. When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5R-cy-fRH">
+                    <rect key="frame" x="20" y="501" width="728" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -281,6 +304,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBx-z2-yES" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="CkX-kA-MNg"/>
                     </constraints>
@@ -290,11 +314,13 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1iI-n9-Z0T">
+                    <rect key="frame" x="20" y="50" width="728" height="517"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="517" id="xen-MM-naa"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gT7-hv-oYu">
+                    <rect key="frame" x="349" y="836" width="71" height="97"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="71" id="FDq-Ar-3BZ"/>
                         <constraint firstAttribute="height" constant="97" id="XRf-uj-D16"/>
@@ -304,7 +330,7 @@
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="LeT-4e-8Iy"/>
+                        <action selector="recordTask:" destination="-1" eventType="touchUpInside" id="LLM-QH-E82"/>
                     </connections>
                 </button>
             </subviews>
@@ -325,12 +351,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iO9-uI-1dB">
+                    <rect key="frame" x="20" y="20" width="728" height="43"/>
                     <string key="text">In this task you have to read the words presented on the screen. Try to do it as fast as you can, from left to right in each row.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTO-IW-tia" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="AVB-DP-F2X"/>
                     </constraints>
@@ -340,17 +368,20 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JeE-gz-VAd">
+                    <rect key="frame" x="20" y="71" width="728" height="335"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="335" id="cL7-LP-hd0"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready press START and read the words out loud as fast as you can. When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLL-kc-yOm">
+                    <rect key="frame" x="20" y="452" width="728" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1Z-kv-yXw" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="347" y="414" width="74" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="74" id="E3d-SW-zFu"/>
                     </constraints>
@@ -382,6 +413,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Mf-Jw-QH0" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="nIu-oL-dpI"/>
                     </constraints>
@@ -391,11 +423,13 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ph-zD-iIz">
+                    <rect key="frame" x="20" y="50" width="728" height="517"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="517" id="mxR-1A-e51"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MOF-XH-IzJ">
+                    <rect key="frame" x="349" y="836" width="71" height="97"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="71" id="d4b-Rt-EoI"/>
                         <constraint firstAttribute="height" constant="97" id="gt4-hh-63x"/>
@@ -405,7 +439,7 @@
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="kXP-Fr-fGI"/>
+                        <action selector="recordTask:" destination="-1" eventType="touchUpInside" id="2MJ-t8-anc"/>
                     </connections>
                 </button>
             </subviews>
@@ -426,12 +460,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOX-JV-ZOd">
+                    <rect key="frame" x="20" y="100" width="728" height="335"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="335" id="vST-O7-rYc"/>
                     </constraints>
                 </view>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Utp-e3-4jH" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="347" y="443" width="74" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="74" id="pQf-2c-e4d"/>
                     </constraints>
@@ -441,6 +477,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFc-2r-7GS" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="TTx-YH-tAf"/>
                     </constraints>
@@ -450,12 +487,14 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6F-0p-bZA">
+                    <rect key="frame" x="20" y="49" width="728" height="43"/>
                     <string key="text">In this task you have to name the colors of the circles presented on the screen. Try to do it as fast as you can, from left to right in each row.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Fl-7a-VZf">
+                    <rect key="frame" x="20" y="481" width="728" height="43"/>
                     <string key="text">When you are ready press START and read the words out loud as fast as you can. When you finish with the last circle click on DONE.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
@@ -484,6 +523,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njM-Ec-ahj" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="cIu-1X-sRL"/>
                     </constraints>
@@ -493,11 +533,13 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6o7-C8-Lzb">
+                    <rect key="frame" x="20" y="50" width="728" height="517"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="517" id="1J0-XT-45x"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WBK-Zb-DJ9">
+                    <rect key="frame" x="349" y="836" width="71" height="97"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="97" id="DM5-aV-Q6n"/>
                         <constraint firstAttribute="width" constant="71" id="gv6-Xq-O08"/>
@@ -507,7 +549,7 @@
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="PwB-Ru-EQR"/>
+                        <action selector="recordTask:" destination="-1" eventType="touchUpInside" id="SJv-4V-e1M"/>
                     </connections>
                 </button>
             </subviews>
@@ -528,6 +570,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sW-E1-6jp" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="iCG-IV-ku6"/>
                     </constraints>
@@ -537,6 +580,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApH-Mp-Al7">
+                    <rect key="frame" x="20" y="93" width="728" height="22"/>
                     <attributedString key="attributedText">
                         <fragment content="Label">
                             <attributes>
@@ -548,23 +592,27 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szt-MK-FCu">
+                    <rect key="frame" x="20" y="123" width="728" height="43"/>
                     <string key="text">Do not pay attention to the word itself, just name the color in which it is written. Try to do it as fast as you can, from left to right in each row.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In this task you have to name the colors in which the words are written, DO NOT READ the word." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUj-jI-HF5">
+                    <rect key="frame" x="20" y="49" width="728" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fmy-7s-v0P">
+                    <rect key="frame" x="20" y="174" width="728" height="335"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="335" id="TvR-He-tQc"/>
                     </constraints>
                 </view>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Z4-TW-jln" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="347" y="517" width="74" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="74" id="Kv8-6G-vnO"/>
                     </constraints>
@@ -574,6 +622,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready press START and read the words out loud as fast as you can. When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Cu-Be-Wye">
+                    <rect key="frame" x="20" y="555" width="728" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -610,6 +659,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQG-BI-tNC" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="Pig-xA-DDv"/>
                     </constraints>
@@ -619,11 +669,13 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="udu-5w-Ah2">
+                    <rect key="frame" x="20" y="50" width="728" height="517"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="517" id="HXc-oD-lu5"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pHn-9P-ryx">
+                    <rect key="frame" x="349" y="836" width="71" height="97"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="97" id="0LK-kf-hdV"/>
                         <constraint firstAttribute="width" constant="71" id="lhl-vI-6s0"/>
@@ -633,7 +685,7 @@
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="lrh-Cv-Zih"/>
+                        <action selector="recordTask:" destination="-1" eventType="touchUpInside" id="h9r-37-c3X"/>
                     </connections>
                 </button>
             </subviews>

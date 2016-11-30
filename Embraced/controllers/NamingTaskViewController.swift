@@ -120,17 +120,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         }
     }
     
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
-    }
     
-    func getCacheDirectory() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        
-        return paths[0]
-    }
     
     func finishRecording(_ button: UIButton, success: Bool) {
         soundRecorder.stop()
@@ -328,8 +318,8 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         } else {
             resetTimer()
             APIWrapper.post(id: participant.string(forKey: "pid")!, test: "naming_task", data: createPostObject())
-//            let multipleErrandsViewController:ComprehensionViewController = ComprehensionViewController()
-//            self.navigationController?.pushViewController(multipleErrandsViewController, animated: true)
+            let multipleErrandsViewController:ComprehensionViewController = ComprehensionViewController()
+            self.navigationController?.pushViewController(multipleErrandsViewController, animated: true)
         }
     }
     
@@ -338,7 +328,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         var jsonTask = [AnyObject]()
         var jsonTaskObject = [String: AnyObject]()
         
-        for i in 0...count {
+        for i in 0...task.count-1 {
             let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("namingTask\(i).m4a"))
             let dataStr = soundData?.base64EncodedString(options: [])
             

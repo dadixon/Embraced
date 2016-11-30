@@ -176,7 +176,7 @@
 		A47448741DE6908300BB4011 /* SPA-43.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47448481DE6908300BB4011 /* SPA-43.mp3 */; };
 		A47448751DE6908300BB4011 /* SPA-44.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47448491DE6908300BB4011 /* SPA-44.mp3 */; };
 		A474487A1DE690CD00BB4011 /* STIMULI_1_ENG.png in Resources */ = {isa = PBXBuildFile; fileRef = A47448771DE690CD00BB4011 /* STIMULI_1_ENG.png */; };
-		A474487B1DE690CD00BB4011 /* STIMULI_2_4_ENG.png in Resources */ = {isa = PBXBuildFile; fileRef = A47448781DE690CD00BB4011 /* STIMULI_2_4_ENG.png */; };
+		A474487B1DE690CD00BB4011 /* STIMULI_2&4_ENG.png in Resources */ = {isa = PBXBuildFile; fileRef = A47448781DE690CD00BB4011 /* STIMULI_2&4_ENG.png */; };
 		A474487C1DE690CD00BB4011 /* STIMULI_3.png in Resources */ = {isa = PBXBuildFile; fileRef = A47448791DE690CD00BB4011 /* STIMULI_3.png */; };
 		A474489C1DE692F400BB4011 /* Image 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A47448851DE692F400BB4011 /* Image 1.jpg */; };
 		A474489D1DE692F400BB4011 /* Image 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A47448861DE692F400BB4011 /* Image 2.jpg */; };
@@ -470,7 +470,7 @@
 		A47448481DE6908300BB4011 /* SPA-43.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-43.mp3"; sourceTree = "<group>"; };
 		A47448491DE6908300BB4011 /* SPA-44.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-44.mp3"; sourceTree = "<group>"; };
 		A47448771DE690CD00BB4011 /* STIMULI_1_ENG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = STIMULI_1_ENG.png; sourceTree = "<group>"; };
-		A47448781DE690CD00BB4011 /* STIMULI_2_4_ENG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = STIMULI_2_4_ENG.png; sourceTree = "<group>"; };
+		A47448781DE690CD00BB4011 /* STIMULI_2&4_ENG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STIMULI_2&4_ENG.png"; sourceTree = "<group>"; };
 		A47448791DE690CD00BB4011 /* STIMULI_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = STIMULI_3.png; sourceTree = "<group>"; };
 		A474487D1DE6925400BB4011 /* STROOP_ENG_TASK1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = STROOP_ENG_TASK1.mp4; sourceTree = "<group>"; };
 		A474487E1DE6925400BB4011 /* STROOP_ENG_TASK2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = STROOP_ENG_TASK2.mp4; sourceTree = "<group>"; };
@@ -833,7 +833,7 @@
 				A474487F1DE6925400BB4011 /* STROOP_ENG_TASK3.mp4 */,
 				A47448801DE6925400BB4011 /* STROOP_ENG_TASK4.mp4 */,
 				A47448771DE690CD00BB4011 /* STIMULI_1_ENG.png */,
-				A47448781DE690CD00BB4011 /* STIMULI_2_4_ENG.png */,
+				A47448781DE690CD00BB4011 /* STIMULI_2&4_ENG.png */,
 				A47448791DE690CD00BB4011 /* STIMULI_3.png */,
 			);
 			name = Stroop;
@@ -1156,7 +1156,7 @@
 				A47447A11DE6900B00BB4011 /* ENG-FWD-07.mp3 in Resources */,
 				A4347FD61D7BCABC0033306A /* PegboardViewController.xib in Resources */,
 				A47448A41DE692F400BB4011 /* Image 9.jpg in Resources */,
-				A474487B1DE690CD00BB4011 /* STIMULI_2_4_ENG.png in Resources */,
+				A474487B1DE690CD00BB4011 /* STIMULI_2&4_ENG.png in Resources */,
 				A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */,
 				A4E3388E1DE6098B0010FC45 /* melodies 320ms diff(16).wav in Resources */,
 				A490D7D71D0919CB00D2B59D /* Roboto-Light.ttf in Resources */,

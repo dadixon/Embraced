@@ -135,8 +135,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     }
     
     
-    func startRecording(_ button: UIButton) {
-        let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName[button.tag])
+    func startRecording(_ button: UIButton, fileName: String) {
+        let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName)
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -156,11 +156,6 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         }
     }
     
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
-    }
     
     func finishRecording(button: UIButton, success: Bool) {
         soundRecorder.stop()
@@ -241,8 +236,6 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
             resetTimer()
             countLabel.text = ""
             
-            var url = NSURL()
-            
             if position < 5 {
                 self.play(trials[0])
             } else {
@@ -281,7 +274,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     
     @IBAction func recordTapped(_ sender: UIButton) {
         if soundRecorder == nil {
-            startRecording(sender)
+            startRecording(sender, fileName: "wordlist\(position).m4a")
         } else {
             finishRecording(button: sender, success: true)
         }
@@ -315,11 +308,37 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         if position < instructions.count {
             setup()
         } else {
+            APIWrapper.post(id: participant.string(forKey: "pid")!, test: "wordlist", data: createPostObject())
             next(self)
         }
     }
     
-    
+    func createPostObject() -> [String: AnyObject] {
+        var jsonObject = [String: AnyObject]()
+        var jsonTask = [AnyObject]()
+        var jsonTaskObject = [String: AnyObject]()
+        
+        for i in 0...position-2 {
+            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("wordlist\(i).m4a"))
+            let dataStr = soundData?.base64EncodedString(options: [])
+            
+            jsonTaskObject = [
+                "name": "wordlist\(i+1)" as AnyObject,
+                "soundByte": dataStr as AnyObject
+            ]
+            
+            jsonTask.append(jsonTaskObject as AnyObject)
+        }
+        
+        
+        // Gather data for post
+        jsonObject = [
+            "id": participant.string(forKey: "pid")! as AnyObject,
+            "task": jsonTask as AnyObject
+        ]
+        
+        return jsonObject
+    }
     
     // MARK: - Delegate
     

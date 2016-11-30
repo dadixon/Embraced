@@ -24,7 +24,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
     var recordingSession: AVAudioSession!
     var soundRecorder: AVAudioRecorder!
     var soundPlayer: AVAudioPlayer!
-    var fileName : String = "testAudioFile.m4a"
+    var fileName : String = "wordlistRecall.m4a"
     var tasks = Array<String>()
     var startTime = TimeInterval()
     var timer = Timer()
@@ -120,12 +120,6 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
         } catch {
             finishRecording(button: button, success: false)
         }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
     }
     
     func finishRecording(button: UIButton, success: Bool) {
@@ -246,6 +240,18 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
         position += 1
         
         if position == tasks.count {
+            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("wordlistRecall.m4a"))
+            let dataStr = soundData?.base64EncodedString(options: [])
+            var jsonObject = [String: AnyObject]()
+            
+            // Gather data for post
+            jsonObject = [
+                "answers": answers as AnyObject,
+                "soundByte": dataStr as AnyObject
+            ]
+            
+            APIWrapper.post(id: participant.string(forKey: "pid")!, test: "wordlist2", data: jsonObject)
+            
             next(self)
         } else {
             listenBtn.isEnabled = true

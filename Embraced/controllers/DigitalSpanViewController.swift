@@ -134,12 +134,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         }
     }
     
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
-    }
-    
     func finishRecording(_ button: UIButton, success: Bool) {
         soundRecorder.stop()
         soundRecorder = nil
@@ -306,12 +300,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
             
 //            self.next(self)
         }
-    }
-    
-    func getCacheDirectory() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        
-        return paths[0]
     }
     
     func createPostObject() -> [String: AnyObject] {

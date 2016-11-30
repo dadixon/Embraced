@@ -49,8 +49,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     var soundRecorder: AVAudioRecorder!
     var soundPlayer: AVAudioPlayer!
     var playerController = AVPlayerViewController()
-    var fileName : [String] = ["testAudioFile.m4a", "task1.m4a", "task2.m4a", "task3.m4a", "task4.m4a"]
-    
+    var fileName : String = "testAudioFile.m4a"
     var stimuli = [String: Any]()
     var images = Array<String>()
     var videos = Array<String>()
@@ -138,6 +137,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         // Grab images from the api
         images = appDelegate.stroopImages
         videos = appDelegate.stroopVideos
+        print(images)
         
         myMutableString2 = NSMutableAttributedString(string: myString2, attributes: [NSFontAttributeName:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
         myMutableString2.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 18), range: NSRange(location:51,length:5))
@@ -152,30 +152,12 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         // Dispose of any resources that can be recreated.
     }
     
-    func loadImageFromUrl(_ url: String, view: UIImageView){
-        
-        // Create Url from string
-        let url = URL(string: url)!
-        
-        // Download task:
-        // - sharedSession = global NSURLCache, NSHTTPCookieStorage and NSURLCredentialStorage objects.
-        let task = URLSession.shared.dataTask(with: url, completionHandler: { (responseData, responseUrl, error) -> Void in
-            // if responseData is not null...
-            if let data = responseData{
-                
-                // execute in UI thread
-                DispatchQueue.main.async(execute: { () -> Void in
-                    view.image = UIImage(data: data)
-                })
-            }
-        })
-        
-        // Run task
-        task.resume()
+    func loadImageFromUrl(_ filename: String, view: UIImageView){
+        view.image = UIImage(named: filename)
     }
     
-    func startRecording(_ button: UIButton) {
-        let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName[button.tag])
+    func startRecording(_ button: UIButton, fileName: String) {
+        let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName)
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -194,12 +176,6 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         } catch {
             finishRecording(button: button, success: false)
         }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
     }
     
     func finishRecording(button: UIButton, success: Bool) {
@@ -228,7 +204,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     func preparePlayer() {
         do {
-            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName[0]))
+            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName))
             soundPlayer.delegate = self
             soundPlayer.prepareToPlay()
             soundPlayer.volume = 1.0
@@ -287,10 +263,38 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         print("\(functionName): \(logMessage)")
     }
     
+    func createPostObject() -> [String: AnyObject] {
+        var jsonObject = [String: AnyObject]()
+        var jsonTask = [AnyObject]()
+        var jsonTaskObject = [String: AnyObject]()
+        
+        for i in 0...position-1 {
+            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("stroop\(i).m4a"))
+            let dataStr = soundData?.base64EncodedString(options: [])
+            
+            jsonTaskObject = [
+                "name": "stroop\(i+1)" as AnyObject,
+                "soundByte": dataStr as AnyObject
+            ]
+            
+            jsonTask.append(jsonTaskObject as AnyObject)
+        }
+        
+        
+        // Gather data for post
+        jsonObject = [
+            "id": participant.string(forKey: "pid")! as AnyObject,
+            "task": jsonTask as AnyObject
+        ]
+        
+        return jsonObject
+    }
+    
     
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
+        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "stroop", data: createPostObject())
 //        var navigationArray = self.navigationController?.viewControllers
 //        
 //        navigationArray?.remove(at: 0)
@@ -311,9 +315,17 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     
     @IBAction func recordTapped(_ sender: UIButton) {
         if soundRecorder == nil {
-            startRecording(sender)
+            startRecording(sender, fileName: fileName)
         } else {
             finishRecording(button: sender, success: true)
+        }
+    }
+    
+    @IBAction func recordTask(_ sender: AnyObject) {
+        if soundRecorder == nil {
+            startRecording(sender as! UIButton, fileName: "stroop\(position).m4a")
+        } else {
+            finishRecording(button: sender as! UIButton, success: true)
         }
     }
     
