@@ -251,15 +251,15 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        var navigationArray = self.navigationController?.viewControllers
+//        var navigationArray = self.navigationController?.viewControllers
         
-        navigationArray?.remove(at: 0)
+//        navigationArray?.remove(at: 0)
         
         let mOCAMMSETestViewController:StroopViewController = StroopViewController()
-        navigationArray?.append(mOCAMMSETestViewController)
+//        navigationArray?.append(mOCAMMSETestViewController)
 //
-        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-//        self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
+//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+        self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
     }
 
     

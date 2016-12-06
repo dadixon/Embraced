@@ -298,7 +298,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
             // Push to API
             APIWrapper.post(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: createPostObject())
             
-//            self.next(self)
+            self.next(self)
         }
     }
     

@@ -294,7 +294,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "stroop", data: createPostObject())
+        
 //        var navigationArray = self.navigationController?.viewControllers
 //        
 //        navigationArray?.remove(at: 0)
@@ -391,6 +391,16 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         setSubview(preTask4View, next: task4View)
         self.loadImageFromUrl(images[1], view: self.task4ImageView)
         position += 1
+    }
+    
+    @IBAction func submitTask(_ sender: AnyObject) {
+        player.pause()
+        
+        if (createPostObject().count > 0) {
+            APIWrapper.post(id: participant.string(forKey: "pid")!, test: "stroop", data: createPostObject())
+        }
+        
+        self.next(self)
     }
     
     @IBAction func playVideo(_ sender: AnyObject) {

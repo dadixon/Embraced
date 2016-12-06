@@ -75,7 +75,6 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     }
     
     
-    
     override func viewDidLoad() {
         step = 7
         

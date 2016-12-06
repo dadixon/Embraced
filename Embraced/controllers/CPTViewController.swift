@@ -23,6 +23,7 @@ class CPTViewController: FrontViewController, UIWebViewDelegate {
         
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController?.addAction(defaultAction)
+        self.present(alertController!, animated: true, completion: nil)
         
         orientation = "portrait"
         rotated()
