@@ -178,7 +178,7 @@ Please practice recording your voice with the microphone button below</string>
                 <constraint firstItem="han-Z8-s4b" firstAttribute="top" secondItem="Vr4-Mj-e6s" secondAttribute="top" constant="20" id="xEB-e1-1rg"/>
                 <constraint firstItem="dHK-SS-xav" firstAttribute="centerX" secondItem="Vr4-Mj-e6s" secondAttribute="centerX" id="yKY-JG-Vk4"/>
             </constraints>
-            <point key="canvasLocation" x="421" y="-791"/>
+            <point key="canvasLocation" x="574" y="-791"/>
         </view>
         <view contentMode="scaleToFill" id="kSe-9b-lPj">
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
@@ -279,7 +279,7 @@ Please tap the LISTEN button when you are ready to start</string>
                 <constraint firstItem="mMB-hw-R1N" firstAttribute="top" secondItem="kSe-9b-lPj" secondAttribute="top" constant="20" id="twt-vs-LaN"/>
                 <constraint firstItem="USc-zK-X47" firstAttribute="leading" secondItem="kSe-9b-lPj" secondAttribute="leading" constant="20" id="x4s-BJ-c4v"/>
             </constraints>
-            <point key="canvasLocation" x="1289" y="-791"/>
+            <point key="canvasLocation" x="1690" y="-791"/>
         </view>
     </objects>
     <resources>

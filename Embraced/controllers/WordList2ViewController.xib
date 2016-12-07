@@ -20,6 +20,7 @@
                 <outlet property="containerView" destination="0xU-Tj-aOe" id="U92-gV-d68"/>
                 <outlet property="countLabel" destination="YMS-Fw-1n9" id="3GU-wU-xYw"/>
                 <outlet property="firstListLabel" destination="Q0T-3i-wfJ" id="qBy-ZJ-kES"/>
+                <outlet property="instructionText" destination="lFo-Na-wjO" id="qFj-Sl-Hxj"/>
                 <outlet property="listenBtn" destination="jvb-V9-QCB" id="U1B-g4-3fe"/>
                 <outlet property="mainView" destination="w6Q-va-En2" id="G4b-NS-CaU"/>
                 <outlet property="practiceView" destination="2Rz-dq-ngT" id="16r-cu-set"/>
@@ -104,13 +105,18 @@
                         <action selector="moveToRecogniton:" destination="-1" eventType="touchUpInside" id="Z0q-4K-Krz"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFo-Na-wjO">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFo-Na-wjO">
                     <rect key="frame" x="20" y="55" width="728" height="81.5"/>
-                    <string key="text">Some time ago you listened to a list of words 5 times. Now say out loud all the words you can remember from that list 
+                    <attributedString key="attributedText">
+                        <fragment>
+                            <string key="content">Some time ago you listened to a list of words 5 times. Now say out loud all the words you can remember from that list 
 
 Tap the microphone button to start recording</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                            <attributes>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hti-Xg-EXF">
@@ -159,18 +165,17 @@ Tap the microphone button to start recording</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOY-VY-y9i">
-                    <rect key="frame" x="20" y="55" width="728" height="102"/>
+                    <rect key="frame" x="20" y="55" width="728" height="101.5"/>
                     <string key="text">Now you will hear a longer list of words, one by one. 
-If the word is one of the words in the first list you heard, click the button “YES”
-If you do not recognize the word, click the button “NO”. 
-There will be a three second countdown.
-Tap the LISTEN to start</string>
+If the word is one of the words in the first list you heard, the on you heard 5 times, click the button “YES”
+If the word was NOT in the first list, the one you heard 5 times, click the button “NO”. 
+Tap the LISTEN icon to start</string>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hA3-LX-vC9">
-                    <rect key="frame" x="112" y="190" width="544" height="247"/>
+                    <rect key="frame" x="112" y="189.5" width="544" height="247"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="jvb-V9-QCB">
                             <rect key="frame" x="8" y="60" width="200" height="128"/>

@@ -49,7 +49,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
                                    "Now say out loud all the words you can remember from the list, including the ones you said before.\nTap the microphone button to start recording.",
                                    "Now say out loud all the words you can remember from the list, including the ones you said before. \nTap the microphone button to start recording",
                                    "Now say out loud all the words you can remember from the list, including the ones you said before. \nTap the microphone button to start recording",
-                                   "Now say out loud all the words you can remember from the list, including the ones you said before. \nTap the microphone button to start recording"]
+                                   "Now say out loud all the words you can remember from the list. \nTap the microphone button to start recording"]
     
     
     
@@ -125,7 +125,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         if position < 5 {
             titleLabel.text = "Trial \(position + 1)"
         } else {
-            titleLabel.text = "Interference list"
+            titleLabel.text = "" //"Interference list"
         }
         
         InstructionsLabel.text = instructions[position]

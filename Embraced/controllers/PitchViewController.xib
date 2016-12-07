@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -45,15 +48,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="63N-dC-I4a">
+                    <rect key="frame" x="8" y="65" width="752" height="951"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ta2-Aj-byp">
+                            <rect key="frame" x="0.0" y="0.0" width="752" height="47"/>
                             <subviews>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="A91-h5-NVq">
+                                    <rect key="frame" x="205" y="32" width="342" height="2"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="342" id="QYJ-3d-1x7"/>
                                     </constraints>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPp-9X-HUS">
+                                    <rect key="frame" x="361.5" y="8" width="29" height="21"/>
                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -70,6 +77,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOa-m6-D7o">
+                            <rect key="frame" x="0.0" y="47" width="752" height="904"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
@@ -99,6 +107,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chI-tk-VV9">
+                    <rect key="frame" x="20" y="55" width="728" height="279.5"/>
                     <string key="text">Next, you will hear pairs of melodies. 
 In some trials, the second one will be altered. 
 This change may be subtle or obvious. 
@@ -116,6 +125,7 @@ Please tap on START when you are ready.</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRH-jv-29k" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="Ux4-7W-r8W"/>
                     </constraints>
@@ -140,6 +150,7 @@ Please tap on START when you are ready.</string>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pah-DV-82L" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="KRP-5x-l9W"/>
                     </constraints>
@@ -149,16 +160,19 @@ Please tap on START when you are ready.</string>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubv-xk-DX9">
+                    <rect key="frame" x="20" y="55" width="728" height="26.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLv-Vx-Wwx">
+                    <rect key="frame" x="367.5" y="468" width="33" height="88.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="74"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="t9g-wb-MrD">
+                    <rect key="frame" x="248.5" y="827" width="271" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="271" id="rfP-O0-qab"/>
                     </constraints>
@@ -172,6 +186,7 @@ Please tap on START when you are ready.</string>
                     </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cW5-WD-PVT">
+                    <rect key="frame" x="20" y="89.5" width="728" height="64.5"/>
                     <string key="text">In this pair of melodies the second melody is identical to the first.
 When both melodies are the same, you should tap the button “SAME”
 Tap on the button “SAME” to indicate that the melodies are the same.</string>
@@ -180,6 +195,7 @@ Tap on the button “SAME” to indicate that the melodies are the same.</string
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uU-dm-nhl">
+                    <rect key="frame" x="20" y="418" width="728" height="0.0"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -211,6 +227,7 @@ Tap on the button “SAME” to indicate that the melodies are the same.</string
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HS-Uf-iq0" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="6JZ-Zy-6MW"/>
                     </constraints>
@@ -220,6 +237,7 @@ Tap on the button “SAME” to indicate that the melodies are the same.</string
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2K-68-LWS">
+                    <rect key="frame" x="20" y="55" width="728" height="193.5"/>
                     <string key="text">You have completed the practice trials. 
 
 During this task, the screen will show numbers 1 and 2 to help you differentiate the two melodies. Also, it will show the buttons “SAME” and “DIFFERENT” and information on whether your response was correct or not.
@@ -247,6 +265,7 @@ Please, tap the START button when you are ready to start.</string>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lud-Lr-EWg" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="aiL-bo-Kru"/>
                     </constraints>
@@ -256,16 +275,19 @@ Please, tap the START button when you are ready to start.</string>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMW-sL-Lrf">
+                    <rect key="frame" x="20" y="55" width="87.5" height="26.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIU-ev-8c4">
+                    <rect key="frame" x="367.5" y="468" width="33" height="88.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="74"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="ItZ-Vj-dpA">
+                    <rect key="frame" x="248.5" y="827" width="271" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="271" id="qqs-st-q9g"/>
                     </constraints>
@@ -279,6 +301,7 @@ Please, tap the START button when you are ready to start.</string>
                     </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t1-nG-okL">
+                    <rect key="frame" x="20" y="89.5" width="728" height="129"/>
                     <string key="text">Now you will practice on your own.  Remember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.
 There will be 5 pairs of melodies for you to practice.
 When you are ready, tap on START button.</string>
@@ -287,6 +310,7 @@ When you are ready, tap on START button.</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJc-ET-pl0">
+                    <rect key="frame" x="699" y="822.5" width="49" height="38"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="38" id="N8b-KX-gig"/>
                         <constraint firstAttribute="width" constant="49" id="bZM-bj-oYJ"/>
@@ -297,6 +321,7 @@ When you are ready, tap on START button.</string>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi7-4I-Qtx">
+                    <rect key="frame" x="20" y="368" width="728" height="0.0"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -329,6 +354,7 @@ When you are ready, tap on START button.</string>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJ5-4c-8Op" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="OJL-8h-wOD"/>
                     </constraints>
@@ -338,11 +364,13 @@ When you are ready, tap on START button.</string>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1r-WS-ZBd">
+                    <rect key="frame" x="367.5" y="468" width="33" height="88.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="74"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Y38-Zx-0cO">
+                    <rect key="frame" x="248.5" y="827" width="271" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="271" id="qxz-1U-Zfo"/>
                     </constraints>
@@ -356,6 +384,7 @@ When you are ready, tap on START button.</string>
                     </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qB8-xk-w7x">
+                    <rect key="frame" x="20" y="368" width="728" height="0.0"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -380,6 +409,7 @@ When you are ready, tap on START button.</string>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IT5-SX-vUy" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="LDK-5W-zyj"/>
                     </constraints>
@@ -389,16 +419,19 @@ When you are ready, tap on START button.</string>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQa-ic-LCF">
+                    <rect key="frame" x="20" y="55" width="108.5" height="26.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IV-bi-xXS">
+                    <rect key="frame" x="367.5" y="468" width="33" height="88.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="74"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rt-x4-rLw">
+                    <rect key="frame" x="20" y="89.5" width="728" height="172"/>
                     <string key="text">We will now continue to an example where the melodies are different. 
 
 This example uses the same melody as in Example 1, but now the second melody has been altered. 
@@ -411,6 +444,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="4sf-vH-XsI">
+                    <rect key="frame" x="248.5" y="827" width="271" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="271" id="Egs-CS-Vsb"/>
                     </constraints>
@@ -424,6 +458,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                     </connections>
                 </segmentedControl>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3o-lN-Zg6">
+                    <rect key="frame" x="699" y="822.5" width="49" height="38"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="38" id="OO7-4k-MX9"/>
                         <constraint firstAttribute="width" constant="49" id="TyA-0D-0sh"/>
@@ -434,6 +469,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63d-zm-zEy">
+                    <rect key="frame" x="20" y="418" width="728" height="0.0"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -465,6 +501,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiU-8p-po8" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="gEn-wb-PLS"/>
                     </constraints>
@@ -474,16 +511,19 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BW8-4r-SHC">
+                    <rect key="frame" x="20" y="55" width="109.5" height="26.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTY-n4-wSH">
+                    <rect key="frame" x="367.5" y="468" width="33" height="88.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="74"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-bI-cFW">
+                    <rect key="frame" x="20" y="89.5" width="728" height="172"/>
                     <string key="text">We will now continue to an example where the difference between the melodies is more subtle.
 
 In this example, the difference between the melodies is more subtle.
@@ -496,6 +536,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-8L-wog">
+                    <rect key="frame" x="248.5" y="827" width="271" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="271" id="5ql-7D-IIy"/>
                     </constraints>
@@ -509,6 +550,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                     </connections>
                 </segmentedControl>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79G-ld-NPH">
+                    <rect key="frame" x="699" y="822.5" width="49" height="38"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="38" id="gfM-l2-hMP"/>
                         <constraint firstAttribute="width" constant="49" id="t4K-MS-DkF"/>
@@ -519,6 +561,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phw-l0-Pfh">
+                    <rect key="frame" x="20" y="418" width="728" height="0.0"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>

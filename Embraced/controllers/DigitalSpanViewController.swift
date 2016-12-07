@@ -18,6 +18,15 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
     
+    @IBOutlet weak var listenBtn: UIButton!
+    @IBOutlet weak var recordPracticeBtn: UIButton!
+    @IBOutlet weak var listenForwardBtn: UIButton!
+    @IBOutlet weak var recordForwardBtn: UIButton!
+    @IBOutlet weak var listenPracticeBtn2: UIButton!
+    @IBOutlet weak var recordPracitceBtn2: UIButton!
+    @IBOutlet weak var listenBackwardBtn: UIButton!
+    @IBOutlet weak var recordBackwardBtn: UIButton!
+    
     @IBOutlet var preTask1View: UIView!
     @IBOutlet var task1View: UIView!
     @IBOutlet var preTask2View: UIView!
@@ -186,7 +195,19 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         print("\(functionName): \(logMessage)")
     }
     
-    
+    func finishedPlaying() {
+        recordPracticeBtn.isEnabled = true
+        listenBtn.isEnabled = false
+        
+        listenForwardBtn.isEnabled = false
+        recordForwardBtn.isEnabled = true
+        
+        listenPracticeBtn2.isEnabled = false
+        recordPracitceBtn2.isEnabled = true
+        
+        listenBackwardBtn.isEnabled = false
+        recordBackwardBtn.isEnabled = true
+    }
     
     // MARK: - Navigation
     
@@ -268,10 +289,14 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     
     @IBAction func moveToListen(_ sender: AnyObject) {
         setSubview(introView, next: preTask1View)
+        recordPracticeBtn.isEnabled = false
+        listenBtn.isEnabled = true
     }
     
     @IBAction func moveToForward(_ sender: AnyObject) {
         setSubview(preTask1View, next: task1View)
+        listenForwardBtn.isEnabled = true
+        recordForwardBtn.isEnabled = false
     }
     
     @IBAction func nextSound(_ sender: AnyObject) {
@@ -279,14 +304,20 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         if (forwardCount < forward.count - 2) {
             forwardCount += 1
             rounds.text = "Round \(forwardCount+1)"
+            listenForwardBtn.isEnabled = true
+            recordForwardBtn.isEnabled = false
         } else {
             setSubview(task1View, next: preTask2View)
+            listenPracticeBtn2.isEnabled = true
+            recordPracitceBtn2.isEnabled = false
         }
     }
     
     @IBAction func moveToBackward(_ sender: AnyObject) {
         setSubview(preTask2View, next: task2View)
         bRounds.text = "Round \(backwardCount+1)"
+        listenBackwardBtn.isEnabled = true
+        recordBackwardBtn.isEnabled = false
     }
     
     @IBAction func nextBSound(_ sender: AnyObject) {
@@ -294,6 +325,8 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         if (backwardCount < backward.count - 2) {
             backwardCount += 1
             bRounds.text = "Round \(backwardCount+1)"
+            listenBackwardBtn.isEnabled = true
+            recordBackwardBtn.isEnabled = false
         } else {
             // Push to API
             APIWrapper.post(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: createPostObject())
@@ -353,5 +386,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         recordBtn.isEnabled = true
         playBtn.setTitle("Play", for: UIControlState())
+        finishedPlaying()
     }
 }

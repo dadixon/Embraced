@@ -21,6 +21,8 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
     @IBOutlet weak var listenBtn: UIButton!
     @IBOutlet weak var answerSegment: UISegmentedControl!
     
+    @IBOutlet weak var instructionText: UILabel!
+    
     var recordingSession: AVAudioSession!
     var soundRecorder: AVAudioRecorder!
     var soundPlayer: AVAudioPlayer!
@@ -33,6 +35,10 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
     var answers = [String]()
     var answer = String()
     
+    let myString: String = "Some time ago you listened to a list of words 5 times. Now say out loud all the words you can remember from that list. \nTap the microphone button to start recording."
+    let myString2: String = "Now you will hear a longer list of words, one by one.\nIf the word is one of the words in the first list you heard, the on you heard 5 times, click the button “YES”\nIf the word was NOT in the first list, the one you heard 5 times, click the button “NO”.\nTap the LISTEN icon to start"
+    var myMutableString = NSMutableAttributedString()
+    var myMutableString2 = NSMutableAttributedString()
     
     // MARK: - Private
     
@@ -91,6 +97,10 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
         
         // Fetch audios
         tasks = appDelegate.wordListTasks
+        
+        myMutableString = NSMutableAttributedString(string: myString)
+        myMutableString.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: NSMakeRange(46, 7))
+        instructionText.attributedText = myMutableString
         
         loadingView.stopAnimating()
     }

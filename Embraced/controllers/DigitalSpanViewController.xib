@@ -21,13 +21,21 @@
                 <outlet property="instructions" destination="W5d-aU-YUb" id="D8J-wH-4d0"/>
                 <outlet property="instructionsA" destination="dmM-P0-4MJ" id="FXX-6i-2Mw"/>
                 <outlet property="introView" destination="cVi-fu-JAH" id="ZYh-t5-glv"/>
+                <outlet property="listenBackwardBtn" destination="gOM-Oj-VlA" id="qlW-ii-lsg"/>
+                <outlet property="listenBtn" destination="Pba-QZ-kRp" id="wXe-RV-ahM"/>
+                <outlet property="listenForwardBtn" destination="A3b-f4-6b3" id="nQP-0O-rt4"/>
+                <outlet property="listenPracticeBtn2" destination="WhN-gL-hFd" id="DoO-Op-PZ6"/>
                 <outlet property="mainView" destination="PpR-IV-LmM" id="qir-ei-Fte"/>
                 <outlet property="playBtn" destination="EKM-0V-z7N" id="I8l-Kf-lQl"/>
                 <outlet property="preTask1View" destination="Ep8-qV-Cvv" id="H7a-ND-yl8"/>
                 <outlet property="preTask2View" destination="mo0-Ba-4sC" id="eqP-Pc-hmz"/>
                 <outlet property="progressLabel" destination="g24-df-W8H" id="6Bo-m2-xJp"/>
                 <outlet property="progressView" destination="DLd-be-qs1" id="S5a-0U-B5H"/>
+                <outlet property="recordBackwardBtn" destination="wIt-um-Ncc" id="hse-uE-fX8"/>
                 <outlet property="recordBtn" destination="p7l-UL-1Cg" id="Y1J-7q-XLp"/>
+                <outlet property="recordForwardBtn" destination="HcA-UX-jfn" id="SZt-mL-mcR"/>
+                <outlet property="recordPracitceBtn2" destination="sHy-8l-Oqs" id="x7H-q7-V00"/>
+                <outlet property="recordPracticeBtn" destination="AOr-uP-wO7" id="76v-1E-CWO"/>
                 <outlet property="rounds" destination="YZd-IO-sAI" id="DAf-8k-YaP"/>
                 <outlet property="task1View" destination="7iD-ap-k0X" id="xxV-BB-ApT"/>
                 <outlet property="task2View" destination="TeY-My-cQ3" id="1jR-wZ-6A7"/>
