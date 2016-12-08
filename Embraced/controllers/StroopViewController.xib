@@ -20,6 +20,10 @@
                 <outlet property="instructionsView" destination="W9B-BG-USC" id="zYj-sK-SJd"/>
                 <outlet property="introView" destination="Moa-ZS-BgY" id="x5l-Db-NiV"/>
                 <outlet property="mainView" destination="8Rr-JW-3tU" id="Czu-xH-X0T"/>
+                <outlet property="pTask1View" destination="EIl-Jl-eP0" id="rOz-YQ-DxX"/>
+                <outlet property="pTask2View" destination="HrM-Ef-Ku0" id="qff-eA-F2F"/>
+                <outlet property="pTask3View" destination="Z7N-DT-xhO" id="k53-kF-GCI"/>
+                <outlet property="pTask4View" destination="RcK-ig-Hyu" id="EQ9-fl-Zzz"/>
                 <outlet property="playBtn" destination="nmH-ny-Rcf" id="2AD-Zt-vmT"/>
                 <outlet property="practiceText" destination="BDi-Ht-a0M" id="Bda-CR-wjC"/>
                 <outlet property="preTask1View" destination="JQe-9a-F5a" id="2QJ-Cv-Lbs"/>
@@ -270,17 +274,11 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="dBT-2c-Pix"/>
                     </constraints>
-                    <state key="normal" title="Start"/>
+                    <state key="normal" title="Next"/>
                     <connections>
-                        <action selector="moveToTask1:" destination="-1" eventType="touchUpInside" id="rXK-2t-P6a"/>
+                        <action selector="moveToPTask1:" destination="-1" eventType="touchUpInside" id="QHE-8V-a4T"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready press START and read the words out loud as fast as you can. When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5R-cy-fRH">
-                    <rect key="frame" x="20" y="522.5" width="728" height="43"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <constraints>
                 <constraint firstItem="XfW-tn-mK9" firstAttribute="leading" secondItem="JQe-9a-F5a" secondAttribute="leading" constant="20" id="Eja-hh-Dgk"/>
@@ -288,12 +286,9 @@
                 <constraint firstAttribute="trailing" secondItem="XfW-tn-mK9" secondAttribute="trailing" constant="20" id="LpG-YZ-zAw"/>
                 <constraint firstItem="NnA-te-eAp" firstAttribute="leading" secondItem="JQe-9a-F5a" secondAttribute="leading" constant="20" id="OWa-Bg-c78"/>
                 <constraint firstItem="reJ-7z-FZJ" firstAttribute="centerX" secondItem="JQe-9a-F5a" secondAttribute="centerX" id="PDc-or-bSz"/>
-                <constraint firstItem="O5R-cy-fRH" firstAttribute="top" secondItem="DLu-R7-gQI" secondAttribute="bottom" constant="8" id="Pij-Hs-5AD"/>
                 <constraint firstItem="DLu-R7-gQI" firstAttribute="centerX" secondItem="JQe-9a-F5a" secondAttribute="centerX" id="SvD-ah-kzP"/>
-                <constraint firstItem="O5R-cy-fRH" firstAttribute="leading" secondItem="JQe-9a-F5a" secondAttribute="leading" constant="20" id="Wjq-dQ-43x"/>
                 <constraint firstItem="NnA-te-eAp" firstAttribute="top" secondItem="XfW-tn-mK9" secondAttribute="bottom" constant="28" id="YNw-lD-RXq"/>
                 <constraint firstItem="XfW-tn-mK9" firstAttribute="top" secondItem="JQe-9a-F5a" secondAttribute="top" constant="49" id="Yej-3l-3dM"/>
-                <constraint firstAttribute="trailing" secondItem="O5R-cy-fRH" secondAttribute="trailing" constant="20" id="ngk-G3-dSw"/>
                 <constraint firstAttribute="bottom" secondItem="reJ-7z-FZJ" secondAttribute="bottom" constant="20" id="wbG-P4-wdn"/>
                 <constraint firstItem="DLu-R7-gQI" firstAttribute="top" secondItem="NnA-te-eAp" secondAttribute="bottom" constant="8" id="wpE-vP-UyZ"/>
             </constraints>
@@ -344,7 +339,7 @@
                 <constraint firstItem="FBx-z2-yES" firstAttribute="top" secondItem="gT7-hv-oYu" secondAttribute="bottom" constant="41" id="lOe-15-gIt"/>
                 <constraint firstItem="gT7-hv-oYu" firstAttribute="centerX" secondItem="zoj-0o-4k0" secondAttribute="centerX" id="wqY-Gl-BCJ"/>
             </constraints>
-            <point key="canvasLocation" x="2233" y="-791"/>
+            <point key="canvasLocation" x="3108" y="-791"/>
         </view>
         <view contentMode="scaleToFill" id="08H-Cx-j3j">
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -362,9 +357,9 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="AVB-DP-F2X"/>
                     </constraints>
-                    <state key="normal" title="Start"/>
+                    <state key="normal" title="Next"/>
                     <connections>
-                        <action selector="moveToTask2:" destination="-1" eventType="touchUpInside" id="dSS-VK-gYT"/>
+                        <action selector="moveToPTask2:" destination="-1" eventType="touchUpInside" id="NXe-SD-I7d"/>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JeE-gz-VAd">
@@ -374,12 +369,6 @@
                         <constraint firstAttribute="height" constant="335" id="cL7-LP-hd0"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready press START and read the words out loud as fast as you can. When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLL-kc-yOm">
-                    <rect key="frame" x="20" y="473.5" width="728" height="43"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1Z-kv-yXw" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
                     <rect key="frame" x="347" y="435.5" width="74" height="30"/>
                     <constraints>
@@ -393,8 +382,6 @@
             </subviews>
             <constraints>
                 <constraint firstItem="JeE-gz-VAd" firstAttribute="top" secondItem="iO9-uI-1dB" secondAttribute="bottom" constant="8" id="2rl-BT-vEm"/>
-                <constraint firstItem="TLL-kc-yOm" firstAttribute="top" secondItem="b1Z-kv-yXw" secondAttribute="bottom" constant="8" id="Bd1-bv-gka"/>
-                <constraint firstAttribute="trailing" secondItem="TLL-kc-yOm" secondAttribute="trailing" constant="20" id="C1q-Kf-ttu"/>
                 <constraint firstItem="iO9-uI-1dB" firstAttribute="top" secondItem="08H-Cx-j3j" secondAttribute="top" constant="20" id="FJS-6a-w88"/>
                 <constraint firstItem="b1Z-kv-yXw" firstAttribute="top" secondItem="JeE-gz-VAd" secondAttribute="bottom" constant="8" id="GgO-Pl-0py"/>
                 <constraint firstAttribute="bottom" secondItem="wTO-IW-tia" secondAttribute="bottom" constant="20" id="NaY-5k-zs1"/>
@@ -402,7 +389,6 @@
                 <constraint firstItem="b1Z-kv-yXw" firstAttribute="centerX" secondItem="08H-Cx-j3j" secondAttribute="centerX" id="c5W-ml-btd"/>
                 <constraint firstItem="wTO-IW-tia" firstAttribute="centerX" secondItem="08H-Cx-j3j" secondAttribute="centerX" id="ggC-m4-OXY"/>
                 <constraint firstItem="JeE-gz-VAd" firstAttribute="leading" secondItem="08H-Cx-j3j" secondAttribute="leading" constant="20" id="imp-Ov-yNn"/>
-                <constraint firstItem="TLL-kc-yOm" firstAttribute="leading" secondItem="08H-Cx-j3j" secondAttribute="leading" constant="20" id="v2f-wD-LUY"/>
                 <constraint firstItem="iO9-uI-1dB" firstAttribute="leading" secondItem="08H-Cx-j3j" secondAttribute="leading" constant="20" id="vPN-TZ-Jlh"/>
                 <constraint firstAttribute="trailing" secondItem="iO9-uI-1dB" secondAttribute="trailing" constant="20" id="wdl-s1-Ac4"/>
             </constraints>
@@ -453,7 +439,7 @@
                 <constraint firstAttribute="trailing" secondItem="6Ph-zD-iIz" secondAttribute="trailing" constant="20" id="q9U-Mg-ywT"/>
                 <constraint firstItem="MOF-XH-IzJ" firstAttribute="centerX" secondItem="jGt-oF-Zhv" secondAttribute="centerX" id="wfw-dD-FrP"/>
             </constraints>
-            <point key="canvasLocation" x="2233" y="329"/>
+            <point key="canvasLocation" x="3108" y="329"/>
         </view>
         <view contentMode="scaleToFill" id="lJh-YG-00j">
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -481,9 +467,9 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="TTx-YH-tAf"/>
                     </constraints>
-                    <state key="normal" title="Start"/>
+                    <state key="normal" title="Next"/>
                     <connections>
-                        <action selector="moveToTask3:" destination="-1" eventType="touchUpInside" id="3MX-j1-xPJ"/>
+                        <action selector="moveToPTask3:" destination="-1" eventType="touchUpInside" id="J8u-2q-YfE"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6F-0p-bZA">
@@ -493,22 +479,12 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Fl-7a-VZf">
-                    <rect key="frame" x="20" y="502.5" width="728" height="43"/>
-                    <string key="text">When you are ready press START and read the words out loud as fast as you can. When you finish with the last circle click on DONE.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="9Fl-7a-VZf" secondAttribute="trailing" constant="20" id="Bqw-Vg-OZK"/>
                 <constraint firstAttribute="bottom" secondItem="jFc-2r-7GS" secondAttribute="bottom" constant="20" id="DQl-Jw-dc0"/>
-                <constraint firstItem="9Fl-7a-VZf" firstAttribute="leading" secondItem="lJh-YG-00j" secondAttribute="leading" constant="20" id="NmF-h3-SAw"/>
                 <constraint firstAttribute="trailing" secondItem="n6F-0p-bZA" secondAttribute="trailing" constant="20" id="PQD-MN-usP"/>
                 <constraint firstItem="jFc-2r-7GS" firstAttribute="centerX" secondItem="lJh-YG-00j" secondAttribute="centerX" id="brD-42-wtD"/>
                 <constraint firstAttribute="trailing" secondItem="tOX-JV-ZOd" secondAttribute="trailing" constant="20" id="gGd-GA-MoG"/>
-                <constraint firstItem="9Fl-7a-VZf" firstAttribute="top" secondItem="Utp-e3-4jH" secondAttribute="bottom" constant="8" id="iOd-5h-gu0"/>
                 <constraint firstItem="tOX-JV-ZOd" firstAttribute="leading" secondItem="lJh-YG-00j" secondAttribute="leading" constant="20" id="kU9-1u-94m"/>
                 <constraint firstItem="Utp-e3-4jH" firstAttribute="top" secondItem="tOX-JV-ZOd" secondAttribute="bottom" constant="8" id="sZ5-tX-gtb"/>
                 <constraint firstItem="n6F-0p-bZA" firstAttribute="top" secondItem="lJh-YG-00j" secondAttribute="top" constant="49" id="sv7-dJ-wgg"/>
@@ -563,7 +539,7 @@
                 <constraint firstAttribute="bottom" secondItem="njM-Ec-ahj" secondAttribute="bottom" constant="20" id="ngl-xL-nr5"/>
                 <constraint firstAttribute="trailing" secondItem="6o7-C8-Lzb" secondAttribute="trailing" constant="20" id="rhc-OS-dKM"/>
             </constraints>
-            <point key="canvasLocation" x="2233" y="1453"/>
+            <point key="canvasLocation" x="3108" y="1453"/>
         </view>
         <view contentMode="scaleToFill" id="HyN-rS-BNA">
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -574,9 +550,9 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="iCG-IV-ku6"/>
                     </constraints>
-                    <state key="normal" title="Start"/>
+                    <state key="normal" title="Next"/>
                     <connections>
-                        <action selector="moveToTask4:" destination="-1" eventType="touchUpInside" id="ciB-RP-lKY"/>
+                        <action selector="moveToPTask4:" destination="-1" eventType="touchUpInside" id="byz-Zn-Tvt"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApH-Mp-Al7">
@@ -621,12 +597,6 @@
                         <action selector="playVideo:" destination="-1" eventType="touchUpInside" id="Pl5-Sa-9ZK"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready press START and read the words out loud as fast as you can. When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Cu-Be-Wye">
-                    <rect key="frame" x="20" y="576.5" width="728" height="43"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="1sW-E1-6jp" secondAttribute="bottom" constant="20" id="6kE-i1-wpz"/>
@@ -637,20 +607,16 @@
                 <constraint firstAttribute="trailing" secondItem="tUj-jI-HF5" secondAttribute="trailing" constant="20" id="GJq-de-uu4"/>
                 <constraint firstAttribute="trailing" secondItem="Fmy-7s-v0P" secondAttribute="trailing" constant="20" id="MPH-HZ-hQe"/>
                 <constraint firstItem="szt-MK-FCu" firstAttribute="top" secondItem="ApH-Mp-Al7" secondAttribute="bottom" constant="8" id="Nor-0F-q5c"/>
-                <constraint firstItem="1Cu-Be-Wye" firstAttribute="top" secondItem="5Z4-TW-jln" secondAttribute="bottom" constant="8" id="Suq-he-mZ6"/>
                 <constraint firstItem="Fmy-7s-v0P" firstAttribute="leading" secondItem="HyN-rS-BNA" secondAttribute="leading" constant="20" id="U4o-tz-5Y8"/>
                 <constraint firstAttribute="trailing" secondItem="szt-MK-FCu" secondAttribute="trailing" constant="20" id="VdQ-Gz-PK2"/>
                 <constraint firstAttribute="trailing" secondItem="ApH-Mp-Al7" secondAttribute="trailing" constant="20" id="XRm-xG-bBE"/>
-                <constraint firstItem="1Cu-Be-Wye" firstAttribute="top" secondItem="5Z4-TW-jln" secondAttribute="bottom" constant="8" id="ZcW-SP-bUe"/>
                 <constraint firstItem="szt-MK-FCu" firstAttribute="top" secondItem="ApH-Mp-Al7" secondAttribute="bottom" constant="8" id="a3P-ei-Jv3"/>
                 <constraint firstItem="szt-MK-FCu" firstAttribute="leading" secondItem="HyN-rS-BNA" secondAttribute="leading" constant="20" id="e4c-36-Ayq"/>
-                <constraint firstAttribute="trailing" secondItem="1Cu-Be-Wye" secondAttribute="trailing" constant="20" id="eX4-Tl-2Ew"/>
                 <constraint firstItem="5Z4-TW-jln" firstAttribute="top" secondItem="Fmy-7s-v0P" secondAttribute="bottom" constant="8" id="fjy-mC-wbI"/>
                 <constraint firstItem="tUj-jI-HF5" firstAttribute="top" secondItem="HyN-rS-BNA" secondAttribute="top" constant="49" id="mNQ-NF-498"/>
                 <constraint firstItem="tUj-jI-HF5" firstAttribute="leading" secondItem="HyN-rS-BNA" secondAttribute="leading" constant="20" id="mdH-CI-Qlm"/>
                 <constraint firstItem="5Z4-TW-jln" firstAttribute="top" secondItem="Fmy-7s-v0P" secondAttribute="bottom" constant="8" id="thD-Nr-Ini"/>
                 <constraint firstItem="5Z4-TW-jln" firstAttribute="centerX" secondItem="HyN-rS-BNA" secondAttribute="centerX" id="vMS-vO-9oB"/>
-                <constraint firstItem="1Cu-Be-Wye" firstAttribute="leading" secondItem="HyN-rS-BNA" secondAttribute="leading" constant="20" id="vPE-Mv-Axh"/>
             </constraints>
             <point key="canvasLocation" x="1321" y="2584"/>
         </view>
@@ -699,7 +665,131 @@
                 <constraint firstItem="BQG-BI-tNC" firstAttribute="top" secondItem="pHn-9P-ryx" secondAttribute="bottom" constant="41" id="iZL-fg-88t"/>
                 <constraint firstItem="udu-5w-Ah2" firstAttribute="leading" secondItem="ulX-KO-Bge" secondAttribute="leading" constant="20" id="tMi-x5-tsN"/>
             </constraints>
+            <point key="canvasLocation" x="3108" y="2584"/>
+        </view>
+        <view contentMode="scaleToFill" id="EIl-Jl-eP0">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready press START and read the words out loud as fast as you can. When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5R-cy-fRH">
+                    <rect key="frame" x="20" y="49" width="728" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80k-aw-Cjl" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="126" id="YjC-Ug-68F"/>
+                    </constraints>
+                    <state key="normal" title="Start"/>
+                    <connections>
+                        <action selector="moveToTask1:" destination="-1" eventType="touchUpInside" id="yz6-l3-beL"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="O5R-cy-fRH" secondAttribute="trailing" constant="20" id="70g-j8-hAg"/>
+                <constraint firstItem="80k-aw-Cjl" firstAttribute="centerX" secondItem="EIl-Jl-eP0" secondAttribute="centerX" id="9pn-ak-1b7"/>
+                <constraint firstAttribute="bottom" secondItem="80k-aw-Cjl" secondAttribute="bottom" constant="20" id="A1k-mQ-6ej"/>
+                <constraint firstItem="O5R-cy-fRH" firstAttribute="top" secondItem="EIl-Jl-eP0" secondAttribute="top" constant="49" id="WUG-hY-T0Q"/>
+                <constraint firstItem="O5R-cy-fRH" firstAttribute="leading" secondItem="EIl-Jl-eP0" secondAttribute="leading" constant="20" id="jpq-aD-t6S"/>
+            </constraints>
+            <point key="canvasLocation" x="2233" y="-791"/>
+        </view>
+        <view contentMode="scaleToFill" id="RcK-ig-Hyu">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready press START and read the words out loud as fast as you can. When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzf-gH-PP7">
+                    <rect key="frame" x="20" y="49" width="728" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zl-Oe-jPW" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="126" id="BcL-im-EFH"/>
+                    </constraints>
+                    <state key="normal" title="Start"/>
+                    <connections>
+                        <action selector="moveToTask4:" destination="-1" eventType="touchUpInside" id="9Nc-b2-cdL"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="tzf-gH-PP7" firstAttribute="leading" secondItem="RcK-ig-Hyu" secondAttribute="leading" constant="20" id="5op-sG-g6c"/>
+                <constraint firstItem="tzf-gH-PP7" firstAttribute="top" secondItem="RcK-ig-Hyu" secondAttribute="top" constant="49" id="Sfj-Gv-NM3"/>
+                <constraint firstItem="9Zl-Oe-jPW" firstAttribute="centerX" secondItem="RcK-ig-Hyu" secondAttribute="centerX" id="aAX-gq-Esa"/>
+                <constraint firstAttribute="trailing" secondItem="tzf-gH-PP7" secondAttribute="trailing" constant="20" id="auK-0g-HZb"/>
+                <constraint firstAttribute="bottom" secondItem="9Zl-Oe-jPW" secondAttribute="bottom" constant="20" id="hZ6-8P-ZZt"/>
+            </constraints>
             <point key="canvasLocation" x="2233" y="2584"/>
+        </view>
+        <view contentMode="scaleToFill" id="Z7N-DT-xhO">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready press START and read the words out loud as fast as you can. When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LK1-hE-jSK">
+                    <rect key="frame" x="20" y="49" width="728" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8V-rn-TJN" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="126" id="Kwc-Dk-2kv"/>
+                    </constraints>
+                    <state key="normal" title="Start"/>
+                    <connections>
+                        <action selector="moveToTask3:" destination="-1" eventType="touchUpInside" id="Ihb-2X-c2C"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="X8V-rn-TJN" firstAttribute="centerX" secondItem="Z7N-DT-xhO" secondAttribute="centerX" id="B48-Bl-jsa"/>
+                <constraint firstAttribute="bottom" secondItem="X8V-rn-TJN" secondAttribute="bottom" constant="20" id="TZx-nb-muD"/>
+                <constraint firstItem="LK1-hE-jSK" firstAttribute="top" secondItem="Z7N-DT-xhO" secondAttribute="top" constant="49" id="d8p-eN-Sl8"/>
+                <constraint firstAttribute="trailing" secondItem="LK1-hE-jSK" secondAttribute="trailing" constant="20" id="dib-oH-8cH"/>
+                <constraint firstItem="LK1-hE-jSK" firstAttribute="leading" secondItem="Z7N-DT-xhO" secondAttribute="leading" constant="20" id="i2L-UD-FtR"/>
+            </constraints>
+            <point key="canvasLocation" x="2233" y="1453"/>
+        </view>
+        <view contentMode="scaleToFill" id="HrM-Ef-Ku0">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready press START and read the words out loud as fast as you can. When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2x-w6-WEX">
+                    <rect key="frame" x="20" y="49" width="728" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P29-bO-N59" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="126" id="FQt-CN-mek"/>
+                    </constraints>
+                    <state key="normal" title="Start"/>
+                    <connections>
+                        <action selector="moveToTask2:" destination="-1" eventType="touchUpInside" id="n2v-8w-L1H"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="P29-bO-N59" secondAttribute="bottom" constant="20" id="5yn-W3-vtI"/>
+                <constraint firstItem="V2x-w6-WEX" firstAttribute="top" secondItem="HrM-Ef-Ku0" secondAttribute="top" constant="49" id="8CK-MQ-o4U"/>
+                <constraint firstItem="P29-bO-N59" firstAttribute="centerX" secondItem="HrM-Ef-Ku0" secondAttribute="centerX" id="MIY-aE-gHU"/>
+                <constraint firstItem="V2x-w6-WEX" firstAttribute="leading" secondItem="HrM-Ef-Ku0" secondAttribute="leading" constant="20" id="ZCZ-Qo-GI3"/>
+                <constraint firstAttribute="trailing" secondItem="V2x-w6-WEX" secondAttribute="trailing" constant="20" id="lNy-4l-V65"/>
+            </constraints>
+            <point key="canvasLocation" x="2233" y="329"/>
         </view>
     </objects>
     <resources>

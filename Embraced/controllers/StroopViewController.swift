@@ -21,18 +21,22 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     @IBOutlet var instructionsView: UIView!
     
     @IBOutlet var preTask1View: UIView!
+    @IBOutlet var pTask1View: UIView!
     @IBOutlet var task1View: UIView!
     @IBOutlet weak var task1ImageView: UIImageView!
     
     @IBOutlet var preTask2View: UIView!
+    @IBOutlet var pTask2View: UIView!
     @IBOutlet var task2View: UIView!
     @IBOutlet weak var task2ImageView: UIImageView!
     
     @IBOutlet var preTask3View: UIView!
+    @IBOutlet var pTask3View: UIView!
     @IBOutlet var task3View: UIView!
     @IBOutlet weak var task3ImageView: UIImageView!
     
     @IBOutlet var preTask4View: UIView!
+    @IBOutlet var pTask4View: UIView!
     @IBOutlet var task4View: UIView!
     @IBOutlet weak var task4ImageView: UIImageView!
     @IBOutlet weak var specialText: UILabel!
@@ -103,6 +107,10 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         preTask2View.translatesAutoresizingMaskIntoConstraints = false
         preTask3View.translatesAutoresizingMaskIntoConstraints = false
         preTask4View.translatesAutoresizingMaskIntoConstraints = false
+        pTask1View.translatesAutoresizingMaskIntoConstraints = false
+        pTask2View.translatesAutoresizingMaskIntoConstraints = false
+        pTask3View.translatesAutoresizingMaskIntoConstraints = false
+        pTask4View.translatesAutoresizingMaskIntoConstraints = false
         task1View.translatesAutoresizingMaskIntoConstraints = false
         task2View.translatesAutoresizingMaskIntoConstraints = false
         task3View.translatesAutoresizingMaskIntoConstraints = false
@@ -349,9 +357,13 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         setSubview(instructionsView, next: preTask1View)
     }
     
+    @IBAction func moveToPTask1(_ sender: AnyObject) {
+        setSubview(preTask1View, next: pTask1View)
+    }
+    
     @IBAction func moveToTask1(_ sender: AnyObject) {
         player.pause()
-        setSubview(preTask1View, next: task1View)
+        setSubview(pTask1View, next: task1View)
         self.loadImageFromUrl(images[position], view: self.task1ImageView)
         position += 1
     }
@@ -360,9 +372,13 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         setSubview(task1View, next: preTask2View)
     }
     
+    @IBAction func moveToPTask2(_ sender: AnyObject) {
+        setSubview(preTask2View, next: pTask2View)
+    }
+    
     @IBAction func moveToTask2(_ sender: AnyObject) {
         player.pause()
-        setSubview(preTask2View, next: task2View)
+        setSubview(pTask2View, next: task2View)
         self.loadImageFromUrl(images[position], view: self.task2ImageView)
         position += 1
     }
@@ -371,9 +387,13 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         setSubview(task2View, next: preTask3View)
     }
     
+    @IBAction func moveToPTask3(_ sender: AnyObject) {
+        setSubview(preTask3View, next: pTask3View)
+    }
+    
     @IBAction func moveToTask3(_ sender: AnyObject) {
         player.pause()
-        setSubview(preTask3View, next: task3View)
+        setSubview(pTask3View, next: task3View)
         self.loadImageFromUrl(images[position], view: self.task3ImageView)
         position += 1
     }
@@ -386,9 +406,13 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         specialText.attributedText = myMutableString
     }
     
+    @IBAction func moveToPTask4(_ sender: AnyObject) {
+        setSubview(preTask4View, next: pTask4View)
+    }
+    
     @IBAction func moveToTask4(_ sender: AnyObject) {
         player.pause()
-        setSubview(preTask4View, next: task4View)
+        setSubview(pTask4View, next: task4View)
         self.loadImageFromUrl(images[1], view: self.task4ImageView)
         position += 1
     }

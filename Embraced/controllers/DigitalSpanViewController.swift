@@ -133,9 +133,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         ]
         
         do {
-            soundRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
-            soundRecorder.delegate = self
-            soundRecorder.record()
+            let soundR = try AVAudioRecorder(url: audioFilename, settings: settings)
+            soundR.delegate = self
+            soundRecorder = soundR
+            soundR.record()
             
             button.setTitle("Stop", for: .normal)
         } catch {
@@ -168,13 +169,13 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         do {
             let path = Bundle.main.path(forResource: filename, ofType: nil)
             let url = URL(fileURLWithPath: path!)
-            soundPlayer = try AVAudioPlayer(contentsOf: url)
-            soundPlayer.delegate = self
-            soundPlayer.prepareToPlay()
-            soundPlayer.volume = 1.0
-            soundPlayer.play()
+            let sound = try AVAudioPlayer(contentsOf: url)
+            sound.delegate = self
+            sound.prepareToPlay()
+            sound.volume = 1.0
+            soundPlayer = sound
+            sound.play()
         } catch let error as NSError {
-            //self.player = nil
             print(error.localizedDescription)
         } catch {
             print("AVAudioPlayer init failed")
@@ -266,23 +267,22 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
             preparePlayer()
             soundPlayer.play()
         } else {
-            soundPlayer.stop()
+            if soundPlayer != nil {
+                soundPlayer.stop()
+                soundPlayer = nil
+            }
             sender.setTitle("Play", for: UIControlState())
         }
     }
     
     @IBAction func listenToSound(_ sender: AnyObject) {
         if sender.tag == 0 {
-//            let url = NSURL(string: forward[forward.count - 1])
             self.play(forward[forward.count - 1])
         } else if sender.tag == 1 {
-//            let url = NSURL(string: forward[forwardCount])
             self.play(forward[forwardCount])
         } else if sender.tag == 2 {
-//            let url = NSURL(string: backward[backward.count - 1])
             self.play(backward[backward.count - 1])
         } else if sender.tag == 3 {
-//            let url = NSURL(string: backward[backwardCount])
             self.play(backward[backwardCount])
         }
     }

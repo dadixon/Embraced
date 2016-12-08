@@ -27,6 +27,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var trialLabel: UILabel!
     @IBOutlet weak var tasksLabel: UILabel!
+    @IBOutlet weak var practiceLabel: UILabel!
+    @IBOutlet weak var practiceInstructionsLabel: UILabel!
     
     @IBOutlet weak var example1Response: UILabel!
     @IBOutlet weak var example2Response: UILabel!
@@ -60,6 +62,10 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     var tasksCount = 0
     
     var timer = Timer()
+    
+    var practiceString = NSLocalizedString("Now you will practice on your own.\nRemember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.\nThere will be 5 pairs of melodies for you to practice.\nWhen you are ready, tap on sound icon.", comment: "")
+    var practiceString2 = NSLocalizedString("Now you will practice on your own.\nRemember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.\nWhen you are ready, tap on sound icon.", comment: "")
+    
     
     // MARK: - Private
     
@@ -122,11 +128,12 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         do {
             let path = Bundle.main.path(forResource: filename, ofType: nil)
             let url = URL(fileURLWithPath: path!)
-            soundPlayer = try AVAudioPlayer(contentsOf: url)
-            soundPlayer.delegate = self
-            soundPlayer.prepareToPlay()
-            soundPlayer.volume = 1.0
-            soundPlayer.play()
+            let sound = try AVAudioPlayer(contentsOf: url)
+            sound.delegate = self
+            sound.prepareToPlay()
+            sound.volume = 1.0
+            soundPlayer = sound
+            sound.play()
         } catch let error as NSError {
             //self.player = nil
             print(error.localizedDescription)
@@ -139,6 +146,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     private func setupSounds(_ soundArray: Array<Array<String>>, iterator: Int, label: UILabel) {
         if soundPlayer != nil {
             soundPlayer.stop()
+            soundPlayer = nil
         }
         
         played = false
@@ -155,7 +163,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         print(firstSound)
         print(secondSound)
         
-        self.play(firstSound)
+//        self.play(firstSound)
         soundLabel = label
         soundLabel.text = "1"
     }
@@ -185,6 +193,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     @IBAction func replay(_ sender: AnyObject) {
         if soundPlayer != nil {
             soundPlayer.stop()
+            soundPlayer = nil
         }
         
         resetTimer()
@@ -194,7 +203,10 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func moveToExample3(_ sender: AnyObject) {
-        soundPlayer.stop()
+        if soundPlayer != nil {
+            soundPlayer.stop()
+            soundPlayer = nil
+        }
         setSubview(example2View, next: example3View)
         setupSounds(examples, iterator: 2, label: example3Label)
         exampleCount += 1
@@ -202,9 +214,14 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
-        soundPlayer.stop()
+        if soundPlayer != nil {
+            soundPlayer.stop()
+            soundPlayer = nil
+        }
         setSubview(example3View, next: trial1View)
         setupSounds(trials, iterator: trialCount, label: trialLabel)
+        practiceLabel.text = NSLocalizedString("Practice \(trialCount+1)", comment: "")
+        practiceInstructionsLabel.text = practiceString
     }
     
     @IBAction func exampleAnswered(_ sender: AnyObject) {
@@ -258,19 +275,20 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         trialCount += 1
         
         if trialCount < trials.count {
-            // Save answer
-            
             // Which label back to 1
             trialLabel.text = "1"
             practiceResponse.text = ""
             practiceSegment.selectedSegmentIndex = -1
+            practiceLabel.text = NSLocalizedString("Practice \(trialCount+1)", comment: "")
+            practiceInstructionsLabel.text = practiceString2
             
             // Set sounds to play
             setupSounds(trials, iterator: trialCount, label: trialLabel)
         } else {
-            //            if soundPlayer != nil {
-            soundPlayer.stop()
-            //            }
+            if soundPlayer != nil {
+                soundPlayer.stop()
+                soundPlayer = nil
+            }
             
             setSubview(trial1View, next: preTaskView)
         }
@@ -279,6 +297,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     @IBAction func moveToTask(_ sender: AnyObject) {
         setSubview(preTaskView, next: taskView)
         setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
+        self.play(firstSound)
         tasksCount += 1
     }
     
@@ -297,9 +316,14 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
             // Set sounds to play
             setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
             
+            self.play(firstSound)
+            
             tasksCount += 1
         } else {
-            soundPlayer.stop()
+            if soundPlayer != nil {
+                soundPlayer.stop()
+                soundPlayer = nil
+            }
             print(userAnswers)
             var jsonObject = [String: AnyObject]()
             

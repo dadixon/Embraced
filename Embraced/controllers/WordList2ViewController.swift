@@ -150,34 +150,6 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
         }
     }
     
-    func startTimer() {
-        if !timer.isValid {
-            
-            let aSelector : Selector = #selector(UIMenuController.update)
-            
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
-            
-            startTime = Date.timeIntervalSinceReferenceDate
-        }
-    }
-    
-    func update() {
-        if(count > 0) {
-            countLabel.text = String(count)
-            count -= 1
-        } else {
-            resetTimer()
-            countLabel.text = ""
-            
-            self.play(tasks[position])
-        }
-    }
-    
-    func resetTimer() {
-        timer.invalidate()
-    }
-    
-    
     func play(_ filename:String) {
         do {
             let path = Bundle.main.path(forResource: filename, ofType: nil)
@@ -241,8 +213,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
     }
     
     @IBAction func listen(_ sender: AnyObject) {
-        count = 3
-        startTimer()
+        self.play(tasks[position])
         listenBtn.isEnabled = false
     }
 
