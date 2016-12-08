@@ -22,6 +22,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
     @IBOutlet weak var answerSegment: UISegmentedControl!
     
     @IBOutlet weak var instructionText: UILabel!
+    @IBOutlet weak var instructionText2: UILabel!
     
     var recordingSession: AVAudioSession!
     var soundRecorder: AVAudioRecorder!
@@ -101,6 +102,11 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
         myMutableString = NSMutableAttributedString(string: myString)
         myMutableString.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: NSMakeRange(46, 7))
         instructionText.attributedText = myMutableString
+        
+        myMutableString2 = NSMutableAttributedString(string: myString2)
+        myMutableString2.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: NSMakeRange(132, 7))
+        myMutableString2.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: NSMakeRange(221, 7))
+        instructionText2.attributedText = myMutableString2
         
         loadingView.stopAnimating()
     }
