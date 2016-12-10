@@ -7,25 +7,16 @@
 //
 
 import UIKit
+import WebKit
 
-class ReyComplexFigure2ViewController: FrontViewController, UIWebViewDelegate {
-
-    @IBOutlet weak var myWebView: UIWebView!
-        
+class ReyComplexFigure2ViewController: WebViewController {
+    
     override func viewDidLoad() {
         step = 5
+        orientation = "portrait"
+        url = URL (string: "http://girlscouts.harryatwal.com/reyComplexFigure2.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
-        
-        orientation = "portrait"
-        rotated()
-        myWebView.delegate = self
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ReyComplexFigure2ViewController.next(_:)))
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ReyComplexFigure2ViewController.back(_:)))
-        
-        let url = URL (string: "http://girlscouts.harryatwal.com/reyComplexFigure2.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!);
-        let requestObj = URLRequest(url: url!);
-        myWebView.loadRequest(requestObj);
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,24 +27,17 @@ class ReyComplexFigure2ViewController: FrontViewController, UIWebViewDelegate {
     
     // MARK: - Navigation
     
-    @IBAction func next(_ sender: AnyObject) {
-//        var navigationArray = self.navigationController?.viewControllers
-//        
-//        navigationArray?.remove(at: 0)
-        
+    func next() {
         let trailMakingTestViewController:TrailMakingTestViewController = TrailMakingTestViewController()
-//        navigationArray?.append(trailMakingTestViewController)
-//        
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        self.navigationController?.pushViewController(trailMakingTestViewController, animated: true)
+        nextViewController(viewController: trailMakingTestViewController)
     }
-
-//    @IBAction func back(_ sender: AnyObject) {
-//        _ = self.navigationController?.popViewController(animated: true)
-//    }
     
     // MARK: - Delegate
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        loadingView.stopAnimating()
+    
+    override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if (message.name == "callbackHandler") {
+            next()
+        }
+        
     }
 }

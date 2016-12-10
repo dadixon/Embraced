@@ -7,25 +7,16 @@
 //
 
 import UIKit
+import WebKit
 
-class PegboardViewController: FrontViewController, UIWebViewDelegate {
-
-    @IBOutlet weak var myWebView: UIWebView!
+class PegboardViewController: WebViewController {
     
     override func viewDidLoad() {
         step = 13
+        orientation = "landscape"
+        url = URL(string: "http://girlscouts.harryatwal.com/motorTask.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
-        
-        orientation = "portrait"
-        rotated()
-        myWebView.delegate = self
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PegboardViewController.next(_:)))
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(PegboardViewController.back(_:)))
-        
-        let url = URL (string: "http://girlscouts.harryatwal.com/motorTask.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!);
-        let requestObj = URLRequest(url: url!);
-        myWebView.loadRequest(requestObj);
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,24 +27,17 @@ class PegboardViewController: FrontViewController, UIWebViewDelegate {
     
     // MARK: - Navigation
     
-    @IBAction func next(_ sender: AnyObject) {
-//        var navigationArray = self.navigationController?.viewControllers
-//        
-//        navigationArray?.remove(at: 0)
-        
-        let mOCAMMSETestViewController:WordListViewController = WordListViewController()
-//        navigationArray?.append(mOCAMMSETestViewController)
-//        
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
+    func next() {
+        let vc:WordListViewController = WordListViewController()
+        nextViewController(viewController: vc)
     }
-
-//    @IBAction func back(_ sender: AnyObject) {
-//        _ = self.navigationController?.popViewController(animated: true)
-//    }
     
     // MARK: - Delegate
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        loadingView.stopAnimating()
+    
+    override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if (message.name == "callbackHandler") {
+            next()
+        }
+        
     }
 }

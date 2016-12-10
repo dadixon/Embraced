@@ -15,6 +15,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var practiceView: UIView!
     @IBOutlet var recognitionView: UIView!
+    @IBOutlet var completeView: UIView!
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var firstListLabel: UILabel!
@@ -61,12 +62,15 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
         
         super.viewDidLoad()
         
+        orientation = "landscape"
+        rotated()
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(WordListViewController.next(_:)))
-        //        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(WordListViewController.back(_:)))
         
         
         practiceView.translatesAutoresizingMaskIntoConstraints = false
         recognitionView.translatesAutoresizingMaskIntoConstraints = false
+        completeView.translatesAutoresizingMaskIntoConstraints = false
         
         containerView.addSubview(practiceView)
         
@@ -97,7 +101,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
         
         
         // Fetch audios
-        tasks = appDelegate.wordListTasks
+        tasks = DataManager.sharedInstance.wordListTasks
         
         myMutableString = NSMutableAttributedString(string: myString)
         myMutableString.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: NSMakeRange(46, 7))
@@ -182,17 +186,25 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        var navigationArray = self.navigationController?.viewControllers
-        
-        navigationArray?.remove(at: 0)
-        
-        let mOCAMMSETestViewController:NamingTaskViewController = NamingTaskViewController()
-        navigationArray?.append(mOCAMMSETestViewController)
-        
-        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        //        self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
+        let vc:NamingTaskViewController = NamingTaskViewController()
+        nextViewController(viewController: vc)
     }
     
+    @IBAction func done(_ sender: AnyObject) {
+        let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("wordlistRecall.m4a"))
+        let dataStr = soundData?.base64EncodedString(options: [])
+        var jsonObject = [String: AnyObject]()
+        
+        // Gather data for post
+        jsonObject = [
+            "answers": answers as AnyObject,
+            "soundByte": dataStr as AnyObject
+        ]
+        
+        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "wordlist2", data: jsonObject)
+        
+        next(self)
+    }
     
     @IBAction func moveToRecogniton(_ sender: AnyObject) {
         setSubview(practiceView, next: recognitionView)
@@ -227,19 +239,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
         position += 1
         
         if position == tasks.count {
-            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("wordlistRecall.m4a"))
-            let dataStr = soundData?.base64EncodedString(options: [])
-            var jsonObject = [String: AnyObject]()
-            
-            // Gather data for post
-            jsonObject = [
-                "answers": answers as AnyObject,
-                "soundByte": dataStr as AnyObject
-            ]
-            
-            APIWrapper.post(id: participant.string(forKey: "pid")!, test: "wordlist2", data: jsonObject)
-            
-            next(self)
+            setSubview(recognitionView, next: completeView)
         } else {
             listenBtn.isEnabled = true
             firstListLabel.isHidden = true

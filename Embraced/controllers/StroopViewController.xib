@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StroopViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
+                <outlet property="completeView" destination="LRS-gg-uL2" id="0GA-n2-kKD"/>
                 <outlet property="containerView" destination="dPI-mb-XRS" id="kWx-3P-Hv6"/>
                 <outlet property="instructionsView" destination="W9B-BG-USC" id="zYj-sK-SJd"/>
                 <outlet property="introView" destination="Moa-ZS-BgY" id="x5l-Db-NiV"/>
@@ -790,6 +791,29 @@
                 <constraint firstAttribute="trailing" secondItem="V2x-w6-WEX" secondAttribute="trailing" constant="20" id="lNy-4l-V65"/>
             </constraints>
             <point key="canvasLocation" x="2233" y="329"/>
+        </view>
+        <view contentMode="scaleToFill" id="LRS-gg-uL2" userLabel="Complete View">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFv-Dt-Y9l">
+                    <rect key="frame" x="345" y="497" width="78" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="SUBMIT"/>
+                    <connections>
+                        <action selector="done:" destination="-1" eventType="touchUpInside" id="aWr-F1-Npu"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-31-afy">
+                    <rect key="frame" x="277" y="390" width="214" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="4059" y="-791"/>
         </view>
     </objects>
     <resources>

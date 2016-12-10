@@ -17,6 +17,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DigitalSpanViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
                 <outlet property="bRounds" destination="KBF-ll-4we" id="Nnk-o6-4P7"/>
+                <outlet property="completeView" destination="Tbg-TJ-DWN" id="hNY-2h-DkM"/>
                 <outlet property="containerView" destination="bru-dk-i0h" id="1T5-ce-Yb5"/>
                 <outlet property="instructions" destination="W5d-aU-YUb" id="D8J-wH-4d0"/>
                 <outlet property="instructionsA" destination="dmM-P0-4MJ" id="FXX-6i-2Mw"/>
@@ -503,6 +504,29 @@ Click on LISTEN button when you are ready.</string>
                 <constraint firstItem="KBF-ll-4we" firstAttribute="centerX" secondItem="TeY-My-cQ3" secondAttribute="centerX" id="r5T-ke-co3"/>
             </constraints>
             <point key="canvasLocation" x="3271" y="-1030"/>
+        </view>
+        <view contentMode="scaleToFill" id="Tbg-TJ-DWN" userLabel="Complete View">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDz-fl-CkV">
+                    <rect key="frame" x="277" y="362" width="214" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdG-on-Vyl">
+                    <rect key="frame" x="345" y="497" width="78" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="SUBMIT"/>
+                    <connections>
+                        <action selector="done:" destination="-1" eventType="touchUpInside" id="fe0-t2-rG3"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="4203" y="-1030"/>
         </view>
     </objects>
     <resources>

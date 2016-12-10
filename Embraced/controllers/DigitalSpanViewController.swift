@@ -31,6 +31,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     @IBOutlet var task1View: UIView!
     @IBOutlet var preTask2View: UIView!
     @IBOutlet var task2View: UIView!
+    @IBOutlet var completeView: UIView!
     
     @IBOutlet weak var rounds: UILabel!
     @IBOutlet weak var bRounds: UILabel!
@@ -75,13 +76,13 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         rotated()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(DigitalSpanViewController.next(_:)))
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(DigitalSpanViewController.back(_:)))
         
         introView.translatesAutoresizingMaskIntoConstraints = false
         preTask1View.translatesAutoresizingMaskIntoConstraints = false
         preTask2View.translatesAutoresizingMaskIntoConstraints = false
         task1View.translatesAutoresizingMaskIntoConstraints = false
         task2View.translatesAutoresizingMaskIntoConstraints = false
+        completeView.translatesAutoresizingMaskIntoConstraints = false
         
         containerView.addSubview(introView)
         
@@ -110,8 +111,8 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
             // failed to record!
         }
 
-        forward = appDelegate.digitalSpanForward
-        backward = appDelegate.digitalSpanBackward
+        forward = DataManager.sharedInstance.digitalSpanForward
+        backward = DataManager.sharedInstance.digitalSpanBackward
         
         loadingView.stopAnimating()
     }
@@ -183,17 +184,8 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         
     }
     
-//    func downloadFileFromURL(url:NSURL){
-//        var downloadTask:URLSessionDownloadTask
-//        downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
-//            self.play(URL! as NSURL)
-//        })
-//        
-//        downloadTask.resume()
-//    }
-    
     func log(logMessage: String, functionName: String = #function) {
-        print("\(functionName): \(logMessage)")
+        print("\(#function): \(logMessage)")
     }
     
     func finishedPlaying() {
@@ -213,26 +205,16 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-//        var navigationArray = self.navigationController?.viewControllers
-//        
-//        navigationArray?.remove(at: 0)
-        
-        let reyComplexFigure3ViewController:ReyComplexFigure3ViewController = ReyComplexFigure3ViewController()
-//        navigationArray?.append(reyComplexFigure3ViewController)
-//        
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        self.navigationController?.pushViewController(reyComplexFigure3ViewController, animated: true)
+        let vc:ReyComplexFigure3ViewController = ReyComplexFigure3ViewController()
+        nextViewController(viewController: vc)
     }
-    
-//    @IBAction func back(_ sender: AnyObject) {
-//        _ = self.navigationController?.popViewController(animated: true)
-//    }
-    
-    
-    
-    
-    
-    
+
+    @IBAction func done(_ sender:AnyObject) {
+        // Push to API
+        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: createPostObject())
+        
+        next(self)
+    }
     // MARK: - Actions
     
     @IBAction func recordTapped(_ sender: UIButton) {
@@ -328,10 +310,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
             listenBackwardBtn.isEnabled = true
             recordBackwardBtn.isEnabled = false
         } else {
-            // Push to API
-            APIWrapper.post(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: createPostObject())
-            
-            self.next(self)
+            setSubview(task2View, next: completeView)
         }
     }
     

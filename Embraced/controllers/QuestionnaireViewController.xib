@@ -17,8 +17,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionnaireViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
                 <outlet property="loadingView" destination="RRg-a3-HCC" id="ttE-8E-LsJ"/>
-                <outlet property="mainView" destination="XZG-ZL-cZS" id="rgk-az-Qnw"/>
-                <outlet property="myWebView" destination="g6o-Us-yZn" id="LT9-LG-Hxu"/>
+                <outlet property="mainView" destination="XZG-ZL-cZS" id="VuF-qd-XgD"/>
                 <outlet property="progressLabel" destination="Tvd-sE-plK" id="qk6-Yx-XU5"/>
                 <outlet property="progressView" destination="OyK-Y5-dOa" id="3ZR-xG-KMX"/>
                 <outlet property="view" destination="J3q-W3-s7m" id="w7z-fF-E2e"/>
@@ -30,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZG-ZL-cZS">
-                    <rect key="frame" x="8" y="65" width="752" height="951"/>
+                    <rect key="frame" x="8" y="20" width="752" height="996"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghg-R8-L4S">
                             <rect key="frame" x="0.0" y="0.0" width="752" height="47"/>
@@ -73,7 +72,7 @@
                         <constraint firstItem="g6o-Us-yZn" firstAttribute="leading" secondItem="XZG-ZL-cZS" secondAttribute="leading" id="2Wj-7v-EMV"/>
                         <constraint firstAttribute="trailing" secondItem="ghg-R8-L4S" secondAttribute="trailing" id="Afn-Oy-Pr3"/>
                         <constraint firstItem="ghg-R8-L4S" firstAttribute="top" secondItem="XZG-ZL-cZS" secondAttribute="top" id="a0E-Pb-z2o"/>
-                        <constraint firstAttribute="bottom" secondItem="g6o-Us-yZn" secondAttribute="bottom" id="kGv-5y-LlJ"/>
+                        <constraint firstAttribute="bottom" secondItem="g6o-Us-yZn" secondAttribute="bottom" constant="45" id="kGv-5y-LlJ"/>
                         <constraint firstItem="ghg-R8-L4S" firstAttribute="leading" secondItem="XZG-ZL-cZS" secondAttribute="leading" id="kZ9-ag-125"/>
                         <constraint firstItem="g6o-Us-yZn" firstAttribute="top" secondItem="ghg-R8-L4S" secondAttribute="bottom" id="leP-hb-c63"/>
                         <constraint firstAttribute="trailing" secondItem="g6o-Us-yZn" secondAttribute="trailing" id="spV-hs-ddA"/>
@@ -85,7 +84,7 @@
                 <constraint firstItem="XZG-ZL-cZS" firstAttribute="leading" secondItem="J3q-W3-s7m" secondAttribute="leading" constant="8" id="HhG-UW-k33"/>
                 <constraint firstAttribute="bottom" secondItem="XZG-ZL-cZS" secondAttribute="bottom" constant="8" id="Lb1-P2-5EC"/>
                 <constraint firstAttribute="trailing" secondItem="XZG-ZL-cZS" secondAttribute="trailing" constant="8" id="kcC-do-4FF"/>
-                <constraint firstItem="XZG-ZL-cZS" firstAttribute="top" secondItem="J3q-W3-s7m" secondAttribute="top" constant="65" id="mEO-tA-SEC"/>
+                <constraint firstItem="XZG-ZL-cZS" firstAttribute="top" secondItem="J3q-W3-s7m" secondAttribute="top" constant="20" id="mEO-tA-SEC"/>
             </constraints>
             <point key="canvasLocation" x="132" y="-1137"/>
         </view>

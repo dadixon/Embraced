@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PitchViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
+                <outlet property="completeView" destination="ZnL-qQ-idM" id="nb4-yI-73I"/>
                 <outlet property="containerView" destination="yOa-m6-D7o" id="r17-Yh-3VX"/>
                 <outlet property="example1Label" destination="dLv-Vx-Wwx" id="1dg-67-Kiv"/>
                 <outlet property="example1Response" destination="8uU-dm-nhl" id="ODj-vW-0tS"/>
@@ -602,6 +603,29 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                 <constraint firstAttribute="trailing" secondItem="vVO-bI-cFW" secondAttribute="trailing" constant="20" id="xaH-9T-3SM"/>
             </constraints>
             <point key="canvasLocation" x="-256" y="924"/>
+        </view>
+        <view contentMode="scaleToFill" id="ZnL-qQ-idM" userLabel="Complete View">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ox-dh-Epf">
+                    <rect key="frame" x="277" y="362" width="214" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-Lt-zs5">
+                    <rect key="frame" x="345" y="497" width="78" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="SUBMIT"/>
+                    <connections>
+                        <action selector="done:" destination="-1" eventType="touchUpInside" id="YkW-Yx-v5h"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="3395" y="-1287"/>
         </view>
     </objects>
     <resources>

@@ -22,23 +22,6 @@ class ViewController: UIViewController {
         signInBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
         
-//        if Reachability.isConnectedToNetwork() == true {
-//            print("Online")
-//            if (Stormpath.sharedSession.accessToken != nil) {
-//                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//                let secondViewController = storyBoard.instantiateViewControllerWithIdentifier("UserInputViewController") as! UserInputViewController
-//                
-//                self.presentViewController(secondViewController, animated: true, completion: nil)
-//            }
-//        } else {
-//            print("Offline")
-//            let alertController = UIAlertController(title: "Unable to download content", message: "The content is having trouble downloading.\nPlease try again with a stronger internet connection.", preferredStyle: .alert)
-//            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//            alertController.addAction(defaultAction)
-//            self.present(alertController, animated: true, completion: nil)
-//        }
-        
-        
     }
 
     override func viewDidLayoutSubviews() {
@@ -74,15 +57,15 @@ class ViewController: UIViewController {
         else {
 //            showAlert(withTitle: "Success", message: "You logged in successfully")
             
-            Stormpath.sharedSession.me { (account, error) -> Void in
-                if let account = account {
-                    self.errorLabel.text = "Hello \(account.fullName)!"
-                }
-            }
-            
-            let notesEndpoint = URL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/secret")!
-            let request = NSMutableURLRequest(url: notesEndpoint)
-            request.setValue("Bearer \(Stormpath.sharedSession.accessToken!)", forHTTPHeaderField: "Authorization")
+//            Stormpath.sharedSession.me { (account, error) -> Void in
+//                if let account = account {
+//                    self.errorLabel.text = "Hello \(account.fullName)!"
+//                }
+//            }
+//            
+//            let notesEndpoint = URL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/secret")!
+//            let request = NSMutableURLRequest(url: notesEndpoint)
+//            request.setValue("Bearer \(Stormpath.sharedSession.accessToken!)", forHTTPHeaderField: "Authorization")
 //            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
 //                guard let data = data, json = try? NSJSONSerialization.JSONObjectWithData(data, options: []), notes = json["notes"] as? String else {
 //                    return

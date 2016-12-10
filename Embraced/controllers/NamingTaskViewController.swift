@@ -25,6 +25,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     @IBOutlet var trialView: UIView!
     @IBOutlet var preTaskView: UIView!
     @IBOutlet var taskView: UIView!
+    @IBOutlet var completeView: UIView!
 
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
@@ -63,11 +64,10 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         
         super.viewDidLoad()
 
-        practice = appDelegate.namingTaskPractice
-        task = appDelegate.namingTaskTask
+        practice = DataManager.sharedInstance.namingTaskPractice
+        task = DataManager.sharedInstance.namingTaskTask
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(NamingTaskViewController.next(_:)))
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(ReyComplexFigureViewController.back(_:)))
         
         orientation = "landscape"
         rotated()
@@ -76,6 +76,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         trialView.translatesAutoresizingMaskIntoConstraints = false
         preTaskView.translatesAutoresizingMaskIntoConstraints = false
         taskView.translatesAutoresizingMaskIntoConstraints = false
+        completeView.translatesAutoresizingMaskIntoConstraints = false
         
         containerView.addSubview(initialView)
         
@@ -142,23 +143,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         }
     }
     
-//    func play(_ url:NSURL) {
-//        print("playing \(url)")
-//        
-//        do {
-//            soundPlayer = try AVAudioPlayer(contentsOf: url as URL)
-//            soundPlayer.prepareToPlay()
-//            soundPlayer.volume = 1.0
-//            soundPlayer.play()
-//        } catch let error as NSError {
-//            //self.player = nil
-//            print(error.localizedDescription)
-//        } catch {
-//            print("AVAudioPlayer init failed")
-//        }
-//        
-//    }
-    
     func log(logMessage: String, functionName: String = #function) {
         print("\(functionName): \(logMessage)")
     }
@@ -178,24 +162,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
         
         let seconds = UInt8(elapsedTime)
         elapsedTime -= TimeInterval(seconds)
-        
-        
-        //fraction of milliseconds
-        
-//        let fraction = UInt8(elapsedTime * 100)
-        
-        //add the leading zero for minutues, seconds and milliseconds, store
-        // as string constants
-//        
-//        let strMinutes = minutes > 9 ? String(minutes): "0" + String(minutes)
-//        
-//        let strSeconds = seconds > 9 ? String(seconds): "0" + String(seconds)
-//        
-//        let strFraction = fraction > 9 ? String(fraction): "0" + String(fraction)
-        
-        //concatonate mins, seoncds and milliseconds, assign to UILable timercount
-        
-//        timerCount.text = "\(strMinutes):\(strSeconds):\(strFraction)"
         
         if seconds >= 15 {
             timerCount.text = String(timeCount)
@@ -241,21 +207,14 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-//        var navigationArray = self.navigationController?.viewControllers
-//        
-//        navigationArray?.remove(at: 0)
-        
-        let multipleErrandsViewController:ComprehensionViewController = ComprehensionViewController()
-//        navigationArray?.append(multipleErrandsViewController)
-//        
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        self.navigationController?.pushViewController(multipleErrandsViewController, animated: true)
+        let vc:ComprehensionViewController = ComprehensionViewController()
+        nextViewController(viewController: vc)
     }
     
-//    @IBAction func back(_ sender: AnyObject) {
-//        _ = self.navigationController?.popViewController(animated: true)
-//    }
-    
+    @IBAction func done(_ sender:AnyObject) {
+        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "naming_task", data: createPostObject())
+        next(self)
+    }
     
     // MARK: - Actions
     @IBAction func recordTapped(_ sender: UIButton) {
@@ -317,9 +276,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
             startTimer()
         } else {
             resetTimer()
-            APIWrapper.post(id: participant.string(forKey: "pid")!, test: "naming_task", data: createPostObject())
-            let multipleErrandsViewController:ComprehensionViewController = ComprehensionViewController()
-            self.navigationController?.pushViewController(multipleErrandsViewController, animated: true)
+            setSubview(taskView, next: completeView)
         }
     }
     

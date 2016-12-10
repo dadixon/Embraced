@@ -15,6 +15,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var practiceView: UIView!
     @IBOutlet var trial1View: UIView!
+    @IBOutlet var completeView: UIView!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
@@ -74,13 +75,13 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(WordListViewController.next(_:)))
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(WordListViewController.back(_:)))
         
         orientation = "landscape"
         rotated()
         
         practiceView.translatesAutoresizingMaskIntoConstraints = false
         trial1View.translatesAutoresizingMaskIntoConstraints = false
+        completeView.translatesAutoresizingMaskIntoConstraints = false
         
         containerView.addSubview(practiceView)
         
@@ -109,7 +110,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         }
         
         // Fetch audios
-        trials = appDelegate.wordListTrials
+        trials = DataManager.sharedInstance.wordListTrials
         
         loadingView.stopAnimating()
     }
@@ -251,17 +252,14 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-//        var navigationArray = self.navigationController?.viewControllers
-        
-//        navigationArray?.remove(at: 0)
-        
-        let mOCAMMSETestViewController:StroopViewController = StroopViewController()
-//        navigationArray?.append(mOCAMMSETestViewController)
-//
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
+        let vc:StroopViewController = StroopViewController()
+        nextViewController(viewController: vc)
     }
 
+    @IBAction func done(_ sender: AnyObject) {
+        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "wordlist", data: createPostObject())
+        next(self)
+    }
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
         setSubview(practiceView, next: trial1View)
@@ -308,8 +306,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         if position < instructions.count {
             setup()
         } else {
-            APIWrapper.post(id: participant.string(forKey: "pid")!, test: "wordlist", data: createPostObject())
-            next(self)
+            setSubview(trial1View, next: completeView)
         }
     }
     

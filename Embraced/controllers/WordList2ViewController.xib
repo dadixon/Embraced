@@ -17,6 +17,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WordList2ViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
                 <outlet property="answerSegment" destination="PD5-Kf-Kvj" id="sHw-vg-hlu"/>
+                <outlet property="completeView" destination="jxZ-he-2Kh" id="QyO-DS-hTr"/>
                 <outlet property="containerView" destination="0xU-Tj-aOe" id="U92-gV-d68"/>
                 <outlet property="countLabel" destination="YMS-Fw-1n9" id="3GU-wU-xYw"/>
                 <outlet property="firstListLabel" destination="Q0T-3i-wfJ" id="qBy-ZJ-kES"/>
@@ -253,6 +254,29 @@ Tap the LISTEN icon to start</string>
                 <constraint firstItem="F7Y-zP-p1n" firstAttribute="leading" secondItem="jIr-wz-Bpc" secondAttribute="leading" constant="20" id="zej-aS-vS6"/>
             </constraints>
             <point key="canvasLocation" x="1289" y="-791"/>
+        </view>
+        <view contentMode="scaleToFill" id="jxZ-he-2Kh" userLabel="Complete View">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6A2-iy-SE2">
+                    <rect key="frame" x="345" y="497" width="78" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="SUBMIT"/>
+                    <connections>
+                        <action selector="done:" destination="-1" eventType="touchUpInside" id="7M1-xN-exi"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfZ-GD-Cq1">
+                    <rect key="frame" x="277" y="390" width="214" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="2273" y="-791"/>
         </view>
     </objects>
     <resources>

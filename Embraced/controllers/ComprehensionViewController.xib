@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -14,7 +17,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComprehensionViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
                 <outlet property="mainView" destination="WZg-tI-7ig" id="4lo-VZ-RiY"/>
-                <outlet property="myWebView" destination="cgO-zY-6g3" id="k3X-Ct-Koq"/>
                 <outlet property="progressLabel" destination="ttW-iZ-Zne" id="gd5-Jg-0aJ"/>
                 <outlet property="progressView" destination="sw8-km-5c2" id="nVn-j4-WTI"/>
                 <outlet property="view" destination="s5N-xF-bGJ" id="cQg-8O-U3C"/>
@@ -22,19 +24,23 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="s5N-xF-bGJ">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZg-tI-7ig">
+                    <rect key="frame" x="8" y="65" width="359" height="594"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qy5-MH-InX">
+                            <rect key="frame" x="0.0" y="0.0" width="359" height="47"/>
                             <subviews>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sw8-km-5c2">
+                                    <rect key="frame" x="8.5" y="32" width="342" height="2"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="342" id="aKd-9L-9HE"/>
                                     </constraints>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttW-iZ-Zne">
+                                    <rect key="frame" x="165.5" y="8" width="29" height="21"/>
                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -50,19 +56,12 @@
                                 <constraint firstAttribute="height" constant="47" id="xCM-bS-Ltc"/>
                             </constraints>
                         </view>
-                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgO-zY-6g3">
-                            <color key="backgroundColor" red="0.28958413" green="0.31462949509999999" blue="0.32950475810000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </webView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="Qy5-MH-InX" firstAttribute="leading" secondItem="WZg-tI-7ig" secondAttribute="leading" id="CK6-n7-5Ed"/>
-                        <constraint firstAttribute="bottom" secondItem="cgO-zY-6g3" secondAttribute="bottom" constant="12" id="JoB-ZC-YH0"/>
                         <constraint firstItem="Qy5-MH-InX" firstAttribute="top" secondItem="WZg-tI-7ig" secondAttribute="top" id="MwM-5f-rTK"/>
                         <constraint firstAttribute="trailing" secondItem="Qy5-MH-InX" secondAttribute="trailing" id="X19-ei-XoD"/>
-                        <constraint firstItem="cgO-zY-6g3" firstAttribute="leading" secondItem="WZg-tI-7ig" secondAttribute="leading" id="ePW-Gb-eW5"/>
-                        <constraint firstAttribute="trailing" secondItem="cgO-zY-6g3" secondAttribute="trailing" id="jkh-c4-OSh"/>
-                        <constraint firstItem="cgO-zY-6g3" firstAttribute="top" secondItem="WZg-tI-7ig" secondAttribute="top" constant="48" id="nG8-43-iG1"/>
                     </constraints>
                 </view>
             </subviews>

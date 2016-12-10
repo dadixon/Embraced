@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NamingTaskViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
+                <outlet property="completeView" destination="O6H-w5-HxU" id="YdO-LC-MOm"/>
                 <outlet property="containerView" destination="s5c-HD-6pZ" id="iwO-jF-oxN"/>
                 <outlet property="imageView" destination="zsK-61-qEx" id="mp9-jW-gFd"/>
                 <outlet property="initialView" destination="Z25-ue-BeG" id="Xl8-9R-zXQ"/>
@@ -327,6 +328,29 @@ Please click START when you are ready</string>
                 <constraint firstAttribute="trailing" secondItem="rEK-9p-R7D" secondAttribute="trailing" constant="20" id="e5y-TK-TBj"/>
             </constraints>
             <point key="canvasLocation" x="1329" y="-1024"/>
+        </view>
+        <view contentMode="scaleToFill" id="O6H-w5-HxU" userLabel="Complete View">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5y8-rM-v2E">
+                    <rect key="frame" x="345" y="497" width="78" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="SUBMIT"/>
+                    <connections>
+                        <action selector="done:" destination="-1" eventType="touchUpInside" id="VkA-6d-wMW"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUq-LZ-Yax">
+                    <rect key="frame" x="277" y="390" width="214" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="3213" y="-1024"/>
         </view>
     </objects>
     <resources>

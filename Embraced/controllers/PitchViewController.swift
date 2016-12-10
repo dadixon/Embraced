@@ -20,6 +20,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     @IBOutlet var trial1View: UIView!
     @IBOutlet var preTaskView: UIView!
     @IBOutlet var taskView: UIView!
+    @IBOutlet var completeView: UIView!
     
     @IBOutlet weak var example1Label: UILabel!
     @IBOutlet weak var example2Label: UILabel!
@@ -87,7 +88,6 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PitchViewController.next(_:)))
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(PitchViewController.back(_:)))
         
         orientation = "portrait"
         rotated()
@@ -99,6 +99,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         trial1View.translatesAutoresizingMaskIntoConstraints = false
         preTaskView.translatesAutoresizingMaskIntoConstraints = false
         taskView.translatesAutoresizingMaskIntoConstraints = false
+        completeView.translatesAutoresizingMaskIntoConstraints = false
         
         containerView.addSubview(introView)
         
@@ -110,9 +111,9 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         
         
         // Fetch audios
-        examples = appDelegate.pitchExamples
-        trials = appDelegate.pitchTrials
-        tasks = appDelegate.pitchTasks
+        examples = DataManager.sharedInstance.pitchExamples
+        trials = DataManager.sharedInstance.pitchTrials
+        tasks = DataManager.sharedInstance.pitchTasks
         
         loadingView.stopAnimating()
     }
@@ -163,7 +164,6 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         print(firstSound)
         print(secondSound)
         
-//        self.play(firstSound)
         soundLabel = label
         soundLabel.text = "1"
     }
@@ -172,9 +172,25 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        let mOCAMMSETestViewController:DigitalSpanViewController = DigitalSpanViewController()
-        self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
+        let vc:DigitalSpanViewController = DigitalSpanViewController()
+        nextViewController(viewController: vc)
     }
+    
+    @IBAction func done(_ sender: AnyObject) {
+        print(userAnswers)
+        var jsonObject = [String: AnyObject]()
+        
+        // Gather data for post
+        jsonObject = [
+            "answers": userAnswers as AnyObject,
+            "score": score as AnyObject
+        ]
+        
+        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "pitch", data: jsonObject)
+        
+        next(self)
+    }
+    
     
     
     // MARK: - Actions
@@ -324,19 +340,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
                 soundPlayer.stop()
                 soundPlayer = nil
             }
-            print(userAnswers)
-            var jsonObject = [String: AnyObject]()
             
-            // Gather data for post
-            jsonObject = [
-                "answers": userAnswers as AnyObject,
-                "score": score as AnyObject
-            ]
-            
-            APIWrapper.post(id: participant.string(forKey: "pid")!, test: "pitch", data: jsonObject)
-            
-            let mOCAMMSETestViewController:DigitalSpanViewController = DigitalSpanViewController()
-            self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
+            setSubview(taskView, next: completeView)
         }
     }
     

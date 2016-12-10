@@ -17,6 +17,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WordListViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
                 <outlet property="InstructionsLabel" destination="USc-zK-X47" id="DQb-dB-AJ6"/>
+                <outlet property="completeView" destination="sZF-Yg-zBs" id="LL2-lC-DxV"/>
                 <outlet property="containerView" destination="hSf-IR-Jn9" id="3s7-8e-R3g"/>
                 <outlet property="countLabel" destination="tqr-Jd-rZ5" id="PMa-px-Atj"/>
                 <outlet property="instructions2Label" destination="kSd-Ri-ZDi" id="Gt0-eN-4rV"/>
@@ -280,6 +281,29 @@ Please tap the LISTEN button when you are ready to start</string>
                 <constraint firstItem="USc-zK-X47" firstAttribute="leading" secondItem="kSe-9b-lPj" secondAttribute="leading" constant="20" id="x4s-BJ-c4v"/>
             </constraints>
             <point key="canvasLocation" x="1690" y="-791"/>
+        </view>
+        <view contentMode="scaleToFill" id="sZF-Yg-zBs" userLabel="Complete View">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZh-ix-gRL">
+                    <rect key="frame" x="405" y="294" width="214" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asv-Dm-bVm">
+                    <rect key="frame" x="473" y="369" width="78" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="SUBMIT"/>
+                    <connections>
+                        <action selector="done:" destination="-1" eventType="touchUpInside" id="oTX-ff-uP2"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="2963" y="-791"/>
         </view>
     </objects>
     <resources>

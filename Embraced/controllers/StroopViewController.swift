@@ -45,6 +45,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     @IBOutlet weak var video2View: UIView!
     @IBOutlet weak var video3View: UIView!
     @IBOutlet weak var video4View: UIView!
+    @IBOutlet weak var completeView: UIView!
 
     @IBOutlet weak var practiceText: UILabel!
     
@@ -95,11 +96,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         orientation = "landscape"
         rotated()
         
-        
-//        self.present(alertController!, animated: true, completion: nil)
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(StroopViewController.next(_:)))
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(StroopViewController.back(_:)))
         
         introView.translatesAutoresizingMaskIntoConstraints = false
         instructionsView.translatesAutoresizingMaskIntoConstraints = false
@@ -115,6 +112,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         task2View.translatesAutoresizingMaskIntoConstraints = false
         task3View.translatesAutoresizingMaskIntoConstraints = false
         task4View.translatesAutoresizingMaskIntoConstraints = false
+        completeView.translatesAutoresizingMaskIntoConstraints = false
         
         containerView.addSubview(introView)
         
@@ -143,8 +141,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         }
         
         // Grab images from the api
-        images = appDelegate.stroopImages
-        videos = appDelegate.stroopVideos
+        images = DataManager.sharedInstance.stroopImages
+        videos = DataManager.sharedInstance.stroopVideos
         print(images)
         
         myMutableString2 = NSMutableAttributedString(string: myString2, attributes: [NSFontAttributeName:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
@@ -302,22 +300,19 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        
-//        var navigationArray = self.navigationController?.viewControllers
-//        
-//        navigationArray?.remove(at: 0)
-        
-        let digitalSpanViewController:CancellationTestViewController = CancellationTestViewController()
-//        navigationArray?.append(digitalSpanViewController)
-//        
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        self.navigationController?.pushViewController(digitalSpanViewController, animated: true)
+        let vc:CancellationTestViewController = CancellationTestViewController()
+        nextViewController(viewController: vc)
     }
     
-//    @IBAction func back(_ sender: AnyObject) {
-//        _ = self.navigationController?.popViewController(animated: true)
-//    }
-    
+    @IBAction func done(_ sender: AnyObject) {
+        let jsonObject = createPostObject()
+        
+        if (jsonObject.count > 0) {
+            APIWrapper.post(id: participant.string(forKey: "pid")!, test: "stroop", data: jsonObject)
+        }
+        
+        self.next(self)
+    }
     
     // MARK: - Actions
     
@@ -420,11 +415,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     @IBAction func submitTask(_ sender: AnyObject) {
         player.pause()
         
-        if (createPostObject().count > 0) {
-            APIWrapper.post(id: participant.string(forKey: "pid")!, test: "stroop", data: createPostObject())
-        }
-        
-        self.next(self)
+        setSubview(task4View, next: completeView)
     }
     
     @IBAction func playVideo(_ sender: AnyObject) {

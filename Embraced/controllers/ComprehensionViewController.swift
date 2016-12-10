@@ -7,25 +7,16 @@
 //
 
 import UIKit
+import WebKit
 
-class ComprehensionViewController: FrontViewController, UIWebViewDelegate {
-
-    @IBOutlet weak var myWebView: UIWebView!
+class ComprehensionViewController: WebViewController {
     
     override func viewDidLoad() {
         step = 19
+        orientation = "landscape"
+        url = URL(string: "http://girlscouts.harryatwal.com/comprehension.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
-        
-        orientation = "landscape"
-        rotated()
-        myWebView.delegate = self
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(CancellationTestViewController.next(_:)))
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(CancellationTestViewController.back(_:)))
-        
-        let url = URL (string: "http://girlscouts.harryatwal.com/comprehension.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!);
-        let requestObj = URLRequest(url: url!);
-        myWebView.loadRequest(requestObj);
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,25 +27,17 @@ class ComprehensionViewController: FrontViewController, UIWebViewDelegate {
     
     // MARK: - Navigation
     
-    @IBAction func next(_ sender: AnyObject) {
-        //        var navigationArray = self.navigationController?.viewControllers
-        //
-        //        navigationArray?.remove(at: 0)
-        
-        let eyeTestViewController:EyeTestViewController = EyeTestViewController()
-        //        navigationArray?.append(eyeTestViewController)
-        //
-        //        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        self.navigationController?.pushViewController(eyeTestViewController, animated: true)
+    func next() {
+        let vc:EyeTestViewController = EyeTestViewController()
+        nextViewController(viewController: vc)
     }
     
-//    @IBAction func back(_ sender: AnyObject) {
-//        _ = self.navigationController?.popViewController(animated: true)
-//    }
-
-    
     // MARK: - Delegate
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        loadingView.stopAnimating()
+    
+    override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if (message.name == "callbackHandler") {
+            next()
+        }
+        
     }
 }

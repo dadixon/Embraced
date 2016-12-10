@@ -43,14 +43,12 @@ class StartViewController: UIViewController {
         
         navigationArray?.remove(at: 0)
         
-//        let questionnaireViewController:QuestionnaireViewController = QuestionnaireViewController()
-        let questionnaireViewController:DigitalSpanViewController = DigitalSpanViewController()
-        navigationArray?.append(questionnaireViewController)
+        let vc:QuestionnaireViewController = QuestionnaireViewController()
+//        let vc = PegboardViewController()
+        navigationArray?.append(vc)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        
-//        let questionnaireViewController:QuestionnaireViewController = QuestionnaireViewController()
-//        self.navigationController?.pushViewController(questionnaireViewController, animated: true)
+
     }
     
  

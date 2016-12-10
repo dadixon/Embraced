@@ -7,25 +7,16 @@
 //
 
 import UIKit
+import WebKit
 
-class MOCAMMSETestViewController: FrontViewController, UIWebViewDelegate {
-
-    @IBOutlet weak var myWebView: UIWebView!
+class MOCAMMSETestViewController: WebViewController {
     
     override func viewDidLoad() {
         step = 2
+        orientation = "portrait"
+        url = URL (string: "http://girlscouts.harryatwal.com/MoCA_MMSE.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
-        
-        orientation = "portrait"
-        rotated()
-        
-        myWebView.delegate = self
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(MOCAMMSETestViewController.next(_:)))
-        
-        let url = URL (string: "http://girlscouts.harryatwal.com/MoCA_MMSE.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!);
-        let requestObj = URLRequest(url: url!);
-        myWebView.loadRequest(requestObj);
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,20 +27,18 @@ class MOCAMMSETestViewController: FrontViewController, UIWebViewDelegate {
     
     // MARK: - Navigation
     
-    @IBAction func next(_ sender: AnyObject) {
-        var navigationArray = self.navigationController?.viewControllers
-        
-        navigationArray?.remove(at: 0)
-        
-        let reyComplexFigureViewController:ReyComplexFigureViewController = ReyComplexFigureViewController()
-        navigationArray?.append(reyComplexFigureViewController)
-        
-//        self.navigationController?.pushViewController(reyComplexFigureViewController, animated: true)
-        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+    func next() {
+        let vc:ReyComplexFigureViewController = ReyComplexFigureViewController()
+        nextViewController(viewController: vc)
     }
     
     // MARK: - Delegate
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        loadingView.stopAnimating()
+    
+    override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        print("Testing")
+        if (message.name == "callbackHandler") {
+            next()
+        }
+        
     }
 }
