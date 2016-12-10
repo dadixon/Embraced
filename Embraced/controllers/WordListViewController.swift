@@ -285,7 +285,9 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
             preparePlayer()
             soundPlayer.play()
         } else {
-            soundPlayer.stop()
+            if soundPlayer != nil {
+                soundPlayer.stop()
+            }
             sender.setTitle("Play", for: UIControlState())
         }
     }

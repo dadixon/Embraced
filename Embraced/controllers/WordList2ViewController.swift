@@ -143,8 +143,10 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
     }
     
     func finishRecording(button: UIButton, success: Bool) {
-        soundRecorder.stop()
-        soundRecorder = nil
+        if soundRecorder != nil {
+            soundRecorder.stop()
+            soundRecorder = nil
+        }
         
         if success {
             button.setTitle("Re-record", for: .normal)
@@ -173,8 +175,10 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
     }
     
     func finishPlaying() {
-        soundPlayer.stop()
-        soundPlayer = nil
+        if soundPlayer != nil {
+            soundPlayer.stop()
+            soundPlayer = nil
+        }
         
         firstListLabel.isHidden = false
         answerSegment.isHidden = false
