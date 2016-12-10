@@ -7,35 +7,16 @@
 //
 
 import UIKit
+import WebKit
 
-class CPTViewController: FrontViewController, UIWebViewDelegate {
-
-    @IBOutlet weak var myWebView: UIWebView!
-    
-    var alertController : UIAlertController?
+class CPTViewController: WebViewController {
     
     override func viewDidLoad() {
         step = 11
+        orientation = "landscape"
+        url = URL(string: "http://girlscouts.harryatwal.com/cpt.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
-        
-        alertController = UIAlertController(title: "Orientation", message: "Please turn the device to landscape orientation and do not turn until stated.", preferredStyle: .alert)
-        
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController?.addAction(defaultAction)
-        self.present(alertController!, animated: true, completion: nil)
-        
-        orientation = "portrait"
-        rotated()
-        
-        myWebView.delegate = self
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(CPTViewController.next(_:)))
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(CPTViewController.back(_:)))
-        
-        let url = URL (string: "http://girlscouts.harryatwal.com/cpt.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!);
-        let requestObj = URLRequest(url: url!);
-        myWebView.loadRequest(requestObj);
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,24 +27,17 @@ class CPTViewController: FrontViewController, UIWebViewDelegate {
     
     // MARK: - Navigation
     
-    @IBAction func next(_ sender: AnyObject) {
-//        var navigationArray = self.navigationController?.viewControllers
-//
-//        navigationArray?.remove(at: 0)
-        
-        let eyeTestViewController:MatricesViewController = MatricesViewController()
-//        navigationArray?.append(eyeTestViewController)
-//        
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        self.navigationController?.pushViewController(eyeTestViewController, animated: true)
+    func next() {
+        let vc:MatricesViewController = MatricesViewController()
+        nextViewController(viewController: vc)
     }
-
-//    @IBAction func back(_ sender: AnyObject) {
-//        _ = self.navigationController?.popViewController(animated: true)
-//    }
     
     // MARK: - Delegate
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        loadingView.stopAnimating()
+    
+    override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if (message.name == "callbackHandler") {
+            next()
+        }
+        
     }
 }
