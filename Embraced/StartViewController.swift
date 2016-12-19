@@ -43,8 +43,8 @@ class StartViewController: UIViewController {
         
         navigationArray?.remove(at: 0)
         
-        let vc:QuestionnaireViewController = QuestionnaireViewController()
-//        let vc = PegboardViewController()
+//        let vc:QuestionnaireViewController = QuestionnaireViewController()
+        let vc = PitchViewController()
         navigationArray?.append(vc)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)

@@ -13,7 +13,7 @@ class EyeTestViewController: WebViewController {
     
     override func viewDidLoad() {
         step = 20
-        orientation = "landscape"
+        orientation = "portrait"
         url = URL(string: "http://girlscouts.harryatwal.com/eyeTest.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()

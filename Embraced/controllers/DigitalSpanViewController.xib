@@ -48,7 +48,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PpR-IV-LmM">
-                    <rect key="frame" x="8" y="65" width="752" height="951"/>
+                    <rect key="frame" x="8" y="20" width="752" height="996"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYH-LQ-IXd">
                             <rect key="frame" x="0.0" y="0.0" width="752" height="47"/>
@@ -88,7 +88,7 @@
                         <constraint firstItem="bru-dk-i0h" firstAttribute="leading" secondItem="PpR-IV-LmM" secondAttribute="leading" id="Rp6-pv-kOi"/>
                         <constraint firstItem="GYH-LQ-IXd" firstAttribute="top" secondItem="PpR-IV-LmM" secondAttribute="top" id="TSI-qm-KZ6"/>
                         <constraint firstAttribute="trailing" secondItem="GYH-LQ-IXd" secondAttribute="trailing" id="bol-gc-xPl"/>
-                        <constraint firstAttribute="bottom" secondItem="bru-dk-i0h" secondAttribute="bottom" id="cCI-9U-yBL"/>
+                        <constraint firstAttribute="bottom" secondItem="bru-dk-i0h" secondAttribute="bottom" constant="45" id="cCI-9U-yBL"/>
                         <constraint firstAttribute="trailing" secondItem="bru-dk-i0h" secondAttribute="trailing" id="eWj-S3-w3Y"/>
                     </constraints>
                 </view>
@@ -97,7 +97,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="PpR-IV-LmM" secondAttribute="trailing" constant="8" id="22C-KJ-9UE"/>
                 <constraint firstAttribute="bottom" secondItem="PpR-IV-LmM" secondAttribute="bottom" constant="8" id="8gz-ph-Vcu"/>
-                <constraint firstItem="PpR-IV-LmM" firstAttribute="top" secondItem="sx6-SJ-Dkr" secondAttribute="top" constant="65" id="HE2-w7-hvx"/>
+                <constraint firstItem="PpR-IV-LmM" firstAttribute="top" secondItem="sx6-SJ-Dkr" secondAttribute="top" constant="20" id="HE2-w7-hvx"/>
                 <constraint firstItem="PpR-IV-LmM" firstAttribute="leading" secondItem="sx6-SJ-Dkr" secondAttribute="leading" constant="8" id="Vik-us-sB0"/>
             </constraints>
             <point key="canvasLocation" x="-1045" y="-1030"/>

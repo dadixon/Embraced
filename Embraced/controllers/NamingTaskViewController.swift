@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import Stormpath
 
-class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
 
     
     @IBOutlet weak var playBtn: UIButton!
@@ -31,7 +31,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate, AV
     var audioRecorder: AVAudioRecorder!
     
     var soundRecorder: AVAudioRecorder!
-    var soundPlayer: AVAudioPlayer!
     var fileName = "audioFile.m4a"
     
     var practice = Array<String>()

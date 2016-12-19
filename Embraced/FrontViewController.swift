@@ -8,8 +8,9 @@
 
 import UIKit
 import Stormpath
+import AVFoundation
 
-class FrontViewController: UIViewController {
+class FrontViewController: UIViewController, AVAudioPlayerDelegate {
 
     @IBOutlet weak var backBtn: UIBarButtonItem!
     @IBOutlet weak var nextBtn: UIBarButtonItem!
@@ -33,6 +34,7 @@ class FrontViewController: UIViewController {
     
     var alertController = UIAlertController()
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var soundPlayer = AVAudioPlayer()
     
     override func viewWillAppear(_ animated: Bool) {
         loadingView.center = mainView.center
@@ -121,4 +123,30 @@ class FrontViewController: UIViewController {
         return paths[0]
     }
     
+    func play(_ filename:String) {
+        let file = filename.characters.split(separator: ".").map(String.init)
+        
+        if let pathResource = Bundle.main.path(forResource: file[0], ofType: "wav") {
+            let finishedStepSound = NSURL(fileURLWithPath: pathResource)
+            do {
+                soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
+                if(soundPlayer.prepareToPlay()){
+                    print("preparation success")
+                    soundPlayer.delegate = self
+                    if(soundPlayer.play()){
+                        print("Sound play success")
+                    }else{
+                        print("Sound file could not be played")
+                    }
+                }else{
+                    print("preparation failure")
+                }
+                
+            }catch{
+                print("Sound file could not be found")
+            }
+        }else{
+            print("path not found")
+        }
+    }
 }

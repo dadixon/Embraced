@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import AVKit
 
-class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var practiceView: UIView!
@@ -27,7 +27,6 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
     
     var recordingSession: AVAudioSession!
     var soundRecorder: AVAudioRecorder!
-    var soundPlayer: AVAudioPlayer!
     var fileName : String = "wordlistRecall.m4a"
     var tasks = Array<String>()
     var startTime = TimeInterval()
@@ -156,28 +155,27 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate, AVA
         }
     }
     
-    func play(_ filename:String) {
-        do {
-            let path = Bundle.main.path(forResource: filename, ofType: nil)
-            let url = URL(fileURLWithPath: path!)
-            soundPlayer = try AVAudioPlayer(contentsOf: url)
-            soundPlayer.delegate = self
-            soundPlayer.prepareToPlay()
-            soundPlayer.volume = 1.0
-            soundPlayer.play()
-        } catch let error as NSError {
-            //self.player = nil
-            print(error.localizedDescription)
-        } catch {
-            print("AVAudioPlayer init failed")
-        }
-        
-    }
+//    func play(_ filename:String) {
+//        do {
+//            let path = Bundle.main.path(forResource: filename, ofType: nil)
+//            let url = URL(fileURLWithPath: path!)
+//            soundPlayer = try AVAudioPlayer(contentsOf: url)
+//            soundPlayer.delegate = self
+//            soundPlayer.prepareToPlay()
+//            soundPlayer.volume = 1.0
+//            soundPlayer.play()
+//        } catch let error as NSError {
+//            //self.player = nil
+//            print(error.localizedDescription)
+//        } catch {
+//            print("AVAudioPlayer init failed")
+//        }
+//        
+//    }
     
     func finishPlaying() {
-        if soundPlayer != nil {
+        if soundPlayer.isPlaying {
             soundPlayer.stop()
-            soundPlayer = nil
         }
         
         firstListLabel.isHidden = false

@@ -28,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCB-ee-q4C">
-                    <rect key="frame" x="8" y="65" width="359" height="594"/>
+                    <rect key="frame" x="8" y="20" width="359" height="639"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hw3-5j-AJF">
                             <rect key="frame" x="0.0" y="0.0" width="359" height="47"/>
@@ -70,9 +70,9 @@
                 <constraint firstItem="YCB-ee-q4C" firstAttribute="leading" secondItem="F50-Gf-Lv5" secondAttribute="leading" constant="8" id="Hee-bC-fuL"/>
                 <constraint firstAttribute="bottom" secondItem="YCB-ee-q4C" secondAttribute="bottom" constant="8" id="KxO-Xw-hc6"/>
                 <constraint firstAttribute="trailing" secondItem="YCB-ee-q4C" secondAttribute="trailing" constant="8" id="rA2-v0-fxr"/>
-                <constraint firstItem="YCB-ee-q4C" firstAttribute="top" secondItem="F50-Gf-Lv5" secondAttribute="top" constant="65" id="v9G-uZ-A8n"/>
+                <constraint firstItem="YCB-ee-q4C" firstAttribute="top" secondItem="F50-Gf-Lv5" secondAttribute="top" constant="20" id="v9G-uZ-A8n"/>
             </constraints>
-            <point key="canvasLocation" x="1" y="-66"/>
+            <point key="canvasLocation" x="0.5" y="-66.5"/>
         </view>
     </objects>
 </document>

@@ -56,7 +56,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Rr-JW-3tU">
-                    <rect key="frame" x="8" y="65" width="752" height="951"/>
+                    <rect key="frame" x="8" y="20" width="752" height="996"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Acm-Bs-6gP">
                             <rect key="frame" x="0.0" y="0.0" width="752" height="47"/>
@@ -97,7 +97,7 @@
                         <constraint firstItem="Acm-Bs-6gP" firstAttribute="leading" secondItem="8Rr-JW-3tU" secondAttribute="leading" id="WwJ-Yg-0Nj"/>
                         <constraint firstAttribute="trailing" secondItem="dPI-mb-XRS" secondAttribute="trailing" id="ZKB-P1-S1d"/>
                         <constraint firstItem="dPI-mb-XRS" firstAttribute="leading" secondItem="8Rr-JW-3tU" secondAttribute="leading" id="e8o-L2-f3t"/>
-                        <constraint firstAttribute="bottom" secondItem="dPI-mb-XRS" secondAttribute="bottom" id="n7E-uJ-Jtv"/>
+                        <constraint firstAttribute="bottom" secondItem="dPI-mb-XRS" secondAttribute="bottom" constant="45" id="n7E-uJ-Jtv"/>
                     </constraints>
                 </view>
             </subviews>
@@ -106,7 +106,7 @@
                 <constraint firstAttribute="bottom" secondItem="8Rr-JW-3tU" secondAttribute="bottom" constant="8" id="86T-Ka-y8A"/>
                 <constraint firstAttribute="trailing" secondItem="8Rr-JW-3tU" secondAttribute="trailing" constant="8" id="IPq-h1-nV1"/>
                 <constraint firstItem="8Rr-JW-3tU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ZIa-ad-ZKu"/>
-                <constraint firstItem="8Rr-JW-3tU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="oOH-25-7h5"/>
+                <constraint firstItem="8Rr-JW-3tU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="oOH-25-7h5"/>
             </constraints>
             <point key="canvasLocation" x="-507" y="-791"/>
         </view>

@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
+class PitchViewController: FrontViewController {
     
     @IBOutlet weak var containerView: UIView!
     
@@ -40,7 +40,6 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var practiceSegment: UISegmentedControl!
     @IBOutlet weak var taskSegment: UISegmentedControl!
     
-    var soundPlayer: AVAudioPlayer!
     var stimuli = [String: Any]()
     var examples = Array<Array<String>>()
     var trials = Array<Array<String>>()
@@ -115,6 +114,23 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         trials = DataManager.sharedInstance.pitchTrials
         tasks = DataManager.sharedInstance.pitchTasks
         
+        let pathResource = Bundle.main.path(forResource: "melodies 320ms orig(16)", ofType: "wav")
+        let finishedStepSound = NSURL(fileURLWithPath: pathResource!)
+        
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
+            if(soundPlayer.prepareToPlay()){
+                print("preparation success")
+                soundPlayer.delegate = self
+            }else{
+                print("preparation failure")
+            }
+            
+        }catch{
+            print("Sound file could not be found")
+        }
+        
+        
         loadingView.stopAnimating()
     }
     
@@ -125,29 +141,34 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     
     
-    func play(_ filename:String) {
-        do {
-            let path = Bundle.main.path(forResource: filename, ofType: nil)
-            let url = URL(fileURLWithPath: path!)
-            let sound = try AVAudioPlayer(contentsOf: url)
-            sound.delegate = self
-            sound.prepareToPlay()
-            sound.volume = 1.0
-            soundPlayer = sound
-            sound.play()
-        } catch let error as NSError {
-            //self.player = nil
-            print(error.localizedDescription)
-        } catch {
-            print("AVAudioPlayer init failed")
-        }
-        
-    }
+//    private func play(_ filename:String) {
+//        if let pathResource = Bundle.main.path(forResource: filename, ofType: "wav") {
+//            let finishedStepSound = NSURL(fileURLWithPath: pathResource)
+//            do {
+//                soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
+//                if(soundPlayer.prepareToPlay()){
+//                    print("preparation success")
+//                    soundPlayer.delegate = self
+//                    if(soundPlayer.play()){
+//                        print("Sound play success")
+//                    }else{
+//                        print("Sound file could not be played")
+//                    }
+//                }else{
+//                    print("preparation failure")
+//                }
+//                
+//            }catch{
+//                print("Sound file could not be found")
+//            }
+//        }else{
+//            print("path not found")
+//        }
+//    }
     
     private func setupSounds(_ soundArray: Array<Array<String>>, iterator: Int, label: UILabel) {
-        if soundPlayer != nil {
+        if soundPlayer.isPlaying {
             soundPlayer.stop()
-            soundPlayer = nil
         }
         
         played = false
@@ -160,6 +181,15 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
             firstSound = soundArray[iterator][0]
             secondSound = soundArray[iterator][0]
         }
+        
+        print(firstSound)
+        print(secondSound)
+        
+        let firstSoundArray = firstSound.characters.split(separator: ".").map(String.init)
+        let secondSoundArray = secondSound.characters.split(separator: ".").map(String.init)
+        
+        firstSound = firstSoundArray[0]
+        secondSound = secondSoundArray[0]
         
         print(firstSound)
         print(secondSound)
@@ -207,9 +237,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func replay(_ sender: AnyObject) {
-        if soundPlayer != nil {
+        if soundPlayer.isPlaying {
             soundPlayer.stop()
-            soundPlayer = nil
         }
         
         resetTimer()
@@ -219,10 +248,6 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func moveToExample3(_ sender: AnyObject) {
-        if soundPlayer != nil {
-            soundPlayer.stop()
-            soundPlayer = nil
-        }
         setSubview(example2View, next: example3View)
         setupSounds(examples, iterator: 2, label: example3Label)
         exampleCount += 1
@@ -230,10 +255,6 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
-        if soundPlayer != nil {
-            soundPlayer.stop()
-            soundPlayer = nil
-        }
         setSubview(example3View, next: trial1View)
         setupSounds(trials, iterator: trialCount, label: trialLabel)
         practiceLabel.text = NSLocalizedString("Practice \(trialCount+1)", comment: "")
@@ -301,9 +322,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
             // Set sounds to play
             setupSounds(trials, iterator: trialCount, label: trialLabel)
         } else {
-            if soundPlayer != nil {
+            if soundPlayer.isPlaying {
                 soundPlayer.stop()
-                soundPlayer = nil
             }
             
             setSubview(trial1View, next: preTaskView)
@@ -313,7 +333,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     @IBAction func moveToTask(_ sender: AnyObject) {
         setSubview(preTaskView, next: taskView)
         setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
-        self.play(firstSound)
+        play(firstSound)
         tasksCount += 1
     }
     
@@ -332,13 +352,12 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
             // Set sounds to play
             setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
             
-            self.play(firstSound)
+            play(firstSound)
             
             tasksCount += 1
         } else {
-            if soundPlayer != nil {
+            if soundPlayer.isPlaying {
                 soundPlayer.stop()
-                soundPlayer = nil
             }
             
             setSubview(taskView, next: completeView)

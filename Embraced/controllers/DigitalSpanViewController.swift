@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
 
     
     @IBOutlet weak var containerView: UIView!
@@ -42,7 +42,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     var recordingSession: AVAudioSession!
     
     var soundRecorder: AVAudioRecorder!
-    var soundPlayer: AVAudioPlayer!
     var fileName = "testAudioFile.m4a"
     
     var stimuli = [String: Any]()
@@ -114,6 +113,22 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         forward = DataManager.sharedInstance.digitalSpanForward
         backward = DataManager.sharedInstance.digitalSpanBackward
         
+        let pathResource = Bundle.main.path(forResource: "melodies 320ms orig(16)", ofType: "wav")
+        let finishedStepSound = NSURL(fileURLWithPath: pathResource!)
+        
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
+            if(soundPlayer.prepareToPlay()){
+                print("preparation success")
+                soundPlayer.delegate = self
+            }else{
+                print("preparation failure")
+            }
+            
+        }catch{
+            print("Sound file could not be found")
+        }
+        
         loadingView.stopAnimating()
     }
 
@@ -166,23 +181,30 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         }
     }
     
-    func play(_ filename:String) {
-        do {
-            let path = Bundle.main.path(forResource: filename, ofType: nil)
-            let url = URL(fileURLWithPath: path!)
-            let sound = try AVAudioPlayer(contentsOf: url)
-            sound.delegate = self
-            sound.prepareToPlay()
-            sound.volume = 1.0
-            soundPlayer = sound
-            sound.play()
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        } catch {
-            print("AVAudioPlayer init failed")
-        }
-        
-    }
+//    func play(_ filename:String) {
+//        if let pathResource = Bundle.main.path(forResource: filename, ofType: "wav") {
+//            let finishedStepSound = NSURL(fileURLWithPath: pathResource)
+//            do {
+//                soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
+//                if(soundPlayer.prepareToPlay()){
+//                    print("preparation success")
+//                    soundPlayer.delegate = self
+//                    if(soundPlayer.play()){
+//                        print("Sound play success")
+//                    }else{
+//                        print("Sound file could not be played")
+//                    }
+//                }else{
+//                    print("preparation failure")
+//                }
+//                
+//            }catch{
+//                print("Sound file could not be found")
+//            }
+//        }else{
+//            print("path not found")
+//        }
+//    }
     
     func log(logMessage: String, functionName: String = #function) {
         print("\(#function): \(logMessage)")
@@ -249,9 +271,8 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
             preparePlayer()
             soundPlayer.play()
         } else {
-            if soundPlayer != nil {
+            if soundPlayer.isPlaying {
                 soundPlayer.stop()
-                soundPlayer = nil
             }
             sender.setTitle("Play", for: UIControlState())
         }
@@ -259,13 +280,13 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     
     @IBAction func listenToSound(_ sender: AnyObject) {
         if sender.tag == 0 {
-            self.play(forward[forward.count - 1])
+            play(forward[forward.count - 1])
         } else if sender.tag == 1 {
-            self.play(forward[forwardCount])
+            play(forward[forwardCount])
         } else if sender.tag == 2 {
-            self.play(backward[backward.count - 1])
+            play(backward[backward.count - 1])
         } else if sender.tag == 3 {
-            self.play(backward[backwardCount])
+            play(backward[backwardCount])
         }
     }
     

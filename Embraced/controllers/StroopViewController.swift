@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import AVKit
 
-class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate, AVPlayerViewControllerDelegate {
+class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlayerViewControllerDelegate {
 
     @IBOutlet weak var containerView: UIView!
     
@@ -52,7 +52,6 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     var recordingSession: AVAudioSession!
     
     var soundRecorder: AVAudioRecorder!
-    var soundPlayer: AVAudioPlayer!
     var playerController = AVPlayerViewController()
     var fileName : String = "testAudioFile.m4a"
     var stimuli = [String: Any]()
@@ -201,8 +200,9 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
     }
     
     func finishPlaying() {
-        soundPlayer.stop()
-        soundPlayer = nil
+        if soundPlayer.isPlaying {
+            soundPlayer.stop()
+        }
         
         playBtn.setTitle("Play", for: .normal)
         recordBtn.isEnabled = true
@@ -217,24 +217,6 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVAudi
         } catch {
             log(logMessage: "Something went wrong")
         }
-    }
-    
-    func play(_ filename:String) {
-        do {
-            let path = Bundle.main.path(forResource: filename, ofType: nil)
-            let url = URL(fileURLWithPath: path!)
-            soundPlayer = try AVAudioPlayer(contentsOf: url)
-            soundPlayer.delegate = self
-            soundPlayer.prepareToPlay()
-            soundPlayer.volume = 1.0
-            soundPlayer.play()
-        } catch let error as NSError {
-            //self.player = nil
-            print(error.localizedDescription)
-        } catch {
-            print("AVAudioPlayer init failed")
-        }
-        
     }
     
     func stopTime() {

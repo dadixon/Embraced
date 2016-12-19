@@ -38,7 +38,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ah-2e-thL">
-                    <rect key="frame" x="8" y="65" width="752" height="951"/>
+                    <rect key="frame" x="8" y="20" width="752" height="996"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-Yj-qhH">
                             <rect key="frame" x="0.0" y="0.0" width="752" height="47"/>
@@ -76,7 +76,7 @@
                         <constraint firstAttribute="trailing" secondItem="cHx-Yj-qhH" secondAttribute="trailing" id="CyH-4z-441"/>
                         <constraint firstItem="s5c-HD-6pZ" firstAttribute="leading" secondItem="0Ah-2e-thL" secondAttribute="leading" id="Ij7-1e-fuY"/>
                         <constraint firstItem="cHx-Yj-qhH" firstAttribute="top" secondItem="0Ah-2e-thL" secondAttribute="top" id="L9z-TS-yIi"/>
-                        <constraint firstAttribute="bottom" secondItem="s5c-HD-6pZ" secondAttribute="bottom" id="Xwa-uE-WEQ"/>
+                        <constraint firstAttribute="bottom" secondItem="s5c-HD-6pZ" secondAttribute="bottom" constant="45" id="Xwa-uE-WEQ"/>
                         <constraint firstItem="s5c-HD-6pZ" firstAttribute="top" secondItem="cHx-Yj-qhH" secondAttribute="bottom" id="ZDK-CC-pMA"/>
                         <constraint firstItem="cHx-Yj-qhH" firstAttribute="leading" secondItem="0Ah-2e-thL" secondAttribute="leading" id="aaC-WV-xBb"/>
                         <constraint firstAttribute="trailing" secondItem="s5c-HD-6pZ" secondAttribute="trailing" id="eVQ-GC-yyO"/>
@@ -86,7 +86,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="0Ah-2e-thL" firstAttribute="leading" secondItem="kOd-oI-dBf" secondAttribute="leading" constant="8" id="0rT-Hj-env"/>
-                <constraint firstItem="0Ah-2e-thL" firstAttribute="top" secondItem="kOd-oI-dBf" secondAttribute="top" constant="65" id="SeT-Tt-TzM"/>
+                <constraint firstItem="0Ah-2e-thL" firstAttribute="top" secondItem="kOd-oI-dBf" secondAttribute="top" constant="20" id="SeT-Tt-TzM"/>
                 <constraint firstAttribute="bottom" secondItem="0Ah-2e-thL" secondAttribute="bottom" constant="8" id="pXo-hh-J7F"/>
                 <constraint firstAttribute="trailing" secondItem="0Ah-2e-thL" secondAttribute="trailing" constant="8" id="vK7-hK-hpg"/>
             </constraints>

@@ -40,7 +40,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2nr-Ul-KqZ">
-                    <rect key="frame" x="8" y="65" width="1008" height="695"/>
+                    <rect key="frame" x="8" y="20" width="1008" height="740"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GlK-lU-PuA">
                             <rect key="frame" x="0.0" y="0.0" width="1008" height="47"/>
@@ -80,7 +80,7 @@
                         <constraint firstItem="hSf-IR-Jn9" firstAttribute="leading" secondItem="2nr-Ul-KqZ" secondAttribute="leading" id="4bj-Wh-1mD"/>
                         <constraint firstItem="hSf-IR-Jn9" firstAttribute="top" secondItem="GlK-lU-PuA" secondAttribute="bottom" id="7jK-ep-9KX"/>
                         <constraint firstItem="GlK-lU-PuA" firstAttribute="top" secondItem="2nr-Ul-KqZ" secondAttribute="top" id="Euy-hG-Rci"/>
-                        <constraint firstAttribute="bottom" secondItem="hSf-IR-Jn9" secondAttribute="bottom" id="Jvb-Ge-XZ6"/>
+                        <constraint firstAttribute="bottom" secondItem="hSf-IR-Jn9" secondAttribute="bottom" constant="45" id="Jvb-Ge-XZ6"/>
                         <constraint firstAttribute="trailing" secondItem="hSf-IR-Jn9" secondAttribute="trailing" id="msM-E8-Oye"/>
                     </constraints>
                 </view>
@@ -88,7 +88,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="2nr-Ul-KqZ" secondAttribute="trailing" constant="8" id="8p5-6B-M5F"/>
-                <constraint firstItem="2nr-Ul-KqZ" firstAttribute="top" secondItem="15h-3k-CVI" secondAttribute="top" constant="65" id="9cN-yI-WuX"/>
+                <constraint firstItem="2nr-Ul-KqZ" firstAttribute="top" secondItem="15h-3k-CVI" secondAttribute="top" constant="20" id="9cN-yI-WuX"/>
                 <constraint firstAttribute="bottom" secondItem="2nr-Ul-KqZ" secondAttribute="bottom" constant="8" id="FhO-bN-QD8"/>
                 <constraint firstItem="2nr-Ul-KqZ" firstAttribute="leading" secondItem="15h-3k-CVI" secondAttribute="leading" constant="8" id="MAI-7n-160"/>
             </constraints>
@@ -128,7 +128,7 @@ Please practice recording your voice with the microphone button below</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHK-SS-xav">
-                    <rect key="frame" x="240" y="260.5" width="544" height="247"/>
+                    <rect key="frame" x="240" y="261" width="544" height="247"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zCn-Eg-qyk">
                             <rect key="frame" x="8" y="60" width="162" height="128"/>
@@ -196,13 +196,13 @@ Please practice recording your voice with the microphone button below</string>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trial 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMB-hw-R1N">
-                    <rect key="frame" x="20" y="20" width="61.5" height="26.5"/>
+                    <rect key="frame" x="20" y="20" width="62" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USc-zK-X47">
-                    <rect key="frame" x="20" y="54.5" width="984" height="41"/>
+                    <rect key="frame" x="20" y="55" width="984" height="41"/>
                     <string key="text">There will be a 3 second countdown before the list starts.
 Please tap the LISTEN button when you are ready to start</string>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -221,14 +221,8 @@ Please tap the LISTEN button when you are ready to start</string>
                         <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="jiT-Hq-2nW"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now say out loud all the words you can remember from the list. Tap the microphone button to start recording." lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSd-Ri-ZDi">
-                    <rect key="frame" x="20" y="512" width="984" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3c-xw-nEW">
-                    <rect key="frame" x="240" y="179" width="544" height="247"/>
+                    <rect key="frame" x="240" y="104" width="544" height="208"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1xb-Ik-dhP">
                             <rect key="frame" x="8" y="59.5" width="200" height="128"/>
@@ -251,26 +245,32 @@ Please tap the LISTEN button when you are ready to start</string>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="247" id="05A-ma-T9Q"/>
-                        <constraint firstItem="1xb-Ik-dhP" firstAttribute="centerY" secondItem="Y3c-xw-nEW" secondAttribute="centerY" id="ANd-qB-Nh4"/>
+                        <constraint firstItem="1xb-Ik-dhP" firstAttribute="centerY" secondItem="Y3c-xw-nEW" secondAttribute="centerY" constant="19.5" id="ANd-qB-Nh4"/>
                         <constraint firstAttribute="width" constant="544" id="LkU-Xl-oaK"/>
                         <constraint firstAttribute="trailing" secondItem="tqr-Jd-rZ5" secondAttribute="trailing" constant="117" id="TgP-1c-dj3"/>
-                        <constraint firstItem="tqr-Jd-rZ5" firstAttribute="centerY" secondItem="Y3c-xw-nEW" secondAttribute="centerY" id="ZkC-Og-jZc"/>
+                        <constraint firstItem="tqr-Jd-rZ5" firstAttribute="centerY" secondItem="Y3c-xw-nEW" secondAttribute="centerY" constant="19.5" id="ZkC-Og-jZc"/>
                         <constraint firstItem="1xb-Ik-dhP" firstAttribute="leading" secondItem="Y3c-xw-nEW" secondAttribute="leading" constant="8" id="cp0-z9-gda"/>
-                        <constraint firstItem="1xb-Ik-dhP" firstAttribute="centerY" secondItem="Y3c-xw-nEW" secondAttribute="centerY" id="vHU-0X-7nt"/>
+                        <constraint firstItem="1xb-Ik-dhP" firstAttribute="centerY" secondItem="Y3c-xw-nEW" secondAttribute="centerY" constant="19.5" id="vHU-0X-7nt"/>
+                        <constraint firstAttribute="height" constant="208" id="zqi-Hy-RYb"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now say out loud all the words you can remember from the list. Tap the microphone button to start recording." lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSd-Ri-ZDi">
+                    <rect key="frame" x="20" y="320" width="984" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="bic-uz-Yoc" firstAttribute="top" secondItem="kSd-Ri-ZDi" secondAttribute="bottom" constant="34.5" id="09H-Y6-GHI"/>
                 <constraint firstItem="Y3c-xw-nEW" firstAttribute="centerX" secondItem="kSe-9b-lPj" secondAttribute="centerX" id="2aE-XR-b3a"/>
                 <constraint firstAttribute="trailing" secondItem="kSd-Ri-ZDi" secondAttribute="trailing" constant="20" id="2jI-Gj-1bI"/>
                 <constraint firstItem="GMh-oC-tsK" firstAttribute="centerX" secondItem="kSe-9b-lPj" secondAttribute="centerX" id="Gey-v9-bQi"/>
+                <constraint firstItem="Y3c-xw-nEW" firstAttribute="top" secondItem="USc-zK-X47" secondAttribute="bottom" constant="8" id="JYO-bz-l3L"/>
                 <constraint firstAttribute="bottom" secondItem="GMh-oC-tsK" secondAttribute="bottom" constant="20" id="QW7-vX-v8V"/>
-                <constraint firstItem="Y3c-xw-nEW" firstAttribute="top" secondItem="USc-zK-X47" secondAttribute="bottom" constant="83.5" id="UOf-5i-Bg0"/>
                 <constraint firstItem="GMh-oC-tsK" firstAttribute="top" secondItem="bic-uz-Yoc" secondAttribute="bottom" constant="23" id="V47-2l-hkT"/>
                 <constraint firstItem="kSd-Ri-ZDi" firstAttribute="leading" secondItem="kSe-9b-lPj" secondAttribute="leading" constant="20" id="XI5-3K-dhw"/>
+                <constraint firstItem="kSd-Ri-ZDi" firstAttribute="top" secondItem="Y3c-xw-nEW" secondAttribute="bottom" constant="8" id="gFe-yK-AkU"/>
                 <constraint firstItem="mMB-hw-R1N" firstAttribute="leading" secondItem="kSe-9b-lPj" secondAttribute="leading" constant="20" id="hss-Ft-cqx"/>
                 <constraint firstAttribute="trailing" secondItem="USc-zK-X47" secondAttribute="trailing" constant="20" id="lFd-2N-7pt"/>
                 <constraint firstItem="bic-uz-Yoc" firstAttribute="centerX" secondItem="kSe-9b-lPj" secondAttribute="centerX" id="lWa-Al-dW5"/>

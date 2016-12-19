@@ -233,7 +233,6 @@
 		A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */; };
 		A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */; };
 		A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */; };
-		A4A794381D68F62800305AB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4A7943A1D68F62800305AB4 /* Localizable.strings */; };
 		A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */; };
 		A4AB688B1DE4BE9A0009808D /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB688A1DE4BE9A0009808D /* AsynchronousOperation.swift */; };
 		A4AB688D1DE4D4730009808D /* DownloadMangager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB688C1DE4D4730009808D /* DownloadMangager.swift */; };
@@ -531,13 +530,12 @@
 		A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
-		A4A794351D68F4F100305AB4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
-		A4A794391D68F62800305AB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A4A7943B1D68F63000305AB4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		A4AB688A1DE4BE9A0009808D /* AsynchronousOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
 		A4AB688C1DE4D4730009808D /* DownloadMangager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadMangager.swift; sourceTree = "<group>"; };
 		A4AE36E21DFC545400727DFD /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		A4AE36E61DFC9EA600727DFD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		A4AE36E71DFC9EA600727DFD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A4BB08E41D7EDB0900B76C64 /* ISRadioButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ISRadioButton.framework; path = "../../../Library/Developer/Xcode/DerivedData/Embraced-gpyewpmhwauogygclnkydouwsmur/Build/Products/Debug-iphonesimulator/ISRadioButton/ISRadioButton.framework"; sourceTree = "<group>"; };
 		A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireViewController.swift; path = controllers/QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuestionnaireViewController.xib; path = controllers/QuestionnaireViewController.xib; sourceTree = "<group>"; };
@@ -933,7 +931,6 @@
 				A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */,
 				A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */,
 				A414247E1D02C3F60028933E /* LOGO_r1_c1.png */,
-				A4A7943A1D68F62800305AB4 /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1065,7 +1062,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Domonique Dixon";
 				TargetAttributes = {
 					A48B4DC01CF9E7C600878928 = {
@@ -1082,7 +1079,6 @@
 			knownRegions = (
 				en,
 				Base,
-				es,
 			);
 			mainGroup = A48B4DB81CF9E7C600878928;
 			productRefGroup = A48B4DC21CF9E7C600878928 /* Products */;
@@ -1244,7 +1240,6 @@
 				A4773D0B1D9D849100E5CCEE /* listen.png in Resources */,
 				A47447A81DE6900B00BB4011 /* ENG-FWD-14.mp3 in Resources */,
 				A47447BD1DE6901700BB4011 /* ENG-BWD-07.mp3 in Resources */,
-				A4A794381D68F62800305AB4 /* Localizable.strings in Resources */,
 				A47447F31DE6906500BB4011 /* ENG-02.mp3 in Resources */,
 				A47447A71DE6900B00BB4011 /* ENG-FWD-13.mp3 in Resources */,
 				A474485A1DE6908300BB4011 /* SPA-17.mp3 in Resources */,
@@ -1517,7 +1512,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A48B4DC91CF9E7C700878928 /* Base */,
-				A4A794351D68F4F100305AB4 /* es */,
+				A4AE36E61DFC9EA600727DFD /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1526,17 +1521,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				A48B4DD11CF9E7C700878928 /* Base */,
+				A4AE36E71DFC9EA600727DFD /* es */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		A4A7943A1D68F62800305AB4 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A4A794391D68F62800305AB4 /* en */,
-				A4A7943B1D68F63000305AB4 /* es */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

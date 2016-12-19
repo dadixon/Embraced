@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import AVKit
 
-class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var practiceView: UIView!
@@ -29,7 +29,6 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     var recordingSession: AVAudioSession!
     
     var soundRecorder: AVAudioRecorder!
-    var soundPlayer: AVAudioPlayer!
     var fileName : [String] = ["testAudioFile.m4a", "trial1.m4a", "trial2.m4a", "trial3.m4a", "trial4.m4a", "trial5.m4a"]
     
     var startTime = TimeInterval()
@@ -171,8 +170,9 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     }
     
     func finishPlaying() {
-        soundPlayer.stop()
-        soundPlayer = nil
+        if soundPlayer.isPlaying {
+            soundPlayer.stop()
+        }
         
         if practice {
             playBtn.setTitle("Play", for: .normal)
@@ -195,23 +195,6 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
         }
     }
     
-    func play(_ filename:String) {
-        do {
-            let path = Bundle.main.path(forResource: filename, ofType: nil)
-            let url = URL(fileURLWithPath: path!)
-            soundPlayer = try AVAudioPlayer(contentsOf: url)
-            soundPlayer.delegate = self
-            soundPlayer.prepareToPlay()
-            soundPlayer.volume = 1.0
-            soundPlayer.play()
-        } catch let error as NSError {
-            //self.player = nil
-            print(error.localizedDescription)
-        } catch {
-            print("AVAudioPlayer init failed")
-        }
-        
-    }
     
     
     func log(logMessage: String, functionName: String = #function) {
@@ -285,7 +268,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
             preparePlayer()
             soundPlayer.play()
         } else {
-            if soundPlayer != nil {
+            if soundPlayer.isPlaying {
                 soundPlayer.stop()
             }
             sender.setTitle("Play", for: UIControlState())
@@ -301,7 +284,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate, AVAu
     @IBAction func nextTrial(_ sender: AnyObject) {
         position += 1
         
-        if soundPlayer != nil {
+        if soundPlayer.isPlaying {
             soundPlayer.stop()
         }
         

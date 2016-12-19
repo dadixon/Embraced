@@ -28,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2uH-PD-Ydg">
-                    <rect key="frame" x="8" y="65" width="359" height="594"/>
+                    <rect key="frame" x="8" y="20" width="359" height="639"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEj-sB-j0d">
                             <rect key="frame" x="0.0" y="0.0" width="359" height="47"/>
@@ -68,11 +68,11 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="2uH-PD-Ydg" firstAttribute="leading" secondItem="v9U-xX-ZvV" secondAttribute="leading" constant="8" id="DaL-Pl-7Ht"/>
-                <constraint firstItem="2uH-PD-Ydg" firstAttribute="top" secondItem="v9U-xX-ZvV" secondAttribute="top" constant="65" id="Hal-yY-E3p"/>
+                <constraint firstItem="2uH-PD-Ydg" firstAttribute="top" secondItem="v9U-xX-ZvV" secondAttribute="top" constant="20" id="Hal-yY-E3p"/>
                 <constraint firstAttribute="bottom" secondItem="2uH-PD-Ydg" secondAttribute="bottom" constant="8" id="KFy-f1-nft"/>
                 <constraint firstAttribute="trailing" secondItem="2uH-PD-Ydg" secondAttribute="trailing" constant="8" id="aDc-LC-tsO"/>
             </constraints>
-            <point key="canvasLocation" x="1" y="-66"/>
+            <point key="canvasLocation" x="0.5" y="-66.5"/>
         </view>
     </objects>
 </document>
