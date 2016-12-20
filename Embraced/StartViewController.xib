@@ -20,14 +20,14 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME TO EMBRACED PROJECT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0K1-2d-0Oo">
-                    <rect key="frame" x="35.5" y="487.5" width="697" height="49"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME TO EMBRACED PROJECT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0K1-2d-0Oo">
+                    <rect key="frame" x="36" y="488" width="697" height="49"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="41"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMv-48-MPI" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="198" y="629.5" width="117" height="47"/>
+                    <rect key="frame" x="198" y="630" width="117" height="47"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="117" id="BE9-3f-7xw"/>
                     </constraints>
@@ -37,7 +37,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTa-aM-oy3" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="453" y="629.5" width="117" height="47"/>
+                    <rect key="frame" x="453" y="630" width="117" height="47"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="117" id="4HF-Qq-0vd"/>
                         <constraint firstAttribute="height" constant="47" id="luz-ra-ZGh"/>
@@ -53,8 +53,10 @@
                 <constraint firstAttribute="trailing" secondItem="lTa-aM-oy3" secondAttribute="trailing" constant="198" id="369-BA-jtJ"/>
                 <constraint firstItem="wMv-48-MPI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="198" id="Q0d-iF-cAH"/>
                 <constraint firstItem="0K1-2d-0Oo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bkI-Qx-G5Q"/>
+                <constraint firstAttribute="trailing" secondItem="0K1-2d-0Oo" secondAttribute="trailing" constant="35" id="cV3-Ks-ef4"/>
                 <constraint firstItem="lTa-aM-oy3" firstAttribute="centerY" secondItem="wMv-48-MPI" secondAttribute="centerY" id="kUm-rb-Jun"/>
                 <constraint firstItem="wMv-48-MPI" firstAttribute="top" secondItem="0K1-2d-0Oo" secondAttribute="bottom" constant="93" id="okS-vk-1WO"/>
+                <constraint firstItem="0K1-2d-0Oo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="36" id="qjh-dm-fkr"/>
                 <constraint firstItem="lTa-aM-oy3" firstAttribute="top" secondItem="0K1-2d-0Oo" secondAttribute="bottom" constant="93" id="te8-Ti-XrQ"/>
                 <constraint firstItem="0K1-2d-0Oo" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="xtX-JP-SAk"/>
             </constraints>

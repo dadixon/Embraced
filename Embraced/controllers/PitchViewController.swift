@@ -37,6 +37,7 @@ class PitchViewController: FrontViewController {
     @IBOutlet weak var practiceResponse: UILabel!
     @IBOutlet weak var taskResponse: UILabel!
     
+    @IBOutlet weak var introLabel: UILabel!
     @IBOutlet weak var practiceSegment: UISegmentedControl!
     @IBOutlet weak var taskSegment: UISegmentedControl!
     
@@ -130,6 +131,7 @@ class PitchViewController: FrontViewController {
             print("Sound file could not be found")
         }
         
+        introLabel.text = "pitch_intro".localized(lang: participant.string(forKey: "language")!)
         
         loadingView.stopAnimating()
     }

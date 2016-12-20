@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var navController: UINavigationController?
     var window: UIWindow?
 
-    
     var pitchExamples = Array<Array<String>>()
     var pitchTrials = Array<Array<String>>()
     var pitchTasks = Array<Array<String>>()

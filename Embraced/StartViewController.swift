@@ -13,6 +13,7 @@ class StartViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     
     let participant = UserDefaults.standard
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +39,11 @@ class StartViewController: UIViewController {
     // MARK: - Navigation
     @IBAction func chooseLanguage(_ sender: AnyObject) {
         if sender.tag == 0 {
-            participant.set("en", forKey: "language")
+            participant.setValue("en", forKey: "language")
         } else if sender.tag == 1 {
-            participant.set("es", forKey: "langauge")
+            participant.setValue("es", forKey: "language")
         }
-        
+                
         let welcomeLabelText = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "language")!)
         welcomeLabel.text = welcomeLabelText
         

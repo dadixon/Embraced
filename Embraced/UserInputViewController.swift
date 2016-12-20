@@ -74,6 +74,8 @@ class UserInputViewController: UIViewController {
         participant.setValue(locationTextField.text, forKey: "location")
         participant.setValue(floorTextField.text, forKey: "floor")
 
+        print(participant.string(forKey: "pid")!)
+        
         var jsonObject = [String: AnyObject]()
         
         // Gather data for post

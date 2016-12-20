@@ -8,3 +8,7 @@
 
 "WELCOME_TO_EMBRACED_PROJECT" = "WELCOME TO EMBRACED PROJECT";
 "Next" = "Next";
+"Start" = "Start";
+
+// Pitch
+"pitch_intro" = "Next, you will hear pairs of melodies.\nIn some trials, the second one will be altered.\nThis change may be subtle or obvious.\n\nYou will have to indicate whether the second melody has been altered or not.\n\nIf both melodies are the same, you will tap the button “SAME”\nIf they are different, you will tap the button “DIFFERENT”\n\nTo aid you differentiate the two melodies, numbers 1 and 2 will be shown in the screen when playing the first and second melody respectively\n\nWe will start with some examples.\nPlease tap on START when you are ready.";

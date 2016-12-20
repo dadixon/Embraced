@@ -27,6 +27,7 @@
                 <outlet property="example3Label" destination="sTY-n4-wSH" id="1ef-ok-CGy"/>
                 <outlet property="example3Response" destination="phw-l0-Pfh" id="0Nq-zS-pN7"/>
                 <outlet property="example3View" destination="7y3-ol-fQa" id="PNH-nB-ICT"/>
+                <outlet property="introLabel" destination="chI-tk-VV9" id="8iZ-Hh-I9p"/>
                 <outlet property="introView" destination="bsX-3k-iZX" id="nXk-TY-aUV"/>
                 <outlet property="mainView" destination="63N-dC-I4a" id="AsM-Iq-Trg"/>
                 <outlet property="practiceInstructionsLabel" destination="4t1-nG-okL" id="Fgt-A5-nud"/>
