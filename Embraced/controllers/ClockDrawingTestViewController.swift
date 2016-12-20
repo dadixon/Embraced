@@ -17,6 +17,8 @@ class ClockDrawingTestViewController: WebViewController {
         url = URL(string: "http://girlscouts.harryatwal.com/clockDrawing.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(ClockDrawingTestViewController.next(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,7 +29,7 @@ class ClockDrawingTestViewController: WebViewController {
     
     // MARK: - Navigation
 
-    func next() {
+    func next(_ sender:Any) {
         let vc:ReyComplexFigure2ViewController = ReyComplexFigure2ViewController()
         nextViewController(viewController: vc)
     }
@@ -35,7 +37,7 @@ class ClockDrawingTestViewController: WebViewController {
     // MARK: - Delegate
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if (message.name == "callbackHandler") {
-            next()
+            next(self)
         }
         
     }

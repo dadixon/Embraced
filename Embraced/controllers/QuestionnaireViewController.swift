@@ -17,6 +17,8 @@ class QuestionnaireViewController: WebViewController {
         url = URL(string: "http://girlscouts.harryatwal.com/initial.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(QuestionnaireViewController.next(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,7 +28,7 @@ class QuestionnaireViewController: WebViewController {
     
     // MARK: - Navigation
     
-    func next() {
+    func next(_ sender:Any) {
         let vc:MOCAMMSETestViewController = MOCAMMSETestViewController()
         nextViewController(viewController: vc)
     }
@@ -36,7 +38,7 @@ class QuestionnaireViewController: WebViewController {
     
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if (message.name == "callbackHandler") {
-            next()
+            next(self)
         }
         
     }

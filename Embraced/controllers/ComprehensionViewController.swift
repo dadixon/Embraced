@@ -17,6 +17,8 @@ class ComprehensionViewController: WebViewController {
         url = URL(string: "http://girlscouts.harryatwal.com/comprehension.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(ComprehensionViewController.next(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,7 +29,7 @@ class ComprehensionViewController: WebViewController {
     
     // MARK: - Navigation
     
-    func next() {
+    func next(_ sender:Any) {
         let vc:EyeTestViewController = EyeTestViewController()
         nextViewController(viewController: vc)
     }
@@ -36,7 +38,7 @@ class ComprehensionViewController: WebViewController {
     
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if (message.name == "callbackHandler") {
-            next()
+            next(self)
         }
         
     }

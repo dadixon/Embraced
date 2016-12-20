@@ -244,6 +244,8 @@
 		A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9041D1D2380380092D6AA /* FrontViewController.swift */; };
 		A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D904211D23810C0092D6AA /* EmbracedTextField.swift */; };
 		A4DB0FB41DFB2CA1000811B6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */; };
+		A4DF9F221E08FBC90084EAF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4DF9F241E08FBC90084EAF9 /* Localizable.strings */; };
+		A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */; };
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
 		A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */; };
 		A4E3388C1DE6098B0010FC45 /* melodies 320ms diff(06).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3385B1DE6098B0010FC45 /* melodies 320ms diff(06).wav */; };
@@ -544,6 +546,9 @@
 		A4D9041D1D2380380092D6AA /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		A4D904211D23810C0092D6AA /* EmbracedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbracedTextField.swift; sourceTree = "<group>"; };
 		A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A4DF9F231E08FBC90084EAF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A4DF9F251E08FBF60084EAF9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		A4E3385B1DE6098B0010FC45 /* melodies 320ms diff(06).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(06).wav"; sourceTree = "<group>"; };
@@ -898,6 +903,7 @@
 				A48B4DC81CF9E7C700878928 /* Main.storyboard */,
 				A48B4DCE1CF9E7C700878928 /* Assets.xcassets */,
 				A48B4DD01CF9E7C700878928 /* LaunchScreen.storyboard */,
+				A4DF9F241E08FBC90084EAF9 /* Localizable.strings */,
 				A48B4DD31CF9E7C700878928 /* Info.plist */,
 				A48B4DCB1CF9E7C700878928 /* Embraced.xcdatamodeld */,
 				A41AE3C01DCA57150089231D /* Images.xcassets */,
@@ -957,6 +963,7 @@
 		A4D904231D2384010092D6AA /* Customizations */ = {
 			isa = PBXGroup;
 			children = (
+				A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */,
 				A4D9041D1D2380380092D6AA /* FrontViewController.swift */,
 				A4D904211D23810C0092D6AA /* EmbracedTextField.swift */,
 				A42AB5C11D2DE061001387BB /* ChildTableViewCell.swift */,
@@ -1175,6 +1182,7 @@
 				A47447FB1DE6906500BB4011 /* ENG-10.mp3 in Resources */,
 				A4E338A01DE6098C0010FC45 /* melodies 320ms orig(06).wav in Resources */,
 				A4E338901DE6098B0010FC45 /* melodies 320ms diff(24).wav in Resources */,
+				A4DF9F221E08FBC90084EAF9 /* Localizable.strings in Resources */,
 				A4347FCE1D7BCA570033306A /* ReyFigureComplex4ViewController.xib in Resources */,
 				A474484B1DE6908300BB4011 /* SPA-02.mp3 in Resources */,
 				A46C14241D79AA7C0066EF37 /* ClockDrawingTestViewController.xib in Resources */,
@@ -1475,6 +1483,7 @@
 				A4347FE31D7BCC170033306A /* MultipleErrandsViewController.swift in Sources */,
 				A4AB688D1DE4D4730009808D /* DownloadMangager.swift in Sources */,
 				A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */,
+				A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */,
 				A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */,
 				A4347FD51D7BCABC0033306A /* PegboardViewController.swift in Sources */,
 				A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */,
@@ -1524,6 +1533,15 @@
 				A4AE36E71DFC9EA600727DFD /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A4DF9F241E08FBC90084EAF9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4DF9F231E08FBC90084EAF9 /* en */,
+				A4DF9F251E08FBF60084EAF9 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

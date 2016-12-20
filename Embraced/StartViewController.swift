@@ -10,6 +10,8 @@ import UIKit
 
 class StartViewController: UIViewController {
 
+    @IBOutlet weak var welcomeLabel: UILabel!
+    
     let participant = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -17,7 +19,9 @@ class StartViewController: UIViewController {
 
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
         self.navigationController?.isNavigationBarHidden = true
-        // Do any additional setup after loading the view.
+        
+        let welcomeLabelText = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: "en")
+        welcomeLabel.text = welcomeLabelText
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,17 +38,20 @@ class StartViewController: UIViewController {
     // MARK: - Navigation
     @IBAction func chooseLanguage(_ sender: AnyObject) {
         if sender.tag == 0 {
-            participant.set("en-us", forKey: "language")
+            participant.set("en", forKey: "language")
         } else if sender.tag == 1 {
-            participant.set("sp", forKey: "langauge")
+            participant.set("es", forKey: "langauge")
         }
+        
+        let welcomeLabelText = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "language")!)
+        welcomeLabel.text = welcomeLabelText
         
         var navigationArray = self.navigationController?.viewControllers
         
         navigationArray?.remove(at: 0)
         
-//        let vc:QuestionnaireViewController = QuestionnaireViewController()
-        let vc = PitchViewController()
+        let vc = QuestionnaireViewController()
+//        let vc = PitchViewController()
         navigationArray?.append(vc)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)

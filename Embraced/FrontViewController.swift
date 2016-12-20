@@ -60,7 +60,13 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(FrontViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         
+        mainView.translatesAutoresizingMaskIntoConstraints = false
         
+        let leftConstraint = mainView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8.0)
+        let topConstraint = mainView.topAnchor.constraint(equalTo: view.topAnchor, constant: 48.0)
+        let rightConstraint = mainView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8.0)
+        let bottomConstraint = mainView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 8.0)
+        NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
 
     }
 

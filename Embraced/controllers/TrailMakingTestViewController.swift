@@ -17,6 +17,8 @@ class TrailMakingTestViewController: WebViewController {
         url = URL(string: "http://girlscouts.harryatwal.com/trailMaking.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(TrailMakingTestViewController.next(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,16 +29,16 @@ class TrailMakingTestViewController: WebViewController {
     
     // MARK: - Navigation
     
-    func next() {
-        let stroopViewController:PitchViewController = PitchViewController()
-        nextViewController(viewController: stroopViewController)
+    func next(_ sender:Any) {
+        let vc = PitchViewController()
+        nextViewController(viewController: vc)
     }
     
     // MARK: - Delegate
     
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if (message.name == "callbackHandler") {
-            next()
+            next(self)
         }
         
     }

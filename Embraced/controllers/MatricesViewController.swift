@@ -17,6 +17,8 @@ class MatricesViewController: WebViewController {
         url = URL(string: "http://girlscouts.harryatwal.com/matrices.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(MatricesViewController.next(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,8 +29,8 @@ class MatricesViewController: WebViewController {
     
     // MARK: - Navigation
     
-    func next() {
-        let vc:PegboardViewController = PegboardViewController()
+    func next(_ sender:Any) {
+        let vc = PegboardViewController()
         nextViewController(viewController: vc)
     }
     
@@ -36,7 +38,7 @@ class MatricesViewController: WebViewController {
     
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if (message.name == "callbackHandler") {
-            next()
+            next(self)
         }
         
     }

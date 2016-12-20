@@ -18,6 +18,8 @@ class ReyComplexFigureViewController: WebViewController {
         
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(ReyComplexFigureViewController.next(_:)))
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,7 +30,7 @@ class ReyComplexFigureViewController: WebViewController {
     
     // MARK: - Navigation
     
-    func next() {
+    func next(_ sender:Any) {
         let vc:ClockDrawingTestViewController = ClockDrawingTestViewController()
         nextViewController(viewController: vc)
     }
@@ -36,7 +38,7 @@ class ReyComplexFigureViewController: WebViewController {
     // MARK: - Delegate
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if (message.name == "callbackHandler") {
-            next()
+            next(self)
         }
         
     }

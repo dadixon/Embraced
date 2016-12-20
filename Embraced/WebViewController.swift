@@ -17,7 +17,7 @@ class WebViewController: FrontViewController, WKNavigationDelegate, WKScriptMess
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = false
         
         rotated()
         

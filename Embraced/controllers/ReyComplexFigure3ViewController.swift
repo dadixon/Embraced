@@ -17,6 +17,8 @@ class ReyComplexFigure3ViewController: WebViewController {
         url = URL(string: "http://girlscouts.harryatwal.com/reyComplexFigure3.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(ReyComplexFigure3ViewController.next(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,8 +28,8 @@ class ReyComplexFigure3ViewController: WebViewController {
     
     // MARK: - Navigation
 
-    func next() {
-        let vc:ReyFigureComplex4ViewController = ReyFigureComplex4ViewController()
+    func next(_ sender:Any) {
+        let vc = ReyFigureComplex4ViewController()
         nextViewController(viewController: vc)
     }
     
@@ -36,7 +38,7 @@ class ReyComplexFigure3ViewController: WebViewController {
     
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if (message.name == "callbackHandler") {
-            next()
+            next(self)
         }
         
     }

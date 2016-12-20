@@ -17,6 +17,8 @@ class CancellationTestViewController: WebViewController {
         url = URL(string: "http://girlscouts.harryatwal.com/cancellationTest.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(CancellationTestViewController.next(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,8 +29,8 @@ class CancellationTestViewController: WebViewController {
     
     // MARK: - Navigation
     
-    func next() {
-        let vc:WordList2ViewController = WordList2ViewController()
+    func next(_ sender:Any) {
+        let vc = WordList2ViewController()
         nextViewController(viewController: vc)
     }
 
@@ -37,7 +39,7 @@ class CancellationTestViewController: WebViewController {
     
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if (message.name == "callbackHandler") {
-            next()
+            next(self)
         }
         
     }
