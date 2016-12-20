@@ -1,19 +1,77 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComprehensionViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComprehensionViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="mainView" destination="WZg-tI-7ig" id="4lo-VZ-RiY"/>
+                <outlet property="progressLabel" destination="ttW-iZ-Zne" id="gd5-Jg-0aJ"/>
+                <outlet property="progressView" destination="sw8-km-5c2" id="nVn-j4-WTI"/>
+                <outlet property="view" destination="s5N-xF-bGJ" id="cQg-8O-U3C"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="s5N-xF-bGJ">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WZg-tI-7ig">
+                    <rect key="frame" x="8" y="20" width="359" height="639"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qy5-MH-InX">
+                            <rect key="frame" x="0.0" y="0.0" width="359" height="47"/>
+                            <subviews>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sw8-km-5c2">
+                                    <rect key="frame" x="8.5" y="32" width="342" height="2"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="342" id="aKd-9L-9HE"/>
+                                    </constraints>
+                                </progressView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttW-iZ-Zne">
+                                    <rect key="frame" x="165.5" y="8" width="29" height="21"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="sw8-km-5c2" firstAttribute="top" secondItem="ttW-iZ-Zne" secondAttribute="bottom" constant="3" id="L9V-mB-xFc"/>
+                                <constraint firstItem="ttW-iZ-Zne" firstAttribute="centerX" secondItem="Qy5-MH-InX" secondAttribute="centerX" id="PN4-Ac-MYI"/>
+                                <constraint firstItem="ttW-iZ-Zne" firstAttribute="top" secondItem="Qy5-MH-InX" secondAttribute="top" constant="8" id="ce9-0i-7Sv"/>
+                                <constraint firstItem="sw8-km-5c2" firstAttribute="centerX" secondItem="Qy5-MH-InX" secondAttribute="centerX" id="e4I-SK-WSK"/>
+                                <constraint firstAttribute="bottom" secondItem="sw8-km-5c2" secondAttribute="bottom" constant="13" id="nGM-8R-J9d"/>
+                                <constraint firstAttribute="height" constant="47" id="xCM-bS-Ltc"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Qy5-MH-InX" firstAttribute="leading" secondItem="WZg-tI-7ig" secondAttribute="leading" id="CK6-n7-5Ed"/>
+                        <constraint firstItem="Qy5-MH-InX" firstAttribute="top" secondItem="WZg-tI-7ig" secondAttribute="top" id="MwM-5f-rTK"/>
+                        <constraint firstAttribute="trailing" secondItem="Qy5-MH-InX" secondAttribute="trailing" id="X19-ei-XoD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="WZg-tI-7ig" firstAttribute="leading" secondItem="s5N-xF-bGJ" secondAttribute="leading" constant="8" id="2zc-Ja-A3T"/>
+                <constraint firstAttribute="bottom" secondItem="WZg-tI-7ig" secondAttribute="bottom" constant="8" id="CDr-AX-na8"/>
+                <constraint firstAttribute="trailing" secondItem="WZg-tI-7ig" secondAttribute="trailing" constant="8" id="bwz-DN-qaW"/>
+            </constraints>
+            <point key="canvasLocation" x="0.5" y="-66.5"/>
         </view>
     </objects>
 </document>

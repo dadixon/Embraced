@@ -9,8 +9,8 @@
 import UIKit
 import AVFoundation
 
-class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
-
+class PitchViewController: FrontViewController {
+    
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet var introView: UIView!
@@ -20,6 +20,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     @IBOutlet var trial1View: UIView!
     @IBOutlet var preTaskView: UIView!
     @IBOutlet var taskView: UIView!
+    @IBOutlet var completeView: UIView!
     
     @IBOutlet weak var example1Label: UILabel!
     @IBOutlet weak var example2Label: UILabel!
@@ -27,23 +28,43 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var trialLabel: UILabel!
     @IBOutlet weak var tasksLabel: UILabel!
+    @IBOutlet weak var practiceLabel: UILabel!
+    @IBOutlet weak var practiceInstructionsLabel: UILabel!
     
+    @IBOutlet weak var example1Response: UILabel!
+    @IBOutlet weak var example2Response: UILabel!
+    @IBOutlet weak var example3Response: UILabel!
+    @IBOutlet weak var practiceResponse: UILabel!
+    @IBOutlet weak var taskResponse: UILabel!
     
-    var soundPlayer: AVAudioPlayer!
+    @IBOutlet weak var practiceSegment: UISegmentedControl!
+    @IBOutlet weak var taskSegment: UISegmentedControl!
+    
     var stimuli = [String: Any]()
     var examples = Array<Array<String>>()
     var trials = Array<Array<String>>()
     var tasks = Array<Array<String>>()
     
+    let exampleAnswers = ["S", "D", "D"]
+    let practiceAnswers = ["D", "D", "S", "D", "D"]
+    let taskAnswers = ["S", "D", "S", "D", "D", "S", "D", "S", "D", "D", "S", "S", "S", "S", "D", "D", "D", "D", "D", "S", "S", "S", "S", "D"]
+    
+    var userAnswers = [String]()
+    var score = Int()
     
     var firstSound = String()
     var secondSound = String()
     var soundLabel = UILabel()
     var played = false
     
+    var exampleCount = 0
     var trialCount = 0
     var tasksCount = 0
     
+    var timer = Timer()
+    
+    var practiceString = NSLocalizedString("Now you will practice on your own.\nRemember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.\nThere will be 5 pairs of melodies for you to practice.\nWhen you are ready, tap on sound icon.", comment: "")
+    var practiceString2 = NSLocalizedString("Now you will practice on your own.\nRemember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.\nWhen you are ready, tap on sound icon.", comment: "")
     
     
     // MARK: - Private
@@ -60,12 +81,15 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     }
     
     
-    
     override func viewDidLoad() {
+        step = 7
+        
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PitchViewController.next(_:)))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(PitchViewController.back(_:)))
+        
+        orientation = "portrait"
+        rotated()
         
         introView.translatesAutoresizingMaskIntoConstraints = false
         example1View.translatesAutoresizingMaskIntoConstraints = false
@@ -74,7 +98,8 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         trial1View.translatesAutoresizingMaskIntoConstraints = false
         preTaskView.translatesAutoresizingMaskIntoConstraints = false
         taskView.translatesAutoresizingMaskIntoConstraints = false
-
+        completeView.translatesAutoresizingMaskIntoConstraints = false
+        
         containerView.addSubview(introView)
         
         let leftConstraint = introView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
@@ -83,31 +108,30 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
         let bottomConstraint = introView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
         
-        // Fetch audios
-        let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/pitch")!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
-        let session = URLSession.shared
-        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-            (data, response, error) -> Void in
-            
-            let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            if (statusCode == 200) {
-                print("Everyone is fine, file downloaded successfully.")
-                
-                do {
-                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String:Any]
-                    self.examples = self.stimuli["examples"] as! Array<Array<String>>
-                    self.trials = self.stimuli["trials"] as! Array<Array<String>>
-                    self.tasks = self.stimuli["tasks"] as! Array<Array<String>>
-                } catch {
-                    print("Error with Json: \(error)")
-                }
-            }
-        })
         
-        task.resume()
+        // Fetch audios
+        examples = DataManager.sharedInstance.pitchExamples
+        trials = DataManager.sharedInstance.pitchTrials
+        tasks = DataManager.sharedInstance.pitchTasks
+        
+        let pathResource = Bundle.main.path(forResource: "melodies 320ms orig(16)", ofType: "wav")
+        let finishedStepSound = NSURL(fileURLWithPath: pathResource!)
+        
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
+            if(soundPlayer.prepareToPlay()){
+                print("preparation success")
+                soundPlayer.delegate = self
+            }else{
+                print("preparation failure")
+            }
+            
+        }catch{
+            print("Sound file could not be found")
+        }
+        
+        
+        loadingView.stopAnimating()
     }
     
     override func didReceiveMemoryWarning() {
@@ -117,67 +141,86 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     
     
     
-    func play(_ url:NSURL) {
-        print("playing \(url)")
-        
-        do {
-            soundPlayer = try AVAudioPlayer(contentsOf: url as URL)
-            soundPlayer.delegate = self
-            soundPlayer.prepareToPlay()
-            soundPlayer.volume = 1.0
-            soundPlayer.play()
-        } catch let error as NSError {
-            //self.player = nil
-            print(error.localizedDescription)
-        } catch {
-            print("AVAudioPlayer init failed")
-        }
-        
-    }
-    
-    
-    func downloadFileFromURL(url:NSURL){
-        var downloadTask:URLSessionDownloadTask
-        downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
-            self.play(URL! as NSURL)
-        })
-        
-        downloadTask.resume()
-    }
+//    private func play(_ filename:String) {
+//        if let pathResource = Bundle.main.path(forResource: filename, ofType: "wav") {
+//            let finishedStepSound = NSURL(fileURLWithPath: pathResource)
+//            do {
+//                soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
+//                if(soundPlayer.prepareToPlay()){
+//                    print("preparation success")
+//                    soundPlayer.delegate = self
+//                    if(soundPlayer.play()){
+//                        print("Sound play success")
+//                    }else{
+//                        print("Sound file could not be played")
+//                    }
+//                }else{
+//                    print("preparation failure")
+//                }
+//                
+//            }catch{
+//                print("Sound file could not be found")
+//            }
+//        }else{
+//            print("path not found")
+//        }
+//    }
     
     private func setupSounds(_ soundArray: Array<Array<String>>, iterator: Int, label: UILabel) {
-        if soundPlayer != nil {
+        if soundPlayer.isPlaying {
             soundPlayer.stop()
         }
         
         played = false
+        resetTimer()
         
         if soundArray[iterator].count > 1 {
-            firstSound = soundArray[iterator][0]
-            secondSound = soundArray[iterator][1]
+            firstSound = soundArray[iterator][1]
+            secondSound = soundArray[iterator][0]
         } else if soundArray[iterator].count == 1 {
             firstSound = soundArray[iterator][0]
             secondSound = soundArray[iterator][0]
         }
         
-        let url = NSURL(string: firstSound)
-        downloadFileFromURL(url: url!)
-        soundLabel = label
+        print(firstSound)
+        print(secondSound)
         
-        print("Sound url \(firstSound)")
+        let firstSoundArray = firstSound.characters.split(separator: ".").map(String.init)
+        let secondSoundArray = secondSound.characters.split(separator: ".").map(String.init)
+        
+        firstSound = firstSoundArray[0]
+        secondSound = secondSoundArray[0]
+        
+        print(firstSound)
+        print(secondSound)
+        
+        soundLabel = label
+        soundLabel.text = "1"
     }
     
     
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        let mOCAMMSETestViewController:WordListViewController = WordListViewController()
-        self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
+        let vc:DigitalSpanViewController = DigitalSpanViewController()
+        nextViewController(viewController: vc)
     }
-
-    @IBAction func back(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
+    
+    @IBAction func done(_ sender: AnyObject) {
+        print(userAnswers)
+        var jsonObject = [String: AnyObject]()
+        
+        // Gather data for post
+        jsonObject = [
+            "answers": userAnswers as AnyObject,
+            "score": score as AnyObject
+        ]
+        
+        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "pitch", data: jsonObject)
+        
+        next(self)
     }
+    
     
     
     // MARK: - Actions
@@ -190,39 +233,99 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     @IBAction func moveToExample2(_ sender: AnyObject) {
         setSubview(example1View, next: example2View)
         setupSounds(examples, iterator: 1, label: example2Label)
+        exampleCount += 1
     }
     
     @IBAction func replay(_ sender: AnyObject) {
+        if soundPlayer.isPlaying {
+            soundPlayer.stop()
+        }
+        
+        resetTimer()
         played = false
-        let url = NSURL(string: firstSound)
-        downloadFileFromURL(url: url!)
+        self.play(firstSound)
         soundLabel.text = "1"
     }
     
     @IBAction func moveToExample3(_ sender: AnyObject) {
         setSubview(example2View, next: example3View)
         setupSounds(examples, iterator: 2, label: example3Label)
+        exampleCount += 1
     }
     
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
         setSubview(example3View, next: trial1View)
         setupSounds(trials, iterator: trialCount, label: trialLabel)
-        trialCount += 1
+        practiceLabel.text = NSLocalizedString("Practice \(trialCount+1)", comment: "")
+        practiceInstructionsLabel.text = practiceString
+    }
+    
+    @IBAction func exampleAnswered(_ sender: AnyObject) {
+        if ((sender.selectedSegmentIndex == 0 && exampleAnswers[exampleCount] == "S") || (sender.selectedSegmentIndex == 1 && exampleAnswers[exampleCount] == "D")) {
+            if exampleCount == 0 {
+                example1Response.text = "Correct!"
+            } else if exampleCount == 1 {
+                example2Response.text = "Correct!"
+            } else if exampleCount == 2 {
+                example3Response.text = "Correct!"
+            }
+        } else {
+            if exampleCount == 0 {
+                example1Response.text = "Sorry, that was an incorrect response. You can try again."
+            } else if exampleCount == 1 {
+                example2Response.text = "Sorry, that was an incorrect response. You can try again."
+            } else if exampleCount == 2 {
+                example3Response.text = "Sorry, that was an incorrect response. You can try again."
+            }
+        }
+    }
+    
+    @IBAction func practiceAnswered(_ sender: AnyObject) {
+        if ((sender.selectedSegmentIndex == 0 && practiceAnswers[trialCount] == "S") || (sender.selectedSegmentIndex == 1 && practiceAnswers[trialCount] == "D")) {
+            practiceResponse.text = "Correct!"
+        } else {
+            practiceResponse.text = "Sorry, that was an incorrect response. You can try again."
+        }
+    }
+    
+    @IBAction func taskAnswered(_ sender: AnyObject) {
+        if ((sender.selectedSegmentIndex == 0 && taskAnswers[tasksCount - 1] == "S") || (sender.selectedSegmentIndex == 1 && taskAnswers[tasksCount - 1] == "D")) {
+            taskResponse.text = "Correct!"
+            userAnswers.insert("c", at: tasksCount - 1)
+            score += 1
+        } else {
+            taskResponse.text = "Incorrect"
+            userAnswers.insert("i", at: tasksCount - 1)
+            score -= 1
+        }
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            taskSegment.setEnabled(false, forSegmentAt: 1)
+        default:
+            taskSegment.setEnabled(false, forSegmentAt: 0)
+        }
     }
     
     @IBAction func nextTrial(_ sender: AnyObject) {
-        if trialCount < trials.count {
-            // Save answer
+        trialCount += 1
         
+        if trialCount < trials.count {
             // Which label back to 1
             trialLabel.text = "1"
-        
+            practiceResponse.text = ""
+            practiceSegment.selectedSegmentIndex = -1
+            practiceLabel.text = NSLocalizedString("Practice \(trialCount+1)", comment: "")
+            practiceInstructionsLabel.text = practiceString2
+            
             // Set sounds to play
             setupSounds(trials, iterator: trialCount, label: trialLabel)
-        
-            trialCount += 1
         } else {
+            if soundPlayer.isPlaying {
+                soundPlayer.stop()
+            }
+            
             setSubview(trial1View, next: preTaskView)
         }
     }
@@ -230,6 +333,7 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
     @IBAction func moveToTask(_ sender: AnyObject) {
         setSubview(preTaskView, next: taskView)
         setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
+        play(firstSound)
         tasksCount += 1
     }
     
@@ -240,35 +344,55 @@ class PitchViewController: FrontViewController, AVAudioPlayerDelegate {
             
             // Which label back to 1
             tasksLabel.text = "1"
+            taskResponse.text = ""
+            taskSegment.setEnabled(true, forSegmentAt: 0)
+            taskSegment.setEnabled(true, forSegmentAt: 1)
+            taskSegment.selectedSegmentIndex = -1
             
             // Set sounds to play
             setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
             
+            play(firstSound)
+            
             tasksCount += 1
         } else {
-            let mOCAMMSETestViewController:WordListViewController = WordListViewController()
-            self.navigationController?.pushViewController(mOCAMMSETestViewController, animated: true)
+            if soundPlayer.isPlaying {
+                soundPlayer.stop()
+            }
+            
+            setSubview(taskView, next: completeView)
         }
     }
     
     
+    func updateTime() {
+        if self.played == false {
+            self.soundLabel.text = "2"
+            play(secondSound)
+        }
+        
+        self.played = true
+    }
     
+    func startTimer() {
+        if !timer.isValid {
+            
+            let aSelector : Selector = #selector(NamingTaskViewController.updateTime)
+            
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
+        }
+    }
+    
+    func resetTimer() {
+        timer.invalidate()
+    }
     
     
     // MARK: - Delegate
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("finished")
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            if self.played == false {
-                self.soundLabel.text = "2"
-                let url = NSURL(string: self.secondSound)
-                self.downloadFileFromURL(url: url!)
-            }
-        
-            self.played = true
-        }
+        startTimer()
     }
     
 }

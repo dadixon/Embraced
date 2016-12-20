@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -26,11 +30,30 @@
                                     <constraint firstAttribute="width" constant="317" id="LGg-W4-HLd"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rxg-G6-8Ig">
+                                <rect key="frame" x="452" y="682" width="121" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGI-Ad-u39">
+                                        <rect key="frame" x="8" y="12" width="104" height="27"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gGI-Ad-u39" secondAttribute="trailing" constant="9" id="CHX-Ed-Q2J"/>
+                                    <constraint firstAttribute="bottom" secondItem="gGI-Ad-u39" secondAttribute="bottom" constant="10" id="N4e-gw-imb"/>
+                                    <constraint firstItem="gGI-Ad-u39" firstAttribute="leading" secondItem="Rxg-G6-8Ig" secondAttribute="leading" constant="8" id="VIC-Uq-9tl"/>
+                                    <constraint firstItem="gGI-Ad-u39" firstAttribute="top" secondItem="Rxg-G6-8Ig" secondAttribute="top" constant="12" id="rKM-o5-pgF"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rLl-j5-Op5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4V2-0v-xnG"/>
+                            <constraint firstItem="Rxg-G6-8Ig" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6jQ-mV-1nn"/>
                             <constraint firstItem="fe0-1D-0yY" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="HG1-Q9-o5y"/>
+                            <constraint firstItem="Rxg-G6-8Ig" firstAttribute="top" secondItem="rLl-j5-Op5" secondAttribute="bottom" constant="8" id="JZb-HL-IAd"/>
                             <constraint firstItem="fe0-1D-0yY" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="kra-8L-mWY"/>
                             <constraint firstItem="rLl-j5-Op5" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="105" id="mAc-EJ-Iew"/>
                             <constraint firstAttribute="trailing" secondItem="fe0-1D-0yY" secondAttribute="trailing" id="pAQ-Wl-QeX"/>
@@ -43,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="648" y="495"/>
+            <point key="canvasLocation" x="838.28125" y="92.578125"/>
         </scene>
     </scenes>
     <resources>

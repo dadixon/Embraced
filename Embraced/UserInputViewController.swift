@@ -21,7 +21,9 @@ class UserInputViewController: UIViewController {
     @IBOutlet weak var floorTextField: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
     
+    
     let participant = UserDefaults.standard
+    let downloadManager = DownloadManager()
     
     fileprivate func setBottomBorder(_ textfield: UITextField) {
         let border = CALayer()
@@ -41,21 +43,13 @@ class UserInputViewController: UIViewController {
         
         self.navigationController?.isNavigationBarHidden = true
         
-        Stormpath.sharedSession.me { (account, error) -> Void in
-            if let account = account {
-                print("Hello \(account.fullName)!")
-            }
-        }
+        DataManager.sharedInstance.fetchStimuli()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         submitBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
-        
-        let uuid = UUID().uuidString
-        let index = uuid.characters.index(uuid.endIndex, offsetBy: -28)
-        participantID.text = uuid.substring(to: index)
 
     }
 
@@ -69,8 +63,10 @@ class UserInputViewController: UIViewController {
     }
     
     @IBAction func submit(_ sender: AnyObject) {
-//        self.saveUserInputs()
-        participant.setValue(participantID.text, forKey: "pid")
+        let uuid = UUID().uuidString
+        let index = uuid.characters.index(uuid.endIndex, offsetBy: -15)
+        
+        participant.setValue(uuid.substring(to: index), forKey: "pid")
         participant.setValue(dayOfTheWeekTextField.text, forKey: "dayOfTheWeek")
         participant.setValue(countryTextField.text, forKey: "country")
         participant.setValue(countyTextField.text, forKey: "county")
@@ -78,12 +74,37 @@ class UserInputViewController: UIViewController {
         participant.setValue(locationTextField.text, forKey: "location")
         participant.setValue(floorTextField.text, forKey: "floor")
 
+        var jsonObject = [String: AnyObject]()
         
+        // Gather data for post
+        jsonObject = [
+            "id": uuid.substring(to: index) as AnyObject
+        ]
+
         
-        let questionnaireViewController:PitchViewController = PitchViewController()
+//        print(jsonObject)
+        
+        // Push to API
+        APIWrapper.post(id: "", test: "", data: jsonObject)
+
+        
+        let questionnaireViewController:StartViewController = StartViewController()
         let navController = UINavigationController(rootViewController: questionnaireViewController)
         self.present(navController, animated: true, completion: nil)
-        
-        
     }
+    
+    
+//    func downloadFileFromURL(url:NSURL, x: Int, y: Int){
+//        var downloadTask:URLSessionDownloadTask
+//        downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
+//            if error != nil {
+//                print(error!.localizedDescription)
+//            }
+//            print(URL! as NSURL)
+//            print(x)
+//            self.examples2[x][y] = URL! as URL
+//        })
+//        
+//        downloadTask.resume()
+//    }
 }

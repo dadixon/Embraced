@@ -1,15 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionnaireViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
-                <outlet property="mainView" destination="XZG-ZL-cZS" id="rgk-az-Qnw"/>
-                <outlet property="myWebView" destination="g6o-Us-yZn" id="LT9-LG-Hxu"/>
+                <outlet property="loadingView" destination="RRg-a3-HCC" id="ttE-8E-LsJ"/>
+                <outlet property="mainView" destination="XZG-ZL-cZS" id="VuF-qd-XgD"/>
+                <outlet property="progressLabel" destination="Tvd-sE-plK" id="qk6-Yx-XU5"/>
+                <outlet property="progressView" destination="OyK-Y5-dOa" id="3ZR-xG-KMX"/>
                 <outlet property="view" destination="J3q-W3-s7m" id="w7z-fF-E2e"/>
             </connections>
         </placeholder>
@@ -19,17 +29,53 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZG-ZL-cZS">
+                    <rect key="frame" x="8" y="48" width="752" height="968"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghg-R8-L4S">
+                            <rect key="frame" x="0.0" y="0.0" width="752" height="47"/>
+                            <subviews>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OyK-Y5-dOa">
+                                    <rect key="frame" x="205" y="32" width="342" height="2"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="342" id="dme-7f-Gjf"/>
+                                    </constraints>
+                                </progressView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvd-sE-plK">
+                                    <rect key="frame" x="362" y="8" width="29" height="21"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="OyK-Y5-dOa" secondAttribute="bottom" constant="13" id="KLS-5M-clI"/>
+                                <constraint firstItem="Tvd-sE-plK" firstAttribute="top" secondItem="ghg-R8-L4S" secondAttribute="top" constant="8" id="b8f-UP-pIW"/>
+                                <constraint firstItem="OyK-Y5-dOa" firstAttribute="centerX" secondItem="ghg-R8-L4S" secondAttribute="centerX" id="bnx-L1-PjE"/>
+                                <constraint firstItem="Tvd-sE-plK" firstAttribute="centerX" secondItem="ghg-R8-L4S" secondAttribute="centerX" id="eSi-ZL-edc"/>
+                                <constraint firstAttribute="height" constant="47" id="pZi-b1-N39"/>
+                                <constraint firstItem="OyK-Y5-dOa" firstAttribute="top" secondItem="Tvd-sE-plK" secondAttribute="bottom" constant="3" id="zha-qb-l0T"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="47" id="zqS-1e-sld"/>
+                            </constraints>
+                        </view>
                         <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6o-Us-yZn">
+                            <rect key="frame" x="0.0" y="47" width="752" height="876"/>
                             <color key="backgroundColor" red="0.28958413" green="0.31462949509999999" blue="0.32950475810000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </webView>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="RRg-a3-HCC">
+                            <rect key="frame" x="366" y="489" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="g6o-Us-yZn" firstAttribute="leading" secondItem="XZG-ZL-cZS" secondAttribute="leading" id="2Wj-7v-EMV"/>
-                        <constraint firstAttribute="bottom" secondItem="g6o-Us-yZn" secondAttribute="bottom" id="kGv-5y-LlJ"/>
+                        <constraint firstAttribute="trailing" secondItem="ghg-R8-L4S" secondAttribute="trailing" id="Afn-Oy-Pr3"/>
+                        <constraint firstItem="ghg-R8-L4S" firstAttribute="top" secondItem="XZG-ZL-cZS" secondAttribute="top" id="a0E-Pb-z2o"/>
+                        <constraint firstAttribute="bottom" secondItem="g6o-Us-yZn" secondAttribute="bottom" constant="45" id="kGv-5y-LlJ"/>
+                        <constraint firstItem="ghg-R8-L4S" firstAttribute="leading" secondItem="XZG-ZL-cZS" secondAttribute="leading" id="kZ9-ag-125"/>
+                        <constraint firstItem="g6o-Us-yZn" firstAttribute="top" secondItem="ghg-R8-L4S" secondAttribute="bottom" id="leP-hb-c63"/>
                         <constraint firstAttribute="trailing" secondItem="g6o-Us-yZn" secondAttribute="trailing" id="spV-hs-ddA"/>
-                        <constraint firstItem="g6o-Us-yZn" firstAttribute="top" secondItem="XZG-ZL-cZS" secondAttribute="top" id="zgv-6v-M86"/>
                     </constraints>
                 </view>
             </subviews>
@@ -38,8 +84,9 @@
                 <constraint firstItem="XZG-ZL-cZS" firstAttribute="leading" secondItem="J3q-W3-s7m" secondAttribute="leading" constant="8" id="HhG-UW-k33"/>
                 <constraint firstAttribute="bottom" secondItem="XZG-ZL-cZS" secondAttribute="bottom" constant="8" id="Lb1-P2-5EC"/>
                 <constraint firstAttribute="trailing" secondItem="XZG-ZL-cZS" secondAttribute="trailing" constant="8" id="kcC-do-4FF"/>
-                <constraint firstItem="XZG-ZL-cZS" firstAttribute="top" secondItem="J3q-W3-s7m" secondAttribute="top" constant="65" id="mEO-tA-SEC"/>
+                <constraint firstItem="XZG-ZL-cZS" firstAttribute="top" secondItem="J3q-W3-s7m" secondAttribute="top" constant="48" id="mEO-tA-SEC"/>
             </constraints>
+            <point key="canvasLocation" x="132" y="-1137"/>
         </view>
     </objects>
 </document>

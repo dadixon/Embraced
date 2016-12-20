@@ -6,13 +6,5 @@
   Copyright © 2016 Domonique Dixon. All rights reserved.
 */
 
-minutes = "minutos";
-Close = "cerca";
-Action = "Action";
-Drama = "Drama";
-War = "War";
-Biography = "Biography";
-Sci-Fi = "Sci-Fi";
-Thriller = "Thriller";
-Adventure = "Adventure";
-Mystery = "Mystery";
+"WELCOME_TO_EMBRACED_PROJECT" = "BIENVENIDO AL PROYECTO EMBRACADO";
+"Next" = "Siguiente";

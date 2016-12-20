@@ -7,35 +7,18 @@
 //
 
 import UIKit
+import WebKit
 
-class ReyComplexFigure3ViewController: FrontViewController {
-
-    @IBOutlet weak var myWebView: UIWebView!
-    
-    var step = 1
-    var totalSteps = 3
-    var progress : Float {
-        get {
-            return Float(step) / Float(totalSteps)
-        }
-    }
-    
-    var alertController = UIAlertController()
+class ReyComplexFigure3ViewController: WebViewController {
     
     override func viewDidLoad() {
+        step = 9
+        orientation = "portrait"
+        url = URL(string: "http://girlscouts.harryatwal.com/reyComplexFigure3.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
+        
         super.viewDidLoad()
         
-        rotated()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(ReyComplexFigure3ViewController.next(_:)))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(StroopViewController.back(_:)))
-        
-        progressView.progress = progress
-        progressLabel.text = "Progress (\(step)/\(totalSteps))"
-        
-        let url = URL (string: "http://girlscouts.harryatwal.com/reyComplexFigure3.php");
-
-        let requestObj = URLRequest(url: url!);
-        myWebView.loadRequest(requestObj);
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(ReyComplexFigure3ViewController.next(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,33 +26,20 @@ class ReyComplexFigure3ViewController: FrontViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func rotated() {
-        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
-            alertController.dismiss(animated: true, completion: nil)
-        }
-        
-        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
-            alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
-            self.present(alertController, animated: true, completion: nil)
-        }
-    }
-    
     // MARK: - Navigation
 
-    @IBAction func next(_ sender: AnyObject) {
-//        var navigationArray = self.navigationController?.viewControllers
-//        
-//        navigationArray?.remove(at: 0)
-        
-        let reyComplexFigure4ViewController:ReyFigureComplex4ViewController = ReyFigureComplex4ViewController()
-//        navigationArray?.append(reyComplexFigure4ViewController)
-//        
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        self.navigationController?.pushViewController(reyComplexFigure4ViewController, animated: true)
-    }
-
-    @IBAction func back(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
+    func next(_ sender:Any) {
+        let vc = ReyFigureComplex4ViewController()
+        nextViewController(viewController: vc)
     }
     
+    
+    // MARK: - Delegate
+    
+    override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if (message.name == "callbackHandler") {
+            next(self)
+        }
+        
+    }
 }

@@ -7,23 +7,18 @@
 //
 
 import UIKit
+import WebKit
 
-class CPTViewController: FrontViewController {
-
-    @IBOutlet weak var myWebView: UIWebView!
-    
-    var alertController = UIAlertController()
+class CPTViewController: WebViewController {
     
     override func viewDidLoad() {
+        step = 11
+        orientation = "landscape"
+        url = URL(string: "http://girlscouts.harryatwal.com/cpt.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
+        
         super.viewDidLoad()
         
-        rotated()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(CPTViewController.next(_:)))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(CPTViewController.back(_:)))
-        
-        let url = URL (string: "http://girlscouts.harryatwal.com/cpt.php");
-        let requestObj = URLRequest(url: url!);
-        myWebView.loadRequest(requestObj);
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(CPTViewController.next(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,33 +26,20 @@ class CPTViewController: FrontViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func rotated() {
-        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
-            alertController.dismiss(animated: true, completion: nil)
-        }
-        
-        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
-            alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
-            self.present(alertController, animated: true, completion: nil)
-        }
-    }
-    
     
     // MARK: - Navigation
     
-    @IBAction func next(_ sender: AnyObject) {
-//        var navigationArray = self.navigationController?.viewControllers
-//
-//        navigationArray?.remove(at: 0)
-        
-        let eyeTestViewController:EyeTestViewController = EyeTestViewController()
-//        navigationArray?.append(eyeTestViewController)
-//        
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        self.navigationController?.pushViewController(eyeTestViewController, animated: true)
+    func next(_ sender:Any) {
+        let vc:MatricesViewController = MatricesViewController()
+        nextViewController(viewController: vc)
     }
-
-    @IBAction func back(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
+    
+    // MARK: - Delegate
+    
+    override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if (message.name == "callbackHandler") {
+            next(self)
+        }
+        
     }
 }

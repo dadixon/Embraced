@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
 
     
     @IBOutlet weak var containerView: UIView!
@@ -18,37 +18,39 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
     
+    @IBOutlet weak var listenBtn: UIButton!
+    @IBOutlet weak var recordPracticeBtn: UIButton!
+    @IBOutlet weak var listenForwardBtn: UIButton!
+    @IBOutlet weak var recordForwardBtn: UIButton!
+    @IBOutlet weak var listenPracticeBtn2: UIButton!
+    @IBOutlet weak var recordPracitceBtn2: UIButton!
+    @IBOutlet weak var listenBackwardBtn: UIButton!
+    @IBOutlet weak var recordBackwardBtn: UIButton!
+    
     @IBOutlet var preTask1View: UIView!
     @IBOutlet var task1View: UIView!
     @IBOutlet var preTask2View: UIView!
     @IBOutlet var task2View: UIView!
+    @IBOutlet var completeView: UIView!
     
     @IBOutlet weak var rounds: UILabel!
     @IBOutlet weak var bRounds: UILabel!
     
+    @IBOutlet weak var instructionsA: UILabel!
+    @IBOutlet weak var instructions: UILabel!
     
     var recordingSession: AVAudioSession!
     
     var soundRecorder: AVAudioRecorder!
-    var soundPlayer: AVAudioPlayer!
     var fileName = "testAudioFile.m4a"
     
     var stimuli = [String: Any]()
     var forward = Array<String>()
     var backward = Array<String>()
     
-    var step = 1
-    var totalSteps = 3
-    var progress : Float {
-        get {
-            return Float(step) / Float(totalSteps)
-        }
-    }
     
     var forwardCount = 0
     var backwardCount = 0
-
-    var alertController = UIAlertController()
     
     // MARK: - Private
     
@@ -66,20 +68,20 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     
     
     override func viewDidLoad() {
+        step = 8
         super.viewDidLoad()
         
+        orientation = "portrait"
         rotated()
-        progressView.progress = progress
-        progressLabel.text = "Progress"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(DigitalSpanViewController.next(_:)))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(DigitalSpanViewController.back(_:)))
         
         introView.translatesAutoresizingMaskIntoConstraints = false
         preTask1View.translatesAutoresizingMaskIntoConstraints = false
         preTask2View.translatesAutoresizingMaskIntoConstraints = false
         task1View.translatesAutoresizingMaskIntoConstraints = false
         task2View.translatesAutoresizingMaskIntoConstraints = false
+        completeView.translatesAutoresizingMaskIntoConstraints = false
         
         containerView.addSubview(introView)
         
@@ -108,45 +110,31 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
             // failed to record!
         }
 
-        let requestURL: URL = URL(string: "http://api.girlscouts.harryatwal.com/digital_span")!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
-        let session = URLSession.shared
-        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-            (data, response, error) -> Void in
-            
-            let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            if (statusCode == 200) {
-                print("Everyone is fine, file downloaded successfully.")
-                
-                do {
-                    self.stimuli = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String:Any]
-                    self.forward = self.stimuli["forward"] as! Array<String>
-                    self.backward = self.stimuli["backward"] as! Array<String>
-                }catch {
-                    print("Error with Json: \(error)")
-                }
-            }
-        })
+        forward = DataManager.sharedInstance.digitalSpanForward
+        backward = DataManager.sharedInstance.digitalSpanBackward
         
-        task.resume()
+        let pathResource = Bundle.main.path(forResource: "melodies 320ms orig(16)", ofType: "wav")
+        let finishedStepSound = NSURL(fileURLWithPath: pathResource!)
+        
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
+            if(soundPlayer.prepareToPlay()){
+                print("preparation success")
+                soundPlayer.delegate = self
+            }else{
+                print("preparation failure")
+            }
+            
+        }catch{
+            print("Sound file could not be found")
+        }
+        
+        loadingView.stopAnimating()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func rotated() {
-        if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
-            alertController.dismiss(animated: true, completion: nil)
-        }
-        
-        if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
-            alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
-            self.present(alertController, animated: true, completion: nil)
-        }
     }
     
     
@@ -161,20 +149,15 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         ]
         
         do {
-            soundRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
-            soundRecorder.delegate = self
-            soundRecorder.record()
+            let soundR = try AVAudioRecorder(url: audioFilename, settings: settings)
+            soundR.delegate = self
+            soundRecorder = soundR
+            soundR.record()
             
             button.setTitle("Stop", for: .normal)
         } catch {
             finishRecording(button, success: false)
         }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
     }
     
     func finishRecording(_ button: UIButton, success: Bool) {
@@ -198,61 +181,62 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
         }
     }
     
-    func play(_ url:NSURL) {
-        print("playing \(url)")
-        
-        do {
-            soundPlayer = try AVAudioPlayer(contentsOf: url as URL)
-            soundPlayer.prepareToPlay()
-            soundPlayer.volume = 1.0
-            soundPlayer.play()
-        } catch let error as NSError {
-            //self.player = nil
-            print(error.localizedDescription)
-        } catch {
-            print("AVAudioPlayer init failed")
-        }
-        
-    }
-    
-    func downloadFileFromURL(url:NSURL){
-        var downloadTask:URLSessionDownloadTask
-        downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
-            self.play(URL! as NSURL)
-        })
-        
-        downloadTask.resume()
-    }
+//    func play(_ filename:String) {
+//        if let pathResource = Bundle.main.path(forResource: filename, ofType: "wav") {
+//            let finishedStepSound = NSURL(fileURLWithPath: pathResource)
+//            do {
+//                soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
+//                if(soundPlayer.prepareToPlay()){
+//                    print("preparation success")
+//                    soundPlayer.delegate = self
+//                    if(soundPlayer.play()){
+//                        print("Sound play success")
+//                    }else{
+//                        print("Sound file could not be played")
+//                    }
+//                }else{
+//                    print("preparation failure")
+//                }
+//                
+//            }catch{
+//                print("Sound file could not be found")
+//            }
+//        }else{
+//            print("path not found")
+//        }
+//    }
     
     func log(logMessage: String, functionName: String = #function) {
-        print("\(functionName): \(logMessage)")
+        print("\(#function): \(logMessage)")
     }
     
-    
+    func finishedPlaying() {
+        recordPracticeBtn.isEnabled = true
+        listenBtn.isEnabled = false
+        
+        listenForwardBtn.isEnabled = false
+        recordForwardBtn.isEnabled = true
+        
+        listenPracticeBtn2.isEnabled = false
+        recordPracitceBtn2.isEnabled = true
+        
+        listenBackwardBtn.isEnabled = false
+        recordBackwardBtn.isEnabled = true
+    }
     
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-//        var navigationArray = self.navigationController?.viewControllers
-//        
-//        navigationArray?.remove(at: 0)
+        let vc:ReyComplexFigure3ViewController = ReyComplexFigure3ViewController()
+        nextViewController(viewController: vc)
+    }
+
+    @IBAction func done(_ sender:AnyObject) {
+        // Push to API
+        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: createPostObject())
         
-        let reyComplexFigure3ViewController:ReyComplexFigure3ViewController = ReyComplexFigure3ViewController()
-//        navigationArray?.append(reyComplexFigure3ViewController)
-//        
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-        self.navigationController?.pushViewController(reyComplexFigure3ViewController, animated: true)
+        next(self)
     }
-    
-    @IBAction func back(_ sender: AnyObject) {
-        _ = self.navigationController?.popViewController(animated: true)
-    }
-    
-    
-    
-    
-    
-    
     // MARK: - Actions
     
     @IBAction func recordTapped(_ sender: UIButton) {
@@ -265,7 +249,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     
     @IBAction func recordForward(_ sender: AnyObject) {
         if soundRecorder == nil {
-            startRecording(sender as! UIButton, fileName: "forward\(forwardCount)")
+            startRecording(sender as! UIButton, fileName: "forward\(forwardCount).m4a")
         } else {
             finishRecording(sender as! UIButton, success: true)
         }
@@ -273,7 +257,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
     
     @IBAction func recordBackward(_ sender: AnyObject) {
         if soundRecorder == nil {
-            startRecording(sender as! UIButton, fileName: "backward\(backwardCount)")
+            startRecording(sender as! UIButton, fileName: "backward\(backwardCount).m4a")
         } else {
             finishRecording(sender as! UIButton, success: true)
         }
@@ -287,66 +271,121 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate, A
             preparePlayer()
             soundPlayer.play()
         } else {
-            soundPlayer.stop()
+            if soundPlayer.isPlaying {
+                soundPlayer.stop()
+            }
             sender.setTitle("Play", for: UIControlState())
         }
     }
     
     @IBAction func listenToSound(_ sender: AnyObject) {
         if sender.tag == 0 {
-            let url = NSURL(string: forward[forward.count - 1])
-            downloadFileFromURL(url: url!)
+            play(forward[forward.count - 1])
         } else if sender.tag == 1 {
-            let url = NSURL(string: forward[forwardCount])
-            downloadFileFromURL(url: url!)
+            play(forward[forwardCount])
         } else if sender.tag == 2 {
-            let url = NSURL(string: backward[backward.count - 1])
-            downloadFileFromURL(url: url!)
+            play(backward[backward.count - 1])
         } else if sender.tag == 3 {
-            let url = NSURL(string: backward[backwardCount])
-            downloadFileFromURL(url: url!)
+            play(backward[backwardCount])
         }
     }
     
     @IBAction func moveToListen(_ sender: AnyObject) {
         setSubview(introView, next: preTask1View)
+        recordPracticeBtn.isEnabled = false
+        listenBtn.isEnabled = true
     }
     
     @IBAction func moveToForward(_ sender: AnyObject) {
         setSubview(preTask1View, next: task1View)
+        listenForwardBtn.isEnabled = true
+        recordForwardBtn.isEnabled = false
     }
     
     @IBAction func nextSound(_ sender: AnyObject) {
+        instructionsA.text = "Click on LISTEN button when you are ready."
         if (forwardCount < forward.count - 2) {
             forwardCount += 1
             rounds.text = "Round \(forwardCount+1)"
+            listenForwardBtn.isEnabled = true
+            recordForwardBtn.isEnabled = false
         } else {
             setSubview(task1View, next: preTask2View)
+            listenPracticeBtn2.isEnabled = true
+            recordPracitceBtn2.isEnabled = false
         }
     }
     
     @IBAction func moveToBackward(_ sender: AnyObject) {
         setSubview(preTask2View, next: task2View)
         bRounds.text = "Round \(backwardCount+1)"
+        listenBackwardBtn.isEnabled = true
+        recordBackwardBtn.isEnabled = false
     }
     
     @IBAction func nextBSound(_ sender: AnyObject) {
+        instructions.text = "Click on LISTEN button when you are ready."
         if (backwardCount < backward.count - 2) {
             backwardCount += 1
             bRounds.text = "Round \(backwardCount+1)"
+            listenBackwardBtn.isEnabled = true
+            recordBackwardBtn.isEnabled = false
         } else {
-            setSubview(task1View, next: preTask2View)
+            setSubview(task2View, next: completeView)
         }
     }
     
+    func createPostObject() -> [String: AnyObject] {
+        var jsonObject = [String: AnyObject]()
+        var jsonForward = [AnyObject]()
+        var jsonForwardObject = [String: AnyObject]()
+        var jsonBackward = [AnyObject]()
+        var jsonBackwardObject = [String: AnyObject]()
+        
+
+        for i in 0...forwardCount {
+            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("forward\(i).m4a"))
+//            print(soundData! as NSData)
+            let dataStr = soundData?.base64EncodedString(options: [])
+//            print(dataStr! as String)
+            
+            jsonForwardObject = [
+                "name": "forward\(i+1)" as AnyObject,
+                "soundByte": dataStr as AnyObject
+            ]
+            
+            jsonForward.append(jsonForwardObject as AnyObject)
+        }
+        
+        for i in 0...backwardCount {
+            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("backward\(i).m4a"))
+            let dataStr = soundData?.base64EncodedString(options: [])
+            
+            jsonBackwardObject = [
+                "name": "backward\(i+1)" as AnyObject,
+                "soundByte": dataStr as AnyObject
+            ]
+            
+            jsonBackward.append(jsonBackwardObject as AnyObject)
+        }
+        
+    
+        // Gather data for post
+        jsonObject = [
+            "id": participant.string(forKey: "pid")! as AnyObject,
+            "forward": jsonForward as AnyObject,
+            "backward": jsonBackward as AnyObject
+        ]
+    
+        return jsonObject
+    }
+    
+    
     // MARK: - Delegate
     
-//    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-//        playBtn.isEnabled = true
-//    }
-//    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         recordBtn.isEnabled = true
         playBtn.setTitle("Play", for: UIControlState())
+        finishedPlaying()
     }
 }
