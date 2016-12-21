@@ -9,7 +9,24 @@
 "WELCOME_TO_EMBRACED_PROJECT" = "BIENVENIDO AL PROYECTO EMBRACADO";
 "Next" = "Siguiente";
 "Start" = "Comienzo";
+"Example_1" = "Ejemplo 1";
+"Example_2" = "Ejemplo 2";
+"Example_3" = "Ejemplo 3";
+"Practice" = "Práctica";
+"Same" = "Igual";
+"Different" = "Diferente";
+"Submit" = "ENVIAR";
+"Test_complete" = "Prueba completa";
+"Correct" = "Correcto";
+"Incorrect" = "Incorrecto";
+"Incorrect_2" = "Lo siento, esa respuesta es incorrecta. Puede intentarlo de nuevo.";
 
 
 // Pitch
 "pitch_intro" = "En la siguiente tarea usted va a escuchar pares de melodías.\nAlgunas veces, la segunda melodía estará alterado.\nEste cambio puede ser leve o evidente.\n\nUsted tendrá que indicar si la segunda melodía está cambiada o no.\nSi las dos melodías son iguales, usted deberá pulsar el botón “IGUALES”.\nSi las dos melodías son diferentes, usted deberá pulsar el botón “DIFERENTES”.\n\nPara ayudarle a diferenciar las dos melodías, aparecerán los números 1 y 2 en la pantalla cuando estén sonando la primera y la segunda melodía respectivamente.\n\nEmpezaremos con algunos ejemplos.\nPulse el botón COMENZAR cuando esté preparado.";
+"pitch_example_1" = "En este par de melodías, la segunda melodía es idéntica a la primera.\nCuando crea que las melodías son iguales, usted deberá responder pulsando el botón “IGUALES”\n\nPulse el botón “IGUALES” para indicar que las melodías son iguales.\n\nVamos a continuar con un ejemplo en el que las melodías son diferentes.";
+"pitch_example_2" = "Este ejemplo utiliza la misma melodía que el Ejemplo 1 pero en este caso, la segunda melodía ha sido alterada.\n\nPara escuchar las melodías de nuevo, pulse sobre el ALTAVOZ\n\nPulse el botón “DIFERENTES” para indicar que las melodías que ha escuchado eran diferentes.\n\nContinuaremos ahora con un ejemplo en el que la diferencia entre ambas melodías es más sutil.";
+"pitch_example_3" = "En este ejemplo, la diferencia entre melodías es más sutil.\n\nPara escuchar las melodías de nuevo, pulse sobre el ALTAVOZ\n\nPulse el botón “DIFERENTES” para indicar que las melodías que ha escuchado eran diferentes.\n\nA continuación podrá practicar antes de comenzar la tarea.";
+"pitch_practice_1" = "Recuerde: después de escuchar las dos melodías, pulse “IGUALES” si las dos son idénticas y pulse “DIFERENTES” si son diferentes.\n\nTendrá 5 pares de melodías para practicar.\nCuando esté preparado, pulse COMENZAR";
+"pitch_practice_2" = "Recuerde: después de escuchar las dos melodías, pulse “IGUALES” si las dos son idénticas y pulse “DIFERENTES” si son diferentes.\n\nCuando esté preparado, pulse COMENZAR";
+"pitch_tasks" = "Ya ha completado los ensayos de práctica.\nAhora comenzaremos con la tarea.\n\nDurante esta tarea, en la pantalla se mostrarán los números 1 y 2 para ayudarle a diferenciar las dos melodías. También, se mostrarán los botones “IGUALES” y “DIFERENTES”, así como si su respuesta fue correcta o no.\n\nEsta tarea incluye 24 ensayos y llevará unos 5 minutos para completarla.\nPor favor, pulse COMENZAR cuando esté preparado.";

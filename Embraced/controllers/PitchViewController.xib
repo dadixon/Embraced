@@ -16,30 +16,49 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PitchViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
+                <outlet property="completeLabel" destination="2ox-dh-Epf" id="Fyw-54-c6w"/>
                 <outlet property="completeView" destination="ZnL-qQ-idM" id="nb4-yI-73I"/>
                 <outlet property="containerView" destination="yOa-m6-D7o" id="r17-Yh-3VX"/>
+                <outlet property="example1" destination="ubv-xk-DX9" id="hFa-sn-5st"/>
+                <outlet property="example1Content" destination="cW5-WD-PVT" id="qw0-Uu-i00"/>
                 <outlet property="example1Label" destination="dLv-Vx-Wwx" id="1dg-67-Kiv"/>
                 <outlet property="example1Response" destination="8uU-dm-nhl" id="ODj-vW-0tS"/>
                 <outlet property="example1View" destination="baQ-Rn-Gp2" id="F2L-ru-c2C"/>
+                <outlet property="example1btn" destination="Pah-DV-82L" id="kOi-uE-T5J"/>
+                <outlet property="example1segment" destination="t9g-wb-MrD" id="LSC-2p-TuE"/>
+                <outlet property="example2" destination="dQa-ic-LCF" id="wzs-Ht-izr"/>
+                <outlet property="example2Content" destination="3rt-x4-rLw" id="Lx5-1y-Tvh"/>
                 <outlet property="example2Label" destination="6IV-bi-xXS" id="xLF-8f-N04"/>
                 <outlet property="example2Response" destination="63d-zm-zEy" id="ZPI-Nf-3qe"/>
                 <outlet property="example2View" destination="YBG-GS-vvZ" id="XYf-Sc-7uj"/>
+                <outlet property="example2btn" destination="IT5-SX-vUy" id="xgB-ra-BEK"/>
+                <outlet property="example2segment" destination="4sf-vH-XsI" id="3BV-Ju-5kx"/>
+                <outlet property="example3" destination="BW8-4r-SHC" id="7lz-Nh-4Mt"/>
+                <outlet property="example3Content" destination="vVO-bI-cFW" id="Ay0-5B-hMj"/>
                 <outlet property="example3Label" destination="sTY-n4-wSH" id="1ef-ok-CGy"/>
                 <outlet property="example3Response" destination="phw-l0-Pfh" id="0Nq-zS-pN7"/>
                 <outlet property="example3View" destination="7y3-ol-fQa" id="PNH-nB-ICT"/>
+                <outlet property="example3btn" destination="iiU-8p-po8" id="3A8-Vb-KIG"/>
+                <outlet property="example3segment" destination="cWh-8L-wog" id="ctH-Wn-w8E"/>
+                <outlet property="introBtn" destination="aRH-jv-29k" id="cY4-Yd-TRu"/>
                 <outlet property="introLabel" destination="chI-tk-VV9" id="8iZ-Hh-I9p"/>
                 <outlet property="introView" destination="bsX-3k-iZX" id="nXk-TY-aUV"/>
                 <outlet property="mainView" destination="63N-dC-I4a" id="AsM-Iq-Trg"/>
+                <outlet property="practiceBtn" destination="Lud-Lr-EWg" id="md4-pX-eYt"/>
                 <outlet property="practiceInstructionsLabel" destination="4t1-nG-okL" id="Fgt-A5-nud"/>
                 <outlet property="practiceLabel" destination="tMW-sL-Lrf" id="o0r-B6-20m"/>
                 <outlet property="practiceResponse" destination="Bi7-4I-Qtx" id="EXE-5Q-kTa"/>
                 <outlet property="practiceSegment" destination="ItZ-Vj-dpA" id="Q5f-Zs-xex"/>
                 <outlet property="preTaskView" destination="hBT-b0-W23" id="PR8-NU-zWL"/>
+                <outlet property="pretaskBtn" destination="2HS-Uf-iq0" id="4WK-QV-XS0"/>
                 <outlet property="progressLabel" destination="XPp-9X-HUS" id="CGL-MY-6Np"/>
                 <outlet property="progressView" destination="A91-h5-NVq" id="ufk-Yo-D1y"/>
+                <outlet property="submitBtn" destination="5cm-Lt-zs5" id="yaY-5c-BJH"/>
+                <outlet property="taskBtn" destination="sJ5-4c-8Op" id="rWh-t7-1Zu"/>
                 <outlet property="taskResponse" destination="qB8-xk-w7x" id="nt5-CD-8b5"/>
                 <outlet property="taskSegment" destination="Y38-Zx-0cO" id="yzR-Uh-Tju"/>
                 <outlet property="taskView" destination="o0A-36-t90" id="Zey-9k-AyI"/>
+                <outlet property="tasksContent" destination="X2K-68-LWS" id="jX7-xJ-AeO"/>
                 <outlet property="tasksLabel" destination="w1r-WS-ZBd" id="fMs-tA-627"/>
                 <outlet property="trial1View" destination="E4u-Jf-GIt" id="3qb-eq-lg1"/>
                 <outlet property="trialLabel" destination="XIU-ev-8c4" id="jMd-Tp-st8"/>

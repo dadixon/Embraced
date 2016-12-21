@@ -9,6 +9,25 @@
 "WELCOME_TO_EMBRACED_PROJECT" = "WELCOME TO EMBRACED PROJECT";
 "Next" = "Next";
 "Start" = "Start";
+"Example_1" = "Example 1";
+"Example_2" = "Example 2";
+"Example_3" = "Example 3";
+"Practice" = "Practice";
+"Same" = "Same";
+"Different" = "Different";
+"Submit" = "SUBMIT";
+"Test_complete" = "Test complete!";
+"Correct" = "Correct!";
+"Incorrect" = "Incorrect";
+"Incorrect_2" = "Sorry, that was an incorrect response. You can try again.";
+
+
 
 // Pitch
 "pitch_intro" = "Next, you will hear pairs of melodies.\nIn some trials, the second one will be altered.\nThis change may be subtle or obvious.\n\nYou will have to indicate whether the second melody has been altered or not.\n\nIf both melodies are the same, you will tap the button “SAME”\nIf they are different, you will tap the button “DIFFERENT”\n\nTo aid you differentiate the two melodies, numbers 1 and 2 will be shown in the screen when playing the first and second melody respectively\n\nWe will start with some examples.\nPlease tap on START when you are ready.";
+"pitch_example_1" = "In this pair of melodies the second melody is identical to the first.\nWhen both melodies are the same, you should tap the button “SAME”\nTap on the button “SAME” to indicate that the melodies are the same.";
+"pitch_example_2" = "We will now continue to an example where the melodies are different.\n\nThis example uses the same melody as in Example 1, but now the second melody has been altered.\n\nTo hear the melodies again tap on the “SPEAKER BUTTON”\nWhen both melodies are different, you should tap the button “DIFFERENT”.\nTap on the button “DIFFERENT” to indicate that the melodies are different.";
+"pitch_example_3" = "We will now continue to an example where the difference between the melodies is more subtle.\n\nIn this example, the difference between the melodies is more subtle.\n\nTo hear the melodies again tap on the “SPEAKER BUTTON”\n\nTap on the button “DIFFERENT” to indicate that the melodies are different.";
+"pitch_practice_1" = "Now you will practice on your own.\n\nRemember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.\nThere will be 5 pairs of melodies for you to practice.\nWhen you are ready, tap on START button.";
+"pitch_practice_2" = "Now you will practice on your own.\nRemember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.\nWhen you are ready, tap on sound icon.";
+"pitch_tasks" = "You have completed the practice trials.\n\nDuring this task, the screen will show numbers 1 and 2 to help you differentiate the two melodies. Also, it will show the buttons “SAME” and “DIFFERENT” and information on whether your response was correct or not.\n\nThis task contains 24 trials and will take about 5 minutes to complete.\n\nPlease, tap the START button when you are ready to start.";

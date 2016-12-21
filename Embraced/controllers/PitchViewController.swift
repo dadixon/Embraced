@@ -26,6 +26,15 @@ class PitchViewController: FrontViewController {
     @IBOutlet weak var example2Label: UILabel!
     @IBOutlet weak var example3Label: UILabel!
     
+    @IBOutlet weak var example1: UILabel!
+    @IBOutlet weak var example2: UILabel!
+    @IBOutlet weak var example3: UILabel!
+    @IBOutlet weak var example1Content: UILabel!
+    @IBOutlet weak var example2Content: UILabel!
+    @IBOutlet weak var example3Content: UILabel!
+    @IBOutlet weak var tasksContent: UILabel!
+    @IBOutlet weak var completeLabel: UILabel!
+    
     @IBOutlet weak var trialLabel: UILabel!
     @IBOutlet weak var tasksLabel: UILabel!
     @IBOutlet weak var practiceLabel: UILabel!
@@ -37,10 +46,22 @@ class PitchViewController: FrontViewController {
     @IBOutlet weak var practiceResponse: UILabel!
     @IBOutlet weak var taskResponse: UILabel!
     
+    @IBOutlet weak var example1segment: UISegmentedControl!
+    @IBOutlet weak var example2segment: UISegmentedControl!
+    @IBOutlet weak var example3segment: UISegmentedControl!
     @IBOutlet weak var introLabel: UILabel!
     @IBOutlet weak var practiceSegment: UISegmentedControl!
     @IBOutlet weak var taskSegment: UISegmentedControl!
     
+    @IBOutlet weak var introBtn: NavigationButton!
+    @IBOutlet weak var example1btn: NavigationButton!
+    @IBOutlet weak var example2btn: NavigationButton!
+    @IBOutlet weak var example3btn: NavigationButton!
+    @IBOutlet weak var practiceBtn: NavigationButton!
+    @IBOutlet weak var pretaskBtn: NavigationButton!
+    @IBOutlet weak var taskBtn: NavigationButton!
+    @IBOutlet weak var submitBtn: UIButton!
+
     var stimuli = [String: Any]()
     var examples = Array<Array<String>>()
     var trials = Array<Array<String>>()
@@ -64,9 +85,6 @@ class PitchViewController: FrontViewController {
     
     var timer = Timer()
     
-    var practiceString = NSLocalizedString("Now you will practice on your own.\nRemember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.\nThere will be 5 pairs of melodies for you to practice.\nWhen you are ready, tap on sound icon.", comment: "")
-    var practiceString2 = NSLocalizedString("Now you will practice on your own.\nRemember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.\nWhen you are ready, tap on sound icon.", comment: "")
-    
     
     // MARK: - Private
     
@@ -80,7 +98,6 @@ class PitchViewController: FrontViewController {
         let bottomConstraint = next.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
     }
-    
     
     override func viewDidLoad() {
         step = 7
@@ -131,6 +148,7 @@ class PitchViewController: FrontViewController {
             print("Sound file could not be found")
         }
         
+        introBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
         introLabel.text = "pitch_intro".localized(lang: participant.string(forKey: "language")!)
         
         loadingView.stopAnimating()
@@ -140,33 +158,6 @@ class PitchViewController: FrontViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-//    private func play(_ filename:String) {
-//        if let pathResource = Bundle.main.path(forResource: filename, ofType: "wav") {
-//            let finishedStepSound = NSURL(fileURLWithPath: pathResource)
-//            do {
-//                soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
-//                if(soundPlayer.prepareToPlay()){
-//                    print("preparation success")
-//                    soundPlayer.delegate = self
-//                    if(soundPlayer.play()){
-//                        print("Sound play success")
-//                    }else{
-//                        print("Sound file could not be played")
-//                    }
-//                }else{
-//                    print("preparation failure")
-//                }
-//                
-//            }catch{
-//                print("Sound file could not be found")
-//            }
-//        }else{
-//            print("path not found")
-//        }
-//    }
     
     private func setupSounds(_ soundArray: Array<Array<String>>, iterator: Int, label: UILabel) {
         if soundPlayer.isPlaying {
@@ -223,35 +214,40 @@ class PitchViewController: FrontViewController {
         next(self)
     }
     
-    
-    
-    // MARK: - Actions
-    
     @IBAction func moveToExample(_ sender: AnyObject) {
         setSubview(introView, next: example1View)
         setupSounds(examples, iterator: 0, label: example1Label)
+        
+        example1.text = "Example_1".localized(lang: participant.string(forKey: "language")!)
+        example1Content.text = "pitch_example_1".localized(lang: participant.string(forKey: "language")!)
+        example1btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        example1segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
+        example1segment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
     }
     
     @IBAction func moveToExample2(_ sender: AnyObject) {
         setSubview(example1View, next: example2View)
         setupSounds(examples, iterator: 1, label: example2Label)
-        exampleCount += 1
-    }
-    
-    @IBAction func replay(_ sender: AnyObject) {
-        if soundPlayer.isPlaying {
-            soundPlayer.stop()
-        }
         
-        resetTimer()
-        played = false
-        self.play(firstSound)
-        soundLabel.text = "1"
+        example2.text = "Example_2".localized(lang: participant.string(forKey: "language")!)
+        example2Content.text = "pitch_example_2".localized(lang: participant.string(forKey: "language")!)
+        example2btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        example2segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
+        example2segment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
+        
+        exampleCount += 1
     }
     
     @IBAction func moveToExample3(_ sender: AnyObject) {
         setSubview(example2View, next: example3View)
         setupSounds(examples, iterator: 2, label: example3Label)
+        
+        example3.text = "Example_3".localized(lang: participant.string(forKey: "language")!)
+        example3Content.text = "pitch_example_3".localized(lang: participant.string(forKey: "language")!)
+        example3btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        example3segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
+        example3segment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
+        
         exampleCount += 1
     }
     
@@ -259,55 +255,12 @@ class PitchViewController: FrontViewController {
     @IBAction func moveToTrial1(_ sender: AnyObject) {
         setSubview(example3View, next: trial1View)
         setupSounds(trials, iterator: trialCount, label: trialLabel)
-        practiceLabel.text = NSLocalizedString("Practice \(trialCount+1)", comment: "")
-        practiceInstructionsLabel.text = practiceString
-    }
-    
-    @IBAction func exampleAnswered(_ sender: AnyObject) {
-        if ((sender.selectedSegmentIndex == 0 && exampleAnswers[exampleCount] == "S") || (sender.selectedSegmentIndex == 1 && exampleAnswers[exampleCount] == "D")) {
-            if exampleCount == 0 {
-                example1Response.text = "Correct!"
-            } else if exampleCount == 1 {
-                example2Response.text = "Correct!"
-            } else if exampleCount == 2 {
-                example3Response.text = "Correct!"
-            }
-        } else {
-            if exampleCount == 0 {
-                example1Response.text = "Sorry, that was an incorrect response. You can try again."
-            } else if exampleCount == 1 {
-                example2Response.text = "Sorry, that was an incorrect response. You can try again."
-            } else if exampleCount == 2 {
-                example3Response.text = "Sorry, that was an incorrect response. You can try again."
-            }
-        }
-    }
-    
-    @IBAction func practiceAnswered(_ sender: AnyObject) {
-        if ((sender.selectedSegmentIndex == 0 && practiceAnswers[trialCount] == "S") || (sender.selectedSegmentIndex == 1 && practiceAnswers[trialCount] == "D")) {
-            practiceResponse.text = "Correct!"
-        } else {
-            practiceResponse.text = "Sorry, that was an incorrect response. You can try again."
-        }
-    }
-    
-    @IBAction func taskAnswered(_ sender: AnyObject) {
-        if ((sender.selectedSegmentIndex == 0 && taskAnswers[tasksCount - 1] == "S") || (sender.selectedSegmentIndex == 1 && taskAnswers[tasksCount - 1] == "D")) {
-            taskResponse.text = "Correct!"
-            userAnswers.insert("c", at: tasksCount - 1)
-            score += 1
-        } else {
-            taskResponse.text = "Incorrect"
-            userAnswers.insert("i", at: tasksCount - 1)
-            score -= 1
-        }
         
-        switch sender.selectedSegmentIndex {
-        case 0:
-            taskSegment.setEnabled(false, forSegmentAt: 1)
-        default:
-            taskSegment.setEnabled(false, forSegmentAt: 0)
-        }
+        practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!) + " " + String(trialCount+1)
+        practiceInstructionsLabel.text = "pitch_practice_1".localized(lang: participant.string(forKey: "language")!)
+        practiceSegment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
+        practiceSegment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
+        practiceBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
     }
     
     @IBAction func nextTrial(_ sender: AnyObject) {
@@ -318,8 +271,8 @@ class PitchViewController: FrontViewController {
             trialLabel.text = "1"
             practiceResponse.text = ""
             practiceSegment.selectedSegmentIndex = -1
-            practiceLabel.text = NSLocalizedString("Practice \(trialCount+1)", comment: "")
-            practiceInstructionsLabel.text = practiceString2
+            practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!) + " " + String(trialCount+1)
+            practiceInstructionsLabel.text = "pitch_practice_2".localized(lang: participant.string(forKey: "language")!)
             
             // Set sounds to play
             setupSounds(trials, iterator: trialCount, label: trialLabel)
@@ -329,12 +282,20 @@ class PitchViewController: FrontViewController {
             }
             
             setSubview(trial1View, next: preTaskView)
+            
+            tasksContent.text = "pitch_tasks".localized(lang: participant.string(forKey: "language")!)
+            pretaskBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
         }
     }
     
     @IBAction func moveToTask(_ sender: AnyObject) {
         setSubview(preTaskView, next: taskView)
         setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
+        
+        taskSegment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
+        taskSegment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
+        taskBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        
         play(firstSound)
         tasksCount += 1
     }
@@ -363,6 +324,70 @@ class PitchViewController: FrontViewController {
             }
             
             setSubview(taskView, next: completeView)
+            
+            completeLabel.text = "Test_complete".localized(lang: participant.string(forKey: "language")!)
+            submitBtn.setTitle("Submit".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        }
+    }
+    
+    
+    // MARK: - Actions
+    
+    @IBAction func replay(_ sender: AnyObject) {
+        if soundPlayer.isPlaying {
+            soundPlayer.stop()
+        }
+        
+        resetTimer()
+        played = false
+        self.play(firstSound)
+        soundLabel.text = "1"
+    }
+    
+    @IBAction func exampleAnswered(_ sender: AnyObject) {
+        if ((sender.selectedSegmentIndex == 0 && exampleAnswers[exampleCount] == "S") || (sender.selectedSegmentIndex == 1 && exampleAnswers[exampleCount] == "D")) {
+            if exampleCount == 0 {
+                example1Response.text = "Correct".localized(lang: participant.string(forKey: "language")!)
+            } else if exampleCount == 1 {
+                example2Response.text = "Correct".localized(lang: participant.string(forKey: "language")!)
+            } else if exampleCount == 2 {
+                example3Response.text = "Correct".localized(lang: participant.string(forKey: "language")!)
+            }
+        } else {
+            if exampleCount == 0 {
+                example1Response.text = "Incorrect_2".localized(lang: participant.string(forKey: "language")!)
+            } else if exampleCount == 1 {
+                example2Response.text = "Incorrect_2".localized(lang: participant.string(forKey: "language")!)
+            } else if exampleCount == 2 {
+                example3Response.text = "Incorrect_2".localized(lang: participant.string(forKey: "language")!)
+            }
+        }
+    }
+    
+    @IBAction func practiceAnswered(_ sender: AnyObject) {
+        if ((sender.selectedSegmentIndex == 0 && practiceAnswers[trialCount] == "S") || (sender.selectedSegmentIndex == 1 && practiceAnswers[trialCount] == "D")) {
+            practiceResponse.text = "Correct".localized(lang: participant.string(forKey: "language")!)
+        } else {
+            practiceResponse.text = "Incorrect_2".localized(lang: participant.string(forKey: "language")!)
+        }
+    }
+    
+    @IBAction func taskAnswered(_ sender: AnyObject) {
+        if ((sender.selectedSegmentIndex == 0 && taskAnswers[tasksCount - 1] == "S") || (sender.selectedSegmentIndex == 1 && taskAnswers[tasksCount - 1] == "D")) {
+            taskResponse.text = "Correct".localized(lang: participant.string(forKey: "language")!)
+            userAnswers.insert("c", at: tasksCount - 1)
+            score += 1
+        } else {
+            taskResponse.text = "Incorrect".localized(lang: participant.string(forKey: "language")!)
+            userAnswers.insert("i", at: tasksCount - 1)
+            score -= 1
+        }
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            taskSegment.setEnabled(false, forSegmentAt: 1)
+        default:
+            taskSegment.setEnabled(false, forSegmentAt: 0)
         }
     }
     
