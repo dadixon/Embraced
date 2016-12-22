@@ -12,7 +12,7 @@ import WebKit
 class TrailMakingTestViewController: WebViewController {
     
     override func viewDidLoad() {
-        step = 6
+        step = AppDelegate.position
         orientation = "portrait"
         url = URL(string: "http://girlscouts.harryatwal.com/trailMaking.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
@@ -30,8 +30,10 @@ class TrailMakingTestViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-        let vc = PitchViewController()
-        nextViewController(viewController: vc)
+//        let vc = PitchViewController()
+//        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
     }
     
     // MARK: - Delegate

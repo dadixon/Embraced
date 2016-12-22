@@ -11,6 +11,8 @@ import UIKit
 class FinishedViewController: FrontViewController {
 
     override func viewDidLoad() {
+        step = AppDelegate.position
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

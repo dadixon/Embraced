@@ -12,7 +12,7 @@ import WebKit
 class PegboardViewController: WebViewController {
     
     override func viewDidLoad() {
-        step = 13
+        step = AppDelegate.position
         orientation = "landscape"
         url = URL(string: "http://girlscouts.harryatwal.com/motorTask.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
@@ -30,8 +30,10 @@ class PegboardViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-        let vc = WordListViewController()
-        nextViewController(viewController: vc)
+//        let vc = WordListViewController()
+//        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
     }
     
     // MARK: - Delegate

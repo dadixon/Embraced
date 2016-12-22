@@ -13,7 +13,6 @@ class StartViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     
     let participant = UserDefaults.standard
-    var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +50,58 @@ class StartViewController: UIViewController {
         
         navigationArray?.remove(at: 0)
         
+        let vc: UIViewController!
+        let test = participant.array(forKey: "Tests")!
+        
+        print(test)
+        
+        switch test[0] as! String {
+        case "Questionnaire":
+            vc = QuestionnaireViewController()
+        case "MOCA":
+            vc = MOCAMMSETestViewController()
+        case "RCF1":
+            vc = ReyComplexFigureViewController()
+        case "ClockDrawing":
+            vc = ClockDrawingTestViewController()
+        case "RCF2":
+            vc = ReyComplexFigure2ViewController()
+        case "TrailMaking":
+            vc = TrailMakingTestViewController()
+        case "Pitch":
+            vc = PitchViewController()
+        case "DigitalSpan":
+            vc = DigitalSpanViewController()
+        case "RCF3":
+            vc = ReyComplexFigure3ViewController()
+        case "RCF4":
+            vc = ReyFigureComplex4ViewController()
+        case "CPT":
+            vc = CPTViewController()
+        case "Matrices":
+            vc = MatricesViewController()
+        case "Pegboard":
+            vc = PegboardViewController()
+        case "WordList1":
+            vc = WordListViewController()
+        case "Stroop":
+            vc = StroopViewController()
+        case "Cancellation":
+            vc = CancellationTestViewController()
+        case "WordList2":
+            vc = WordList2ViewController()
+        case "NamingTask":
+            vc = NamingTaskViewController()
+        case "Comprehension":
+            vc = ComprehensionViewController()
+        case "EyeTest":
+            vc = EyeTestViewController()
+        default:
+            vc = UserInputViewController()
+        }
+        
 //        let vc = QuestionnaireViewController()
-        let vc = PitchViewController()
+//        let vc = PitchViewController()
         navigationArray?.append(vc)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)

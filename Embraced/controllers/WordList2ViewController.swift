@@ -57,7 +57,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     
     
     override func viewDidLoad() {
-        step = 17
+        step = AppDelegate.position
         
         super.viewDidLoad()
         
@@ -188,8 +188,10 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        let vc:NamingTaskViewController = NamingTaskViewController()
-        nextViewController(viewController: vc)
+//        let vc:NamingTaskViewController = NamingTaskViewController()
+//        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
     }
     
     @IBAction func done(_ sender: AnyObject) {

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseTestViewController" customModule="Embraced" customModuleProvider="target">
+            <connections>
+                <outlet property="confirmListLabel" destination="5nw-dg-rKX" id="Ikg-Gc-TAy"/>
+                <outlet property="confirmListTable" destination="TLW-Os-k4U" id="YmW-Up-qMn"/>
+                <outlet property="saveBtn" destination="oxB-rh-hIF" id="oI2-Mx-R7B"/>
+                <outlet property="testListLabel" destination="fb9-vj-oxy" id="HAr-jn-EA5"/>
+                <outlet property="testListTable" destination="Ml6-9K-fn8" id="BF4-8a-ZFg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TLW-Os-k4U">
+                    <rect key="frame" x="421" y="150" width="327" height="770"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="327" id="TeZ-OO-9Zr"/>
+                        <constraint firstAttribute="height" constant="770" id="a8E-88-m3w"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="mfa-qW-u6b"/>
+                        <outlet property="delegate" destination="-1" id="Hnd-ot-7Wc"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxB-rh-hIF" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="337" y="971" width="94" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="YHB-ci-Y5c"/>
+                        <constraint firstAttribute="width" constant="94" id="ov3-0b-N1R"/>
+                    </constraints>
+                    <state key="normal" title="Save"/>
+                    <connections>
+                        <action selector="saveTestList:" destination="-1" eventType="touchUpInside" id="nAS-hh-HmB"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Test List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fb9-vj-oxy">
+                    <rect key="frame" x="20" y="106" width="340" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmed List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nw-dg-rKX">
+                    <rect key="frame" x="421" y="106" width="327" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ml6-9K-fn8">
+                    <rect key="frame" x="20" y="150" width="340" height="770"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ppH-1t-Vsp"/>
+                        <outlet property="delegate" destination="-1" id="RyU-Ar-IEC"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oxB-rh-hIF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5vW-cB-8PN"/>
+                <constraint firstItem="Ml6-9K-fn8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="89S-bN-MHc"/>
+                <constraint firstItem="TLW-Os-k4U" firstAttribute="top" secondItem="Ml6-9K-fn8" secondAttribute="top" id="F2J-Qr-BnZ"/>
+                <constraint firstAttribute="trailing" secondItem="5nw-dg-rKX" secondAttribute="trailing" constant="20" id="ORn-Ad-C1E"/>
+                <constraint firstItem="fb9-vj-oxy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="106" id="S4W-yX-qzQ"/>
+                <constraint firstItem="5nw-dg-rKX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="106" id="YdG-aw-ROC"/>
+                <constraint firstItem="oxB-rh-hIF" firstAttribute="top" secondItem="TLW-Os-k4U" secondAttribute="bottom" constant="51" id="dcz-7W-TTw"/>
+                <constraint firstItem="TLW-Os-k4U" firstAttribute="leading" secondItem="Ml6-9K-fn8" secondAttribute="trailing" constant="61" id="iOO-gX-8Wk"/>
+                <constraint firstAttribute="bottom" secondItem="oxB-rh-hIF" secondAttribute="bottom" constant="20" id="itt-SB-wtg"/>
+                <constraint firstItem="TLW-Os-k4U" firstAttribute="top" secondItem="5nw-dg-rKX" secondAttribute="bottom" constant="23" id="kjW-CD-5PH"/>
+                <constraint firstAttribute="trailing" secondItem="TLW-Os-k4U" secondAttribute="trailing" constant="20" id="lOU-F8-PMi"/>
+                <constraint firstItem="oxB-rh-hIF" firstAttribute="top" secondItem="Ml6-9K-fn8" secondAttribute="bottom" constant="51" id="lTi-zT-aPG"/>
+                <constraint firstItem="fb9-vj-oxy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="tbT-pn-9lf"/>
+                <constraint firstItem="TLW-Os-k4U" firstAttribute="leading" secondItem="5nw-dg-rKX" secondAttribute="leading" id="xpE-N7-GEg"/>
+                <constraint firstItem="Ml6-9K-fn8" firstAttribute="top" secondItem="fb9-vj-oxy" secondAttribute="bottom" constant="23" id="zSj-J6-cQi"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

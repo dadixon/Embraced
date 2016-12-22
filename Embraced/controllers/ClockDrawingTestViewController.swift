@@ -12,7 +12,7 @@ import WebKit
 class ClockDrawingTestViewController: WebViewController {
     
     override func viewDidLoad() {
-        step = 4
+        step = AppDelegate.position
         orientation = "portrait"
         url = URL(string: "http://girlscouts.harryatwal.com/clockDrawing.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
@@ -30,8 +30,10 @@ class ClockDrawingTestViewController: WebViewController {
     // MARK: - Navigation
 
     func next(_ sender:Any) {
-        let vc:ReyComplexFigure2ViewController = ReyComplexFigure2ViewController()
-        nextViewController(viewController: vc)
+//        let vc:ReyComplexFigure2ViewController = ReyComplexFigure2ViewController()
+//        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
     }
     
     // MARK: - Delegate

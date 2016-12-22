@@ -89,7 +89,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     
     
     override func viewDidLoad() {
-        step = 15
+        step = AppDelegate.position
         super.viewDidLoad()
         
         orientation = "landscape"
@@ -282,8 +282,10 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        let vc:CancellationTestViewController = CancellationTestViewController()
-        nextViewController(viewController: vc)
+//        let vc:CancellationTestViewController = CancellationTestViewController()
+//        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
     }
     
     @IBAction func done(_ sender: AnyObject) {

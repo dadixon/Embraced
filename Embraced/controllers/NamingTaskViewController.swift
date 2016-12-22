@@ -59,7 +59,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     
     
     override func viewDidLoad() {
-        step = 18
+        step = AppDelegate.position
         
         super.viewDidLoad()
 
@@ -206,8 +206,10 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        let vc:ComprehensionViewController = ComprehensionViewController()
-        nextViewController(viewController: vc)
+//        let vc:ComprehensionViewController = ComprehensionViewController()
+//        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
     }
     
     @IBAction func done(_ sender:AnyObject) {

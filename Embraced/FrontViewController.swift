@@ -35,6 +35,9 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
     var alertController = UIAlertController()
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var soundPlayer = AVAudioPlayer()
+    var viewPosition = 0
+    var testsArray = [String]()
+    
     
     override func viewWillAppear(_ animated: Bool) {
         loadingView.center = mainView.center
@@ -44,8 +47,10 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        testsArray = participant.array(forKey: "Tests")! as! [String]
+        
         progressView.progress = progress
-        progressLabel.text = "Progress (\(step)/\(totalSteps))"
+        progressLabel.text = "Progress (\(step + 1)/\(testsArray.count + 1))"
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
         
@@ -115,6 +120,71 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
 //        self.navigationController?.pushViewController(reyComplexFigure3ViewController, animated: true)
+    }
+    
+    func nextViewController2(position: Int) {
+        let vc: UIViewController!
+        
+        if position >= testsArray.count {
+            vc = FinishedViewController()
+        } else {
+            switch testsArray[position] {
+            case "Questionnaire":
+                vc = QuestionnaireViewController()
+            case "MOCA":
+                vc = MOCAMMSETestViewController()
+            case "RCF1":
+                vc = ReyComplexFigureViewController()
+            case "ClockDrawing":
+                vc = ClockDrawingTestViewController()
+            case "RCF2":
+                vc = ReyComplexFigure2ViewController()
+            case "TrailMaking":
+                vc = TrailMakingTestViewController()
+            case "Pitch":
+                vc = PitchViewController()
+            case "DigitalSpan":
+                vc = DigitalSpanViewController()
+            case "RCF3":
+                vc = ReyComplexFigure3ViewController()
+            case "RCF4":
+                vc = ReyFigureComplex4ViewController()
+            case "CPT":
+                vc = CPTViewController()
+            case "Matrices":
+                vc = MatricesViewController()
+            case "Pegboard":
+                vc = PegboardViewController()
+            case "WordList1":
+                vc = WordListViewController()
+            case "Stroop":
+                vc = StroopViewController()
+            case "Cancellation":
+                vc = CancellationTestViewController()
+            case "WordList2":
+                vc = WordList2ViewController()
+            case "NamingTask":
+                vc = NamingTaskViewController()
+            case "Comprehension":
+                vc = ComprehensionViewController()
+            case "EyeTest":
+                vc = EyeTestViewController()
+            default:
+                vc = UserInputViewController()
+            }
+        }
+        
+        var navigationArray = self.navigationController?.viewControllers
+        
+        navigationArray?.remove(at: 0)
+        
+        //        let reyComplexFigure3ViewController:viewController = viewController()
+        navigationArray?.append(vc)
+        
+        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+        //        self.navigationController?.pushViewController(reyComplexFigure3ViewController, animated: true)
+        
+        
     }
     
     func getDocumentsDirectory() -> URL {

@@ -12,7 +12,7 @@ import WebKit
 class ComprehensionViewController: WebViewController {
     
     override func viewDidLoad() {
-        step = 19
+        step = AppDelegate.position
         orientation = "landscape"
         url = URL(string: "http://girlscouts.harryatwal.com/comprehension.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
@@ -30,8 +30,10 @@ class ComprehensionViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-        let vc:EyeTestViewController = EyeTestViewController()
-        nextViewController(viewController: vc)
+//        let vc:EyeTestViewController = EyeTestViewController()
+//        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
     }
     
     // MARK: - Delegate

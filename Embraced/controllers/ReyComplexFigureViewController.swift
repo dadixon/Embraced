@@ -12,7 +12,7 @@ import WebKit
 class ReyComplexFigureViewController: WebViewController {
     
     override func viewDidLoad() {
-        step = 3
+        step = AppDelegate.position
         orientation = "portrait"
         url = URL(string: "http://girlscouts.harryatwal.com/reyComplexFigure.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
@@ -31,8 +31,10 @@ class ReyComplexFigureViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-        let vc:ClockDrawingTestViewController = ClockDrawingTestViewController()
-        nextViewController(viewController: vc)
+//        let vc:ClockDrawingTestViewController = ClockDrawingTestViewController()
+//        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
     }
 
     // MARK: - Delegate

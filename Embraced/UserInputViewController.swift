@@ -50,7 +50,6 @@ class UserInputViewController: UIViewController {
         super.viewDidLoad()
         
         submitBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,14 +83,11 @@ class UserInputViewController: UIViewController {
         ]
 
         
-//        print(jsonObject)
-        
         // Push to API
-        APIWrapper.post(id: "", test: "", data: jsonObject)
-
+        APIWrapper.post(id: "", test: "", data: jsonObject)      
         
-        let questionnaireViewController:StartViewController = StartViewController()
-        let navController = UINavigationController(rootViewController: questionnaireViewController)
+        let vc = StartViewController()
+        let navController = UINavigationController(rootViewController: vc)
         self.present(navController, animated: true, completion: nil)
     }
     

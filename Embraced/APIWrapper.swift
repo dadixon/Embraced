@@ -12,17 +12,17 @@ import Stormpath
 
 public class APIWrapper {
     class func post(id: String, test: String, data: Any) {
-        var notesEndpoint = NSURL()
+        var notesEndpoint : URL!
         
         if id == "" && test == "" {
-            notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/participant")!
+            notesEndpoint = URL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/participant")!
         } else if id != "" && test == "" {
-            notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/participant/" + id)!
+            notesEndpoint = URL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/participant/" + id)!
         } else if id != "" && test != "" {
-            notesEndpoint = NSURL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/participant/" + id + "/" + test)!
+            notesEndpoint = URL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/participant/" + id + "/" + test)!
         }
         
-        let request = NSMutableURLRequest(url: notesEndpoint as URL)
+        let request = NSMutableURLRequest(url: notesEndpoint)
         
         request.httpMethod = "POST"
         request.httpBody = try? JSONSerialization.data(withJSONObject: data, options: [])

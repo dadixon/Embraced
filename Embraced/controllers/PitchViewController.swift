@@ -100,7 +100,7 @@ class PitchViewController: FrontViewController {
     }
     
     override func viewDidLoad() {
-        step = 7
+        step = AppDelegate.position
         
         super.viewDidLoad()
         
@@ -133,10 +133,10 @@ class PitchViewController: FrontViewController {
         tasks = DataManager.sharedInstance.pitchTasks
         
         let pathResource = Bundle.main.path(forResource: "melodies 320ms orig(16)", ofType: "wav")
-        let finishedStepSound = NSURL(fileURLWithPath: pathResource!)
+        let finishedStepSound = URL(fileURLWithPath: pathResource!)
         
         do {
-            soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
+            soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound)
             if(soundPlayer.prepareToPlay()){
                 print("preparation success")
                 soundPlayer.delegate = self
@@ -195,8 +195,10 @@ class PitchViewController: FrontViewController {
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        let vc:DigitalSpanViewController = DigitalSpanViewController()
-        nextViewController(viewController: vc)
+//        let vc:DigitalSpanViewController = DigitalSpanViewController()
+//        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
     }
     
     @IBAction func done(_ sender: AnyObject) {

@@ -12,7 +12,7 @@ import WebKit
 class EyeTestViewController: WebViewController {
     
     override func viewDidLoad() {
-        step = 20
+        step = AppDelegate.position
         orientation = "portrait"
         url = URL(string: "http://girlscouts.harryatwal.com/eyeTest.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
@@ -30,8 +30,10 @@ class EyeTestViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-        let vc:FinishedViewController = FinishedViewController()
-        nextViewController(viewController: vc)
+//        let vc:FinishedViewController = FinishedViewController()
+//        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
     }
     
     // MARK: - Delegate

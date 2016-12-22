@@ -29,6 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var namingTaskPractice = Array<String>()
     var namingTaskTask = Array<String>()
     
+    static var position = 0
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let APIURL = "http://api.girlscouts.harryatwal.com"
         

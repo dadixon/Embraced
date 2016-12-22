@@ -44,7 +44,8 @@ class ViewController: UIViewController {
     }
     
     func showModal() {
-        let modalViewController = UserInputViewController()
+//        let modalViewController = UserInputViewController()
+        let modalViewController = ChooseTestViewController()
         modalViewController.modalPresentationStyle = .overCurrentContext
         present(modalViewController, animated: true, completion: nil)
     }

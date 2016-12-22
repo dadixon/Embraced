@@ -68,7 +68,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     
     
     override func viewDidLoad() {
-        step = 8
+        step = AppDelegate.position
         super.viewDidLoad()
         
         orientation = "portrait"
@@ -114,10 +114,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         backward = DataManager.sharedInstance.digitalSpanBackward
         
         let pathResource = Bundle.main.path(forResource: "melodies 320ms orig(16)", ofType: "wav")
-        let finishedStepSound = NSURL(fileURLWithPath: pathResource!)
+        let finishedStepSound = URL(fileURLWithPath: pathResource!)
         
         do {
-            soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
+            soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound)
             if(soundPlayer.prepareToPlay()){
                 print("preparation success")
                 soundPlayer.delegate = self
@@ -227,8 +227,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        let vc:ReyComplexFigure3ViewController = ReyComplexFigure3ViewController()
-        nextViewController(viewController: vc)
+//        let vc:ReyComplexFigure3ViewController = ReyComplexFigure3ViewController()
+//        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
     }
 
     @IBAction func done(_ sender:AnyObject) {

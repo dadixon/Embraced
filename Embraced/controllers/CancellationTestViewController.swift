@@ -12,7 +12,7 @@ import WebKit
 class CancellationTestViewController: WebViewController {
     
     override func viewDidLoad() {
-        step = 16
+        step = AppDelegate.position
         orientation = "landscape"
         url = URL(string: "http://girlscouts.harryatwal.com/cancellationTest.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
@@ -30,8 +30,10 @@ class CancellationTestViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-        let vc = WordList2ViewController()
-        nextViewController(viewController: vc)
+//        let vc = WordList2ViewController()
+//        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
     }
 
     

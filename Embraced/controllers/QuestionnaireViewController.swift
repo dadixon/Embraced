@@ -12,7 +12,7 @@ import WebKit
 class QuestionnaireViewController: WebViewController {
     
     override func viewDidLoad() {
-        step = 1
+        step = AppDelegate.position
         orientation = "portrait"
         url = URL(string: "http://girlscouts.harryatwal.com/initial.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
@@ -29,8 +29,11 @@ class QuestionnaireViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-        let vc:MOCAMMSETestViewController = MOCAMMSETestViewController()
-        nextViewController(viewController: vc)
+//        let vc:MOCAMMSETestViewController = MOCAMMSETestViewController()
+//        nextViewController(viewController: vc)
+//        let test = participant.array(forKey: "Tests")!
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
     }
     
     

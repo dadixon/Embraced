@@ -12,7 +12,7 @@ import WebKit
 class CPTViewController: WebViewController {
     
     override func viewDidLoad() {
-        step = 11
+        step = AppDelegate.position
         orientation = "landscape"
         url = URL(string: "http://girlscouts.harryatwal.com/cpt.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
@@ -30,8 +30,10 @@ class CPTViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-        let vc:MatricesViewController = MatricesViewController()
-        nextViewController(viewController: vc)
+//        let vc:MatricesViewController = MatricesViewController()
+//        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
     }
     
     // MARK: - Delegate

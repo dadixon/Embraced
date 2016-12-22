@@ -12,7 +12,7 @@ import WebKit
 class MatricesViewController: WebViewController {
     
     override func viewDidLoad() {
-        step = 12
+        step = AppDelegate.position
         orientation = "landscape"
         url = URL(string: "http://girlscouts.harryatwal.com/matrices.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
@@ -30,8 +30,10 @@ class MatricesViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-        let vc = PegboardViewController()
-        nextViewController(viewController: vc)
+//        let vc = PegboardViewController()
+//        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
     }
     
     // MARK: - Delegate
