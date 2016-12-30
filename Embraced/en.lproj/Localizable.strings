@@ -20,7 +20,11 @@
 "Correct" = "Correct!";
 "Incorrect" = "Incorrect";
 "Incorrect_2" = "Sorry, that was an incorrect response. You can try again.";
-
+"Start_Record" = "Start Recording";
+"Stop_Recording" = "Stop Recording";
+"Play" = "Play";
+"Recording" = "Recording";
+"Stop" = "Stop";
 
 
 // Pitch
@@ -31,3 +35,12 @@
 "pitch_practice_1" = "Now you will practice on your own.\n\nRemember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.\nThere will be 5 pairs of melodies for you to practice.\nWhen you are ready, tap on START button.";
 "pitch_practice_2" = "Now you will practice on your own.\nRemember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.\nWhen you are ready, tap on sound icon.";
 "pitch_tasks" = "You have completed the practice trials.\n\nDuring this task, the screen will show numbers 1 and 2 to help you differentiate the two melodies. Also, it will show the buttons “SAME” and “DIFFERENT” and information on whether your response was correct or not.\n\nThis task contains 24 trials and will take about 5 minutes to complete.\n\nPlease, tap the START button when you are ready to start.";
+
+// Digital
+"digital_practice_1" = "Next you will hear a series of numbers.\nAfter each series, you will repeat the numbers that you heard in the same order.\nYou can only hear the list of numbers once, so do the best you can from what you hear.\nYou will be recording your answers in this device.\nPlease practice recording your voice with the microphone button below";
+"digital_practice_2" = "You will have a practice round before starting with the series.\nPlease click LISTEN button when you are ready.";
+"digital_begin_round" = "Now we will start with the task.\nClick on LISTEN button when you are ready.";
+"digital_begin_round_start" = "Click on LISTEN button when you are ready.";
+"digital_practice_3" = "Next you will hear series of numbers, but this time you will have to repeat them in reverse order. For example, if you hear the numbers 2-5-8, you should then say 8-5-2.\nAgain, you will only hear each list of numbers once, so do the best you can from what you hear.\nYou will have a practice round before starting with the series.";
+"digital_begin_round2" = "Now we will start with the task.\nClick on LISTEN button when you are ready.";
+"digital_begin_round2_start" = "Click on LISTEN button when you are ready.";

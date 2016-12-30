@@ -20,6 +20,7 @@ class ChooseTestViewController: UIViewController, UITableViewDelegate, UITableVi
     var tests = ["Questionnaire", "MOCA", "RCF1", "ClockDrawing", "RCF2", "TrailMaking", "Pitch", "DigitalSpan", "RCF3", "RCF4", "CPT", "Matrices", "Pegboard", "WordList1", "Stroop", "Cancellation", "WordList2", "NamingTask", "Comprehension", "EyeTest"]
     var confirm = [String]()
     
+    let participant = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,14 @@ class ChooseTestViewController: UIViewController, UITableViewDelegate, UITableVi
         confirmListTable.tableFooterView = UIView(frame: .zero)
         
         confirmListTable.setEditing(true, animated: true)
+        
+        if participant.array(forKey: "Tests") != nil {
+            confirm = participant.array(forKey: "Tests") as! [String]
+            
+            for test in confirm {
+                tests = tests.filter {$0 != test}
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,7 +101,6 @@ class ChooseTestViewController: UIViewController, UITableViewDelegate, UITableVi
             self.testListTable.deleteRows(at: [IndexPath.init(row: indexPath.row, section: 0)], with: .right)
             self.testListTable.endUpdates()
         }
-        
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -115,17 +123,33 @@ class ChooseTestViewController: UIViewController, UITableViewDelegate, UITableVi
         confirmListTable.reloadData()
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var rv = ""
+        
+        if tableView == self.testListTable {
+            rv = "Test List"
+        } else if tableView == self.confirmListTable {
+            rv = "Your Test"
+        }
+        
+        return rv
+    }
     
     // MARK: Action
     
     @IBAction func saveTestList(_ sender: Any) {
-        let participant = UserDefaults.standard
-        
         participant.set(confirm, forKey: "Tests")
         
-        let vc = UserInputViewController()
-        let navController = UINavigationController(rootViewController: vc)
-        self.present(navController, animated: true, completion: nil)
+        var alertController = UIAlertController()
+        
+        alertController = UIAlertController(title: "Saved", message: "Your test settings are saved.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        
+        alertController.addAction(dismissAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
 }

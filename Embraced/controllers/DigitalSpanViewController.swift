@@ -38,7 +38,15 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     
     @IBOutlet weak var instructionsA: UILabel!
     @IBOutlet weak var instructions: UILabel!
+    @IBOutlet weak var practice1Label: UILabel!
+    @IBOutlet weak var practice1Instructions: UILabel!
+    @IBOutlet weak var practice2Label: UILabel!
+    @IBOutlet weak var practice2instructions: UILabel!
+    @IBOutlet weak var practice3Label: UILabel!
+    @IBOutlet weak var practice3Instructions: UILabel!
+    @IBOutlet weak var completeLabel: UILabel!
     
+    @IBOutlet weak var submit: UIButton!
     var recordingSession: AVAudioSession!
     
     var soundRecorder: AVAudioRecorder!
@@ -130,6 +138,9 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         }
         
         loadingView.stopAnimating()
+        
+        practice1Label.text = "Practice".localized(lang: participant.string(forKey: "language")!)
+        practice1Instructions.text = "digital_practice_1".localized(lang: participant.string(forKey: "language")!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -149,23 +160,25 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         ]
         
         do {
-            let soundR = try AVAudioRecorder(url: audioFilename, settings: settings)
-            soundR.delegate = self
-            soundRecorder = soundR
-            soundR.record()
+            soundRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            soundRecorder.delegate = self
+//            soundRecorder = soundR
+            soundRecorder.record()
             
-            button.setTitle("Stop", for: .normal)
+            button.setTitle("Stop_Recording".localized(lang: participant.string(forKey: "language")!), for: .normal)
         } catch {
             finishRecording(button, success: false)
         }
     }
     
     func finishRecording(_ button: UIButton, success: Bool) {
-        soundRecorder.stop()
-        soundRecorder = nil
+        if soundRecorder.isRecording {
+            soundRecorder.stop()
+            soundRecorder = nil
+        }
         
         if success {
-            button.setTitle("Start", for: .normal)
+            button.setTitle("Start_Recording".localized(lang: participant.string(forKey: "language")!), for: .normal)
         }
     }
     
@@ -180,31 +193,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             log(logMessage: "Something went wrong")
         }
     }
-    
-//    func play(_ filename:String) {
-//        if let pathResource = Bundle.main.path(forResource: filename, ofType: "wav") {
-//            let finishedStepSound = NSURL(fileURLWithPath: pathResource)
-//            do {
-//                soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
-//                if(soundPlayer.prepareToPlay()){
-//                    print("preparation success")
-//                    soundPlayer.delegate = self
-//                    if(soundPlayer.play()){
-//                        print("Sound play success")
-//                    }else{
-//                        print("Sound file could not be played")
-//                    }
-//                }else{
-//                    print("preparation failure")
-//                }
-//                
-//            }catch{
-//                print("Sound file could not be found")
-//            }
-//        }else{
-//            print("path not found")
-//        }
-//    }
     
     func log(logMessage: String, functionName: String = #function) {
         print("\(#function): \(logMessage)")
@@ -227,8 +215,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-//        let vc:ReyComplexFigure3ViewController = ReyComplexFigure3ViewController()
-//        nextViewController(viewController: vc)
         AppDelegate.position += 1
         nextViewController2(position: AppDelegate.position)
     }
@@ -269,14 +255,14 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBAction func playSound(_ sender: UIButton) {
         if sender.titleLabel!.text == "Play" {
             recordBtn.isEnabled = false
-            sender.setTitle("Stop", for: UIControlState())
+            sender.setTitle("Stop".localized(lang: participant.string(forKey: "language")!), for: UIControlState())
             preparePlayer()
             soundPlayer.play()
         } else {
             if soundPlayer.isPlaying {
                 soundPlayer.stop()
             }
-            sender.setTitle("Play", for: UIControlState())
+            sender.setTitle("Play".localized(lang: participant.string(forKey: "language")!), for: UIControlState())
         }
     }
     
@@ -296,44 +282,52 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         setSubview(introView, next: preTask1View)
         recordPracticeBtn.isEnabled = false
         listenBtn.isEnabled = true
+        practice2Label.text = "Practice".localized(lang: participant.string(forKey: "language")!)
+        practice2instructions.text = "digital_practice_2".localized(lang: participant.string(forKey: "language")!)
     }
     
     @IBAction func moveToForward(_ sender: AnyObject) {
         setSubview(preTask1View, next: task1View)
         listenForwardBtn.isEnabled = true
         recordForwardBtn.isEnabled = false
+        instructionsA.text = "digital_begin_round".localized(lang: participant.string(forKey: "language")!)
     }
     
     @IBAction func nextSound(_ sender: AnyObject) {
-        instructionsA.text = "Click on LISTEN button when you are ready."
+        instructionsA.text = "digital_begin_round_start".localized(lang: participant.string(forKey: "language")!)
         if (forwardCount < forward.count - 2) {
             forwardCount += 1
-            rounds.text = "Round \(forwardCount+1)"
+            rounds.text = "Round".localized(lang: participant.string(forKey: "language")!) + " " + String(forwardCount+1)
             listenForwardBtn.isEnabled = true
             recordForwardBtn.isEnabled = false
         } else {
             setSubview(task1View, next: preTask2View)
             listenPracticeBtn2.isEnabled = true
             recordPracitceBtn2.isEnabled = false
+            practice3Label.text = "Practice".localized(lang: participant.string(forKey: "language")!)
+            practice3Instructions.text = "digital_practice_3".localized(lang: participant.string(forKey: "language")!)
         }
     }
     
     @IBAction func moveToBackward(_ sender: AnyObject) {
         setSubview(preTask2View, next: task2View)
-        bRounds.text = "Round \(backwardCount+1)"
+        bRounds.text = "Round".localized(lang: participant.string(forKey: "language")!) + " " + String(backwardCount+1)
         listenBackwardBtn.isEnabled = true
         recordBackwardBtn.isEnabled = false
+        instructions.text = "digital_begin_round2".localized(lang: participant.string(forKey: "language")!)
     }
     
     @IBAction func nextBSound(_ sender: AnyObject) {
-        instructions.text = "Click on LISTEN button when you are ready."
+        instructions.text = "digital_begin_round2_start".localized(lang: participant.string(forKey: "language")!)
         if (backwardCount < backward.count - 2) {
             backwardCount += 1
-            bRounds.text = "Round \(backwardCount+1)"
+            bRounds.text = "Round".localized(lang: participant.string(forKey: "language")!) + " " + String(backwardCount+1)
             listenBackwardBtn.isEnabled = true
             recordBackwardBtn.isEnabled = false
         } else {
             setSubview(task2View, next: completeView)
+            completeLabel.text = "Test_complete".localized(lang: participant.string(forKey: "language")!)
+            submit.setTitle("Submit".localized(lang: participant.string(forKey: "language")!), for: .normal)
         }
     }
     
@@ -387,7 +381,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         recordBtn.isEnabled = true
-        playBtn.setTitle("Play", for: UIControlState())
+        playBtn.setTitle("Play".localized(lang: participant.string(forKey: "language")!), for: UIControlState())
         finishedPlaying()
     }
 }

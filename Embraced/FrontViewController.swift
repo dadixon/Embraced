@@ -114,12 +114,9 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         var navigationArray = self.navigationController?.viewControllers
         
         navigationArray?.remove(at: 0)
-        
-//        let reyComplexFigure3ViewController:viewController = viewController()
         navigationArray?.append(viewController)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
-//        self.navigationController?.pushViewController(reyComplexFigure3ViewController, animated: true)
     }
     
     func nextViewController2(position: Int) {
@@ -202,7 +199,7 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
     func play(_ filename:String) {
         let file = filename.characters.split(separator: ".").map(String.init)
         
-        if let pathResource = Bundle.main.path(forResource: file[0], ofType: "wav") {
+        if let pathResource = Bundle.main.path(forResource: file[0], ofType: file[1]) {
             let finishedStepSound = NSURL(fileURLWithPath: pathResource)
             do {
                 soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Stormpath
+//import Stormpath
 
 class ViewController: UIViewController {
  
@@ -40,12 +40,24 @@ class ViewController: UIViewController {
     
     @IBAction func login(_ sender: AnyObject) {
 //        Stormpath.sharedSession.login(usernameTextfield.text!, password: passwordTextfield.text!, completionHandler: logResponse)
-        showModal()
+//        showModal()
+        
+        let vc = AdminViewController()
+        let navController = UINavigationController(rootViewController: vc)
+        self.present(navController, animated: true, completion: nil)
     }
     
     func showModal() {
 //        let modalViewController = UserInputViewController()
-        let modalViewController = ChooseTestViewController()
+        var modalViewController = UIViewController()
+        
+        if #available(iOS 10.0, *) {
+            modalViewController = SpeechTestViewController()
+        } else {
+            // Fallback on earlier versions
+            modalViewController = UserInputViewController()
+        }
+        
         modalViewController.modalPresentationStyle = .overCurrentContext
         present(modalViewController, animated: true, completion: nil)
     }

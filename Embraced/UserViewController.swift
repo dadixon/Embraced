@@ -1,18 +1,16 @@
 //
-//  FinishedViewController.swift
+//  UserViewController.swift
 //  Embraced
 //
-//  Created by Domonique Dixon on 10/6/16.
+//  Created by Domonique Dixon on 12/27/16.
 //  Copyright © 2016 Domonique Dixon. All rights reserved.
 //
 
 import UIKit
 
-class FinishedViewController: FrontViewController {
+class UserViewController: UIViewController {
 
     override func viewDidLoad() {
-        step = AppDelegate.position
-        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -22,16 +20,10 @@ class FinishedViewController: FrontViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-
-    // MARK: - Navigation
-
-    @IBAction func startOver(_ sender: AnyObject) {
-        let vc = AdminViewController()
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+    @IBAction func startTest(_ sender: Any) {
+        let vc = UserInputViewController()
+        let navController = UINavigationController(rootViewController: vc)
+        self.present(navController, animated: true, completion: nil)
     }
-    
-
 }
