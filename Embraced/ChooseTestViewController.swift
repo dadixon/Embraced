@@ -10,14 +10,13 @@ import UIKit
 
 class ChooseTestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var confirmListLabel: UILabel!
-    @IBOutlet weak var testListLabel: UILabel!
     @IBOutlet weak var testListTable: UITableView!
     @IBOutlet weak var confirmListTable: UITableView!
     @IBOutlet weak var saveBtn: NavigationButton!
     
     
     var tests = ["Questionnaire", "MOCA", "RCF1", "ClockDrawing", "RCF2", "TrailMaking", "Pitch", "DigitalSpan", "RCF3", "RCF4", "CPT", "Matrices", "Pegboard", "WordList1", "Stroop", "Cancellation", "WordList2", "NamingTask", "Comprehension", "EyeTest"]
+    var defaultTests = [String]()
     var confirm = [String]()
     
     let participant = UserDefaults.standard
@@ -40,6 +39,8 @@ class ChooseTestViewController: UIViewController, UITableViewDelegate, UITableVi
                 tests = tests.filter {$0 != test}
             }
         }
+        
+        defaultTests = tests
     }
 
     override func didReceiveMemoryWarning() {
@@ -152,4 +153,10 @@ class ChooseTestViewController: UIViewController, UITableViewDelegate, UITableVi
         self.present(alertController, animated: true, completion: nil)
     }
     
+    @IBAction func selectAllTest(_ sender: Any) {
+        confirm = defaultTests
+        tests = []
+        testListTable.reloadData()
+        confirmListTable.reloadData()
+    }
 }

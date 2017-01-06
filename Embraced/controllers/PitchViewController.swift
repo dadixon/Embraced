@@ -62,6 +62,8 @@ class PitchViewController: FrontViewController {
     @IBOutlet weak var taskBtn: NavigationButton!
     @IBOutlet weak var submitBtn: UIButton!
 
+    let downloadManager = DownloadManager()
+    
     var stimuli = [String: Any]()
     var examples = Array<Array<String>>()
     var trials = Array<Array<String>>()
@@ -128,6 +130,62 @@ class PitchViewController: FrontViewController {
         
         
         // Fetch audios
+        // New way by downloading files instead of using native ones
+        
+        var stimuliURIs = [String: Any]()
+        
+        let todoEndpoint: String = "http://api2.girlscouts.harryatwal.com/stimuli/pitch"
+        guard let url = URL(string: todoEndpoint) else {
+            print("Error: cannot create URL")
+            return
+        }
+        let urlRequest = URLRequest(url: url)
+        //            let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
+        //            let session = URLSession.shared
+        //            let session = URLSession(configuration: URLSessionConfiguration.ephemeral)
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            guard error == nil else {
+                print("error calling GET on stumiliNames")
+                print(error!)
+                return
+            }
+            // make sure we got data
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                return
+            }
+            
+            if (statusCode == 200) {
+                print("Everyone is fine, file downloaded successfully.")
+                
+                do {
+                    guard let todo = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
+                        print("error trying to convert data to JSON")
+                        return
+                    }
+                    
+                    stimuliURIs = todo
+                    print(stimuliURIs)
+                } catch {
+                    print("Error with Json: \(error)")
+                    return
+                }
+            }
+        })
+        
+        task.resume()
+    
+    
+    
+    
+        
         examples = DataManager.sharedInstance.pitchExamples
         trials = DataManager.sharedInstance.pitchTrials
         tasks = DataManager.sharedInstance.pitchTasks

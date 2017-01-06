@@ -16,8 +16,8 @@ class AdminViewController: UITabBarController, UITabBarControllerDelegate {
         super.viewWillAppear(animated)
         let item1 = UserViewController()
         let item2 = ChooseTestViewController()
-        let icon1 = UITabBarItem(title: "Title", image: UIImage(named: "someImage.png"), selectedImage: UIImage(named: "otherImage.png"))
-        let icon2 = UITabBarItem(title: "Setting", image: UIImage(named: "someImage.png"), selectedImage: UIImage(named: "otherImage.png"))
+        let icon1 = UITabBarItem(title: "Test", image: UIImage(named: "iconTab0.png"), selectedImage: UIImage(named: "iconTab0.png"))
+        let icon2 = UITabBarItem(title: "Setting", image: UIImage(named: "iconTab1.png"), selectedImage: UIImage(named: "iconTab1.png"))
         item1.tabBarItem = icon1
         item2.tabBarItem = icon2
         let controllers = [item1, item2]  //array of the root view controllers displayed by the tab bar interface

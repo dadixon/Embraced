@@ -240,7 +240,7 @@
 		A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */; };
 		A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */; };
 		A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */; };
-		A4AB688B1DE4BE9A0009808D /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB688A1DE4BE9A0009808D /* AsynchronousOperation.swift */; };
+		A4AB688B1DE4BE9A0009808D /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB688A1DE4BE9A0009808D /* DownloadOperation.swift */; };
 		A4AB688D1DE4D4730009808D /* DownloadMangager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB688C1DE4D4730009808D /* DownloadMangager.swift */; };
 		A4AE36E31DFC545400727DFD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE36E21DFC545400727DFD /* WebViewController.swift */; };
 		A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */; };
@@ -550,7 +550,7 @@
 		A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
-		A4AB688A1DE4BE9A0009808D /* AsynchronousOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
+		A4AB688A1DE4BE9A0009808D /* DownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadOperation.swift; sourceTree = "<group>"; };
 		A4AB688C1DE4D4730009808D /* DownloadMangager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadMangager.swift; sourceTree = "<group>"; };
 		A4AE36E21DFC545400727DFD /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A4AE36E61DFC9EA600727DFD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
@@ -1002,7 +1002,7 @@
 				A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */,
 				A46A2C651DD7AB91000AC66C /* Reachability.swift */,
 				A46A2C671DD96FF0000AC66C /* APIWrapper.swift */,
-				A4AB688A1DE4BE9A0009808D /* AsynchronousOperation.swift */,
+				A4AB688A1DE4BE9A0009808D /* DownloadOperation.swift */,
 				A4AB688C1DE4D4730009808D /* DownloadMangager.swift */,
 				A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */,
 				A4AE36E21DFC545400727DFD /* WebViewController.swift */,
@@ -1539,7 +1539,7 @@
 				A4347FDD1D7BCB260033306A /* WordListViewController.swift in Sources */,
 				A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */,
 				A4347FD91D7BCAFB0033306A /* PitchViewController.swift in Sources */,
-				A4AB688B1DE4BE9A0009808D /* AsynchronousOperation.swift in Sources */,
+				A4AB688B1DE4BE9A0009808D /* DownloadOperation.swift in Sources */,
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
 				A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
