@@ -45,7 +45,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     @IBOutlet weak var video2View: UIView!
     @IBOutlet weak var video3View: UIView!
     @IBOutlet weak var video4View: UIView!
-    @IBOutlet weak var completeView: UIView!
+    @IBOutlet var completeView: UIView!
 
     @IBOutlet weak var practiceText: UILabel!
     
@@ -256,12 +256,12 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         var jsonTask = [AnyObject]()
         var jsonTaskObject = [String: AnyObject]()
         
-        for i in 0...position-1 {
+        for i in 1...position {
             let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("stroop\(i).m4a"))
             let dataStr = soundData?.base64EncodedString(options: [])
             
             jsonTaskObject = [
-                "name": "stroop\(i+1)" as AnyObject,
+                "name": "stroop\(i)" as AnyObject,
                 "soundByte": dataStr as AnyObject
             ]
             
@@ -282,8 +282,6 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-//        let vc:CancellationTestViewController = CancellationTestViewController()
-//        nextViewController(viewController: vc)
         AppDelegate.position += 1
         nextViewController2(position: AppDelegate.position)
     }
@@ -399,7 +397,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     @IBAction func submitTask(_ sender: AnyObject) {
         player.pause()
         
-        setSubview(task4View, next: completeView)
+        setSubview(task4View, next: self.completeView)
     }
     
     @IBAction func playVideo(_ sender: AnyObject) {

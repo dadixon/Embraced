@@ -302,7 +302,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         var jsonTask = [AnyObject]()
         var jsonTaskObject = [String: AnyObject]()
         
-        for i in 0...position-2 {
+        for i in 0...position-1 {
             let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("wordlist\(i).m4a"))
             let dataStr = soundData?.base64EncodedString(options: [])
             
