@@ -126,9 +126,9 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         
         do {
             soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound)
-            if(soundPlayer.prepareToPlay()){
+            if(soundPlayer?.prepareToPlay())!{
                 print("preparation success")
-                soundPlayer.delegate = self
+                soundPlayer?.delegate = self
             }else{
                 print("preparation failure")
             }
@@ -186,9 +186,9 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     func preparePlayer() {
         do {
             soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName))
-            soundPlayer.delegate = self
-            soundPlayer.prepareToPlay()
-            soundPlayer.volume = 1.0
+            soundPlayer?.delegate = self
+            soundPlayer?.prepareToPlay()
+            soundPlayer?.volume = 1.0
         } catch {
             log(logMessage: "Something went wrong")
         }
@@ -257,10 +257,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             recordBtn.isEnabled = false
             sender.setTitle("Stop".localized(lang: participant.string(forKey: "language")!), for: UIControlState())
             preparePlayer()
-            soundPlayer.play()
+            soundPlayer?.play()
         } else {
-            if soundPlayer.isPlaying {
-                soundPlayer.stop()
+            if (soundPlayer?.isPlaying)! {
+                soundPlayer?.stop()
             }
             sender.setTitle("Play".localized(lang: participant.string(forKey: "language")!), for: UIControlState())
         }

@@ -170,8 +170,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     func finishPlaying() {
-        if soundPlayer.isPlaying {
-            soundPlayer.stop()
+        if (soundPlayer?.isPlaying)! {
+            soundPlayer?.stop()
         }
         
         if practice {
@@ -187,9 +187,9 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     func preparePlayer() {
         do {
             soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName[0]))
-            soundPlayer.delegate = self
-            soundPlayer.prepareToPlay()
-            soundPlayer.volume = 1.0
+            soundPlayer?.delegate = self
+            soundPlayer?.prepareToPlay()
+            soundPlayer?.volume = 1.0
         } catch {
             log(logMessage: "Something went wrong")
         }
@@ -268,10 +268,10 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
             recordBtn.isEnabled = false
             sender.setTitle("Stop", for: UIControlState())
             preparePlayer()
-            soundPlayer.play()
+            soundPlayer?.play()
         } else {
-            if soundPlayer.isPlaying {
-                soundPlayer.stop()
+            if (soundPlayer?.isPlaying)! {
+                soundPlayer?.stop()
             }
             sender.setTitle("Play", for: UIControlState())
         }
@@ -286,8 +286,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBAction func nextTrial(_ sender: AnyObject) {
         position += 1
         
-        if soundPlayer.isPlaying {
-            soundPlayer.stop()
+        if (soundPlayer?.isPlaying)! {
+            soundPlayer?.stop()
         }
         
         if position < instructions.count {

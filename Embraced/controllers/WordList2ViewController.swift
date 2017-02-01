@@ -174,8 +174,8 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
 //    }
     
     func finishPlaying() {
-        if soundPlayer.isPlaying {
-            soundPlayer.stop()
+        if (soundPlayer?.isPlaying)! {
+            soundPlayer?.stop()
         }
         
         firstListLabel.isHidden = false

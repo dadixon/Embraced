@@ -200,8 +200,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     }
     
     func finishPlaying() {
-        if soundPlayer.isPlaying {
-            soundPlayer.stop()
+        if (soundPlayer?.isPlaying)! {
+            soundPlayer?.stop()
         }
         
         playBtn.setTitle("Play", for: .normal)
@@ -211,9 +211,9 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     func preparePlayer() {
         do {
             soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName))
-            soundPlayer.delegate = self
-            soundPlayer.prepareToPlay()
-            soundPlayer.volume = 1.0
+            soundPlayer?.delegate = self
+            soundPlayer?.prepareToPlay()
+            soundPlayer?.volume = 1.0
         } catch {
             log(logMessage: "Something went wrong")
         }
@@ -319,9 +319,9 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
             recordBtn.isEnabled = false
             sender.setTitle("Stop", for: UIControlState())
             preparePlayer()
-            soundPlayer.play()
+            soundPlayer?.play()
         } else {
-            soundPlayer.stop()
+            soundPlayer?.stop()
             sender.setTitle("Play", for: UIControlState())
         }
     }

@@ -14,53 +14,55 @@ class PitchViewController: FrontViewController {
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet var introView: UIView!
+    @IBOutlet weak var introLabel: UILabel!
+    @IBOutlet weak var introBtn: NavigationButton!
+    
     @IBOutlet var example1View: UIView!
-    @IBOutlet var example2View: UIView!
-    @IBOutlet var example3View: UIView!
-    @IBOutlet var trial1View: UIView!
-    @IBOutlet var preTaskView: UIView!
-    @IBOutlet var taskView: UIView!
-    @IBOutlet var completeView: UIView!
-    
-    @IBOutlet weak var example1Label: UILabel!
-    @IBOutlet weak var example2Label: UILabel!
-    @IBOutlet weak var example3Label: UILabel!
-    
     @IBOutlet weak var example1: UILabel!
-    @IBOutlet weak var example2: UILabel!
-    @IBOutlet weak var example3: UILabel!
     @IBOutlet weak var example1Content: UILabel!
-    @IBOutlet weak var example2Content: UILabel!
-    @IBOutlet weak var example3Content: UILabel!
-    @IBOutlet weak var tasksContent: UILabel!
-    @IBOutlet weak var completeLabel: UILabel!
+    @IBOutlet weak var example1Response: UILabel!
+    @IBOutlet weak var example1Label: UILabel!
+    @IBOutlet weak var example1segment: UISegmentedControl!
+    @IBOutlet weak var example1btn: NavigationButton!
     
-    @IBOutlet weak var trialLabel: UILabel!
-    @IBOutlet weak var tasksLabel: UILabel!
+    @IBOutlet var example2View: UIView!
+    @IBOutlet weak var example2: UILabel!
+    @IBOutlet weak var example2Content: UILabel!
+    @IBOutlet weak var example2Response: UILabel!
+    @IBOutlet weak var example2Label: UILabel!
+    @IBOutlet weak var example2segment: UISegmentedControl!
+    @IBOutlet weak var example2btn: NavigationButton!
+    
+    @IBOutlet var example3View: UIView!
+    @IBOutlet weak var example3: UILabel!
+    @IBOutlet weak var example3Content: UILabel!
+    @IBOutlet weak var example3Response: UILabel!
+    @IBOutlet weak var example3Label: UILabel!
+    @IBOutlet weak var example3segment: UISegmentedControl!
+    @IBOutlet weak var example3btn: NavigationButton!
+    
+    @IBOutlet var trial1View: UIView!
     @IBOutlet weak var practiceLabel: UILabel!
     @IBOutlet weak var practiceInstructionsLabel: UILabel!
-    
-    @IBOutlet weak var example1Response: UILabel!
-    @IBOutlet weak var example2Response: UILabel!
-    @IBOutlet weak var example3Response: UILabel!
     @IBOutlet weak var practiceResponse: UILabel!
-    @IBOutlet weak var taskResponse: UILabel!
-    
-    @IBOutlet weak var example1segment: UISegmentedControl!
-    @IBOutlet weak var example2segment: UISegmentedControl!
-    @IBOutlet weak var example3segment: UISegmentedControl!
-    @IBOutlet weak var introLabel: UILabel!
+    @IBOutlet weak var trialLabel: UILabel!
     @IBOutlet weak var practiceSegment: UISegmentedControl!
-    @IBOutlet weak var taskSegment: UISegmentedControl!
-    
-    @IBOutlet weak var introBtn: NavigationButton!
-    @IBOutlet weak var example1btn: NavigationButton!
-    @IBOutlet weak var example2btn: NavigationButton!
-    @IBOutlet weak var example3btn: NavigationButton!
     @IBOutlet weak var practiceBtn: NavigationButton!
+    
+    @IBOutlet var preTaskView: UIView!
+    @IBOutlet weak var tasksContent: UILabel!
     @IBOutlet weak var pretaskBtn: NavigationButton!
+    
+    @IBOutlet var taskView: UIView!
+    @IBOutlet weak var taskResponse: UILabel!
+    @IBOutlet weak var tasksLabel: UILabel!
+    @IBOutlet weak var taskSegment: UISegmentedControl!
     @IBOutlet weak var taskBtn: NavigationButton!
+    
+    @IBOutlet var completeView: UIView!
+    @IBOutlet weak var completeLabel: UILabel!
     @IBOutlet weak var submitBtn: UIButton!
+    
 
     let downloadManager = DownloadManager()
     
@@ -84,6 +86,7 @@ class PitchViewController: FrontViewController {
     var exampleCount = 0
     var trialCount = 0
     var tasksCount = 0
+    var position = 0
     
     var timer = Timer()
     
@@ -135,14 +138,13 @@ class PitchViewController: FrontViewController {
         var stimuliURIs = [String: Any]()
         
         let todoEndpoint: String = "http://api2.girlscouts.harryatwal.com/stimuli/pitch"
+        
         guard let url = URL(string: todoEndpoint) else {
             print("Error: cannot create URL")
             return
         }
+        
         let urlRequest = URLRequest(url: url)
-        //            let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL)
-        //            let session = URLSession.shared
-        //            let session = URLSession(configuration: URLSessionConfiguration.ephemeral)
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
@@ -190,22 +192,6 @@ class PitchViewController: FrontViewController {
         trials = DataManager.sharedInstance.pitchTrials
         tasks = DataManager.sharedInstance.pitchTasks
         
-        let pathResource = Bundle.main.path(forResource: "melodies 320ms orig(16)", ofType: "wav")
-        let finishedStepSound = URL(fileURLWithPath: pathResource!)
-        
-        do {
-            soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound)
-            if(soundPlayer.prepareToPlay()){
-                print("preparation success")
-                soundPlayer.delegate = self
-            }else{
-                print("preparation failure")
-            }
-            
-        }catch{
-            print("Sound file could not be found")
-        }
-        
         introBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
         introLabel.text = "pitch_intro".localized(lang: participant.string(forKey: "language")!)
         
@@ -217,9 +203,32 @@ class PitchViewController: FrontViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func updateTime() {
+        if self.played == false {
+            self.soundLabel.text = "2"
+            play(secondSound)
+        }
+        
+        self.played = true
+    }
+    
+    private func startTimer() {
+        if !timer.isValid {
+            let aSelector : Selector = #selector(PitchViewController.updateTime)
+            
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
+        }
+    }
+    
+    private func resetTimer() {
+        timer.invalidate()
+    }
+    
     private func setupSounds(_ soundArray: Array<Array<String>>, iterator: Int, label: UILabel) {
-        if soundPlayer.isPlaying {
-            soundPlayer.stop()
+        if soundPlayer != nil {
+            if (soundPlayer?.isPlaying)! {
+                soundPlayer?.stop()
+            }
         }
         
         played = false
@@ -236,25 +245,58 @@ class PitchViewController: FrontViewController {
         print(firstSound)
         print(secondSound)
         
-        let firstSoundArray = firstSound.characters.split(separator: ".").map(String.init)
-        let secondSoundArray = secondSound.characters.split(separator: ".").map(String.init)
-        
-        firstSound = firstSoundArray[0]
-        secondSound = secondSoundArray[0]
-        
-        print(firstSound)
-        print(secondSound)
-        
         soundLabel = label
         soundLabel.text = "1"
+    }
+    
+    func setupExample1() {
+        example1.text = "Example_1".localized(lang: participant.string(forKey: "language")!)
+        example1Content.text = "pitch_example_1".localized(lang: participant.string(forKey: "language")!)
+        example1btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        example1segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
+        example1segment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
+        
+        example1btn.isHidden = true
+        example1segment.isHidden = true
+    }
+    
+    func setupExample2() {
+        example2.text = "Example_2".localized(lang: participant.string(forKey: "language")!)
+        example2Content.text = "pitch_example_2".localized(lang: participant.string(forKey: "language")!)
+        example2btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        example2segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
+        example2segment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
+        
+        example2btn.isHidden = true
+        example2segment.isHidden = true
+    }
+    
+    func setupExample3() {
+        example3.text = "Example_3".localized(lang: participant.string(forKey: "language")!)
+        example3Content.text = "pitch_example_3".localized(lang: participant.string(forKey: "language")!)
+        example3btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        example3segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
+        example3segment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
+        
+        example3btn.isHidden = true
+        example3segment.isHidden = true
+    }
+    
+    func setupTrial1() {
+        practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!) + " " + String(trialCount+1)
+        practiceInstructionsLabel.text = "pitch_practice_1".localized(lang: participant.string(forKey: "language")!)
+        practiceSegment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
+        practiceSegment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
+        practiceBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        
+        practiceSegment.isHidden = true
+        practiceBtn.isHidden = true
     }
     
     
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-//        let vc:DigitalSpanViewController = DigitalSpanViewController()
-//        nextViewController(viewController: vc)
         AppDelegate.position += 1
         nextViewController2(position: AppDelegate.position)
     }
@@ -275,70 +317,62 @@ class PitchViewController: FrontViewController {
     }
     
     @IBAction func moveToExample(_ sender: AnyObject) {
+        position += 1
+        
         setSubview(introView, next: example1View)
         setupSounds(examples, iterator: 0, label: example1Label)
-        
-        example1.text = "Example_1".localized(lang: participant.string(forKey: "language")!)
-        example1Content.text = "pitch_example_1".localized(lang: participant.string(forKey: "language")!)
-        example1btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
-        example1segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
-        example1segment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
+        setupExample1()
     }
     
     @IBAction func moveToExample2(_ sender: AnyObject) {
+        position += 1
+        
         setSubview(example1View, next: example2View)
         setupSounds(examples, iterator: 1, label: example2Label)
-        
-        example2.text = "Example_2".localized(lang: participant.string(forKey: "language")!)
-        example2Content.text = "pitch_example_2".localized(lang: participant.string(forKey: "language")!)
-        example2btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
-        example2segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
-        example2segment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
+        setupExample2()
         
         exampleCount += 1
     }
     
     @IBAction func moveToExample3(_ sender: AnyObject) {
+        position += 1
+        
         setSubview(example2View, next: example3View)
         setupSounds(examples, iterator: 2, label: example3Label)
-        
-        example3.text = "Example_3".localized(lang: participant.string(forKey: "language")!)
-        example3Content.text = "pitch_example_3".localized(lang: participant.string(forKey: "language")!)
-        example3btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
-        example3segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
-        example3segment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
+        setupExample3()
         
         exampleCount += 1
     }
     
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
+        position += 1
+        
         setSubview(example3View, next: trial1View)
         setupSounds(trials, iterator: trialCount, label: trialLabel)
-        
-        practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!) + " " + String(trialCount+1)
-        practiceInstructionsLabel.text = "pitch_practice_1".localized(lang: participant.string(forKey: "language")!)
-        practiceSegment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
-        practiceSegment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
-        practiceBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        setupTrial1()
     }
     
     @IBAction func nextTrial(_ sender: AnyObject) {
         trialCount += 1
+        position += 1
         
         if trialCount < trials.count {
-            // Which label back to 1
+            // Swtich label back to 1
             trialLabel.text = "1"
             practiceResponse.text = ""
             practiceSegment.selectedSegmentIndex = -1
             practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!) + " " + String(trialCount+1)
             practiceInstructionsLabel.text = "pitch_practice_2".localized(lang: participant.string(forKey: "language")!)
             
+            practiceSegment.isHidden = true
+            practiceBtn.isHidden = true
+            
             // Set sounds to play
             setupSounds(trials, iterator: trialCount, label: trialLabel)
         } else {
-            if soundPlayer.isPlaying {
-                soundPlayer.stop()
+            if (soundPlayer?.isPlaying)! {
+                soundPlayer?.stop()
             }
             
             setSubview(trial1View, next: preTaskView)
@@ -379,8 +413,8 @@ class PitchViewController: FrontViewController {
             
             tasksCount += 1
         } else {
-            if soundPlayer.isPlaying {
-                soundPlayer.stop()
+            if (soundPlayer?.isPlaying)! {
+                soundPlayer?.stop()
             }
             
             setSubview(taskView, next: completeView)
@@ -394,8 +428,10 @@ class PitchViewController: FrontViewController {
     // MARK: - Actions
     
     @IBAction func replay(_ sender: AnyObject) {
-        if soundPlayer.isPlaying {
-            soundPlayer.stop()
+        if soundPlayer != nil {
+            if (soundPlayer?.isPlaying)! {
+                soundPlayer?.stop()
+            }
         }
         
         resetTimer()
@@ -452,34 +488,37 @@ class PitchViewController: FrontViewController {
     }
     
     
-    func updateTime() {
-        if self.played == false {
-            self.soundLabel.text = "2"
-            play(secondSound)
-        }
-        
-        self.played = true
-    }
-    
-    func startTimer() {
-        if !timer.isValid {
-            
-            let aSelector : Selector = #selector(NamingTaskViewController.updateTime)
-            
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
-        }
-    }
-    
-    func resetTimer() {
-        timer.invalidate()
-    }
-    
     
     // MARK: - Delegate
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("finished")
         startTimer()
+        
+        if self.played {
+            if position == 1 {
+                print("show example 1")
+                example1btn.isHidden = false
+                example1segment.isHidden = false
+            } else if position == 2 {
+                print("show example 2")
+                example2btn.isHidden = false
+                example2segment.isHidden = false
+            } else if position == 3 {
+                print("show example 3")
+                example3btn.isHidden = false
+                example3segment.isHidden = false
+            } else if position == 4 {
+                practiceSegment.isHidden = false
+                practiceBtn.isHidden = false
+            }
+            
+            if position > 4 && position < position + trials.count {
+                practiceSegment.isHidden = false
+                practiceBtn.isHidden = false
+            }
+            resetTimer()
+        }
     }
     
 }

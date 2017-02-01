@@ -34,7 +34,7 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
     
     var alertController = UIAlertController()
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var soundPlayer = AVAudioPlayer()
+    var soundPlayer: AVAudioPlayer?
     var viewPosition = 0
     var testsArray = [String]()
     
@@ -203,10 +203,10 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
             let finishedStepSound = NSURL(fileURLWithPath: pathResource)
             do {
                 soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
-                if(soundPlayer.prepareToPlay()){
+                if(soundPlayer?.prepareToPlay())!{
                     print("preparation success")
-                    soundPlayer.delegate = self
-                    if(soundPlayer.play()){
+                    soundPlayer?.delegate = self
+                    if(soundPlayer?.play())!{
                         print("Sound play success")
                     }else{
                         print("Sound file could not be played")
