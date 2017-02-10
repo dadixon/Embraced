@@ -1,5 +1,5 @@
 //
-//  ChooseTestViewController.swift
+//  SettingsViewController.swift
 //  Embraced
 //
 //  Created by Domonique Dixon on 12/21/16.
@@ -8,14 +8,15 @@
 
 import UIKit
 
-class ChooseTestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var testListTable: UITableView!
     @IBOutlet weak var confirmListTable: UITableView!
     @IBOutlet weak var saveBtn: NavigationButton!
+    @IBOutlet weak var languageSegment: UISegmentedControl!
     
     
-    var tests = ["Questionnaire", "MOCA", "RCF1", "ClockDrawing", "RCF2", "TrailMaking", "Pitch", "DigitalSpan", "RCF3", "RCF4", "CPT", "Matrices", "Pegboard", "WordList1", "Stroop", "Cancellation", "WordList2", "NamingTask", "Comprehension", "EyeTest"]
+    let tests = ["Questionnaire", "MOCA", "RCF1", "ClockDrawing", "RCF2", "TrailMaking", "Pitch", "DigitalSpan", "RCF3", "RCF4", "CPT", "Matrices", "Pegboard", "WordList1", "Stroop", "Cancellation", "WordList2", "NamingTask", "Comprehension", "EyeTest"]
     var defaultTests = [String]()
     var confirm = [String]()
     
@@ -35,12 +36,24 @@ class ChooseTestViewController: UIViewController, UITableViewDelegate, UITableVi
         if participant.array(forKey: "Tests") != nil {
             confirm = participant.array(forKey: "Tests") as! [String]
             
+            defaultTests = tests
+            
             for test in confirm {
-                tests = tests.filter {$0 != test}
+                defaultTests = defaultTests.filter {$0 != test}
             }
         }
         
-        defaultTests = tests
+        let testerLanguage = participant.string(forKey: "TesterLanguage")
+        
+        if testerLanguage != nil {
+            if testerLanguage == "Engligh" {
+                languageSegment.selectedSegmentIndex = 0
+            } else if testerLanguage == "Español" {
+                languageSegment.selectedSegmentIndex = 1
+            }
+        } else {
+          languageSegment.selectedSegmentIndex = 0
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,7 +72,7 @@ class ChooseTestViewController: UIViewController, UITableViewDelegate, UITableVi
         var count : Int!
         
         if tableView == self.testListTable {
-            count = tests.count
+            count = defaultTests.count
         }
         
         if tableView == self.confirmListTable {
@@ -76,7 +89,7 @@ class ChooseTestViewController: UIViewController, UITableViewDelegate, UITableVi
         if tableView == self.testListTable {
             cell = tableView.dequeueReusableCell(withIdentifier: "cellTest", for: indexPath)
             
-            cell.textLabel?.text = tests[indexPath.row]
+            cell.textLabel?.text = defaultTests[indexPath.row]
         }
         
         if tableView == self.confirmListTable {
@@ -91,13 +104,13 @@ class ChooseTestViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == self.testListTable {
             // Add to confirm table with animation
-            confirm.insert(tests[indexPath.row], at: confirm.count)
+            confirm.insert(defaultTests[indexPath.row], at: confirm.count)
             self.confirmListTable.beginUpdates()
             self.confirmListTable.insertRows(at: [IndexPath.init(row: self.confirm.count-1, section: 0)], with: .left)
             self.confirmListTable.endUpdates()
             
             // Remove from test list table
-            tests.remove(at: indexPath.row)
+            defaultTests.remove(at: indexPath.row)
             self.testListTable.beginUpdates()
             self.testListTable.deleteRows(at: [IndexPath.init(row: indexPath.row, section: 0)], with: .right)
             self.testListTable.endUpdates()
@@ -107,7 +120,7 @@ class ChooseTestViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         // Add row to test list table and delete from confirm table
         if editingStyle == .delete {
-            tests.insert(confirm[indexPath.row], at: 0)
+            defaultTests.insert(confirm[indexPath.row], at: 0)
             self.testListTable.beginUpdates()
             self.testListTable.insertRows(at: [IndexPath.init(row: 0, section: 0)], with: .right)
             self.testListTable.endUpdates()
@@ -153,10 +166,25 @@ class ChooseTestViewController: UIViewController, UITableViewDelegate, UITableVi
         self.present(alertController, animated: true, completion: nil)
     }
     
-    @IBAction func selectAllTest(_ sender: Any) {
-        confirm = defaultTests
-        tests = []
+    @IBAction func deselectAllTest(_ sender: Any) {
+        defaultTests = tests
+        confirm = []
         testListTable.reloadData()
         confirmListTable.reloadData()
+    }
+    
+    @IBAction func selectAllTest(_ sender: Any) {
+        confirm = tests
+        defaultTests = []
+        testListTable.reloadData()
+        confirmListTable.reloadData()
+    }
+    
+    @IBAction func languageChange(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            participant.set("English", forKey: "TesterLanguage")
+        } else if sender.selectedSegmentIndex == 1 {
+            participant.set("Español", forKey: "TesterLanguage")
+        }
     }
 }

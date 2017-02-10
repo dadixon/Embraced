@@ -137,7 +137,7 @@ class PitchViewController: FrontViewController {
         
         var stimuliURIs = [String: Any]()
         
-        let todoEndpoint: String = "http://api2.girlscouts.harryatwal.com/stimuli/pitch"
+        let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/stimuli/pitch"
         
         guard let url = URL(string: todoEndpoint) else {
             print("Error: cannot create URL")
@@ -195,6 +195,10 @@ class PitchViewController: FrontViewController {
         introBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
         introLabel.text = "pitch_intro".localized(lang: participant.string(forKey: "language")!)
         
+        for index in 0...24 {
+            userAnswers.insert("", at: index)
+        }
+            
         loadingView.stopAnimating()
     }
     
@@ -292,7 +296,7 @@ class PitchViewController: FrontViewController {
         practiceSegment.isHidden = true
         practiceBtn.isHidden = true
     }
-    
+
     
     // MARK: - Navigation
     

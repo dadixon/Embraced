@@ -20,7 +20,7 @@
 "Correct" = "Correcto";
 "Incorrect" = "Incorrecto";
 "Incorrect_2" = "Lo siento, esa respuesta es incorrecta. Puede intentarlo de nuevo.";
-
+"WELCOME_TEXT" = "Vamos a hacerle algunas preguntas acerca de usted. Por favor, recuerde que es libre de no contestar aquellas preguntas que le molesten pero le rogamos encarecidamente que trate de completar este cuestionario al máximo posible.\nGracias por su participación."
 
 // Pitch
 "pitch_intro" = "En la siguiente tarea usted va a escuchar pares de melodías.\nAlgunas veces, la segunda melodía estará alterado.\nEste cambio puede ser leve o evidente.\n\nUsted tendrá que indicar si la segunda melodía está cambiada o no.\nSi las dos melodías son iguales, usted deberá pulsar el botón “IGUALES”.\nSi las dos melodías son diferentes, usted deberá pulsar el botón “DIFERENTES”.\n\nPara ayudarle a diferenciar las dos melodías, aparecerán los números 1 y 2 en la pantalla cuando estén sonando la primera y la segunda melodía respectivamente.\n\nEmpezaremos con algunos ejemplos.\nPulse el botón COMENZAR cuando esté preparado.";

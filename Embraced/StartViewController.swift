@@ -11,6 +11,8 @@ import UIKit
 class StartViewController: UIViewController {
 
     @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var welcomeText: UILabel!
+    @IBOutlet weak var nextBtn: UIButton!
     
     let participant = UserDefaults.standard
     
@@ -20,8 +22,11 @@ class StartViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
         self.navigationController?.isNavigationBarHidden = true
         
-        let welcomeLabelText = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: "en")
+        let welcomeLabelText = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "language")!)
+        let welcomeTextText = "WELCOME_TEXT".localized(lang: participant.string(forKey: "language")!)
+        
         welcomeLabel.text = welcomeLabelText
+        welcomeText.text = welcomeTextText
     }
 
     override func didReceiveMemoryWarning() {

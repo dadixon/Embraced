@@ -24,6 +24,7 @@ class UserInputViewController: UIViewController {
     
     let participant = UserDefaults.standard
     let downloadManager = DownloadManager()
+    let uuid = UUID().uuidString
     
     fileprivate func setBottomBorder(_ textfield: UITextField) {
         let border = CALayer()
@@ -42,6 +43,10 @@ class UserInputViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.isNavigationBarHidden = true
+        
+        let index = uuid.characters.index(uuid.endIndex, offsetBy: -15)
+        participantID.text = uuid.substring(to: index)
+        participant.setValue(uuid.substring(to: index), forKey: "pid")
         
         DataManager.sharedInstance.fetchStimuli()
     }
@@ -62,24 +67,19 @@ class UserInputViewController: UIViewController {
     }
     
     @IBAction func submit(_ sender: AnyObject) {
-        let uuid = UUID().uuidString
-        let index = uuid.characters.index(uuid.endIndex, offsetBy: -15)
-        
-        participant.setValue(uuid.substring(to: index), forKey: "pid")
-        participant.setValue(dayOfTheWeekTextField.text, forKey: "dayOfTheWeek")
-        participant.setValue(countryTextField.text, forKey: "country")
-        participant.setValue(countyTextField.text, forKey: "county")
-        participant.setValue(cityTextField.text, forKey: "city")
-        participant.setValue(locationTextField.text, forKey: "location")
-        participant.setValue(floorTextField.text, forKey: "floor")
-
         print(participant.string(forKey: "pid")!)
         
         var jsonObject = [String: AnyObject]()
         
         // Gather data for post
         jsonObject = [
-            "id": uuid.substring(to: index) as AnyObject
+            "id": participant.string(forKey: "pid")! as AnyObject,
+            "dayOfWeek": dayOfTheWeekTextField.text as AnyObject,
+            "country": countryTextField.text as AnyObject,
+            "county": countyTextField.text as AnyObject,
+            "city": cityTextField.text as AnyObject,
+            "location": locationTextField.text as AnyObject,
+            "floor": floorTextField.text as AnyObject
         ]
 
         

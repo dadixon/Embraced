@@ -216,8 +216,8 @@
 		A4773D0F1D9D84B200E5CCEE /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773D0E1D9D84B200E5CCEE /* record.png */; };
 		A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */; };
 		A47EB6E41DA65FFB00A68AF6 /* FinishedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */; };
-		A489D6181E0B535A001F56FE /* ChooseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D6161E0B535A001F56FE /* ChooseTestViewController.swift */; };
-		A489D6191E0B535A001F56FE /* ChooseTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A489D6171E0B535A001F56FE /* ChooseTestViewController.xib */; };
+		A489D6181E0B535A001F56FE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D6161E0B535A001F56FE /* SettingsViewController.swift */; };
+		A489D6191E0B535A001F56FE /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A489D6171E0B535A001F56FE /* SettingsViewController.xib */; };
 		A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D61A1E0BA255001F56FE /* AdminViewController.swift */; };
 		A489D61D1E0BA255001F56FE /* AdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A489D61B1E0BA255001F56FE /* AdminViewController.xib */; };
 		A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC41CF9E7C700878928 /* AppDelegate.swift */; };
@@ -524,8 +524,8 @@
 		A4773D0E1D9D84B200E5CCEE /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
 		A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishedViewController.swift; path = controllers/FinishedViewController.swift; sourceTree = "<group>"; };
 		A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinishedViewController.xib; path = controllers/FinishedViewController.xib; sourceTree = "<group>"; };
-		A489D6161E0B535A001F56FE /* ChooseTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseTestViewController.swift; sourceTree = "<group>"; };
-		A489D6171E0B535A001F56FE /* ChooseTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseTestViewController.xib; sourceTree = "<group>"; };
+		A489D6161E0B535A001F56FE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A489D6171E0B535A001F56FE /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		A489D61A1E0BA255001F56FE /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		A489D61B1E0BA255001F56FE /* AdminViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminViewController.xib; sourceTree = "<group>"; };
 		A48B4DC11CF9E7C600878928 /* Embraced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embraced.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -976,8 +976,8 @@
 				A489D61B1E0BA255001F56FE /* AdminViewController.xib */,
 				A4C469A51E134B5900FDD5D5 /* UserViewController.swift */,
 				A4C469A61E134B5900FDD5D5 /* UserViewController.xib */,
-				A489D6161E0B535A001F56FE /* ChooseTestViewController.swift */,
-				A489D6171E0B535A001F56FE /* ChooseTestViewController.xib */,
+				A489D6161E0B535A001F56FE /* SettingsViewController.swift */,
+				A489D6171E0B535A001F56FE /* SettingsViewController.xib */,
 				A4C4699F1E133CE300FDD5D5 /* SpeechTestViewController.swift */,
 				A4C469A01E133CE300FDD5D5 /* SpeechTestViewController.xib */,
 				A490D7C41D09162800D2B59D /* UserInputViewController.swift */,
@@ -1356,7 +1356,7 @@
 				A47448511DE6908300BB4011 /* SPA-08.mp3 in Resources */,
 				A47448A11DE692F400BB4011 /* Image 6.jpg in Resources */,
 				A490D7D21D0919CB00D2B59D /* Roboto-Black.ttf in Resources */,
-				A489D6191E0B535A001F56FE /* ChooseTestViewController.xib in Resources */,
+				A489D6191E0B535A001F56FE /* SettingsViewController.xib in Resources */,
 				A47447FD1DE6906500BB4011 /* ENG-12.mp3 in Resources */,
 				A4E338B81DE6098C0010FC45 /* melodies 320ms orig(82).wav in Resources */,
 				A474484F1DE6908300BB4011 /* SPA-06.mp3 in Resources */,
@@ -1526,7 +1526,7 @@
 				A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */,
 				A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */,
 				A4347FD51D7BCABC0033306A /* PegboardViewController.swift in Sources */,
-				A489D6181E0B535A001F56FE /* ChooseTestViewController.swift in Sources */,
+				A489D6181E0B535A001F56FE /* SettingsViewController.swift in Sources */,
 				A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */,
 				A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */,
 				A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */,

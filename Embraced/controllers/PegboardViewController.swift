@@ -30,8 +30,6 @@ class PegboardViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-//        let vc = WordListViewController()
-//        nextViewController(viewController: vc)
         AppDelegate.position += 1
         nextViewController2(position: AppDelegate.position)
     }

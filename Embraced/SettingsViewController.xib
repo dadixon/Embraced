@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Embraced" customModuleProvider="target">
+            <connections>
+                <outlet property="confirmListTable" destination="TLW-Os-k4U" id="YmW-Up-qMn"/>
+                <outlet property="languageSegment" destination="3ij-kM-yD6" id="lxc-EQ-GE6"/>
+                <outlet property="saveBtn" destination="oxB-rh-hIF" id="oI2-Mx-R7B"/>
+                <outlet property="testListTable" destination="Ml6-9K-fn8" id="BF4-8a-ZFg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxB-rh-hIF" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="337" y="922" width="94" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="YHB-ci-Y5c"/>
+                        <constraint firstAttribute="width" constant="94" id="ov3-0b-N1R"/>
+                    </constraints>
+                    <state key="normal" title="Save"/>
+                    <connections>
+                        <action selector="saveTestList:" destination="-1" eventType="touchUpInside" id="nAS-hh-HmB"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TLW-Os-k4U">
+                    <rect key="frame" x="408" y="115" width="340" height="717"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="340" id="TeZ-OO-9Zr"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="mfa-qW-u6b"/>
+                        <outlet property="delegate" destination="-1" id="Hnd-ot-7Wc"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ml6-9K-fn8">
+                    <rect key="frame" x="20" y="115" width="340" height="717"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="340" id="MVR-RB-61b"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ppH-1t-Vsp"/>
+                        <outlet property="delegate" destination="-1" id="RyU-Ar-IEC"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRM-vQ-gYC">
+                    <rect key="frame" x="20" y="77" width="65" height="30"/>
+                    <state key="normal" title="Select All"/>
+                    <connections>
+                        <action selector="selectAllTest:" destination="-1" eventType="touchUpInside" id="Kzc-1p-npR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvK-cl-LFX">
+                    <rect key="frame" x="408" y="77" width="82" height="30"/>
+                    <state key="normal" title="Deselect All"/>
+                    <connections>
+                        <action selector="deselectAllTest:" destination="-1" eventType="touchUpInside" id="tIZ-s4-YWA"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Language:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byc-Hg-roh">
+                    <rect key="frame" x="20" y="875" width="144" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="3ij-kM-yD6">
+                    <rect key="frame" x="222" y="871" width="158" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="158" id="avX-50-Zl9"/>
+                    </constraints>
+                    <segments>
+                        <segment title="English"/>
+                        <segment title="Español"/>
+                    </segments>
+                    <connections>
+                        <action selector="languageChange:" destination="-1" eventType="valueChanged" id="TaD-XZ-fxR"/>
+                    </connections>
+                </segmentedControl>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="TLW-Os-k4U" firstAttribute="top" secondItem="RvK-cl-LFX" secondAttribute="bottom" constant="8" id="3U7-oM-B5L"/>
+                <constraint firstItem="RvK-cl-LFX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="4LB-zs-Ypk"/>
+                <constraint firstItem="oxB-rh-hIF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5vW-cB-8PN"/>
+                <constraint firstItem="3ij-kM-yD6" firstAttribute="leading" secondItem="byc-Hg-roh" secondAttribute="trailing" constant="58" id="71g-Sv-uXu"/>
+                <constraint firstItem="byc-Hg-roh" firstAttribute="top" secondItem="Ml6-9K-fn8" secondAttribute="bottom" constant="43" id="7Xb-cd-SJZ"/>
+                <constraint firstItem="Ml6-9K-fn8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="89S-bN-MHc"/>
+                <constraint firstItem="Ml6-9K-fn8" firstAttribute="top" secondItem="YRM-vQ-gYC" secondAttribute="bottom" constant="8" id="C52-d0-F8Y"/>
+                <constraint firstItem="byc-Hg-roh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="DOZ-Nn-Xzl"/>
+                <constraint firstItem="TLW-Os-k4U" firstAttribute="top" secondItem="Ml6-9K-fn8" secondAttribute="top" id="F2J-Qr-BnZ"/>
+                <constraint firstItem="YRM-vQ-gYC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="KSZ-qp-x3R"/>
+                <constraint firstItem="YRM-vQ-gYC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="QqS-t3-9Kq"/>
+                <constraint firstItem="oxB-rh-hIF" firstAttribute="top" secondItem="TLW-Os-k4U" secondAttribute="bottom" constant="90" id="dcz-7W-TTw"/>
+                <constraint firstAttribute="bottom" secondItem="oxB-rh-hIF" secondAttribute="bottom" constant="69" id="itt-SB-wtg"/>
+                <constraint firstItem="TLW-Os-k4U" firstAttribute="leading" secondItem="RvK-cl-LFX" secondAttribute="leading" id="kxR-ha-cjE"/>
+                <constraint firstAttribute="trailing" secondItem="TLW-Os-k4U" secondAttribute="trailing" constant="20" id="lOU-F8-PMi"/>
+                <constraint firstItem="oxB-rh-hIF" firstAttribute="top" secondItem="Ml6-9K-fn8" secondAttribute="bottom" constant="90" id="lTi-zT-aPG"/>
+                <constraint firstItem="3ij-kM-yD6" firstAttribute="centerY" secondItem="byc-Hg-roh" secondAttribute="centerY" id="tdB-uG-8aC"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+        </view>
+    </objects>
+</document>

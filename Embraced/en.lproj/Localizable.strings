@@ -26,7 +26,8 @@
 "Recording" = "Recording";
 "Stop" = "Stop";
 
-
+"WELCOME_TEXT" = "We are going to be asking you some questions about yourself.\nPlease remember that you are free to skip any question that may bother you, although we kindly ask you to complete as much of this questionnaire as possible.\nThank you for your participation";
+"
 // Pitch
 "pitch_intro" = "Next, you will hear pairs of melodies.\nIn some trials, the second one will be altered.\nThis change may be subtle or obvious.\n\nYou will have to indicate whether the second melody has been altered or not.\n\nIf both melodies are the same, you will tap the button “SAME”\nIf they are different, you will tap the button “DIFFERENT”\n\nTo aid you differentiate the two melodies, numbers 1 and 2 will be shown in the screen when playing the first and second melody respectively\n\nWe will start with some examples.\nPlease tap on START when you are ready.";
 "pitch_example_1" = "In this pair of melodies the second melody is identical to the first.\nWhen both melodies are the same, you should tap the button “SAME”\nTap on the button “SAME” to indicate that the melodies are the same.";

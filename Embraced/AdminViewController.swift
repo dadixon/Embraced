@@ -15,7 +15,7 @@ class AdminViewController: UITabBarController, UITabBarControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let item1 = UserViewController()
-        let item2 = ChooseTestViewController()
+        let item2 = SettingsViewController()
         let icon1 = UITabBarItem(title: "Test", image: UIImage(named: "iconTab0.png"), selectedImage: UIImage(named: "iconTab0.png"))
         let icon2 = UITabBarItem(title: "Setting", image: UIImage(named: "iconTab1.png"), selectedImage: UIImage(named: "iconTab1.png"))
         item1.tabBarItem = icon1

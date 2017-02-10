@@ -18,7 +18,7 @@ class QuestionnaireViewController: WebViewController {
         
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(QuestionnaireViewController.next(_:)))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(QuestionnaireViewController.next(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,9 +29,6 @@ class QuestionnaireViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-//        let vc:MOCAMMSETestViewController = MOCAMMSETestViewController()
-//        nextViewController(viewController: vc)
-//        let test = participant.array(forKey: "Tests")!
         AppDelegate.position += 1
         nextViewController2(position: AppDelegate.position)
     }

@@ -235,8 +235,6 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-//        let vc:StroopViewController = StroopViewController()
-//        nextViewController(viewController: vc)
         AppDelegate.position += 1
         nextViewController2(position: AppDelegate.position)
     }

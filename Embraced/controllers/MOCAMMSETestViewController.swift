@@ -18,7 +18,7 @@ class MOCAMMSETestViewController: WebViewController {
         
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(MOCAMMSETestViewController.next(_:)))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(MOCAMMSETestViewController.next(_:)))
         
     }
     
