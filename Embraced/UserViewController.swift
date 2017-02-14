@@ -10,10 +10,22 @@ import UIKit
 
 class UserViewController: UIViewController {
 
+    @IBOutlet weak var startBtn: NavigationButton!
+    
+    let participant = UserDefaults.standard
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let language = participant.string(forKey: "TesterLanguage") {
+            startBtn.setTitle("Start_Test".localized(lang: language), for: .normal)
+        } else {
+            startBtn.setTitle("Start Test", for: .normal)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {

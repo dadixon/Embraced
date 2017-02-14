@@ -84,7 +84,7 @@ class UserInputViewController: UIViewController {
 
         
         // Push to API
-        APIWrapper.post(id: "", test: "", data: jsonObject)      
+//        APIWrapper.post(id: "", test: "", data: jsonObject)      
         
         let vc = StartViewController()
         let navController = UINavigationController(rootViewController: vc)

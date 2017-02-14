@@ -250,11 +250,11 @@ class PitchViewController: FrontViewController {
         print(secondSound)
         
         soundLabel = label
-        soundLabel.text = "1"
+//        soundLabel.text = "1"
     }
     
     func setupExample1() {
-        example1.text = "Example_1".localized(lang: participant.string(forKey: "language")!)
+        example1.text = "Example".localized(lang: participant.string(forKey: "language")!) + "1"
         example1Content.text = "pitch_example_1".localized(lang: participant.string(forKey: "language")!)
         example1btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
         example1segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
@@ -265,7 +265,7 @@ class PitchViewController: FrontViewController {
     }
     
     func setupExample2() {
-        example2.text = "Example_2".localized(lang: participant.string(forKey: "language")!)
+        example2.text = "Example".localized(lang: participant.string(forKey: "language")!) + "2"
         example2Content.text = "pitch_example_2".localized(lang: participant.string(forKey: "language")!)
         example2btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
         example2segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
@@ -276,7 +276,7 @@ class PitchViewController: FrontViewController {
     }
     
     func setupExample3() {
-        example3.text = "Example_3".localized(lang: participant.string(forKey: "language")!)
+        example3.text = "Example".localized(lang: participant.string(forKey: "language")!) + "3"
         example3Content.text = "pitch_example_3".localized(lang: participant.string(forKey: "language")!)
         example3btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
         example3segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)

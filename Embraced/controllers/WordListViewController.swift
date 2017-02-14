@@ -20,10 +20,16 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var trialRecordBtn: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var InstructionsLabel: UILabel!
     @IBOutlet weak var instructions2Label: UILabel!
     @IBOutlet weak var listenBtn: UIButton!
+    @IBOutlet weak var practiceLabel: UILabel!
+    @IBOutlet weak var practiceInstruction: UILabel!
+    @IBOutlet weak var trialLabel: UILabel!
+    @IBOutlet weak var completeLabel: UILabel!
+    @IBOutlet weak var completeBtn: UIButton!
+    @IBOutlet weak var startBtn: NavigationButton!
+    @IBOutlet weak var wordNextBtn: NavigationButton!
     
     
     var recordingSession: AVAudioSession!
@@ -38,19 +44,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     var sound = String()
     var practice = true
     var position = 0
-    var instructions : [String] = ["There will be a 3 second countdown before the list starts. \nPlease tap the LISTEN button when you are ready to start",
-                                   "Tap the LISTEN button to listen to the list again",
-                                   "Tap the LISTEN button to listen to the list again",
-                                   "Tap the LISTEN button to listen to the list again",
-                                   "This is the last time that you are going to listen to this list. Tap the screen to listen to the list again",
-                                   "Now you are going to listen to a different list of words. Again, once the list is finished say out loud all the words you can remember from this second list.\nTap the screen to listen to this new list"]
-    var instructions2 : [String] = ["Now say out loud all the words you can remember from the list. Tap the microphone button to start recording",
-                                    "Now say out loud all the words you can remember from the list, including the ones you said before.\nTap the microphone button to start recording.",
-                                   "Now say out loud all the words you can remember from the list, including the ones you said before.\nTap the microphone button to start recording.",
-                                   "Now say out loud all the words you can remember from the list, including the ones you said before. \nTap the microphone button to start recording",
-                                   "Now say out loud all the words you can remember from the list, including the ones you said before. \nTap the microphone button to start recording",
-                                   "Now say out loud all the words you can remember from the list. \nTap the microphone button to start recording"]
-    
+    var instructions = Array<String>()
+    var instructions2 = Array<String>()
     
     
     // MARK: - Private
@@ -111,6 +106,27 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         // Fetch audios
         trials = DataManager.sharedInstance.wordListTrials
         
+        practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!)
+        practiceInstruction.text = "wordlist1_practice_instruction".localized(lang: participant.string(forKey: "language")!)
+        startBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        
+        instructions = ["wordlist1_instructionA1".localized(lang: participant.string(forKey: "language")!),
+                                       "wordlist1_instructionA2".localized(lang: participant.string(forKey: "language")!),
+                                       "wordlist1_instructionA2".localized(lang: participant.string(forKey: "language")!),
+                                       "wordlist1_instructionA2".localized(lang: participant.string(forKey: "language")!),
+                                       "wordlist1_instructionA3".localized(lang: participant.string(forKey: "language")!),
+                                       "wordlist1_instructionA4".localized(lang: participant.string(forKey: "language")!),
+                                       "wordlist1_instructionA5".localized(lang: participant.string(forKey: "language")!)
+        ]
+        instructions2 = ["wordlist1_instructionB1".localized(lang: participant.string(forKey: "language")!),
+                                        "wordlist1_instructionB2".localized(lang: participant.string(forKey: "language")!),
+                                        "wordlist1_instructionB2".localized(lang: participant.string(forKey: "language")!),
+                                        "wordlist1_instructionB2".localized(lang: participant.string(forKey: "language")!),
+                                        "wordlist1_instructionB2".localized(lang: participant.string(forKey: "language")!),
+                                        "wordlist1_instructionB1".localized(lang: participant.string(forKey: "language")!),
+                                        ""
+        ]
+        
         loadingView.stopAnimating()
     }
     
@@ -123,15 +139,20 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         instructions2Label.isHidden = true
         
         if position < 5 {
-            titleLabel.text = "Trial \(position + 1)"
+            trialLabel.text = "Trial".localized(lang: participant.string(forKey: "language")!) + " " + String(position + 1)
         } else {
-            titleLabel.text = "" //"Interference list"
+            trialLabel.text = "" //"Interference list"
         }
         
         InstructionsLabel.text = instructions[position]
         instructions2Label.text = instructions2[position]
         trialRecordBtn.isEnabled = false
         listenBtn.isEnabled = true
+        
+        if position == 6 {
+            listenBtn.isHidden = true
+            trialRecordBtn.isEnabled = true
+        }
     }
     
     
@@ -150,7 +171,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
             soundRecorder.delegate = self
             soundRecorder.record()
             
-            button.setTitle("Stop", for: .normal)
+            button.setTitle("Stop".localized(lang: participant.string(forKey: "language")!), for: .normal)
         } catch {
             finishRecording(button: button, success: false)
         }
@@ -162,9 +183,9 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         soundRecorder = nil
         
         if success {
-            button.setTitle("Re-record", for: .normal)
+            button.setTitle("Re-record".localized(lang: participant.string(forKey: "language")!), for: .normal)
         } else {
-            button.setTitle("Record", for: .normal)
+            button.setTitle("Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
             // recording failed :(
         }
     }
@@ -175,7 +196,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         }
         
         if practice {
-            playBtn.setTitle("Play", for: .normal)
+            playBtn.setTitle("Play".localized(lang: participant.string(forKey: "language")!), for: .normal)
             recordBtn.isEnabled = true
         } else {
             instructions2Label.isHidden = false
@@ -248,6 +269,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         setSubview(practiceView, next: trial1View)
         setup()
         practice = false
+        
+        wordNextBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
     }
     
     
@@ -262,16 +285,16 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func playSound(_ sender: UIButton) {
-        if sender.titleLabel!.text == "Play" {
+        if sender.titleLabel!.text == "Play".localized(lang: participant.string(forKey: "language")!) {
             recordBtn.isEnabled = false
-            sender.setTitle("Stop", for: UIControlState())
+            sender.setTitle("Stop".localized(lang: participant.string(forKey: "language")!), for: UIControlState())
             preparePlayer()
             soundPlayer?.play()
         } else {
             if (soundPlayer?.isPlaying)! {
                 soundPlayer?.stop()
             }
-            sender.setTitle("Play", for: UIControlState())
+            sender.setTitle("Play".localized(lang: participant.string(forKey: "language")!), for: UIControlState())
         }
     }
     
@@ -284,14 +307,19 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBAction func nextTrial(_ sender: AnyObject) {
         position += 1
         
-        if (soundPlayer?.isPlaying)! {
-            soundPlayer?.stop()
+        if soundPlayer != nil {
+            if (soundPlayer?.isPlaying)! {
+                soundPlayer?.stop()
+            }
         }
         
         if position < instructions.count {
             setup()
         } else {
             setSubview(trial1View, next: completeView)
+            
+            completeLabel.text = "Test_complete".localized(lang: participant.string(forKey: "language")!)
+            completeBtn.setTitle("Submit".localized(lang: participant.string(forKey: "language")!), for: .normal)
         }
     }
     
@@ -325,7 +353,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     // MARK: - Delegate
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        NSLog("finished playing")
+        print("finished playing")
         finishPlaying()
     }
 }

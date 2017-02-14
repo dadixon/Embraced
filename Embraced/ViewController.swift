@@ -48,7 +48,6 @@ class ViewController: UIViewController {
     }
     
     func showModal() {
-//        let modalViewController = UserInputViewController()
         var modalViewController = UIViewController()
         
         if #available(iOS 10.0, *) {

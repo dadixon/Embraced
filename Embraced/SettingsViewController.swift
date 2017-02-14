@@ -14,13 +14,17 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var confirmListTable: UITableView!
     @IBOutlet weak var saveBtn: NavigationButton!
     @IBOutlet weak var languageSegment: UISegmentedControl!
+    @IBOutlet weak var selectAllBtn: UIButton!
+    @IBOutlet weak var deselectAllBtn: UIButton!
+    @IBOutlet weak var chooseLanguage: UILabel!
     
     
-    let tests = ["Questionnaire", "MOCA", "RCF1", "ClockDrawing", "RCF2", "TrailMaking", "Pitch", "DigitalSpan", "RCF3", "RCF4", "CPT", "Matrices", "Pegboard", "WordList1", "Stroop", "Cancellation", "WordList2", "NamingTask", "Comprehension", "EyeTest"]
+    let tests = ["Questionnaire", "MoCA/MMSE", "Rey Complex Figure 1", "Clock Drawing Test", "Rey Complex Figure 2", "Trail Making", "Pitch", "Digit Span", "Rey Complex Figure 3", "Rey Complex Figure 4", "Continuous Performance Test", "Matrices", "Motor Tasks", "Word List 1", "Stroop Test", "Cancellation Test", "Word List 2", "Naming Task", "Comprehension Task", "Eye Test"]
     var defaultTests = [String]()
     var confirm = [String]()
     
     let participant = UserDefaults.standard
+    var testerLanguage = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,19 +45,27 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             for test in confirm {
                 defaultTests = defaultTests.filter {$0 != test}
             }
+        } else {
+            defaultTests = tests
         }
         
-        let testerLanguage = participant.string(forKey: "TesterLanguage")
+        var testerLanguage = participant.string(forKey: "TesterLanguage")
         
         if testerLanguage != nil {
-            if testerLanguage == "Engligh" {
+            if testerLanguage == "en" {
                 languageSegment.selectedSegmentIndex = 0
-            } else if testerLanguage == "Español" {
+            } else if testerLanguage == "es" {
                 languageSegment.selectedSegmentIndex = 1
             }
         } else {
           languageSegment.selectedSegmentIndex = 0
+            testerLanguage = "en"
         }
+        
+        self.navigationController?.isNavigationBarHidden = true
+        selectAllBtn.setTitle("Select_All".localized(lang: testerLanguage!), for: .normal)
+        deselectAllBtn.setTitle("Deselect_All".localized(lang: testerLanguage!), for: .normal)
+        chooseLanguage.text = "Choose_Language".localized(lang: testerLanguage!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -141,9 +153,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         var rv = ""
         
         if tableView == self.testListTable {
-            rv = "Test List"
+            rv = "Test_List".localized(lang: participant.string(forKey: "TesterLanguage")!)
         } else if tableView == self.confirmListTable {
-            rv = "Your Test"
+            rv = "Your_Test".localized(lang: participant.string(forKey: "TesterLanguage")!)
         }
         
         return rv
@@ -151,12 +163,29 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: Action
     
-    @IBAction func saveTestList(_ sender: Any) {
+    @IBAction func saveSettings(_ sender: Any) {
         participant.set(confirm, forKey: "Tests")
+        
+        if testerLanguage != "" {
+            participant.setValue(testerLanguage, forKey: "TesterLanguage")
+        } else {
+            participant.setValue("en", forKey: "TesterLanguage")
+        }
+
+        self.tabBarController?.tabBar.items![0].title = "Test".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        self.tabBarController?.tabBar.items![1].title = "Settings".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        
+        selectAllBtn.setTitle("Select_All".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
+        deselectAllBtn.setTitle("Deselect_All".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
+        
+        chooseLanguage.text = "Choose_Language".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        
+        self.testListTable.reloadData()
+        self.confirmListTable.reloadData()
         
         var alertController = UIAlertController()
         
-        alertController = UIAlertController(title: "Saved", message: "Your test settings are saved.", preferredStyle: UIAlertControllerStyle.alert)
+        alertController = UIAlertController(title: "Saved", message: "Your settings have been saved.", preferredStyle: UIAlertControllerStyle.alert)
         
         let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
             alertController.dismiss(animated: true, completion: nil)
@@ -182,9 +211,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func languageChange(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            participant.set("English", forKey: "TesterLanguage")
+            testerLanguage = "en"
         } else if sender.selectedSegmentIndex == 1 {
-            participant.set("Español", forKey: "TesterLanguage")
+            testerLanguage = "es"
         }
     }
 }

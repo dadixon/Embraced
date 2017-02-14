@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -238,8 +238,8 @@ Please click LISTEN button when you are ready.</string>
                                 <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="wtd-PF-VfW"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="bottomLeft" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pba-QZ-kRp" customClass="ListenButton" customModule="Embraced" customModuleProvider="target">
-                            <rect key="frame" x="8" y="46" width="135" height="144"/>
+                        <button opaque="NO" contentMode="bottomLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pba-QZ-kRp" customClass="ListenButton" customModule="Embraced" customModuleProvider="target">
+                            <rect key="frame" x="8" y="89.5" width="133" height="68"/>
                             <inset key="titleEdgeInsets" minX="-95" minY="0.0" maxX="0.0" maxY="-135"/>
                             <inset key="imageEdgeInsets" minX="-6" minY="-24" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="Listen" image="speaker.png">
@@ -252,7 +252,6 @@ Please click LISTEN button when you are ready.</string>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="AOr-uP-wO7" firstAttribute="centerY" secondItem="tPE-Zq-5xF" secondAttribute="centerY" id="1Ge-Z1-8A9"/>
                         <constraint firstItem="Pba-QZ-kRp" firstAttribute="centerY" secondItem="tPE-Zq-5xF" secondAttribute="centerY" id="CSY-4y-BxJ"/>
                         <constraint firstItem="Pba-QZ-kRp" firstAttribute="leading" secondItem="tPE-Zq-5xF" secondAttribute="leading" constant="8" id="O2E-os-mQT"/>
                         <constraint firstAttribute="trailing" secondItem="AOr-uP-wO7" secondAttribute="trailing" constant="8" id="YW1-Is-Iif"/>

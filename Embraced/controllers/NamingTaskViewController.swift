@@ -27,6 +27,21 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBOutlet var taskView: UIView!
     @IBOutlet var completeView: UIView!
 
+    @IBOutlet weak var practiceLabel: UILabel!
+    @IBOutlet weak var practiceInstruction1: UILabel!
+    @IBOutlet weak var pracitceInstruction2: UILabel!
+    @IBOutlet weak var startBtn: NavigationButton!
+    
+    @IBOutlet weak var exampleLabel: UILabel!
+    @IBOutlet weak var exampleNextBtn: NavigationButton!
+    
+    @IBOutlet weak var taskInstruction: UILabel!
+    @IBOutlet weak var taskStartBtn: NavigationButton!
+    @IBOutlet weak var taskNextBtn: NavigationButton!
+    
+    @IBOutlet weak var completeLabel: UILabel!
+    @IBOutlet weak var completeSubmitBtn: UIButton!
+    
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     
@@ -34,7 +49,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     var fileName = "audioFile.m4a"
     
     var practice = Array<String>()
-    var task = Array<String>()
+    var tasks = Array<String>()
     var count = 0
     var timeCount = 5
     
@@ -63,8 +78,63 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         
         super.viewDidLoad()
 
-        practice = DataManager.sharedInstance.namingTaskPractice
-        task = DataManager.sharedInstance.namingTaskTask
+        // Fetch images
+        var stimuliURIs = [String: Any]()
+        
+        let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/stimuli/namingtask"
+        
+        guard let url = URL(string: todoEndpoint) else {
+            print("Error: cannot create URL")
+            return
+        }
+        
+        let urlRequest = URLRequest(url: url)
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            guard error == nil else {
+                print("error calling GET on stumiliNames")
+                print(error!)
+                return
+            }
+            // make sure we got data
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                return
+            }
+            
+            if (statusCode == 200) {
+                print("Everyone is fine, file downloaded successfully.")
+                
+                do {
+                    guard let todo = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
+                        print("error trying to convert data to JSON")
+                        return
+                    }
+                    
+                    stimuliURIs = todo
+                    print(stimuliURIs)
+                    print(stimuliURIs["practice"]!)
+                    self.practice = stimuliURIs["practice"] as! Array<String>
+                    self.tasks = stimuliURIs["task"] as! Array<String>
+                    
+                    print(self.practice)
+                } catch {
+                    print("Error with Json: \(error)")
+                    return
+                }
+            }
+        })
+        
+        task.resume()
+        
+//        practice = DataManager.sharedInstance.namingTaskPractice
+//        task = DataManager.sharedInstance.namingTaskTask
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(NamingTaskViewController.next(_:)))
         
@@ -87,6 +157,11 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         
         recordingSession = AVAudioSession.sharedInstance()
         
+        practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!)
+        practiceInstruction1.text = "naming_practice_instruction1".localized(lang: participant.string(forKey: "language")!)
+        pracitceInstruction2.text = "naming_practice_instruction2".localized(lang: participant.string(forKey: "language")!)
+        startBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        
         loadingView.stopAnimating()
     }
 
@@ -96,7 +171,9 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     func loadImageFromUrl(_ filename: String, view: UIImageView) {
-        view.image = UIImage(named: filename)
+        let strurl = URL(string: filename)
+        let dtinternet = NSData(contentsOf: strurl!)
+        view.image = UIImage(data: dtinternet as! Data)
     }
     
     func startRecording(_ button: UIButton, fileName: String) {
@@ -199,15 +276,13 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         recordBtn.isEnabled = true
-        playBtn.setTitle("Play", for: UIControlState())
+        playBtn.setTitle("Play".localized(lang: participant.string(forKey: "language")!), for: UIControlState())
         playBtn.isEnabled = false
     }
     
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-//        let vc:ComprehensionViewController = ComprehensionViewController()
-//        nextViewController(viewController: vc)
         AppDelegate.position += 1
         nextViewController2(position: AppDelegate.position)
     }
@@ -249,6 +324,9 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBAction func initialToTrial(_ sender: AnyObject) {
         setSubview(initialView, next: trialView)
         loadImageFromUrl(practice[count], view: imageView)
+        
+        exampleLabel.text = "Example".localized(lang: participant.string(forKey: "language")!)
+        exampleNextBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
     }
     
     @IBAction func nextExample(_ sender: AnyObject) {
@@ -257,27 +335,33 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
             loadImageFromUrl(practice[count], view: imageView)
         } else {
             setSubview(trialView, next: preTaskView)
+            
+            taskInstruction.text = "naming_task_instruction".localized(lang: participant.string(forKey: "language")!)
+            taskStartBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
         }
     }
     
     @IBAction func toTask(_ sender: AnyObject) {
         isTask = true
         setSubview(preTaskView, next: taskView)
+        taskNextBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
         count = 0
-        loadImageFromUrl(task[count], view: taskImageView)
+        loadImageFromUrl(tasks[count], view: taskImageView)
         startTimer()
     }
     
     @IBAction func nextTask(_ sender: AnyObject) {
         count += 1
         
-        if count < task.count {
-            loadImageFromUrl(task[count], view: taskImageView)
+        if count < tasks.count {
+            loadImageFromUrl(tasks[count], view: taskImageView)
             resetTimer()
             startTimer()
         } else {
             resetTimer()
             setSubview(taskView, next: completeView)
+            completeLabel.text = "Test_complete".localized(lang: participant.string(forKey: "language")!)
+            completeSubmitBtn.setTitle("Submit".localized(lang: participant.string(forKey: "language")!), for: .normal)
         }
     }
     
@@ -286,7 +370,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         var jsonTask = [AnyObject]()
         var jsonTaskObject = [String: AnyObject]()
         
-        for i in 0...task.count-1 {
+        for i in 0...tasks.count-1 {
             let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("namingTask\(i).m4a"))
             let dataStr = soundData?.base64EncodedString(options: [])
             

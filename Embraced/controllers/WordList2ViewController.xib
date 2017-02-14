@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,6 +17,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WordList2ViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
                 <outlet property="answerSegment" destination="PD5-Kf-Kvj" id="sHw-vg-hlu"/>
+                <outlet property="completeBtn" destination="6A2-iy-SE2" id="Xpf-Vw-fS6"/>
+                <outlet property="completeLabel" destination="PfZ-GD-Cq1" id="0Je-AH-JFF"/>
                 <outlet property="completeView" destination="jxZ-he-2Kh" id="QyO-DS-hTr"/>
                 <outlet property="containerView" destination="0xU-Tj-aOe" id="U92-gV-d68"/>
                 <outlet property="countLabel" destination="YMS-Fw-1n9" id="3GU-wU-xYw"/>
@@ -28,9 +30,12 @@
                 <outlet property="practiceView" destination="2Rz-dq-ngT" id="16r-cu-set"/>
                 <outlet property="progressLabel" destination="czM-D7-HwJ" id="LHg-f7-Ks2"/>
                 <outlet property="progressView" destination="J4v-vP-z3Q" id="swF-zW-k43"/>
+                <outlet property="recognitionLabel" destination="F7Y-zP-p1n" id="3ID-Lj-1Mv"/>
                 <outlet property="recognitionView" destination="jIr-wz-Bpc" id="gYh-46-ZTM"/>
                 <outlet property="recordBtn" destination="hti-Xg-EXF" id="1xt-aH-37h"/>
                 <outlet property="view" destination="rGE-Pq-kfX" id="dWF-VO-9Q4"/>
+                <outlet property="wordNext2Btn" destination="POF-6a-FEP" id="WLc-Hf-slw"/>
+                <outlet property="wordNextBtn" destination="CPp-r2-XUf" id="Fap-Cv-FDT"/>
             </connections>
         </placeholder>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="rGE-Pq-kfX">

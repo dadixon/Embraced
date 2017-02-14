@@ -58,7 +58,6 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         mainView.layer.shadowOpacity = 0.7
         mainView.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
         mainView.layer.shadowRadius = 10
-//        mainView.layer.shadowPath = UIBezierPath(rect: mainView.bounds).CGPath
         mainView.layer.shouldRasterize = true
         
         self.automaticallyAdjustsScrollViewInsets = false
@@ -72,6 +71,11 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         let rightConstraint = mainView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8.0)
         let bottomConstraint = mainView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 8.0)
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
+        
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.isTranslucent = true
+//        self.navigationController?.view.backgroundColor = UIColor.clear
 
     }
 

@@ -10,14 +10,14 @@ import UIKit
 
 class AdminViewController: UITabBarController, UITabBarControllerDelegate {
     
-    
+    let participant = UserDefaults.standard
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let item1 = UserViewController()
         let item2 = SettingsViewController()
-        let icon1 = UITabBarItem(title: "Test", image: UIImage(named: "iconTab0.png"), selectedImage: UIImage(named: "iconTab0.png"))
-        let icon2 = UITabBarItem(title: "Setting", image: UIImage(named: "iconTab1.png"), selectedImage: UIImage(named: "iconTab1.png"))
+        let icon1 = UITabBarItem(title: "Test".localized(lang: participant.string(forKey: "TesterLanguage")!), image: UIImage(named: "iconTab0.png"), selectedImage: UIImage(named: "iconTab0.png"))
+        let icon2 = UITabBarItem(title: "Settings".localized(lang: participant.string(forKey: "TesterLanguage")!), image: UIImage(named: "iconTab1.png"), selectedImage: UIImage(named: "iconTab1.png"))
         item1.tabBarItem = icon1
         item2.tabBarItem = icon2
         let controllers = [item1, item2]  //array of the root view controllers displayed by the tab bar interface
@@ -28,6 +28,7 @@ class AdminViewController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         delegate = self
 
+        self.navigationController?.isNavigationBarHidden = true
         // Do any additional setup after loading the view.
     }
 

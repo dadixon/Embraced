@@ -22,8 +22,8 @@ class StartViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
         self.navigationController?.isNavigationBarHidden = true
         
-        let welcomeLabelText = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "language")!)
-        let welcomeTextText = "WELCOME_TEXT".localized(lang: participant.string(forKey: "language")!)
+        let welcomeLabelText = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        let welcomeTextText = "WELCOME_TEXT".localized(lang: participant.string(forKey: "TesterLanguage")!)
         
         welcomeLabel.text = welcomeLabelText
         welcomeText.text = welcomeTextText
@@ -47,9 +47,6 @@ class StartViewController: UIViewController {
         } else if sender.tag == 1 {
             participant.setValue("es", forKey: "language")
         }
-                
-        let welcomeLabelText = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "language")!)
-        welcomeLabel.text = welcomeLabelText
         
         var navigationArray = self.navigationController?.viewControllers
         
@@ -63,50 +60,48 @@ class StartViewController: UIViewController {
         switch test[0] as! String {
         case "Questionnaire":
             vc = QuestionnaireViewController()
-        case "MOCA":
+        case "MoCA/MMSE":
             vc = MOCAMMSETestViewController()
-        case "RCF1":
+        case "Rey Complex Figure 1":
             vc = ReyComplexFigureViewController()
-        case "ClockDrawing":
+        case "Clock Drawing Test":
             vc = ClockDrawingTestViewController()
-        case "RCF2":
+        case "Rey Complex Figure 2":
             vc = ReyComplexFigure2ViewController()
-        case "TrailMaking":
+        case "Trail Making":
             vc = TrailMakingTestViewController()
         case "Pitch":
             vc = PitchViewController()
-        case "DigitalSpan":
+        case "Digit Span":
             vc = DigitalSpanViewController()
-        case "RCF3":
+        case "Rey Complex Figure 3":
             vc = ReyComplexFigure3ViewController()
-        case "RCF4":
+        case "Rey Complex Figure 4":
             vc = ReyFigureComplex4ViewController()
-        case "CPT":
+        case "Continuous Performance Test":
             vc = CPTViewController()
         case "Matrices":
             vc = MatricesViewController()
-        case "Pegboard":
+        case "Motor Tasks":
             vc = PegboardViewController()
-        case "WordList1":
+        case "Word List 1":
             vc = WordListViewController()
-        case "Stroop":
+        case "Stroop Test":
             vc = StroopViewController()
-        case "Cancellation":
+        case "Cancellation Test":
             vc = CancellationTestViewController()
-        case "WordList2":
+        case "Word List 2":
             vc = WordList2ViewController()
-        case "NamingTask":
+        case "Naming Task":
             vc = NamingTaskViewController()
-        case "Comprehension":
+        case "Comprehension Task":
             vc = ComprehensionViewController()
-        case "EyeTest":
+        case "Eye Test":
             vc = EyeTestViewController()
         default:
             vc = UserInputViewController()
         }
         
-//        let vc = QuestionnaireViewController()
-//        let vc = PitchViewController()
         navigationArray?.append(vc)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
