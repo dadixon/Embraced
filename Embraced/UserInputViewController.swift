@@ -20,6 +20,7 @@ class UserInputViewController: UIViewController {
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var floorTextField: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
+    @IBOutlet weak var participantLabel: UILabel!
     
     
     let participant = UserDefaults.standard
@@ -47,6 +48,7 @@ class UserInputViewController: UIViewController {
         let index = uuid.characters.index(uuid.endIndex, offsetBy: -15)
         participantID.text = uuid.substring(to: index)
         participant.setValue(uuid.substring(to: index), forKey: "pid")
+//        participant.setValue("abc123", forKey: "pid")
         
         DataManager.sharedInstance.fetchStimuli()
     }
@@ -55,6 +57,15 @@ class UserInputViewController: UIViewController {
         super.viewDidLoad()
         
         submitBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+        
+        participantLabel.text = "Participant_ID".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        dayOfTheWeekTextField.placeholder = "Day_of_the_week".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        countryTextField.placeholder = "Country".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        countyTextField.placeholder = "County".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        cityTextField.placeholder = "City".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        locationTextField.placeholder = "Location".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        floorTextField.placeholder = "Floor".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        submitBtn.setTitle("Submit".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,7 +95,7 @@ class UserInputViewController: UIViewController {
 
         
         // Push to API
-//        APIWrapper.post(id: "", test: "", data: jsonObject)      
+        APIWrapper.post(id: "", test: "", data: jsonObject)      
         
         let vc = StartViewController()
         let navController = UINavigationController(rootViewController: vc)

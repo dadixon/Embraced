@@ -22,11 +22,11 @@ class StartViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
         self.navigationController?.isNavigationBarHidden = true
         
-        let welcomeLabelText = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "TesterLanguage")!)
-        let welcomeTextText = "WELCOME_TEXT".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        welcomeText.text = "WELCOME_TEXT".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
         
-        welcomeLabel.text = welcomeLabelText
-        welcomeText.text = welcomeTextText
+        participant.setValue("en", forKey: "language")
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +48,12 @@ class StartViewController: UIViewController {
             participant.setValue("es", forKey: "language")
         }
         
+        welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "language")!)
+        welcomeText.text = "WELCOME_TEXT".localized(lang: participant.string(forKey: "language")!)
+        nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
+    }
+    
+    @IBAction func startTest(_ sender: Any) {
         var navigationArray = self.navigationController?.viewControllers
         
         navigationArray?.remove(at: 0)
@@ -105,9 +111,7 @@ class StartViewController: UIViewController {
         navigationArray?.append(vc)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
-
     }
-    
  
     
     

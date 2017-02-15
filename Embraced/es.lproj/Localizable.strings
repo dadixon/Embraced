@@ -36,7 +36,13 @@
 "Recognition" = "Reconocimiento";
 "Done" = "Hecho";
 "Re-record" = "Volver a grabar";
-
+"Participant_ID" = "ID de participante";
+"Day_of_the_week" = "Día de la semana";
+"Country" = "País";
+"County" = "Condado";
+"City" = "Ciudad";
+"Location" = "Ubicación";
+"Floor" = "Piso";
 
 "WELCOME_TEXT" = "Vamos a hacerle algunas preguntas acerca de usted. Por favor, recuerde que es libre de no contestar aquellas preguntas que le molesten pero le rogamos encarecidamente que trate de completar este cuestionario al máximo posible.\nGracias por su participación.";
 

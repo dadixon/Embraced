@@ -254,7 +254,7 @@ class PitchViewController: FrontViewController {
     }
     
     func setupExample1() {
-        example1.text = "Example".localized(lang: participant.string(forKey: "language")!) + "1"
+        example1.text = "Example".localized(lang: participant.string(forKey: "language")!) + " 1"
         example1Content.text = "pitch_example_1".localized(lang: participant.string(forKey: "language")!)
         example1btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
         example1segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
@@ -265,7 +265,7 @@ class PitchViewController: FrontViewController {
     }
     
     func setupExample2() {
-        example2.text = "Example".localized(lang: participant.string(forKey: "language")!) + "2"
+        example2.text = "Example".localized(lang: participant.string(forKey: "language")!) + " 2"
         example2Content.text = "pitch_example_2".localized(lang: participant.string(forKey: "language")!)
         example2btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
         example2segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
@@ -276,7 +276,7 @@ class PitchViewController: FrontViewController {
     }
     
     func setupExample3() {
-        example3.text = "Example".localized(lang: participant.string(forKey: "language")!) + "3"
+        example3.text = "Example".localized(lang: participant.string(forKey: "language")!) + " 3"
         example3Content.text = "pitch_example_3".localized(lang: participant.string(forKey: "language")!)
         example3btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
         example3segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
@@ -363,7 +363,7 @@ class PitchViewController: FrontViewController {
         
         if trialCount < trials.count {
             // Swtich label back to 1
-            trialLabel.text = "1"
+//            trialLabel.text = "1"
             practiceResponse.text = ""
             practiceSegment.selectedSegmentIndex = -1
             practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!) + " " + String(trialCount+1)
@@ -394,6 +394,9 @@ class PitchViewController: FrontViewController {
         taskSegment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
         taskBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
         
+        taskSegment.isHidden = true
+        taskBtn.isHidden = true
+        
         play(firstSound)
         tasksCount += 1
     }
@@ -404,11 +407,13 @@ class PitchViewController: FrontViewController {
             // Save answer
             
             // Which label back to 1
-            tasksLabel.text = "1"
+//            tasksLabel.text = "1"
             taskResponse.text = ""
             taskSegment.setEnabled(true, forSegmentAt: 0)
             taskSegment.setEnabled(true, forSegmentAt: 1)
             taskSegment.selectedSegmentIndex = -1
+            taskSegment.isHidden = true
+            taskBtn.isHidden = true
             
             // Set sounds to play
             setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
@@ -512,14 +517,14 @@ class PitchViewController: FrontViewController {
                 print("show example 3")
                 example3btn.isHidden = false
                 example3segment.isHidden = false
-            } else if position == 4 {
-                practiceSegment.isHidden = false
-                practiceBtn.isHidden = false
             }
             
-            if position > 4 && position < position + trials.count {
+            if position > examples.count && position <= examples.count + trials.count {
                 practiceSegment.isHidden = false
                 practiceBtn.isHidden = false
+            } else if position > examples.count + trials.count {
+                taskSegment.isHidden = false
+                taskBtn.isHidden = false
             }
             resetTimer()
         }

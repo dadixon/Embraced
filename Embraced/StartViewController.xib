@@ -37,11 +37,6 @@ Thank you for your participation</string>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJC-6K-UjX">
-                    <rect key="frame" x="362" y="974" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMv-48-MPI" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
                     <rect key="frame" x="198" y="470.5" width="117" height="47"/>
                     <constraints>
@@ -64,6 +59,17 @@ Thank you for your participation</string>
                         <action selector="chooseLanguage:" destination="-1" eventType="touchUpInside" id="Nzc-te-N1y"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJC-6K-UjX" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="326" y="957" width="117" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="Pca-xJ-9I6"/>
+                        <constraint firstAttribute="width" constant="117" id="QZU-ia-WGx"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="startTest:" destination="-1" eventType="touchUpInside" id="GiG-T2-rrK"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -71,7 +77,9 @@ Thank you for your participation</string>
                 <constraint firstItem="lTa-aM-oy3" firstAttribute="top" secondItem="q6U-6w-Nsp" secondAttribute="bottom" constant="94" id="2Mn-CO-K1n"/>
                 <constraint firstAttribute="trailing" secondItem="lTa-aM-oy3" secondAttribute="trailing" constant="198" id="369-BA-jtJ"/>
                 <constraint firstAttribute="trailing" secondItem="q6U-6w-Nsp" secondAttribute="trailing" constant="35" id="F3I-KP-PYq"/>
+                <constraint firstItem="fJC-6K-UjX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NTn-Ks-dO4"/>
                 <constraint firstItem="wMv-48-MPI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="198" id="Q0d-iF-cAH"/>
+                <constraint firstAttribute="bottom" secondItem="fJC-6K-UjX" secondAttribute="bottom" constant="20" id="S2l-y7-z6c"/>
                 <constraint firstItem="q6U-6w-Nsp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="35" id="aUe-N0-0Gc"/>
                 <constraint firstAttribute="trailing" secondItem="0K1-2d-0Oo" secondAttribute="trailing" constant="35" id="cV3-Ks-ef4"/>
                 <constraint firstItem="lTa-aM-oy3" firstAttribute="centerY" secondItem="wMv-48-MPI" secondAttribute="centerY" id="kUm-rb-Jun"/>
