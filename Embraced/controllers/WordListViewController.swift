@@ -104,7 +104,55 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         }
         
         // Fetch audios
-        trials = DataManager.sharedInstance.wordListTrials
+//        trials = DataManager.sharedInstance.wordListTrials
+        let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/stimuli/wordlist"
+        
+        guard let url = URL(string: todoEndpoint) else {
+            //            print("Error: cannot create URL")
+            return
+        }
+        
+        let urlRequest = URLRequest(url: url)
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            guard error == nil else {
+                //                print("error calling GET on stumiliNames")
+                //                print(error!)
+                return
+            }
+            // make sure we got data
+            guard let responseData = data else {
+                //                print("Error: did not receive data")
+                return
+            }
+            
+            if (statusCode == 200) {
+                //                print("Everyone is fine, file downloaded successfully.")
+                
+                do {
+                    guard let todo = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
+                        //                        print("error trying to convert data to JSON")
+                        return
+                    }
+                    
+                    //                    stimuliURIs = todo
+                    //                    print(todo["examples"]!)
+                    self.trials = todo["trials"]! as! Array<String>
+                    
+                } catch {
+                    //                    print("Error with Json: \(error)")
+                    return
+                }
+            }
+        })
+        
+        task.resume()
         
         practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!)
         practiceInstruction.text = "wordlist1_practice_instruction".localized(lang: participant.string(forKey: "language")!)

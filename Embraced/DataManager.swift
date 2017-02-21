@@ -36,7 +36,7 @@ class DataManager {
     func fetchStimuli() {
         if Reachability.isConnectedToNetwork() == true {
             /* Preloading data  */
-            let todoEndpoint: String = "http://api2.girlscouts.harryatwal.com/stimuliNames"
+            let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/stimuliNames"
             guard let url = URL(string: todoEndpoint) else {
                 print("Error: cannot create URL")
                 return

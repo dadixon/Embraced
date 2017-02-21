@@ -131,16 +131,17 @@ class PitchViewController: FrontViewController {
         let bottomConstraint = introView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
         
+        introBtn.isEnabled = false
         
         // Fetch audios
         // New way by downloading files instead of using native ones
         
-        var stimuliURIs = [String: Any]()
+//        var stimuliURIs = [String: Any]()
         
         let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/stimuli/pitch"
         
         guard let url = URL(string: todoEndpoint) else {
-            print("Error: cannot create URL")
+//            print("Error: cannot create URL")
             return
         }
         
@@ -154,29 +155,34 @@ class PitchViewController: FrontViewController {
             let statusCode = httpResponse.statusCode
             
             guard error == nil else {
-                print("error calling GET on stumiliNames")
-                print(error!)
+//                print("error calling GET on stumiliNames")
+//                print(error!)
                 return
             }
             // make sure we got data
             guard let responseData = data else {
-                print("Error: did not receive data")
+//                print("Error: did not receive data")
                 return
             }
             
             if (statusCode == 200) {
-                print("Everyone is fine, file downloaded successfully.")
+//                print("Everyone is fine, file downloaded successfully.")
                 
                 do {
                     guard let todo = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
-                        print("error trying to convert data to JSON")
+//                        print("error trying to convert data to JSON")
                         return
                     }
                     
-                    stimuliURIs = todo
-                    print(stimuliURIs)
+//                    stimuliURIs = todo
+//                    print(todo["examples"]!)
+                    self.examples = todo["examples"]! as! Array<Array<String>>
+                    self.trials = todo["trials"]! as! Array<Array<String>>
+                    self.tasks = todo["tasks"]! as! Array<Array<String>>
+                    
+                    self.introBtn.isEnabled = true
                 } catch {
-                    print("Error with Json: \(error)")
+//                    print("Error with Json: \(error)")
                     return
                 }
             }
@@ -188,9 +194,9 @@ class PitchViewController: FrontViewController {
     
     
         
-        examples = DataManager.sharedInstance.pitchExamples
-        trials = DataManager.sharedInstance.pitchTrials
-        tasks = DataManager.sharedInstance.pitchTasks
+//        examples = DataManager.sharedInstance.pitchExamples
+//        trials = DataManager.sharedInstance.pitchTrials
+//        tasks = DataManager.sharedInstance.pitchTasks
         
         introBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
         introLabel.text = "pitch_intro".localized(lang: participant.string(forKey: "language")!)
@@ -246,11 +252,11 @@ class PitchViewController: FrontViewController {
             secondSound = soundArray[iterator][0]
         }
         
-        print(firstSound)
-        print(secondSound)
+//        print(firstSound)
+//        print(secondSound)
         
         soundLabel = label
-//        soundLabel.text = "1"
+        soundLabel.text = ""
     }
     
     func setupExample1() {
@@ -306,7 +312,7 @@ class PitchViewController: FrontViewController {
     }
     
     @IBAction func done(_ sender: AnyObject) {
-        print(userAnswers)
+//        print(userAnswers)
         var jsonObject = [String: AnyObject]()
         
         // Gather data for post
@@ -316,6 +322,7 @@ class PitchViewController: FrontViewController {
         ]
         
         APIWrapper.post(id: participant.string(forKey: "pid")!, test: "pitch", data: jsonObject)
+//        APIWrapper.post(id: "abc123", test: "pitch", data: jsonObject)
         
         next(self)
     }
@@ -362,8 +369,6 @@ class PitchViewController: FrontViewController {
         position += 1
         
         if trialCount < trials.count {
-            // Swtich label back to 1
-//            trialLabel.text = "1"
             practiceResponse.text = ""
             practiceSegment.selectedSegmentIndex = -1
             practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!) + " " + String(trialCount+1)
@@ -390,6 +395,8 @@ class PitchViewController: FrontViewController {
         setSubview(preTaskView, next: taskView)
         setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
         
+        tasksLabel.text = "1"
+        
         taskSegment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
         taskSegment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
         taskBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
@@ -404,10 +411,11 @@ class PitchViewController: FrontViewController {
     
     @IBAction func nextTask(_ sender: AnyObject) {
         if tasksCount < tasks.count {
-            // Save answer
+            // Set sounds to play
+            setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
             
             // Which label back to 1
-//            tasksLabel.text = "1"
+            tasksLabel.text = "1"
             taskResponse.text = ""
             taskSegment.setEnabled(true, forSegmentAt: 0)
             taskSegment.setEnabled(true, forSegmentAt: 1)
@@ -415,8 +423,7 @@ class PitchViewController: FrontViewController {
             taskSegment.isHidden = true
             taskBtn.isHidden = true
             
-            // Set sounds to play
-            setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
+            
             
             play(firstSound)
             
@@ -501,20 +508,20 @@ class PitchViewController: FrontViewController {
     // MARK: - Delegate
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print("finished")
+//        print("finished")
         startTimer()
         
         if self.played {
             if position == 1 {
-                print("show example 1")
+//                print("show example 1")
                 example1btn.isHidden = false
                 example1segment.isHidden = false
             } else if position == 2 {
-                print("show example 2")
+//                print("show example 2")
                 example2btn.isHidden = false
                 example2segment.isHidden = false
             } else if position == 3 {
-                print("show example 3")
+//                print("show example 3")
                 example3btn.isHidden = false
                 example3segment.isHidden = false
             }
