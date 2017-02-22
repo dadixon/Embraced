@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-import Stormpath
+//import Stormpath
 
 class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
 
@@ -288,8 +288,8 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func done(_ sender:AnyObject) {
-//        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "naming_task", data: createPostObject())
-        APIWrapper.post(id: "abc123", test: "naming_task", data: createPostObject())
+        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "naming_task", data: createPostObject())
+//        APIWrapper.post(id: "abc123", test: "naming_task", data: createPostObject())
         next(self)
     }
     
