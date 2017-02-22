@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Stormpath
+//import Stormpath
 import AVFoundation
 
 class FrontViewController: UIViewController, AVAudioPlayerDelegate {
@@ -132,43 +132,43 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
             switch testsArray[position] {
             case "Questionnaire":
                 vc = QuestionnaireViewController()
-            case "MOCA":
+            case "MoCA/MMSE":
                 vc = MOCAMMSETestViewController()
-            case "RCF1":
+            case "Rey Complex Figure 1":
                 vc = ReyComplexFigureViewController()
-            case "ClockDrawing":
+            case "Clock Drawing Test":
                 vc = ClockDrawingTestViewController()
-            case "RCF2":
+            case "Rey Complex Figure 2":
                 vc = ReyComplexFigure2ViewController()
-            case "TrailMaking":
+            case "Trail Making":
                 vc = TrailMakingTestViewController()
             case "Pitch":
                 vc = PitchViewController()
-            case "DigitalSpan":
+            case "Digit Span":
                 vc = DigitalSpanViewController()
-            case "RCF3":
+            case "Rey Complex Figure 3":
                 vc = ReyComplexFigure3ViewController()
-            case "RCF4":
+            case "Rey Complex Figure 4":
                 vc = ReyFigureComplex4ViewController()
-            case "CPT":
+            case "Continuous Performance Test":
                 vc = CPTViewController()
             case "Matrices":
                 vc = MatricesViewController()
-            case "Pegboard":
+            case "Motor Tasks":
                 vc = PegboardViewController()
-            case "WordList1":
+            case "Word List 1":
                 vc = WordListViewController()
-            case "Stroop":
+            case "Stroop Test":
                 vc = StroopViewController()
-            case "Cancellation":
+            case "Cancellation Test":
                 vc = CancellationTestViewController()
-            case "WordList2":
+            case "Word List 2":
                 vc = WordList2ViewController()
-            case "NamingTask":
+            case "Naming Task":
                 vc = NamingTaskViewController()
-            case "Comprehension":
+            case "Comprehension Task":
                 vc = ComprehensionViewController()
-            case "EyeTest":
+            case "Eye Test":
                 vc = EyeTestViewController()
             default:
                 vc = UserInputViewController()

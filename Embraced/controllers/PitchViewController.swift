@@ -93,7 +93,13 @@ class PitchViewController: FrontViewController {
     
     // MARK: - Private
     
+    private func log(logMessage: String, functionName: String = #function) {
+        print("\(functionName): \(logMessage)")
+    }
+    
     private func setSubview(_ current: UIView, next: UIView) {
+//        log(logMessage: "initi")
+        
         current.removeFromSuperview()
         containerView.addSubview(next)
         
@@ -102,9 +108,12 @@ class PitchViewController: FrontViewController {
         let rightConstraint = next.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
         let bottomConstraint = next.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
+        
+//        log(logMessage: "finished")
     }
     
     override func viewDidLoad() {
+//        log(logMessage: "initi")
         step = AppDelegate.position
         
         super.viewDidLoad()
@@ -206,35 +215,46 @@ class PitchViewController: FrontViewController {
         }
             
         loadingView.stopAnimating()
+//        log(logMessage: "finished")
     }
     
     override func didReceiveMemoryWarning() {
+//        log(logMessage: "initi")
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func updateTime() {
+//        log(logMessage: "initi")
         if self.played == false {
             self.soundLabel.text = "2"
             play(secondSound)
+            
+            resetTimer()
         }
         
         self.played = true
+//        log(logMessage: "finished")
     }
     
     private func startTimer() {
+//        log(logMessage: "initi")
         if !timer.isValid {
             let aSelector : Selector = #selector(PitchViewController.updateTime)
             
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
         }
+//        log(logMessage: "finished")/
     }
     
     private func resetTimer() {
+//        log(logMessage: "initi")
         timer.invalidate()
+//        log(logMessage: "finished")
     }
     
     private func setupSounds(_ soundArray: Array<Array<String>>, iterator: Int, label: UILabel) {
+//        log(logMessage: "initi")
         if soundPlayer != nil {
             if (soundPlayer?.isPlaying)! {
                 soundPlayer?.stop()
@@ -257,9 +277,11 @@ class PitchViewController: FrontViewController {
         
         soundLabel = label
         soundLabel.text = ""
+//        log(logMessage: "finished")
     }
     
     func setupExample1() {
+//        log(logMessage: "initi")
         example1.text = "Example".localized(lang: participant.string(forKey: "language")!) + " 1"
         example1Content.text = "pitch_example_1".localized(lang: participant.string(forKey: "language")!)
         example1btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
@@ -268,9 +290,11 @@ class PitchViewController: FrontViewController {
         
         example1btn.isHidden = true
         example1segment.isHidden = true
+//        log(logMessage: "finished")
     }
     
     func setupExample2() {
+//        log(logMessage: "initi")
         example2.text = "Example".localized(lang: participant.string(forKey: "language")!) + " 2"
         example2Content.text = "pitch_example_2".localized(lang: participant.string(forKey: "language")!)
         example2btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
@@ -279,9 +303,11 @@ class PitchViewController: FrontViewController {
         
         example2btn.isHidden = true
         example2segment.isHidden = true
+//        log(logMessage: "finished")
     }
     
     func setupExample3() {
+//        log(logMessage: "initi")
         example3.text = "Example".localized(lang: participant.string(forKey: "language")!) + " 3"
         example3Content.text = "pitch_example_3".localized(lang: participant.string(forKey: "language")!)
         example3btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
@@ -290,9 +316,11 @@ class PitchViewController: FrontViewController {
         
         example3btn.isHidden = true
         example3segment.isHidden = true
+//        log(logMessage: "finished")
     }
     
     func setupTrial1() {
+//        log(logMessage: "initi")
         practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!) + " " + String(trialCount+1)
         practiceInstructionsLabel.text = "pitch_practice_1".localized(lang: participant.string(forKey: "language")!)
         practiceSegment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
@@ -301,17 +329,21 @@ class PitchViewController: FrontViewController {
         
         practiceSegment.isHidden = true
         practiceBtn.isHidden = true
+//        log(logMessage: "finished")
     }
 
     
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
+//        log(logMessage: "initi")
         AppDelegate.position += 1
         nextViewController2(position: AppDelegate.position)
+//        log(logMessage: "finished")
     }
     
     @IBAction func done(_ sender: AnyObject) {
+//        log(logMessage: "initi")
 //        print(userAnswers)
         var jsonObject = [String: AnyObject]()
         
@@ -325,17 +357,21 @@ class PitchViewController: FrontViewController {
 //        APIWrapper.post(id: "abc123", test: "pitch", data: jsonObject)
         
         next(self)
+//        log(logMessage: "finished")
     }
     
     @IBAction func moveToExample(_ sender: AnyObject) {
+//        log(logMessage: "initi")
         position += 1
         
         setSubview(introView, next: example1View)
         setupSounds(examples, iterator: 0, label: example1Label)
         setupExample1()
+//        log(logMessage: "finished")
     }
     
     @IBAction func moveToExample2(_ sender: AnyObject) {
+//        log(logMessage: "initi")
         position += 1
         
         setSubview(example1View, next: example2View)
@@ -343,9 +379,11 @@ class PitchViewController: FrontViewController {
         setupExample2()
         
         exampleCount += 1
+//        log(logMessage: "finished")
     }
     
     @IBAction func moveToExample3(_ sender: AnyObject) {
+//        log(logMessage: "initi")
         position += 1
         
         setSubview(example2View, next: example3View)
@@ -353,18 +391,22 @@ class PitchViewController: FrontViewController {
         setupExample3()
         
         exampleCount += 1
+//        log(logMessage: "finished")
     }
     
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
+//        log(logMessage: "initi")
         position += 1
         
         setSubview(example3View, next: trial1View)
         setupSounds(trials, iterator: trialCount, label: trialLabel)
         setupTrial1()
+//        log(logMessage: "finished")
     }
     
     @IBAction func nextTrial(_ sender: AnyObject) {
+//        log(logMessage: "initi")
         trialCount += 1
         position += 1
         
@@ -389,9 +431,11 @@ class PitchViewController: FrontViewController {
             tasksContent.text = "pitch_tasks".localized(lang: participant.string(forKey: "language")!)
             pretaskBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
         }
+//        log(logMessage: "finished")
     }
     
     @IBAction func moveToTask(_ sender: AnyObject) {
+//        log(logMessage: "initi")
         setSubview(preTaskView, next: taskView)
         setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
         
@@ -406,10 +450,12 @@ class PitchViewController: FrontViewController {
         
         play(firstSound)
         tasksCount += 1
+//        log(logMessage: "finished")
     }
     
     
     @IBAction func nextTask(_ sender: AnyObject) {
+//        log(logMessage: "initi")
         if tasksCount < tasks.count {
             // Set sounds to play
             setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
@@ -438,12 +484,14 @@ class PitchViewController: FrontViewController {
             completeLabel.text = "Test_complete".localized(lang: participant.string(forKey: "language")!)
             submitBtn.setTitle("Submit".localized(lang: participant.string(forKey: "language")!), for: .normal)
         }
+//        log(logMessage: "finished")
     }
     
     
     // MARK: - Actions
     
     @IBAction func replay(_ sender: AnyObject) {
+//        log(logMessage: "initi")
         if soundPlayer != nil {
             if (soundPlayer?.isPlaying)! {
                 soundPlayer?.stop()
@@ -454,9 +502,11 @@ class PitchViewController: FrontViewController {
         played = false
         self.play(firstSound)
         soundLabel.text = "1"
+//        log(logMessage: "finished")
     }
     
     @IBAction func exampleAnswered(_ sender: AnyObject) {
+//        log(logMessage: "initi")
         if ((sender.selectedSegmentIndex == 0 && exampleAnswers[exampleCount] == "S") || (sender.selectedSegmentIndex == 1 && exampleAnswers[exampleCount] == "D")) {
             if exampleCount == 0 {
                 example1Response.text = "Correct".localized(lang: participant.string(forKey: "language")!)
@@ -474,17 +524,21 @@ class PitchViewController: FrontViewController {
                 example3Response.text = "Incorrect_2".localized(lang: participant.string(forKey: "language")!)
             }
         }
+//        log(logMessage: "finished")
     }
     
     @IBAction func practiceAnswered(_ sender: AnyObject) {
+//        log(logMessage: "initi")
         if ((sender.selectedSegmentIndex == 0 && practiceAnswers[trialCount] == "S") || (sender.selectedSegmentIndex == 1 && practiceAnswers[trialCount] == "D")) {
             practiceResponse.text = "Correct".localized(lang: participant.string(forKey: "language")!)
         } else {
             practiceResponse.text = "Incorrect_2".localized(lang: participant.string(forKey: "language")!)
         }
+//        log(logMessage: "finished")
     }
     
     @IBAction func taskAnswered(_ sender: AnyObject) {
+//        log(logMessage: "initi")
         if ((sender.selectedSegmentIndex == 0 && taskAnswers[tasksCount - 1] == "S") || (sender.selectedSegmentIndex == 1 && taskAnswers[tasksCount - 1] == "D")) {
             taskResponse.text = "Correct".localized(lang: participant.string(forKey: "language")!)
             userAnswers.insert("c", at: tasksCount - 1)
@@ -501,6 +555,7 @@ class PitchViewController: FrontViewController {
         default:
             taskSegment.setEnabled(false, forSegmentAt: 0)
         }
+//        log(logMessage: "finished")
     }
     
     
@@ -508,6 +563,7 @@ class PitchViewController: FrontViewController {
     // MARK: - Delegate
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+//        log(logMessage: "initi")
 //        print("finished")
         startTimer()
         
@@ -535,6 +591,7 @@ class PitchViewController: FrontViewController {
             }
             resetTimer()
         }
+//        log(logMessage: "finished")
     }
     
 }

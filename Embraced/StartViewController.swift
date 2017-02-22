@@ -59,11 +59,14 @@ class StartViewController: UIViewController {
         navigationArray?.remove(at: 0)
         
         let vc: UIViewController!
-        let test = participant.array(forKey: "Tests")!
+        var tests = ["Questionnaire", "MoCA/MMSE", "Rey Complex Figure 1", "Clock Drawing Test", "Rey Complex Figure 2", "Trail Making", "Pitch", "Digit Span", "Rey Complex Figure 3", "Rey Complex Figure 4", "Continuous Performance Test", "Matrices", "Motor Tasks", "Word List 1", "Stroop Test", "Cancellation Test", "Word List 2", "Naming Task", "Comprehension Task", "Eye Test"]
+        if let test = participant.array(forKey: "Tests") {
+            tests = test as! [String]
+        }
         
-        print(test)
+        participant.set(tests, forKey: "Tests")
         
-        switch test[0] as! String {
+        switch tests[0] {
         case "Questionnaire":
             vc = QuestionnaireViewController()
         case "MoCA/MMSE":
