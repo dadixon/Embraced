@@ -48,7 +48,7 @@ class UserInputViewController: UIViewController {
         let index = uuid.characters.index(uuid.endIndex, offsetBy: -15)
         participantID.text = uuid.substring(to: index)
         participant.setValue(uuid.substring(to: index), forKey: "pid")
-        participant.setValue("dom", forKey: "pid")
+//        participant.setValue("dom", forKey: "pid")
         
         DataManager.sharedInstance.fetchStimuli()
     }
@@ -78,7 +78,7 @@ class UserInputViewController: UIViewController {
     }
     
     @IBAction func submit(_ sender: AnyObject) {
-        print(participant.string(forKey: "pid")!)
+//        print(participant.string(forKey: "pid")!)
         
         var jsonObject = [String: AnyObject]()
         

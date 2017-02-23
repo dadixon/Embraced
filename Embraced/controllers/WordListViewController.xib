@@ -148,7 +148,7 @@ Please practice recording your voice with the microphone button below</string>
                                 <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="6Sj-ZS-tMg"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GS2-EV-A6d">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GS2-EV-A6d" customClass="PlayButton" customModule="Embraced" customModuleProvider="target">
                             <rect key="frame" x="349" y="60" width="187" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="187" id="Qib-r7-J3V"/>

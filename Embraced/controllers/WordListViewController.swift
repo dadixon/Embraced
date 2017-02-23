@@ -35,7 +35,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     var recordingSession: AVAudioSession!
     
     var soundRecorder: AVAudioRecorder!
-    var fileName : [String] = ["testAudioFile.m4a", "trial1.m4a", "trial2.m4a", "trial3.m4a", "trial4.m4a", "trial5.m4a"]
+    var fileName : [String] = ["testWordlistAudioFile.m4a", "trial1.m4a", "trial2.m4a", "trial3.m4a", "trial4.m4a", "trial5.m4a"]
     
     var startTime = TimeInterval()
     var timer = Timer()
@@ -176,6 +176,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         ]
         
         loadingView.stopAnimating()
+        
+        playBtn.isEnabled = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -227,14 +229,14 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     
     
     func finishRecording(button: UIButton, success: Bool) {
-        soundRecorder.stop()
-        soundRecorder = nil
+        if soundRecorder.isRecording {
+            soundRecorder.stop()
+            soundRecorder = nil
+        }
         
         if success {
-            button.setTitle("Re-record".localized(lang: participant.string(forKey: "language")!), for: .normal)
-        } else {
-            button.setTitle("Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
-            // recording failed :(
+            button.setTitle("Start_Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
+            playBtn.isEnabled = true
         }
     }
     
@@ -329,6 +331,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
             startRecording(sender, fileName: "wordlist\(position).m4a")
         } else {
             finishRecording(button: sender, success: true)
+            trialRecordBtn.isEnabled = false
         }
     }
     

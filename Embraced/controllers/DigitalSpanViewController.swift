@@ -50,7 +50,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     var recordingSession: AVAudioSession!
     
     var soundRecorder: AVAudioRecorder!
-    var fileName = "testAudioFile.m4a"
+    var fileName = "testDigitSpanAudioFile.m4a"
     
     var stimuli = [String: Any]()
     var forward = Array<String>()
@@ -121,26 +121,27 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         forward = DataManager.sharedInstance.digitalSpanForward
         backward = DataManager.sharedInstance.digitalSpanBackward
         
-        let pathResource = Bundle.main.path(forResource: "melodies 320ms orig(16)", ofType: "wav")
-        let finishedStepSound = URL(fileURLWithPath: pathResource!)
-        
-        do {
-            soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound)
-            if(soundPlayer?.prepareToPlay())!{
-                print("preparation success")
-                soundPlayer?.delegate = self
-            }else{
-                print("preparation failure")
-            }
-            
-        }catch{
-            print("Sound file could not be found")
-        }
+//        let pathResource = Bundle.main.path(forResource: "melodies 320ms orig(16)", ofType: "wav")
+//        let finishedStepSound = URL(fileURLWithPath: pathResource!)
+//        
+//        do {
+//            soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound)
+//            if(soundPlayer?.prepareToPlay())!{
+//                print("preparation success")
+//                soundPlayer?.delegate = self
+//            }else{
+//                print("preparation failure")
+//            }
+//            
+//        }catch{
+//            print("Sound file could not be found")
+//        }
         
         loadingView.stopAnimating()
         
         practice1Label.text = "Practice".localized(lang: participant.string(forKey: "language")!)
         practice1Instructions.text = "digital_practice_1".localized(lang: participant.string(forKey: "language")!)
+        playBtn.isEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -162,7 +163,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         do {
             soundRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
             soundRecorder.delegate = self
-//            soundRecorder = soundR
             soundRecorder.record()
             
             button.setTitle("Stop_Recording".localized(lang: participant.string(forKey: "language")!), for: .normal)
@@ -178,7 +178,8 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         }
         
         if success {
-            button.setTitle("Start_Recording".localized(lang: participant.string(forKey: "language")!), for: .normal)
+            button.setTitle("Start_Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
+            playBtn.isEnabled = true
         }
     }
     
@@ -232,6 +233,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             startRecording(sender, fileName: fileName)
         } else {
             finishRecording(sender, success: true)
+            recordPracticeBtn.isEnabled = false
+            recordForwardBtn.isEnabled = false
+            recordPracitceBtn2.isEnabled = false
+            recordBackwardBtn.isEnabled = false
         }
     }
     
