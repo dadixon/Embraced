@@ -652,16 +652,18 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ox-dh-Epf">
-                    <rect key="frame" x="277" y="362" width="214" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ox-dh-Epf">
+                    <rect key="frame" x="292" y="362" width="184" height="31.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-Lt-zs5">
-                    <rect key="frame" x="345" y="497" width="78" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-Lt-zs5">
+                    <rect key="frame" x="345" y="507.5" width="78" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="jM4-Wx-UOd"/>
+                        <constraint firstAttribute="width" constant="78" id="wL1-WG-dxq"/>
+                    </constraints>
                     <state key="normal" title="SUBMIT"/>
                     <connections>
                         <action selector="done:" destination="-1" eventType="touchUpInside" id="YkW-Yx-v5h"/>
@@ -669,6 +671,12 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="5cm-Lt-zs5" firstAttribute="top" secondItem="2ox-dh-Epf" secondAttribute="bottom" constant="114" id="7Lx-CO-czl"/>
+                <constraint firstItem="2ox-dh-Epf" firstAttribute="centerX" secondItem="ZnL-qQ-idM" secondAttribute="centerX" id="qHC-j4-afM"/>
+                <constraint firstItem="5cm-Lt-zs5" firstAttribute="centerX" secondItem="ZnL-qQ-idM" secondAttribute="centerX" id="sJJ-CR-DLC"/>
+                <constraint firstItem="2ox-dh-Epf" firstAttribute="top" secondItem="ZnL-qQ-idM" secondAttribute="top" constant="362" id="vAV-Ex-CQ7"/>
+            </constraints>
             <point key="canvasLocation" x="3395" y="-1287"/>
         </view>
     </objects>

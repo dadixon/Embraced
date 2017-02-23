@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="ipad9_7" orientation="portrait">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -39,23 +39,23 @@
             </connections>
         </placeholder>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="rGE-Pq-kfX">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6Q-va-En2">
-                    <rect key="frame" x="8" y="20" width="752" height="996"/>
+                    <rect key="frame" x="8" y="20" width="1008" height="740"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3c-cW-xvv">
-                            <rect key="frame" x="0.0" y="0.0" width="752" height="47"/>
+                            <rect key="frame" x="0.0" y="0.0" width="1008" height="47"/>
                             <subviews>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="J4v-vP-z3Q">
-                                    <rect key="frame" x="205" y="32" width="342" height="2"/>
+                                    <rect key="frame" x="333" y="32" width="342" height="2"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="342" id="ZKE-N1-XQh"/>
                                     </constraints>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czM-D7-HwJ">
-                                    <rect key="frame" x="362" y="8" width="29" height="21"/>
+                                    <rect key="frame" x="490" y="8" width="29" height="21"/>
                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xU-Tj-aOe">
-                            <rect key="frame" x="0.0" y="47" width="752" height="904"/>
+                            <rect key="frame" x="0.0" y="47" width="1008" height="648"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
@@ -99,11 +99,11 @@
         </view>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="2Rz-dq-ngT">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPp-r2-XUf" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="6A3-Z6-IBY"/>
                     </constraints>
@@ -113,7 +113,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFo-Na-wjO">
-                    <rect key="frame" x="20" y="55" width="728" height="81.5"/>
+                    <rect key="frame" x="20" y="55" width="984" height="61"/>
                     <attributedString key="attributedText">
                         <fragment>
                             <string key="content">Some time ago you listened to a list of words 5 times. Now say out loud all the words you can remember from that list 
@@ -127,7 +127,7 @@ Tap the microphone button to start recording</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hti-Xg-EXF">
-                    <rect key="frame" x="303" y="448" width="162" height="128"/>
+                    <rect key="frame" x="431" y="320" width="162" height="128"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="162" id="9Vn-zS-dWV"/>
                     </constraints>
@@ -152,11 +152,11 @@ Tap the microphone button to start recording</string>
             <point key="canvasLocation" x="421" y="-791"/>
         </view>
         <view contentMode="scaleToFill" id="jIr-wz-Bpc">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POF-6a-FEP" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="ZRF-UC-cIo"/>
                     </constraints>
@@ -172,7 +172,7 @@ Tap the microphone button to start recording</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOY-VY-y9i">
-                    <rect key="frame" x="20" y="55" width="728" height="101.5"/>
+                    <rect key="frame" x="20" y="55" width="984" height="81.5"/>
                     <attributedString key="attributedText">
                         <fragment>
                             <string key="content">Now you will hear a longer list of words, one by one. 
@@ -187,7 +187,7 @@ Tap the LISTEN icon to start</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hA3-LX-vC9">
-                    <rect key="frame" x="112" y="189.5" width="544" height="247"/>
+                    <rect key="frame" x="240" y="169.5" width="544" height="247"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="jvb-V9-QCB">
                             <rect key="frame" x="8" y="60" width="200" height="128"/>
@@ -220,13 +220,13 @@ Tap the LISTEN icon to start</string>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Was this word in the first list?" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0T-3i-wfJ">
-                    <rect key="frame" x="20" y="502" width="728" height="21"/>
+                    <rect key="frame" x="20" y="373.5" width="984" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="PD5-Kf-Kvj">
-                    <rect key="frame" x="272" y="897" width="225" height="29"/>
+                    <rect key="frame" x="399.5" y="641" width="225" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="225" id="vDV-Hs-ISt"/>
                     </constraints>
@@ -261,27 +261,35 @@ Tap the LISTEN icon to start</string>
             <point key="canvasLocation" x="1289" y="-791"/>
         </view>
         <view contentMode="scaleToFill" id="jxZ-he-2Kh" userLabel="Complete View">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6A2-iy-SE2">
-                    <rect key="frame" x="345" y="497" width="78" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6A2-iy-SE2">
+                    <rect key="frame" x="473" y="427.5" width="78" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="78" id="VYh-Xm-LeL"/>
+                        <constraint firstAttribute="height" constant="30" id="sz7-Ui-VOX"/>
+                    </constraints>
                     <state key="normal" title="SUBMIT"/>
                     <connections>
                         <action selector="done:" destination="-1" eventType="touchUpInside" id="7M1-xN-exi"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfZ-GD-Cq1">
-                    <rect key="frame" x="277" y="390" width="214" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfZ-GD-Cq1">
+                    <rect key="frame" x="420" y="318" width="184" height="31.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="2273" y="-791"/>
+            <constraints>
+                <constraint firstItem="6A2-iy-SE2" firstAttribute="centerX" secondItem="jxZ-he-2Kh" secondAttribute="centerX" id="44l-wK-Ig8"/>
+                <constraint firstItem="6A2-iy-SE2" firstAttribute="top" secondItem="PfZ-GD-Cq1" secondAttribute="bottom" constant="78" id="B50-ro-JoX"/>
+                <constraint firstItem="PfZ-GD-Cq1" firstAttribute="top" secondItem="jxZ-he-2Kh" secondAttribute="top" constant="318" id="i1j-3n-nwl"/>
+                <constraint firstItem="PfZ-GD-Cq1" firstAttribute="centerX" secondItem="jxZ-he-2Kh" secondAttribute="centerX" id="pvZ-eU-fBj"/>
+            </constraints>
+            <point key="canvasLocation" x="2487" y="-791"/>
         </view>
     </objects>
     <resources>

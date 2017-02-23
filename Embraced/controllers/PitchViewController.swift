@@ -98,7 +98,6 @@ class PitchViewController: FrontViewController {
     }
     
     private func setSubview(_ current: UIView, next: UIView) {
-//        log(logMessage: "initi")
         
         current.removeFromSuperview()
         containerView.addSubview(next)
@@ -108,12 +107,9 @@ class PitchViewController: FrontViewController {
         let rightConstraint = next.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
         let bottomConstraint = next.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
-        
-//        log(logMessage: "finished")
     }
     
     override func viewDidLoad() {
-//        log(logMessage: "initi")
         step = AppDelegate.position
         
         super.viewDidLoad()

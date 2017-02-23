@@ -150,10 +150,10 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
                 vc = ReyComplexFigure3ViewController()
             case "Rey Complex Figure 4":
                 vc = ReyFigureComplex4ViewController()
-            case "Continuous Performance Test":
-                vc = CPTViewController()
             case "Matrices":
                 vc = MatricesViewController()
+            case "Continuous Performance Test":
+                vc = CPTViewController()
             case "Motor Tasks":
                 vc = PegboardViewController()
             case "Word List 1":

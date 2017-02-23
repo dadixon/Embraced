@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="ipad9_7" orientation="portrait">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -81,23 +81,23 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Rr-JW-3tU">
-                    <rect key="frame" x="8" y="20" width="752" height="996"/>
+                    <rect key="frame" x="8" y="20" width="1008" height="740"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Acm-Bs-6gP">
-                            <rect key="frame" x="0.0" y="0.0" width="752" height="47"/>
+                            <rect key="frame" x="0.0" y="0.0" width="1008" height="47"/>
                             <subviews>
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BKW-zQ-Z7p">
-                                    <rect key="frame" x="205" y="32" width="342" height="2"/>
+                                    <rect key="frame" x="333" y="32" width="342" height="2"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="342" id="haW-2t-c7y"/>
                                     </constraints>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZr-Wq-fH0">
-                                    <rect key="frame" x="362" y="8" width="29" height="21"/>
+                                    <rect key="frame" x="490" y="8" width="29" height="21"/>
                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -114,7 +114,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPI-mb-XRS">
-                            <rect key="frame" x="0.0" y="47" width="752" height="904"/>
+                            <rect key="frame" x="0.0" y="47" width="1008" height="648"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </subviews>
@@ -140,11 +140,11 @@
             <point key="canvasLocation" x="-507" y="-791"/>
         </view>
         <view contentMode="scaleToFill" id="Moa-ZS-BgY">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SxJ-HE-Nus" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="QwP-0s-mtY"/>
                     </constraints>
@@ -160,7 +160,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91N-7D-5VX">
-                    <rect key="frame" x="112" y="389" width="544" height="247"/>
+                    <rect key="frame" x="240" y="260.5" width="544" height="247"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6QZ-wG-oUW">
                             <rect key="frame" x="8" y="59" width="162" height="128"/>
@@ -200,7 +200,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please, practice how to record your voice using the START and DONE buttons below." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDi-Ht-a0M">
-                    <rect key="frame" x="20" y="55" width="728" height="22"/>
+                    <rect key="frame" x="20" y="55" width="984" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -221,11 +221,11 @@
             <point key="canvasLocation" x="421" y="-791"/>
         </view>
         <view contentMode="scaleToFill" id="W9B-BG-USC">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MC7-Pi-QYe" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="wAC-f5-9Qm"/>
                     </constraints>
@@ -235,7 +235,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4p-Hf-hHl">
-                    <rect key="frame" x="20" y="61" width="740" height="64.5"/>
+                    <rect key="frame" x="20" y="61" width="996" height="65"/>
                     <string key="text">This task has 4 different parts. We will provide instructions for each of them. This is a timed task so remember to do it as fast as possible, but without committing errors.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
@@ -253,11 +253,11 @@
             <point key="canvasLocation" x="428" y="296"/>
         </view>
         <view contentMode="scaleToFill" id="JQe-9a-F5a">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLu-R7-gQI" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="347" y="484.5" width="74" height="30"/>
+                    <rect key="frame" x="475" y="485" width="74" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="74" id="Icc-aB-Wr2"/>
                     </constraints>
@@ -267,21 +267,21 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnA-te-eAp">
-                    <rect key="frame" x="20" y="141.5" width="728" height="335"/>
+                    <rect key="frame" x="20" y="142" width="984" height="335"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="335" id="OnC-kN-kUl"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfW-tn-mK9">
-                    <rect key="frame" x="20" y="49" width="728" height="64.5"/>
+                    <rect key="frame" x="20" y="49" width="984" height="65"/>
                     <string key="text">In this task you have to read the words presented on the screen. Try to do it as fast as you can, from left to right in each row. Click “Preview” for a demonstration</string>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reJ-7z-FZJ" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="dBT-2c-Pix"/>
                     </constraints>
@@ -306,11 +306,11 @@
             <point key="canvasLocation" x="1321" y="-791"/>
         </view>
         <view contentMode="scaleToFill" id="zoj-0o-4k0">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBx-z2-yES" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="CkX-kA-MNg"/>
                     </constraints>
@@ -320,13 +320,13 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1iI-n9-Z0T">
-                    <rect key="frame" x="20" y="50" width="728" height="517"/>
+                    <rect key="frame" x="20" y="50" width="984" height="517"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="517" id="xen-MM-naa"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gT7-hv-oYu">
-                    <rect key="frame" x="349" y="836" width="71" height="97"/>
+                    <rect key="frame" x="476.5" y="580" width="71" height="97"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="71" id="FDq-Ar-3BZ"/>
                         <constraint firstAttribute="height" constant="97" id="XRf-uj-D16"/>
@@ -353,18 +353,18 @@
             <point key="canvasLocation" x="3108" y="-791"/>
         </view>
         <view contentMode="scaleToFill" id="08H-Cx-j3j">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iO9-uI-1dB">
-                    <rect key="frame" x="20" y="20" width="728" height="64.5"/>
+                    <rect key="frame" x="20" y="20" width="984" height="65"/>
                     <string key="text">In this task you have to read the words presented on the screen. Try to do it as fast as you can, from left to right in each row. Click “Preview” for a demonstration</string>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTO-IW-tia" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="AVB-DP-F2X"/>
                     </constraints>
@@ -374,14 +374,14 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JeE-gz-VAd">
-                    <rect key="frame" x="20" y="92.5" width="728" height="335"/>
+                    <rect key="frame" x="20" y="93" width="984" height="335"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="335" id="cL7-LP-hd0"/>
                     </constraints>
                 </view>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1Z-kv-yXw" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="347" y="435.5" width="74" height="30"/>
+                    <rect key="frame" x="475" y="436" width="74" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="74" id="E3d-SW-zFu"/>
                     </constraints>
@@ -406,11 +406,11 @@
             <point key="canvasLocation" x="1321" y="329"/>
         </view>
         <view contentMode="scaleToFill" id="jGt-oF-Zhv">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Mf-Jw-QH0" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="nIu-oL-dpI"/>
                     </constraints>
@@ -420,13 +420,13 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ph-zD-iIz">
-                    <rect key="frame" x="20" y="50" width="728" height="517"/>
+                    <rect key="frame" x="20" y="50" width="984" height="517"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="517" id="mxR-1A-e51"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MOF-XH-IzJ">
-                    <rect key="frame" x="349" y="836" width="71" height="97"/>
+                    <rect key="frame" x="476.5" y="580" width="71" height="97"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="71" id="d4b-Rt-EoI"/>
                         <constraint firstAttribute="height" constant="97" id="gt4-hh-63x"/>
@@ -453,18 +453,18 @@
             <point key="canvasLocation" x="3108" y="329"/>
         </view>
         <view contentMode="scaleToFill" id="lJh-YG-00j">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOX-JV-ZOd">
-                    <rect key="frame" x="20" y="121.5" width="728" height="335"/>
+                    <rect key="frame" x="20" y="122" width="984" height="335"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="335" id="vST-O7-rYc"/>
                     </constraints>
                 </view>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Utp-e3-4jH" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="347" y="464.5" width="74" height="30"/>
+                    <rect key="frame" x="475" y="465" width="74" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="74" id="pQf-2c-e4d"/>
                     </constraints>
@@ -474,7 +474,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFc-2r-7GS" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="TTx-YH-tAf"/>
                     </constraints>
@@ -484,7 +484,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6F-0p-bZA">
-                    <rect key="frame" x="20" y="49" width="728" height="64.5"/>
+                    <rect key="frame" x="20" y="49" width="984" height="65"/>
                     <string key="text">In this task you have to name the colors of the circles presented on the screen. Try to do it as fast as you can, from left to right in each row. Click “Preview” for a demonstration</string>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
@@ -506,11 +506,11 @@
             <point key="canvasLocation" x="1321" y="1453"/>
         </view>
         <view contentMode="scaleToFill" id="jn6-5g-sLw">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njM-Ec-ahj" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="cIu-1X-sRL"/>
                     </constraints>
@@ -520,13 +520,13 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6o7-C8-Lzb">
-                    <rect key="frame" x="20" y="50" width="728" height="517"/>
+                    <rect key="frame" x="20" y="50" width="984" height="517"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="517" id="1J0-XT-45x"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WBK-Zb-DJ9">
-                    <rect key="frame" x="349" y="836" width="71" height="97"/>
+                    <rect key="frame" x="476.5" y="580" width="71" height="97"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="97" id="DM5-aV-Q6n"/>
                         <constraint firstAttribute="width" constant="71" id="gv6-Xq-O08"/>
@@ -553,11 +553,11 @@
             <point key="canvasLocation" x="3108" y="1453"/>
         </view>
         <view contentMode="scaleToFill" id="HyN-rS-BNA">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sW-E1-6jp" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="iCG-IV-ku6"/>
                     </constraints>
@@ -567,20 +567,20 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In this task you have to name the colors in which the words are written, DO NOT READ the word." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUj-jI-HF5">
-                    <rect key="frame" x="20" y="49" width="728" height="43"/>
+                    <rect key="frame" x="20" y="49" width="984" height="21.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fmy-7s-v0P">
-                    <rect key="frame" x="20" y="195.5" width="728" height="335"/>
+                    <rect key="frame" x="20" y="78.5" width="984" height="335"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="335" id="TvR-He-tQc"/>
                     </constraints>
                 </view>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Z4-TW-jln" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="347" y="538.5" width="74" height="30"/>
+                    <rect key="frame" x="475" y="421.5" width="74" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="74" id="Kv8-6G-vnO"/>
                     </constraints>
@@ -594,23 +594,22 @@
                 <constraint firstAttribute="bottom" secondItem="1sW-E1-6jp" secondAttribute="bottom" constant="20" id="6kE-i1-wpz"/>
                 <constraint firstItem="1sW-E1-6jp" firstAttribute="centerX" secondItem="HyN-rS-BNA" secondAttribute="centerX" id="ANY-X2-MQM"/>
                 <constraint firstAttribute="trailing" secondItem="tUj-jI-HF5" secondAttribute="trailing" constant="20" id="GJq-de-uu4"/>
-                <constraint firstItem="Fmy-7s-v0P" firstAttribute="top" secondItem="tUj-jI-HF5" secondAttribute="bottom" constant="103.5" id="LIw-La-Ujq"/>
+                <constraint firstItem="Fmy-7s-v0P" firstAttribute="top" secondItem="tUj-jI-HF5" secondAttribute="bottom" constant="8" id="LIw-La-Ujq"/>
                 <constraint firstAttribute="trailing" secondItem="Fmy-7s-v0P" secondAttribute="trailing" constant="20" id="MPH-HZ-hQe"/>
                 <constraint firstItem="Fmy-7s-v0P" firstAttribute="leading" secondItem="HyN-rS-BNA" secondAttribute="leading" constant="20" id="U4o-tz-5Y8"/>
                 <constraint firstItem="5Z4-TW-jln" firstAttribute="top" secondItem="Fmy-7s-v0P" secondAttribute="bottom" constant="8" id="fjy-mC-wbI"/>
                 <constraint firstItem="tUj-jI-HF5" firstAttribute="top" secondItem="HyN-rS-BNA" secondAttribute="top" constant="49" id="mNQ-NF-498"/>
                 <constraint firstItem="tUj-jI-HF5" firstAttribute="leading" secondItem="HyN-rS-BNA" secondAttribute="leading" constant="20" id="mdH-CI-Qlm"/>
-                <constraint firstItem="5Z4-TW-jln" firstAttribute="top" secondItem="Fmy-7s-v0P" secondAttribute="bottom" constant="8" id="thD-Nr-Ini"/>
                 <constraint firstItem="5Z4-TW-jln" firstAttribute="centerX" secondItem="HyN-rS-BNA" secondAttribute="centerX" id="vMS-vO-9oB"/>
             </constraints>
             <point key="canvasLocation" x="1321" y="2584"/>
         </view>
         <view contentMode="scaleToFill" id="ulX-KO-Bge">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQG-BI-tNC" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="Pig-xA-DDv"/>
                     </constraints>
@@ -620,13 +619,13 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="udu-5w-Ah2">
-                    <rect key="frame" x="20" y="50" width="728" height="517"/>
+                    <rect key="frame" x="20" y="50" width="984" height="517"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="517" id="HXc-oD-lu5"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pHn-9P-ryx">
-                    <rect key="frame" x="349" y="836" width="71" height="97"/>
+                    <rect key="frame" x="476.5" y="580" width="71" height="97"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="97" id="0LK-kf-hdV"/>
                         <constraint firstAttribute="width" constant="71" id="lhl-vI-6s0"/>
@@ -653,17 +652,17 @@
             <point key="canvasLocation" x="3108" y="2584"/>
         </view>
         <view contentMode="scaleToFill" id="EIl-Jl-eP0">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready press START and read the words out loud as fast as you can. When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5R-cy-fRH">
-                    <rect key="frame" x="20" y="49" width="728" height="43"/>
+                    <rect key="frame" x="20" y="49" width="984" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80k-aw-Cjl" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="YjC-Ug-68F"/>
                     </constraints>
@@ -684,17 +683,17 @@
             <point key="canvasLocation" x="2233" y="-791"/>
         </view>
         <view contentMode="scaleToFill" id="RcK-ig-Hyu">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready press START and read the words out loud as fast as you can. When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzf-gH-PP7">
-                    <rect key="frame" x="20" y="49" width="728" height="43"/>
+                    <rect key="frame" x="20" y="49" width="984" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zl-Oe-jPW" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="BcL-im-EFH"/>
                     </constraints>
@@ -715,17 +714,17 @@
             <point key="canvasLocation" x="2233" y="2584"/>
         </view>
         <view contentMode="scaleToFill" id="Z7N-DT-xhO">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready press START and read the words out loud as fast as you can. When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LK1-hE-jSK">
-                    <rect key="frame" x="20" y="49" width="728" height="43"/>
+                    <rect key="frame" x="20" y="49" width="984" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8V-rn-TJN" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="Kwc-Dk-2kv"/>
                     </constraints>
@@ -746,17 +745,17 @@
             <point key="canvasLocation" x="2233" y="1453"/>
         </view>
         <view contentMode="scaleToFill" id="HrM-Ef-Ku0">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready press START and read the words out loud as fast as you can. When you finish with the last word click DONE." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2x-w6-WEX">
-                    <rect key="frame" x="20" y="49" width="728" height="43"/>
+                    <rect key="frame" x="20" y="49" width="984" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P29-bO-N59" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="321" y="974" width="126" height="30"/>
+                    <rect key="frame" x="449" y="718" width="126" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="FQt-CN-mek"/>
                     </constraints>
@@ -777,27 +776,35 @@
             <point key="canvasLocation" x="2233" y="329"/>
         </view>
         <view contentMode="scaleToFill" id="LRS-gg-uL2" userLabel="Complete View">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFv-Dt-Y9l">
-                    <rect key="frame" x="345" y="497" width="78" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFv-Dt-Y9l">
+                    <rect key="frame" x="473" y="427.5" width="78" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="78" id="7ZC-Sh-fnQ"/>
+                        <constraint firstAttribute="height" constant="30" id="mRQ-nA-3os"/>
+                    </constraints>
                     <state key="normal" title="SUBMIT"/>
                     <connections>
                         <action selector="done:" destination="-1" eventType="touchUpInside" id="aWr-F1-Npu"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-31-afy">
-                    <rect key="frame" x="277" y="390" width="214" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-31-afy">
+                    <rect key="frame" x="420" y="318" width="184" height="31.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="4059" y="-791"/>
+            <constraints>
+                <constraint firstItem="kFv-Dt-Y9l" firstAttribute="centerX" secondItem="LRS-gg-uL2" secondAttribute="centerX" id="0QX-oK-H4o"/>
+                <constraint firstItem="kFv-Dt-Y9l" firstAttribute="top" secondItem="Cmx-31-afy" secondAttribute="bottom" constant="78" id="4zE-8r-dwx"/>
+                <constraint firstItem="Cmx-31-afy" firstAttribute="top" secondItem="LRS-gg-uL2" secondAttribute="top" constant="318" id="M8A-BN-Yg9"/>
+                <constraint firstItem="Cmx-31-afy" firstAttribute="centerX" secondItem="LRS-gg-uL2" secondAttribute="centerX" id="ycg-po-1No"/>
+            </constraints>
+            <point key="canvasLocation" x="4229" y="-791"/>
         </view>
     </objects>
     <resources>
