@@ -376,7 +376,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
             let dataStr = soundData?.base64EncodedString(options: [])
             
             jsonTaskObject = [
-                "name": "task\(i+1)" as AnyObject,
+                "name": "namingTask\(i+1)" as AnyObject,
                 "soundByte": dataStr as AnyObject
             ]
             
