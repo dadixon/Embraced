@@ -141,8 +141,6 @@ class PitchViewController: FrontViewController {
         // Fetch audios
         // New way by downloading files instead of using native ones
         
-//        var stimuliURIs = [String: Any]()
-        
         let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/stimuli/pitch"
         
         guard let url = URL(string: todoEndpoint) else {

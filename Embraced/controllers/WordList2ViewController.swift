@@ -39,7 +39,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     var count = 3
     var position = 0
     var answers = [String]()
-    var answer = String()
+    var answer = Int()
     
     var myString = ""
     var myString2 = ""
@@ -105,7 +105,65 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         
         
         // Fetch audios
-        tasks = DataManager.sharedInstance.wordListTasks
+//        tasks = DataManager.sharedInstance.wordListTasks
+        let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/stimuli/wordlist2"
+        
+        guard let url = URL(string: todoEndpoint) else {
+            //            print("Error: cannot create URL")
+            return
+        }
+        
+        let urlRequest = URLRequest(url: url)
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            guard error == nil else {
+                //                print("error calling GET on stumiliNames")
+                //                print(error!)
+                return
+            }
+            // make sure we got data
+            guard let responseData = data else {
+                //                print("Error: did not receive data")
+                return
+            }
+            
+            if (statusCode == 200) {
+                //                print("Everyone is fine, file downloaded successfully.")
+                
+                do {
+                    guard let todo = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
+                        //                        print("error trying to convert data to JSON")
+                        return
+                    }
+                    var language = "en"
+                    var trial = ""
+                    
+                    if self.participant.string(forKey: "language") != nil {
+                        language = self.participant.string(forKey: "language")!
+                    }
+                    
+                    if language == "en" {
+                        trial = "trials"
+                    } else if language == "es" {
+                        trial = "trialsSp"
+                    }
+                    
+                    self.tasks = todo[trial]! as! Array<String>
+                    
+                } catch {
+                    //                    print("Error with Json: \(error)")
+                    return
+                }
+            }
+        })
+        
+        task.resume()
         
         myString = "wordlist2_instruction".localized(lang: participant.string(forKey: "language")!)
         myString2 = "wordlist2_instruction2".localized(lang: participant.string(forKey: "language")!)
@@ -118,6 +176,8 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         myMutableString2.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: NSMakeRange(132, 7))
         myMutableString2.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: NSMakeRange(221, 7))
         instructionText2.attributedText = myMutableString2
+        
+        recordBtn.setTitle("Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
         wordNextBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
         
         loadingView.stopAnimating()
@@ -156,12 +216,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
             soundRecorder = nil
         }
         
-        if success {
-            button.setTitle("Re-record".localized(lang: participant.string(forKey: "language")!), for: .normal)
-        } else {
-            button.setTitle("Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
-            // recording failed :(
-        }
+        button.isEnabled = false
     }
     
     func finishPlaying() {
@@ -196,7 +251,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         
         APIWrapper.post(id: participant.string(forKey: "pid")!, test: "wordlist2", data: jsonObject)
         
-        next(self)
+//        next(self)
     }
     
     @IBAction func moveToRecogniton(_ sender: AnyObject) {
@@ -229,11 +284,16 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func answerSegment(_ sender: UISegmentedControl) {
-        answer = sender.titleForSegment(at: sender.selectedSegmentIndex)!
+        answer = sender.selectedSegmentIndex
     }
 
     @IBAction func nextQuestion(_ sender: UISegmentedControl) {
-        answers.insert(answer, at: position)
+        switch answer {
+            case 0: answers.insert("Yes", at: position)
+            case 1: answers.insert("No", at: position)
+            default: answers.insert("", at: position)
+        }
+        
         print(answers)
         position += 1
         
@@ -247,6 +307,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
             answerSegment.isHidden = true
             answerSegment.selectedSegmentIndex = -1
         }
+        answer = -1;
     }
     
     
@@ -254,7 +315,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     // MARK: - Delegate
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print("finished playing")
+//        print("finished playing")
         finishPlaying()
     }
 }
