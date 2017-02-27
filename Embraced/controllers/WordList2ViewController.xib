@@ -21,7 +21,6 @@
                 <outlet property="completeLabel" destination="PfZ-GD-Cq1" id="0Je-AH-JFF"/>
                 <outlet property="completeView" destination="jxZ-he-2Kh" id="QyO-DS-hTr"/>
                 <outlet property="containerView" destination="0xU-Tj-aOe" id="U92-gV-d68"/>
-                <outlet property="countLabel" destination="YMS-Fw-1n9" id="3GU-wU-xYw"/>
                 <outlet property="firstListLabel" destination="Q0T-3i-wfJ" id="qBy-ZJ-kES"/>
                 <outlet property="instructionText" destination="lFo-Na-wjO" id="qFj-Sl-Hxj"/>
                 <outlet property="instructionText2" destination="TOY-VY-y9i" id="cko-nU-oyj"/>
@@ -165,13 +164,13 @@ Tap the microphone button to start recording</string>
                         <action selector="nextQuestion:" destination="-1" eventType="touchUpInside" id="8B6-hP-C9V"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recognition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7Y-zP-p1n">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Recognition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7Y-zP-p1n">
                     <rect key="frame" x="20" y="20" width="127" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOY-VY-y9i">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOY-VY-y9i">
                     <rect key="frame" x="20" y="55" width="984" height="81.5"/>
                     <attributedString key="attributedText">
                         <fragment>
@@ -184,45 +183,6 @@ Tap the LISTEN icon to start</string>
                             </attributes>
                         </fragment>
                     </attributedString>
-                    <nil key="highlightedColor"/>
-                </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hA3-LX-vC9">
-                    <rect key="frame" x="240" y="169.5" width="544" height="247"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="jvb-V9-QCB">
-                            <rect key="frame" x="8" y="60" width="200" height="128"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="200" id="neH-wd-QCH"/>
-                            </constraints>
-                            <state key="normal" title="Listen" image="listen.png">
-                                <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="listen:" destination="-1" eventType="touchUpInside" id="EjZ-1F-824"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMS-Fw-1n9">
-                            <rect key="frame" x="427" y="124" width="0.0" height="0.0"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="119"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="247" id="1yo-fA-Ebj"/>
-                        <constraint firstItem="YMS-Fw-1n9" firstAttribute="centerY" secondItem="hA3-LX-vC9" secondAttribute="centerY" id="F3X-AF-s1X"/>
-                        <constraint firstAttribute="width" constant="544" id="Xkg-hn-wIs"/>
-                        <constraint firstItem="jvb-V9-QCB" firstAttribute="leading" secondItem="hA3-LX-vC9" secondAttribute="leading" constant="8" id="nK1-6B-QTi"/>
-                        <constraint firstItem="jvb-V9-QCB" firstAttribute="centerY" secondItem="hA3-LX-vC9" secondAttribute="centerY" id="o9K-lX-Mij"/>
-                        <constraint firstAttribute="trailing" secondItem="YMS-Fw-1n9" secondAttribute="trailing" constant="117" id="uiV-tM-jv8"/>
-                        <constraint firstItem="jvb-V9-QCB" firstAttribute="centerY" secondItem="hA3-LX-vC9" secondAttribute="centerY" id="zRF-Rn-IoW"/>
-                    </constraints>
-                </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Was this word in the first list?" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0T-3i-wfJ">
-                    <rect key="frame" x="20" y="373.5" width="984" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="PD5-Kf-Kvj">
@@ -239,21 +199,41 @@ Tap the LISTEN icon to start</string>
                         <action selector="answerSegment:" destination="-1" eventType="valueChanged" id="dlp-4C-XXo"/>
                     </connections>
                 </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="jvb-V9-QCB" customClass="ListenButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="412" y="225" width="200" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="neH-wd-QCH"/>
+                    </constraints>
+                    <state key="normal" image="listen.png">
+                        <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="listen:" destination="-1" eventType="touchUpInside" id="EjZ-1F-824"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Was this word in the first list?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0T-3i-wfJ">
+                    <rect key="frame" x="20" y="373.5" width="984" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="POF-6a-FEP" secondAttribute="bottom" constant="20" id="1KD-EH-0Jx"/>
                 <constraint firstItem="Q0T-3i-wfJ" firstAttribute="centerX" secondItem="jIr-wz-Bpc" secondAttribute="centerX" id="8Es-v1-Ugr"/>
-                <constraint firstItem="hA3-LX-vC9" firstAttribute="top" secondItem="TOY-VY-y9i" secondAttribute="bottom" constant="33" id="FEv-HN-bWa"/>
+                <constraint firstItem="Q0T-3i-wfJ" firstAttribute="centerX" secondItem="jIr-wz-Bpc" secondAttribute="centerX" id="DbG-Nm-k33"/>
                 <constraint firstItem="Q0T-3i-wfJ" firstAttribute="centerY" secondItem="jIr-wz-Bpc" secondAttribute="centerY" id="Fxa-3c-PSV"/>
                 <constraint firstAttribute="trailing" secondItem="Q0T-3i-wfJ" secondAttribute="trailing" constant="20" id="Ih6-XF-242"/>
+                <constraint firstItem="jvb-V9-QCB" firstAttribute="top" secondItem="TOY-VY-y9i" secondAttribute="bottom" constant="88.5" id="Pol-5H-SPs"/>
                 <constraint firstAttribute="trailing" secondItem="TOY-VY-y9i" secondAttribute="trailing" constant="20" id="SY8-HG-lQc"/>
                 <constraint firstItem="Q0T-3i-wfJ" firstAttribute="leading" secondItem="jIr-wz-Bpc" secondAttribute="leading" constant="20" id="aqD-Lb-uYj"/>
                 <constraint firstItem="F7Y-zP-p1n" firstAttribute="top" secondItem="jIr-wz-Bpc" secondAttribute="top" constant="20" id="cGB-2E-T3Z"/>
                 <constraint firstItem="POF-6a-FEP" firstAttribute="centerX" secondItem="jIr-wz-Bpc" secondAttribute="centerX" id="esI-mK-nQr"/>
+                <constraint firstItem="Q0T-3i-wfJ" firstAttribute="top" secondItem="jvb-V9-QCB" secondAttribute="bottom" constant="20.5" id="hDF-bd-Nvr"/>
                 <constraint firstItem="POF-6a-FEP" firstAttribute="top" secondItem="PD5-Kf-Kvj" secondAttribute="bottom" constant="49" id="hxc-El-tgy"/>
                 <constraint firstItem="TOY-VY-y9i" firstAttribute="top" secondItem="F7Y-zP-p1n" secondAttribute="bottom" constant="8" id="p5J-tM-h9R"/>
-                <constraint firstItem="hA3-LX-vC9" firstAttribute="centerX" secondItem="jIr-wz-Bpc" secondAttribute="centerX" id="qhn-eu-KST"/>
+                <constraint firstItem="jvb-V9-QCB" firstAttribute="centerX" secondItem="jIr-wz-Bpc" secondAttribute="centerX" id="s9m-Ll-gb0"/>
                 <constraint firstItem="PD5-Kf-Kvj" firstAttribute="centerX" secondItem="jIr-wz-Bpc" secondAttribute="centerX" id="wcP-g0-XoD"/>
                 <constraint firstItem="TOY-VY-y9i" firstAttribute="leading" secondItem="jIr-wz-Bpc" secondAttribute="leading" constant="20" id="xW4-cZ-lCe"/>
                 <constraint firstItem="F7Y-zP-p1n" firstAttribute="leading" secondItem="jIr-wz-Bpc" secondAttribute="leading" constant="20" id="zej-aS-vS6"/>

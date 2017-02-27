@@ -156,12 +156,13 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
             soundRecorder = nil
         }
         
-        if success {
-            button.setTitle("Re-record".localized(lang: participant.string(forKey: "language")!), for: .normal)
-        } else {
-            button.setTitle("Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
-            // recording failed :(
-        }
+        button.isEnabled = false
+//        if success {
+//            button.setTitle("Re-record".localized(lang: participant.string(forKey: "language")!), for: .normal)
+//        } else {
+//            button.setTitle("Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
+//            // recording failed :(
+//        }
     }
     
     func finishPlaying() {
@@ -196,7 +197,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         
         APIWrapper.post(id: participant.string(forKey: "pid")!, test: "wordlist2", data: jsonObject)
         
-        next(self)
+//        next(self)
     }
     
     @IBAction func moveToRecogniton(_ sender: AnyObject) {
@@ -247,6 +248,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
             answerSegment.isHidden = true
             answerSegment.selectedSegmentIndex = -1
         }
+        answer = "";
     }
     
     
@@ -254,7 +256,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     // MARK: - Delegate
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print("finished playing")
+//        print("finished playing")
         finishPlaying()
     }
 }
