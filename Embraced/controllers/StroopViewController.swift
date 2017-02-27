@@ -84,7 +84,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     
     var soundRecorder: AVAudioRecorder!
     var playerController = AVPlayerViewController()
-    var fileName : String = "testAudioFile.m4a"
+    var fileName : String = "testStroopAudioFile.m4a"
     var stimuli = [String: Any]()
     var images = Array<String>()
     var videos = Array<String>()
@@ -218,7 +218,6 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
             soundRecorder.record()
             
             button.setTitle("Stop".localized(lang: participant.string(forKey: "language")!), for: .normal)
-//            startTimer()
         } catch {
             finishRecording(button: button, success: false)
         }
@@ -228,16 +227,13 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         soundRecorder.stop()
         soundRecorder = nil
         
-        if success {
-            button.setTitle("Re-record".localized(lang: participant.string(forKey: "language")!), for: .normal)
-        } else {
-            button.setTitle("Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
-            // recording failed :(
-        }
-        
-//        stopTime()
-//        resetTimer()
-//        startTimer()
+        button.isEnabled = false
+//        if success {
+//            button.setTitle("Re-record".localized(lang: participant.string(forKey: "language")!), for: .normal)
+//        } else {
+//            button.setTitle("Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
+//            // recording failed :(
+//        }
     }
     
     func finishPlaying() {
@@ -259,34 +255,6 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
             log(logMessage: "Something went wrong")
         }
     }
-    
-//    func stopTime() {
-//        
-//        let currentTime = Date.timeIntervalSinceReferenceDate
-//        
-//        var elapsedTime : TimeInterval = currentTime - startTime
-//        
-//        //calculate the seconds in elapsed time
-//        let seconds = UInt8(elapsedTime)
-//        elapsedTime -= TimeInterval(seconds)
-//
-//        let strSeconds = seconds > 9 ? String(seconds): "0" + String(seconds)
-//        
-//        reactionTime = "\(strSeconds)"
-//        
-//        print(reactionTime)
-//        
-//    }
-    
-//    func startTimer() {
-//        if !timer.isValid {
-//            startTime = Date.timeIntervalSinceReferenceDate
-//        }
-//    }
-//    
-//    func resetTimer() {
-//        timer.invalidate()
-//    }
     
     func log(logMessage: String, functionName: String = #function) {
         print("\(functionName): \(logMessage)")

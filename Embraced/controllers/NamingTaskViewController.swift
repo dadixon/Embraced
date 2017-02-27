@@ -46,7 +46,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     var audioRecorder: AVAudioRecorder!
     
     var soundRecorder: AVAudioRecorder!
-    var fileName = "audioFile.m4a"
+    var fileName = "testNamingAudioFile.m4a"
     
     var practice = Array<String>()
     var tasks = Array<String>()
