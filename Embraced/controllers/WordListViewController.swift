@@ -141,9 +141,20 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
                         return
                     }
                     
-                    //                    stimuliURIs = todo
-                    //                    print(todo["examples"]!)
-                    self.trials = todo["trials"]! as! Array<String>
+                    var language = "en"
+                    var trial = ""
+                    
+                    if self.participant.string(forKey: "language") != nil {
+                        language = self.participant.string(forKey: "language")!
+                    }
+                    
+                    if language == "en" {
+                        trial = "trials"
+                    } else if language == "es" {
+                        trial = "trialsSp"
+                    }
+                    
+                    self.trials = todo[trial]! as! Array<String>
                     
                 } catch {
                     //                    print("Error with Json: \(error)")
