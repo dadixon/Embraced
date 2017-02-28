@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,21 +27,20 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eky-lN-bmH">
-                    <rect key="frame" x="8" y="20" width="359" height="639"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eky-lN-bmH">
+                    <rect key="frame" x="8" y="8" width="359" height="651"/>
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ljo-RX-J76">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ljo-RX-J76">
                             <rect key="frame" x="0.0" y="0.0" width="359" height="47"/>
                             <subviews>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bon-Qg-vqx">
-                                    <rect key="frame" x="8.5" y="32" width="342" height="2"/>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bon-Qg-vqx">
+                                    <rect key="frame" x="9" y="32" width="342" height="2"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="342" id="GQB-G6-7x2"/>
                                     </constraints>
                                 </progressView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="st8-lu-Hg4">
-                                    <rect key="frame" x="165.5" y="8" width="29" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="st8-lu-Hg4">
+                                    <rect key="frame" x="165" y="8" width="29" height="21"/>
                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -59,9 +58,20 @@
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Ljo-RX-J76" firstAttribute="top" secondItem="eky-lN-bmH" secondAttribute="top" id="0oZ-rV-bDi"/>
+                        <constraint firstItem="Ljo-RX-J76" firstAttribute="leading" secondItem="eky-lN-bmH" secondAttribute="leading" id="P9G-rT-7qr"/>
+                        <constraint firstAttribute="trailing" secondItem="Ljo-RX-J76" secondAttribute="trailing" id="TFg-OR-bHD"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eky-lN-bmH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="5GY-EF-8Sl"/>
+                <constraint firstItem="eky-lN-bmH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="U4Y-gE-unP"/>
+                <constraint firstAttribute="bottom" secondItem="eky-lN-bmH" secondAttribute="bottom" constant="8" id="dyj-Wa-NBl"/>
+                <constraint firstAttribute="trailing" secondItem="eky-lN-bmH" secondAttribute="trailing" constant="8" id="etr-Ou-FEP"/>
+            </constraints>
             <point key="canvasLocation" x="0.5" y="-66.5"/>
         </view>
     </objects>

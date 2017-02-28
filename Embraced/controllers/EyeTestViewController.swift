@@ -18,7 +18,7 @@ class EyeTestViewController: WebViewController {
         
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(EyeTestViewController.next(_:)))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(EyeTestViewController.next(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,8 +30,6 @@ class EyeTestViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-//        let vc:FinishedViewController = FinishedViewController()
-//        nextViewController(viewController: vc)
         AppDelegate.position += 1
         nextViewController2(position: AppDelegate.position)
     }

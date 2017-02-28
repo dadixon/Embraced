@@ -669,6 +669,8 @@
 		A42AB5C51D2DE0F4001387BB /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */,
+				A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */,
 				A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */,
 				A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */,
 				A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */,
@@ -990,8 +992,6 @@
 				A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */,
 				A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */,
 				A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */,
-				A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */,
-				A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */,
 				A42AB5C51D2DE0F4001387BB /* Test */,
 				A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */,
 				A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */,

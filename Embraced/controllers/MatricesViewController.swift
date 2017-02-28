@@ -13,7 +13,7 @@ class MatricesViewController: WebViewController {
     
     override func viewDidLoad() {
         step = AppDelegate.position
-        orientation = "landscape"
+        orientation = "portrait"
         url = URL(string: "http://girlscouts.harryatwal.com/matrices.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
