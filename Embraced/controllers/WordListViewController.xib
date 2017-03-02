@@ -145,7 +145,7 @@ Please practice recording your voice with the microphone button below</string>
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
-                                <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="6Sj-ZS-tMg"/>
+                                <action selector="recordTappedTest:" destination="-1" eventType="touchUpInside" id="ptc-pD-Y9e"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GS2-EV-A6d" customClass="PlayButton" customModule="Embraced" customModuleProvider="target">

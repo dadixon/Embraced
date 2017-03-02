@@ -245,6 +245,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             startRecording(sender as! UIButton, fileName: "forward\(forwardCount).m4a")
         } else {
             finishRecording(sender as! UIButton, success: true)
+            recordPracticeBtn.isEnabled = false
+            recordForwardBtn.isEnabled = false
+            recordPracitceBtn2.isEnabled = false
+            recordBackwardBtn.isEnabled = false
         }
     }
     
@@ -253,6 +257,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             startRecording(sender as! UIButton, fileName: "backward\(backwardCount).m4a")
         } else {
             finishRecording(sender as! UIButton, success: true)
+            recordPracticeBtn.isEnabled = false
+            recordForwardBtn.isEnabled = false
+            recordPracitceBtn2.isEnabled = false
+            recordBackwardBtn.isEnabled = false
         }
     }
 
