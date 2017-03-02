@@ -232,14 +232,14 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
             soundRecorder.delegate = self
             soundRecorder.record()
             
-            button.setTitle("Stop".localized(lang: participant.string(forKey: "language")!), for: .normal)
+            button.setTitle("Stop_Recording".localized(lang: participant.string(forKey: "language")!), for: .normal)
         } catch {
-            finishRecording(button: button, success: false)
+            finishRecording(button, success: false)
         }
     }
     
     
-    func finishRecording(button: UIButton, success: Bool) {
+    func finishRecording(_ button: UIButton, success: Bool) {
         if soundRecorder.isRecording {
             soundRecorder.stop()
             soundRecorder = nil
@@ -268,7 +268,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     
     func preparePlayer() {
         do {
-            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName[0]))
+            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent("testWordlistAudioFile.m4a"))
             soundPlayer?.delegate = self
             soundPlayer?.prepareToPlay()
             soundPlayer?.volume = 1.0
@@ -337,11 +337,20 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     
     // MARK: - Action
     
+    @IBAction func recordTappedTest(_ sender: UIButton) {
+        if soundRecorder == nil {
+            startRecording(sender, fileName: "testWordlistAudioFile.m4a")
+        } else {
+            finishRecording(sender, success: true)
+            trialRecordBtn.isEnabled = false
+        }
+    }
+    
     @IBAction func recordTapped(_ sender: UIButton) {
         if soundRecorder == nil {
             startRecording(sender, fileName: "wordlist\(position).m4a")
         } else {
-            finishRecording(button: sender, success: true)
+            finishRecording(sender, success: true)
             trialRecordBtn.isEnabled = false
         }
     }
