@@ -251,7 +251,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         
         APIWrapper.post(id: participant.string(forKey: "pid")!, test: "wordlist2", data: jsonObject)
         
-//        next(self)
+        next(self)
     }
     
     @IBAction func moveToRecogniton(_ sender: AnyObject) {
