@@ -121,22 +121,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         forward = DataManager.sharedInstance.digitalSpanForward
         backward = DataManager.sharedInstance.digitalSpanBackward
         
-//        let pathResource = Bundle.main.path(forResource: "melodies 320ms orig(16)", ofType: "wav")
-//        let finishedStepSound = URL(fileURLWithPath: pathResource!)
-//        
-//        do {
-//            soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound)
-//            if(soundPlayer?.prepareToPlay())!{
-//                print("preparation success")
-//                soundPlayer?.delegate = self
-//            }else{
-//                print("preparation failure")
-//            }
-//            
-//        }catch{
-//            print("Sound file could not be found")
-//        }
-        
         loadingView.stopAnimating()
         
         practice1Label.text = "Practice".localized(lang: participant.string(forKey: "language")!)
@@ -224,7 +208,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         // Push to API
         APIWrapper.post(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: createPostObject())
         
-        next(self)
+//        next(self)
     }
     // MARK: - Actions
     
@@ -353,29 +337,31 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         
 
         for i in 0...forwardCount {
-            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("forward\(i).m4a"))
-//            print(soundData! as NSData)
-            let dataStr = soundData?.base64EncodedString(options: [])
-//            print(dataStr! as String)
+            if fileExist("forward\(i).m4a") {
+                let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("forward\(i).m4a"))
+                let dataStr = soundData?.base64EncodedString(options: [])
             
-            jsonForwardObject = [
-                "name": "forward\(i+1)" as AnyObject,
-                "soundByte": dataStr as AnyObject
-            ]
+                jsonForwardObject = [
+                    "name": "forward\(i+1)" as AnyObject,
+                    "soundByte": dataStr as AnyObject
+                ]
             
-            jsonForward.append(jsonForwardObject as AnyObject)
+                jsonForward.append(jsonForwardObject as AnyObject)
+            }
         }
         
         for i in 0...backwardCount {
-            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("backward\(i).m4a"))
-            let dataStr = soundData?.base64EncodedString(options: [])
+            if fileExist("backward\(i).m4a") {
+                let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("backward\(i).m4a"))
+                let dataStr = soundData?.base64EncodedString(options: [])
             
-            jsonBackwardObject = [
-                "name": "backward\(i+1)" as AnyObject,
-                "soundByte": dataStr as AnyObject
-            ]
+                jsonBackwardObject = [
+                    "name": "backward\(i+1)" as AnyObject,
+                    "soundByte": dataStr as AnyObject
+                ]
             
-            jsonBackward.append(jsonBackwardObject as AnyObject)
+                jsonBackward.append(jsonBackwardObject as AnyObject)
+            }
         }
         
     
@@ -387,6 +373,21 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         ]
     
         return jsonObject
+    }
+    
+    func fileExist(_ filename: String) -> Bool {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let url = NSURL(fileURLWithPath: path)
+        let filePath = url.appendingPathComponent(filename)?.path
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: filePath!) {
+            print("FILE \(filename) AVAILABLE")
+            return true
+        } else {
+            print("FILE \(filename) NOT AVAILABLE")
+        }
+        
+        return false
     }
     
     
