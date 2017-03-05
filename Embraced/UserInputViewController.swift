@@ -47,8 +47,8 @@ class UserInputViewController: UIViewController {
         
         let index = uuid.characters.index(uuid.endIndex, offsetBy: -15)
         participantID.text = uuid.substring(to: index)
-        participant.setValue(uuid.substring(to: index), forKey: "pid")
-//        participant.setValue("dom", forKey: "pid")
+//        participant.setValue(uuid.substring(to: index), forKey: "pid")
+        participant.setValue("dom6", forKey: "pid")
         
         DataManager.sharedInstance.fetchStimuli()
     }
@@ -78,13 +78,17 @@ class UserInputViewController: UIViewController {
     }
     
     @IBAction func submit(_ sender: AnyObject) {
-//        print(participant.string(forKey: "pid")!)
-        
         var jsonObject = [String: AnyObject]()
+        
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateString = dateFormatter.string(from:date)
         
         // Gather data for post
         jsonObject = [
             "id": participant.string(forKey: "pid")! as AnyObject,
+            "time": dateString as AnyObject,
             "dayOfWeek": dayOfTheWeekTextField.text as AnyObject,
             "country": countryTextField.text as AnyObject,
             "county": countyTextField.text as AnyObject,
@@ -101,19 +105,4 @@ class UserInputViewController: UIViewController {
         let navController = UINavigationController(rootViewController: vc)
         self.present(navController, animated: true, completion: nil)
     }
-    
-    
-//    func downloadFileFromURL(url:NSURL, x: Int, y: Int){
-//        var downloadTask:URLSessionDownloadTask
-//        downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
-//            if error != nil {
-//                print(error!.localizedDescription)
-//            }
-//            print(URL! as NSURL)
-//            print(x)
-//            self.examples2[x][y] = URL! as URL
-//        })
-//        
-//        downloadTask.resume()
-//    }
 }
