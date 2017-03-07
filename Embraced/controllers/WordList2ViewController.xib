@@ -125,7 +125,7 @@ Tap the microphone button to start recording</string>
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hti-Xg-EXF">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hti-Xg-EXF" customClass="RecordButton" customModule="Embraced" customModuleProvider="target">
                     <rect key="frame" x="431" y="320" width="162" height="128"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="162" id="9Vn-zS-dWV"/>

@@ -35,7 +35,6 @@ class UserViewController: UIViewController {
 
     @IBAction func startTest(_ sender: Any) {
         let vc = UserInputViewController()
-        let navController = UINavigationController(rootViewController: vc)
-        self.present(navController, animated: true, completion: nil)
+        self.present(vc, animated: true, completion: nil)
     }
 }

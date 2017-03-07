@@ -120,7 +120,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uw-Yf-fzR">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uw-Yf-fzR">
                     <rect key="frame" x="20" y="55" width="984" height="143"/>
                     <string key="text">In the next task the objective is to remember words.
 You will hear a list of words and once the list is finished you will be asked to recall them.
@@ -136,7 +136,7 @@ Please practice recording your voice with the microphone button below</string>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHK-SS-xav">
                     <rect key="frame" x="240" y="261" width="544" height="247"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zCn-Eg-qyk">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zCn-Eg-qyk" customClass="RecordButton" customModule="Embraced" customModuleProvider="target">
                             <rect key="frame" x="8" y="60" width="162" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="UGf-Kj-30J"/>
@@ -207,7 +207,7 @@ Please practice recording your voice with the microphone button below</string>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USc-zK-X47">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USc-zK-X47">
                     <rect key="frame" x="20" y="55" width="984" height="41"/>
                     <string key="text">There will be a 3 second countdown before the list starts.
 Please tap the LISTEN button when you are ready to start</string>
@@ -215,7 +215,7 @@ Please tap the LISTEN button when you are ready to start</string>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bic-uz-Yoc">
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bic-uz-Yoc" customClass="RecordButton" customModule="Embraced" customModuleProvider="target">
                     <rect key="frame" x="431" y="567" width="162" height="128"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="162" id="akS-PY-LCq"/>
@@ -230,7 +230,7 @@ Please tap the LISTEN button when you are ready to start</string>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3c-xw-nEW">
                     <rect key="frame" x="240" y="104" width="544" height="208"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1xb-Ik-dhP">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1xb-Ik-dhP" customClass="ListenButton" customModule="Embraced" customModuleProvider="target">
                             <rect key="frame" x="8" y="59.5" width="200" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="0B5-1u-oyf"/>
@@ -260,7 +260,7 @@ Please tap the LISTEN button when you are ready to start</string>
                         <constraint firstAttribute="height" constant="208" id="zqi-Hy-RYb"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now say out loud all the words you can remember from the list. Tap the microphone button to start recording." lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSd-Ri-ZDi">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now say out loud all the words you can remember from the list. Tap the microphone button to start recording." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSd-Ri-ZDi">
                     <rect key="frame" x="20" y="320" width="984" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>

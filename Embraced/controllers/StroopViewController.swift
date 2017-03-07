@@ -304,6 +304,11 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         }
         
         next(self)
+        
+        // Clear audios
+        for i in 1...position {
+            deleteFile("stroop\(i).m4a")
+        }
     }
     
     // MARK: - Actions

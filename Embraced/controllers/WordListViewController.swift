@@ -324,6 +324,11 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBAction func done(_ sender: AnyObject) {
         APIWrapper.post(id: participant.string(forKey: "pid")!, test: "wordlist", data: createPostObject())
         next(self)
+        
+        // Clear audios
+        for i in 0...position-1 {
+            deleteFile("wordlist\(i).m4a")
+        }
     }
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
@@ -332,6 +337,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         practice = false
         
         wordNextBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        wordNextBtn.isHidden = true
     }
     
     
@@ -352,6 +358,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         } else {
             finishRecording(sender, success: true)
             trialRecordBtn.isEnabled = false
+            wordNextBtn.isHidden = false
         }
     }
     
@@ -386,6 +393,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         
         if position < instructions.count {
             setup()
+            wordNextBtn.isHidden = true
         } else {
             setSubview(trial1View, next: completeView)
             

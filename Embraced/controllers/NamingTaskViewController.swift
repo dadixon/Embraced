@@ -34,10 +34,12 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     
     @IBOutlet weak var exampleLabel: UILabel!
     @IBOutlet weak var exampleNextBtn: NavigationButton!
+    @IBOutlet weak var exampleRecordBtn: UIButton!
     
     @IBOutlet weak var taskInstruction: UILabel!
     @IBOutlet weak var taskStartBtn: NavigationButton!
     @IBOutlet weak var taskNextBtn: NavigationButton!
+    @IBOutlet weak var taskRecordBtn: UIButton!
     
     @IBOutlet weak var completeLabel: UILabel!
     @IBOutlet weak var completeSubmitBtn: UIButton!
@@ -289,8 +291,12 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     
     @IBAction func done(_ sender:AnyObject) {
         APIWrapper.post(id: participant.string(forKey: "pid")!, test: "naming_task", data: createPostObject())
-//        APIWrapper.post(id: "abc123", test: "naming_task", data: createPostObject())
         next(self)
+        
+        // Clear audios
+        for i in 0...tasks.count-1 {
+            deleteFile("namingTask\(i).m4a")
+        }
     }
     
     // MARK: - Actions
@@ -299,6 +305,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
             startRecording(sender, fileName: fileName)
         } else {
             finishRecording(sender, success: true)
+            exampleRecordBtn.isEnabled = false
         }
     }
     
@@ -307,6 +314,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
             startRecording(sender as! UIButton, fileName: "namingTask\(count).m4a")
         } else {
             finishRecording(sender as! UIButton, success: true)
+            taskRecordBtn.isEnabled = false
         }
     }
     
@@ -328,12 +336,14 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         
         exampleLabel.text = "Example".localized(lang: participant.string(forKey: "language")!)
         exampleNextBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        exampleRecordBtn.isEnabled = true
     }
     
     @IBAction func nextExample(_ sender: AnyObject) {
         count += 1
         if count < practice.count {
             loadImageFromUrl(practice[count], view: imageView)
+            exampleRecordBtn.isEnabled = true
         } else {
             setSubview(trialView, next: preTaskView)
             
@@ -349,12 +359,14 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         count = 0
         loadImageFromUrl(tasks[count], view: taskImageView)
         startTimer()
+        
     }
     
     @IBAction func nextTask(_ sender: AnyObject) {
         count += 1
         
         if count < tasks.count {
+            taskRecordBtn.isEnabled = true
             loadImageFromUrl(tasks[count], view: taskImageView)
             resetTimer()
             startTimer()

@@ -28,6 +28,8 @@ class FinishedViewController: FrontViewController {
     // MARK: - Navigation
 
     @IBAction func startOver(_ sender: AnyObject) {
+        AppDelegate.position = 0
+        
         let vc = AdminViewController()
         
         self.navigationController?.pushViewController(vc, animated: true)

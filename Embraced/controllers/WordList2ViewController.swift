@@ -252,6 +252,9 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         APIWrapper.post(id: participant.string(forKey: "pid")!, test: "wordlist2", data: jsonObject)
         
         next(self)
+        
+        // Clear audios
+        deleteFile("wordlistRecall.m4a")
     }
     
     @IBAction func moveToRecogniton(_ sender: AnyObject) {
