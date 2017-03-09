@@ -164,18 +164,9 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         })
         
         task.resume()
-        
-        myString = "wordlist2_instruction".localized(lang: participant.string(forKey: "language")!)
-        myString2 = "wordlist2_instruction2".localized(lang: participant.string(forKey: "language")!)
-        
-        myMutableString = NSMutableAttributedString(string: myString)
-        myMutableString.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: NSMakeRange(46, 7))
-        instructionText.attributedText = myMutableString
-        
-        myMutableString2 = NSMutableAttributedString(string: myString2)
-        myMutableString2.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: NSMakeRange(132, 7))
-        myMutableString2.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: NSMakeRange(221, 7))
-        instructionText2.attributedText = myMutableString2
+
+        instructionText.text = "wordlist2_instruction".localized(lang: participant.string(forKey: "language")!)
+        instructionText2.text = "wordlist2_instruction2".localized(lang: participant.string(forKey: "language")!)
         
         recordBtn.setTitle("Start_Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
         wordNextBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)

@@ -315,6 +315,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         } else {
             finishRecording(sender as! UIButton, success: true)
             taskRecordBtn.isEnabled = false
+            taskNextBtn.isHidden = false
         }
     }
     
@@ -359,11 +360,13 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         count = 0
         loadImageFromUrl(tasks[count], view: taskImageView)
         startTimer()
-        
+        taskNextBtn.isHidden = true
     }
     
     @IBAction func nextTask(_ sender: AnyObject) {
         count += 1
+        
+        taskNextBtn.isHidden = true
         
         if count < tasks.count {
             taskRecordBtn.isEnabled = true
