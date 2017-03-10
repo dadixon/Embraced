@@ -17,9 +17,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DigitalSpanViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
                 <outlet property="bRounds" destination="KBF-ll-4we" id="Nnk-o6-4P7"/>
+                <outlet property="backwardBtn" destination="ihh-pk-YgS" id="Nif-gn-USk"/>
                 <outlet property="completeLabel" destination="JDz-fl-CkV" id="ukE-bb-ua8"/>
                 <outlet property="completeView" destination="Tbg-TJ-DWN" id="hNY-2h-DkM"/>
                 <outlet property="containerView" destination="bru-dk-i0h" id="1T5-ce-Yb5"/>
+                <outlet property="forwardBtn" destination="BnC-0d-Zfp" id="UvW-tm-dUY"/>
                 <outlet property="instructions" destination="W5d-aU-YUb" id="D8J-wH-4d0"/>
                 <outlet property="instructionsA" destination="dmM-P0-4MJ" id="FXX-6i-2Mw"/>
                 <outlet property="introView" destination="cVi-fu-JAH" id="ZYh-t5-glv"/>
@@ -32,9 +34,11 @@
                 <outlet property="practice1Instructions" destination="fCB-98-gGJ" id="9qD-zN-npW"/>
                 <outlet property="practice1Label" destination="38b-Sn-sTG" id="svl-x0-MM0"/>
                 <outlet property="practice2Label" destination="c0j-U6-bRc" id="8aa-sb-qyo"/>
+                <outlet property="practice2NextBtn" destination="I6d-eY-aPO" id="7LX-6n-Dkt"/>
                 <outlet property="practice2instructions" destination="OyJ-lm-PN4" id="pOr-Vx-MYf"/>
                 <outlet property="practice3Instructions" destination="8Q1-nt-Lvd" id="cxj-qZ-o3X"/>
                 <outlet property="practice3Label" destination="NYE-DH-iub" id="GMg-sr-NSH"/>
+                <outlet property="practiceNextBtn" destination="Xes-FL-k9S" id="Qph-fa-v2W"/>
                 <outlet property="preTask1View" destination="Ep8-qV-Cvv" id="H7a-ND-yl8"/>
                 <outlet property="preTask2View" destination="mo0-Ba-4sC" id="eqP-Pc-hmz"/>
                 <outlet property="progressLabel" destination="g24-df-W8H" id="6Bo-m2-xJp"/>
@@ -227,7 +231,7 @@ Please click LISTEN button when you are ready.</string>
                     <rect key="frame" x="112" y="389" width="544" height="247"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="AOr-uP-wO7" customClass="RecordButton" customModule="Embraced" customModuleProvider="target">
-                            <rect key="frame" x="374" y="59.5" width="162" height="128"/>
+                            <rect key="frame" x="374" y="60" width="162" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="MTj-0O-Ias"/>
                             </constraints>
@@ -239,7 +243,7 @@ Please click LISTEN button when you are ready.</string>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="bottomLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pba-QZ-kRp" customClass="ListenButton" customModule="Embraced" customModuleProvider="target">
-                            <rect key="frame" x="8" y="89.5" width="133" height="68"/>
+                            <rect key="frame" x="8" y="90" width="133" height="68"/>
                             <inset key="titleEdgeInsets" minX="-95" minY="0.0" maxX="0.0" maxY="-135"/>
                             <inset key="imageEdgeInsets" minX="-6" minY="-24" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="Listen" image="speaker.png">
@@ -286,7 +290,7 @@ Please click LISTEN button when you are ready.</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Q1-nt-Lvd">
-                    <rect key="frame" x="20" y="55" width="728" height="81.5"/>
+                    <rect key="frame" x="20" y="55" width="728" height="82"/>
                     <string key="text">Next you will hear series of numbers, but this time you will have to repeat them in reverse order. For example, if you hear the numbers 2-5-8, you should then say 8-5-2.
 Again, you will only hear each list of numbers once, so do the best you can from what you hear.
 You will have a practice round before starting with the series.</string>

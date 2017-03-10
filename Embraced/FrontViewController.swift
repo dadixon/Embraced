@@ -226,4 +226,38 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
             print("path not found")
         }
     }
+    
+    func deleteFile(_ fileNameToDelete:String) {
+        var filePath = ""
+        
+        // Fine documents directory on device
+        let dirs : [String] = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
+        
+        if dirs.count > 0 {
+            let dir = dirs[0] //documents directory
+            filePath = dir.appendingFormat("/" + fileNameToDelete)
+            print("Local path = \(filePath)")
+            
+        } else {
+            print("Could not find local directory to store file")
+            return
+        }
+        
+        
+        do {
+            let fileManager = FileManager.default
+            
+            // Check if file exists
+            if fileManager.fileExists(atPath: filePath) {
+                // Delete file
+                try fileManager.removeItem(atPath: filePath)
+            } else {
+                print("File does not exist")
+            }
+            
+        }
+        catch let error as NSError {
+            print("An error took place: \(error)")
+        }
+    }
 }

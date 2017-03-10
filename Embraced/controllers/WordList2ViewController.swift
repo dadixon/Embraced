@@ -164,20 +164,11 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         })
         
         task.resume()
+
+        instructionText.text = "wordlist2_instruction".localized(lang: participant.string(forKey: "language")!)
+        instructionText2.text = "wordlist2_instruction2".localized(lang: participant.string(forKey: "language")!)
         
-        myString = "wordlist2_instruction".localized(lang: participant.string(forKey: "language")!)
-        myString2 = "wordlist2_instruction2".localized(lang: participant.string(forKey: "language")!)
-        
-        myMutableString = NSMutableAttributedString(string: myString)
-        myMutableString.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: NSMakeRange(46, 7))
-        instructionText.attributedText = myMutableString
-        
-        myMutableString2 = NSMutableAttributedString(string: myString2)
-        myMutableString2.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: NSMakeRange(132, 7))
-        myMutableString2.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.styleSingle.rawValue, range: NSMakeRange(221, 7))
-        instructionText2.attributedText = myMutableString2
-        
-        recordBtn.setTitle("Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        recordBtn.setTitle("Start_Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
         wordNextBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
         
         loadingView.stopAnimating()
@@ -204,7 +195,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
             soundRecorder.delegate = self
             soundRecorder.record()
             
-            button.setTitle("Stop".localized(lang: participant.string(forKey: "language")!), for: .normal)
+            button.setTitle("Stop_Recording".localized(lang: participant.string(forKey: "language")!), for: .normal)
         } catch {
             finishRecording(button: button, success: false)
         }
@@ -252,6 +243,9 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         APIWrapper.post(id: participant.string(forKey: "pid")!, test: "wordlist2", data: jsonObject)
         
         next(self)
+        
+        // Clear audios
+        deleteFile("wordlistRecall.m4a")
     }
     
     @IBAction func moveToRecogniton(_ sender: AnyObject) {
@@ -265,6 +259,8 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         wordNext2Btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
         answerSegment.setTitle("Yes".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
         answerSegment.setTitle("No".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
+        
+        wordNext2Btn.isHidden = true
     }
     
     
@@ -285,6 +281,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
 
     @IBAction func answerSegment(_ sender: UISegmentedControl) {
         answer = sender.selectedSegmentIndex
+        wordNext2Btn.isHidden = false
     }
 
     @IBAction func nextQuestion(_ sender: UISegmentedControl) {
@@ -294,7 +291,8 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
             default: answers.insert("", at: position)
         }
         
-        print(answers)
+        wordNext2Btn.isHidden = true
+        
         position += 1
         
         if position == tasks.count {

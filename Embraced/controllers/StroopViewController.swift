@@ -177,12 +177,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         print(images)
         
 
-        let myString = "stroop_practice_instruction".localized(lang: participant.string(forKey: "language")!)
-        
-        myMutableString = NSMutableAttributedString(string: myString, attributes: [NSFontAttributeName:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
-        myMutableString.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 18), range: NSRange(location:51,length:5))
-        myMutableString.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 18), range: NSRange(location:61,length:4))
-        practiceText.attributedText = myMutableString
+        practiceText.text = "stroop_practice_instruction".localized(lang: participant.string(forKey: "language")!)
         
         practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!)
         practiceDoneBtn.setTitle("Done".localized(lang: participant.string(forKey: "language")!), for: .normal)
@@ -228,12 +223,6 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         soundRecorder = nil
         
         button.isEnabled = false
-//        if success {
-//            button.setTitle("Re-record".localized(lang: participant.string(forKey: "language")!), for: .normal)
-//        } else {
-//            button.setTitle("Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
-//            // recording failed :(
-//        }
     }
     
     func finishPlaying() {
@@ -304,6 +293,11 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         }
         
         next(self)
+        
+        // Clear audios
+        for i in 1...position {
+            deleteFile("stroop\(i).m4a")
+        }
     }
     
     // MARK: - Actions

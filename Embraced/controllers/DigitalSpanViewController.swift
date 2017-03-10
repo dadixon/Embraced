@@ -22,10 +22,12 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordPracticeBtn: UIButton!
     @IBOutlet weak var listenForwardBtn: UIButton!
     @IBOutlet weak var recordForwardBtn: UIButton!
+    @IBOutlet weak var forwardBtn: NavigationButton!
     @IBOutlet weak var listenPracticeBtn2: UIButton!
     @IBOutlet weak var recordPracitceBtn2: UIButton!
     @IBOutlet weak var listenBackwardBtn: UIButton!
     @IBOutlet weak var recordBackwardBtn: UIButton!
+    @IBOutlet weak var backwardBtn: NavigationButton!
     
     @IBOutlet var preTask1View: UIView!
     @IBOutlet var task1View: UIView!
@@ -40,8 +42,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var instructions: UILabel!
     @IBOutlet weak var practice1Label: UILabel!
     @IBOutlet weak var practice1Instructions: UILabel!
+    @IBOutlet weak var practiceNextBtn: NavigationButton!
     @IBOutlet weak var practice2Label: UILabel!
     @IBOutlet weak var practice2instructions: UILabel!
+    @IBOutlet weak var practice2NextBtn: NavigationButton!
     @IBOutlet weak var practice3Label: UILabel!
     @IBOutlet weak var practice3Instructions: UILabel!
     @IBOutlet weak var completeLabel: UILabel!
@@ -209,6 +213,14 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         APIWrapper.post(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: createPostObject())
         
         next(self)
+        
+        // Clear audios
+        for i in 0...forwardCount {
+            deleteFile("forward\(i)")
+        }
+        for i in 0...backwardCount {
+            deleteFile("backward\(i)")
+        }
     }
     // MARK: - Actions
     
@@ -221,6 +233,8 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             recordForwardBtn.isEnabled = false
             recordPracitceBtn2.isEnabled = false
             recordBackwardBtn.isEnabled = false
+            practiceNextBtn.isHidden = false
+            practice2NextBtn.isHidden = false
         }
     }
     
@@ -233,6 +247,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             recordForwardBtn.isEnabled = false
             recordPracitceBtn2.isEnabled = false
             recordBackwardBtn.isEnabled = false
+            forwardBtn.isHidden = false
         }
     }
     
@@ -245,6 +260,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             recordForwardBtn.isEnabled = false
             recordPracitceBtn2.isEnabled = false
             recordBackwardBtn.isEnabled = false
+            backwardBtn.isHidden = false
         }
     }
 
@@ -281,6 +297,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         listenBtn.isEnabled = true
         practice2Label.text = "Practice".localized(lang: participant.string(forKey: "language")!)
         practice2instructions.text = "digital_practice_2".localized(lang: participant.string(forKey: "language")!)
+        practiceNextBtn.isHidden = true
     }
     
     @IBAction func moveToForward(_ sender: AnyObject) {
@@ -288,6 +305,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         listenForwardBtn.isEnabled = true
         recordForwardBtn.isEnabled = false
         instructionsA.text = "digital_begin_round".localized(lang: participant.string(forKey: "language")!)
+        forwardBtn.isHidden = true
     }
     
     @IBAction func nextSound(_ sender: AnyObject) {
@@ -297,12 +315,14 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             rounds.text = "Round".localized(lang: participant.string(forKey: "language")!) + " " + String(forwardCount+1)
             listenForwardBtn.isEnabled = true
             recordForwardBtn.isEnabled = false
+            forwardBtn.isHidden = true
         } else {
             setSubview(task1View, next: preTask2View)
             listenPracticeBtn2.isEnabled = true
             recordPracitceBtn2.isEnabled = false
             practice3Label.text = "Practice".localized(lang: participant.string(forKey: "language")!)
             practice3Instructions.text = "digital_practice_3".localized(lang: participant.string(forKey: "language")!)
+            practice2NextBtn.isHidden = true
         }
     }
     
@@ -312,6 +332,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         listenBackwardBtn.isEnabled = true
         recordBackwardBtn.isEnabled = false
         instructions.text = "digital_begin_round2".localized(lang: participant.string(forKey: "language")!)
+        backwardBtn.isHidden = true
     }
     
     @IBAction func nextBSound(_ sender: AnyObject) {
@@ -321,6 +342,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             bRounds.text = "Round".localized(lang: participant.string(forKey: "language")!) + " " + String(backwardCount+1)
             listenBackwardBtn.isEnabled = true
             recordBackwardBtn.isEnabled = false
+            backwardBtn.isHidden = true
         } else {
             setSubview(task2View, next: completeView)
             completeLabel.text = "Test_complete".localized(lang: participant.string(forKey: "language")!)

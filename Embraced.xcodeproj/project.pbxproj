@@ -681,10 +681,6 @@
 				A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */,
 				A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */,
 				A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */,
-				A4347FD71D7BCAFB0033306A /* PitchViewController.swift */,
-				A4347FD81D7BCAFB0033306A /* PitchViewController.xib */,
-				A4347FC71D7BCA280033306A /* DigitalSpanViewController.swift */,
-				A4347FC81D7BCA280033306A /* DigitalSpanViewController.xib */,
 				A4347FC31D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift */,
 				A4347FC41D7BC9FC0033306A /* ReyComplexFigure3ViewController.xib */,
 				A4347FCB1D7BCA570033306A /* ReyFigureComplex4ViewController.swift */,
@@ -695,16 +691,8 @@
 				A4347FD01D7BCA950033306A /* MatricesViewController.xib */,
 				A4347FD31D7BCABC0033306A /* PegboardViewController.swift */,
 				A4347FD41D7BCABC0033306A /* PegboardViewController.xib */,
-				A4347FDB1D7BCB260033306A /* WordListViewController.swift */,
-				A4347FDC1D7BCB260033306A /* WordListViewController.xib */,
-				A4347FBF1D7BC9E20033306A /* StroopViewController.swift */,
-				A4347FC01D7BC9E20033306A /* StroopViewController.xib */,
 				A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */,
 				A46C14161D7999AF0066EF37 /* CancellationTestViewController.xib */,
-				A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */,
-				A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */,
-				A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */,
-				A4347FDF1D7BCB800033306A /* NamingTaskViewController.xib */,
 				A4347FE11D7BCC170033306A /* MultipleErrandsViewController.swift */,
 				A4347FE21D7BCC170033306A /* MultipleErrandsViewController.xib */,
 				A4347FE51D7BCC4C0033306A /* ComprehensionViewController.swift */,
@@ -992,11 +980,31 @@
 				A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */,
 				A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */,
 				A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */,
+				A4C72F031E6A1B4F00ADC405 /* AppsideTest */,
 				A42AB5C51D2DE0F4001387BB /* Test */,
 				A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */,
 				A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A4C72F031E6A1B4F00ADC405 /* AppsideTest */ = {
+			isa = PBXGroup;
+			children = (
+				A4347FD71D7BCAFB0033306A /* PitchViewController.swift */,
+				A4347FD81D7BCAFB0033306A /* PitchViewController.xib */,
+				A4347FC71D7BCA280033306A /* DigitalSpanViewController.swift */,
+				A4347FC81D7BCA280033306A /* DigitalSpanViewController.xib */,
+				A4347FDB1D7BCB260033306A /* WordListViewController.swift */,
+				A4347FDC1D7BCB260033306A /* WordListViewController.xib */,
+				A4347FBF1D7BC9E20033306A /* StroopViewController.swift */,
+				A4347FC01D7BC9E20033306A /* StroopViewController.xib */,
+				A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */,
+				A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */,
+				A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */,
+				A4347FDF1D7BCB800033306A /* NamingTaskViewController.xib */,
+			);
+			name = AppsideTest;
 			sourceTree = "<group>";
 		};
 		A4D904231D2384010092D6AA /* Customizations */ = {
