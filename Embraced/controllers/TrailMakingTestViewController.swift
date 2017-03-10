@@ -18,7 +18,6 @@ class TrailMakingTestViewController: WebViewController {
         
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(TrailMakingTestViewController.next(_:)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,8 +29,6 @@ class TrailMakingTestViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-//        let vc = PitchViewController()
-//        nextViewController(viewController: vc)
         AppDelegate.position += 1
         nextViewController2(position: AppDelegate.position)
     }
