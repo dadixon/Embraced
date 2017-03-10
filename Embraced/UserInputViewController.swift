@@ -47,8 +47,8 @@ class UserInputViewController: UIViewController {
         
         let index = uuid.characters.index(uuid.endIndex, offsetBy: -15)
         participantID.text = uuid.substring(to: index)
-//        participant.setValue(uuid.substring(to: index), forKey: "pid")
-        participant.setValue("dom7", forKey: "pid")
+        participant.setValue(uuid.substring(to: index), forKey: "pid")
+//        participant.setValue("dom7", forKey: "pid")
         
         DataManager.sharedInstance.fetchStimuli()
     }
