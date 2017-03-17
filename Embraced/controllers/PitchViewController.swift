@@ -116,8 +116,7 @@ class PitchViewController: FrontViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PitchViewController.next(_:)))
         
-        orientation = "portrait"
-        rotated()
+        showOrientationAlert(orientation: "portrait")
         
         introView.translatesAutoresizingMaskIntoConstraints = false
         example1View.translatesAutoresizingMaskIntoConstraints = false
@@ -532,7 +531,6 @@ class PitchViewController: FrontViewController {
     }
     
     @IBAction func taskAnswered(_ sender: AnyObject) {
-//        log(logMessage: "initi")
         if ((sender.selectedSegmentIndex == 0 && taskAnswers[tasksCount - 1] == "S") || (sender.selectedSegmentIndex == 1 && taskAnswers[tasksCount - 1] == "D")) {
             taskResponse.text = "Correct".localized(lang: participant.string(forKey: "language")!)
             userAnswers.insert("c", at: tasksCount - 1)
@@ -549,7 +547,8 @@ class PitchViewController: FrontViewController {
         default:
             taskSegment.setEnabled(false, forSegmentAt: 0)
         }
-//        log(logMessage: "finished")
+        
+        taskBtn.isHidden = false
     }
     
     
@@ -557,21 +556,16 @@ class PitchViewController: FrontViewController {
     // MARK: - Delegate
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-//        log(logMessage: "initi")
-//        print("finished")
         startTimer()
         
         if self.played {
             if position == 1 {
-//                print("show example 1")
                 example1btn.isHidden = false
                 example1segment.isHidden = false
             } else if position == 2 {
-//                print("show example 2")
                 example2btn.isHidden = false
                 example2segment.isHidden = false
             } else if position == 3 {
-//                print("show example 3")
                 example3btn.isHidden = false
                 example3segment.isHidden = false
             }
@@ -581,11 +575,9 @@ class PitchViewController: FrontViewController {
                 practiceBtn.isHidden = false
             } else if position > examples.count + trials.count {
                 taskSegment.isHidden = false
-                taskBtn.isHidden = false
             }
             resetTimer()
         }
-//        log(logMessage: "finished")
     }
     
 }

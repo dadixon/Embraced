@@ -13,7 +13,7 @@ class TrailMakingTestViewController: WebViewController {
     
     override func viewDidLoad() {
         step = AppDelegate.position
-        orientation = "portrait"
+        showOrientationAlert(orientation: "portrait")
         url = URL(string: "http://girlscouts.harryatwal.com/trailMaking.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()

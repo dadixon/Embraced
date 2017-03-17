@@ -13,12 +13,10 @@ class ClockDrawingTestViewController: WebViewController {
     
     override func viewDidLoad() {
         step = AppDelegate.position
-        orientation = "portrait"
+        showOrientationAlert(orientation: "portrait")
         url = URL(string: "http://girlscouts.harryatwal.com/clockDrawing.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(ClockDrawingTestViewController.next(_:)))
     }
     
     override func didReceiveMemoryWarning() {

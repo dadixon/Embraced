@@ -140,8 +140,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(NamingTaskViewController.next(_:)))
         
-        orientation = "landscape"
-        rotated()
+        showOrientationAlert(orientation: "landscape")
         
         initialView.translatesAutoresizingMaskIntoConstraints = false
         trialView.translatesAutoresizingMaskIntoConstraints = false

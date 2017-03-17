@@ -83,8 +83,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         step = AppDelegate.position
         super.viewDidLoad()
         
-        orientation = "portrait"
-        rotated()
+        showOrientationAlert(orientation: "portrait")
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(DigitalSpanViewController.next(_:)))
         

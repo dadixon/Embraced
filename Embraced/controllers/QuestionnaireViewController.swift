@@ -13,11 +13,10 @@ class QuestionnaireViewController: WebViewController {
     
     override func viewDidLoad() {
         step = AppDelegate.position
-        orientation = "portrait"
+        showOrientationAlert(orientation: "portrait")
         url = URL(string: "http://girlscouts.harryatwal.com/initial.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
-
     }
     
     override func didReceiveMemoryWarning() {

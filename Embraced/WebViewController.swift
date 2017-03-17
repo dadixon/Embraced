@@ -18,9 +18,7 @@ class WebViewController: FrontViewController, WKNavigationDelegate, WKScriptMess
         super.viewDidLoad()
 
         self.navigationController?.isNavigationBarHidden = true
-        
-        rotated()
-        
+                
         let contentController = WKUserContentController()
         contentController.add(self, name: "callbackHandler")
         

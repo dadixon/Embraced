@@ -66,8 +66,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         
         super.viewDidLoad()
         
-        orientation = "landscape"
-        rotated()
+        showOrientationAlert(orientation: "landscape")
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(WordListViewController.next(_:)))
         

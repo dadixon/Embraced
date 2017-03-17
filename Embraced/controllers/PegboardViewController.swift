@@ -13,12 +13,10 @@ class PegboardViewController: WebViewController {
     
     override func viewDidLoad() {
         step = AppDelegate.position
-        orientation = "landscape"
+        showOrientationAlert(orientation: "landscape")
         url = URL(string: "http://girlscouts.harryatwal.com/motorTask.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(PegboardViewController.next(_:)))
     }
     
     override func didReceiveMemoryWarning() {

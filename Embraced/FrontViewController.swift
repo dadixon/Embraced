@@ -32,7 +32,6 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    var alertController = UIAlertController()
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var soundPlayer: AVAudioPlayer?
     var viewPosition = 0
@@ -62,7 +61,7 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         
         self.automaticallyAdjustsScrollViewInsets = false
         
-        NotificationCenter.default.addObserver(self, selector: #selector(FrontViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(FrontViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         
         mainView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -88,29 +87,27 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         return true
     }
     
-    func rotated() {
+    func showOrientationAlert(orientation: String) {
         if orientation == "landscape" {
-            if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
-                alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
-                
-                let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
-                    self.alertController.dismiss(animated: true, completion: nil)
-                    self.rotated()
-                }
-                alertController.addAction(dismissAction)
-                self.present(alertController, animated: true, completion: nil)
+            let alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+                alertController.dismiss(animated: true, completion: nil)
             }
+            
+            alertController.addAction(dismissAction)
         } else if orientation == "portrait" {
-            if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
-                alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to portrait orientation", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to portrait orientation", preferredStyle: UIAlertControllerStyle.alert)
                 
-                let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
-                    self.alertController.dismiss(animated: true, completion: nil)
-                    self.rotated()
-                }
-                alertController.addAction(dismissAction)
-                self.present(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
+            
+            let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+                alertController.dismiss(animated: true, completion: nil)
             }
+            
+            alertController.addAction(dismissAction)
         }
     }
     

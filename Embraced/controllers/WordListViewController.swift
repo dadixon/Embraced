@@ -70,8 +70,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(WordListViewController.next(_:)))
         
-        orientation = "landscape"
-        rotated()
+        showOrientationAlert(orientation: "landscape")
         
         practiceView.translatesAutoresizingMaskIntoConstraints = false
         trial1View.translatesAutoresizingMaskIntoConstraints = false

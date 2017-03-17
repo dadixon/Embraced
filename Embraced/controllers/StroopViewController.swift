@@ -124,8 +124,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         step = AppDelegate.position
         super.viewDidLoad()
         
-        orientation = "landscape"
-        rotated()
+        showOrientationAlert(orientation: "landscape")
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(StroopViewController.next(_:)))
         
