@@ -143,7 +143,6 @@ class PitchViewController: FrontViewController {
         let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/stimuli/pitch"
         
         guard let url = URL(string: todoEndpoint) else {
-//            print("Error: cannot create URL")
             return
         }
         
@@ -157,34 +156,26 @@ class PitchViewController: FrontViewController {
             let statusCode = httpResponse.statusCode
             
             guard error == nil else {
-//                print("error calling GET on stumiliNames")
-//                print(error!)
                 return
             }
             // make sure we got data
             guard let responseData = data else {
-//                print("Error: did not receive data")
                 return
             }
             
             if (statusCode == 200) {
-//                print("Everyone is fine, file downloaded successfully.")
                 
                 do {
                     guard let todo = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
-//                        print("error trying to convert data to JSON")
                         return
                     }
                     
-//                    stimuliURIs = todo
-//                    print(todo["examples"]!)
                     self.examples = todo["examples"]! as! Array<Array<String>>
                     self.trials = todo["trials"]! as! Array<Array<String>>
                     self.tasks = todo["tasks"]! as! Array<Array<String>>
                     
                     self.introBtn.isEnabled = true
                 } catch {
-//                    print("Error with Json: \(error)")
                     return
                 }
             }

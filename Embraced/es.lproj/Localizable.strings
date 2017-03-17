@@ -6,92 +6,94 @@
   Copyright © 2016 Domonique Dixon. All rights reserved.
 */
 
-"WELCOME_TO_EMBRACED_PROJECT" = "BIENVENIDO AL PROYECTO EMBRACADO";
+"WELCOME_TO_EMBRACED_PROJECT" = "BIENVENIDO AL PROYECTO EMBRACED";
 "Next" = "Siguiente";
-"Start" = "Comienzo";
+"Start" = "Comenzar";
 "Example" = "Ejemplo";
 "Practice" = "Práctica";
-"Same" = "Igual";
-"Different" = "Diferente";
+"Same" = "Iguales";
+"Different" = "Diferentes";
 "Submit" = "ENVIAR";
-"Test_complete" = "Prueba completa";
-"Correct" = "Correcto";
+"Test_complete" = "¡Test completado!";
+"Correct" = "¡Correcto!";
 "Incorrect" = "Incorrecto";
-"Incorrect_2" = "Lo siento, esa respuesta es incorrecta. Puede intentarlo de nuevo.";
-"Start_Record" = "Empezar a Grabar";
-"Stop_Recording" = "Para de Grabar";
-"Play" = "Jugar";
-"Recording" = "Grabación";
-"Stop" = "Detener";
-"Test" = "Prueba";
+"Incorrect_2" = "Lo siento, esa respuesta es incorrecta. Inténtelo de nuevo.";
+"Start_Record" = "Comience a Grabar";
+"Stop_Recording" = "Pare de Grabar";
+"Play" = "Reproducir";
+"Recording" = "Grabando";
+"Stop" = "Parar";
+"Test" = "Test";
 "Settings" = "Ajustes";
-"Start_Test" = "Iniciar Prueba";
-"Select_All" = "Seleccionar todo";
-"Deselect_All" = "Deseleccionar todo";
-"Test_List" = "Lista de pruebas";
-"Your_Test" = "Su prueba";
-"Choose_Language" = "Elige lengua";
-"Yes" = "Si";
+"Start_Test" = "Comenzar Test";
+"Select_All" = "Seleccionar Todos";
+"Deselect_All" = "Deseleccionar Todos";
+"Test_List" = "Lista de Tests";
+"Your_Test" = "Sus Test";
+"Choose_Language" = "Elija idioma";
+"Yes" = "Sí";
 "No" = "No";
 "Recognition" = "Reconocimiento";
 "Done" = "Hecho";
-"Re-record" = "Volver a grabar";
-"Participant_ID" = "ID de participante";
-"Day_of_the_week" = "Día de la semana";
+"Re-record" = "Volver a Grabar";
+"Participant_ID" = "ID de Participante";
+"Day_of_the_week" = "Día de la Semana";
 "Country" = "País";
 "County" = "Condado";
 "City" = "Ciudad";
-"Location" = "Ubicación";
-"Floor" = "Piso";
+"Location" = "Lugar";
+"Floor" = "Planta";
 "Record" = "Grabar";
+"Listen" = "ESCUCHAR";
+"Round" = "Redondo";
 
-"WELCOME_TEXT" = "Vamos a hacerle algunas preguntas acerca de usted. Por favor, recuerde que es libre de no contestar aquellas preguntas que le molesten pero le rogamos encarecidamente que trate de completar este cuestionario al máximo posible.\nGracias por su participación.";
+"WELCOME_TEXT" = "Vamos a hacerle algunas preguntas acerca de usted.\nPor favor, recuerde que es libre de no contestar aquellas preguntas que le molesten pero le rogamos encarecidamente que trate de completar este cuestionario al máximo posible.\nGracias por su participación.";
 
 // Pitch
-"pitch_intro" = "En la siguiente tarea usted va a escuchar pares de melodías.\nAlgunas veces, la segunda melodía estará alterado.\nEste cambio puede ser leve o evidente.\n\nUsted tendrá que indicar si la segunda melodía está cambiada o no.\nSi las dos melodías son iguales, usted deberá pulsar el botón “IGUALES”.\nSi las dos melodías son diferentes, usted deberá pulsar el botón “DIFERENTES”.\n\nPara ayudarle a diferenciar las dos melodías, aparecerán los números 1 y 2 en la pantalla cuando estén sonando la primera y la segunda melodía respectivamente.\n\nEmpezaremos con algunos ejemplos.\nPulse el botón COMENZAR cuando esté preparado.";
-"pitch_example_1" = "En este par de melodías, la segunda melodía es idéntica a la primera.\nCuando crea que las melodías son iguales, usted deberá responder pulsando el botón “IGUALES”\n\nPulse el botón “IGUALES” para indicar que las melodías son iguales.\n\nVamos a continuar con un ejemplo en el que las melodías son diferentes.";
-"pitch_example_2" = "Este ejemplo utiliza la misma melodía que el Ejemplo 1 pero en este caso, la segunda melodía ha sido alterada.\n\nPara escuchar las melodías de nuevo, pulse sobre el ALTAVOZ\n\nPulse el botón “DIFERENTES” para indicar que las melodías que ha escuchado eran diferentes.\n\nContinuaremos ahora con un ejemplo en el que la diferencia entre ambas melodías es más sutil.";
-"pitch_example_3" = "En este ejemplo, la diferencia entre melodías es más sutil.\n\nPara escuchar las melodías de nuevo, pulse sobre el ALTAVOZ\n\nPulse el botón “DIFERENTES” para indicar que las melodías que ha escuchado eran diferentes.\n\nA continuación podrá practicar antes de comenzar la tarea.";
-"pitch_practice_1" = "Recuerde: después de escuchar las dos melodías, pulse “IGUALES” si las dos son idénticas y pulse “DIFERENTES” si son diferentes.\n\nTendrá 5 pares de melodías para practicar.\nCuando esté preparado, pulse COMENZAR";
-"pitch_practice_2" = "Recuerde: después de escuchar las dos melodías, pulse “IGUALES” si las dos son idénticas y pulse “DIFERENTES” si son diferentes.\n\nCuando esté preparado, pulse COMENZAR";
-"pitch_tasks" = "Ya ha completado los ensayos de práctica.\nAhora comenzaremos con la tarea.\n\nDurante esta tarea, en la pantalla se mostrarán los números 1 y 2 para ayudarle a diferenciar las dos melodías. También, se mostrarán los botones “IGUALES” y “DIFERENTES”, así como si su respuesta fue correcta o no.\n\nEsta tarea incluye 24 ensayos y llevará unos 5 minutos para completarla.\nPor favor, pulse COMENZAR cuando esté preparado.";
+"pitch_intro" = "En la siguiente tarea usted va a escuchar pares de melodías.\nAlgunas veces, la segunda melodía estará alterada.\nEste cambio puede ser leve o evidente.\n\nUsted tendrá que indicar si la segunda melodía está cambiada o no.\n\nSi las dos melodías son iguales, usted deberá pulsar el botón 'IGUALES'\nSi las dos melodías son diferentes, usted deberá pulsar el botón 'DIFERENTES'.\n\nPara ayudarle a diferenciar las dos melodías, aparecerán los números 1 y 2 en la pantalla cuando estén sonando la primera y la segunda melodía respectivamente.\n\nEmpezaremos con algunos ejemplos. \nPulse el botón COMENZAR cuando esté preparado.";
+"pitch_example_1" = "En este par de melodías, la segunda melodía es idéntica a la primera.\nCuando crea que las melodías son iguales, usted deberá responder pulsando el botón 'IGUALES'\nPulse el botón 'IGUALES' para indicar que las melodías son iguales.";
+"pitch_example_2" = "Vamos a continuar con un ejemplo en el que las melodías son diferentes.\n\nEste ejemplo utiliza la misma melodía que el Ejemplo 1 pero en este caso, la segunda melodía ha sido alterada.\n\nPara escuchar las melodías de nuevo, pulse sobre el ALTAVOZ\nCuando crea que las melodías son diferentes, usted deberá responder pulsando el botón 'DIFERENTES'.\nPulse el botón 'DIFERENTES' para indicar que las melodías que ha escuchado eran diferentes.";
+"pitch_example_3" = "Continuaremos ahora con un ejemplo en el que la diferencia entre ambas melodías es más sutil.\n\nEn este ejemplo, la diferencia entre melodías es más sutil.\n\nPara escuchar las melodías de nuevo, pulse sobre el ALTAVOZ.\n\nPulse el botón 'DIFERENTES' para indicar que las melodías que ha escuchado eran diferentes.";
+"pitch_practice_1" = "A continuación podrá practicar antes de comenzar la tarea.\n\nRecuerde: después de escuchar las dos melodías, pulse 'IGUALES' si las dos son idénticas y pulse 'DIFERENTES' si son diferentes.\nTendrá 5 pares de melodías para practicar\nCuando esté preparado, pulse sobre el ALTAVOZ";
+"pitch_practice_2" = "Recuerde: después de escuchar las dos melodías, pulse 'IGUALES' si las dos son idénticas y pulse 'DIFERENTES' si son diferentes.\nCuando esté preparado, pulse sobre el ALTAVOZ";
+"pitch_tasks" = "Ya ha completado los ensayos de práctica.\nAhora comenzaremos con la tarea.\n\nDurante esta tarea, en la pantalla se mostrarán los números 1 y 2 para ayudarle a diferenciar las dos melodías.\nTambién, se mostrarán los botones 'IGUALES' y 'DIFERENTES', así como si su respuesta fue correcta o no.\n\nEsta tarea incluye 24 ensayos y llevará unos 5 minutos para completarla.\n\nPor favor, pulse COMENZAR cuando esté preparado.";
 
 // Digital
-"digital_practice_1" = "Next you will hear a series of numbers.\nAfter each series, you will repeat the numbers that you heard in the same order.\nYou can only hear the list of numbers once, so do the best you can from what you hear.\nYou will be recording your answers in this device.\nPlease practice recording your voice with the microphone button below";
-"digital_practice_2" = "You will have a practice round before starting with the series.\nPlease click LISTEN button when you are ready.";
-"digital_begin_round" = "Now we will start with the task.\nClick on LISTEN button when you are ready.";
-"digital_begin_round_start" = "Click on LISTEN button when you are ready.";
-"digital_practice_3" = "Next you will hear series of numbers, but this time you will have to repeat them in reverse order. For example, if you hear the numbers 2-5-8, you should then say 8-5-2.\nAgain, you will only hear each list of numbers once, so do the best you can from what you hear.\nYou will have a practice round before starting with the series.";
-"digital_begin_round2" = "Now we will start with the task.\nClick on LISTEN button when you are ready.";
-"digital_begin_round2_start" = "Click on LISTEN button when you are ready.";
+"digital_practice_1" = "A continuación, usted oirá series de números.\nDespués de cada serie, deberá repetir los números que escuche en el mismo orden.\nSolo oirá cada serie una vez, así que hágalo lo mejor que pueda.\nGrabará sus respuestas en este dispositivo.\nPor favor, practique cómo grabar su voz con el micrófono que tiene abajo.";
+"digital_practice_2" = "Tendrá un ensayo de práctica antes de empezar con las series.\nPor favor, pulse sobre el botón 'ESCUCHAR' cuando esté listo.";
+"digital_begin_round" = "Ahora empezaremos con la tarea.\nPulse sobre el botón 'ESCUCHAR' cuando esté listo.";
+"digital_begin_round_start" = "Pulse sobre el botón 'ESCUCHAR' cuando esté listo.";
+"digital_practice_3" = "A continuación, escuchará series de números, pero esta vez deberá repetirlos en orden inverso. Por ejemplo, si oye 2-5-8, usted debe decir 8-5-2.\nDe nuevo, usted solo oirá la lista una vez. Hágalo lo mejor que pueda.\nTendrá un ensayo de práctica antes de empezar con las series.";
+"digital_begin_round2" = "Ahora empezaremos con la tarea.\nPulse sobre el botón 'ESCUCHAR' cuando esté listo.";
+"digital_begin_round2_start" = "Pulse sobre el botón 'ESCUCHAR' cuando esté listo.";
 
 
 // WordList 1
-"wordlist1_practice_instruction" = "En la siguiente prueba el objetivo es recordar palabras.\nOirá una lista de palabras y cuando termine se le pedirá que las recuerde.\nOirá la lista 3 veces\nDespués de cada vez, se le pedirá que repita tantas palabras como pueda recordar\nGrabará sus respuestas en este dispositivo.\n\nPor favor, practique el modo en que se graba su voz en el dispositivo usando el botón de micrófono que aparece más abajo";
-"wordlist1_instructionA1" = "Habrá una cuenta atrás antes de que la lista empiece.\nPor favor, pulse el botón OIR cuando esté listo para comenzar";
-"wordlist1_instructionA2" = "Toque el botón OIR para escuchar la lista de nuevo";
-"wordlist1_instructionA3" = "Ahora oirá otra lista de palabras. De nuevo, cuando termine  presione, el botón del micrófono para empezar a grabar lo que recuerde de la lista. Presione la pantalla para oír la nueva lista.";
-"wordlist1_instructionA4" = "Now you are going to listen to a different list of words. Again, once the list is finished say out loud all the words you can remember from this second list.\nTap the screen to listen to this new list";
-"wordlist1_instructionA5" = "Ahora, diga todas las palabras que pueda recordar de la primera lista, la que oyó 5 veces\n“Presione el botón del micrófono para empezar a grabar";
-"wordlist1_instructionB1" = "Ahora, diga todas las palabras que pueda recordar de la lista. Presione el botón del micrófono para empezar a grabar";
-"wordlist1_instructionB2" = "Ahora, diga todas las palabras que pueda recordar de la lista, incluidas las que dijo antes. Presione el botón del micrófono para empezar a grabar";
+"wordlist1_practice_instruction" = "En la siguiente prueba el objetivo es recordar palabras.\nOirá una lista de palabras y cuando termine se le pedirá que las recuerde.\nOirá la lista 5 veces.\nDespués de cada vez, se le pedirá que repita tantas palabras como pueda recordar.\nGrabará sus respuestas en este dispositivo.\n\nPor favor, practique el modo en que se graba su voz en el dispositivo usando el botón de micrófono que aparece más abajo";
+"wordlist1_instructionA1" = "Habrá una cuenta atrás de 3 segundos antes de que la lista empiece. \nPor favor, pulse el botón ESCUCHAR cuando esté listo para comenzar";
+"wordlist1_instructionA2" = "Pulse el botón ESCUCHAR  para escuchar la lista de nuevo";
+"wordlist1_instructionA3" = "Esta es la última vez que va a oír la lista. Por favor, toque el botón ESCUCHAR para escuchar la lista de nuevo";
+"wordlist1_instructionA4" = "Ahora oirá otra lista de palabras. De nuevo, cuando la lista termine presione, el botón del micrófono para grabar todas las palabras que recuerde de esta segunda lista.\nPulse sobre el altavoz para oír la nueva lista.";
+"wordlist1_instructionA5" = "Ahora, diga todas las palabras que pueda recordar de la primera lista, la que oyó 5 veces\nToque el micrófono para empezar a grabar";
+"wordlist1_instructionB1" = "Ahora, diga todas las palabras que pueda recordar de la lista. \nToque el micrófono para empezar a grabar.";
+"wordlist1_instructionB2" = "Ahora, diga todas las palabras que pueda recordar de la lista, incluidas las que dijo antes. \nPresione el botón del micrófono para empezar a grabar";
+
 
 // WordList 2
-"wordlist2_instruction" = "Hace algún tiempo escuchaste una lista de palabras 5 veces. Ahora diga en voz alta todas las palabras que puede recordar de esa lista\nToque el botón del micrófono para iniciar la grabación.";
-"wordlist2_instruction2" = "Ahora oirá una lista de palabras más larga, de una en una.\nSi la palabra es una de las que oyó en la lista anterior, pulse el botón SÍ.\nSi no reconoce la palabra, pulse el botón NO.\nHabrá una cuenta atrás de 3 segundos antes de comenzar.\nPulse el botón EMPEZAR.";
+"wordlist2_instruction" = "Hace un tiempo usted oyó una lista de palabras 5 veces. Por favor, repita ahora todas las palabras que pueda recordar de esa lista.\nToque el micrófono para empezar a grabar.";
+"wordlist2_instruction2" = "Ahora oirá una lista de palabras más larga, de una en una.\nSi la palabra es una de las que oyó en la primera lista, la que oyó 5 veces, pulse el botón SÍ.\nSi la palabra no estaba en la primera lista, la que usted oyó 5 veces, pulse el botón NO.\nPulse el botón ESCUCHAR para comenzar.";
 "wordlist2_in_first_list" = "¿Estaba esta palabra en la primera lista?";
-
 
 // Stroop
 "stroop_practice_instruction" = "En esta tarea usted grabará su voz en este dispositivo.\nPor favor, practique cómo grabar su voz utilizando los botones COMENZAR y HECHO que puede encontrar abajo";
-"stroop_practice_instruction2" = "Esta tarea tiene 4 partes.\nLe daremos instrucciones para cada una de ellas.\nEsta es una tarea cronometrada así que recuerde hacerlo tan rápido como pueda, pero tratando de no cometer errores.";
-"stroop_pretask_instruction" = "En esta tarea usted tiene que leer las palabras que se presentarán en la pantalla. Hágalo tan rápido como pueda, de izquierda a derecha en cada fila";
-"stroop_pretask_instruction2" = "En esta tarea usted tiene que nombrar el color de los círculos que se presentarán en pantalla.\nHágalo tan rápido como pueda, de izquierda a derecha en cada fila";
-"stroop_pretask_instruction3" = "En esta tarea usted tiene que nombrar el color en el que la palabra está escrita, NO LEERLA\nPor ejemplo, para la palabra “azul”, que está escrita en color rojo, usted debe decir: “rojo”.\nNo preste atención a la palabra en sí, solo nombre el color en el que está escrita.\nHágalo tan rápido como pueda, de izquierda a derecha en cada fila.";
-"stroop_ptask" = "Cuando esté preparado, pulse COMENZAR y lea todas las palabras en voz alta tan rápido como pueda.\nCuando termine la última palabra, pulse HECHO.";
+"stroop_practice_instruction2" = "Esta tarea tiene 4 partes.\nLe daremos instrucciones para cada una de ellas. \nEsta es una tarea cronometrada así que recuerde hacerlo tan rápido como pueda, pero tratando de no cometer errores.";
+"stroop_pretask_instruction" = "En esta tarea usted tiene que leer las palabras que se presentarán en la pantalla.\nHágalo tan rápido como pueda, de izquierda a derecha en cada fila. \nToque 'Video' para ver una demostración";
+"stroop_pretask_instruction2" = "En esta tarea usted tiene que nombrar el color de los círculos que se presentarán en pantalla.\nHágalo tan rápido como pueda, de izquierda a derecha en cada fila\nToque 'Video' para ver una demostración";
+"stroop_pretask_instruction3" = "En esta tarea usted tiene que nombrar el color en el que la palabra está escrita, NO LEERLA\nPor ejemplo, para la palabra 'azul', que está escrita en color rojo, usted debe decir: 'rojo'.\nNo preste atención a la palabra en sí, solo nombre el color en el que está escrita.\nHágalo tan rápido como pueda, de izquierda a derecha en cada fila.\nToque 'Video' para ver una demostración";
+"stroop_ptask" = "Cuando esté preparado, pulse COMENZAR \nCuando termine, pulse HECHO";
 
 
 // Naming Task
 "naming_practice_instruction1" = "A continuación le vamos a mostrar una serie de imágenes y usted tendrá que reconocerlas y nombrar cada dibujo en alto.\nGrabará su respuesta en este dispositivo.\nPor favor, practique cómo se graba su voz con el botón de micrófono que tiene abajo";
-"naming_practice_instruction2" = "Se le mostrarán las figuras de una en una. Si no sabe el nombre, tendra la opcion de saltar a la siguiente imagen";
-"naming_task_instruction" = "Primero practicaremos con algunos ejemplos.\nPulse COMENZAR cuando esté preparado";
+"naming_practice_instruction2" = "Se le mostrarán las figuras de una en una. Si no sabe el nombre el el tiempo permitido, tendrá la opción de saltar a la siguiente imagen\n\nComenzaremos con algunos ejemplos\nPulse COMENZAR cuando esté preparado";
+"naming_task_instruction" = "Ahora comenzaremos la tarea.\nPor favor, pulse COMENZAR cuando esté preparado";

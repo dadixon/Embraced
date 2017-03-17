@@ -35,7 +35,6 @@
 "No" = "No";
 "Recognition" = "Recognition";
 "Done" = "Done";
-"Re-record" = "Re-record";
 "Participant_ID" = "Participant ID";
 "Day_of_the_week" = "Day of the Week";
 "Country" = "Country";
@@ -44,6 +43,8 @@
 "Location" = "Location";
 "Floor" = "Floor";
 "Record" = "Record";
+"Listen" = "Listen";
+"Round" = "Round";
 
 "WELCOME_TEXT" = "We are going to be asking you some questions about yourself.\nPlease remember that you are free to skip any question that may bother you, although we kindly ask you to complete as much of this questionnaire as possible.\nThank you for your participation";
 

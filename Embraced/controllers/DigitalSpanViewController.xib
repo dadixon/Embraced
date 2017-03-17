@@ -21,6 +21,7 @@
                 <outlet property="completeLabel" destination="JDz-fl-CkV" id="ukE-bb-ua8"/>
                 <outlet property="completeView" destination="Tbg-TJ-DWN" id="hNY-2h-DkM"/>
                 <outlet property="containerView" destination="bru-dk-i0h" id="1T5-ce-Yb5"/>
+                <outlet property="doneBtn" destination="lOr-Fh-PI3" id="VG4-3O-gJy"/>
                 <outlet property="forwardBtn" destination="BnC-0d-Zfp" id="UvW-tm-dUY"/>
                 <outlet property="instructions" destination="W5d-aU-YUb" id="D8J-wH-4d0"/>
                 <outlet property="instructionsA" destination="dmM-P0-4MJ" id="FXX-6i-2Mw"/>
@@ -290,7 +291,7 @@ Please click LISTEN button when you are ready.</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Q1-nt-Lvd">
-                    <rect key="frame" x="20" y="55" width="728" height="82"/>
+                    <rect key="frame" x="20" y="55" width="728" height="81.5"/>
                     <string key="text">Next you will hear series of numbers, but this time you will have to repeat them in reverse order. For example, if you hear the numbers 2-5-8, you should then say 8-5-2.
 Again, you will only hear each list of numbers once, so do the best you can from what you hear.
 You will have a practice round before starting with the series.</string>

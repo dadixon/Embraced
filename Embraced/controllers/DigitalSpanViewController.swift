@@ -17,6 +17,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBOutlet var introView: UIView!
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
+    @IBOutlet weak var doneBtn: NavigationButton!
     
     @IBOutlet weak var listenBtn: UIButton!
     @IBOutlet weak var recordPracticeBtn: UIButton!
@@ -60,9 +61,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     var forward = Array<String>()
     var backward = Array<String>()
     
-    
     var forwardCount = 0
     var backwardCount = 0
+    
+    var language = String()
     
     // MARK: - Private
     
@@ -83,9 +85,9 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         step = AppDelegate.position
         super.viewDidLoad()
         
-        showOrientationAlert(orientation: "portrait")
+        language = participant.string(forKey: "language")!
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(DigitalSpanViewController.next(_:)))
+        showOrientationAlert(orientation: "portrait")
         
         introView.translatesAutoresizingMaskIntoConstraints = false
         preTask1View.translatesAutoresizingMaskIntoConstraints = false
@@ -121,13 +123,71 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             // failed to record!
         }
 
-        forward = DataManager.sharedInstance.digitalSpanForward
-        backward = DataManager.sharedInstance.digitalSpanBackward
+        
+        let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/stimuli/digitsspan"
+        
+        guard let url = URL(string: todoEndpoint) else {
+            return
+        }
+        
+        let urlRequest = URLRequest(url: url)
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
+            (data, response, error) -> Void in
+            
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            guard error == nil else {
+                return
+            }
+            // make sure we got data
+            guard let responseData = data else {
+                return
+            }
+            
+            if (statusCode == 200) {
+                
+                do {
+                    guard let todo = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
+                        return
+                    }
+                    
+                    if self.language == "es" {
+                        self.forward = todo["forwardSpa"]! as! Array<String>
+                        self.backward = todo["backwardSpa"]! as! Array<String>
+                    } else {
+                        self.forward = todo["forwardEng"]! as! Array<String>
+                        self.backward = todo["backwardEng"]! as! Array<String>
+                    }
+                } catch {
+                    return
+                }
+            }
+        })
+        
+        task.resume()
+        
+//        forward = DataManager.sharedInstance.digitalSpanForward
+//        backward = DataManager.sharedInstance.digitalSpanBackward
         
         loadingView.stopAnimating()
         
-        practice1Label.text = "Practice".localized(lang: participant.string(forKey: "language")!)
-        practice1Instructions.text = "digital_practice_1".localized(lang: participant.string(forKey: "language")!)
+        practice1Label.text = "Practice".localized(lang: language)
+        practice1Instructions.text = "digital_practice_1".localized(lang: language)
+        recordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
+        playBtn.setTitle("Play".localized(lang: language), for: .normal)
+        doneBtn.setTitle("Done".localized(lang: language), for: .normal)
+        practice2Label.text = "Practice".localized(lang: language)
+        listenBtn.setTitle("Listen".localized(lang: language), for: .normal)
+        recordPracticeBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
+        listenForwardBtn.setTitle("Listen".localized(lang: language), for: .normal)
+        practiceNextBtn.setTitle("Done".localized(lang: language), for: .normal)
+        practice2instructions.text = "digital_practice_2".localized(lang: language)
+        rounds.text = "Round".localized(lang: language) + " 1"
+        forwardBtn.setTitle("Next".localized(lang: language), for: .normal)
+        
         playBtn.isEnabled = false
     }
 
