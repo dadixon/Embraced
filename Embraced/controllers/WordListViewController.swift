@@ -46,7 +46,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     var position = 0
     var instructions = Array<String>()
     var instructions2 = Array<String>()
-    
+    var language = String()
     
     // MARK: - Private
     
@@ -68,7 +68,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(WordListViewController.next(_:)))
+        language = participant.string(forKey: "language")!
         
         showOrientationAlert(orientation: "landscape")
         
@@ -164,24 +164,29 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         
         task.resume()
         
-        practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!)
-        practiceInstruction.text = "wordlist1_practice_instruction".localized(lang: participant.string(forKey: "language")!)
-        startBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
-        
-        instructions = ["wordlist1_instructionA1".localized(lang: participant.string(forKey: "language")!),
-                                       "wordlist1_instructionA2".localized(lang: participant.string(forKey: "language")!),
-                                       "wordlist1_instructionA2".localized(lang: participant.string(forKey: "language")!),
-                                       "wordlist1_instructionA2".localized(lang: participant.string(forKey: "language")!),
-                                       "wordlist1_instructionA3".localized(lang: participant.string(forKey: "language")!),
-                                       "wordlist1_instructionA4".localized(lang: participant.string(forKey: "language")!),
-                                       "wordlist1_instructionA5".localized(lang: participant.string(forKey: "language")!)
+        practiceLabel.text = "Practice".localized(lang: language)
+        practiceInstruction.text = "wordlist1_practice_instruction".localized(lang: language)
+        startBtn.setTitle("Start".localized(lang: language), for: .normal)
+        recordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
+        playBtn.setTitle("Play".localized(lang: language), for: .normal)
+        trialLabel.text = "Trial".localized(lang: language) + " 1"
+        listenBtn.setTitle("Listen".localized(lang: language), for: .normal)
+        trialRecordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
+        wordNextBtn.setTitle("Done".localized(lang: language), for: .normal)
+        instructions = ["wordlist1_instructionA1".localized(lang: language),
+                                       "wordlist1_instructionA2".localized(lang: language),
+                                       "wordlist1_instructionA2".localized(lang: language),
+                                       "wordlist1_instructionA2".localized(lang: language),
+                                       "wordlist1_instructionA3".localized(lang: language),
+                                       "wordlist1_instructionA4".localized(lang: language),
+                                       "wordlist1_instructionA5".localized(lang: language)
         ]
-        instructions2 = ["wordlist1_instructionB1".localized(lang: participant.string(forKey: "language")!),
-                                        "wordlist1_instructionB2".localized(lang: participant.string(forKey: "language")!),
-                                        "wordlist1_instructionB2".localized(lang: participant.string(forKey: "language")!),
-                                        "wordlist1_instructionB2".localized(lang: participant.string(forKey: "language")!),
-                                        "wordlist1_instructionB2".localized(lang: participant.string(forKey: "language")!),
-                                        "wordlist1_instructionB1".localized(lang: participant.string(forKey: "language")!),
+        instructions2 = ["wordlist1_instructionB1".localized(lang: language),
+                                        "wordlist1_instructionB2".localized(lang: language),
+                                        "wordlist1_instructionB2".localized(lang: language),
+                                        "wordlist1_instructionB2".localized(lang: language),
+                                        "wordlist1_instructionB2".localized(lang: language),
+                                        "wordlist1_instructionB1".localized(lang: language),
                                         ""
         ]
         
@@ -199,7 +204,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         instructions2Label.isHidden = true
         
         if position < 5 {
-            trialLabel.text = "Trial".localized(lang: participant.string(forKey: "language")!) + " " + String(position + 1)
+            trialLabel.text = "Trial".localized(lang: language) + " " + String(position + 1)
         } else {
             trialLabel.text = "" //"Interference list"
         }
@@ -231,7 +236,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
             soundRecorder.delegate = self
             soundRecorder.record()
             
-            button.setTitle("Stop_Recording".localized(lang: participant.string(forKey: "language")!), for: .normal)
+            button.setTitle("Stop_Recording".localized(lang: language), for: .normal)
         } catch {
             finishRecording(button, success: false)
         }
@@ -245,7 +250,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         }
         
         if success {
-            button.setTitle("Start_Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
+            button.setTitle("Start_Record".localized(lang: language), for: .normal)
             playBtn.isEnabled = true
         }
     }
@@ -256,7 +261,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         }
         
         if practice {
-            playBtn.setTitle("Play".localized(lang: participant.string(forKey: "language")!), for: .normal)
+            playBtn.setTitle("Play".localized(lang: language), for: .normal)
             recordBtn.isEnabled = true
         } else {
             instructions2Label.isHidden = false
@@ -335,7 +340,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         setup()
         practice = false
         
-        wordNextBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        wordNextBtn.setTitle("Next".localized(lang: language), for: .normal)
         wordNextBtn.isHidden = true
     }
     
@@ -362,16 +367,16 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func playSound(_ sender: UIButton) {
-        if sender.titleLabel!.text == "Play".localized(lang: participant.string(forKey: "language")!) {
+        if sender.titleLabel!.text == "Play".localized(lang: language) {
             recordBtn.isEnabled = false
-            sender.setTitle("Stop".localized(lang: participant.string(forKey: "language")!), for: UIControlState())
+            sender.setTitle("Stop".localized(lang: language), for: UIControlState())
             preparePlayer()
             soundPlayer?.play()
         } else {
             if (soundPlayer?.isPlaying)! {
                 soundPlayer?.stop()
             }
-            sender.setTitle("Play".localized(lang: participant.string(forKey: "language")!), for: UIControlState())
+            sender.setTitle("Play".localized(lang: language), for: UIControlState())
         }
     }
     
@@ -396,8 +401,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         } else {
             setSubview(trial1View, next: completeView)
             
-            completeLabel.text = "Test_complete".localized(lang: participant.string(forKey: "language")!)
-            completeBtn.setTitle("Submit".localized(lang: participant.string(forKey: "language")!), for: .normal)
+            completeLabel.text = "Test_complete".localized(lang: language)
+            completeBtn.setTitle("Submit".localized(lang: language), for: .normal)
         }
     }
     

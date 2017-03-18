@@ -45,6 +45,7 @@
 "Record" = "Record";
 "Listen" = "Listen";
 "Round" = "Round";
+"Trial" = "Trial";
 
 "WELCOME_TEXT" = "We are going to be asking you some questions about yourself.\nPlease remember that you are free to skip any question that may bother you, although we kindly ask you to complete as much of this questionnaire as possible.\nThank you for your participation";
 

@@ -46,6 +46,7 @@
 "Record" = "Grabar";
 "Listen" = "ESCUCHAR";
 "Round" = "Redondo";
+"Trial" = "Juicio";
 
 "WELCOME_TEXT" = "Vamos a hacerle algunas preguntas acerca de usted.\nPor favor, recuerde que es libre de no contestar aquellas preguntas que le molesten pero le rogamos encarecidamente que trate de completar este cuestionario al máximo posible.\nGracias por su participación.";
 
