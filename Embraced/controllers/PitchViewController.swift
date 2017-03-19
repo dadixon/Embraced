@@ -114,6 +114,8 @@ class PitchViewController: FrontViewController {
         
         super.viewDidLoad()
         
+        language = participant.string(forKey: "language")!
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PitchViewController.next(_:)))
         
         showOrientationAlert(orientation: "portrait")
@@ -191,8 +193,8 @@ class PitchViewController: FrontViewController {
 //        trials = DataManager.sharedInstance.pitchTrials
 //        tasks = DataManager.sharedInstance.pitchTasks
         
-        introBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
-        introLabel.text = "pitch_intro".localized(lang: participant.string(forKey: "language")!)
+        introBtn.setTitle("Start".localized(lang: language), for: .normal)
+        introLabel.text = "pitch_intro".localized(lang: language)
         
         for index in 0...24 {
             userAnswers.insert("", at: index)
@@ -266,11 +268,11 @@ class PitchViewController: FrontViewController {
     
     func setupExample1() {
 //        log(logMessage: "initi")
-        example1.text = "Example".localized(lang: participant.string(forKey: "language")!) + " 1"
-        example1Content.text = "pitch_example_1".localized(lang: participant.string(forKey: "language")!)
-        example1btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
-        example1segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
-        example1segment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
+        example1.text = "Example".localized(lang: language) + " 1"
+        example1Content.text = "pitch_example_1".localized(lang: language)
+        example1btn.setTitle("Next".localized(lang: language), for: .normal)
+        example1segment.setTitle("Same".localized(lang: language), forSegmentAt: 0)
+        example1segment.setTitle("Different".localized(lang: language), forSegmentAt: 1)
         
         example1btn.isHidden = true
         example1segment.isHidden = true
@@ -279,11 +281,11 @@ class PitchViewController: FrontViewController {
     
     func setupExample2() {
 //        log(logMessage: "initi")
-        example2.text = "Example".localized(lang: participant.string(forKey: "language")!) + " 2"
-        example2Content.text = "pitch_example_2".localized(lang: participant.string(forKey: "language")!)
-        example2btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
-        example2segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
-        example2segment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
+        example2.text = "Example".localized(lang: language) + " 2"
+        example2Content.text = "pitch_example_2".localized(lang: language)
+        example2btn.setTitle("Next".localized(lang: language), for: .normal)
+        example2segment.setTitle("Same".localized(lang: language), forSegmentAt: 0)
+        example2segment.setTitle("Different".localized(lang: language), forSegmentAt: 1)
         
         example2btn.isHidden = true
         example2segment.isHidden = true
@@ -292,11 +294,11 @@ class PitchViewController: FrontViewController {
     
     func setupExample3() {
 //        log(logMessage: "initi")
-        example3.text = "Example".localized(lang: participant.string(forKey: "language")!) + " 3"
-        example3Content.text = "pitch_example_3".localized(lang: participant.string(forKey: "language")!)
-        example3btn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
-        example3segment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
-        example3segment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
+        example3.text = "Example".localized(lang: language) + " 3"
+        example3Content.text = "pitch_example_3".localized(lang: language)
+        example3btn.setTitle("Next".localized(lang: language), for: .normal)
+        example3segment.setTitle("Same".localized(lang: language), forSegmentAt: 0)
+        example3segment.setTitle("Different".localized(lang: language), forSegmentAt: 1)
         
         example3btn.isHidden = true
         example3segment.isHidden = true
@@ -305,11 +307,11 @@ class PitchViewController: FrontViewController {
     
     func setupTrial1() {
 //        log(logMessage: "initi")
-        practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!) + " " + String(trialCount+1)
-        practiceInstructionsLabel.text = "pitch_practice_1".localized(lang: participant.string(forKey: "language")!)
-        practiceSegment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
-        practiceSegment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
-        practiceBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        practiceLabel.text = "Practice".localized(lang: language) + " " + String(trialCount+1)
+        practiceInstructionsLabel.text = "pitch_practice_1".localized(lang: language)
+        practiceSegment.setTitle("Same".localized(lang: language), forSegmentAt: 0)
+        practiceSegment.setTitle("Different".localized(lang: language), forSegmentAt: 1)
+        practiceBtn.setTitle("Next".localized(lang: language), for: .normal)
         
         practiceSegment.isHidden = true
         practiceBtn.isHidden = true
@@ -397,8 +399,8 @@ class PitchViewController: FrontViewController {
         if trialCount < trials.count {
             practiceResponse.text = ""
             practiceSegment.selectedSegmentIndex = -1
-            practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!) + " " + String(trialCount+1)
-            practiceInstructionsLabel.text = "pitch_practice_2".localized(lang: participant.string(forKey: "language")!)
+            practiceLabel.text = "Practice".localized(lang: language) + " " + String(trialCount+1)
+            practiceInstructionsLabel.text = "pitch_practice_2".localized(lang: language)
             
             practiceSegment.isHidden = true
             practiceBtn.isHidden = true
@@ -412,8 +414,8 @@ class PitchViewController: FrontViewController {
             
             setSubview(trial1View, next: preTaskView)
             
-            tasksContent.text = "pitch_tasks".localized(lang: participant.string(forKey: "language")!)
-            pretaskBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
+            tasksContent.text = "pitch_tasks".localized(lang: language)
+            pretaskBtn.setTitle("Start".localized(lang: language), for: .normal)
         }
 //        log(logMessage: "finished")
     }
@@ -425,9 +427,9 @@ class PitchViewController: FrontViewController {
         
         tasksLabel.text = "1"
         
-        taskSegment.setTitle("Same".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 0)
-        taskSegment.setTitle("Different".localized(lang: participant.string(forKey: "language")!), forSegmentAt: 1)
-        taskBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        taskSegment.setTitle("Same".localized(lang: language), forSegmentAt: 0)
+        taskSegment.setTitle("Different".localized(lang: language), forSegmentAt: 1)
+        taskBtn.setTitle("Next".localized(lang: language), for: .normal)
         
         taskSegment.isHidden = true
         taskBtn.isHidden = true
@@ -465,8 +467,8 @@ class PitchViewController: FrontViewController {
             
             setSubview(taskView, next: completeView)
             
-            completeLabel.text = "Test_complete".localized(lang: participant.string(forKey: "language")!)
-            submitBtn.setTitle("Submit".localized(lang: participant.string(forKey: "language")!), for: .normal)
+            completeLabel.text = "Test_complete".localized(lang: language)
+            submitBtn.setTitle("Submit".localized(lang: language), for: .normal)
         }
 //        log(logMessage: "finished")
     }
@@ -493,19 +495,19 @@ class PitchViewController: FrontViewController {
 //        log(logMessage: "initi")
         if ((sender.selectedSegmentIndex == 0 && exampleAnswers[exampleCount] == "S") || (sender.selectedSegmentIndex == 1 && exampleAnswers[exampleCount] == "D")) {
             if exampleCount == 0 {
-                example1Response.text = "Correct".localized(lang: participant.string(forKey: "language")!)
+                example1Response.text = "Correct".localized(lang: language)
             } else if exampleCount == 1 {
-                example2Response.text = "Correct".localized(lang: participant.string(forKey: "language")!)
+                example2Response.text = "Correct".localized(lang: language)
             } else if exampleCount == 2 {
-                example3Response.text = "Correct".localized(lang: participant.string(forKey: "language")!)
+                example3Response.text = "Correct".localized(lang: language)
             }
         } else {
             if exampleCount == 0 {
-                example1Response.text = "Incorrect_2".localized(lang: participant.string(forKey: "language")!)
+                example1Response.text = "Incorrect_2".localized(lang: language)
             } else if exampleCount == 1 {
-                example2Response.text = "Incorrect_2".localized(lang: participant.string(forKey: "language")!)
+                example2Response.text = "Incorrect_2".localized(lang: language)
             } else if exampleCount == 2 {
-                example3Response.text = "Incorrect_2".localized(lang: participant.string(forKey: "language")!)
+                example3Response.text = "Incorrect_2".localized(lang: language)
             }
         }
 //        log(logMessage: "finished")
@@ -514,20 +516,20 @@ class PitchViewController: FrontViewController {
     @IBAction func practiceAnswered(_ sender: AnyObject) {
 //        log(logMessage: "initi")
         if ((sender.selectedSegmentIndex == 0 && practiceAnswers[trialCount] == "S") || (sender.selectedSegmentIndex == 1 && practiceAnswers[trialCount] == "D")) {
-            practiceResponse.text = "Correct".localized(lang: participant.string(forKey: "language")!)
+            practiceResponse.text = "Correct".localized(lang: language)
         } else {
-            practiceResponse.text = "Incorrect_2".localized(lang: participant.string(forKey: "language")!)
+            practiceResponse.text = "Incorrect_2".localized(lang: language)
         }
 //        log(logMessage: "finished")
     }
     
     @IBAction func taskAnswered(_ sender: AnyObject) {
         if ((sender.selectedSegmentIndex == 0 && taskAnswers[tasksCount - 1] == "S") || (sender.selectedSegmentIndex == 1 && taskAnswers[tasksCount - 1] == "D")) {
-            taskResponse.text = "Correct".localized(lang: participant.string(forKey: "language")!)
+            taskResponse.text = "Correct".localized(lang: language)
             userAnswers.insert("c", at: tasksCount - 1)
             score += 1
         } else {
-            taskResponse.text = "Incorrect".localized(lang: participant.string(forKey: "language")!)
+            taskResponse.text = "Incorrect".localized(lang: language)
             userAnswers.insert("i", at: tasksCount - 1)
             score -= 1
         }

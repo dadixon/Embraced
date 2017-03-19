@@ -291,6 +291,8 @@
 		A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */; };
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
 		A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */; };
+		A4E16ABC1E7E724E00902464 /* STIMULI_1_SPA.png in Resources */ = {isa = PBXBuildFile; fileRef = A4E16ABB1E7E724E00902464 /* STIMULI_1_SPA.png */; };
+		A4E16ABE1E7E725A00902464 /* STIMULI_2_4_SPA.png in Resources */ = {isa = PBXBuildFile; fileRef = A4E16ABD1E7E725A00902464 /* STIMULI_2_4_SPA.png */; };
 		A4E3388C1DE6098B0010FC45 /* melodies 320ms diff(06).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3385B1DE6098B0010FC45 /* melodies 320ms diff(06).wav */; };
 		A4E3388D1DE6098B0010FC45 /* melodies 320ms diff(07).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3385C1DE6098B0010FC45 /* melodies 320ms diff(07).wav */; };
 		A4E3388E1DE6098B0010FC45 /* melodies 320ms diff(16).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4E3385D1DE6098B0010FC45 /* melodies 320ms diff(16).wav */; };
@@ -637,6 +639,8 @@
 		A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		A4E16ABB1E7E724E00902464 /* STIMULI_1_SPA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = STIMULI_1_SPA.png; sourceTree = "<group>"; };
+		A4E16ABD1E7E725A00902464 /* STIMULI_2_4_SPA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = STIMULI_2_4_SPA.png; sourceTree = "<group>"; };
 		A4E3385B1DE6098B0010FC45 /* melodies 320ms diff(06).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(06).wav"; sourceTree = "<group>"; };
 		A4E3385C1DE6098B0010FC45 /* melodies 320ms diff(07).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(07).wav"; sourceTree = "<group>"; };
 		A4E3385D1DE6098B0010FC45 /* melodies 320ms diff(16).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(16).wav"; sourceTree = "<group>"; };
@@ -941,6 +945,8 @@
 		A47448761DE690B700BB4011 /* Stroop */ = {
 			isa = PBXGroup;
 			children = (
+				A4E16ABD1E7E725A00902464 /* STIMULI_2_4_SPA.png */,
+				A4E16ABB1E7E724E00902464 /* STIMULI_1_SPA.png */,
 				A47448811DE692C100BB4011 /* STROOP_SPA_TASK1.mp4 */,
 				A47448821DE692C100BB4011 /* STROOP_SPA_TASK2.mp4 */,
 				A47448831DE692C100BB4011 /* STROOP_SPA_TASK3.mp4 */,
@@ -1310,6 +1316,7 @@
 				A47447A11DE6900B00BB4011 /* ENG-FWD-07.mp3 in Resources */,
 				A47141AD1E6896A90089B95F /* SPA-23.mp3 in Resources */,
 				A47141A81E6896A90089B95F /* SPA-18.mp3 in Resources */,
+				A4E16ABE1E7E725A00902464 /* STIMULI_2_4_SPA.png in Resources */,
 				A4347FD61D7BCABC0033306A /* PegboardViewController.xib in Resources */,
 				A47141A91E6896A90089B95F /* SPA-19.mp3 in Resources */,
 				A474487B1DE690CD00BB4011 /* STIMULI_2&4_ENG.png in Resources */,
@@ -1526,6 +1533,7 @@
 				A45F3AE21E5230E600D2813C /* Image19.jpg in Resources */,
 				A444ACDA1E7CA84B0039EE84 /* SPA-FWD-02.mp3 in Resources */,
 				A47447F91DE6906500BB4011 /* ENG-08.mp3 in Resources */,
+				A4E16ABC1E7E724E00902464 /* STIMULI_1_SPA.png in Resources */,
 				A4E338AC1DE6098C0010FC45 /* melodies 320ms orig(45).wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

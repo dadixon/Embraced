@@ -23,6 +23,7 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
     let participant = UserDefaults.standard
     
     var orientation = "portrait"
+    var language = String()
     
     var step = 1
     var totalSteps = 20

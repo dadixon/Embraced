@@ -46,7 +46,6 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     var position = 0
     var instructions = Array<String>()
     var instructions2 = Array<String>()
-    var language = String()
     
     // MARK: - Private
     

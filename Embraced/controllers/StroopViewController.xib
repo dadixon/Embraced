@@ -63,6 +63,10 @@
                 <outlet property="progressLabel" destination="tZr-Wq-fH0" id="SCk-Zc-Brq"/>
                 <outlet property="progressView" destination="BKW-zQ-Z7p" id="PX6-xT-C1h"/>
                 <outlet property="recordBtn" destination="6QZ-wG-oUW" id="NnI-xd-F5n"/>
+                <outlet property="recordBtn1" destination="gT7-hv-oYu" id="OVj-cM-i1z"/>
+                <outlet property="recordBtn2" destination="MOF-XH-IzJ" id="3xS-MW-jhy"/>
+                <outlet property="recordBtn3" destination="WBK-Zb-DJ9" id="Nwj-sZ-vjb"/>
+                <outlet property="recordBtn4" destination="pHn-9P-ryx" id="N5w-5p-rdr"/>
                 <outlet property="stroopNextBtn" destination="MC7-Pi-QYe" id="YEq-ri-scW"/>
                 <outlet property="task1ImageView" destination="1iI-n9-Z0T" id="Icb-g6-uDC"/>
                 <outlet property="task1View" destination="zoj-0o-4k0" id="K8X-qx-AYh"/>
@@ -257,10 +261,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLu-R7-gQI" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="475" y="485" width="74" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="74" id="Icc-aB-Wr2"/>
-                    </constraints>
+                    <rect key="frame" x="485" y="485" width="54" height="30"/>
                     <state key="normal" title="Preview"/>
                     <connections>
                         <action selector="playVideo:" destination="-1" eventType="touchUpInside" id="5ck-23-4Rd"/>
@@ -381,10 +382,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1Z-kv-yXw" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="475" y="436" width="74" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="74" id="E3d-SW-zFu"/>
-                    </constraints>
+                    <rect key="frame" x="485" y="436" width="54" height="30"/>
                     <state key="normal" title="Preview"/>
                     <connections>
                         <action selector="playVideo:" destination="-1" eventType="touchUpInside" id="SUj-Yr-7oP"/>
@@ -464,10 +462,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Utp-e3-4jH" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="475" y="465" width="74" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="74" id="pQf-2c-e4d"/>
-                    </constraints>
+                    <rect key="frame" x="485" y="465" width="54" height="30"/>
                     <state key="normal" title="Preview"/>
                     <connections>
                         <action selector="playVideo:" destination="-1" eventType="touchUpInside" id="5TV-Eo-9xC"/>
@@ -580,10 +575,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Z4-TW-jln" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="475" y="422" width="74" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="74" id="Kv8-6G-vnO"/>
-                    </constraints>
+                    <rect key="frame" x="485" y="422" width="54" height="30"/>
                     <state key="normal" title="Preview"/>
                     <connections>
                         <action selector="playVideo:" destination="-1" eventType="touchUpInside" id="Pl5-Sa-9ZK"/>
