@@ -321,16 +321,16 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1iI-n9-Z0T">
-                    <rect key="frame" x="20" y="50" width="984" height="517"/>
+                    <rect key="frame" x="20" y="50" width="984" height="422"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="517" id="xen-MM-naa"/>
+                        <constraint firstAttribute="height" constant="422" id="hHP-La-fUa"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gT7-hv-oYu">
-                    <rect key="frame" x="477" y="580" width="71" height="97"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gT7-hv-oYu" customClass="RecordButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="431" y="549" width="162" height="128"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="71" id="FDq-Ar-3BZ"/>
-                        <constraint firstAttribute="height" constant="97" id="XRf-uj-D16"/>
+                        <constraint firstAttribute="height" constant="128" id="JIU-JD-3Nk"/>
+                        <constraint firstAttribute="width" constant="162" id="RHP-W9-zVB"/>
                     </constraints>
                     <inset key="titleEdgeInsets" minX="-92" minY="0.0" maxX="0.0" maxY="-121"/>
                     <state key="normal" title="Start" image="record.png">
@@ -418,16 +418,16 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ph-zD-iIz">
-                    <rect key="frame" x="20" y="50" width="984" height="517"/>
+                    <rect key="frame" x="20" y="50" width="984" height="422"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="517" id="mxR-1A-e51"/>
+                        <constraint firstAttribute="height" constant="422" id="mxR-1A-e51"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MOF-XH-IzJ">
-                    <rect key="frame" x="477" y="580" width="71" height="97"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="MOF-XH-IzJ" customClass="RecordButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="431" y="549" width="162" height="128"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="71" id="d4b-Rt-EoI"/>
-                        <constraint firstAttribute="height" constant="97" id="gt4-hh-63x"/>
+                        <constraint firstAttribute="height" constant="128" id="ME3-b6-bFV"/>
+                        <constraint firstAttribute="width" constant="162" id="Vgx-B1-OML"/>
                     </constraints>
                     <inset key="titleEdgeInsets" minX="-92" minY="0.0" maxX="0.0" maxY="-121"/>
                     <state key="normal" title="Start" image="record.png">
@@ -515,16 +515,16 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6o7-C8-Lzb">
-                    <rect key="frame" x="20" y="50" width="984" height="517"/>
+                    <rect key="frame" x="20" y="50" width="984" height="422"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="517" id="1J0-XT-45x"/>
+                        <constraint firstAttribute="height" constant="422" id="1J0-XT-45x"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WBK-Zb-DJ9">
-                    <rect key="frame" x="477" y="580" width="71" height="97"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WBK-Zb-DJ9" customClass="RecordButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="431" y="549" width="162" height="128"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="97" id="DM5-aV-Q6n"/>
-                        <constraint firstAttribute="width" constant="71" id="gv6-Xq-O08"/>
+                        <constraint firstAttribute="height" constant="128" id="P6H-T9-aWj"/>
+                        <constraint firstAttribute="width" constant="162" id="rOM-hj-zxF"/>
                     </constraints>
                     <inset key="titleEdgeInsets" minX="-92" minY="0.0" maxX="0.0" maxY="-121"/>
                     <state key="normal" title="Start" image="record.png">
@@ -611,16 +611,16 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="udu-5w-Ah2">
-                    <rect key="frame" x="20" y="50" width="984" height="517"/>
+                    <rect key="frame" x="20" y="50" width="984" height="422"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="517" id="HXc-oD-lu5"/>
+                        <constraint firstAttribute="height" constant="422" id="HXc-oD-lu5"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pHn-9P-ryx">
-                    <rect key="frame" x="477" y="580" width="71" height="97"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pHn-9P-ryx" customClass="RecordButton" customModule="Embraced" customModuleProvider="target">
+                    <rect key="frame" x="431" y="549" width="162" height="128"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="97" id="0LK-kf-hdV"/>
-                        <constraint firstAttribute="width" constant="71" id="lhl-vI-6s0"/>
+                        <constraint firstAttribute="width" constant="162" id="96i-HG-SD8"/>
+                        <constraint firstAttribute="height" constant="128" id="OV1-wQ-i6A"/>
                     </constraints>
                     <inset key="titleEdgeInsets" minX="-92" minY="0.0" maxX="0.0" maxY="-121"/>
                     <state key="normal" title="Start" image="record.png">

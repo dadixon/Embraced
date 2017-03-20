@@ -273,10 +273,14 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         
         // Clear audios
         for i in 0...forwardCount {
-            deleteFile("forward\(i)")
+            if fileExist("forward\(i).m4a") {
+                deleteFile("forward\(i)")
+            }
         }
         for i in 0...backwardCount {
-            deleteFile("backward\(i)")
+            if fileExist("backward\(i).m4a") {
+                deleteFile("backward\(i)")
+            }
         }
     }
     // MARK: - Actions

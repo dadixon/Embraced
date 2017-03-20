@@ -239,10 +239,15 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         previewBtn2.setTitle("Preview".localized(lang: language), for: .normal)
         previewBtn3.setTitle("Preview".localized(lang: language), for: .normal)
         previewBtn4.setTitle("Preview".localized(lang: language), for: .normal)
-        recordBtn1.setTitle("Preview".localized(lang: language), for: .normal)
-        recordBtn2.setTitle("Preview".localized(lang: language), for: .normal)
-        recordBtn3.setTitle("Preview".localized(lang: language), for: .normal)
-        recordBtn4.setTitle("Preview".localized(lang: language), for: .normal)
+        recordBtn1.setTitle("Start_Record".localized(lang: language), for: .normal)
+        recordBtn2.setTitle("Start_Record".localized(lang: language), for: .normal)
+        recordBtn3.setTitle("Start_Record".localized(lang: language), for: .normal)
+        recordBtn4.setTitle("Start_Record".localized(lang: language), for: .normal)
+        
+        doneBtn.isHidden = true
+        doneBtn2.isHidden = true
+        doneBtn3.isHidden = true
+        doneBtn4.isHidden = true
         
         for index in 0...3 {
             reactionTimes.insert(-1, at: index)
@@ -376,6 +381,19 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
             startRecording(sender as! UIButton, fileName: "stroop\(position).m4a")
         } else {
             finishRecording(button: sender as! UIButton, success: true)
+            
+            switch position {
+            case 1:
+                doneBtn.isHidden = false
+            case 2:
+                doneBtn2.isHidden = false
+            case 3:
+                doneBtn3.isHidden = false
+            case 4:
+                doneBtn4.isHidden = false
+            default:
+                return
+            }
         }
     }
     
@@ -491,12 +509,19 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         reactionTimes.insert(Int(mill), at: 2)
         setSubview(task3View, next: preTask4View)
         
-//        let myString = "stroop_pretask_instruction3".localized(lang: participant.string(forKey: "language")!)
-//        
-//        myMutableString = NSMutableAttributedString(string: myString, attributes: [NSFontAttributeName:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
-//        myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange(location:28,length:4))
-//        specialText.attributedText = myMutableString
-        preTaskInstruction4.text = "stroop_pretask_instruction3".localized(lang: language)
+        let myString = "stroop_pretask_instruction3".localized(lang: language)
+
+        if let range = myString.range(of: "blue".localized(lang: language)) {
+            let startPos = myString.characters.distance(from: myString.characters.startIndex, to: range.lowerBound)
+            let endPos = myString.characters.distance(from: myString.characters.startIndex, to: range.upperBound)
+            print(startPos, endPos)
+            
+            myMutableString = NSMutableAttributedString(string: myString, attributes: [NSFontAttributeName:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
+            myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange(location:startPos,length:endPos - startPos))
+            preTaskInstruction4.attributedText = myMutableString
+        }
+        
+        
         previewBtn4.setTitle("Preview".localized(lang: language), for: .normal)
         nextBtn5.setTitle("Next".localized(lang: language), for: .normal)
     }
