@@ -80,6 +80,9 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         
         super.viewDidLoad()
 
+        language = participant.string(forKey: "language")!
+        showOrientationAlert(orientation: "landscape")
+        
         // Fetch images
         var stimuliURIs = [String: Any]()
         
@@ -135,13 +138,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         
         task.resume()
         
-//        practice = DataManager.sharedInstance.namingTaskPractice
-//        task = DataManager.sharedInstance.namingTaskTask
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(NamingTaskViewController.next(_:)))
-        
-        showOrientationAlert(orientation: "landscape")
-        
         initialView.translatesAutoresizingMaskIntoConstraints = false
         trialView.translatesAutoresizingMaskIntoConstraints = false
         preTaskView.translatesAutoresizingMaskIntoConstraints = false
@@ -158,11 +154,11 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         
         recordingSession = AVAudioSession.sharedInstance()
         
-        practiceLabel.text = "Practice".localized(lang: participant.string(forKey: "language")!)
-        practiceInstruction1.text = "naming_practice_instruction1".localized(lang: participant.string(forKey: "language")!)
-        pracitceInstruction2.text = "naming_practice_instruction2".localized(lang: participant.string(forKey: "language")!)
-        startBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
-        
+        practiceLabel.text = "Practice".localized(lang: language)
+        practiceInstruction1.text = "naming_practice_instruction1".localized(lang: language)
+        pracitceInstruction2.text = "naming_practice_instruction2".localized(lang: language)
+        startBtn.setTitle("Start".localized(lang: language), for: .normal)
+        exampleRecordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
         loadingView.stopAnimating()
     }
 
@@ -277,7 +273,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         recordBtn.isEnabled = true
-        playBtn.setTitle("Play".localized(lang: participant.string(forKey: "language")!), for: UIControlState())
+        playBtn.setTitle("Play".localized(lang: language), for: UIControlState())
         playBtn.isEnabled = false
     }
     
@@ -334,8 +330,8 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         setSubview(initialView, next: trialView)
         loadImageFromUrl(practice[count], view: imageView)
         
-        exampleLabel.text = "Example".localized(lang: participant.string(forKey: "language")!)
-        exampleNextBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        exampleLabel.text = "Example".localized(lang: language)
+        exampleNextBtn.setTitle("Next".localized(lang: language), for: .normal)
         exampleRecordBtn.isEnabled = true
     }
     
@@ -347,15 +343,15 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         } else {
             setSubview(trialView, next: preTaskView)
             
-            taskInstruction.text = "naming_task_instruction".localized(lang: participant.string(forKey: "language")!)
-            taskStartBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
+            taskInstruction.text = "naming_task_instruction".localized(lang: language)
+            taskStartBtn.setTitle("Start".localized(lang: language), for: .normal)
         }
     }
     
     @IBAction func toTask(_ sender: AnyObject) {
         isTask = true
         setSubview(preTaskView, next: taskView)
-        taskNextBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        taskNextBtn.setTitle("Next".localized(lang: language), for: .normal)
         count = 0
         loadImageFromUrl(tasks[count], view: taskImageView)
         startTimer()
@@ -375,8 +371,8 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         } else {
             resetTimer()
             setSubview(taskView, next: completeView)
-            completeLabel.text = "Test_complete".localized(lang: participant.string(forKey: "language")!)
-            completeSubmitBtn.setTitle("Submit".localized(lang: participant.string(forKey: "language")!), for: .normal)
+            completeLabel.text = "Test_complete".localized(lang: language)
+            completeSubmitBtn.setTitle("Submit".localized(lang: language), for: .normal)
         }
     }
     
