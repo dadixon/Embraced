@@ -274,12 +274,12 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         // Clear audios
         for i in 0...forwardCount {
             if fileExist("forward\(i).m4a") {
-                deleteFile("forward\(i)")
+                deleteFile("forward\(i).m4a")
             }
         }
         for i in 0...backwardCount {
             if fileExist("backward\(i).m4a") {
-                deleteFile("backward\(i)")
+                deleteFile("backward\(i).m4a")
             }
         }
     }
@@ -327,7 +327,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
 
     
     @IBAction func playSound(_ sender: UIButton) {
-        if sender.titleLabel!.text == "Play" {
+        if sender.titleLabel!.text == "Play".localized(lang: language) {
             recordBtn.isEnabled = false
             sender.setTitle("Stop".localized(lang: language), for: UIControlState())
             preparePlayer()
