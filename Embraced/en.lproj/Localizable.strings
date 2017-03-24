@@ -48,6 +48,15 @@
 "Trial" = "Trial";
 "Preview" = "Preview";
 "blue" = "blue";
+"Save" = "Save";
+"Saved" = "Saved";
+"Save_settings" = "Your settings have been saved.";
+"Rotation" = "Rotation";
+"Rotation_landscpaing_prompt" = "Please, rotate iPad to landscape orientation";
+"Rotation_portrait_prompt" = "Please, rotate iPad to portrait orientation";
+"Finished" = "Finished";
+"Start_over" = "Start Over";
+
 
 "WELCOME_TEXT" = "We are going to be asking you some questions about yourself.\nPlease remember that you are free to skip any question that may bother you, although we kindly ask you to complete as much of this questionnaire as possible.\nThank you for your participation";
 

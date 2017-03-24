@@ -46,19 +46,27 @@
 "Record" = "Grabar";
 "Listen" = "ESCUCHAR";
 "Round" = "Serie";
-"Trial" = "Juicio";
+"Trial" = "Ensayo";
 "Preview" = "Previsualización";
 "blue" = "azul";
+"Save" = "Guardar";
+"Saved" = "Guardado";
+"Save_settings" = "Su configuración se ha guardado.";
+"Rotation" = "Rotación";
+"Rotation_landscpaing_prompt" = "Por favor, coloque el iPad en posición vertical";
+"Rotation_portrait_prompt" = "Por favor, coloque el iPad en posición horizontal";
+"Finished" = "Ha finalizado";
+"Start_over" = "Comenzar de nuevo";
 
 "WELCOME_TEXT" = "Vamos a hacerle algunas preguntas acerca de usted.\nPor favor, recuerde que es libre de no contestar aquellas preguntas que le molesten pero le rogamos encarecidamente que trate de completar este cuestionario al máximo posible.\nGracias por su participación.";
 
 // Pitch
-"pitch_intro" = "En la siguiente tarea usted va a escuchar pares de melodías.\nAlgunas veces, la segunda melodía estará alterada.\nEste cambio puede ser leve o evidente.\n\nUsted tendrá que indicar si la segunda melodía está cambiada o no.\n\nSi las dos melodías son iguales, usted deberá pulsar el botón 'IGUALES'\nSi las dos melodías son diferentes, usted deberá pulsar el botón 'DIFERENTES'.\n\nPara ayudarle a diferenciar las dos melodías, aparecerán los números 1 y 2 en la pantalla cuando estén sonando la primera y la segunda melodía respectivamente.\n\nEmpezaremos con algunos ejemplos. \nPulse el botón COMENZAR cuando esté preparado.";
+"pitch_intro" = "En la siguiente tarea usted va a escuchar pares de melodías.\nAlgunas veces, la segunda melodía estará alterada.\nEste cambio puede ser leve o evidente.\n\nUsted tendrá que indicar si la segunda melodía está cambiada o no.\n\nSi las dos melodías son iguales, usted deberá pulsar el botón 'IGUALES'\nSi las dos melodías son diferentes, usted deberá pulsar el botón 'DIFERENTES'.\n\nPara ayudarle a diferenciar las dos melodías, aparecerán los números 1 y 2 en la pantalla cuando estén sonando la primera y la segunda melodía respectivamente.\n\nEmpezaremos con algunos ejemplos.\nPulse el botón COMENZAR cuando esté preparado.";
 "pitch_example_1" = "En este par de melodías, la segunda melodía es idéntica a la primera.\nCuando crea que las melodías son iguales, usted deberá responder pulsando el botón 'IGUALES'\nPulse el botón 'IGUALES' para indicar que las melodías son iguales.";
 "pitch_example_2" = "Vamos a continuar con un ejemplo en el que las melodías son diferentes.\n\nEste ejemplo utiliza la misma melodía que el Ejemplo 1 pero en este caso, la segunda melodía ha sido alterada.\n\nPara escuchar las melodías de nuevo, pulse sobre el ALTAVOZ\nCuando crea que las melodías son diferentes, usted deberá responder pulsando el botón 'DIFERENTES'.\nPulse el botón 'DIFERENTES' para indicar que las melodías que ha escuchado eran diferentes.";
 "pitch_example_3" = "Continuaremos ahora con un ejemplo en el que la diferencia entre ambas melodías es más sutil.\n\nEn este ejemplo, la diferencia entre melodías es más sutil.\n\nPara escuchar las melodías de nuevo, pulse sobre el ALTAVOZ.\n\nPulse el botón 'DIFERENTES' para indicar que las melodías que ha escuchado eran diferentes.";
-"pitch_practice_1" = "A continuación podrá practicar antes de comenzar la tarea.\n\nRecuerde: después de escuchar las dos melodías, pulse 'IGUALES' si las dos son idénticas y pulse 'DIFERENTES' si son diferentes.\nTendrá 5 pares de melodías para practicar\nCuando esté preparado, pulse sobre el ALTAVOZ";
-"pitch_practice_2" = "Recuerde: después de escuchar las dos melodías, pulse 'IGUALES' si las dos son idénticas y pulse 'DIFERENTES' si son diferentes.\nCuando esté preparado, pulse sobre el ALTAVOZ";
+"pitch_practice_1" = "A continuación podrá practicar antes de comenzar la tarea.\n\nRecuerde: después de escuchar las dos melodías, pulse 'IGUALES' si las dos son idénticas y pulse 'DIFERENTES' si son diferentes.\nTendrá 5 pares de melodías para practicar\nCuando esté preparado, pulse sobre el ALTAVOZ.";
+"pitch_practice_2" = "Recuerde: después de escuchar las dos melodías, pulse 'IGUALES' si las dos son idénticas y pulse 'DIFERENTES' si son diferentes.\nCuando esté preparado, pulse sobre el ALTAVOZ.";
 "pitch_tasks" = "Ya ha completado los ensayos de práctica.\nAhora comenzaremos con la tarea.\n\nDurante esta tarea, en la pantalla se mostrarán los números 1 y 2 para ayudarle a diferenciar las dos melodías.\nTambién, se mostrarán los botones 'IGUALES' y 'DIFERENTES', así como si su respuesta fue correcta o no.\n\nEsta tarea incluye 24 ensayos y llevará unos 5 minutos para completarla.\n\nPor favor, pulse COMENZAR cuando esté preparado.";
 
 // Digital
@@ -88,12 +96,12 @@
 "wordlist2_in_first_list" = "¿Estaba esta palabra en la primera lista?";
 
 // Stroop
-"stroop_practice_instruction" = "En esta tarea usted grabará su voz en este dispositivo.\nPor favor, practique cómo grabar su voz utilizando los botones COMENZAR y HECHO que puede encontrar abajo";
+"stroop_practice_instruction" = "En esta tarea usted grabará su voz en este dispositivo.\nPor favor, practique cómo grabar su voz utilizando los botones GRABAR y REPRODUCIR que puede encontrar abajo";
 "stroop_practice_instruction2" = "Esta tarea tiene 4 partes.\nLe daremos instrucciones para cada una de ellas. \nEsta es una tarea cronometrada así que recuerde hacerlo tan rápido como pueda, pero tratando de no cometer errores.";
 "stroop_pretask_instruction" = "En esta tarea usted tiene que leer las palabras que se presentarán en la pantalla.\nHágalo tan rápido como pueda, de izquierda a derecha en cada fila. \nToque 'Video' para ver una demostración";
 "stroop_pretask_instruction2" = "En esta tarea usted tiene que nombrar el color de los círculos que se presentarán en pantalla.\nHágalo tan rápido como pueda, de izquierda a derecha en cada fila\nToque 'Video' para ver una demostración";
 "stroop_pretask_instruction3" = "En esta tarea usted tiene que nombrar el color en el que la palabra está escrita, NO LEERLA\nPor ejemplo, para la palabra 'azul', que está escrita en color rojo, usted debe decir: 'rojo'.\nNo preste atención a la palabra en sí, solo nombre el color en el que está escrita.\nHágalo tan rápido como pueda, de izquierda a derecha en cada fila.\nToque 'Video' para ver una demostración";
-"stroop_ptask" = "Cuando esté preparado, pulse COMENZAR \nCuando termine, pulse HECHO";
+"stroop_ptask" = "Cuando esté preparado, pulse COMENZAR \nCuando termine, pulse Parar";
 
 
 // Naming Task
