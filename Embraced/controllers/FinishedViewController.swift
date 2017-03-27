@@ -10,12 +10,18 @@ import UIKit
 
 class FinishedViewController: FrontViewController {
 
+    @IBOutlet weak var finishedLabel: UILabel!
+    @IBOutlet weak var startOverBtn: NavigationButton!
+    
     override func viewDidLoad() {
         step = AppDelegate.position
         
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        language = participant.string(forKey: "language")!
+        
+        finishedLabel.text = "Finished".localized(lang: language)
+        startOverBtn.setTitle("Start_over".localized(lang: language), for: .normal)
     }
 
     override func didReceiveMemoryWarning() {

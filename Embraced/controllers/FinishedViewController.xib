@@ -16,9 +16,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FinishedViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
+                <outlet property="finishedLabel" destination="pym-My-f87" id="aqG-5z-j15"/>
                 <outlet property="mainView" destination="Vqo-M3-Hhb" id="JMC-YW-GGr"/>
                 <outlet property="progressLabel" destination="wqi-Jl-CPf" id="tmb-gb-PAB"/>
                 <outlet property="progressView" destination="IGd-sv-73N" id="vja-Ex-H1L"/>
+                <outlet property="startOverBtn" destination="Mox-X9-NNL" id="qgF-Hz-wVY"/>
                 <outlet property="view" destination="pXc-GE-oe3" id="yTg-gD-Alx"/>
             </connections>
         </placeholder>

@@ -233,16 +233,16 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         practiceLabel.text = "Practice".localized(lang: language)
         practiceDoneBtn.setTitle("Done".localized(lang: language), for: .normal)
         loadingView.stopAnimating()
-        recordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
+        recordBtn.setTitle("Start".localized(lang: language), for: .normal)
         playBtn.setTitle("Play".localized(lang: language), for: .normal)
         previewBtn.setTitle("Preview".localized(lang: language), for: .normal)
         previewBtn2.setTitle("Preview".localized(lang: language), for: .normal)
         previewBtn3.setTitle("Preview".localized(lang: language), for: .normal)
         previewBtn4.setTitle("Preview".localized(lang: language), for: .normal)
-        recordBtn1.setTitle("Start_Record".localized(lang: language), for: .normal)
-        recordBtn2.setTitle("Start_Record".localized(lang: language), for: .normal)
-        recordBtn3.setTitle("Start_Record".localized(lang: language), for: .normal)
-        recordBtn4.setTitle("Start_Record".localized(lang: language), for: .normal)
+        recordBtn1.setTitle("Start".localized(lang: language), for: .normal)
+        recordBtn2.setTitle("Start".localized(lang: language), for: .normal)
+        recordBtn3.setTitle("Start".localized(lang: language), for: .normal)
+        recordBtn4.setTitle("Start".localized(lang: language), for: .normal)
         
         doneBtn.isHidden = true
         doneBtn2.isHidden = true

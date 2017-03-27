@@ -89,8 +89,10 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func showOrientationAlert(orientation: String) {
+        language = participant.string(forKey: "language")!
+        
         if orientation == "landscape" {
-            let alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Rotation".localized(lang: language), message: "Rotation_landscpaing_prompt".localized(lang: language), preferredStyle: UIAlertControllerStyle.alert)
             
             self.present(alertController, animated: true, completion: nil)
             
@@ -100,7 +102,7 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
             
             alertController.addAction(dismissAction)
         } else if orientation == "portrait" {
-            let alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to portrait orientation", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Rotation".localized(lang: language), message: "Rotation_portrait_prompt".localized(lang: language), preferredStyle: UIAlertControllerStyle.alert)
                 
             self.present(alertController, animated: true, completion: nil)
             

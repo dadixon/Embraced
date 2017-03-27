@@ -63,9 +63,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         self.navigationController?.isNavigationBarHidden = true
-        selectAllBtn.setTitle("Select_All".localized(lang: testerLanguage!), for: .normal)
-        deselectAllBtn.setTitle("Deselect_All".localized(lang: testerLanguage!), for: .normal)
-        chooseLanguage.text = "Choose_Language".localized(lang: testerLanguage!)
+        setControllerLanguage(testerLanguage!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,6 +71,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
 
+    private func setControllerLanguage(_ language: String) {
+        selectAllBtn.setTitle("Select_All".localized(lang: language), for: .normal)
+        deselectAllBtn.setTitle("Deselect_All".localized(lang: language), for: .normal)
+        chooseLanguage.text = "Choose_Language".localized(lang: language)
+        saveBtn.setTitle("Save".localized(lang: language), for: .normal)
+        self.tabBarController?.tabBar.items![0].title = "Test".localized(lang: language)
+        self.tabBarController?.tabBar.items![1].title = "Settings".localized(lang: language)
+    }
+    
+    
     
     // MARK: Table Delegate
     
@@ -172,20 +180,21 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             participant.setValue("en", forKey: "TesterLanguage")
         }
 
-        self.tabBarController?.tabBar.items![0].title = "Test".localized(lang: participant.string(forKey: "TesterLanguage")!)
-        self.tabBarController?.tabBar.items![1].title = "Settings".localized(lang: participant.string(forKey: "TesterLanguage")!)
-        
-        selectAllBtn.setTitle("Select_All".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
-        deselectAllBtn.setTitle("Deselect_All".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
-        
-        chooseLanguage.text = "Choose_Language".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        setControllerLanguage(participant.string(forKey: "TesterLanguage")!)
+//        self.tabBarController?.tabBar.items![0].title = "Test".localized(lang: participant.string(forKey: "TesterLanguage")!)
+//        self.tabBarController?.tabBar.items![1].title = "Settings".localized(lang: participant.string(forKey: "TesterLanguage")!)
+//        
+//        selectAllBtn.setTitle("Select_All".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
+//        deselectAllBtn.setTitle("Deselect_All".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
+//        
+//        chooseLanguage.text = "Choose_Language".localized(lang: participant.string(forKey: "TesterLanguage")!)
         
         self.testListTable.reloadData()
         self.confirmListTable.reloadData()
         
         var alertController = UIAlertController()
         
-        alertController = UIAlertController(title: "Saved", message: "Your settings have been saved.", preferredStyle: UIAlertControllerStyle.alert)
+        alertController = UIAlertController(title: "Saved".localized(lang: participant.string(forKey: "TesterLanguage")!), message: "Save_settings".localized(lang: participant.string(forKey: "TesterLanguage")!), preferredStyle: UIAlertControllerStyle.alert)
         
         let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
             alertController.dismiss(animated: true, completion: nil)
@@ -215,5 +224,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         } else if sender.selectedSegmentIndex == 1 {
             testerLanguage = "es"
         }
+        
+        setControllerLanguage(testerLanguage)
     }
 }
