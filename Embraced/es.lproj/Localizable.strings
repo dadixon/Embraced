@@ -53,8 +53,8 @@
 "Saved" = "Guardado";
 "Save_settings" = "Su configuración se ha guardado.";
 "Rotation" = "Rotación";
-"Rotation_landscpaing_prompt" = "Por favor, coloque el iPad en posición vertical";
-"Rotation_portrait_prompt" = "Por favor, coloque el iPad en posición horizontal";
+"Rotation_portrait_prompt" = "Por favor, coloque el iPad en posición vertical";
+"Rotation_landscpaing_prompt" = "Por favor, coloque el iPad en posición horizontal";
 "Finished" = "Ha finalizado";
 "Start_over" = "Comenzar de nuevo";
 
