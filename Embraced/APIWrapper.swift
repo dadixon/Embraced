@@ -32,4 +32,23 @@ public class APIWrapper {
         
         task.resume()
     }
+    
+    class func post2(id: String, test: String, data: Any, callback: Any) {
+        let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/participant/" + id + "/" + test
+        guard let url = URL(string: todoEndpoint) else {
+            print("Error: cannot create URL")
+            return
+        }
+        
+        let request = NSMutableURLRequest(url: url)
+        
+        request.httpMethod = "POST"
+        request.httpBody = try? JSONSerialization.data(withJSONObject: data, options: [])
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: request as URLRequest, completionHandler: callback as! (Data?, URLResponse?, Error?) -> Void)
+        task.resume()
+    }
 }

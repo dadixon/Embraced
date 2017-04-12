@@ -47,6 +47,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     var instructions = Array<String>()
     var instructions2 = Array<String>()
     
+    
     // MARK: - Private
     
     private func setSubview(_ current: UIView, next: UIView) {
@@ -163,6 +164,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         
         task.resume()
         
+        
         practiceLabel.text = "Practice".localized(lang: language)
         practiceInstruction.text = "wordlist1_practice_instruction".localized(lang: language)
         startBtn.setTitle("Start".localized(lang: language), for: .normal)
@@ -173,20 +175,20 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         trialRecordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
         wordNextBtn.setTitle("Done".localized(lang: language), for: .normal)
         instructions = ["wordlist1_instructionA1".localized(lang: language),
-                                       "wordlist1_instructionA2".localized(lang: language),
-                                       "wordlist1_instructionA2".localized(lang: language),
-                                       "wordlist1_instructionA2".localized(lang: language),
-                                       "wordlist1_instructionA3".localized(lang: language),
-                                       "wordlist1_instructionA4".localized(lang: language),
-                                       "wordlist1_instructionA5".localized(lang: language)
+                        "wordlist1_instructionA2".localized(lang: language),
+                        "wordlist1_instructionA2".localized(lang: language),
+                        "wordlist1_instructionA2".localized(lang: language),
+                        "wordlist1_instructionA3".localized(lang: language),
+                        "wordlist1_instructionA4".localized(lang: language),
+                        "wordlist1_instructionA5".localized(lang: language)
         ]
         instructions2 = ["wordlist1_instructionB1".localized(lang: language),
-                                        "wordlist1_instructionB2".localized(lang: language),
-                                        "wordlist1_instructionB2".localized(lang: language),
-                                        "wordlist1_instructionB2".localized(lang: language),
-                                        "wordlist1_instructionB2".localized(lang: language),
-                                        "wordlist1_instructionB1".localized(lang: language),
-                                        ""
+                        "wordlist1_instructionB2".localized(lang: language),
+                        "wordlist1_instructionB2".localized(lang: language),
+                        "wordlist1_instructionB2".localized(lang: language),
+                        "wordlist1_instructionB2".localized(lang: language),
+                        "wordlist1_instructionB1".localized(lang: language),
+                        ""
         ]
         
         loadingView.stopAnimating()
@@ -316,6 +318,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     func resetTimer() {
         timer.invalidate()
     }
+
     
     // MARK: - Navigation
     
@@ -325,13 +328,10 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func done(_ sender: AnyObject) {
-        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "wordlist", data: createPostObject())
-        next(self)
+        showOverlay()
         
-        // Clear audios
-        for i in 0...position-1 {
-            deleteFile("wordlist\(i).m4a")
-        }
+        // Push to the API
+        postToAPI()
     }
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
@@ -364,6 +364,37 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
             wordNextBtn.isHidden = false
         }
     }
+    
+    
+    
+    func postToAPI() {
+        // Completion Handler
+        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
+            (data, response, error) in
+            // this is where the completion handler code goes
+            if let response = response {
+                print(response)
+                // Clear audios
+                for i in 0...self.position-1 {
+                    self.deleteFile("wordlist\(i).m4a")
+                }
+                print("Deleted temp file")
+                print("Done")
+                DispatchQueue.main.async(execute: {
+                    self.hideOverlayView()
+                    self.next(self)
+                })
+                
+            }
+            if let error = error {
+                print(error)
+            }
+        }
+        
+        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "wordlist", data: createPostObject(), callback: myCompletionHandler)
+    }
+    
+    
     
     @IBAction func playSound(_ sender: UIButton) {
         if sender.titleLabel!.text == "Play".localized(lang: language) {

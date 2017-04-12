@@ -170,7 +170,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     func loadImageFromUrl(_ filename: String, view: UIImageView) {
         let strurl = URL(string: filename)
         let dtinternet = NSData(contentsOf: strurl!)
-        view.image = UIImage(data: dtinternet as! Data)
+        view.image = UIImage(data: dtinternet! as Data)
     }
     
     func startRecording(_ button: UIButton, fileName: String) {

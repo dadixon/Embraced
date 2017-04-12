@@ -19,6 +19,8 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var mainView: UIView!
     
     var loadingView = UIActivityIndicatorView()
+    var overlayView = UIView()
+    var activityIndicator = UIActivityIndicatorView()
     
     let participant = UserDefaults.standard
     
@@ -259,5 +261,27 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         catch let error as NSError {
             print("An error took place: \(error)")
         }
+    }
+    
+    public func showOverlay() {
+        overlayView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+        overlayView.center = self.view.center
+        overlayView.backgroundColor = UIColor.black
+        overlayView.clipsToBounds = true
+        overlayView.layer.cornerRadius = 10
+        
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        activityIndicator.activityIndicatorViewStyle = .whiteLarge
+        activityIndicator.center = CGPoint(x: overlayView.bounds.width / 2, y: overlayView.bounds.height / 2)
+        
+        overlayView.addSubview(activityIndicator)
+        view.addSubview(overlayView)
+        
+        activityIndicator.startAnimating()
+    }
+    
+    public func hideOverlayView() {
+        activityIndicator.stopAnimating()
+        overlayView.removeFromSuperview()
     }
 }

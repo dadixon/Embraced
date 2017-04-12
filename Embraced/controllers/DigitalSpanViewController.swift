@@ -170,8 +170,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
 //        forward = DataManager.sharedInstance.digitalSpanForward
 //        backward = DataManager.sharedInstance.digitalSpanBackward
         
-        loadingView.stopAnimating()
-        
         practice1Label.text = "Practice".localized(lang: language)
         practice1Instructions.text = "digital_practice_1".localized(lang: language)
         recordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
@@ -260,6 +258,40 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         recordBackwardBtn.isEnabled = true
     }
     
+    func postToAPI() {
+        // Completion Handler
+        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
+            (data, response, error) in
+            // this is where the completion handler code goes
+            if let response = response {
+                print(response)
+                // Clear audios
+                for i in 0...self.forwardCount {
+                    if self.fileExist("forward\(i).m4a") {
+                        self.deleteFile("forward\(i).m4a")
+                    }
+                }
+                for i in 0...self.backwardCount {
+                    if self.fileExist("backward\(i).m4a") {
+                        self.deleteFile("backward\(i).m4a")
+                    }
+                }
+                print("Deleted temp file")
+                print("Done")
+                DispatchQueue.main.async(execute: {
+                    self.hideOverlayView()
+                    self.next(self)
+                })
+                
+            }
+            if let error = error {
+                print(error)
+            }
+        }
+        
+        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: createPostObject(), callback: myCompletionHandler)
+    }
+    
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
@@ -268,22 +300,27 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func done(_ sender:AnyObject) {
-        // Push to API
-        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: createPostObject())
+        showOverlay()
         
-        next(self)
+        // Push to the API
+        postToAPI()
         
-        // Clear audios
-        for i in 0...forwardCount {
-            if fileExist("forward\(i).m4a") {
-                deleteFile("forward\(i).m4a")
-            }
-        }
-        for i in 0...backwardCount {
-            if fileExist("backward\(i).m4a") {
-                deleteFile("backward\(i).m4a")
-            }
-        }
+//        // Push to API
+//        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: createPostObject())
+//        
+//        next(self)
+//        
+//        // Clear audios
+//        for i in 0...forwardCount {
+//            if fileExist("forward\(i).m4a") {
+//                deleteFile("forward\(i).m4a")
+//            }
+//        }
+//        for i in 0...backwardCount {
+//            if fileExist("backward\(i).m4a") {
+//                deleteFile("backward\(i).m4a")
+//            }
+//        }
     }
     // MARK: - Actions
     
