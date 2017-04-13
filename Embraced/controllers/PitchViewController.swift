@@ -318,19 +318,7 @@ class PitchViewController: FrontViewController {
 //        log(logMessage: "finished")
     }
 
-    
-    // MARK: - Navigation
-    
-    @IBAction func next(_ sender: AnyObject) {
-//        log(logMessage: "initi")
-        AppDelegate.position += 1
-        nextViewController2(position: AppDelegate.position)
-//        log(logMessage: "finished")
-    }
-    
-    @IBAction func done(_ sender: AnyObject) {
-//        log(logMessage: "initi")
-//        print(userAnswers)
+    func createPostObject() -> [String: AnyObject] {
         var jsonObject = [String: AnyObject]()
         
         // Gather data for post
@@ -339,11 +327,48 @@ class PitchViewController: FrontViewController {
             "score": score as AnyObject
         ]
         
-        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "pitch", data: jsonObject)
-//        APIWrapper.post(id: "abc123", test: "pitch", data: jsonObject)
+        return jsonObject
+    }
+    
+    func postToAPI() {
+        // Completion Handler
+        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
+            (data, response, error) in
+            // this is where the completion handler code goes
+            if let response = response {
+                print(response)
+                // Clear audios
+                for i in 0...self.position-1 {
+                    self.deleteFile("wordlist\(i).m4a")
+                }
+                print("Deleted temp file")
+                print("Done")
+                DispatchQueue.main.async(execute: {
+                    self.hideOverlayView()
+                    self.next(self)
+                })
+                
+            }
+            if let error = error {
+                print(error)
+            }
+        }
         
-        next(self)
-//        log(logMessage: "finished")
+        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "pitch", data: createPostObject(), callback: myCompletionHandler)
+    }
+    
+    // MARK: - Navigation
+    
+    @IBAction func next(_ sender: AnyObject) {
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
+    }
+    
+    @IBAction func done(_ sender: AnyObject) {
+        showOverlay()
+        
+        // Push to the API
+        postToAPI()
     }
     
     @IBAction func moveToExample(_ sender: AnyObject) {

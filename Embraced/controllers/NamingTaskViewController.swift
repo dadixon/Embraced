@@ -123,12 +123,11 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
                     }
                     
                     stimuliURIs = todo
-                    print(stimuliURIs)
-                    print(stimuliURIs["practice"]!)
+                    
                     self.practice = stimuliURIs["practice"] as! Array<String>
                     self.tasks = stimuliURIs["task"] as! Array<String>
                     
-                    print(self.practice)
+                    
                 } catch {
                     print("Error with Json: \(error)")
                     return
@@ -277,6 +276,33 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         playBtn.isEnabled = false
     }
     
+    func postToAPI() {
+        // Completion Handler
+        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
+            (data, response, error) in
+            // this is where the completion handler code goes
+            if let response = response {
+                print(response)
+                // Clear audios
+                for i in 0...self.tasks.count-1 {
+                    self.deleteFile("namingTask\(i).m4a")
+                }
+                print("Deleted temp file")
+                print("Done")
+                DispatchQueue.main.async(execute: {
+                    self.hideOverlayView()
+                    self.next(self)
+                })
+                
+            }
+            if let error = error {
+                print(error)
+            }
+        }
+        
+        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "naming_task", data: createPostObject(), callback: myCompletionHandler)
+    }
+    
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
@@ -285,13 +311,10 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func done(_ sender:AnyObject) {
-        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "naming_task", data: createPostObject())
-        next(self)
+        showOverlay()
         
-        // Clear audios
-        for i in 0...tasks.count-1 {
-            deleteFile("namingTask\(i).m4a")
-        }
+        // Push to the API
+        postToAPI()
     }
     
     // MARK: - Actions

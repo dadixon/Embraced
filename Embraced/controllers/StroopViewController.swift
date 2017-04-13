@@ -343,6 +343,33 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         return jsonObject
     }
     
+    func postToAPI() {
+        // Completion Handler
+        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
+            (data, response, error) in
+            // this is where the completion handler code goes
+            if let response = response {
+                print(response)
+                // Clear audios
+                for i in 1...self.position {
+                    self.deleteFile("stroop\(i).m4a")
+                }
+                print("Deleted temp file")
+                print("Done")
+                DispatchQueue.main.async(execute: {
+                    self.hideOverlayView()
+                    self.next(self)
+                })
+                
+            }
+            if let error = error {
+                print(error)
+            }
+        }
+        
+        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "stroop", data: createPostObject(), callback: myCompletionHandler)
+    }
+    
     
     // MARK: - Navigation
     
@@ -352,18 +379,10 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     }
     
     @IBAction func done(_ sender: AnyObject) {
-        let jsonObject = createPostObject()
-        print(jsonObject)
-        if (jsonObject.count > 0) {
-            APIWrapper.post(id: participant.string(forKey: "pid")!, test: "stroop", data: jsonObject)
-        }
+        showOverlay()
         
-        next(self)
-        
-        // Clear audios
-        for i in 1...position {
-            deleteFile("stroop\(i).m4a")
-        }
+        // Push to the API
+        postToAPI()
     }
     
     // MARK: - Actions

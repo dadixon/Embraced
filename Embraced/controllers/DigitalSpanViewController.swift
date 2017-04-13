@@ -246,15 +246,8 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     
     func finishedPlaying() {
         recordPracticeBtn.isEnabled = true
-        listenBtn.isEnabled = false
-        
-        listenForwardBtn.isEnabled = false
         recordForwardBtn.isEnabled = true
-        
-        listenPracticeBtn2.isEnabled = false
         recordPracitceBtn2.isEnabled = true
-        
-        listenBackwardBtn.isEnabled = false
         recordBackwardBtn.isEnabled = true
     }
     
@@ -304,23 +297,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         
         // Push to the API
         postToAPI()
-        
-//        // Push to API
-//        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: createPostObject())
-//        
-//        next(self)
-//        
-//        // Clear audios
-//        for i in 0...forwardCount {
-//            if fileExist("forward\(i).m4a") {
-//                deleteFile("forward\(i).m4a")
-//            }
-//        }
-//        for i in 0...backwardCount {
-//            if fileExist("backward\(i).m4a") {
-//                deleteFile("backward\(i).m4a")
-//            }
-//        }
     }
     // MARK: - Actions
     
@@ -380,6 +356,11 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func listenToSound(_ sender: AnyObject) {
+        listenBtn.isEnabled = false
+        listenForwardBtn.isEnabled = false
+        listenBackwardBtn.isEnabled = false
+        listenPracticeBtn2.isEnabled = false
+        
         if sender.tag == 0 {
             play(forward[forward.count - 1])
         } else if sender.tag == 1 {

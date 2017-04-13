@@ -220,16 +220,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         listenBtn.isEnabled = false
     }
     
-    
-    
-    // MARK: - Navigation
-    
-    @IBAction func next(_ sender: AnyObject) {
-        AppDelegate.position += 1
-        nextViewController2(position: AppDelegate.position)
-    }
-    
-    @IBAction func done(_ sender: AnyObject) {
+    func createPostObject() -> [String: AnyObject] {
         let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("wordlistRecall.m4a"))
         let dataStr = soundData?.base64EncodedString(options: [])
         var jsonObject = [String: AnyObject]()
@@ -240,12 +231,47 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
             "soundByte": dataStr as AnyObject
         ]
         
-        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "wordlist2", data: jsonObject)
+        return jsonObject
+    }
+    
+    func postToAPI() {
+        // Completion Handler
+        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
+            (data, response, error) in
+            // this is where the completion handler code goes
+            if let response = response {
+                print(response)
+                // Clear audios
+                self.deleteFile("wordlistRecall.m4a")
+                print("Deleted temp file")
+                print("Done")
+                DispatchQueue.main.async(execute: {
+                    self.hideOverlayView()
+                    self.next(self)
+                })
+                
+            }
+            if let error = error {
+                print(error)
+            }
+        }
         
-        next(self)
+        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "wordlist2", data: createPostObject(), callback: myCompletionHandler)
+    }
+    
+    
+    // MARK: - Navigation
+    
+    @IBAction func next(_ sender: AnyObject) {
+        AppDelegate.position += 1
+        nextViewController2(position: AppDelegate.position)
+    }
+    
+    @IBAction func done(_ sender: AnyObject) {
+        showOverlay()
         
-        // Clear audios
-        deleteFile("wordlistRecall.m4a")
+        // Push to the API
+        postToAPI()
     }
     
     @IBAction func moveToRecogniton(_ sender: AnyObject) {
