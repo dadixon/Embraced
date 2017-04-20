@@ -61,8 +61,8 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     var forward = Array<String>()
     var backward = Array<String>()
     
-    var forwardCount = 0
-    var backwardCount = 0
+    var forwardCount = 1
+    var backwardCount = 1
     
     // MARK: - Private
     
@@ -178,6 +178,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         practice2Label.text = "Practice".localized(lang: language)
         listenBtn.setTitle("Listen".localized(lang: language), for: .normal)
         recordPracticeBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
+        recordPracitceBtn2.setTitle("Start_Record".localized(lang: language), for: .normal)
         recordForwardBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
         recordBackwardBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
         listenForwardBtn.setTitle("Listen".localized(lang: language), for: .normal)
@@ -251,7 +252,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         recordBackwardBtn.isEnabled = true
     }
     
-    func postToAPI() {
+    func postToAPI(object: [String: AnyObject]) {
         // Completion Handler
         let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
             (data, response, error) in
@@ -271,10 +272,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
                 }
                 print("Deleted temp file")
                 print("Done")
-                DispatchQueue.main.async(execute: {
-                    self.hideOverlayView()
-                    self.next(self)
-                })
+//                DispatchQueue.main.async(execute: {
+//                    self.hideOverlayView()
+//                    self.next(self)
+//                })
                 
             }
             if let error = error {
@@ -282,7 +283,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             }
         }
         
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: createPostObject(), callback: myCompletionHandler)
+        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: object, callback: myCompletionHandler)
     }
     
     // MARK: - Navigation
@@ -293,10 +294,11 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func done(_ sender:AnyObject) {
-        showOverlay()
+//        showOverlay()
         
         // Push to the API
-        postToAPI()
+//        postToAPI()
+        self.next(self)
     }
     // MARK: - Actions
     
@@ -364,11 +366,11 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         if sender.tag == 0 {
             play(forward[forward.count - 1])
         } else if sender.tag == 1 {
-            play(forward[forwardCount])
+            play(forward[forwardCount - 1])
         } else if sender.tag == 2 {
             play(backward[backward.count - 1])
         } else if sender.tag == 3 {
-            play(backward[backwardCount])
+            play(backward[backwardCount - 1])
         }
     }
     
@@ -391,9 +393,11 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     
     @IBAction func nextSound(_ sender: AnyObject) {
         instructionsA.text = "digital_begin_round_start".localized(lang: language)
-        if (forwardCount < forward.count - 2) {
+        postToAPI(object: createPostObject(direction: "F", index: forwardCount))
+        
+        if (forwardCount < forward.count - 1) {
             forwardCount += 1
-            rounds.text = "Round".localized(lang: language) + " " + String(forwardCount+1)
+            rounds.text = "Round".localized(lang: language) + " " + String(forwardCount)
             listenForwardBtn.isEnabled = true
             recordForwardBtn.isEnabled = false
             forwardBtn.isHidden = true
@@ -409,7 +413,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     
     @IBAction func moveToBackward(_ sender: AnyObject) {
         setSubview(preTask2View, next: task2View)
-        bRounds.text = "Round".localized(lang: language) + " " + String(backwardCount+1)
+        bRounds.text = "Round".localized(lang: language) + " " + String(backwardCount)
         listenBackwardBtn.isEnabled = true
         recordBackwardBtn.isEnabled = false
         instructions.text = "digital_begin_round2".localized(lang: language)
@@ -418,9 +422,11 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     
     @IBAction func nextBSound(_ sender: AnyObject) {
         instructions.text = "digital_begin_round2_start".localized(lang: language)
-        if (backwardCount < backward.count - 2) {
+        postToAPI(object: createPostObject(direction: "B", index: backwardCount))
+        
+        if (backwardCount < backward.count - 1) {
             backwardCount += 1
-            bRounds.text = "Round".localized(lang: language) + " " + String(backwardCount+1)
+            bRounds.text = "Round".localized(lang: language) + " " + String(backwardCount)
             listenBackwardBtn.isEnabled = true
             recordBackwardBtn.isEnabled = false
             backwardBtn.isHidden = true
@@ -431,52 +437,79 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         }
     }
     
-    func createPostObject() -> [String: AnyObject] {
+    func createPostObject(direction: String, index: Int) -> [String: AnyObject] {
         var jsonObject = [String: AnyObject]()
-        var jsonForward = [AnyObject]()
-        var jsonForwardObject = [String: AnyObject]()
-        var jsonBackward = [AnyObject]()
-        var jsonBackwardObject = [String: AnyObject]()
+        var directionName = ""
         
-
-        for i in 0...forwardCount {
-            if fileExist("forward\(i).m4a") {
-                let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("forward\(i).m4a"))
-                let dataStr = soundData?.base64EncodedString(options: [])
-            
-                jsonForwardObject = [
-                    "name": "forward\(i+1)" as AnyObject,
-                    "soundByte": dataStr as AnyObject
-                ]
-            
-                jsonForward.append(jsonForwardObject as AnyObject)
-            }
+        if direction == "F" {
+            directionName = "forward"
+        } else if direction == "B" {
+            directionName = "backward"
         }
         
-        for i in 0...backwardCount {
-            if fileExist("backward\(i).m4a") {
-                let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("backward\(i).m4a"))
-                let dataStr = soundData?.base64EncodedString(options: [])
+        print(directionName + "\(index).m4a")
+        
+        if fileExist(directionName + "\(index).m4a") {
+            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent(directionName + "\(index).m4a"))
+            let dataStr = soundData?.base64EncodedString(options: [])
             
-                jsonBackwardObject = [
-                    "name": "backward\(i+1)" as AnyObject,
-                    "soundByte": dataStr as AnyObject
-                ]
-            
-                jsonBackward.append(jsonBackwardObject as AnyObject)
-            }
+            jsonObject = [
+                "id": participant.string(forKey: "pid")! as AnyObject,
+                "direction": direction as AnyObject,
+                "index": index as AnyObject,
+                "soundByte": dataStr as AnyObject
+            ]
         }
         
-    
-        // Gather data for post
-        jsonObject = [
-            "id": participant.string(forKey: "pid")! as AnyObject,
-            "forward": jsonForward as AnyObject,
-            "backward": jsonBackward as AnyObject
-        ]
-    
         return jsonObject
     }
+    
+//    func createPostObject() -> [String: AnyObject] {
+//        var jsonObject = [String: AnyObject]()
+//        var jsonForward = [AnyObject]()
+//        var jsonForwardObject = [String: AnyObject]()
+//        var jsonBackward = [AnyObject]()
+//        var jsonBackwardObject = [String: AnyObject]()
+//        
+//
+//        for i in 0...forwardCount {
+//            if fileExist("forward\(i).m4a") {
+//                let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("forward\(i).m4a"))
+//                let dataStr = soundData?.base64EncodedString(options: [])
+//            
+//                jsonForwardObject = [
+//                    "name": "forward\(i+1)" as AnyObject,
+//                    "soundByte": dataStr as AnyObject
+//                ]
+//            
+//                jsonForward.append(jsonForwardObject as AnyObject)
+//            }
+//        }
+//        
+//        for i in 0...backwardCount {
+//            if fileExist("backward\(i).m4a") {
+//                let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("backward\(i).m4a"))
+//                let dataStr = soundData?.base64EncodedString(options: [])
+//            
+//                jsonBackwardObject = [
+//                    "name": "backward\(i+1)" as AnyObject,
+//                    "soundByte": dataStr as AnyObject
+//                ]
+//            
+//                jsonBackward.append(jsonBackwardObject as AnyObject)
+//            }
+//        }
+//        
+//    
+//        // Gather data for post
+//        jsonObject = [
+//            "id": participant.string(forKey: "pid")! as AnyObject,
+//            "forward": jsonForward as AnyObject,
+//            "backward": jsonBackward as AnyObject
+//        ]
+//    
+//        return jsonObject
+//    }
     
     func fileExist(_ filename: String) -> Bool {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String

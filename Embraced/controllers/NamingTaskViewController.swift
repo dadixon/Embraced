@@ -157,6 +157,9 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         practiceInstruction1.text = "naming_practice_instruction1".localized(lang: language)
         pracitceInstruction2.text = "naming_practice_instruction2".localized(lang: language)
         startBtn.setTitle("Start".localized(lang: language), for: .normal)
+        recordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
+        playBtn.setTitle("Play".localized(lang: language), for: .normal)
+        taskRecordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
         exampleRecordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
         loadingView.stopAnimating()
     }
@@ -187,7 +190,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
             soundRecorder.delegate = self
             soundRecorder.record()
             
-            button.setTitle("Stop", for: .normal)
+            button.setTitle("Stop".localized(lang: language), for: .normal)
         } catch {
             finishRecording(button, success: false)
         }
@@ -200,7 +203,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         soundRecorder = nil
         
         if success {
-            button.setTitle("Start", for: .normal)
+            button.setTitle("Start_Record".localized(lang: language), for: .normal)
         }
     }
     
@@ -338,14 +341,14 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func playSound(_ sender: UIButton) {
-        if sender.titleLabel!.text == "Play" {
+        if sender.titleLabel!.text == "Play".localized(lang: language) {
             recordBtn.isEnabled = false
-            sender.setTitle("Stop", for: UIControlState())
+            sender.setTitle("Stop".localized(lang: language), for: UIControlState())
             preparePlayer()
             soundPlayer?.play()
         } else {
             soundPlayer?.stop()
-            sender.setTitle("Play", for: UIControlState())
+            sender.setTitle("Play".localized(lang: language), for: UIControlState())
         }
     }
     

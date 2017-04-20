@@ -34,7 +34,26 @@ class UserViewController: UIViewController {
     }
 
     @IBAction func startTest(_ sender: Any) {
+//        saveImageDocumentDirectory()
         let vc = UserInputViewController()
         self.present(vc, animated: true, completion: nil)
     }
+    
+    
+    
+    
+    func saveImageDocumentDirectory(){
+        // Download form url
+        let strurl = URL(string: "http://api.girlscouts.harryatwal.com/static_images/naming_task/task/Image01.jpg")
+        let dtinternet = NSData(contentsOf: strurl!)
+        
+        let fileManager = FileManager.default
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("Image01.jpg")
+//        let image = UIImage(named: "apple.jpg")
+        let image = UIImage(data: dtinternet! as Data)
+        print(paths)
+        let imageData = UIImageJPEGRepresentation(image!, 0.5)
+        fileManager.createFile(atPath: paths as String, contents: imageData, attributes: nil)
+    }
+    
 }
