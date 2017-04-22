@@ -34,7 +34,7 @@ public class APIWrapper {
     }
     
     class func post2(id: String, test: String, data: Any, callback: Any) {
-        let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/participant/" + id + "/" + test
+        let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/participant/v2/" + id + "/" + test
         guard let url = URL(string: todoEndpoint) else {
             print("Error: cannot create URL")
             return

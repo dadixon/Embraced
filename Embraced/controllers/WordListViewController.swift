@@ -43,7 +43,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     var trials = Array<String>()
     var sound = String()
     var practice = true
-    var position = 0
+    var position = 1
     var instructions = Array<String>()
     var instructions2 = Array<String>()
     
@@ -170,7 +170,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         startBtn.setTitle("Start".localized(lang: language), for: .normal)
         recordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
         playBtn.setTitle("Play".localized(lang: language), for: .normal)
-        trialLabel.text = "Trial".localized(lang: language) + " 1"
+        trialLabel.text = "Round".localized(lang: language) + " 1"
         listenBtn.setTitle("Listen".localized(lang: language), for: .normal)
         trialRecordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
         wordNextBtn.setTitle("Done".localized(lang: language), for: .normal)
@@ -204,18 +204,18 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     func setup() {
         instructions2Label.isHidden = true
         
-        if position < 5 {
-            trialLabel.text = "Trial".localized(lang: language) + " " + String(position + 1)
+        if position <= 6 {
+            trialLabel.text = "Round".localized(lang: language) + " " + String(position)
         } else {
             trialLabel.text = "" //"Interference list"
         }
         
-        InstructionsLabel.text = instructions[position]
-        instructions2Label.text = instructions2[position]
+        InstructionsLabel.text = instructions[position-1]
+        instructions2Label.text = instructions2[position-1]
         trialRecordBtn.isEnabled = false
         listenBtn.isEnabled = true
         
-        if position == 6 {
+        if position == 7 {
             listenBtn.isHidden = true
             trialRecordBtn.isEnabled = true
         }
@@ -307,7 +307,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
             resetTimer()
             countLabel.text = ""
             
-            if position < 5 {
+            if position <= 5 {
                 self.play(trials[0])
             } else {
                 self.play(trials[1])
@@ -328,10 +328,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func done(_ sender: AnyObject) {
-        showOverlay()
-        
-        // Push to the API
-        postToAPI()
+        self.next(self)
     }
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
@@ -367,7 +364,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     
     
     
-    func postToAPI() {
+    func postToAPI(object: [String: AnyObject]) {
         // Completion Handler
         let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
             (data, response, error) in
@@ -375,15 +372,15 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
             if let response = response {
                 print(response)
                 // Clear audios
-                for i in 0...self.position-1 {
+                for i in 0...self.position {
                     self.deleteFile("wordlist\(i).m4a")
                 }
                 print("Deleted temp file")
                 print("Done")
-                DispatchQueue.main.async(execute: {
-                    self.hideOverlayView()
-                    self.next(self)
-                })
+//                DispatchQueue.main.async(execute: {
+//                    self.hideOverlayView()
+//                    self.next(self)
+//                })
                 
             }
             if let error = error {
@@ -391,7 +388,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
             }
         }
         
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "wordlist", data: createPostObject(), callback: myCompletionHandler)
+        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "wordlist", data: object, callback: myCompletionHandler)
     }
     
     
@@ -417,6 +414,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func nextTrial(_ sender: AnyObject) {
+        postToAPI(object: createPostObject(index: position))
         position += 1
         
         if soundPlayer != nil {
@@ -425,7 +423,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
             }
         }
         
-        if position < instructions.count {
+        if position <= instructions.count {
             setup()
             wordNextBtn.isHidden = true
         } else {
@@ -436,32 +434,47 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         }
     }
     
-    func createPostObject() -> [String: AnyObject] {
+    func createPostObject(index: Int) -> [String: AnyObject] {
         var jsonObject = [String: AnyObject]()
-        var jsonTask = [AnyObject]()
-        var jsonTaskObject = [String: AnyObject]()
-        
-        for i in 0...position-1 {
-            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("wordlist\(i).m4a"))
-            let dataStr = soundData?.base64EncodedString(options: [])
-            
-            jsonTaskObject = [
-                "name": "wordlist\(i+1)" as AnyObject,
-                "soundByte": dataStr as AnyObject
-            ]
-            
-            jsonTask.append(jsonTaskObject as AnyObject)
-        }
-        
+        let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("wordlist\(index).m4a"))
+        let dataStr = soundData?.base64EncodedString(options: [])
         
         // Gather data for post
         jsonObject = [
             "id": participant.string(forKey: "pid")! as AnyObject,
-            "task": jsonTask as AnyObject
+            "index": index as AnyObject,
+            "soundByte": dataStr as AnyObject
         ]
         
         return jsonObject
     }
+    
+//    func createPostObject() -> [String: AnyObject] {
+//        var jsonObject = [String: AnyObject]()
+//        var jsonTask = [AnyObject]()
+//        var jsonTaskObject = [String: AnyObject]()
+//        
+//        for i in 0...position-1 {
+//            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("wordlist\(i).m4a"))
+//            let dataStr = soundData?.base64EncodedString(options: [])
+//            
+//            jsonTaskObject = [
+//                "name": "wordlist\(i+1)" as AnyObject,
+//                "soundByte": dataStr as AnyObject
+//            ]
+//            
+//            jsonTask.append(jsonTaskObject as AnyObject)
+//        }
+//        
+//        
+//        // Gather data for post
+//        jsonObject = [
+//            "id": participant.string(forKey: "pid")! as AnyObject,
+//            "task": jsonTask as AnyObject
+//        ]
+//        
+//        return jsonObject
+//    }
     
     // MARK: - Delegate
     
