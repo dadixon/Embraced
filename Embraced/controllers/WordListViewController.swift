@@ -449,33 +449,6 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         return jsonObject
     }
     
-//    func createPostObject() -> [String: AnyObject] {
-//        var jsonObject = [String: AnyObject]()
-//        var jsonTask = [AnyObject]()
-//        var jsonTaskObject = [String: AnyObject]()
-//        
-//        for i in 0...position-1 {
-//            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("wordlist\(i).m4a"))
-//            let dataStr = soundData?.base64EncodedString(options: [])
-//            
-//            jsonTaskObject = [
-//                "name": "wordlist\(i+1)" as AnyObject,
-//                "soundByte": dataStr as AnyObject
-//            ]
-//            
-//            jsonTask.append(jsonTaskObject as AnyObject)
-//        }
-//        
-//        
-//        // Gather data for post
-//        jsonObject = [
-//            "id": participant.string(forKey: "pid")! as AnyObject,
-//            "task": jsonTask as AnyObject
-//        ]
-//        
-//        return jsonObject
-//    }
-    
     // MARK: - Delegate
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {

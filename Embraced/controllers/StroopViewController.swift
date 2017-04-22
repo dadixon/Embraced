@@ -315,35 +315,24 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         print("\(functionName): \(logMessage)")
     }
     
-    func createPostObject() -> [String: AnyObject] {
+    func createPostObject(index: Int, reactionTime: Int) -> [String: AnyObject] {
         var jsonObject = [String: AnyObject]()
-        var jsonTask = [AnyObject]()
-        var jsonTaskObject = [String: AnyObject]()
         
-        for i in 1...position {
-            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("stroop\(i).m4a"))
-            let dataStr = soundData?.base64EncodedString(options: [])
+        let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("stroop\(index).m4a"))
+        let dataStr = soundData?.base64EncodedString(options: [])
             
-            jsonTaskObject = [
-                "name": "stroop\(i)" as AnyObject,
-                "reaction": reactionTimes[i-1] as AnyObject,
-                "soundByte": dataStr as AnyObject
-            ]
-            
-            jsonTask.append(jsonTaskObject as AnyObject)
-        }
-        
-        
-        // Gather data for post
         jsonObject = [
             "id": participant.string(forKey: "pid")! as AnyObject,
-            "task": jsonTask as AnyObject
+            "index": index as AnyObject,
+            "reaction": reactionTime as AnyObject,
+            "soundByte": dataStr as AnyObject
         ]
+
         
         return jsonObject
     }
     
-    func postToAPI() {
+    func postToAPI(object: [String: AnyObject]) {
         // Completion Handler
         let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
             (data, response, error) in
@@ -356,10 +345,10 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
                 }
                 print("Deleted temp file")
                 print("Done")
-                DispatchQueue.main.async(execute: {
-                    self.hideOverlayView()
-                    self.next(self)
-                })
+//                DispatchQueue.main.async(execute: {
+//                    self.hideOverlayView()
+//                    self.next(self)
+//                })
                 
             }
             if let error = error {
@@ -367,7 +356,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
             }
         }
         
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "stroop", data: createPostObject(), callback: myCompletionHandler)
+        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "stroop", data: object, callback: myCompletionHandler)
     }
     
     
@@ -379,10 +368,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     }
     
     @IBAction func done(_ sender: AnyObject) {
-        showOverlay()
-        
-        // Push to the API
-        postToAPI()
+        self.next(self)
     }
     
     // MARK: - Actions
@@ -466,7 +452,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         let elapsed = CFAbsoluteTimeGetCurrent() - start
         print(elapsed)
         let mill = elapsed * 1000
-        reactionTimes.insert(Int(mill), at: 0)
+        postToAPI(object: createPostObject(index: 1, reactionTime: Int(mill)))
+//        reactionTimes.insert(Int(mill), at: 0)
         setSubview(task1View, next: preTask2View)
         preTaskInstruction2.text = "stroop_pretask_instruction".localized(lang: language)
         previewBtn2.setTitle("Preview".localized(lang: language), for: .normal)
@@ -497,7 +484,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         let elapsed = CFAbsoluteTimeGetCurrent() - start
         print(elapsed)
         let mill = elapsed * 1000
-        reactionTimes.insert(Int(mill), at: 1)
+        postToAPI(object: createPostObject(index: 2, reactionTime: Int(mill)))
+//        reactionTimes.insert(Int(mill), at: 1)
         setSubview(task2View, next: preTask3View)
         preTaskInstruction3.text = "stroop_pretask_instruction2".localized(lang: language)
         previewBtn3.setTitle("Preview".localized(lang: language), for: .normal)
@@ -525,7 +513,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         let elapsed = CFAbsoluteTimeGetCurrent() - start
         print(elapsed)
         let mill = elapsed * 1000
-        reactionTimes.insert(Int(mill), at: 2)
+        postToAPI(object: createPostObject(index: 3, reactionTime: Int(mill)))
+//        reactionTimes.insert(Int(mill), at: 2)
         setSubview(task3View, next: preTask4View)
         
         let myString = "stroop_pretask_instruction3".localized(lang: language)
@@ -569,7 +558,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         let elapsed = CFAbsoluteTimeGetCurrent() - start
         print(elapsed)
         let mill = elapsed * 1000
-        reactionTimes.insert(Int(mill), at: 3)
+        postToAPI(object: createPostObject(index: 4, reactionTime: Int(mill)))
+//        reactionTimes.insert(Int(mill), at: 3)
         
         if self.player.rate != 0.0 {
             self.player.pause()
