@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Stormpath
-import CoreData
 
 class UserInputViewController: UIViewController {
 

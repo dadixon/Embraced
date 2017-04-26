@@ -137,6 +137,19 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         
         task.resume()
         
+        // Insert row in database
+        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
+            (data, response, error) in
+            // this is where the completion handler code goes
+            if let response = response {
+                print(response)
+            }
+            if let error = error {
+                print(error)
+            }
+        }
+        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "naming_task", data: ["id": participant.string(forKey: "pid")! as AnyObject], callback: myCompletionHandler)
+        
         initialView.translatesAutoresizingMaskIntoConstraints = false
         trialView.translatesAutoresizingMaskIntoConstraints = false
         preTaskView.translatesAutoresizingMaskIntoConstraints = false
@@ -279,7 +292,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         playBtn.isEnabled = false
     }
     
-    func postToAPI() {
+    func postToAPI(object: [String: AnyObject]) {
         // Completion Handler
         let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
             (data, response, error) in
@@ -292,10 +305,10 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
                 }
                 print("Deleted temp file")
                 print("Done")
-                DispatchQueue.main.async(execute: {
-                    self.hideOverlayView()
-                    self.next(self)
-                })
+//                DispatchQueue.main.async(execute: {
+//                    self.hideOverlayView()
+//                    self.next(self)
+//                })
                 
             }
             if let error = error {
@@ -303,7 +316,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
             }
         }
         
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "naming_task", data: createPostObject(), callback: myCompletionHandler)
+        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "naming_task", data: object, callback: myCompletionHandler)
     }
     
     // MARK: - Navigation
@@ -314,10 +327,11 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func done(_ sender:AnyObject) {
-        showOverlay()
+//        showOverlay()
         
         // Push to the API
-        postToAPI()
+//        postToAPI()
+        self.next(self)
     }
     
     // MARK: - Actions
@@ -386,7 +400,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     
     @IBAction func nextTask(_ sender: AnyObject) {
         count += 1
-        
+        postToAPI(object: createPostObject(index: count))
         taskNextBtn.isHidden = true
         
         if count < tasks.count {
@@ -402,28 +416,16 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         }
     }
     
-    func createPostObject() -> [String: AnyObject] {
+    func createPostObject(index: Int) -> [String: AnyObject] {
         var jsonObject = [String: AnyObject]()
-        var jsonTask = [AnyObject]()
-        var jsonTaskObject = [String: AnyObject]()
         
-        for i in 0...tasks.count-1 {
-            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("namingTask\(i).m4a"))
-            let dataStr = soundData?.base64EncodedString(options: [])
-            
-            jsonTaskObject = [
-                "name": "namingTask\(i+1)" as AnyObject,
-                "soundByte": dataStr as AnyObject
-            ]
-            
-            jsonTask.append(jsonTaskObject as AnyObject)
-        }
-        
+        let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("namingTask\(index-1).m4a"))
+        let dataStr = soundData?.base64EncodedString(options: [])
         
         // Gather data for post
         jsonObject = [
-            "id": participant.string(forKey: "pid")! as AnyObject,
-            "task": jsonTask as AnyObject
+            "index": index as AnyObject,
+            "soundByte": dataStr as AnyObject
         ]
         
         return jsonObject

@@ -50,10 +50,10 @@ class WebViewController: FrontViewController, WKNavigationDelegate, WKScriptMess
 
     
     // MARK: - Delegate
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("Stop Animation")
-        loadingView.stopAnimating()
-    }
+//    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+//        print("Stop Animation")
+//        loadingView.stopAnimating()
+//    }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         

@@ -170,6 +170,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         
         recordBtn.setTitle("Start_Record".localized(lang: participant.string(forKey: "language")!), for: .normal)
         wordNextBtn.setTitle("Next".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        wordNextBtn.isHidden = true
         
         loadingView.stopAnimating()
     }
@@ -227,14 +228,25 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         
         // Gather data for post
         jsonObject = [
-            "answers": answers as AnyObject,
             "soundByte": dataStr as AnyObject
         ]
         
         return jsonObject
     }
     
-    func postToAPI() {
+    func createPostObject2(index: Int, answer: String) -> [String: AnyObject] {
+        var jsonObject = [String: AnyObject]()
+        
+        // Gather data for post
+        jsonObject = [
+            "index": index as AnyObject,
+            "answers": answer as AnyObject,
+        ]
+        
+        return jsonObject
+    }
+    
+    func postToAPI(object: [String: AnyObject]) {
         // Completion Handler
         let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
             (data, response, error) in
@@ -245,10 +257,10 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
                 self.deleteFile("wordlistRecall.m4a")
                 print("Deleted temp file")
                 print("Done")
-                DispatchQueue.main.async(execute: {
-                    self.hideOverlayView()
-                    self.next(self)
-                })
+//                DispatchQueue.main.async(execute: {
+//                    self.hideOverlayView()
+//                    self.next(self)
+//                })
                 
             }
             if let error = error {
@@ -256,7 +268,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
             }
         }
         
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "wordlist2", data: createPostObject(), callback: myCompletionHandler)
+        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "wordlist2", data: object, callback: myCompletionHandler)
     }
     
     
@@ -268,13 +280,14 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func done(_ sender: AnyObject) {
-        showOverlay()
+//        showOverlay()
         
         // Push to the API
-        postToAPI()
+        self.next(self)
     }
     
     @IBAction func moveToRecogniton(_ sender: AnyObject) {
+        postToAPI(object: createPostObject())
         setSubview(practiceView, next: recognitionView)
         listenBtn.isEnabled = true
         firstListLabel.isHidden = true
@@ -297,6 +310,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
             startRecording(sender)
         } else {
             finishRecording(button: sender, success: true)
+            wordNextBtn.isHidden = false
         }
     }
     
@@ -311,15 +325,20 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func nextQuestion(_ sender: UISegmentedControl) {
+        var a: String
+        
         switch answer {
-            case 0: answers.insert("Yes", at: position)
-            case 1: answers.insert("No", at: position)
-            default: answers.insert("", at: position)
+            case 0: a = "Yes"
+            case 1: a = "No"
+            default: a = ""
         }
+        
         
         wordNext2Btn.isHidden = true
         
         position += 1
+        
+        postToAPI(object: createPostObject2(index: position, answer: a))
         
         if position == tasks.count {
             setSubview(recognitionView, next: completeView)

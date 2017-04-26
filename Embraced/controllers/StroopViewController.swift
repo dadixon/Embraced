@@ -235,6 +235,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         loadingView.stopAnimating()
         recordBtn.setTitle("Start".localized(lang: language), for: .normal)
         playBtn.setTitle("Play".localized(lang: language), for: .normal)
+        playBtn.isEnabled = false
         previewBtn.setTitle("Preview".localized(lang: language), for: .normal)
         previewBtn2.setTitle("Preview".localized(lang: language), for: .normal)
         previewBtn3.setTitle("Preview".localized(lang: language), for: .normal)
