@@ -87,6 +87,19 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         
         showOrientationAlert(orientation: "portrait")
         
+        // Insert row in database
+        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
+            (data, response, error) in
+            // this is where the completion handler code goes
+            if let response = response {
+                print(response)
+            }
+            if let error = error {
+                print(error)
+            }
+        }
+        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: ["id": participant.string(forKey: "pid")! as AnyObject], callback: myCompletionHandler)
+        
         introView.translatesAutoresizingMaskIntoConstraints = false
         preTask1View.translatesAutoresizingMaskIntoConstraints = false
         preTask2View.translatesAutoresizingMaskIntoConstraints = false

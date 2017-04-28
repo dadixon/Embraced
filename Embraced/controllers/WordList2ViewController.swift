@@ -71,6 +71,18 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(WordListViewController.next(_:)))
         
+        // Insert row in database
+        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
+            (data, response, error) in
+            // this is where the completion handler code goes
+            if let response = response {
+                print(response)
+            }
+            if let error = error {
+                print(error)
+            }
+        }
+        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "wordlist2", data: ["id": participant.string(forKey: "pid")! as AnyObject], callback: myCompletionHandler)
         
         practiceView.translatesAutoresizingMaskIntoConstraints = false
         recognitionView.translatesAutoresizingMaskIntoConstraints = false
