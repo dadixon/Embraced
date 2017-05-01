@@ -12,14 +12,15 @@ import Stormpath
 
 public class APIWrapper {
     class func post(id: String, test: String, data: Any) {
+        let url = "http://api.girlscouts.harryatwal.com"
         var notesEndpoint : URL!
         
         if id == "" && test == "" {
-            notesEndpoint = URL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/participant")!
+            notesEndpoint = URL(string: url + "/participant")!
         } else if id != "" && test == "" {
-            notesEndpoint = URL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/participant/" + id)!
+            notesEndpoint = URL(string: url + "/participant/" + id)!
         } else if id != "" && test != "" {
-            notesEndpoint = URL(string: Stormpath.sharedSession.configuration.APIURL.absoluteString + "/participant/" + id + "/" + test)!
+            notesEndpoint = URL(string: url + "/participant/" + id + "/" + test)!
         }
         
         let request = NSMutableURLRequest(url: notesEndpoint)
