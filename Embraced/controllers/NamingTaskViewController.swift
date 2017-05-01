@@ -203,7 +203,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
             soundRecorder.delegate = self
             soundRecorder.record()
             
-            button.setTitle("Stop".localized(lang: language), for: .normal)
+            button.setTitle("Stop_Recording".localized(lang: language), for: .normal)
         } catch {
             finishRecording(button, success: false)
         }
@@ -255,6 +255,13 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
             timerCount.text = String(timeCount)
             
             if timeCount == 0 {
+                if soundRecorder != nil {
+                    soundRecorder.stop()
+                    soundRecorder = nil
+                }
+
+                taskRecordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
+                
                 nextTask(self)
                 resetTimer()
                 startTimer()
@@ -357,7 +364,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBAction func playSound(_ sender: UIButton) {
         if sender.titleLabel!.text == "Play".localized(lang: language) {
             recordBtn.isEnabled = false
-            sender.setTitle("Stop".localized(lang: language), for: UIControlState())
+            sender.setTitle("Stop_Recording".localized(lang: language), for: UIControlState())
             preparePlayer()
             soundPlayer?.play()
         } else {

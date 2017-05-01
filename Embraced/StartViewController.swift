@@ -54,6 +54,19 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func startTest(_ sender: Any) {
+        // Insert row in database
+        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
+            (data, response, error) in
+            // this is where the completion handler code goes
+            if let response = response {
+                print(response)
+            }
+            if let error = error {
+                print(error)
+            }
+        }
+        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "", data: ["lang": participant.string(forKey: "language")! as AnyObject], callback: myCompletionHandler)
+        
         var navigationArray = self.navigationController?.viewControllers
         
         navigationArray?.remove(at: 0)

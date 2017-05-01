@@ -39,7 +39,55 @@ class AdminViewController: UITabBarController, UITabBarControllerDelegate {
         delegate = self
 
         self.navigationController?.isNavigationBarHidden = true
-        // Do any additional setup after loading the view.
+       
+//        let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/users/"
+//        guard let url = URL(string: todoEndpoint) else {
+//            print("Error: cannot create URL")
+//            return
+//        }
+//        
+//        let request = NSMutableURLRequest(url: url)
+//        request.httpMethod = "GET"
+//        let accessToken = participant.string(forKey: "token")!
+//        request.setValue(accessToken, forHTTPHeaderField: "X-Access-Token")
+//        
+//        let session = URLSession.shared
+//        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
+//            (data, response, error) in
+//            // this is where the completion handler code goes
+//            if let response = response {
+//                print(response)
+//            }
+//            
+//            if let error = error {
+//                print(error)
+//            }
+//            
+//            let httpResponse = response as! HTTPURLResponse
+//            let statusCode = httpResponse.statusCode
+//            
+//            guard let responseData = data else {
+//                return
+//            }
+//            
+//            if (statusCode == 200) {
+//                
+//                do {
+//                    guard let success = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
+//                        return
+//                    }
+//                    print(success)
+//                    
+//                } catch {
+//                    return
+//                }
+//            } else if (statusCode == 403) {
+//                print("Username and password is incorrect")
+//            }
+//        }
+//        
+//        let task = session.dataTask(with: request as URLRequest, completionHandler: myCompletionHandler)
+//        task.resume()
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Stormpath
 import CoreData
 import SystemConfiguration
 
@@ -33,12 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let APIURL = "http://api.girlscouts.harryatwal.com"
-        
-        Stormpath.sharedSession.configuration.APIURL = URL(string: APIURL)!
-        
-//        navController = UINavigationController()
-        
+                
         return true
     }
 
