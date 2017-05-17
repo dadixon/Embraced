@@ -35,7 +35,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     var recordingSession: AVAudioSession!
     
     var soundRecorder: AVAudioRecorder!
-    var fileName : [String] = ["testWordlistAudioFile.m4a", "trial1.m4a", "trial2.m4a", "trial3.m4a", "trial4.m4a", "trial5.m4a"]
+    var fileName = "testWordlistAudioFile.m4a"
     
     var startTime = TimeInterval()
     var timer = Timer()
@@ -254,6 +254,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         } catch {
             finishRecording(button, success: false)
         }
+        
+        playBtn.isEnabled = false
     }
     
     
