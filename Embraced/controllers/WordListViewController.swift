@@ -288,7 +288,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     
     func preparePlayer() {
         do {
-            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent("testWordlistAudioFile.m4a"))
+            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName))
             soundPlayer?.delegate = self
             soundPlayer?.prepareToPlay()
             soundPlayer?.volume = 1.0
@@ -343,10 +343,14 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func done(_ sender: AnyObject) {
+        self.deleteFile(fileName)
         self.next(self)
     }
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
+        if (soundPlayer?.isPlaying)! {
+            soundPlayer?.stop()
+        }
         setSubview(practiceView, next: trial1View)
         setup()
         practice = false
@@ -360,7 +364,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     
     @IBAction func recordTappedTest(_ sender: UIButton) {
         if soundRecorder == nil {
-            startRecording(sender, fileName: "testWordlistAudioFile.m4a")
+            startRecording(sender, fileName: fileName)
         } else {
             finishRecording(sender, success: true)
             trialRecordBtn.isEnabled = false
