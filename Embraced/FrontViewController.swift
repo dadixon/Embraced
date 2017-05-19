@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import Stormpath
 import AVFoundation
 
 class FrontViewController: UIViewController, AVAudioPlayerDelegate {

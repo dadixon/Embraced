@@ -4,7 +4,6 @@
 use_frameworks!
 
 def pods
-pod 'Stormpath', '~> 2.0'
 end
  
 target ‘Embraced’ do
