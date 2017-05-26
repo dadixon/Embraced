@@ -195,10 +195,12 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         recordForwardBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
         recordBackwardBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
         listenForwardBtn.setTitle("Listen".localized(lang: language), for: .normal)
+        listenBackwardBtn.setTitle("Listen".localized(lang: language), for: .normal)
         practiceNextBtn.setTitle("Done".localized(lang: language), for: .normal)
         practice2instructions.text = "digital_practice_2".localized(lang: language)
         rounds.text = "Round".localized(lang: language) + " 1"
         forwardBtn.setTitle("Next".localized(lang: language), for: .normal)
+        backwardBtn.setTitle("Next".localized(lang: language), for: .normal)
         
         playBtn.isEnabled = false
     }
