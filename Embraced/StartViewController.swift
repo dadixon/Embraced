@@ -60,6 +60,7 @@ class StartViewController: UIViewController {
             // this is where the completion handler code goes
             if let response = response {
                 print(response)
+                print("StartViewController:startTest: Add user")
             }
             if let error = error {
                 print(error)

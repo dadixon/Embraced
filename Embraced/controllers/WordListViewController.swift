@@ -78,11 +78,13 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
             // this is where the completion handler code goes
             if let response = response {
                 print(response)
+                print("StartViewController:viewDidLoad: Add user to Wodlist")
             }
             if let error = error {
                 print(error)
             }
         }
+        
         APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "wordlist", data: ["id": participant.string(forKey: "pid")! as AnyObject], callback: myCompletionHandler)
         
         practiceView.translatesAutoresizingMaskIntoConstraints = false
@@ -348,8 +350,10 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
-        if (soundPlayer?.isPlaying)! {
-            soundPlayer?.stop()
+        if (soundPlayer != nil) {
+            if (soundPlayer?.isPlaying)! {
+                soundPlayer?.stop()
+            }
         }
         setSubview(practiceView, next: trial1View)
         setup()
@@ -396,6 +400,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
                 }
                 print("Deleted temp file")
                 print("Done")
+                print("WordlistViewController:postToAPI: Add file")
 //                DispatchQueue.main.async(execute: {
 //                    self.hideOverlayView()
 //                    self.next(self)

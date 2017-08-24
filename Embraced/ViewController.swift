@@ -54,19 +54,19 @@ class ViewController: UIViewController {
         self.present(navController, animated: true, completion: nil)
     }
     
-    func showModal() {
-        var modalViewController = UIViewController()
-        
-        if #available(iOS 10.0, *) {
-            modalViewController = SpeechTestViewController()
-        } else {
-            // Fallback on earlier versions
-            modalViewController = UserInputViewController()
-        }
-        
-        modalViewController.modalPresentationStyle = .overCurrentContext
-        present(modalViewController, animated: true, completion: nil)
-    }
+//    func showModal() {
+//        var modalViewController = UIViewController()
+//        
+//        if #available(iOS 10.0, *) {
+//            modalViewController = SpeechTestViewController()
+//        } else {
+//            // Fallback on earlier versions
+//            modalViewController = UserInputViewController()
+//        }
+//        
+//        modalViewController.modalPresentationStyle = .overCurrentContext
+//        present(modalViewController, animated: true, completion: nil)
+//    }
     
     func logResponse(_ success: Bool, error: NSError?) {
         if let error = error {

@@ -233,8 +233,6 @@
 		A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */; };
 		A4BB08ED1D7EDFFA00B76C64 /* QuestionnaireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */; };
 		A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */; };
-		A4C469A11E133CE300FDD5D5 /* SpeechTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C4699F1E133CE300FDD5D5 /* SpeechTestViewController.swift */; };
-		A4C469A21E133CE300FDD5D5 /* SpeechTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C469A01E133CE300FDD5D5 /* SpeechTestViewController.xib */; };
 		A4C469A41E13409400FDD5D5 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C469A31E13409400FDD5D5 /* Speech.framework */; };
 		A4C469A71E134B5900FDD5D5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C469A51E134B5900FDD5D5 /* UserViewController.swift */; };
 		A4C469A81E134B5900FDD5D5 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C469A61E134B5900FDD5D5 /* UserViewController.xib */; };
@@ -581,8 +579,6 @@
 		A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireViewController.swift; path = controllers/QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuestionnaireViewController.xib; path = controllers/QuestionnaireViewController.xib; sourceTree = "<group>"; };
 		A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInputViewController.xib; sourceTree = "<group>"; };
-		A4C4699F1E133CE300FDD5D5 /* SpeechTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechTestViewController.swift; sourceTree = "<group>"; };
-		A4C469A01E133CE300FDD5D5 /* SpeechTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeechTestViewController.xib; sourceTree = "<group>"; };
 		A4C469A31E13409400FDD5D5 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		A4C469A51E134B5900FDD5D5 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		A4C469A61E134B5900FDD5D5 /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
@@ -1073,8 +1069,6 @@
 				A4C469A61E134B5900FDD5D5 /* UserViewController.xib */,
 				A489D6161E0B535A001F56FE /* SettingsViewController.swift */,
 				A489D6171E0B535A001F56FE /* SettingsViewController.xib */,
-				A4C4699F1E133CE300FDD5D5 /* SpeechTestViewController.swift */,
-				A4C469A01E133CE300FDD5D5 /* SpeechTestViewController.xib */,
 				A490D7C41D09162800D2B59D /* UserInputViewController.swift */,
 				A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */,
 				A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */,
@@ -1393,7 +1387,6 @@
 				A45F3ABA1E5230DB00D2813C /* Practice2.jpg in Resources */,
 				A4FC1E9A1DD2BE4500F19D95 /* WordList2ViewController.xib in Resources */,
 				A4E338A81DE6098C0010FC45 /* melodies 320ms orig(32).wav in Resources */,
-				A4C469A21E133CE300FDD5D5 /* SpeechTestViewController.xib in Resources */,
 				A47447BE1DE6901700BB4011 /* ENG-BWD-08.mp3 in Resources */,
 				A4E338AE1DE6098C0010FC45 /* melodies 320ms orig(49).wav in Resources */,
 				A474480D1DE6906500BB4011 /* ENG-28.mp3 in Resources */,
@@ -1661,7 +1654,6 @@
 				A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */,
 				A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */,
 				A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */,
-				A4C469A11E133CE300FDD5D5 /* SpeechTestViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
 				A46A2C661DD7AB91000AC66C /* Reachability.swift in Sources */,
 				A4476EDB1D13B1BA002722B4 /* UserInputs.swift in Sources */,
