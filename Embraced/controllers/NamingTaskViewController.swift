@@ -85,7 +85,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         // Fetch images
         var stimuliURIs = [String: Any]()
         
-        let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/stimuli/namingtask"
+        let todoEndpoint: String = "http://www.embracedapi.ugr.es/stimuli/namingtask"
         
         guard let url = URL(string: todoEndpoint) else {
             print("Error: cannot create URL")

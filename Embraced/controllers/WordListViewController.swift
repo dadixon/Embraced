@@ -119,7 +119,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         
         // Fetch audios
 //        trials = DataManager.sharedInstance.wordListTrials
-        let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/stimuli/wordlist"
+        let todoEndpoint: String = "http://www.embracedapi.ugr.es/stimuli/wordlist"
         
         guard let url = URL(string: todoEndpoint) else {
             //            print("Error: cannot create URL")

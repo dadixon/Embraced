@@ -14,7 +14,7 @@ class ReyComplexFigure2ViewController: WebViewController {
     override func viewDidLoad() {
         step = AppDelegate.position
         showOrientationAlert(orientation: "portrait")
-        url = URL (string: "http://girlscouts.harryatwal.com/reyComplexFigure2.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
+        url = URL (string: "http://www.embraced.ugr.es/reyComplexFigure2.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
     }

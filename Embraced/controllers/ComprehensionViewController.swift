@@ -14,7 +14,7 @@ class ComprehensionViewController: WebViewController {
     override func viewDidLoad() {
         step = AppDelegate.position
         showOrientationAlert(orientation: "landscape")
-        url = URL(string: "http://girlscouts.harryatwal.com/comprehension.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
+        url = URL(string: "http://www.embraced.ugr.es/comprehension.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
     }

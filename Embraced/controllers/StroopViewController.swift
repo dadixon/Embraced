@@ -194,7 +194,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
 //        images = DataManager.sharedInstance.stroopImages
 //        videos = DataManager.sharedInstance.stroopVideos
         
-        let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/stimuli/stroop"
+        let todoEndpoint: String = "http://www.embracedapi.ugr.es/stimuli/stroop"
         
         guard let url = URL(string: todoEndpoint) else {
             return

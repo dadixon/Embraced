@@ -10,7 +10,7 @@ import Foundation
 
 public class APIWrapper {
     class func post(id: String, test: String, data: Any) {
-        let url = "http://api.girlscouts.harryatwal.com"
+        let url = "http://www.embracedapi.ugr.es"
         var notesEndpoint : URL!
         
         if id == "" && test == "" {
@@ -33,7 +33,7 @@ public class APIWrapper {
     }
     
     class func post2(id: String, test: String, data: Any, callback: Any) {
-        let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/participant/" + id + "/" + test
+        let todoEndpoint: String = "http://www.embracedapi.ugr.es/participant/" + id + "/" + test
         guard let url = URL(string: todoEndpoint) else {
             print("Error: cannot create URL")
             return

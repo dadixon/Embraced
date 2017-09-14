@@ -135,7 +135,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         }
 
         
-        let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/stimuli/digitsspan"
+        let todoEndpoint: String = "http://www.embracedapi.ugr.es/stimuli/digitsspan"
         
         guard let url = URL(string: todoEndpoint) else {
             return

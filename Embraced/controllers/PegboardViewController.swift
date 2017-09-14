@@ -14,7 +14,7 @@ class PegboardViewController: WebViewController {
     override func viewDidLoad() {
         step = AppDelegate.position
         showOrientationAlert(orientation: "landscape")
-        url = URL(string: "http://girlscouts.harryatwal.com/motorTask.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
+        url = URL(string: "http://www.embraced.ugr.es/motorTask.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
         
         super.viewDidLoad()
     }

@@ -142,7 +142,7 @@ class PitchViewController: FrontViewController {
         // Fetch audios
         // New way by downloading files instead of using native ones
         
-        let todoEndpoint: String = "http://api.girlscouts.harryatwal.com/stimuli/pitch"
+        let todoEndpoint: String = "http://www.embracedapi.ugr.es/stimuli/pitch"
         
         guard let url = URL(string: todoEndpoint) else {
             return
