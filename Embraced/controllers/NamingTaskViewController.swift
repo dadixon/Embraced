@@ -234,7 +234,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         print("\(functionName): \(logMessage)")
     }
     
-    func updateTime() {
+    @objc func updateTime() {
         
         let currentTime = Date.timeIntervalSinceReferenceDate
         

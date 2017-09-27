@@ -539,8 +539,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
             let endPos = myString.characters.distance(from: myString.characters.startIndex, to: range.upperBound)
             print(startPos, endPos)
             
-            myMutableString = NSMutableAttributedString(string: myString, attributes: [NSFontAttributeName:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
-            myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange(location:startPos,length:endPos - startPos))
+            myMutableString = NSMutableAttributedString(string: myString, attributes: [NSAttributedStringKey.font:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
+            myMutableString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red, range: NSRange(location:startPos,length:endPos - startPos))
             preTaskInstruction4.attributedText = myMutableString
         }
         

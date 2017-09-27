@@ -210,7 +210,7 @@ class PitchViewController: FrontViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func updateTime() {
+    @objc func updateTime() {
 //        log(logMessage: "initi")
         if self.played == false {
             self.soundLabel.text = "2"

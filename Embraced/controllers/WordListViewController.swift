@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import AVKit
+import Alamofire
 
 class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
 
@@ -31,8 +32,9 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var startBtn: NavigationButton!
     @IBOutlet weak var wordNextBtn: NavigationButton!
     
-    
+    let userDefaults = UserDefaults.standard
     var recordingSession: AVAudioSession!
+    let APIUrl = "http://www.embracedapi.ugr.es/"
     
     var soundRecorder: AVAudioRecorder!
     var fileName = "testWordlistAudioFile.m4a"
@@ -411,6 +413,35 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
                 print(error)
             }
         }
+        
+//        let parameters = createPostObject(index: position)
+//        let url = APIUrl + "api/user/authenticate"
+//
+//        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+//            .responseJSON { response in
+//
+//                let statusCode = response.response?.statusCode
+//
+//                if statusCode == 200 {
+//                    guard let json = response.result.value as? [String: Any] else {
+//                        return
+//                    }
+//
+//                    self.userDefaults.setValue(json["token"]!, forKey: "token")
+//                    DispatchQueue.main.async(execute: {
+//                        self.usernameTextfield.text = ""
+//                        self.passwordTextfield.text = ""
+//
+//                        let vc = AdminViewController()
+//                        let navController = UINavigationController(rootViewController: vc)
+//                        self.present(navController, animated: true, completion: nil)
+//                    })
+//                } else if statusCode == 403 {
+//                    DispatchQueue.main.async(execute: {
+//                        self.errorLabel.text = "WrongUsernamePassword".localized(lang: self.testerLanguage)
+//                    })
+//                }
+//        }
         
         APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "wordlist", data: object, callback: myCompletionHandler)
     }

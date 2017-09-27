@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class StartViewController: UIViewController {
 
@@ -15,6 +16,7 @@ class StartViewController: UIViewController {
     @IBOutlet weak var nextBtn: UIButton!
     
     let participant = UserDefaults.standard
+    let APIUrl = "http://www.embracedapi.ugr.es/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,31 +57,45 @@ class StartViewController: UIViewController {
     
     @IBAction func startTest(_ sender: Any) {
         // Insert row in database
-        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
-            (data, response, error) in
-            // this is where the completion handler code goes
-            if let response = response {
-                print(response)
-                print("StartViewController:startTest: Add user")
-            }
-            if let error = error {
-                print(error)
-            }
-        }
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "", data: ["lang": participant.string(forKey: "language")! as AnyObject], callback: myCompletionHandler)
+//        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
+//            (data, response, error) in
+//            // this is where the completion handler code goes
+//            if let response = response {
+//                print(response)
+//                print("StartViewController:startTest: Add user")
+//            }
+//            if let error = error {
+//                print(error)
+//            }
+//        }
+        
+//        let url = APIUrl + "api/participant/" + participant.string(forKey: "pid")!
+//        let parameters = createPostObject()
+//        
+//        let headers: HTTPHeaders = [
+//            "x-access-token": participant.string(forKey: "token")!
+//        ]
+////
+////        Alamofire.request(url, headers: headers).responseJSON { response in
+////            debugPrint(response)
+////        }
+//        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+//            debugPrint(response)
+//        }
+//        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "", data: ["lang": participant.string(forKey: "language")! as AnyObject], callback: myCompletionHandler)
         
         var navigationArray = self.navigationController?.viewControllers
-        
+
         navigationArray?.remove(at: 0)
-        
+
         let vc: UIViewController!
         var tests = ["Questionnaire", "MoCA/MMSE", "Rey Complex Figure 1", "Clock Drawing Test", "Rey Complex Figure 2", "Trail Making", "Pitch", "Digit Span", "Rey Complex Figure 3", "Rey Complex Figure 4", "Matrices", "Continuous Performance Test", "Motor Tasks", "Word List 1", "Stroop Test", "Cancellation Test", "Word List 2", "Naming Task", "Comprehension Task", "Eye Test"]
         if let test = participant.array(forKey: "Tests") {
             tests = test as! [String]
         }
-        
+
         participant.set(tests, forKey: "Tests")
-        
+
         switch tests[0] {
         case "Questionnaire":
             vc = QuestionnaireViewController()
@@ -124,13 +140,22 @@ class StartViewController: UIViewController {
         default:
             vc = UserInputViewController()
         }
-        
+
         navigationArray?.append(vc)
-        
+
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }
  
-    
+    private func createPostObject() -> [String: AnyObject] {
+        var jsonObject = [String: AnyObject]()
+        
+        // Gather data for post
+        jsonObject = [
+            "language": participant.string(forKey: "language")! as AnyObject
+        ]
+        
+        return jsonObject
+    }
     
 
 }

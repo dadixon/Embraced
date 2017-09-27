@@ -57,6 +57,8 @@
 "Rotation_landscpaing_prompt" = "Por favor, coloque el iPad en posición horizontal";
 "Finished" = "Ha finalizado";
 "Start_over" = "Comenzar de nuevo";
+"UsernamePasswordEmpty" = "Tanto el nombre de usuario como la contraseña son obligatorios";
+"WrongUsernamePassword" = "Nombre de usuario y contraseña incorrectos";
 
 "WELCOME_TEXT" = "Vamos a hacerle algunas preguntas acerca de usted.\nPor favor, recuerde que es libre de no contestar aquellas preguntas que le molesten pero le rogamos encarecidamente que trate de completar este cuestionario al máximo posible.\nGracias por su participación.";
 

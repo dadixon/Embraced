@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import Alamofire
 
 class UserViewController: UIViewController {
 
     @IBOutlet weak var startBtn: NavigationButton!
     
-    let participant = UserDefaults.standard
+    let userDefaults = UserDefaults.standard
+    let APIUrl = "http://www.embracedapi.ugr.es/"
     
     override func viewWillAppear(_ animated: Bool) {
-        if let language = participant.string(forKey: "TesterLanguage") {
+        if let language = userDefaults.string(forKey: "TesterLanguage") {
             startBtn.setTitle("Start_Test".localized(lang: language), for: .normal)
         } else {
             startBtn.setTitle("Start Test", for: .normal)
@@ -34,6 +36,26 @@ class UserViewController: UIViewController {
     }
 
     @IBAction func startTest(_ sender: Any) {
+        // Add a participant
+        let token = userDefaults.string(forKey: "token")!
+        let uid = userDefaults.string(forKey: "id")!
+        let headers: HTTPHeaders = [
+            "x-access-token": token
+        ]
+        
+        Alamofire.request(APIUrl + "api/participant/" + uid, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            debugPrint(response)
+            
+            let statusCode = response.response?.statusCode
+            
+            if statusCode == 200 {
+                guard let json = response.result.value as? [String: Any] else {
+                    return
+                }
+                self.userDefaults.setValue(json["_id"]!, forKey: "pid")
+            }
+        }
+        
         let vc = UserInputViewController()
         self.present(vc, animated: true, completion: nil)
     }
