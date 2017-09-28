@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Alamofire
 
 class PitchViewController: FrontViewController {
     
@@ -89,7 +90,10 @@ class PitchViewController: FrontViewController {
     var position = 0
     
     var timer = Timer()
-    
+    let APIUrl = "http://www.embracedapi.ugr.es/"
+    let userDefaults = UserDefaults.standard
+    var token: String = ""
+    var id: String = ""
     
     // MARK: - Private
     
@@ -115,6 +119,7 @@ class PitchViewController: FrontViewController {
         super.viewDidLoad()
         
         language = participant.string(forKey: "language")!
+        id = participant.string(forKey: "pid")!
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PitchViewController.next(_:)))
         
@@ -141,49 +146,28 @@ class PitchViewController: FrontViewController {
         
         // Fetch audios
         // New way by downloading files instead of using native ones
+        token = userDefaults.string(forKey: "token")!
+        let headers: HTTPHeaders = [
+            "x-access-token": token
+        ]
         
-        let todoEndpoint: String = "http://www.embracedapi.ugr.es/stimuli/pitch"
-        
-        guard let url = URL(string: todoEndpoint) else {
-            return
-        }
-        
-        let urlRequest = URLRequest(url: url)
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-            (data, response, error) -> Void in
+        Alamofire.request(APIUrl + "api/pitch/stimuli/" + language, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            debugPrint(response)
             
-            let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
+            let statusCode = response.response?.statusCode
             
-            guard error == nil else {
-                return
-            }
-            // make sure we got data
-            guard let responseData = data else {
-                return
-            }
-            
-            if (statusCode == 200) {
-                
-                do {
-                    guard let todo = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
-                        return
-                    }
-                    
-                    self.examples = todo["examples"]! as! Array<Array<String>>
-                    self.trials = todo["trials"]! as! Array<Array<String>>
-                    self.tasks = todo["tasks"]! as! Array<Array<String>>
-                    
-                    self.introBtn.isEnabled = true
-                } catch {
+            if statusCode == 200 {
+                guard let json = response.result.value as? [String: Any] else {
                     return
                 }
+                self.examples = json["examples"]! as! Array<Array<String>>
+                self.trials = json["trials"]! as! Array<Array<String>>
+                self.tasks = json["practice"]! as! Array<Array<String>>
+                
+                self.introBtn.isEnabled = true
+                
             }
-        })
-        
-        task.resume()
+        }
     
     
     
@@ -199,9 +183,20 @@ class PitchViewController: FrontViewController {
         for index in 0...24 {
             userAnswers.insert("", at: index)
         }
+        
+        Alamofire.request(APIUrl + "api/pitch/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            debugPrint(response)
             
-        loadingView.stopAnimating()
-//        log(logMessage: "finished")
+            let statusCode = response.response?.statusCode
+            
+            if statusCode == 200 {
+//                guard let json = response.result.value as? [String: Any] else {
+//                    return
+//                }
+            
+                self.loadingView.stopAnimating()
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -331,30 +326,53 @@ class PitchViewController: FrontViewController {
     }
     
     func postToAPI() {
-        // Completion Handler
-        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
-            (data, response, error) in
-            // this is where the completion handler code goes
-            if let response = response {
-                print(response)
-                // Clear audios
-                for i in 0...self.position-1 {
-                    self.deleteFile("wordlist\(i).m4a")
+//        // Completion Handler
+//        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
+//            (data, response, error) in
+//            // this is where the completion handler code goes
+//            if let response = response {
+//                print(response)
+//                // Clear audios
+//                for i in 0...self.position-1 {
+//                    self.deleteFile("wordlist\(i).m4a")
+//                }
+//                print("Deleted temp file")
+//                print("Done")
+//                DispatchQueue.main.async(execute: {
+//                    self.hideOverlayView()
+//                    self.next(self)
+//                })
+//
+//            }
+//            if let error = error {
+//                print(error)
+//            }
+//        }
+//
+//        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "pitch", data: createPostObject(), callback: myCompletionHandler)
+        
+        let headers: HTTPHeaders = [
+            "x-access-token": token
+        ]
+        
+        Alamofire.request(APIUrl + "api/pitch/new/" + id, method: .post, parameters: createPostObject(), encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            debugPrint(response)
+            
+            let statusCode = response.response?.statusCode
+            
+            if statusCode == 200 {
+                guard let json = response.result.value as? [String: Any] else {
+                    return
                 }
-                print("Deleted temp file")
-                print("Done")
-                DispatchQueue.main.async(execute: {
-                    self.hideOverlayView()
-                    self.next(self)
-                })
+                print(json)
+                self.examples = json["examples"]! as! Array<Array<String>>
+                self.trials = json["trials"]! as! Array<Array<String>>
+                self.tasks = json["practice"]! as! Array<Array<String>>
+                
+                self.introBtn.isEnabled = true
                 
             }
-            if let error = error {
-                print(error)
-            }
         }
-        
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "pitch", data: createPostObject(), callback: myCompletionHandler)
     }
     
     // MARK: - Navigation

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class UserInputViewController: UIViewController {
 
@@ -21,9 +22,9 @@ class UserInputViewController: UIViewController {
     @IBOutlet weak var participantLabel: UILabel!
     
     
-    let participant = UserDefaults.standard
+    let userDefaults = UserDefaults.standard
     let downloadManager = DownloadManager()
-    let uuid = UUID().uuidString
+    let APIUrl = "http://www.embracedapi.ugr.es/"
     
     fileprivate func setBottomBorder(_ textfield: UITextField) {
         let border = CALayer()
@@ -43,9 +44,9 @@ class UserInputViewController: UIViewController {
         
         self.navigationController?.isNavigationBarHidden = true
         
-        let index = uuid.characters.index(uuid.endIndex, offsetBy: -15)
-        participantID.text = uuid.substring(to: index)
-        participant.setValue(uuid.substring(to: index), forKey: "pid")
+//        let index = uuid.characters.index(uuid.endIndex, offsetBy: -15)
+//        participantID.text = uuid.substring(to: index)
+//        participant.setValue(uuid.substring(to: index), forKey: "pid")
         
         DataManager.sharedInstance.fetchStimuli()
     }
@@ -55,14 +56,14 @@ class UserInputViewController: UIViewController {
         
         submitBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
         
-        participantLabel.text = "Participant_ID".localized(lang: participant.string(forKey: "TesterLanguage")!)
-        dayOfTheWeekTextField.placeholder = "Day_of_the_week".localized(lang: participant.string(forKey: "TesterLanguage")!)
-        countryTextField.placeholder = "Country".localized(lang: participant.string(forKey: "TesterLanguage")!)
-        countyTextField.placeholder = "County".localized(lang: participant.string(forKey: "TesterLanguage")!)
-        cityTextField.placeholder = "City".localized(lang: participant.string(forKey: "TesterLanguage")!)
-        locationTextField.placeholder = "Location".localized(lang: participant.string(forKey: "TesterLanguage")!)
-        floorTextField.placeholder = "Floor".localized(lang: participant.string(forKey: "TesterLanguage")!)
-        submitBtn.setTitle("Submit".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
+        participantLabel.text = "Participant_ID".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
+        dayOfTheWeekTextField.placeholder = "Day_of_the_week".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
+        countryTextField.placeholder = "Country".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
+        countyTextField.placeholder = "County".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
+        cityTextField.placeholder = "City".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
+        locationTextField.placeholder = "Location".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
+        floorTextField.placeholder = "Floor".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
+        submitBtn.setTitle("Submit".localized(lang: userDefaults.string(forKey: "TesterLanguage")!), for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,15 +77,17 @@ class UserInputViewController: UIViewController {
     
     @IBAction func submit(_ sender: AnyObject) {
         var jsonObject = [String: AnyObject]()
+        let vc = StartViewController()
+        let navController = UINavigationController(rootViewController: vc)
         
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss a"
         let dateString = dateFormatter.string(from:date)
         
         // Gather data for post
         jsonObject = [
-            "id": participant.string(forKey: "pid")! as AnyObject,
+            "pid": userDefaults.string(forKey: "pid")! as AnyObject,
             "time": dateString as AnyObject,
             "dayOfWeek": dayOfTheWeekTextField.text as AnyObject,
             "country": countryTextField.text as AnyObject,
@@ -95,11 +98,22 @@ class UserInputViewController: UIViewController {
         ]
 
         
-        // Push to API
-        APIWrapper.post(id: "", test: "", data: jsonObject)      
+        let token = userDefaults.string(forKey: "token")!
+        let pid = userDefaults.string(forKey: "pid")!
+        let headers: HTTPHeaders = [
+            "x-access-token": token
+        ]
         
-        let vc = StartViewController()
-        let navController = UINavigationController(rootViewController: vc)
-        self.present(navController, animated: true, completion: nil)
+        Alamofire.request(APIUrl + "api/moca/new/" + pid, method: .post, parameters: jsonObject, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            debugPrint(response)
+            
+            let statusCode = response.response?.statusCode
+            
+            if statusCode == 200 {
+                self.present(navController, animated: true, completion: nil)
+            }
+        }
+        
+        
     }
 }

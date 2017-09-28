@@ -53,10 +53,19 @@ class UserViewController: UIViewController {
                     return
                 }
                 self.userDefaults.setValue(json["_id"]!, forKey: "pid")
+                let vc: UIViewController!
+                let tests = self.userDefaults.array(forKey: "Tests")!
+                
+                if tests.contains(where: { String($0 as! String) == "MoCA/MMSE"}) {
+                    vc = UserInputViewController()
+                } else {
+                    vc = StartViewController()
+                }
+                
+                let navController = UINavigationController(rootViewController: vc)
+                self.present(navController, animated: true, completion: nil)
+                
             }
         }
-        
-        let vc = UserInputViewController()
-        self.present(vc, animated: true, completion: nil)
     }
 }

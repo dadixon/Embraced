@@ -14,7 +14,7 @@ class ClockDrawingTestViewController: WebViewController {
     override func viewDidLoad() {
         step = AppDelegate.position
         showOrientationAlert(orientation: "portrait")
-        url = URL(string: "http://www.embraced.ugr.es/clockDrawing.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
+        url = URL(string: "http://www.embraced.ugr.es/clockDrawing.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")! + "&token=" + participant.string(forKey: "token")!)
         
         super.viewDidLoad()
     }

@@ -36,7 +36,6 @@ class QuestionnaireViewController: WebViewController {
     // MARK: - Delegate
     
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print("call back")
         if (message.name == "callbackHandler") {
             next(self)
         }

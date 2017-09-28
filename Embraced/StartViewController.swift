@@ -56,33 +56,7 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func startTest(_ sender: Any) {
-        // Insert row in database
-//        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
-//            (data, response, error) in
-//            // this is where the completion handler code goes
-//            if let response = response {
-//                print(response)
-//                print("StartViewController:startTest: Add user")
-//            }
-//            if let error = error {
-//                print(error)
-//            }
-//        }
-        
-//        let url = APIUrl + "api/participant/" + participant.string(forKey: "pid")!
-//        let parameters = createPostObject()
-//        
-//        let headers: HTTPHeaders = [
-//            "x-access-token": participant.string(forKey: "token")!
-//        ]
-////
-////        Alamofire.request(url, headers: headers).responseJSON { response in
-////            debugPrint(response)
-////        }
-//        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-//            debugPrint(response)
-//        }
-//        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "", data: ["lang": participant.string(forKey: "language")! as AnyObject], callback: myCompletionHandler)
+        // TODO: Update participant language chosen in the db
         
         var navigationArray = self.navigationController?.viewControllers
 
@@ -142,7 +116,6 @@ class StartViewController: UIViewController {
         }
 
         navigationArray?.append(vc)
-
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }
  

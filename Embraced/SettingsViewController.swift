@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Alamofire
+ 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var testListTable: UITableView!
@@ -19,12 +20,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var chooseLanguage: UILabel!
     
     
-    let tests = ["Questionnaire", "MoCA/MMSE", "Rey Complex Figure 1", "Clock Drawing Test", "Rey Complex Figure 2", "Trail Making", "Pitch", "Digit Span", "Rey Complex Figure 3", "Rey Complex Figure 4", "Matrices", "Continuous Performance Test", "Motor Tasks", "Word List 1", "Stroop Test", "Cancellation Test", "Word List 2", "Naming Task", "Comprehension Task", "Eye Test"]
+    var tests = ["Questionnaire", "MoCA/MMSE", "Rey Complex Figure 1", "Clock Drawing Test", "Rey Complex Figure 2", "Trail Making", "Pitch", "Digit Span", "Rey Complex Figure 3", "Rey Complex Figure 4", "Matrices", "Continuous Performance Test", "Motor Tasks", "Word List 1", "Stroop Test", "Cancellation Test", "Word List 2", "Naming Task", "Comprehension Task", "Eye Test"]
     var defaultTests = [String]()
     var confirm = [String]()
     
     let participant = UserDefaults.standard
     var testerLanguage = ""
+    let APIUrl = "http://www.embracedapi.ugr.es/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,17 +39,44 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         confirmListTable.setEditing(true, animated: true)
         
-        if participant.array(forKey: "Tests") != nil {
-            confirm = participant.array(forKey: "Tests") as! [String]
+        // Grab only available tests
+        let token = participant.string(forKey: "token")!
+        let headers: HTTPHeaders = [
+            "x-access-token": token
+        ]
+        
+        Alamofire.request(APIUrl + "api/data/tests", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            debugPrint(response)
             
-            defaultTests = tests
+            let statusCode = response.response?.statusCode
             
-            for test in confirm {
-                defaultTests = defaultTests.filter {$0 != test}
+            if statusCode == 200 {
+                guard let json = response.result.value as? [String: Any] else {
+                    return
+                }
+                self.tests = json["tests"] as! [String]
+                
+                if self.participant.array(forKey: "Tests") != nil {
+                    self.confirm = self.participant.array(forKey: "Tests") as! [String]
+                    self.defaultTests = self.tests
+                    
+                    for test in self.tests {
+                        self.confirm = self.confirm.filter {$0 == test}
+                    }
+                    
+                    for test in self.confirm {
+                        self.defaultTests = self.defaultTests.filter {$0 != test}
+                    }
+                } else {
+                    self.defaultTests = self.tests
+                }
+                
+                self.confirmListTable.reloadData()
+                self.testListTable.reloadData()
             }
-        } else {
-            defaultTests = tests
         }
+        
+        
         
         var testerLanguage = participant.string(forKey: "TesterLanguage")
         
