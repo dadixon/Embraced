@@ -64,20 +64,16 @@ class PitchViewController: FrontViewController {
     @IBOutlet weak var completeLabel: UILabel!
     @IBOutlet weak var submitBtn: UIButton!
     
-
-    let downloadManager = DownloadManager()
-    
     var stimuli = [String: Any]()
-    var examples = Array<Array<String>>()
-    var trials = Array<Array<String>>()
-    var tasks = Array<Array<String>>()
+    var examples = [[String]]()
+    var trials = [[String]]()
+    var practices = [[String]]()
     
     let exampleAnswers = ["S", "D", "D"]
     let practiceAnswers = ["D", "D", "S", "D", "D"]
-    let taskAnswers = ["S", "D", "S", "D", "D", "S", "D", "S", "D", "D", "S", "S", "S", "S", "D", "D", "D", "D", "D", "S", "S", "S", "S", "D"]
+    let trialAnswers = ["S", "D", "S", "D", "D", "S", "D", "S", "D", "D", "S", "S", "S", "S", "D", "D", "D", "D", "D", "S", "S", "S", "S", "D"]
     
     var userAnswers = [String]()
-    var score = Int()
     
     var firstSound = String()
     var secondSound = String()
@@ -86,7 +82,7 @@ class PitchViewController: FrontViewController {
     
     var exampleCount = 0
     var trialCount = 0
-    var tasksCount = 0
+    var practiceCount = 0
     var position = 0
     
     var timer = Timer()
@@ -94,6 +90,9 @@ class PitchViewController: FrontViewController {
     let userDefaults = UserDefaults.standard
     var token: String = ""
     var id: String = ""
+    var headers: HTTPHeaders = [:]
+    
+    let group = DispatchGroup()
     
     // MARK: - Private
     
@@ -118,9 +117,9 @@ class PitchViewController: FrontViewController {
         
         super.viewDidLoad()
         
-        language = participant.string(forKey: "language")!
-        id = participant.string(forKey: "pid")!
+        self.introBtn.isHidden = true
         
+        language = participant.string(forKey: "language")!
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PitchViewController.next(_:)))
         
         showOrientationAlert(orientation: "portrait")
@@ -146,8 +145,9 @@ class PitchViewController: FrontViewController {
         
         // Fetch audios
         // New way by downloading files instead of using native ones
+        id = participant.string(forKey: "pid")!
         token = userDefaults.string(forKey: "token")!
-        let headers: HTTPHeaders = [
+        headers = [
             "x-access-token": token
         ]
         
@@ -160,19 +160,51 @@ class PitchViewController: FrontViewController {
                 guard let json = response.result.value as? [String: Any] else {
                     return
                 }
-                self.examples = json["examples"]! as! Array<Array<String>>
-                self.trials = json["trials"]! as! Array<Array<String>>
-                self.tasks = json["practice"]! as! Array<Array<String>>
+                let examples = json["examples"]! as! [[String]]
+                let trials = json["trials"]! as! [[String]]
+                let practices = json["practice"]! as! [[String]]
                 
                 self.introBtn.isEnabled = true
                 
+                for x in 0..<examples.count {
+                    var examplesString = [String]()
+                    for y in 0..<examples[x].count {
+                        let pathArray = examples[x][y].components(separatedBy: "/")
+                        examplesString.append(pathArray[pathArray.count - 1])
+                        self.group.enter()
+                        self.downloadAudioFile(urlString: "http://www.embracedapi.ugr.es/public/\(self.language)\(examples[x][y])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
+                    }
+                    self.examples.append(examplesString)
+                }
+                
+                for x in 0..<trials.count {
+                    var trialsString = [String]()
+                    for y in 0..<trials[x].count {
+                        let pathArray = trials[x][y].components(separatedBy: "/")
+                        trialsString.append(pathArray[pathArray.count - 1])
+                        self.group.enter()
+                        self.downloadAudioFile(urlString: "http://www.embracedapi.ugr.es/public/\(self.language)\(trials[x][y])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
+                    }
+                    self.trials.append(trialsString)
+                }
+                
+                for x in 0..<practices.count {
+                    var practicesString = [String]()
+                    for y in 0..<practices[x].count {
+                        let pathArray = practices[x][y].components(separatedBy: "/")
+                        practicesString.append(pathArray[pathArray.count - 1])
+                        self.group.enter()
+                        self.downloadAudioFile(urlString: "http://www.embracedapi.ugr.es/public/\(self.language)\(practices[x][y])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
+                    }
+                    self.practices.append(practicesString)
+                }
+                
+                self.group.notify(queue: .main) {
+                    print("All requests are done")
+                    self.introBtn.isHidden = false
+                }
             }
         }
-    
-    
-    
-    
-        
 //        examples = DataManager.sharedInstance.pitchExamples
 //        trials = DataManager.sharedInstance.pitchTrials
 //        tasks = DataManager.sharedInstance.pitchTasks
@@ -180,33 +212,35 @@ class PitchViewController: FrontViewController {
         introBtn.setTitle("Start".localized(lang: language), for: .normal)
         introLabel.text = "pitch_intro".localized(lang: language)
         
-        for index in 0...24 {
-            userAnswers.insert("", at: index)
-        }
-        
-        Alamofire.request(APIUrl + "api/pitch/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            debugPrint(response)
-            
-            let statusCode = response.response?.statusCode
-            
-            if statusCode == 200 {
-//                guard let json = response.result.value as? [String: Any] else {
-//                    return
-//                }
-            
-                self.loadingView.stopAnimating()
-            }
-        }
+//        for index in 0...24 {
+//            userAnswers.insert("", at: index)
+//        }
     }
     
     override func didReceiveMemoryWarning() {
-//        log(logMessage: "initi")
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    private func downloadAudioFile(urlString: String, name: String) {
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileURL = documentsURL.appendingPathComponent(name)
+            
+            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+        }
+        
+        Alamofire.download(urlString, to: destination)
+            .downloadProgress { progress in
+                print("Download Progress: \(progress.fractionCompleted)")
+            }.response { response in
+                self.group.leave()
+//            if response.error == nil, let audioPath = response.destinationURL?.path {
+//                let url = URL(fileURLWithPath: audioPath)
+//                print(url)
+//            }
+        }
+    }
     @objc func updateTime() {
-//        log(logMessage: "initi")
         if self.played == false {
             self.soundLabel.text = "2"
             play(secondSound)
@@ -215,27 +249,21 @@ class PitchViewController: FrontViewController {
         }
         
         self.played = true
-//        log(logMessage: "finished")
     }
     
     private func startTimer() {
-//        log(logMessage: "initi")
         if !timer.isValid {
             let aSelector : Selector = #selector(PitchViewController.updateTime)
             
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
         }
-//        log(logMessage: "finished")/
     }
     
     private func resetTimer() {
-//        log(logMessage: "initi")
         timer.invalidate()
-//        log(logMessage: "finished")
     }
     
     private func setupSounds(_ soundArray: Array<Array<String>>, iterator: Int, label: UILabel) {
-//        log(logMessage: "initi")
         if soundPlayer != nil {
             if (soundPlayer?.isPlaying)! {
                 soundPlayer?.stop()
@@ -253,16 +281,11 @@ class PitchViewController: FrontViewController {
             secondSound = soundArray[iterator][0]
         }
         
-//        print(firstSound)
-//        print(secondSound)
-        
         soundLabel = label
         soundLabel.text = ""
-//        log(logMessage: "finished")
     }
     
     func setupExample1() {
-//        log(logMessage: "initi")
         example1.text = "Example".localized(lang: language) + " 1"
         example1Content.text = "pitch_example_1".localized(lang: language)
         example1btn.setTitle("Next".localized(lang: language), for: .normal)
@@ -271,11 +294,9 @@ class PitchViewController: FrontViewController {
         
         example1btn.isHidden = true
         example1segment.isHidden = true
-//        log(logMessage: "finished")
     }
     
     func setupExample2() {
-//        log(logMessage: "initi")
         example2.text = "Example".localized(lang: language) + " 2"
         example2Content.text = "pitch_example_2".localized(lang: language)
         example2btn.setTitle("Next".localized(lang: language), for: .normal)
@@ -284,11 +305,9 @@ class PitchViewController: FrontViewController {
         
         example2btn.isHidden = true
         example2segment.isHidden = true
-//        log(logMessage: "finished")
     }
     
     func setupExample3() {
-//        log(logMessage: "initi")
         example3.text = "Example".localized(lang: language) + " 3"
         example3Content.text = "pitch_example_3".localized(lang: language)
         example3btn.setTitle("Next".localized(lang: language), for: .normal)
@@ -297,11 +316,9 @@ class PitchViewController: FrontViewController {
         
         example3btn.isHidden = true
         example3segment.isHidden = true
-//        log(logMessage: "finished")
     }
     
-    func setupTrial1() {
-//        log(logMessage: "initi")
+    func setupPractice1() {
         practiceLabel.text = "Practice".localized(lang: language) + " " + String(trialCount+1)
         practiceInstructionsLabel.text = "pitch_practice_1".localized(lang: language)
         practiceSegment.setTitle("Same".localized(lang: language), forSegmentAt: 0)
@@ -310,7 +327,6 @@ class PitchViewController: FrontViewController {
         
         practiceSegment.isHidden = true
         practiceBtn.isHidden = true
-//        log(logMessage: "finished")
     }
 
     func createPostObject() -> [String: AnyObject] {
@@ -318,59 +334,24 @@ class PitchViewController: FrontViewController {
         
         // Gather data for post
         jsonObject = [
-            "answers": userAnswers as AnyObject,
-            "score": score as AnyObject
+            "answers": userAnswers as AnyObject
         ]
         
         return jsonObject
     }
     
     func postToAPI() {
-//        // Completion Handler
-//        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
-//            (data, response, error) in
-//            // this is where the completion handler code goes
-//            if let response = response {
-//                print(response)
-//                // Clear audios
-//                for i in 0...self.position-1 {
-//                    self.deleteFile("wordlist\(i).m4a")
-//                }
-//                print("Deleted temp file")
-//                print("Done")
-//                DispatchQueue.main.async(execute: {
-//                    self.hideOverlayView()
-//                    self.next(self)
-//                })
-//
-//            }
-//            if let error = error {
-//                print(error)
-//            }
-//        }
-//
-//        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "pitch", data: createPostObject(), callback: myCompletionHandler)
-        
         let headers: HTTPHeaders = [
             "x-access-token": token
         ]
         
         Alamofire.request(APIUrl + "api/pitch/new/" + id, method: .post, parameters: createPostObject(), encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            debugPrint(response)
-            
+//            debugPrint(response)
             let statusCode = response.response?.statusCode
             
             if statusCode == 200 {
-                guard let json = response.result.value as? [String: Any] else {
-                    return
-                }
-                print(json)
-                self.examples = json["examples"]! as! Array<Array<String>>
-                self.trials = json["trials"]! as! Array<Array<String>>
-                self.tasks = json["practice"]! as! Array<Array<String>>
-                
-                self.introBtn.isEnabled = true
-                
+                self.hideOverlayView()
+                self.next(self)
             }
         }
     }
@@ -390,17 +371,14 @@ class PitchViewController: FrontViewController {
     }
     
     @IBAction func moveToExample(_ sender: AnyObject) {
-//        log(logMessage: "initi")
         position += 1
         
         setSubview(introView, next: example1View)
         setupSounds(examples, iterator: 0, label: example1Label)
         setupExample1()
-//        log(logMessage: "finished")
     }
     
     @IBAction func moveToExample2(_ sender: AnyObject) {
-//        log(logMessage: "initi")
         position += 1
         
         setSubview(example1View, next: example2View)
@@ -408,11 +386,9 @@ class PitchViewController: FrontViewController {
         setupExample2()
         
         exampleCount += 1
-//        log(logMessage: "finished")
     }
     
     @IBAction func moveToExample3(_ sender: AnyObject) {
-//        log(logMessage: "initi")
         position += 1
         
         setSubview(example2View, next: example3View)
@@ -420,36 +396,32 @@ class PitchViewController: FrontViewController {
         setupExample3()
         
         exampleCount += 1
-//        log(logMessage: "finished")
     }
     
     
-    @IBAction func moveToTrial1(_ sender: AnyObject) {
-//        log(logMessage: "initi")
+    @IBAction func moveToPractice1(_ sender: AnyObject) {
         position += 1
         
         setSubview(example3View, next: trial1View)
-        setupSounds(trials, iterator: trialCount, label: trialLabel)
-        setupTrial1()
-//        log(logMessage: "finished")
+        setupSounds(practices, iterator: practiceCount, label: trialLabel)
+        setupPractice1()
     }
     
-    @IBAction func nextTrial(_ sender: AnyObject) {
-//        log(logMessage: "initi")
-        trialCount += 1
+    @IBAction func nextPractice(_ sender: AnyObject) {
+        practiceCount += 1
         position += 1
         
-        if trialCount < trials.count {
+        if practiceCount < practices.count {
             practiceResponse.text = ""
             practiceSegment.selectedSegmentIndex = -1
-            practiceLabel.text = "Practice".localized(lang: language) + " " + String(trialCount+1)
+            practiceLabel.text = "Practice".localized(lang: language) + " " + String(practiceCount+1)
             practiceInstructionsLabel.text = "pitch_practice_2".localized(lang: language)
             
             practiceSegment.isHidden = true
             practiceBtn.isHidden = true
             
             // Set sounds to play
-            setupSounds(trials, iterator: trialCount, label: trialLabel)
+            setupSounds(practices, iterator: practiceCount, label: trialLabel)
         } else {
             if (soundPlayer?.isPlaying)! {
                 soundPlayer?.stop()
@@ -463,10 +435,10 @@ class PitchViewController: FrontViewController {
 //        log(logMessage: "finished")
     }
     
-    @IBAction func moveToTask(_ sender: AnyObject) {
+    @IBAction func moveToTrial(_ sender: AnyObject) {
 //        log(logMessage: "initi")
         setSubview(preTaskView, next: taskView)
-        setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
+        setupSounds(trials, iterator: trialCount, label: tasksLabel)
         
         tasksLabel.text = "1"
         
@@ -478,16 +450,16 @@ class PitchViewController: FrontViewController {
         taskBtn.isHidden = true
         
         play(firstSound)
-        tasksCount += 1
+        trialCount += 1
 //        log(logMessage: "finished")
     }
     
     
-    @IBAction func nextTask(_ sender: AnyObject) {
+    @IBAction func nextTrial(_ sender: AnyObject) {
 //        log(logMessage: "initi")
-        if tasksCount < tasks.count {
+        if trialCount < trials.count {
             // Set sounds to play
-            setupSounds(tasks, iterator: tasksCount, label: tasksLabel)
+            setupSounds(trials, iterator: trialCount, label: tasksLabel)
             
             // Which label back to 1
             tasksLabel.text = "1"
@@ -497,12 +469,10 @@ class PitchViewController: FrontViewController {
             taskSegment.selectedSegmentIndex = -1
             taskSegment.isHidden = true
             taskBtn.isHidden = true
-            
-            
-            
+    
             play(firstSound)
             
-            tasksCount += 1
+            trialCount += 1
         } else {
             if (soundPlayer?.isPlaying)! {
                 soundPlayer?.stop()
@@ -566,15 +536,13 @@ class PitchViewController: FrontViewController {
 //        log(logMessage: "finished")
     }
     
-    @IBAction func taskAnswered(_ sender: AnyObject) {
-        if ((sender.selectedSegmentIndex == 0 && taskAnswers[tasksCount - 1] == "S") || (sender.selectedSegmentIndex == 1 && taskAnswers[tasksCount - 1] == "D")) {
+    @IBAction func trialAnswered(_ sender: AnyObject) {
+        if ((sender.selectedSegmentIndex == 0 && trialAnswers[trialCount - 1] == "S") || (sender.selectedSegmentIndex == 1 && trialAnswers[trialCount - 1] == "D")) {
             taskResponse.text = "Correct".localized(lang: language)
-            userAnswers.insert("c", at: tasksCount - 1)
-            score += 1
+            userAnswers.insert("c", at: trialCount - 1)
         } else {
             taskResponse.text = "Incorrect".localized(lang: language)
-            userAnswers.insert("i", at: tasksCount - 1)
-            score -= 1
+            userAnswers.insert("i", at: trialCount - 1)
         }
         
         switch sender.selectedSegmentIndex {
@@ -606,10 +574,10 @@ class PitchViewController: FrontViewController {
                 example3segment.isHidden = false
             }
             
-            if position > examples.count && position <= examples.count + trials.count {
+            if position > examples.count && position <= examples.count + practices.count {
                 practiceSegment.isHidden = false
                 practiceBtn.isHidden = false
-            } else if position > examples.count + trials.count {
+            } else if position > examples.count + practices.count {
                 taskSegment.isHidden = false
             }
             resetTimer()

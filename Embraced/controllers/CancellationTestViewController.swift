@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import Alamofire
 
 class CancellationTestViewController: WebViewController {
     
@@ -17,6 +18,10 @@ class CancellationTestViewController: WebViewController {
         url = URL(string: "http://www.embraced.ugr.es/cancellationTest.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")! + "&token=" + participant.string(forKey: "token")!)
         
         super.viewDidLoad()
+        
+        contentController.add(self, name: "addCancellationHandler")
+        contentController.add(self, name: "uploadData")
+        contentController.add(self, name: "nextHandler")
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,8 +33,6 @@ class CancellationTestViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-//        let vc = WordList2ViewController()
-//        nextViewController(viewController: vc)
         AppDelegate.position += 1
         nextViewController2(position: AppDelegate.position)
     }
@@ -38,9 +41,25 @@ class CancellationTestViewController: WebViewController {
     // MARK: - Delegate
     
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if (message.name == "callbackHandler") {
-            next(self)
-        }
+        let id = participant.string(forKey: "pid")!
+        let token = participant.string(forKey: "token")!
+        let headers: HTTPHeaders = [
+            "x-access-token": token
+        ]
+        let APIUrl = "http://www.embracedapi.ugr.es/"
         
+        if message.name == "addCancellationHandler" {
+            Alamofire.request(APIUrl + "api/cancellation/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            }
+        } else if message.name == "nextHandler" {
+            self.next(self)
+        } else if message.name == "uploadData" {
+            let data = message.body as! [String:AnyObject]
+            
+            Alamofire.request(APIUrl + "api/cancellation/update/" + id, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+                debugPrint(response)
+                
+            }
+        }
     }
 }

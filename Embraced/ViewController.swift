@@ -56,7 +56,7 @@ class ViewController: UIViewController {
             return
         }
         
-        let parameters = createPostObjectTest()
+        let parameters = createPostObject()
         let url = APIUrl + "api/user/authenticate"
         
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)

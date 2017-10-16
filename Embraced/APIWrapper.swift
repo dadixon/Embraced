@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 public class APIWrapper {
     class func post(id: String, test: String, data: Any) {

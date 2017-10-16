@@ -8,10 +8,10 @@
 
 import UIKit
 import AVFoundation
+import Alamofire
 
 class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
 
-    
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var imageView: UIImageView!
@@ -49,8 +49,8 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     var soundRecorder: AVAudioRecorder!
     var fileName = "testNamingAudioFile.m4a"
     
-    var practice = Array<String>()
-    var tasks = Array<String>()
+    var practice = [String]()
+    var tasks = [String]()
     var count = 0
     var timeCount = 5
     
@@ -60,7 +60,11 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     var timer = Timer()
     var isRunning = false
     var isTask = false
-    
+    let APIUrl = "http://www.embracedapi.ugr.es/"
+    let userDefaults = UserDefaults.standard
+    var token: String = ""
+    var id: String = ""
+    var headers: HTTPHeaders = [:]
     
     private func setSubview(_ current: UIView, next: UIView) {
         current.removeFromSuperview()
@@ -82,72 +86,111 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         language = participant.string(forKey: "language")!
         showOrientationAlert(orientation: "landscape")
         
+        id = participant.string(forKey: "pid")!
+        token = userDefaults.string(forKey: "token")!
+        headers = [
+            "x-access-token": token
+        ]
+        
         // Fetch images
-        var stimuliURIs = [String: Any]()
-        
-        let todoEndpoint: String = "http://www.embracedapi.ugr.es/stimuli/namingtask"
-        
-        guard let url = URL(string: todoEndpoint) else {
-            print("Error: cannot create URL")
-            return
-        }
-        
-        let urlRequest = URLRequest(url: url)
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-            (data, response, error) -> Void in
+        Alamofire.request(APIUrl + "api/naming_task/stimuli/" + language, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            debugPrint(response)
             
-            let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
+            let statusCode = response.response?.statusCode
             
-            guard error == nil else {
-                print("error calling GET on stumiliNames")
-                print(error!)
-                return
-            }
-            // make sure we got data
-            guard let responseData = data else {
-                print("Error: did not receive data")
-                return
-            }
-            
-            if (statusCode == 200) {
-                print("Everyone is fine, file downloaded successfully.")
-                
-                do {
-                    guard let todo = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
-                        print("error trying to convert data to JSON")
-                        return
-                    }
-                    
-                    stimuliURIs = todo
-                    
-                    self.practice = stimuliURIs["practice"] as! Array<String>
-                    self.tasks = stimuliURIs["task"] as! Array<String>
-                    
-                    
-                } catch {
-                    print("Error with Json: \(error)")
+            if statusCode == 200 {
+                guard let json = response.result.value as? [String: Any] else {
                     return
                 }
-            }
-        })
-        
-        task.resume()
-        
-        // Insert row in database
-        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
-            (data, response, error) in
-            // this is where the completion handler code goes
-            if let response = response {
-                print(response)
-            }
-            if let error = error {
-                print(error)
+                let practicePaths = json["practice"]! as! [String]
+                let taskPaths = json["trial"]! as! [String]
+                
+                for x in 0..<practicePaths.count {
+                    let pathArray = practicePaths[x].components(separatedBy: "/")
+                    let path = pathArray[pathArray.count - 1]
+                    
+                    self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(practicePaths[x])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
+                    
+                    self.practice.append(path)
+                }
+                
+                for x in 0..<taskPaths.count {
+                    let pathArray = taskPaths[x].components(separatedBy: "/")
+                    let path = pathArray[pathArray.count - 1]
+                    
+                    self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(taskPaths[x])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
+                    
+                    self.tasks.append(path)
+                }
             }
         }
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "naming_task", data: ["id": participant.string(forKey: "pid")! as AnyObject], callback: myCompletionHandler)
+        
+        
+        
+        
+        
+//        var stimuliURIs = [String: Any]()
+//
+//        let todoEndpoint: String = "http://www.embracedapi.ugr.es/stimuli/namingtask"
+//
+//        guard let url = URL(string: todoEndpoint) else {
+//            print("Error: cannot create URL")
+//            return
+//        }
+//
+//        let urlRequest = URLRequest(url: url)
+//        let config = URLSessionConfiguration.default
+//        let session = URLSession(configuration: config)
+//        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
+//            (data, response, error) -> Void in
+//
+//            let httpResponse = response as! HTTPURLResponse
+//            let statusCode = httpResponse.statusCode
+//
+//            guard error == nil else {
+//                print("error calling GET on stumiliNames")
+//                print(error!)
+//                return
+//            }
+//            // make sure we got data
+//            guard let responseData = data else {
+//                print("Error: did not receive data")
+//                return
+//            }
+//
+//            if (statusCode == 200) {
+//                print("Everyone is fine, file downloaded successfully.")
+//
+//                do {
+//                    guard let todo = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
+//                        print("error trying to convert data to JSON")
+//                        return
+//                    }
+//
+//                    stimuliURIs = todo
+//
+//                    self.practice = stimuliURIs["practice"] as! Array<String>
+//                    self.tasks = stimuliURIs["task"] as! Array<String>
+//
+//
+//                } catch {
+//                    print("Error with Json: \(error)")
+//                    return
+//                }
+//            }
+//        })
+//
+//        task.resume()
+        
+        // Insert row in database
+        id = participant.string(forKey: "pid")!
+        token = userDefaults.string(forKey: "token")!
+        headers = [
+            "x-access-token": token
+        ]
+        
+        Alamofire.request(APIUrl + "api/naming_task/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+        }
         
         initialView.translatesAutoresizingMaskIntoConstraints = false
         trialView.translatesAutoresizingMaskIntoConstraints = false
@@ -181,10 +224,32 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    private func downloadAudioFile(urlString: String, name: String) {
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileURL = documentsURL.appendingPathComponent(name)
+            
+            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+        }
+        
+        Alamofire.download(urlString, to: destination)
+            .downloadProgress { progress in
+                print("Download Progress: \(progress.fractionCompleted)")
+            }.response { response in
+                if response.error == nil, let audioPath = response.destinationURL?.path {
+                    let url = URL(fileURLWithPath: audioPath)
+                    print(url)
+                }
+        }
+    }
+    
     func loadImageFromUrl(_ filename: String, view: UIImageView) {
-        let strurl = URL(string: filename)
-        let dtinternet = NSData(contentsOf: strurl!)
-        view.image = UIImage(data: dtinternet! as Data)
+//        let strurl = URL(string: filename)
+//        let dtinternet = NSData(contentsOf: strurl!)
+//        view.image = UIImage(data: dtinternet! as Data)
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentsURL.appendingPathComponent(filename)
+        view.image = UIImage(contentsOfFile: fileURL.path)
     }
     
     func startRecording(_ button: UIButton, fileName: String) {
@@ -279,7 +344,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
             let aSelector : Selector = #selector(NamingTaskViewController.updateTime)
             
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
-            
             startTime = Date.timeIntervalSinceReferenceDate
         }
     }
@@ -299,30 +363,26 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     func postToAPI(object: [String: AnyObject]) {
-        // Completion Handler
-        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
-            (data, response, error) in
-            // this is where the completion handler code goes
-            if let response = response {
-                print(response)
-                // Clear audios
-                for i in 0...self.tasks.count-1 {
-                    self.deleteFile("namingTask\(i).m4a")
-                }
-                print("Deleted temp file")
-                print("Done")
-//                DispatchQueue.main.async(execute: {
-//                    self.hideOverlayView()
-//                    self.next(self)
-//                })
-                
-            }
-            if let error = error {
-                print(error)
-            }
-        }
+        let name = object["name"] as! String
+        let fileURL = object["audio"] as! URL
         
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "naming_task", data: object, callback: myCompletionHandler)
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(fileURL, withName: "audio")
+                multipartFormData.append(name.data(using: String.Encoding.utf8)!, withName: "name")
+        }, usingThreshold: UInt64.init(),
+           to: APIUrl + "api/digit_span/uploadfile/" + id,
+           method: .post,
+           headers: headers,
+           encodingCompletion: { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                upload.responseJSON { response in
+                    debugPrint(response)
+                }
+            case .failure(let encodingError):
+                print(encodingError)
+            }})
     }
     
     // MARK: - Navigation

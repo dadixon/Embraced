@@ -13,14 +13,14 @@ class WebViewController: FrontViewController, WKNavigationDelegate, WKScriptMess
 
     var webView: WKWebView!
     var url: URL!
+    var contentController: WKUserContentController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.isNavigationBarHidden = true
                 
-        let contentController = WKUserContentController()
-        contentController.add(self, name: "callbackHandler")
+        contentController = WKUserContentController()
         
         let config = WKWebViewConfiguration()
         config.userContentController = contentController
@@ -33,7 +33,6 @@ class WebViewController: FrontViewController, WKNavigationDelegate, WKScriptMess
         let requestObj = URLRequest(url: url!)
         
         webView.load(requestObj)
-        
         webView.translatesAutoresizingMaskIntoConstraints = false
         
         let leftConstraint = webView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor)
@@ -47,7 +46,6 @@ class WebViewController: FrontViewController, WKNavigationDelegate, WKScriptMess
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
     // MARK: - Delegate
 //    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

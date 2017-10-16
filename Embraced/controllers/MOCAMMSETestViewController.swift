@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import Alamofire
 
 class MOCAMMSETestViewController: WebViewController {
     
@@ -18,8 +19,7 @@ class MOCAMMSETestViewController: WebViewController {
         
         super.viewDidLoad()
         
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(MOCAMMSETestViewController.next(_:)))
-        
+        contentController.add(self, name: "uploadData")
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,9 +31,6 @@ class MOCAMMSETestViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-//        let vc = ReyComplexFigureViewController()
-//        nextViewController(viewController: vc)
-        
         AppDelegate.position += 1
         nextViewController2(position: AppDelegate.position)
     }
@@ -41,10 +38,25 @@ class MOCAMMSETestViewController: WebViewController {
     // MARK: - Delegate
     
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print("Testing")
-        if (message.name == "callbackHandler") {
-            next(self)
-        }
+        let id = participant.string(forKey: "pid")!
+        let token = participant.string(forKey: "token")!
+        let headers: HTTPHeaders = [
+            "x-access-token": token
+        ]
+        let APIUrl = "http://www.embracedapi.ugr.es/"
         
+        if message.name == "uploadData" {
+            let dict = message.body as! [String:AnyObject]
+            
+            Alamofire.request(APIUrl + "api/moca/user/" + id, method: .post, parameters: dict, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+                debugPrint(response)
+                let statusCode = response.response?.statusCode
+                
+                if statusCode == 200 {
+                    self.hideOverlayView()
+                    self.next(self)
+                }
+            }
+        }
     }
 }

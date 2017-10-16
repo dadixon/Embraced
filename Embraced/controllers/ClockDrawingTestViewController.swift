@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import Alamofire
 
 class ClockDrawingTestViewController: WebViewController {
     
@@ -17,6 +18,8 @@ class ClockDrawingTestViewController: WebViewController {
         url = URL(string: "http://www.embraced.ugr.es/clockDrawing.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")! + "&token=" + participant.string(forKey: "token")!)
         
         super.viewDidLoad()
+        
+        contentController.add(self, name: "uploadData")
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,17 +31,31 @@ class ClockDrawingTestViewController: WebViewController {
     // MARK: - Navigation
 
     func next(_ sender:Any) {
-//        let vc:ReyComplexFigure2ViewController = ReyComplexFigure2ViewController()
-//        nextViewController(viewController: vc)
         AppDelegate.position += 1
         nextViewController2(position: AppDelegate.position)
     }
     
     // MARK: - Delegate
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if (message.name == "callbackHandler") {
-            next(self)
-        }
+        let id = participant.string(forKey: "pid")!
+        let token = participant.string(forKey: "token")!
+        let headers: HTTPHeaders = [
+            "x-access-token": token
+        ]
+        let APIUrl = "http://www.embracedapi.ugr.es/"
         
+        if message.name == "uploadData" {
+            let dict = message.body as! [String:AnyObject]
+            
+            Alamofire.request(APIUrl + "api/clockdrawing/new/" + id, method: .post, parameters: dict, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+                debugPrint(response)
+                let statusCode = response.response?.statusCode
+                
+                if statusCode == 200 {
+                    self.hideOverlayView()
+                    self.next(self)
+                }
+            }
+        }
     }
 }

@@ -201,7 +201,7 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         return paths[0]
     }
     
-    func play(_ filename:String) {
+    func playTest(_ filename:String) {
         let file = filename.characters.split(separator: ".").map(String.init)
         
         if let pathResource = Bundle.main.path(forResource: file[0], ofType: file[1]) {
@@ -225,6 +225,27 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
             }
         }else{
             print("path not found")
+        }
+    }
+    
+    func play(_ filename:String) {        
+        let pathResource = getDocumentsDirectory().appendingPathComponent(filename)
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOf: pathResource)
+            if(soundPlayer?.prepareToPlay())!{
+                print("preparation success")
+                soundPlayer?.delegate = self
+                if(soundPlayer?.play())!{
+                    print("Sound play success")
+                }else{
+                    print("Sound file could not be played")
+                }
+            }else{
+                print("preparation failure")
+            }
+            
+        }catch{
+            print("Sound file could not be found")
         }
     }
     

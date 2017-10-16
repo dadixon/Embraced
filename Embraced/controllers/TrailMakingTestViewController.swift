@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import Alamofire
 
 class TrailMakingTestViewController: WebViewController {
     
@@ -18,6 +19,7 @@ class TrailMakingTestViewController: WebViewController {
         
         super.viewDidLoad()
         
+        contentController.add(self, name: "uploadData")
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,9 +38,25 @@ class TrailMakingTestViewController: WebViewController {
     // MARK: - Delegate
     
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if (message.name == "callbackHandler") {
-            next(self)
-        }
+        let id = participant.string(forKey: "pid")!
+        let token = participant.string(forKey: "token")!
+        let headers: HTTPHeaders = [
+            "x-access-token": token
+        ]
+        let APIUrl = "http://www.embracedapi.ugr.es/"
         
+        if message.name == "uploadData" {
+            let data = message.body as! [String:AnyObject]
+            
+            Alamofire.request(APIUrl + "api/trailmaking/new/" + id, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+                debugPrint(response)
+                let statusCode = response.response?.statusCode
+                
+                if statusCode == 200 {
+                    self.hideOverlayView()
+                    self.next(self)
+                }
+            }
+        }
     }
 }

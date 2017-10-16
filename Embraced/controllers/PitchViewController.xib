@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -275,7 +275,7 @@ Tap on the button “SAME” to indicate that the melodies are the same.</string
                     </constraints>
                     <state key="normal" title="Start"/>
                     <connections>
-                        <action selector="moveToTask:" destination="-1" eventType="touchUpInside" id="ud2-dP-HsY"/>
+                        <action selector="moveToTrial:" destination="-1" eventType="touchUpInside" id="oIM-1H-BVY"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2K-68-LWS">
@@ -313,11 +313,11 @@ Please, tap the START button when you are ready to start.</string>
                     </constraints>
                     <state key="normal" title="Next"/>
                     <connections>
-                        <action selector="nextTrial:" destination="-1" eventType="touchUpInside" id="erK-Am-1x2"/>
+                        <action selector="nextPractice:" destination="-1" eventType="touchUpInside" id="68k-RP-LhM"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMW-sL-Lrf">
-                    <rect key="frame" x="20" y="55" width="88" height="27"/>
+                    <rect key="frame" x="20" y="55" width="85.5" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -408,7 +408,7 @@ When you are ready, tap on START button.</string>
                     </constraints>
                     <state key="normal" title="Next"/>
                     <connections>
-                        <action selector="nextTask:" destination="-1" eventType="touchUpInside" id="aiL-r1-KmT"/>
+                        <action selector="nextTrial:" destination="-1" eventType="touchUpInside" id="hq7-a9-MRX"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1r-WS-ZBd">
@@ -428,7 +428,7 @@ When you are ready, tap on START button.</string>
                     </segments>
                     <color key="tintColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
-                        <action selector="taskAnswered:" destination="-1" eventType="valueChanged" id="ROH-CU-N4P"/>
+                        <action selector="trialAnswered:" destination="-1" eventType="valueChanged" id="PpO-0n-rFE"/>
                     </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qB8-xk-w7x">
@@ -467,7 +467,7 @@ When you are ready, tap on START button.</string>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQa-ic-LCF">
-                    <rect key="frame" x="20" y="55" width="109" height="27"/>
+                    <rect key="frame" x="20" y="55" width="106.5" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -561,11 +561,11 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                     </constraints>
                     <state key="normal" title="Next"/>
                     <connections>
-                        <action selector="moveToTrial1:" destination="-1" eventType="touchUpInside" id="Zvi-yB-7Py"/>
+                        <action selector="moveToPractice1:" destination="-1" eventType="touchUpInside" id="w0j-Qt-4xo"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BW8-4r-SHC">
-                    <rect key="frame" x="20" y="55" width="110" height="27"/>
+                    <rect key="frame" x="20" y="55" width="107" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -653,7 +653,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ox-dh-Epf">
-                    <rect key="frame" x="292" y="362" width="184" height="31.5"/>
+                    <rect key="frame" x="294.5" y="362" width="179.5" height="31.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>

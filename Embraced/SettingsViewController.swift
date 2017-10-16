@@ -55,28 +55,19 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                     return
                 }
                 self.tests = json["tests"] as! [String]
+                self.defaultTests = self.tests
                 
                 if self.participant.array(forKey: "Tests") != nil {
                     self.confirm = self.participant.array(forKey: "Tests") as! [String]
-                    self.defaultTests = self.tests
-                    
-                    for test in self.tests {
-                        self.confirm = self.confirm.filter {$0 == test}
-                    }
-                    
-                    for test in self.confirm {
-                        self.defaultTests = self.defaultTests.filter {$0 != test}
-                    }
-                } else {
-                    self.defaultTests = self.tests
+                    self.confirm = self.confirm.filter {self.tests.contains($0)}
                 }
+                
+                self.defaultTests = self.defaultTests.filter {!self.confirm.contains($0)}
                 
                 self.confirmListTable.reloadData()
                 self.testListTable.reloadData()
             }
         }
-        
-        
         
         var testerLanguage = participant.string(forKey: "TesterLanguage")
         

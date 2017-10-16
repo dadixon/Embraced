@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Alamofire
 
 class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
 
@@ -58,11 +59,18 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     var fileName = "testDigitSpanAudioFile.m4a"
     
     var stimuli = [String: Any]()
-    var forward = Array<String>()
-    var backward = Array<String>()
+    var forward = [String]()
+    var forwardPractice = String()
+    var backward = [String]()
+    var backwardPractice = String()
     
     var forwardCount = 1
     var backwardCount = 1
+    let APIUrl = "http://www.embracedapi.ugr.es/"
+    let userDefaults = UserDefaults.standard
+    var token: String = ""
+    var id: String = ""
+    var headers: HTTPHeaders = [:]
     
     // MARK: - Private
     
@@ -77,8 +85,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
     }
     
-    
-    
     override func viewDidLoad() {
         step = AppDelegate.position
         super.viewDidLoad()
@@ -87,18 +93,15 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         
         showOrientationAlert(orientation: "portrait")
         
-        // Insert row in database
-        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
-            (data, response, error) in
-            // this is where the completion handler code goes
-            if let response = response {
-                print(response)
-            }
-            if let error = error {
-                print(error)
-            }
+        // Insert row in database        
+        id = participant.string(forKey: "pid")!
+        token = userDefaults.string(forKey: "token")!
+        headers = [
+            "x-access-token": token
+        ]
+        
+        Alamofire.request(APIUrl + "api/digit_span/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
         }
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: ["id": participant.string(forKey: "pid")! as AnyObject], callback: myCompletionHandler)
         
         introView.translatesAutoresizingMaskIntoConstraints = false
         preTask1View.translatesAutoresizingMaskIntoConstraints = false
@@ -134,51 +137,56 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             // failed to record!
         }
 
-        
-        let todoEndpoint: String = "http://www.embracedapi.ugr.es/stimuli/digitsspan"
-        
-        guard let url = URL(string: todoEndpoint) else {
-            return
-        }
-        
-        let urlRequest = URLRequest(url: url)
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-            (data, response, error) -> Void in
+        Alamofire.request(APIUrl + "api/digit_span/stimuli/" + language, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            debugPrint(response)
             
-            let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
+            let statusCode = response.response?.statusCode
             
-            guard error == nil else {
-                return
-            }
-            // make sure we got data
-            guard let responseData = data else {
-                return
-            }
-            
-            if (statusCode == 200) {
-                
-                do {
-                    guard let todo = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
-                        return
-                    }
-                    
-                    if self.language == "es" {
-                        self.forward = todo["forwardSpa"]! as! Array<String>
-                        self.backward = todo["backwardSpa"]! as! Array<String>
-                    } else {
-                        self.forward = todo["forwardEng"]! as! Array<String>
-                        self.backward = todo["backwardEng"]! as! Array<String>
-                    }
-                } catch {
+            if statusCode == 200 {
+                guard let json = response.result.value as? [String: Any] else {
                     return
                 }
+                let forwardAudioPaths = json["forward"]! as! [String: Any]
+                let forwardTrials = forwardAudioPaths["trials"] as! [String]
+                let forwardPractice = forwardAudioPaths["practice"] as! String
+                let backwardAudioPaths = json["backward"]! as! [String: Any]
+                let backwardTrials = backwardAudioPaths["trials"] as! [String]
+                let backwardPractice = backwardAudioPaths["practice"] as! String
+
+                for x in 0..<forwardTrials.count {
+                    let pathArray = forwardTrials[x].components(separatedBy: "/")
+                    let path = pathArray[pathArray.count - 1]
+                    
+                    if !self.fileExist(path) {
+                        self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(forwardTrials[x])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
+                    }
+                    self.forward.append(path)
+                }
+                var pathArray = forwardPractice.components(separatedBy: "/")
+                self.forwardPractice = pathArray[pathArray.count - 1]
+                
+                if !self.fileExist(self.forwardPractice) {
+                    self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(forwardPractice)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
+                }
+                
+                for x in 0..<backwardTrials.count {
+                    let pathArray = backwardTrials[x].components(separatedBy: "/")
+                    let path = pathArray[pathArray.count - 1]
+                    
+                    if !self.fileExist(path) {
+                        self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(backwardTrials[x])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
+                    }
+                    
+                    self.backward.append(path)
+                }
+                pathArray = backwardPractice.components(separatedBy: "/")
+                self.backwardPractice = pathArray[pathArray.count - 1]
+                
+                if !self.fileExist(self.backwardPractice) {
+                    self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(backwardPractice)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
+                }
             }
-        })
-        
-        task.resume()
+        }
         
 //        forward = DataManager.sharedInstance.digitalSpanForward
 //        backward = DataManager.sharedInstance.digitalSpanBackward
@@ -210,6 +218,24 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    private func downloadAudioFile(urlString: String, name: String) {
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileURL = documentsURL.appendingPathComponent(name)
+            
+            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+        }
+        
+        Alamofire.download(urlString, to: destination)
+            .downloadProgress { progress in
+                print("Download Progress: \(progress.fractionCompleted)")
+            }.response { response in
+                            if response.error == nil, let audioPath = response.destinationURL?.path {
+                                let url = URL(fileURLWithPath: audioPath)
+                                print(url)
+                            }
+        }
+    }
     
     func startRecording(_ button: UIButton, fileName: String) {
         let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName)
@@ -244,7 +270,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         }
     }
     
-    
     func preparePlayer() {
         do {
             soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName))
@@ -268,37 +293,26 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     func postToAPI(object: [String: AnyObject]) {
-        // Completion Handler
-        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
-            (data, response, error) in
-            // this is where the completion handler code goes
-            if let response = response {
-                print(response)
-                // Clear audios
-                for i in 0...self.forwardCount {
-                    if self.fileExist("forward\(i).m4a") {
-                        self.deleteFile("forward\(i).m4a")
-                    }
-                }
-                for i in 0...self.backwardCount {
-                    if self.fileExist("backward\(i).m4a") {
-                        self.deleteFile("backward\(i).m4a")
-                    }
-                }
-                print("Deleted temp file")
-                print("Done")
-//                DispatchQueue.main.async(execute: {
-//                    self.hideOverlayView()
-//                    self.next(self)
-//                })
-                
-            }
-            if let error = error {
-                print(error)
-            }
-        }
+        let name = object["name"] as! String
+        let fileURL = object["audio"] as! URL
         
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "digitalSpan", data: object, callback: myCompletionHandler)
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(fileURL, withName: "audio")
+                multipartFormData.append(name.data(using: String.Encoding.utf8)!, withName: "name")
+        }, usingThreshold: UInt64.init(),
+           to: APIUrl + "api/digit_span/uploadfile/" + id,
+           method: .post,
+           headers: headers,
+           encodingCompletion: { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                upload.responseJSON { response in
+                    debugPrint(response)
+                }
+            case .failure(let encodingError):
+                print(encodingError)
+            }})
     }
     
     // MARK: - Navigation
@@ -357,7 +371,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         }
     }
 
-    
     @IBAction func playSound(_ sender: UIButton) {
         if sender.titleLabel!.text == "Play".localized(lang: language) {
             recordBtn.isEnabled = false
@@ -379,11 +392,11 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         listenPracticeBtn2.isEnabled = false
         
         if sender.tag == 0 {
-            play(forward[forward.count - 1])
+            play(forwardPractice)
         } else if sender.tag == 1 {
             play(forward[forwardCount - 1])
         } else if sender.tag == 2 {
-            play(backward[backward.count - 1])
+            play(backwardPractice)
         } else if sender.tag == 3 {
             play(backward[backwardCount - 1])
         }
@@ -465,66 +478,17 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         print(directionName + "\(index).m4a")
         
         if fileExist(directionName + "\(index).m4a") {
-            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent(directionName + "\(index).m4a"))
-            let dataStr = soundData?.base64EncodedString(options: [])
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileURL = documentsURL.appendingPathComponent("\(directionName)\(index).m4a")
             
             jsonObject = [
-                "id": participant.string(forKey: "pid")! as AnyObject,
-                "direction": direction as AnyObject,
-                "index": index as AnyObject,
-                "soundByte": dataStr as AnyObject
+                "name": "\(directionName)\(index)" as AnyObject,
+                "audio": fileURL as AnyObject
             ]
         }
         
         return jsonObject
     }
-    
-//    func createPostObject() -> [String: AnyObject] {
-//        var jsonObject = [String: AnyObject]()
-//        var jsonForward = [AnyObject]()
-//        var jsonForwardObject = [String: AnyObject]()
-//        var jsonBackward = [AnyObject]()
-//        var jsonBackwardObject = [String: AnyObject]()
-//        
-//
-//        for i in 0...forwardCount {
-//            if fileExist("forward\(i).m4a") {
-//                let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("forward\(i).m4a"))
-//                let dataStr = soundData?.base64EncodedString(options: [])
-//            
-//                jsonForwardObject = [
-//                    "name": "forward\(i+1)" as AnyObject,
-//                    "soundByte": dataStr as AnyObject
-//                ]
-//            
-//                jsonForward.append(jsonForwardObject as AnyObject)
-//            }
-//        }
-//        
-//        for i in 0...backwardCount {
-//            if fileExist("backward\(i).m4a") {
-//                let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("backward\(i).m4a"))
-//                let dataStr = soundData?.base64EncodedString(options: [])
-//            
-//                jsonBackwardObject = [
-//                    "name": "backward\(i+1)" as AnyObject,
-//                    "soundByte": dataStr as AnyObject
-//                ]
-//            
-//                jsonBackward.append(jsonBackwardObject as AnyObject)
-//            }
-//        }
-//        
-//    
-//        // Gather data for post
-//        jsonObject = [
-//            "id": participant.string(forKey: "pid")! as AnyObject,
-//            "forward": jsonForward as AnyObject,
-//            "backward": jsonBackward as AnyObject
-//        ]
-//    
-//        return jsonObject
-//    }
     
     func fileExist(_ filename: String) -> Bool {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String

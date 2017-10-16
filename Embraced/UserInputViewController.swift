@@ -11,7 +11,6 @@ import Alamofire
 
 class UserInputViewController: UIViewController {
 
-    @IBOutlet weak var participantID: UILabel!
     @IBOutlet weak var dayOfTheWeekTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var countyTextField: UITextField!
@@ -23,7 +22,6 @@ class UserInputViewController: UIViewController {
     
     
     let userDefaults = UserDefaults.standard
-    let downloadManager = DownloadManager()
     let APIUrl = "http://www.embracedapi.ugr.es/"
     
     fileprivate func setBottomBorder(_ textfield: UITextField) {
@@ -43,12 +41,6 @@ class UserInputViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.isNavigationBarHidden = true
-        
-//        let index = uuid.characters.index(uuid.endIndex, offsetBy: -15)
-//        participantID.text = uuid.substring(to: index)
-//        participant.setValue(uuid.substring(to: index), forKey: "pid")
-        
-        DataManager.sharedInstance.fetchStimuli()
     }
     
     override func viewDidLoad() {
@@ -56,7 +48,6 @@ class UserInputViewController: UIViewController {
         
         submitBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
         
-        participantLabel.text = "Participant_ID".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
         dayOfTheWeekTextField.placeholder = "Day_of_the_week".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
         countryTextField.placeholder = "Country".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
         countyTextField.placeholder = "County".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
