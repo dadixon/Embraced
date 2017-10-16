@@ -72,6 +72,8 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     var id: String = ""
     var headers: HTTPHeaders = [:]
     
+    let group = DispatchGroup()
+    
     // MARK: - Private
     
     private func setSubview(_ current: UIView, next: UIView) {
@@ -90,8 +92,8 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
         
         language = participant.string(forKey: "language")!
-        
         showOrientationAlert(orientation: "portrait")
+        doneBtn.isHidden = true
         
         // Insert row in database        
         id = participant.string(forKey: "pid")!
@@ -158,6 +160,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
                     let path = pathArray[pathArray.count - 1]
                     
                     if !self.fileExist(path) {
+                        self.group.enter()
                         self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(forwardTrials[x])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
                     }
                     self.forward.append(path)
@@ -166,6 +169,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
                 self.forwardPractice = pathArray[pathArray.count - 1]
                 
                 if !self.fileExist(self.forwardPractice) {
+                    self.group.enter()
                     self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(forwardPractice)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
                 }
                 
@@ -174,6 +178,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
                     let path = pathArray[pathArray.count - 1]
                     
                     if !self.fileExist(path) {
+                        self.group.enter()
                         self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(backwardTrials[x])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
                     }
                     
@@ -183,7 +188,13 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
                 self.backwardPractice = pathArray[pathArray.count - 1]
                 
                 if !self.fileExist(self.backwardPractice) {
+                    self.group.enter()
                     self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(backwardPractice)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
+                }
+                
+                self.group.notify(queue: .main) {
+                    print("All requests are done")
+                    self.doneBtn.isHidden = false
                 }
             }
         }
@@ -230,10 +241,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             .downloadProgress { progress in
                 print("Download Progress: \(progress.fractionCompleted)")
             }.response { response in
-                            if response.error == nil, let audioPath = response.destinationURL?.path {
-                                let url = URL(fileURLWithPath: audioPath)
-                                print(url)
-                            }
+                            self.group.leave()
         }
     }
     
