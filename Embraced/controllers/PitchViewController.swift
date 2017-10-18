@@ -66,12 +66,12 @@ class PitchViewController: FrontViewController {
     
     var stimuli = [String: Any]()
     var examples = [[String]]()
-    var trials = [[String]]()
+    var tasks = [[String]]()
     var practices = [[String]]()
     
     let exampleAnswers = ["S", "D", "D"]
     let practiceAnswers = ["D", "D", "S", "D", "D"]
-    let trialAnswers = ["S", "D", "S", "D", "D", "S", "D", "S", "D", "D", "S", "S", "S", "S", "D", "D", "D", "D", "D", "S", "S", "S", "S", "D"]
+    let taskAnswers = ["S", "D", "S", "D", "D", "S", "D", "S", "D", "D", "S", "S", "S", "S", "D", "D", "D", "D", "D", "S", "S", "S", "S", "D"]
     
     var userAnswers = [String]()
     
@@ -81,7 +81,7 @@ class PitchViewController: FrontViewController {
     var played = false
     
     var exampleCount = 0
-    var trialCount = 0
+    var taskCount = 0
     var practiceCount = 0
     var position = 0
     
@@ -117,8 +117,6 @@ class PitchViewController: FrontViewController {
         
         super.viewDidLoad()
         
-        self.introBtn.isHidden = true
-        
         language = participant.string(forKey: "language")!
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PitchViewController.next(_:)))
         
@@ -141,8 +139,6 @@ class PitchViewController: FrontViewController {
         let bottomConstraint = introView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
         
-        introBtn.isEnabled = false
-        
         // Fetch audios
         // New way by downloading files instead of using native ones
         id = participant.string(forKey: "pid")!
@@ -151,95 +147,18 @@ class PitchViewController: FrontViewController {
             "x-access-token": token
         ]
         
-        Alamofire.request(APIUrl + "api/pitch/stimuli/" + language, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            debugPrint(response)
-            
-            let statusCode = response.response?.statusCode
-            
-            if statusCode == 200 {
-                guard let json = response.result.value as? [String: Any] else {
-                    return
-                }
-                let examples = json["examples"]! as! [[String]]
-                let trials = json["trials"]! as! [[String]]
-                let practices = json["practice"]! as! [[String]]
-                
-                self.introBtn.isEnabled = true
-                
-                for x in 0..<examples.count {
-                    var examplesString = [String]()
-                    for y in 0..<examples[x].count {
-                        let pathArray = examples[x][y].components(separatedBy: "/")
-                        examplesString.append(pathArray[pathArray.count - 1])
-                        self.group.enter()
-                        self.downloadAudioFile(urlString: "http://www.embracedapi.ugr.es/public/\(self.language)\(examples[x][y])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
-                    }
-                    self.examples.append(examplesString)
-                }
-                
-                for x in 0..<trials.count {
-                    var trialsString = [String]()
-                    for y in 0..<trials[x].count {
-                        let pathArray = trials[x][y].components(separatedBy: "/")
-                        trialsString.append(pathArray[pathArray.count - 1])
-                        self.group.enter()
-                        self.downloadAudioFile(urlString: "http://www.embracedapi.ugr.es/public/\(self.language)\(trials[x][y])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
-                    }
-                    self.trials.append(trialsString)
-                }
-                
-                for x in 0..<practices.count {
-                    var practicesString = [String]()
-                    for y in 0..<practices[x].count {
-                        let pathArray = practices[x][y].components(separatedBy: "/")
-                        practicesString.append(pathArray[pathArray.count - 1])
-                        self.group.enter()
-                        self.downloadAudioFile(urlString: "http://www.embracedapi.ugr.es/public/\(self.language)\(practices[x][y])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
-                    }
-                    self.practices.append(practicesString)
-                }
-                
-                self.group.notify(queue: .main) {
-                    print("All requests are done")
-                    self.introBtn.isHidden = false
-                }
-            }
-        }
-//        examples = DataManager.sharedInstance.pitchExamples
-//        trials = DataManager.sharedInstance.pitchTrials
-//        tasks = DataManager.sharedInstance.pitchTasks
+        examples = DataManager.sharedInstance.pitchExamples
+        practices = DataManager.sharedInstance.pitchPractices
+        tasks = DataManager.sharedInstance.pitchTasks
         
         introBtn.setTitle("Start".localized(lang: language), for: .normal)
         introLabel.text = "pitch_intro".localized(lang: language)
-        
-//        for index in 0...24 {
-//            userAnswers.insert("", at: index)
-//        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    private func downloadAudioFile(urlString: String, name: String) {
-        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            let fileURL = documentsURL.appendingPathComponent(name)
-            
-            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
-        }
-        
-        Alamofire.download(urlString, to: destination)
-            .downloadProgress { progress in
-                print("Download Progress: \(progress.fractionCompleted)")
-            }.response { response in
-                self.group.leave()
-//            if response.error == nil, let audioPath = response.destinationURL?.path {
-//                let url = URL(fileURLWithPath: audioPath)
-//                print(url)
-//            }
-        }
-    }
     @objc func updateTime() {
         if self.played == false {
             self.soundLabel.text = "2"
@@ -319,7 +238,7 @@ class PitchViewController: FrontViewController {
     }
     
     func setupPractice1() {
-        practiceLabel.text = "Practice".localized(lang: language) + " " + String(trialCount+1)
+        practiceLabel.text = "Practice".localized(lang: language) + " " + String(practiceCount+1)
         practiceInstructionsLabel.text = "pitch_practice_1".localized(lang: language)
         practiceSegment.setTitle("Same".localized(lang: language), forSegmentAt: 0)
         practiceSegment.setTitle("Different".localized(lang: language), forSegmentAt: 1)
@@ -432,13 +351,12 @@ class PitchViewController: FrontViewController {
             tasksContent.text = "pitch_tasks".localized(lang: language)
             pretaskBtn.setTitle("Start".localized(lang: language), for: .normal)
         }
-//        log(logMessage: "finished")
     }
     
-    @IBAction func moveToTrial(_ sender: AnyObject) {
-//        log(logMessage: "initi")
+    @IBAction func moveToTask(_ sender: AnyObject) {
+        position += 1
         setSubview(preTaskView, next: taskView)
-        setupSounds(trials, iterator: trialCount, label: tasksLabel)
+        setupSounds(tasks, iterator: taskCount, label: tasksLabel)
         
         tasksLabel.text = "1"
         
@@ -450,16 +368,15 @@ class PitchViewController: FrontViewController {
         taskBtn.isHidden = true
         
         play(firstSound)
-        trialCount += 1
-//        log(logMessage: "finished")
+        taskCount += 1
     }
     
     
-    @IBAction func nextTrial(_ sender: AnyObject) {
-//        log(logMessage: "initi")
-        if trialCount < trials.count {
+    @IBAction func nextTask(_ sender: AnyObject) {
+        position += 1
+        if taskCount < tasks.count {
             // Set sounds to play
-            setupSounds(trials, iterator: trialCount, label: tasksLabel)
+            setupSounds(tasks, iterator: taskCount, label: tasksLabel)
             
             // Which label back to 1
             tasksLabel.text = "1"
@@ -472,7 +389,7 @@ class PitchViewController: FrontViewController {
     
             play(firstSound)
             
-            trialCount += 1
+            taskCount += 1
         } else {
             if (soundPlayer?.isPlaying)! {
                 soundPlayer?.stop()
@@ -483,14 +400,12 @@ class PitchViewController: FrontViewController {
             completeLabel.text = "Test_complete".localized(lang: language)
             submitBtn.setTitle("Submit".localized(lang: language), for: .normal)
         }
-//        log(logMessage: "finished")
     }
     
     
     // MARK: - Actions
     
     @IBAction func replay(_ sender: AnyObject) {
-//        log(logMessage: "initi")
         if soundPlayer != nil {
             if (soundPlayer?.isPlaying)! {
                 soundPlayer?.stop()
@@ -501,11 +416,9 @@ class PitchViewController: FrontViewController {
         played = false
         self.play(firstSound)
         soundLabel.text = "1"
-//        log(logMessage: "finished")
     }
     
     @IBAction func exampleAnswered(_ sender: AnyObject) {
-//        log(logMessage: "initi")
         if ((sender.selectedSegmentIndex == 0 && exampleAnswers[exampleCount] == "S") || (sender.selectedSegmentIndex == 1 && exampleAnswers[exampleCount] == "D")) {
             if exampleCount == 0 {
                 example1Response.text = "Correct".localized(lang: language)
@@ -523,26 +436,23 @@ class PitchViewController: FrontViewController {
                 example3Response.text = "Incorrect_2".localized(lang: language)
             }
         }
-//        log(logMessage: "finished")
     }
     
     @IBAction func practiceAnswered(_ sender: AnyObject) {
-//        log(logMessage: "initi")
-        if ((sender.selectedSegmentIndex == 0 && practiceAnswers[trialCount] == "S") || (sender.selectedSegmentIndex == 1 && practiceAnswers[trialCount] == "D")) {
+        if ((sender.selectedSegmentIndex == 0 && practiceAnswers[practiceCount] == "S") || (sender.selectedSegmentIndex == 1 && practiceAnswers[practiceCount] == "D")) {
             practiceResponse.text = "Correct".localized(lang: language)
         } else {
             practiceResponse.text = "Incorrect_2".localized(lang: language)
         }
-//        log(logMessage: "finished")
     }
     
-    @IBAction func trialAnswered(_ sender: AnyObject) {
-        if ((sender.selectedSegmentIndex == 0 && trialAnswers[trialCount - 1] == "S") || (sender.selectedSegmentIndex == 1 && trialAnswers[trialCount - 1] == "D")) {
+    @IBAction func tasksAnswered(_ sender: AnyObject) {
+        if ((sender.selectedSegmentIndex == 0 && taskAnswers[taskCount - 1] == "S") || (sender.selectedSegmentIndex == 1 && taskAnswers[taskCount - 1] == "D")) {
             taskResponse.text = "Correct".localized(lang: language)
-            userAnswers.insert("c", at: trialCount - 1)
+            userAnswers.insert("c", at: taskCount - 1)
         } else {
             taskResponse.text = "Incorrect".localized(lang: language)
-            userAnswers.insert("i", at: trialCount - 1)
+            userAnswers.insert("i", at: taskCount - 1)
         }
         
         switch sender.selectedSegmentIndex {

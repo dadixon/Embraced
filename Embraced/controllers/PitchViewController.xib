@@ -275,7 +275,7 @@ Tap on the button “SAME” to indicate that the melodies are the same.</string
                     </constraints>
                     <state key="normal" title="Start"/>
                     <connections>
-                        <action selector="moveToTrial:" destination="-1" eventType="touchUpInside" id="oIM-1H-BVY"/>
+                        <action selector="moveToTask:" destination="-1" eventType="touchUpInside" id="UAN-sv-gkn"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2K-68-LWS">
@@ -408,7 +408,7 @@ When you are ready, tap on START button.</string>
                     </constraints>
                     <state key="normal" title="Next"/>
                     <connections>
-                        <action selector="nextTrial:" destination="-1" eventType="touchUpInside" id="hq7-a9-MRX"/>
+                        <action selector="nextTask:" destination="-1" eventType="touchUpInside" id="F9x-Ef-zcW"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1r-WS-ZBd">
@@ -428,7 +428,7 @@ When you are ready, tap on START button.</string>
                     </segments>
                     <color key="tintColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
-                        <action selector="trialAnswered:" destination="-1" eventType="valueChanged" id="PpO-0n-rFE"/>
+                        <action selector="tasksAnswered:" destination="-1" eventType="valueChanged" id="f8m-RH-Gcp"/>
                     </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qB8-xk-w7x">

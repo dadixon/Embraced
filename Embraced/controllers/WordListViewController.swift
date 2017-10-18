@@ -63,15 +63,12 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
     }
     
-    
-    
     override func viewDidLoad() {
         step = AppDelegate.position
         
         super.viewDidLoad()
         
         language = participant.string(forKey: "language")!
-        
         showOrientationAlert(orientation: "landscape")
         
         // Insert row in database

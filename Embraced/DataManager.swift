@@ -19,11 +19,13 @@ class DataManager {
     var wordlistStimuli = [String: Any]()
     var practice = Array<String>()
     var task = Array<String>()
-    var pitchExamples = Array<Array<String>>()
-    var pitchTrials = Array<Array<String>>()
-    var pitchTasks = Array<Array<String>>()
-    var digitalSpanForward = Array<String>()
-    var digitalSpanBackward = Array<String>()
+    var pitchExamples = [[String]]()
+    var pitchPractices = [[String]]()
+    var pitchTasks = [[String]]()
+    var digitalSpanForward = [String]()
+    var digitalSpanForwardPractice = String()
+    var digitalSpanBackward = [String]()
+    var digitalSpanBackwardPractice = String()
     var wordListTrials = Array<String>()
     var wordListTasks = Array<String>()
     var stroopImages = Array<String>()
@@ -82,7 +84,7 @@ class DataManager {
                         
                         // Pitch
                         self.pitchExamples = self.pitchStimuli["examples"] as! Array<Array<String>>
-                        self.pitchTrials = self.pitchStimuli["trials"] as! Array<Array<String>>
+                        self.pitchPractices = self.pitchStimuli["practice"] as! Array<Array<String>>
                         self.pitchTasks = self.pitchStimuli["tasks"] as! Array<Array<String>>
                         
                         // Digital Span

@@ -119,6 +119,8 @@
 		A4773D0F1D9D84B200E5CCEE /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773D0E1D9D84B200E5CCEE /* record.png */; };
 		A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */; };
 		A47EB6E41DA65FFB00A68AF6 /* FinishedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */; };
+		A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */; };
+		A4828EB71F967ED700406F19 /* LoadingScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */; };
 		A489D6181E0B535A001F56FE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D6161E0B535A001F56FE /* SettingsViewController.swift */; };
 		A489D6191E0B535A001F56FE /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A489D6171E0B535A001F56FE /* SettingsViewController.xib */; };
 		A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D61A1E0BA255001F56FE /* AdminViewController.swift */; };
@@ -328,6 +330,8 @@
 		A4773D0E1D9D84B200E5CCEE /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
 		A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishedViewController.swift; path = controllers/FinishedViewController.swift; sourceTree = "<group>"; };
 		A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinishedViewController.xib; path = controllers/FinishedViewController.xib; sourceTree = "<group>"; };
+		A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadingScreenViewController.swift; path = controllers/LoadingScreenViewController.swift; sourceTree = "<group>"; };
+		A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoadingScreenViewController.xib; path = controllers/LoadingScreenViewController.xib; sourceTree = "<group>"; };
 		A489D6161E0B535A001F56FE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A489D6171E0B535A001F56FE /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		A489D61A1E0BA255001F56FE /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
@@ -709,6 +713,8 @@
 				A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */,
 				A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */,
 				A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */,
+				A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */,
+				A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */,
 				A4C72F031E6A1B4F00ADC405 /* AppsideTest */,
 				A42AB5C51D2DE0F4001387BB /* Test */,
 				A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */,
@@ -885,6 +891,7 @@
 				A47448111DE6906500BB4011 /* ENG-32.mp3 in Resources */,
 				A48B4DD21CF9E7C700878928 /* LaunchScreen.storyboard in Resources */,
 				A4D0D2531ED8180500E29C13 /* SPA-40.mp3 in Resources */,
+				A4828EB71F967ED700406F19 /* LoadingScreenViewController.xib in Resources */,
 				A4347FC61D7BC9FC0033306A /* ReyComplexFigure3ViewController.xib in Resources */,
 				A490D7D51D0919CB00D2B59D /* Roboto-BoldItalic.ttf in Resources */,
 				A47448181DE6906500BB4011 /* ENG-39.mp3 in Resources */,
@@ -1123,6 +1130,7 @@
 				A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */,
 				A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */,
 				A4347FD51D7BCABC0033306A /* PegboardViewController.swift in Sources */,
+				A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */,
 				A489D6181E0B535A001F56FE /* SettingsViewController.swift in Sources */,
 				A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */,
 				A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */,

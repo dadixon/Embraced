@@ -199,8 +199,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             }
         }
         
-//        forward = DataManager.sharedInstance.digitalSpanForward
-//        backward = DataManager.sharedInstance.digitalSpanBackward
+        forward = DataManager.sharedInstance.digitalSpanForward
+        forwardPractice = DataManager.sharedInstance.digitalSpanForwardPractice
+        backward = DataManager.sharedInstance.digitalSpanBackward
+        backwardPractice = DataManager.sharedInstance.digitalSpanBackwardPractice
         
         practice1Label.text = "Practice".localized(lang: language)
         practice1Instructions.text = "digital_practice_1".localized(lang: language)
