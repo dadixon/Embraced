@@ -93,7 +93,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         
         language = participant.string(forKey: "language")!
         showOrientationAlert(orientation: "portrait")
-        doneBtn.isHidden = true
         
         // Insert row in database        
         id = participant.string(forKey: "pid")!
@@ -138,72 +137,15 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         } catch {
             // failed to record!
         }
-
-        Alamofire.request(APIUrl + "api/digit_span/stimuli/" + language, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            debugPrint(response)
-            
-            let statusCode = response.response?.statusCode
-            
-            if statusCode == 200 {
-                guard let json = response.result.value as? [String: Any] else {
-                    return
-                }
-                let forwardAudioPaths = json["forward"]! as! [String: Any]
-                let forwardTrials = forwardAudioPaths["trials"] as! [String]
-                let forwardPractice = forwardAudioPaths["practice"] as! String
-                let backwardAudioPaths = json["backward"]! as! [String: Any]
-                let backwardTrials = backwardAudioPaths["trials"] as! [String]
-                let backwardPractice = backwardAudioPaths["practice"] as! String
-
-                for x in 0..<forwardTrials.count {
-                    let pathArray = forwardTrials[x].components(separatedBy: "/")
-                    let path = pathArray[pathArray.count - 1]
-                    
-                    if !self.fileExist(path) {
-                        self.group.enter()
-                        self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(forwardTrials[x])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
-                    }
-                    self.forward.append(path)
-                }
-                var pathArray = forwardPractice.components(separatedBy: "/")
-                self.forwardPractice = pathArray[pathArray.count - 1]
-                
-                if !self.fileExist(self.forwardPractice) {
-                    self.group.enter()
-                    self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(forwardPractice)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
-                }
-                
-                for x in 0..<backwardTrials.count {
-                    let pathArray = backwardTrials[x].components(separatedBy: "/")
-                    let path = pathArray[pathArray.count - 1]
-                    
-                    if !self.fileExist(path) {
-                        self.group.enter()
-                        self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(backwardTrials[x])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
-                    }
-                    
-                    self.backward.append(path)
-                }
-                pathArray = backwardPractice.components(separatedBy: "/")
-                self.backwardPractice = pathArray[pathArray.count - 1]
-                
-                if !self.fileExist(self.backwardPractice) {
-                    self.group.enter()
-                    self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(backwardPractice)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
-                }
-                
-                self.group.notify(queue: .main) {
-                    print("All requests are done")
-                    self.doneBtn.isHidden = false
-                }
-            }
-        }
         
         forward = DataManager.sharedInstance.digitalSpanForward
         forwardPractice = DataManager.sharedInstance.digitalSpanForwardPractice
         backward = DataManager.sharedInstance.digitalSpanBackward
         backwardPractice = DataManager.sharedInstance.digitalSpanBackwardPractice
         
+        if (fileExist(forwardPractice)) {
+            print("File Exits")
+        }
         practice1Label.text = "Practice".localized(lang: language)
         practice1Instructions.text = "digital_practice_1".localized(lang: language)
         recordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
@@ -229,22 +171,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    private func downloadAudioFile(urlString: String, name: String) {
-        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            let fileURL = documentsURL.appendingPathComponent(name)
-            
-            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
-        }
-        
-        Alamofire.download(urlString, to: destination)
-            .downloadProgress { progress in
-                print("Download Progress: \(progress.fractionCompleted)")
-            }.response { response in
-                            self.group.leave()
-        }
     }
     
     func startRecording(_ button: UIButton, fileName: String) {
@@ -498,21 +424,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         }
         
         return jsonObject
-    }
-    
-    func fileExist(_ filename: String) -> Bool {
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        let url = NSURL(fileURLWithPath: path)
-        let filePath = url.appendingPathComponent(filename)?.path
-        let fileManager = FileManager.default
-        if fileManager.fileExists(atPath: filePath!) {
-            print("FILE \(filename) AVAILABLE")
-            return true
-        } else {
-            print("FILE \(filename) NOT AVAILABLE")
-        }
-        
-        return false
     }
     
     

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var signInBtn: UIButton!
     
+    @IBOutlet weak var imageHeight: NSLayoutConstraint!
     let userDefaults = UserDefaults.standard
     var testerLanguage = ""
     let APIUrl = "http://www.embracedapi.ugr.es/"
@@ -25,6 +26,8 @@ class ViewController: UIViewController {
         
         signInBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
+        
+        usernameTextfield.delegate = self
         
         if let language = userDefaults.string(forKey: "TesterLanguage") {
             testerLanguage = language
@@ -71,7 +74,7 @@ class ViewController: UIViewController {
                     
                     self.userDefaults.setValue(json["token"]!, forKey: "token")
                     self.userDefaults.setValue(json["id"]!, forKey: "id")
-                    print(json)
+
                     DispatchQueue.main.async(execute: {
                         self.usernameTextfield.text = ""
                         self.passwordTextfield.text = ""
@@ -88,22 +91,6 @@ class ViewController: UIViewController {
         }
     }
     
-    private func checkAuthentication() {
-        
-    }
-    
-    private func createPostObjectTest() -> [String: AnyObject] {
-        var jsonObject = [String: AnyObject]()
-        
-        // Gather data for post
-        jsonObject = [
-            "username": "dadixon7" as AnyObject,
-            "password": "asdfasdf" as AnyObject
-        ]
-        
-        return jsonObject
-    }
-    
     private func createPostObject() -> [String: AnyObject] {
         var jsonObject = [String: AnyObject]()
         
@@ -115,20 +102,6 @@ class ViewController: UIViewController {
         
         return jsonObject
     }
-    
-//    func showModal() {
-//        var modalViewController = UIViewController()
-//        
-//        if #available(iOS 10.0, *) {
-//            modalViewController = SpeechTestViewController()
-//        } else {
-//            // Fallback on earlier versions
-//            modalViewController = UserInputViewController()
-//        }
-//        
-//        modalViewController.modalPresentationStyle = .overCurrentContext
-//        present(modalViewController, animated: true, completion: nil)
-//    }
     
     func logResponse(_ success: Bool, error: NSError?) {
         if let error = error {
@@ -142,5 +115,17 @@ class ViewController: UIViewController {
             self.present(navController, animated: true, completion: nil)
         }
     }
+}
 
+extension ViewController: UITextFieldDelegate {
+    private func AnimateHeight() {
+        UIView.animate(withDuration: 1.0, animations: {
+            self.imageHeight.constant = 150
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        AnimateHeight()
+    }
 }

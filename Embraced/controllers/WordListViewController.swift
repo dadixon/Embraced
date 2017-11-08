@@ -32,10 +32,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var startBtn: NavigationButton!
     @IBOutlet weak var wordNextBtn: NavigationButton!
     
-    let userDefaults = UserDefaults.standard
     var recordingSession: AVAudioSession!
-    let APIUrl = "http://www.embracedapi.ugr.es/"
-    
     var soundRecorder: AVAudioRecorder!
     var fileName = "testWordlistAudioFile.m4a"
     
@@ -49,6 +46,11 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     var instructions = Array<String>()
     var instructions2 = Array<String>()
     
+    let APIUrl = "http://www.embracedapi.ugr.es/"
+    let userDefaults = UserDefaults.standard
+    var token: String = ""
+    var id: String = ""
+    var headers: HTTPHeaders = [:]
     
     // MARK: - Private
     
@@ -72,19 +74,14 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         showOrientationAlert(orientation: "landscape")
         
         // Insert row in database
-        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
-            (data, response, error) in
-            // this is where the completion handler code goes
-            if let response = response {
-                print(response)
-                print("StartViewController:viewDidLoad: Add user to Wodlist")
-            }
-            if let error = error {
-                print(error)
-            }
-        }
+        id = participant.string(forKey: "pid")!
+        token = userDefaults.string(forKey: "token")!
+        headers = [
+            "x-access-token": token
+        ]
         
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "wordlist", data: ["id": participant.string(forKey: "pid")! as AnyObject], callback: myCompletionHandler)
+        Alamofire.request(APIUrl + "api/wordlist/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+        }
         
         practiceView.translatesAutoresizingMaskIntoConstraints = false
         trial1View.translatesAutoresizingMaskIntoConstraints = false
@@ -117,68 +114,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         }
         
         // Fetch audios
-//        trials = DataManager.sharedInstance.wordListTrials
-        let todoEndpoint: String = "http://www.embracedapi.ugr.es/stimuli/wordlist"
-        
-        guard let url = URL(string: todoEndpoint) else {
-            //            print("Error: cannot create URL")
-            return
-        }
-        
-        let urlRequest = URLRequest(url: url)
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-            (data, response, error) -> Void in
-            
-            let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            guard error == nil else {
-                //                print("error calling GET on stumiliNames")
-                //                print(error!)
-                return
-            }
-            // make sure we got data
-            guard let responseData = data else {
-                //                print("Error: did not receive data")
-                return
-            }
-            
-            if (statusCode == 200) {
-                //                print("Everyone is fine, file downloaded successfully.")
-                
-                do {
-                    guard let todo = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
-                        //                        print("error trying to convert data to JSON")
-                        return
-                    }
-                    
-                    var language = "en"
-                    var trial = ""
-                    
-                    if self.participant.string(forKey: "language") != nil {
-                        language = self.participant.string(forKey: "language")!
-                    }
-                    
-                    if language == "en" {
-                        trial = "trials"
-                    } else if language == "es" {
-                        trial = "trialsSp"
-                    }
-                    
-                    self.trials = todo[trial]! as! Array<String>
-                    
-                } catch {
-                    //                    print("Error with Json: \(error)")
-                    return
-                }
-            }
-        })
-        
-        task.resume()
-        
-        
+        self.trials = DataManager.sharedInstance.wordListTasks
+
         practiceLabel.text = "Practice".localized(lang: language)
         practiceInstruction.text = "wordlist1_practice_instruction".localized(lang: language)
         startBtn.setTitle("Start".localized(lang: language), for: .normal)
@@ -307,7 +244,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     func startTimer() {
         if !timer.isValid {
             
-            let aSelector : Selector = #selector(UIMenuController.update)
+            let aSelector : Selector = #selector(WordListViewController.update)
             
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
             
@@ -315,7 +252,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         }
     }
     
-    func update() {
+    @objc func update() {
         if(count > 0) {
             countLabel.text = String(count)
             count -= 1
@@ -387,60 +324,26 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     
     
     func postToAPI(object: [String: AnyObject]) {
-        // Completion Handler
-        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
-            (data, response, error) in
-            // this is where the completion handler code goes
-            if let response = response {
-                print(response)
-                // Clear audios
-                for i in 0...self.position {
-                    self.deleteFile("wordlist\(i).m4a")
+        let index = object["index"] as! Int
+        let fileURL = object["audio"] as! URL
+        
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(fileURL, withName: "audio")
+                multipartFormData.append(String(index).data(using: String.Encoding.utf8)!, withName: "index")
+        }, usingThreshold: UInt64.init(),
+           to: APIUrl + "api/wordlist/uploadfile/" + id,
+           method: .post,
+           headers: headers,
+           encodingCompletion: { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                upload.responseJSON { response in
+                    debugPrint(response)
                 }
-                print("Deleted temp file")
-                print("Done")
-                print("WordlistViewController:postToAPI: Add file")
-//                DispatchQueue.main.async(execute: {
-//                    self.hideOverlayView()
-//                    self.next(self)
-//                })
-                
-            }
-            if let error = error {
-                print(error)
-            }
-        }
-        
-//        let parameters = createPostObject(index: position)
-//        let url = APIUrl + "api/user/authenticate"
-//
-//        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
-//            .responseJSON { response in
-//
-//                let statusCode = response.response?.statusCode
-//
-//                if statusCode == 200 {
-//                    guard let json = response.result.value as? [String: Any] else {
-//                        return
-//                    }
-//
-//                    self.userDefaults.setValue(json["token"]!, forKey: "token")
-//                    DispatchQueue.main.async(execute: {
-//                        self.usernameTextfield.text = ""
-//                        self.passwordTextfield.text = ""
-//
-//                        let vc = AdminViewController()
-//                        let navController = UINavigationController(rootViewController: vc)
-//                        self.present(navController, animated: true, completion: nil)
-//                    })
-//                } else if statusCode == 403 {
-//                    DispatchQueue.main.async(execute: {
-//                        self.errorLabel.text = "WrongUsernamePassword".localized(lang: self.testerLanguage)
-//                    })
-//                }
-//        }
-        
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "wordlist", data: object, callback: myCompletionHandler)
+            case .failure(let encodingError):
+                print(encodingError)
+            }})
     }
     
     
@@ -488,14 +391,13 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     
     func createPostObject(index: Int) -> [String: AnyObject] {
         var jsonObject = [String: AnyObject]()
-        let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("wordlist\(index).m4a"))
-        let dataStr = soundData?.base64EncodedString(options: [])
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentsURL.appendingPathComponent("wordlist\(index).m4a")
         
         // Gather data for post
         jsonObject = [
-            "id": participant.string(forKey: "pid")! as AnyObject,
             "index": index as AnyObject,
-            "soundByte": dataStr as AnyObject
+            "audio": fileURL as AnyObject
         ]
         
         return jsonObject

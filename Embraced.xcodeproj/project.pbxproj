@@ -57,63 +57,6 @@
 		A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */; };
 		A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */; };
 		A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */; };
-		A47141C41E6896BB0089B95F /* ENG-44.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47141C31E6896BB0089B95F /* ENG-44.mp3 */; };
-		A47447861DE6832200BB4011 /* List A ENG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447841DE6832200BB4011 /* List A ENG.mp3 */; };
-		A47447871DE6832200BB4011 /* List B ENG.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447851DE6832200BB4011 /* List B ENG.mp3 */; };
-		A47447F21DE6906500BB4011 /* ENG-01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447C61DE6906500BB4011 /* ENG-01.mp3 */; };
-		A47447F31DE6906500BB4011 /* ENG-02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447C71DE6906500BB4011 /* ENG-02.mp3 */; };
-		A47447F41DE6906500BB4011 /* ENG-03.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447C81DE6906500BB4011 /* ENG-03.mp3 */; };
-		A47447F51DE6906500BB4011 /* ENG-04.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447C91DE6906500BB4011 /* ENG-04.mp3 */; };
-		A47447F61DE6906500BB4011 /* ENG-05.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447CA1DE6906500BB4011 /* ENG-05.mp3 */; };
-		A47447F71DE6906500BB4011 /* ENG-06.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447CB1DE6906500BB4011 /* ENG-06.mp3 */; };
-		A47447F81DE6906500BB4011 /* ENG-07.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447CC1DE6906500BB4011 /* ENG-07.mp3 */; };
-		A47447F91DE6906500BB4011 /* ENG-08.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447CD1DE6906500BB4011 /* ENG-08.mp3 */; };
-		A47447FA1DE6906500BB4011 /* ENG-09.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447CE1DE6906500BB4011 /* ENG-09.mp3 */; };
-		A47447FB1DE6906500BB4011 /* ENG-10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447CF1DE6906500BB4011 /* ENG-10.mp3 */; };
-		A47447FC1DE6906500BB4011 /* ENG-11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447D01DE6906500BB4011 /* ENG-11.mp3 */; };
-		A47447FD1DE6906500BB4011 /* ENG-12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447D11DE6906500BB4011 /* ENG-12.mp3 */; };
-		A47447FE1DE6906500BB4011 /* ENG-13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447D21DE6906500BB4011 /* ENG-13.mp3 */; };
-		A47447FF1DE6906500BB4011 /* ENG-14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447D31DE6906500BB4011 /* ENG-14.mp3 */; };
-		A47448001DE6906500BB4011 /* ENG-15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447D41DE6906500BB4011 /* ENG-15.mp3 */; };
-		A47448011DE6906500BB4011 /* ENG-16.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447D51DE6906500BB4011 /* ENG-16.mp3 */; };
-		A47448021DE6906500BB4011 /* ENG-17.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447D61DE6906500BB4011 /* ENG-17.mp3 */; };
-		A47448031DE6906500BB4011 /* ENG-18.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447D71DE6906500BB4011 /* ENG-18.mp3 */; };
-		A47448041DE6906500BB4011 /* ENG-19.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447D81DE6906500BB4011 /* ENG-19.mp3 */; };
-		A47448051DE6906500BB4011 /* ENG-20.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447D91DE6906500BB4011 /* ENG-20.mp3 */; };
-		A47448061DE6906500BB4011 /* ENG-21.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447DA1DE6906500BB4011 /* ENG-21.mp3 */; };
-		A47448071DE6906500BB4011 /* ENG-22.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447DB1DE6906500BB4011 /* ENG-22.mp3 */; };
-		A47448081DE6906500BB4011 /* ENG-23.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447DC1DE6906500BB4011 /* ENG-23.mp3 */; };
-		A47448091DE6906500BB4011 /* ENG-24.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447DD1DE6906500BB4011 /* ENG-24.mp3 */; };
-		A474480A1DE6906500BB4011 /* ENG-25.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447DE1DE6906500BB4011 /* ENG-25.mp3 */; };
-		A474480B1DE6906500BB4011 /* ENG-26.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447DF1DE6906500BB4011 /* ENG-26.mp3 */; };
-		A474480C1DE6906500BB4011 /* ENG-27.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447E01DE6906500BB4011 /* ENG-27.mp3 */; };
-		A474480D1DE6906500BB4011 /* ENG-28.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447E11DE6906500BB4011 /* ENG-28.mp3 */; };
-		A474480E1DE6906500BB4011 /* ENG-29.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447E21DE6906500BB4011 /* ENG-29.mp3 */; };
-		A474480F1DE6906500BB4011 /* ENG-30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447E31DE6906500BB4011 /* ENG-30.mp3 */; };
-		A47448101DE6906500BB4011 /* ENG-31.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447E41DE6906500BB4011 /* ENG-31.mp3 */; };
-		A47448111DE6906500BB4011 /* ENG-32.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447E51DE6906500BB4011 /* ENG-32.mp3 */; };
-		A47448121DE6906500BB4011 /* ENG-33.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447E61DE6906500BB4011 /* ENG-33.mp3 */; };
-		A47448131DE6906500BB4011 /* ENG-34.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447E71DE6906500BB4011 /* ENG-34.mp3 */; };
-		A47448141DE6906500BB4011 /* ENG-35.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447E81DE6906500BB4011 /* ENG-35.mp3 */; };
-		A47448151DE6906500BB4011 /* ENG-36.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447E91DE6906500BB4011 /* ENG-36.mp3 */; };
-		A47448161DE6906500BB4011 /* ENG-37.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447EA1DE6906500BB4011 /* ENG-37.mp3 */; };
-		A47448171DE6906500BB4011 /* ENG-38.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447EB1DE6906500BB4011 /* ENG-38.mp3 */; };
-		A47448181DE6906500BB4011 /* ENG-39.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447EC1DE6906500BB4011 /* ENG-39.mp3 */; };
-		A47448191DE6906500BB4011 /* ENG-40.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447ED1DE6906500BB4011 /* ENG-40.mp3 */; };
-		A474481A1DE6906500BB4011 /* ENG-41.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447EE1DE6906500BB4011 /* ENG-41.mp3 */; };
-		A474481B1DE6906500BB4011 /* ENG-42.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447EF1DE6906500BB4011 /* ENG-42.mp3 */; };
-		A474481C1DE6906500BB4011 /* ENG-43.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A47447F01DE6906500BB4011 /* ENG-43.mp3 */; };
-		A474487A1DE690CD00BB4011 /* STIMULI_1_ENG.png in Resources */ = {isa = PBXBuildFile; fileRef = A47448771DE690CD00BB4011 /* STIMULI_1_ENG.png */; };
-		A474487B1DE690CD00BB4011 /* STIMULI_2&4_ENG.png in Resources */ = {isa = PBXBuildFile; fileRef = A47448781DE690CD00BB4011 /* STIMULI_2&4_ENG.png */; };
-		A474487C1DE690CD00BB4011 /* STIMULI_3.png in Resources */ = {isa = PBXBuildFile; fileRef = A47448791DE690CD00BB4011 /* STIMULI_3.png */; };
-		A47448B41DE6B79D00BB4011 /* STROOP_ENG_TASK1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A474487D1DE6925400BB4011 /* STROOP_ENG_TASK1.mp4 */; };
-		A47448B51DE6B7D800BB4011 /* STROOP_SPA_TASK1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A47448811DE692C100BB4011 /* STROOP_SPA_TASK1.mp4 */; };
-		A47448B61DE6B7D800BB4011 /* STROOP_SPA_TASK2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A47448821DE692C100BB4011 /* STROOP_SPA_TASK2.mp4 */; };
-		A47448B71DE6B7D800BB4011 /* STROOP_SPA_TASK3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A47448831DE692C100BB4011 /* STROOP_SPA_TASK3.mp4 */; };
-		A47448B81DE6B7D800BB4011 /* STROOP_SPA_TASK4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A47448841DE692C100BB4011 /* STROOP_SPA_TASK4.mp4 */; };
-		A47448B91DE6B7D800BB4011 /* STROOP_ENG_TASK2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A474487E1DE6925400BB4011 /* STROOP_ENG_TASK2.mp4 */; };
-		A47448BA1DE6B7D800BB4011 /* STROOP_ENG_TASK3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A474487F1DE6925400BB4011 /* STROOP_ENG_TASK3.mp4 */; };
-		A47448BB1DE6B7D800BB4011 /* STROOP_ENG_TASK4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A47448801DE6925400BB4011 /* STROOP_ENG_TASK4.mp4 */; };
 		A4773D0B1D9D849100E5CCEE /* listen.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773D0A1D9D849100E5CCEE /* listen.png */; };
 		A4773D0D1D9D84A900E5CCEE /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773D0C1D9D84A900E5CCEE /* play.png */; };
 		A4773D0F1D9D84B200E5CCEE /* record.png in Resources */ = {isa = PBXBuildFile; fileRef = A4773D0E1D9D84B200E5CCEE /* record.png */; };
@@ -156,50 +99,6 @@
 		A4C469A71E134B5900FDD5D5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C469A51E134B5900FDD5D5 /* UserViewController.swift */; };
 		A4C469A81E134B5900FDD5D5 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C469A61E134B5900FDD5D5 /* UserViewController.xib */; };
 		A4C71C0E1D33570100CD5FB1 /* Embraced_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */; };
-		A4D0D22C1ED8180500E29C13 /* SPA-01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2001ED8180500E29C13 /* SPA-01.mp3 */; };
-		A4D0D22D1ED8180500E29C13 /* SPA-02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2011ED8180500E29C13 /* SPA-02.mp3 */; };
-		A4D0D22E1ED8180500E29C13 /* SPA-03.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2021ED8180500E29C13 /* SPA-03.mp3 */; };
-		A4D0D22F1ED8180500E29C13 /* SPA-04.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2031ED8180500E29C13 /* SPA-04.mp3 */; };
-		A4D0D2301ED8180500E29C13 /* SPA-05.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2041ED8180500E29C13 /* SPA-05.mp3 */; };
-		A4D0D2311ED8180500E29C13 /* SPA-06.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2051ED8180500E29C13 /* SPA-06.mp3 */; };
-		A4D0D2321ED8180500E29C13 /* SPA-07.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2061ED8180500E29C13 /* SPA-07.mp3 */; };
-		A4D0D2331ED8180500E29C13 /* SPA-08.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2071ED8180500E29C13 /* SPA-08.mp3 */; };
-		A4D0D2341ED8180500E29C13 /* SPA-09.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2081ED8180500E29C13 /* SPA-09.mp3 */; };
-		A4D0D2351ED8180500E29C13 /* SPA-10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2091ED8180500E29C13 /* SPA-10.mp3 */; };
-		A4D0D2361ED8180500E29C13 /* SPA-11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D20A1ED8180500E29C13 /* SPA-11.mp3 */; };
-		A4D0D2371ED8180500E29C13 /* SPA-12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D20B1ED8180500E29C13 /* SPA-12.mp3 */; };
-		A4D0D2381ED8180500E29C13 /* SPA-13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D20C1ED8180500E29C13 /* SPA-13.mp3 */; };
-		A4D0D2391ED8180500E29C13 /* SPA-14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D20D1ED8180500E29C13 /* SPA-14.mp3 */; };
-		A4D0D23A1ED8180500E29C13 /* SPA-15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D20E1ED8180500E29C13 /* SPA-15.mp3 */; };
-		A4D0D23B1ED8180500E29C13 /* SPA-16.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D20F1ED8180500E29C13 /* SPA-16.mp3 */; };
-		A4D0D23C1ED8180500E29C13 /* SPA-17.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2101ED8180500E29C13 /* SPA-17.mp3 */; };
-		A4D0D23D1ED8180500E29C13 /* SPA-18.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2111ED8180500E29C13 /* SPA-18.mp3 */; };
-		A4D0D23E1ED8180500E29C13 /* SPA-19.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2121ED8180500E29C13 /* SPA-19.mp3 */; };
-		A4D0D23F1ED8180500E29C13 /* SPA-20.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2131ED8180500E29C13 /* SPA-20.mp3 */; };
-		A4D0D2401ED8180500E29C13 /* SPA-21.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2141ED8180500E29C13 /* SPA-21.mp3 */; };
-		A4D0D2411ED8180500E29C13 /* SPA-22.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2151ED8180500E29C13 /* SPA-22.mp3 */; };
-		A4D0D2421ED8180500E29C13 /* SPA-23.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2161ED8180500E29C13 /* SPA-23.mp3 */; };
-		A4D0D2431ED8180500E29C13 /* SPA-24.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2171ED8180500E29C13 /* SPA-24.mp3 */; };
-		A4D0D2441ED8180500E29C13 /* SPA-25.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2181ED8180500E29C13 /* SPA-25.mp3 */; };
-		A4D0D2451ED8180500E29C13 /* SPA-26.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2191ED8180500E29C13 /* SPA-26.mp3 */; };
-		A4D0D2461ED8180500E29C13 /* SPA-27.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D21A1ED8180500E29C13 /* SPA-27.mp3 */; };
-		A4D0D2471ED8180500E29C13 /* SPA-28.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D21B1ED8180500E29C13 /* SPA-28.mp3 */; };
-		A4D0D2481ED8180500E29C13 /* SPA-29.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D21C1ED8180500E29C13 /* SPA-29.mp3 */; };
-		A4D0D2491ED8180500E29C13 /* SPA-30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D21D1ED8180500E29C13 /* SPA-30.mp3 */; };
-		A4D0D24A1ED8180500E29C13 /* SPA-31.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D21E1ED8180500E29C13 /* SPA-31.mp3 */; };
-		A4D0D24B1ED8180500E29C13 /* SPA-32.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D21F1ED8180500E29C13 /* SPA-32.mp3 */; };
-		A4D0D24C1ED8180500E29C13 /* SPA-33.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2201ED8180500E29C13 /* SPA-33.mp3 */; };
-		A4D0D24D1ED8180500E29C13 /* SPA-34.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2211ED8180500E29C13 /* SPA-34.mp3 */; };
-		A4D0D24E1ED8180500E29C13 /* SPA-35.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2221ED8180500E29C13 /* SPA-35.mp3 */; };
-		A4D0D24F1ED8180500E29C13 /* SPA-36.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2231ED8180500E29C13 /* SPA-36.mp3 */; };
-		A4D0D2501ED8180500E29C13 /* SPA-37.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2241ED8180500E29C13 /* SPA-37.mp3 */; };
-		A4D0D2511ED8180500E29C13 /* SPA-38.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2251ED8180500E29C13 /* SPA-38.mp3 */; };
-		A4D0D2521ED8180500E29C13 /* SPA-39.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2261ED8180500E29C13 /* SPA-39.mp3 */; };
-		A4D0D2531ED8180500E29C13 /* SPA-40.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2271ED8180500E29C13 /* SPA-40.mp3 */; };
-		A4D0D2541ED8180500E29C13 /* SPA-41.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2281ED8180500E29C13 /* SPA-41.mp3 */; };
-		A4D0D2551ED8180500E29C13 /* SPA-42.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D2291ED8180500E29C13 /* SPA-42.mp3 */; };
-		A4D0D2561ED8180500E29C13 /* SPA-43.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D22A1ED8180500E29C13 /* SPA-43.mp3 */; };
-		A4D0D2571ED8180500E29C13 /* SPA-44.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4D0D22B1ED8180500E29C13 /* SPA-44.mp3 */; };
 		A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9041D1D2380380092D6AA /* FrontViewController.swift */; };
 		A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D904211D23810C0092D6AA /* EmbracedTextField.swift */; };
 		A4DB0FB41DFB2CA1000811B6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */; };
@@ -207,10 +106,6 @@
 		A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */; };
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
 		A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */; };
-		A4E16ABC1E7E724E00902464 /* STIMULI_1_SPA.png in Resources */ = {isa = PBXBuildFile; fileRef = A4E16ABB1E7E724E00902464 /* STIMULI_1_SPA.png */; };
-		A4E16ABE1E7E725A00902464 /* STIMULI_2_4_SPA.png in Resources */ = {isa = PBXBuildFile; fileRef = A4E16ABD1E7E725A00902464 /* STIMULI_2_4_SPA.png */; };
-		A4F5DE311EBD097E0008604B /* List A SPA.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4F5DE2F1EBD097E0008604B /* List A SPA.mp3 */; };
-		A4F5DE321EBD097E0008604B /* List B SPA.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4F5DE301EBD097E0008604B /* List B SPA.mp3 */; };
 		A4FC1E991DD2BE4500F19D95 /* WordList2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */; };
 		A4FC1E9A1DD2BE4500F19D95 /* WordList2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */; };
 		DD7D49BC9E47B49E27EB6157 /* Pods_Embraced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */; };
@@ -268,63 +163,6 @@
 		A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrailMakingTestViewController.xib; path = controllers/TrailMakingTestViewController.xib; sourceTree = "<group>"; };
 		A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOCAMMSETestViewController.swift; path = controllers/MOCAMMSETestViewController.swift; sourceTree = "<group>"; };
 		A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MOCAMMSETestViewController.xib; path = controllers/MOCAMMSETestViewController.xib; sourceTree = "<group>"; };
-		A47141C31E6896BB0089B95F /* ENG-44.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-44.mp3"; sourceTree = "<group>"; };
-		A47447841DE6832200BB4011 /* List A ENG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "List A ENG.mp3"; sourceTree = "<group>"; };
-		A47447851DE6832200BB4011 /* List B ENG.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "List B ENG.mp3"; sourceTree = "<group>"; };
-		A47447C61DE6906500BB4011 /* ENG-01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-01.mp3"; sourceTree = "<group>"; };
-		A47447C71DE6906500BB4011 /* ENG-02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-02.mp3"; sourceTree = "<group>"; };
-		A47447C81DE6906500BB4011 /* ENG-03.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-03.mp3"; sourceTree = "<group>"; };
-		A47447C91DE6906500BB4011 /* ENG-04.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-04.mp3"; sourceTree = "<group>"; };
-		A47447CA1DE6906500BB4011 /* ENG-05.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-05.mp3"; sourceTree = "<group>"; };
-		A47447CB1DE6906500BB4011 /* ENG-06.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-06.mp3"; sourceTree = "<group>"; };
-		A47447CC1DE6906500BB4011 /* ENG-07.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-07.mp3"; sourceTree = "<group>"; };
-		A47447CD1DE6906500BB4011 /* ENG-08.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-08.mp3"; sourceTree = "<group>"; };
-		A47447CE1DE6906500BB4011 /* ENG-09.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-09.mp3"; sourceTree = "<group>"; };
-		A47447CF1DE6906500BB4011 /* ENG-10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-10.mp3"; sourceTree = "<group>"; };
-		A47447D01DE6906500BB4011 /* ENG-11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-11.mp3"; sourceTree = "<group>"; };
-		A47447D11DE6906500BB4011 /* ENG-12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-12.mp3"; sourceTree = "<group>"; };
-		A47447D21DE6906500BB4011 /* ENG-13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-13.mp3"; sourceTree = "<group>"; };
-		A47447D31DE6906500BB4011 /* ENG-14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-14.mp3"; sourceTree = "<group>"; };
-		A47447D41DE6906500BB4011 /* ENG-15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-15.mp3"; sourceTree = "<group>"; };
-		A47447D51DE6906500BB4011 /* ENG-16.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-16.mp3"; sourceTree = "<group>"; };
-		A47447D61DE6906500BB4011 /* ENG-17.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-17.mp3"; sourceTree = "<group>"; };
-		A47447D71DE6906500BB4011 /* ENG-18.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-18.mp3"; sourceTree = "<group>"; };
-		A47447D81DE6906500BB4011 /* ENG-19.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-19.mp3"; sourceTree = "<group>"; };
-		A47447D91DE6906500BB4011 /* ENG-20.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-20.mp3"; sourceTree = "<group>"; };
-		A47447DA1DE6906500BB4011 /* ENG-21.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-21.mp3"; sourceTree = "<group>"; };
-		A47447DB1DE6906500BB4011 /* ENG-22.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-22.mp3"; sourceTree = "<group>"; };
-		A47447DC1DE6906500BB4011 /* ENG-23.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-23.mp3"; sourceTree = "<group>"; };
-		A47447DD1DE6906500BB4011 /* ENG-24.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-24.mp3"; sourceTree = "<group>"; };
-		A47447DE1DE6906500BB4011 /* ENG-25.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-25.mp3"; sourceTree = "<group>"; };
-		A47447DF1DE6906500BB4011 /* ENG-26.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-26.mp3"; sourceTree = "<group>"; };
-		A47447E01DE6906500BB4011 /* ENG-27.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-27.mp3"; sourceTree = "<group>"; };
-		A47447E11DE6906500BB4011 /* ENG-28.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-28.mp3"; sourceTree = "<group>"; };
-		A47447E21DE6906500BB4011 /* ENG-29.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-29.mp3"; sourceTree = "<group>"; };
-		A47447E31DE6906500BB4011 /* ENG-30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-30.mp3"; sourceTree = "<group>"; };
-		A47447E41DE6906500BB4011 /* ENG-31.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-31.mp3"; sourceTree = "<group>"; };
-		A47447E51DE6906500BB4011 /* ENG-32.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-32.mp3"; sourceTree = "<group>"; };
-		A47447E61DE6906500BB4011 /* ENG-33.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-33.mp3"; sourceTree = "<group>"; };
-		A47447E71DE6906500BB4011 /* ENG-34.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-34.mp3"; sourceTree = "<group>"; };
-		A47447E81DE6906500BB4011 /* ENG-35.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-35.mp3"; sourceTree = "<group>"; };
-		A47447E91DE6906500BB4011 /* ENG-36.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-36.mp3"; sourceTree = "<group>"; };
-		A47447EA1DE6906500BB4011 /* ENG-37.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-37.mp3"; sourceTree = "<group>"; };
-		A47447EB1DE6906500BB4011 /* ENG-38.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-38.mp3"; sourceTree = "<group>"; };
-		A47447EC1DE6906500BB4011 /* ENG-39.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-39.mp3"; sourceTree = "<group>"; };
-		A47447ED1DE6906500BB4011 /* ENG-40.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-40.mp3"; sourceTree = "<group>"; };
-		A47447EE1DE6906500BB4011 /* ENG-41.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-41.mp3"; sourceTree = "<group>"; };
-		A47447EF1DE6906500BB4011 /* ENG-42.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-42.mp3"; sourceTree = "<group>"; };
-		A47447F01DE6906500BB4011 /* ENG-43.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-43.mp3"; sourceTree = "<group>"; };
-		A47448771DE690CD00BB4011 /* STIMULI_1_ENG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = STIMULI_1_ENG.png; sourceTree = "<group>"; };
-		A47448781DE690CD00BB4011 /* STIMULI_2&4_ENG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STIMULI_2&4_ENG.png"; sourceTree = "<group>"; };
-		A47448791DE690CD00BB4011 /* STIMULI_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = STIMULI_3.png; sourceTree = "<group>"; };
-		A474487D1DE6925400BB4011 /* STROOP_ENG_TASK1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = STROOP_ENG_TASK1.mp4; sourceTree = "<group>"; };
-		A474487E1DE6925400BB4011 /* STROOP_ENG_TASK2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = STROOP_ENG_TASK2.mp4; sourceTree = "<group>"; };
-		A474487F1DE6925400BB4011 /* STROOP_ENG_TASK3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = STROOP_ENG_TASK3.mp4; sourceTree = "<group>"; };
-		A47448801DE6925400BB4011 /* STROOP_ENG_TASK4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = STROOP_ENG_TASK4.mp4; sourceTree = "<group>"; };
-		A47448811DE692C100BB4011 /* STROOP_SPA_TASK1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = STROOP_SPA_TASK1.mp4; sourceTree = "<group>"; };
-		A47448821DE692C100BB4011 /* STROOP_SPA_TASK2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = STROOP_SPA_TASK2.mp4; sourceTree = "<group>"; };
-		A47448831DE692C100BB4011 /* STROOP_SPA_TASK3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = STROOP_SPA_TASK3.mp4; sourceTree = "<group>"; };
-		A47448841DE692C100BB4011 /* STROOP_SPA_TASK4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = STROOP_SPA_TASK4.mp4; sourceTree = "<group>"; };
 		A4773D0A1D9D849100E5CCEE /* listen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listen.png; sourceTree = "<group>"; };
 		A4773D0C1D9D84A900E5CCEE /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		A4773D0E1D9D84B200E5CCEE /* record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record.png; sourceTree = "<group>"; };
@@ -358,6 +196,7 @@
 		A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		A49BEFFA1E9C324D002EC7AE /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		A4A30B551FA25C9D00F07AA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		A4AB688A1DE4BE9A0009808D /* DownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadOperation.swift; sourceTree = "<group>"; };
 		A4AB688C1DE4D4730009808D /* DownloadMangager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadMangager.swift; sourceTree = "<group>"; };
@@ -372,50 +211,6 @@
 		A4C469A51E134B5900FDD5D5 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		A4C469A61E134B5900FDD5D5 /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
 		A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Embraced_bg.png; sourceTree = "<group>"; };
-		A4D0D2001ED8180500E29C13 /* SPA-01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-01.mp3"; sourceTree = "<group>"; };
-		A4D0D2011ED8180500E29C13 /* SPA-02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-02.mp3"; sourceTree = "<group>"; };
-		A4D0D2021ED8180500E29C13 /* SPA-03.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-03.mp3"; sourceTree = "<group>"; };
-		A4D0D2031ED8180500E29C13 /* SPA-04.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-04.mp3"; sourceTree = "<group>"; };
-		A4D0D2041ED8180500E29C13 /* SPA-05.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-05.mp3"; sourceTree = "<group>"; };
-		A4D0D2051ED8180500E29C13 /* SPA-06.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-06.mp3"; sourceTree = "<group>"; };
-		A4D0D2061ED8180500E29C13 /* SPA-07.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-07.mp3"; sourceTree = "<group>"; };
-		A4D0D2071ED8180500E29C13 /* SPA-08.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-08.mp3"; sourceTree = "<group>"; };
-		A4D0D2081ED8180500E29C13 /* SPA-09.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-09.mp3"; sourceTree = "<group>"; };
-		A4D0D2091ED8180500E29C13 /* SPA-10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-10.mp3"; sourceTree = "<group>"; };
-		A4D0D20A1ED8180500E29C13 /* SPA-11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-11.mp3"; sourceTree = "<group>"; };
-		A4D0D20B1ED8180500E29C13 /* SPA-12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-12.mp3"; sourceTree = "<group>"; };
-		A4D0D20C1ED8180500E29C13 /* SPA-13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-13.mp3"; sourceTree = "<group>"; };
-		A4D0D20D1ED8180500E29C13 /* SPA-14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-14.mp3"; sourceTree = "<group>"; };
-		A4D0D20E1ED8180500E29C13 /* SPA-15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-15.mp3"; sourceTree = "<group>"; };
-		A4D0D20F1ED8180500E29C13 /* SPA-16.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-16.mp3"; sourceTree = "<group>"; };
-		A4D0D2101ED8180500E29C13 /* SPA-17.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-17.mp3"; sourceTree = "<group>"; };
-		A4D0D2111ED8180500E29C13 /* SPA-18.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-18.mp3"; sourceTree = "<group>"; };
-		A4D0D2121ED8180500E29C13 /* SPA-19.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-19.mp3"; sourceTree = "<group>"; };
-		A4D0D2131ED8180500E29C13 /* SPA-20.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-20.mp3"; sourceTree = "<group>"; };
-		A4D0D2141ED8180500E29C13 /* SPA-21.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-21.mp3"; sourceTree = "<group>"; };
-		A4D0D2151ED8180500E29C13 /* SPA-22.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-22.mp3"; sourceTree = "<group>"; };
-		A4D0D2161ED8180500E29C13 /* SPA-23.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-23.mp3"; sourceTree = "<group>"; };
-		A4D0D2171ED8180500E29C13 /* SPA-24.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-24.mp3"; sourceTree = "<group>"; };
-		A4D0D2181ED8180500E29C13 /* SPA-25.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-25.mp3"; sourceTree = "<group>"; };
-		A4D0D2191ED8180500E29C13 /* SPA-26.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-26.mp3"; sourceTree = "<group>"; };
-		A4D0D21A1ED8180500E29C13 /* SPA-27.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-27.mp3"; sourceTree = "<group>"; };
-		A4D0D21B1ED8180500E29C13 /* SPA-28.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-28.mp3"; sourceTree = "<group>"; };
-		A4D0D21C1ED8180500E29C13 /* SPA-29.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-29.mp3"; sourceTree = "<group>"; };
-		A4D0D21D1ED8180500E29C13 /* SPA-30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-30.mp3"; sourceTree = "<group>"; };
-		A4D0D21E1ED8180500E29C13 /* SPA-31.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-31.mp3"; sourceTree = "<group>"; };
-		A4D0D21F1ED8180500E29C13 /* SPA-32.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-32.mp3"; sourceTree = "<group>"; };
-		A4D0D2201ED8180500E29C13 /* SPA-33.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-33.mp3"; sourceTree = "<group>"; };
-		A4D0D2211ED8180500E29C13 /* SPA-34.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-34.mp3"; sourceTree = "<group>"; };
-		A4D0D2221ED8180500E29C13 /* SPA-35.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-35.mp3"; sourceTree = "<group>"; };
-		A4D0D2231ED8180500E29C13 /* SPA-36.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-36.mp3"; sourceTree = "<group>"; };
-		A4D0D2241ED8180500E29C13 /* SPA-37.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-37.mp3"; sourceTree = "<group>"; };
-		A4D0D2251ED8180500E29C13 /* SPA-38.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-38.mp3"; sourceTree = "<group>"; };
-		A4D0D2261ED8180500E29C13 /* SPA-39.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-39.mp3"; sourceTree = "<group>"; };
-		A4D0D2271ED8180500E29C13 /* SPA-40.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-40.mp3"; sourceTree = "<group>"; };
-		A4D0D2281ED8180500E29C13 /* SPA-41.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-41.mp3"; sourceTree = "<group>"; };
-		A4D0D2291ED8180500E29C13 /* SPA-42.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-42.mp3"; sourceTree = "<group>"; };
-		A4D0D22A1ED8180500E29C13 /* SPA-43.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-43.mp3"; sourceTree = "<group>"; };
-		A4D0D22B1ED8180500E29C13 /* SPA-44.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-44.mp3"; sourceTree = "<group>"; };
 		A4D9041D1D2380380092D6AA /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		A4D904211D23810C0092D6AA /* EmbracedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbracedTextField.swift; sourceTree = "<group>"; };
 		A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -424,10 +219,6 @@
 		A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
-		A4E16ABB1E7E724E00902464 /* STIMULI_1_SPA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = STIMULI_1_SPA.png; sourceTree = "<group>"; };
-		A4E16ABD1E7E725A00902464 /* STIMULI_2_4_SPA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = STIMULI_2_4_SPA.png; sourceTree = "<group>"; };
-		A4F5DE2F1EBD097E0008604B /* List A SPA.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "List A SPA.mp3"; sourceTree = "<group>"; };
-		A4F5DE301EBD097E0008604B /* List B SPA.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "List B SPA.mp3"; sourceTree = "<group>"; };
 		A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordList2ViewController.swift; path = controllers/WordList2ViewController.swift; sourceTree = "<group>"; };
 		A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordList2ViewController.xib; path = controllers/WordList2ViewController.xib; sourceTree = "<group>"; };
 		B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.release.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.release.xcconfig"; sourceTree = "<group>"; };
@@ -515,125 +306,6 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		A47447C51DE6903500BB4011 /* WordList */ = {
-			isa = PBXGroup;
-			children = (
-				A4F5DE2F1EBD097E0008604B /* List A SPA.mp3 */,
-				A4F5DE301EBD097E0008604B /* List B SPA.mp3 */,
-				A4D0D2001ED8180500E29C13 /* SPA-01.mp3 */,
-				A4D0D2011ED8180500E29C13 /* SPA-02.mp3 */,
-				A4D0D2021ED8180500E29C13 /* SPA-03.mp3 */,
-				A4D0D2031ED8180500E29C13 /* SPA-04.mp3 */,
-				A4D0D2041ED8180500E29C13 /* SPA-05.mp3 */,
-				A4D0D2051ED8180500E29C13 /* SPA-06.mp3 */,
-				A4D0D2061ED8180500E29C13 /* SPA-07.mp3 */,
-				A4D0D2071ED8180500E29C13 /* SPA-08.mp3 */,
-				A4D0D2081ED8180500E29C13 /* SPA-09.mp3 */,
-				A4D0D2091ED8180500E29C13 /* SPA-10.mp3 */,
-				A4D0D20A1ED8180500E29C13 /* SPA-11.mp3 */,
-				A4D0D20B1ED8180500E29C13 /* SPA-12.mp3 */,
-				A4D0D20C1ED8180500E29C13 /* SPA-13.mp3 */,
-				A4D0D20D1ED8180500E29C13 /* SPA-14.mp3 */,
-				A4D0D20E1ED8180500E29C13 /* SPA-15.mp3 */,
-				A4D0D20F1ED8180500E29C13 /* SPA-16.mp3 */,
-				A4D0D2101ED8180500E29C13 /* SPA-17.mp3 */,
-				A4D0D2111ED8180500E29C13 /* SPA-18.mp3 */,
-				A4D0D2121ED8180500E29C13 /* SPA-19.mp3 */,
-				A4D0D2131ED8180500E29C13 /* SPA-20.mp3 */,
-				A4D0D2141ED8180500E29C13 /* SPA-21.mp3 */,
-				A4D0D2151ED8180500E29C13 /* SPA-22.mp3 */,
-				A4D0D2161ED8180500E29C13 /* SPA-23.mp3 */,
-				A4D0D2171ED8180500E29C13 /* SPA-24.mp3 */,
-				A4D0D2181ED8180500E29C13 /* SPA-25.mp3 */,
-				A4D0D2191ED8180500E29C13 /* SPA-26.mp3 */,
-				A4D0D21A1ED8180500E29C13 /* SPA-27.mp3 */,
-				A4D0D21B1ED8180500E29C13 /* SPA-28.mp3 */,
-				A4D0D21C1ED8180500E29C13 /* SPA-29.mp3 */,
-				A4D0D21D1ED8180500E29C13 /* SPA-30.mp3 */,
-				A4D0D21E1ED8180500E29C13 /* SPA-31.mp3 */,
-				A4D0D21F1ED8180500E29C13 /* SPA-32.mp3 */,
-				A4D0D2201ED8180500E29C13 /* SPA-33.mp3 */,
-				A4D0D2211ED8180500E29C13 /* SPA-34.mp3 */,
-				A4D0D2221ED8180500E29C13 /* SPA-35.mp3 */,
-				A4D0D2231ED8180500E29C13 /* SPA-36.mp3 */,
-				A4D0D2241ED8180500E29C13 /* SPA-37.mp3 */,
-				A4D0D2251ED8180500E29C13 /* SPA-38.mp3 */,
-				A4D0D2261ED8180500E29C13 /* SPA-39.mp3 */,
-				A4D0D2271ED8180500E29C13 /* SPA-40.mp3 */,
-				A4D0D2281ED8180500E29C13 /* SPA-41.mp3 */,
-				A4D0D2291ED8180500E29C13 /* SPA-42.mp3 */,
-				A4D0D22A1ED8180500E29C13 /* SPA-43.mp3 */,
-				A4D0D22B1ED8180500E29C13 /* SPA-44.mp3 */,
-				A47447C61DE6906500BB4011 /* ENG-01.mp3 */,
-				A47447C71DE6906500BB4011 /* ENG-02.mp3 */,
-				A47447C81DE6906500BB4011 /* ENG-03.mp3 */,
-				A47447C91DE6906500BB4011 /* ENG-04.mp3 */,
-				A47447CA1DE6906500BB4011 /* ENG-05.mp3 */,
-				A47447CB1DE6906500BB4011 /* ENG-06.mp3 */,
-				A47447CC1DE6906500BB4011 /* ENG-07.mp3 */,
-				A47447CD1DE6906500BB4011 /* ENG-08.mp3 */,
-				A47447CE1DE6906500BB4011 /* ENG-09.mp3 */,
-				A47447CF1DE6906500BB4011 /* ENG-10.mp3 */,
-				A47447D01DE6906500BB4011 /* ENG-11.mp3 */,
-				A47447D11DE6906500BB4011 /* ENG-12.mp3 */,
-				A47447D21DE6906500BB4011 /* ENG-13.mp3 */,
-				A47447D31DE6906500BB4011 /* ENG-14.mp3 */,
-				A47447D41DE6906500BB4011 /* ENG-15.mp3 */,
-				A47447D51DE6906500BB4011 /* ENG-16.mp3 */,
-				A47447D61DE6906500BB4011 /* ENG-17.mp3 */,
-				A47447D71DE6906500BB4011 /* ENG-18.mp3 */,
-				A47447D81DE6906500BB4011 /* ENG-19.mp3 */,
-				A47447D91DE6906500BB4011 /* ENG-20.mp3 */,
-				A47447DA1DE6906500BB4011 /* ENG-21.mp3 */,
-				A47447DB1DE6906500BB4011 /* ENG-22.mp3 */,
-				A47447DC1DE6906500BB4011 /* ENG-23.mp3 */,
-				A47447DD1DE6906500BB4011 /* ENG-24.mp3 */,
-				A47447DE1DE6906500BB4011 /* ENG-25.mp3 */,
-				A47447DF1DE6906500BB4011 /* ENG-26.mp3 */,
-				A47447E01DE6906500BB4011 /* ENG-27.mp3 */,
-				A47447E11DE6906500BB4011 /* ENG-28.mp3 */,
-				A47447E21DE6906500BB4011 /* ENG-29.mp3 */,
-				A47447E31DE6906500BB4011 /* ENG-30.mp3 */,
-				A47447E41DE6906500BB4011 /* ENG-31.mp3 */,
-				A47447E51DE6906500BB4011 /* ENG-32.mp3 */,
-				A47447E61DE6906500BB4011 /* ENG-33.mp3 */,
-				A47447E71DE6906500BB4011 /* ENG-34.mp3 */,
-				A47447E81DE6906500BB4011 /* ENG-35.mp3 */,
-				A47447E91DE6906500BB4011 /* ENG-36.mp3 */,
-				A47447EA1DE6906500BB4011 /* ENG-37.mp3 */,
-				A47447EB1DE6906500BB4011 /* ENG-38.mp3 */,
-				A47447EC1DE6906500BB4011 /* ENG-39.mp3 */,
-				A47447ED1DE6906500BB4011 /* ENG-40.mp3 */,
-				A47447EE1DE6906500BB4011 /* ENG-41.mp3 */,
-				A47447EF1DE6906500BB4011 /* ENG-42.mp3 */,
-				A47447F01DE6906500BB4011 /* ENG-43.mp3 */,
-				A47141C31E6896BB0089B95F /* ENG-44.mp3 */,
-				A47447841DE6832200BB4011 /* List A ENG.mp3 */,
-				A47447851DE6832200BB4011 /* List B ENG.mp3 */,
-			);
-			name = WordList;
-			sourceTree = "<group>";
-		};
-		A47448761DE690B700BB4011 /* Stroop */ = {
-			isa = PBXGroup;
-			children = (
-				A4E16ABD1E7E725A00902464 /* STIMULI_2_4_SPA.png */,
-				A4E16ABB1E7E724E00902464 /* STIMULI_1_SPA.png */,
-				A47448811DE692C100BB4011 /* STROOP_SPA_TASK1.mp4 */,
-				A47448821DE692C100BB4011 /* STROOP_SPA_TASK2.mp4 */,
-				A47448831DE692C100BB4011 /* STROOP_SPA_TASK3.mp4 */,
-				A47448841DE692C100BB4011 /* STROOP_SPA_TASK4.mp4 */,
-				A474487D1DE6925400BB4011 /* STROOP_ENG_TASK1.mp4 */,
-				A474487E1DE6925400BB4011 /* STROOP_ENG_TASK2.mp4 */,
-				A474487F1DE6925400BB4011 /* STROOP_ENG_TASK3.mp4 */,
-				A47448801DE6925400BB4011 /* STROOP_ENG_TASK4.mp4 */,
-				A47448771DE690CD00BB4011 /* STIMULI_1_ENG.png */,
-				A47448781DE690CD00BB4011 /* STIMULI_2&4_ENG.png */,
-				A47448791DE690CD00BB4011 /* STIMULI_3.png */,
-			);
-			name = Stroop;
-			sourceTree = "<group>";
-		};
 		A48B4DB81CF9E7C600878928 = {
 			isa = PBXGroup;
 			children = (
@@ -672,8 +344,6 @@
 		A48B4DD91CF9EEAB00878928 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A47448761DE690B700BB4011 /* Stroop */,
-				A47447C51DE6903500BB4011 /* WordList */,
 				A4632C721DAE4629004B71BD /* speaker.png */,
 				A44669351E16443D00EA7E2E /* play2.png */,
 				A4773D0A1D9D849100E5CCEE /* listen.png */,
@@ -829,163 +499,58 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4F5DE321EBD097E0008604B /* List B SPA.mp3 in Resources */,
-				A4D0D23C1ED8180500E29C13 /* SPA-17.mp3 in Resources */,
-				A47448B51DE6B7D800BB4011 /* STROOP_SPA_TASK1.mp4 in Resources */,
-				A47448B61DE6B7D800BB4011 /* STROOP_SPA_TASK2.mp4 in Resources */,
-				A4D0D2391ED8180500E29C13 /* SPA-14.mp3 in Resources */,
-				A47448B71DE6B7D800BB4011 /* STROOP_SPA_TASK3.mp4 in Resources */,
-				A47448B81DE6B7D800BB4011 /* STROOP_SPA_TASK4.mp4 in Resources */,
-				A47448B91DE6B7D800BB4011 /* STROOP_ENG_TASK2.mp4 in Resources */,
-				A47448BA1DE6B7D800BB4011 /* STROOP_ENG_TASK3.mp4 in Resources */,
-				A47448BB1DE6B7D800BB4011 /* STROOP_ENG_TASK4.mp4 in Resources */,
-				A47448B41DE6B79D00BB4011 /* STROOP_ENG_TASK1.mp4 in Resources */,
-				A4D0D2501ED8180500E29C13 /* SPA-37.mp3 in Resources */,
-				A4D0D23B1ED8180500E29C13 /* SPA-16.mp3 in Resources */,
-				A47448061DE6906500BB4011 /* ENG-21.mp3 in Resources */,
 				A490D7D41D0919CB00D2B59D /* Roboto-Bold.ttf in Resources */,
 				A490D7D81D0919CB00D2B59D /* Roboto-LightItalic.ttf in Resources */,
-				A474481B1DE6906500BB4011 /* ENG-42.mp3 in Resources */,
-				A47448081DE6906500BB4011 /* ENG-23.mp3 in Resources */,
-				A47447F71DE6906500BB4011 /* ENG-06.mp3 in Resources */,
-				A474481A1DE6906500BB4011 /* ENG-41.mp3 in Resources */,
 				A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */,
 				A4347FD21D7BCA950033306A /* MatricesViewController.xib in Resources */,
-				A47448041DE6906500BB4011 /* ENG-19.mp3 in Resources */,
-				A47448051DE6906500BB4011 /* ENG-20.mp3 in Resources */,
 				A490D7DA1D0919CB00D2B59D /* Roboto-MediumItalic.ttf in Resources */,
-				A4F5DE311EBD097E0008604B /* List A SPA.mp3 in Resources */,
-				A4D0D23A1ED8180500E29C13 /* SPA-15.mp3 in Resources */,
-				A4D0D2521ED8180500E29C13 /* SPA-39.mp3 in Resources */,
-				A4D0D2551ED8180500E29C13 /* SPA-42.mp3 in Resources */,
 				A4C71C0E1D33570100CD5FB1 /* Embraced_bg.png in Resources */,
 				A490D7D61D0919CB00D2B59D /* Roboto-Italic.ttf in Resources */,
-				A47447FF1DE6906500BB4011 /* ENG-14.mp3 in Resources */,
-				A4D0D2471ED8180500E29C13 /* SPA-28.mp3 in Resources */,
-				A4D0D22C1ED8180500E29C13 /* SPA-01.mp3 in Resources */,
-				A474480A1DE6906500BB4011 /* ENG-25.mp3 in Resources */,
-				A4D0D2301ED8180500E29C13 /* SPA-05.mp3 in Resources */,
-				A47448021DE6906500BB4011 /* ENG-17.mp3 in Resources */,
-				A47447F51DE6906500BB4011 /* ENG-04.mp3 in Resources */,
 				A4347FE41D7BCC170033306A /* MultipleErrandsViewController.xib in Resources */,
-				A4D0D2351ED8180500E29C13 /* SPA-10.mp3 in Resources */,
-				A4D0D2331ED8180500E29C13 /* SPA-08.mp3 in Resources */,
 				A46C14181D7999AF0066EF37 /* CancellationTestViewController.xib in Resources */,
-				A4D0D2401ED8180500E29C13 /* SPA-21.mp3 in Resources */,
 				A4632C731DAE4629004B71BD /* speaker.png in Resources */,
-				A4E16ABE1E7E725A00902464 /* STIMULI_2_4_SPA.png in Resources */,
 				A4347FD61D7BCABC0033306A /* PegboardViewController.xib in Resources */,
-				A474487B1DE690CD00BB4011 /* STIMULI_2&4_ENG.png in Resources */,
 				A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */,
 				A490D7D71D0919CB00D2B59D /* Roboto-Light.ttf in Resources */,
-				A4D0D24F1ED8180500E29C13 /* SPA-36.mp3 in Resources */,
 				A44669361E16443D00EA7E2E /* play2.png in Resources */,
-				A4D0D23D1ED8180500E29C13 /* SPA-18.mp3 in Resources */,
-				A4D0D2461ED8180500E29C13 /* SPA-27.mp3 in Resources */,
-				A47447FB1DE6906500BB4011 /* ENG-10.mp3 in Resources */,
 				A4DF9F221E08FBC90084EAF9 /* Localizable.strings in Resources */,
 				A4347FCE1D7BCA570033306A /* ReyFigureComplex4ViewController.xib in Resources */,
-				A4D0D24A1ED8180500E29C13 /* SPA-31.mp3 in Resources */,
 				A46C14241D79AA7C0066EF37 /* ClockDrawingTestViewController.xib in Resources */,
-				A4D0D2321ED8180500E29C13 /* SPA-07.mp3 in Resources */,
-				A47448111DE6906500BB4011 /* ENG-32.mp3 in Resources */,
 				A48B4DD21CF9E7C700878928 /* LaunchScreen.storyboard in Resources */,
-				A4D0D2531ED8180500E29C13 /* SPA-40.mp3 in Resources */,
 				A4828EB71F967ED700406F19 /* LoadingScreenViewController.xib in Resources */,
 				A4347FC61D7BC9FC0033306A /* ReyComplexFigure3ViewController.xib in Resources */,
 				A490D7D51D0919CB00D2B59D /* Roboto-BoldItalic.ttf in Resources */,
-				A47448181DE6906500BB4011 /* ENG-39.mp3 in Resources */,
-				A474487C1DE690CD00BB4011 /* STIMULI_3.png in Resources */,
-				A474487A1DE690CD00BB4011 /* STIMULI_1_ENG.png in Resources */,
 				A47EB6E41DA65FFB00A68AF6 /* FinishedViewController.xib in Resources */,
-				A4D0D22D1ED8180500E29C13 /* SPA-02.mp3 in Resources */,
-				A47447F81DE6906500BB4011 /* ENG-07.mp3 in Resources */,
-				A4D0D2431ED8180500E29C13 /* SPA-24.mp3 in Resources */,
-				A4D0D2561ED8180500E29C13 /* SPA-43.mp3 in Resources */,
-				A47448121DE6906500BB4011 /* ENG-33.mp3 in Resources */,
-				A4D0D2441ED8180500E29C13 /* SPA-25.mp3 in Resources */,
 				A490D7D31D0919CB00D2B59D /* Roboto-BlackItalic.ttf in Resources */,
-				A4D0D2371ED8180500E29C13 /* SPA-12.mp3 in Resources */,
 				A4FC1E9A1DD2BE4500F19D95 /* WordList2ViewController.xib in Resources */,
-				A474480D1DE6906500BB4011 /* ENG-28.mp3 in Resources */,
 				A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */,
 				A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */,
-				A47447F21DE6906500BB4011 /* ENG-01.mp3 in Resources */,
-				A4D0D24D1ED8180500E29C13 /* SPA-34.mp3 in Resources */,
-				A4D0D24C1ED8180500E29C13 /* SPA-33.mp3 in Resources */,
 				A4347FC21D7BC9E20033306A /* StroopViewController.xib in Resources */,
-				A47448161DE6906500BB4011 /* ENG-37.mp3 in Resources */,
-				A4D0D23E1ED8180500E29C13 /* SPA-19.mp3 in Resources */,
 				A4773D0B1D9D849100E5CCEE /* listen.png in Resources */,
-				A4D0D24E1ED8180500E29C13 /* SPA-35.mp3 in Resources */,
-				A47447F31DE6906500BB4011 /* ENG-02.mp3 in Resources */,
-				A474480C1DE6906500BB4011 /* ENG-27.mp3 in Resources */,
-				A4D0D23F1ED8180500E29C13 /* SPA-20.mp3 in Resources */,
-				A47447F61DE6906500BB4011 /* ENG-05.mp3 in Resources */,
-				A4D0D2511ED8180500E29C13 /* SPA-38.mp3 in Resources */,
 				A4773D0F1D9D84B200E5CCEE /* record.png in Resources */,
 				A489D61D1E0BA255001F56FE /* AdminViewController.xib in Resources */,
-				A47447871DE6832200BB4011 /* List B ENG.mp3 in Resources */,
 				A4C469A81E134B5900FDD5D5 /* UserViewController.xib in Resources */,
-				A47141C41E6896BB0089B95F /* ENG-44.mp3 in Resources */,
 				A4347FE01D7BCB800033306A /* NamingTaskViewController.xib in Resources */,
 				A4BB08ED1D7EDFFA00B76C64 /* QuestionnaireViewController.xib in Resources */,
-				A47447F41DE6906500BB4011 /* ENG-03.mp3 in Resources */,
-				A4D0D22E1ED8180500E29C13 /* SPA-03.mp3 in Resources */,
-				A47447FC1DE6906500BB4011 /* ENG-11.mp3 in Resources */,
-				A47448101DE6906500BB4011 /* ENG-31.mp3 in Resources */,
-				A4D0D2361ED8180500E29C13 /* SPA-11.mp3 in Resources */,
-				A4D0D2381ED8180500E29C13 /* SPA-13.mp3 in Resources */,
-				A4D0D2491ED8180500E29C13 /* SPA-30.mp3 in Resources */,
 				A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */,
 				A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */,
-				A47448171DE6906500BB4011 /* ENG-38.mp3 in Resources */,
-				A47448031DE6906500BB4011 /* ENG-18.mp3 in Resources */,
-				A47448091DE6906500BB4011 /* ENG-24.mp3 in Resources */,
 				A490D7D91D0919CB00D2B59D /* Roboto-Medium.ttf in Resources */,
-				A4D0D24B1ED8180500E29C13 /* SPA-32.mp3 in Resources */,
-				A4D0D2341ED8180500E29C13 /* SPA-09.mp3 in Resources */,
-				A47447FA1DE6906500BB4011 /* ENG-09.mp3 in Resources */,
-				A47448071DE6906500BB4011 /* ENG-22.mp3 in Resources */,
 				A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */,
-				A4D0D2541ED8180500E29C13 /* SPA-41.mp3 in Resources */,
 				A4773D0D1D9D84A900E5CCEE /* play.png in Resources */,
-				A474480F1DE6906500BB4011 /* ENG-30.mp3 in Resources */,
-				A47448191DE6906500BB4011 /* ENG-40.mp3 in Resources */,
 				A4347FE81D7BCC4C0033306A /* ComprehensionViewController.xib in Resources */,
-				A4D0D22F1ED8180500E29C13 /* SPA-04.mp3 in Resources */,
 				A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */,
-				A47448011DE6906500BB4011 /* ENG-16.mp3 in Resources */,
-				A474480E1DE6906500BB4011 /* ENG-29.mp3 in Resources */,
 				A46C14201D79AA110066EF37 /* ReyComplexFigureViewController.xib in Resources */,
-				A47447FE1DE6906500BB4011 /* ENG-13.mp3 in Resources */,
-				A4D0D2311ED8180500E29C13 /* SPA-06.mp3 in Resources */,
-				A47448131DE6906500BB4011 /* ENG-34.mp3 in Resources */,
 				A4347FDA1D7BCAFB0033306A /* PitchViewController.xib in Resources */,
-				A47447861DE6832200BB4011 /* List A ENG.mp3 in Resources */,
 				A490D7D21D0919CB00D2B59D /* Roboto-Black.ttf in Resources */,
 				A489D6191E0B535A001F56FE /* SettingsViewController.xib in Resources */,
-				A47447FD1DE6906500BB4011 /* ENG-12.mp3 in Resources */,
 				A4347FDE1D7BCB260033306A /* WordListViewController.xib in Resources */,
-				A474480B1DE6906500BB4011 /* ENG-26.mp3 in Resources */,
 				A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */,
 				A41AE3C11DCA57150089231D /* Images.xcassets in Resources */,
-				A47448001DE6906500BB4011 /* ENG-15.mp3 in Resources */,
 				A4347FCA1D7BCA280033306A /* DigitalSpanViewController.xib in Resources */,
-				A47448151DE6906500BB4011 /* ENG-36.mp3 in Resources */,
-				A474481C1DE6906500BB4011 /* ENG-43.mp3 in Resources */,
-				A4D0D2481ED8180500E29C13 /* SPA-29.mp3 in Resources */,
 				A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */,
 				A414247F1D02C3F60028933E /* LOGO_r1_c1.png in Resources */,
-				A47448141DE6906500BB4011 /* ENG-35.mp3 in Resources */,
 				A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */,
 				A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */,
-				A4D0D2571ED8180500E29C13 /* SPA-44.mp3 in Resources */,
-				A4D0D2421ED8180500E29C13 /* SPA-23.mp3 in Resources */,
-				A4D0D2411ED8180500E29C13 /* SPA-22.mp3 in Resources */,
-				A47447F91DE6906500BB4011 /* ENG-08.mp3 in Resources */,
-				A4E16ABC1E7E724E00902464 /* STIMULI_1_SPA.png in Resources */,
-				A4D0D2451ED8180500E29C13 /* SPA-26.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1172,6 +737,7 @@
 			children = (
 				A48B4DC91CF9E7C700878928 /* Base */,
 				A4AE36E61DFC9EA600727DFD /* es */,
+				A4A30B551FA25C9D00F07AA5 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

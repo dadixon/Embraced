@@ -28,9 +28,19 @@ class LoadingScreenViewController: UIViewController {
     
     let group = DispatchGroup()
     
-    var examples = [[String]]()
-    var tasks = [[String]]()
-    var practices = [[String]]()
+    var pitchExamples = [[String]]()
+    var pitchTasks = [[String]]()
+    var pitchPractices = [[String]]()
+    var digitalSpanForward = [String]()
+    var digitalSpanForwardPractice = String()
+    var digitalSpanBackward = [String]()
+    var digitalSpanBackwardPractice = String()
+    var stroopVideos = [String]()
+    var stroopTasks = [String]()
+    var namingTaskPracitce = [String]()
+    var namingTaskTasks = [String]()
+    var wordListTasks = [String]()
+    var wordListRecognitions = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,67 +75,106 @@ class LoadingScreenViewController: UIViewController {
                 }
                 
                 var pitch: [String:Any] = [:]
+                var digitSpan: [String:Any] = [:]
+                var stroop: [String:Any] = [:]
+                var namingTask: [String:Any] = [:]
+                var wordList: [String:Any] = [:]
                 
                 for x in 0..<json.count {
                     if json[x]["pitch"] != nil {
                         pitch = json[x]["pitch"]! as! [String: Any]
+                    }
+                    if json[x]["digitSpan"] != nil {
+                        digitSpan = json[x]["digitSpan"]! as! [String: Any]
+                    }
+                    if json[x]["stroop"] != nil {
+                        stroop = json[x]["stroop"]! as! [String: Any]
+                    }
+                    if json[x]["namingTask"] != nil {
+                        namingTask = json[x]["namingTask"]! as! [String: Any]
+                    }
+                    if json[x]["wordlist"] != nil {
+                        wordList = json[x]["wordlist"]! as! [String: Any]
                     }
                 }
                 
                 let pitchExamples = pitch["examples"]! as! [[String]]
                 let pitchTasks = pitch["tasks"]! as! [[String]]
                 let pitchPractices = pitch["practice"]! as! [[String]]
+                
+                let forwardAudioPaths = digitSpan["forward"]! as! [String: Any]
+                let forwardTasks = forwardAudioPaths["tasks"] as! [String]
+                let forwardPractice = forwardAudioPaths["practice"] as! String
+                let backwardAudioPaths = digitSpan["backward"]! as! [String: Any]
+                let backwardTasks = backwardAudioPaths["tasks"] as! [String]
+                let backwardPractice = backwardAudioPaths["practice"] as! String
+                
+                let stroopVideos = stroop["videos"] as! [String]
+                let stroopTasks = stroop["tasks"] as! [String]
+                
+                let namingTaskPractice = namingTask["practice"] as! [String]
+                let namingTaskTasks = namingTask["task"] as! [String]
+                
+                let wordListTasks = wordList["tasks"] as! [String]
+                let wordListRecognitions = wordList["recognition"] as! [String]
 
                 self.total = 0
 
-                self.total += self.totalFromArray(pitchExamples)
-                self.total += self.totalFromArray(pitchPractices)
-                self.total += self.totalFromArray(pitchTasks)
-
-                print(self.total)
-
-                self.downloadMultiArray(pitchExamples, toArray: &self.examples)
-                self.downloadMultiArray(pitchPractices, toArray: &self.practices)
-                self.downloadMultiArray(pitchTasks, toArray: &self.tasks)
+                self.total += self.totalFromMulitArray(pitchExamples)
+                self.total += self.totalFromMulitArray(pitchPractices)
+                self.total += self.totalFromMulitArray(pitchTasks)
                 
-//                for x in 0..<pitchExamples.count {
-//                    var examplesString = [String]()
-//                    for y in 0..<pitchExamples[x].count {
-//                        let pathArray = pitchExamples[x][y].components(separatedBy: "/")
-//                        examplesString.append(pathArray[pathArray.count - 1])
-//                        self.group.enter()
-//                        self.downloadAudioFile(urlString: "http://www.embracedapi.ugr.es/public/\(self.language)\(pitchExamples[x][y])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
-//                    }
-//                    self.examples.append(examplesString)
-//                }
-//
-//                for x in 0..<pitchPractices.count {
-//                    var practicesString = [String]()
-//                    for y in 0..<pitchPractices[x].count {
-//                        let pathArray = pitchPractices[x][y].components(separatedBy: "/")
-//                        practicesString.append(pathArray[pathArray.count - 1])
-//                        self.group.enter()
-//                        self.downloadAudioFile(urlString: "http://www.embracedapi.ugr.es/public/\(self.language)\(pitchPractices[x][y])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
-//                    }
-//                    self.practices.append(practicesString)
-//                }
-//
-//                for x in 0..<pitchTasks.count {
-//                    var tasksString = [String]()
-//                    for y in 0..<pitchTasks[x].count {
-//                        let pathArray = pitchTasks[x][y].components(separatedBy: "/")
-//                        tasksString.append(pathArray[pathArray.count - 1])
-//                        self.group.enter()
-//                        self.downloadAudioFile(urlString: "http://www.embracedapi.ugr.es/public/\(self.language)\(pitchTasks[x][y])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
-//                    }
-//                    self.tasks.append(tasksString)
-//                }
+                self.total += forwardTasks.count
+                self.total += 1 // forwardPractice
+                self.total += backwardTasks.count
+                self.total += 1 // backwardPractice
+                
+                self.total += stroopVideos.count
+                self.total += stroopTasks.count
+                
+                self.total += namingTaskPractice.count
+                self.total += namingTaskTasks.count
+                
+                self.total += wordListRecognitions.count
+                self.total += wordListTasks.count
+
+                self.downloadMultiArray(pitchExamples, toArray: &self.pitchExamples)
+                self.downloadMultiArray(pitchPractices, toArray: &self.pitchPractices)
+                self.downloadMultiArray(pitchTasks, toArray: &self.pitchTasks)
+
+                self.digitalSpanForwardPractice = self.downloadFile(forwardPractice)
+                self.downloadArray(forwardTasks, toArray: &self.digitalSpanForward)
+                self.digitalSpanBackwardPractice = self.downloadFile(backwardPractice)
+                self.downloadArray(backwardTasks, toArray: &self.digitalSpanBackward)
+                
+                self.downloadArray(stroopVideos, toArray: &self.stroopVideos)
+                self.downloadArray(stroopTasks, toArray: &self.stroopTasks)
+                
+                self.downloadArray(namingTaskPractice, toArray: &self.namingTaskPracitce)
+                self.downloadArray(namingTaskTasks, toArray: &self.namingTaskTasks)
+                
+                self.downloadArray(wordListTasks, toArray: &self.wordListTasks)
+                self.downloadArray(wordListRecognitions, toArray: &self.wordListRecognitions)
 
                 self.group.notify(queue: .main) {
                     print("All requests are done")
-                    DataManager.sharedInstance.pitchExamples = self.examples
-                    DataManager.sharedInstance.pitchPractices = self.practices
-                    DataManager.sharedInstance.pitchTasks = self.tasks
+                    DataManager.sharedInstance.pitchExamples = self.pitchExamples
+                    DataManager.sharedInstance.pitchPractices = self.pitchPractices
+                    DataManager.sharedInstance.pitchTasks = self.pitchTasks
+                    
+                    DataManager.sharedInstance.digitalSpanForwardPractice = self.digitalSpanForwardPractice
+                    DataManager.sharedInstance.digitalSpanForward = self.digitalSpanForward
+                    DataManager.sharedInstance.digitalSpanBackwardPractice = self.digitalSpanBackwardPractice
+                    DataManager.sharedInstance.digitalSpanBackward = self.digitalSpanBackward
+                    
+                    DataManager.sharedInstance.stroopVideos = self.stroopVideos
+                    DataManager.sharedInstance.stroopTasks = self.stroopTasks
+                    
+                    DataManager.sharedInstance.namingTaskPractice = self.namingTaskPracitce
+                    DataManager.sharedInstance.namingTaskTask = self.namingTaskTasks
+                    
+                    DataManager.sharedInstance.wordListTasks = self.wordListTasks
+                    DataManager.sharedInstance.wordListRecognitions = self.wordListRecognitions
 
                     self.startTest()
                 }
@@ -154,7 +203,7 @@ class LoadingScreenViewController: UIViewController {
         }
     }
     
-    private func totalFromArray(_ array: [[Any]]) -> Int {
+    private func totalFromMulitArray(_ array: [[Any]]) -> Int {
         var total = 0
         
         for x in 0..<array.count {
@@ -164,6 +213,24 @@ class LoadingScreenViewController: UIViewController {
         return total
     }
     
+    private func downloadFile(_ path: String) -> String {
+        var pathArray = path.components(separatedBy: "/")
+        let name = pathArray[pathArray.count - 1]
+        
+        self.group.enter()
+        self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)/\(path)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: name)
+        return name
+    }
+    private func downloadArray(_ array: [String], toArray: inout [String]) {
+        for x in 0..<array.count {
+            let pathArray = array[x].components(separatedBy: "/")
+            let path = pathArray[pathArray.count - 1]
+            
+            self.group.enter()
+            self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(array[x])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: path)
+            toArray.append(path)
+        }
+    }
     private func downloadMultiArray(_ array: [[String]], toArray: inout [[String]]) {
         for x in 0..<array.count {
             var examplesString = [String]()
@@ -171,7 +238,7 @@ class LoadingScreenViewController: UIViewController {
                 let pathArray = array[x][y].components(separatedBy: "/")
                 examplesString.append(pathArray[pathArray.count - 1])
                 self.group.enter()
-                self.downloadAudioFile(urlString: "http://www.embracedapi.ugr.es/public/\(self.language)\(array[x][y])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
+                self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(array[x][y])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
             }
             toArray.append(examplesString)
         }
@@ -185,8 +252,8 @@ class LoadingScreenViewController: UIViewController {
         navigationArray?.remove(at: 0)
         
         let vc: UIViewController!
-        
-        var tests = ["Questionnaire", "MoCA/MMSE", "Rey Complex Figure 1", "Clock Drawing Test", "Rey Complex Figure 2", "Trail Making", "Pitch", "Digit Span", "Rey Complex Figure 3", "Rey Complex Figure 4", "Matrices", "Continuous Performance Test", "Motor Tasks", "Word List 1", "Stroop Test", "Cancellation Test", "Word List 2", "Naming Task", "Comprehension Task", "Eye Test"]
+
+        var tests = ["Questionnaire", "Orientation Task", "Complex Figure 1", "Clock Drawing Test", "Complex Figure 2", "Trail Making Test", "Melodies Recognition", "Digit Span", "Complex Figure 3", "Complex Figure 4", "Matrices", "Continuous Performance Test", "Motor Tasks", "Word List 1", "Color-Word Stroop Test", "Cancellation Test", "Word List 2", "Naming Test" ,"Comprehension Task", "Eyes Test"]
         if let test = participant.array(forKey: "Tests") {
             tests = test as! [String]
         }
@@ -196,23 +263,23 @@ class LoadingScreenViewController: UIViewController {
         switch tests[0] {
         case "Questionnaire":
             vc = QuestionnaireViewController()
-        case "MoCA/MMSE":
+        case "Orientation Task":
             vc = MOCAMMSETestViewController()
-        case "Rey Complex Figure 1":
+        case "Complex Figure 1":
             vc = ReyComplexFigureViewController()
         case "Clock Drawing Test":
             vc = ClockDrawingTestViewController()
-        case "Rey Complex Figure 2":
+        case "Complex Figure 2":
             vc = ReyComplexFigure2ViewController()
-        case "Trail Making":
+        case "Trail Making Test":
             vc = TrailMakingTestViewController()
-        case "Pitch":
+        case "Melodies Recognition":
             vc = PitchViewController()
         case "Digit Span":
             vc = DigitalSpanViewController()
-        case "Rey Complex Figure 3":
+        case "Complex Figure 3":
             vc = ReyComplexFigure3ViewController()
-        case "Rey Complex Figure 4":
+        case "Complex Figure 4":
             vc = ReyFigureComplex4ViewController()
         case "Matrices":
             vc = MatricesViewController()
@@ -222,13 +289,13 @@ class LoadingScreenViewController: UIViewController {
             vc = PegboardViewController()
         case "Word List 1":
             vc = WordListViewController()
-        case "Stroop Test":
+        case "Color-Word Stroop Test":
             vc = StroopViewController()
         case "Cancellation Test":
             vc = CancellationTestViewController()
         case "Word List 2":
             vc = WordList2ViewController()
-        case "Naming Task":
+        case "Naming Test":
             vc = NamingTaskViewController()
         case "Comprehension Task":
             vc = ComprehensionViewController()

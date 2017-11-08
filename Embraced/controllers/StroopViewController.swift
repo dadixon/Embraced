@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import AVKit
+import Alamofire
 
 class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlayerViewControllerDelegate {
 
@@ -109,6 +110,11 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     
     var player = AVPlayer()
     
+    let APIUrl = "http://www.embracedapi.ugr.es/"
+    let userDefaults = UserDefaults.standard
+    var token: String = ""
+    var id: String = ""
+    var headers: HTTPHeaders = [:]
     
     // MARK: - Private
     
@@ -130,23 +136,17 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         super.viewDidLoad()
         
         language = participant.string(forKey: "language")!
-        
         showOrientationAlert(orientation: "landscape")
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(StroopViewController.next(_:)))
-        
         // Insert row in database
-        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
-            (data, response, error) in
-            // this is where the completion handler code goes
-            if let response = response {
-                print(response)
-            }
-            if let error = error {
-                print(error)
-            }
+        id = participant.string(forKey: "pid")!
+        token = userDefaults.string(forKey: "token")!
+        headers = [
+            "x-access-token": token
+        ]
+        
+        Alamofire.request(APIUrl + "api/stroop/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
         }
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "stroop", data: ["id": participant.string(forKey: "pid")! as AnyObject], callback: myCompletionHandler)
         
         introView.translatesAutoresizingMaskIntoConstraints = false
         instructionsView.translatesAutoresizingMaskIntoConstraints = false
@@ -191,55 +191,8 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         }
         
         // Grab images from the api
-//        images = DataManager.sharedInstance.stroopImages
-//        videos = DataManager.sharedInstance.stroopVideos
-        
-        let todoEndpoint: String = "http://www.embracedapi.ugr.es/stimuli/stroop"
-        
-        guard let url = URL(string: todoEndpoint) else {
-            return
-        }
-        
-        let urlRequest = URLRequest(url: url)
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-            (data, response, error) -> Void in
-            
-            let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            guard error == nil else {
-                return
-            }
-            // make sure we got data
-            guard let responseData = data else {
-                return
-            }
-            
-            if (statusCode == 200) {
-                
-                do {
-                    guard let todo = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
-                        return
-                    }
-                    
-                    if self.language == "es" {
-                        self.images = todo["imagesSpa"] as! Array<String>
-                        self.videos = todo["videosSpa"] as! Array<String>
-                    } else {
-                        self.images = todo["imagesEng"] as! Array<String>
-                        self.videos = todo["videosEng"] as! Array<String>
-                    }
-                    
-                } catch {
-                    return
-                }
-            }
-        })
-        
-        task.resume()
-        
+        self.images = DataManager.sharedInstance.stroopTasks
+        self.videos = DataManager.sharedInstance.stroopVideos
 
         practiceText.text = "stroop_practice_instruction".localized(lang: language)
         
@@ -262,10 +215,6 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         doneBtn2.isHidden = true
         doneBtn3.isHidden = true
         doneBtn4.isHidden = true
-        
-        for index in 0...3 {
-            reactionTimes.insert(-1, at: index)
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -274,7 +223,9 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     }
     
     func loadImageFromUrl(_ filename: String, view: UIImageView){
-        view.image = UIImage(named: filename)
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentsURL.appendingPathComponent(filename)
+        view.image = UIImage(contentsOfFile: fileURL.path)
     }
     
     func startRecording(_ button: UIButton, fileName: String) {
@@ -332,15 +283,13 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     
     func createPostObject(index: Int, reactionTime: Int) -> [String: AnyObject] {
         var jsonObject = [String: AnyObject]()
-        
-        let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("stroop\(index).m4a"))
-        let dataStr = soundData?.base64EncodedString(options: [])
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentsURL.appendingPathComponent("stroop\(index).m4a")
             
         jsonObject = [
-            "id": participant.string(forKey: "pid")! as AnyObject,
             "index": index as AnyObject,
             "reaction": reactionTime as AnyObject,
-            "soundByte": dataStr as AnyObject
+            "audio": fileURL as AnyObject
         ]
 
         
@@ -348,30 +297,28 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     }
     
     func postToAPI(object: [String: AnyObject]) {
-        // Completion Handler
-        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
-            (data, response, error) in
-            // this is where the completion handler code goes
-            if let response = response {
-                print(response)
-                // Clear audios
-                for i in 1...self.position {
-                    self.deleteFile("stroop\(i).m4a")
-                }
-                print("Deleted temp file")
-                print("Done")
-//                DispatchQueue.main.async(execute: {
-//                    self.hideOverlayView()
-//                    self.next(self)
-//                })
-                
-            }
-            if let error = error {
-                print(error)
-            }
-        }
+        let index = object["index"] as! Int
+        let reaction = object["reaction"] as! Int
+        let fileURL = object["audio"] as! URL
         
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "stroop", data: object, callback: myCompletionHandler)
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(fileURL, withName: "audio")
+                multipartFormData.append(String(index).data(using: String.Encoding.utf8)!, withName: "index")
+                multipartFormData.append(String(reaction).data(using: String.Encoding.utf8)!, withName: "reaction")
+        }, usingThreshold: UInt64.init(),
+           to: APIUrl + "api/stroop/uploadfile/" + id,
+           method: .post,
+           headers: headers,
+           encodingCompletion: { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                upload.responseJSON { response in
+                    debugPrint(response)
+                }
+            case .failure(let encodingError):
+                print(encodingError)
+            }})
     }
     
     
@@ -590,10 +537,11 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     }
     
     func playVideoFile(filename: String, index: Int) {
-        let path = Bundle.main.path(forResource: filename, ofType: nil)
-        let url = URL(fileURLWithPath: path!)
+//        let path = Bundle.main.path(forResource: filename, ofType: nil)
+        let pathResource = getDocumentsDirectory().appendingPathComponent(filename)
+//        let url = URL(fileURLWithPath: pathResource!)
         
-        player = AVPlayer(url: url as URL)
+        player = AVPlayer(url: pathResource)
         
         playerController.delegate = self
         playerController.player = player

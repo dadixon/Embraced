@@ -133,23 +133,23 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
             switch testsArray[position] {
             case "Questionnaire":
                 vc = QuestionnaireViewController()
-            case "MoCA/MMSE":
+            case "Orientation Task":
                 vc = MOCAMMSETestViewController()
-            case "Rey Complex Figure 1":
+            case "Complex Figure 1":
                 vc = ReyComplexFigureViewController()
             case "Clock Drawing Test":
                 vc = ClockDrawingTestViewController()
-            case "Rey Complex Figure 2":
+            case "Complex Figure 2":
                 vc = ReyComplexFigure2ViewController()
-            case "Trail Making":
+            case "Trail Making Test":
                 vc = TrailMakingTestViewController()
-            case "Pitch":
+            case "Melodies Recognition":
                 vc = PitchViewController()
             case "Digit Span":
                 vc = DigitalSpanViewController()
-            case "Rey Complex Figure 3":
+            case "Complex Figure 3":
                 vc = ReyComplexFigure3ViewController()
-            case "Rey Complex Figure 4":
+            case "Complex Figure 4":
                 vc = ReyFigureComplex4ViewController()
             case "Matrices":
                 vc = MatricesViewController()
@@ -159,13 +159,13 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
                 vc = PegboardViewController()
             case "Word List 1":
                 vc = WordListViewController()
-            case "Stroop Test":
+            case "Color-Word Stroop Test":
                 vc = StroopViewController()
             case "Cancellation Test":
                 vc = CancellationTestViewController()
             case "Word List 2":
                 vc = WordList2ViewController()
-            case "Naming Task":
+            case "Naming Test":
                 vc = NamingTaskViewController()
             case "Comprehension Task":
                 vc = ComprehensionViewController()
@@ -228,8 +228,9 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    func play(_ filename:String) {        
+    func play(_ filename:String) {
         let pathResource = getDocumentsDirectory().appendingPathComponent(filename)
+            
         do {
             soundPlayer = try AVAudioPlayer(contentsOf: pathResource)
             if(soundPlayer?.prepareToPlay())!{
@@ -247,6 +248,21 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         }catch{
             print("Sound file could not be found")
         }
+    }
+    
+    func fileExist(_ filename: String) -> Bool {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let url = NSURL(fileURLWithPath: path)
+        let filePath = url.appendingPathComponent(filename)?.path
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: filePath!) {
+            print("FILE \(filename) AVAILABLE")
+            return true
+        } else {
+            print("FILE \(filename) NOT AVAILABLE")
+        }
+        
+        return false
     }
     
     func deleteFile(_ fileNameToDelete:String) {

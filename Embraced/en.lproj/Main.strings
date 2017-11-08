@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "Sign In"; ObjectID = "M8a-Zj-8Bx"; */
+"M8a-Zj-8Bx.normalTitle" = "Sign In";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "kAN-f3-GMC"; */
+"kAN-f3-GMC.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "rsY-j8-eFZ"; */
+"rsY-j8-eFZ.placeholder" = "Username";

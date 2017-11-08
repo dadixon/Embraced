@@ -15,12 +15,19 @@ class UserViewController: UIViewController {
     
     let userDefaults = UserDefaults.standard
     let APIUrl = "http://www.embracedapi.ugr.es/"
+    var language = String()
+    var tests = [String]()
     
     override func viewWillAppear(_ animated: Bool) {
         if let language = userDefaults.string(forKey: "TesterLanguage") {
             startBtn.setTitle("Start_Test".localized(lang: language), for: .normal)
+            self.language = language
         } else {
             startBtn.setTitle("Start Test", for: .normal)
+        }
+        
+        if userDefaults.array(forKey: "Tests") != nil {
+            self.tests = userDefaults.array(forKey: "Tests") as! [String]
         }
     }
     
@@ -51,17 +58,29 @@ class UserViewController: UIViewController {
                     return
                 }
                 self.userDefaults.setValue(json["_id"]!, forKey: "pid")
-                let vc: UIViewController!
-                let tests = self.userDefaults.array(forKey: "Tests")!
                 
-                if tests.contains(where: { String($0 as! String) == "MoCA/MMSE"}) {
-                    vc = UserInputViewController()
-                } else {
-                    vc = StartViewController()
+                let alertController = UIAlertController(title: "Participant_ID".localized(lang: self.language), message: self.userDefaults.string(forKey: "pid"), preferredStyle: UIAlertControllerStyle.alert)
+                
+                self.present(alertController, animated: true, completion: nil)
+                
+                let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+                    alertController.dismiss(animated: true, completion: nil)
+                    let vc: UIViewController!
+                    
+                    
+                    if self.tests.contains(where: { String($0) == "Orientation Task"}) {
+                        vc = UserInputViewController()
+                    } else {
+                        vc = StartViewController()
+                    }
+                    
+                    let navController = UINavigationController(rootViewController: vc)
+                    self.present(navController, animated: true, completion: nil)
                 }
                 
-                let navController = UINavigationController(rootViewController: vc)
-                self.present(navController, animated: true, completion: nil)
+                alertController.addAction(dismissAction)
+                
+                
                 
             }
         }

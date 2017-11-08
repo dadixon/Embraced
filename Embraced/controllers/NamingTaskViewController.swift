@@ -93,104 +93,11 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         ]
         
         // Fetch images
-        Alamofire.request(APIUrl + "api/naming_task/stimuli/" + language, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            debugPrint(response)
-            
-            let statusCode = response.response?.statusCode
-            
-            if statusCode == 200 {
-                guard let json = response.result.value as? [String: Any] else {
-                    return
-                }
-                let practicePaths = json["practice"]! as! [String]
-                let taskPaths = json["trial"]! as! [String]
-                
-                for x in 0..<practicePaths.count {
-                    let pathArray = practicePaths[x].components(separatedBy: "/")
-                    let path = pathArray[pathArray.count - 1]
-                    
-                    self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(practicePaths[x])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
-                    
-                    self.practice.append(path)
-                }
-                
-                for x in 0..<taskPaths.count {
-                    let pathArray = taskPaths[x].components(separatedBy: "/")
-                    let path = pathArray[pathArray.count - 1]
-                    
-                    self.downloadAudioFile(urlString: "\(self.APIUrl)public/\(self.language)\(taskPaths[x])".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, name: pathArray[pathArray.count - 1])
-                    
-                    self.tasks.append(path)
-                }
-            }
-        }
-        
-        
-        
-        
-        
-//        var stimuliURIs = [String: Any]()
-//
-//        let todoEndpoint: String = "http://www.embracedapi.ugr.es/stimuli/namingtask"
-//
-//        guard let url = URL(string: todoEndpoint) else {
-//            print("Error: cannot create URL")
-//            return
-//        }
-//
-//        let urlRequest = URLRequest(url: url)
-//        let config = URLSessionConfiguration.default
-//        let session = URLSession(configuration: config)
-//        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-//            (data, response, error) -> Void in
-//
-//            let httpResponse = response as! HTTPURLResponse
-//            let statusCode = httpResponse.statusCode
-//
-//            guard error == nil else {
-//                print("error calling GET on stumiliNames")
-//                print(error!)
-//                return
-//            }
-//            // make sure we got data
-//            guard let responseData = data else {
-//                print("Error: did not receive data")
-//                return
-//            }
-//
-//            if (statusCode == 200) {
-//                print("Everyone is fine, file downloaded successfully.")
-//
-//                do {
-//                    guard let todo = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
-//                        print("error trying to convert data to JSON")
-//                        return
-//                    }
-//
-//                    stimuliURIs = todo
-//
-//                    self.practice = stimuliURIs["practice"] as! Array<String>
-//                    self.tasks = stimuliURIs["task"] as! Array<String>
-//
-//
-//                } catch {
-//                    print("Error with Json: \(error)")
-//                    return
-//                }
-//            }
-//        })
-//
-//        task.resume()
-        
-        // Insert row in database
-        id = participant.string(forKey: "pid")!
-        token = userDefaults.string(forKey: "token")!
-        headers = [
-            "x-access-token": token
-        ]
-        
         Alamofire.request(APIUrl + "api/naming_task/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
         }
+        
+        self.practice = DataManager.sharedInstance.namingTaskPractice
+        self.tasks = DataManager.sharedInstance.namingTaskTask
         
         initialView.translatesAutoresizingMaskIntoConstraints = false
         trialView.translatesAutoresizingMaskIntoConstraints = false
@@ -299,7 +206,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         print("\(functionName): \(logMessage)")
     }
     
-    @objc func updateTime() {
+    func updateTime() {
         
         let currentTime = Date.timeIntervalSinceReferenceDate
         
@@ -341,7 +248,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     func startTimer() {
         if !timer.isValid {
             
-            let aSelector : Selector = #selector(NamingTaskViewController.updateTime)
+            let aSelector : Selector = #selector(updateTime)
             
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
             startTime = Date.timeIntervalSinceReferenceDate
@@ -371,7 +278,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
                 multipartFormData.append(fileURL, withName: "audio")
                 multipartFormData.append(name.data(using: String.Encoding.utf8)!, withName: "name")
         }, usingThreshold: UInt64.init(),
-           to: APIUrl + "api/digit_span/uploadfile/" + id,
+           to: APIUrl + "api/naming_task/uploadfile/" + id,
            method: .post,
            headers: headers,
            encodingCompletion: { encodingResult in
@@ -484,14 +391,14 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     
     func createPostObject(index: Int) -> [String: AnyObject] {
         var jsonObject = [String: AnyObject]()
-        
-        let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("namingTask\(index-1).m4a"))
-        let dataStr = soundData?.base64EncodedString(options: [])
+        let name = "stimuli\(index)"
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentsURL.appendingPathComponent("namingTask\(index-1).m4a")
         
         // Gather data for post
         jsonObject = [
-            "index": index as AnyObject,
-            "soundByte": dataStr as AnyObject
+            "name": name as AnyObject,
+            "audio": fileURL as AnyObject
         ]
         
         return jsonObject

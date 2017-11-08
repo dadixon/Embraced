@@ -19,8 +19,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var deselectAllBtn: UIButton!
     @IBOutlet weak var chooseLanguage: UILabel!
     
-    
-    var tests = ["Questionnaire", "MoCA/MMSE", "Rey Complex Figure 1", "Clock Drawing Test", "Rey Complex Figure 2", "Trail Making", "Pitch", "Digit Span", "Rey Complex Figure 3", "Rey Complex Figure 4", "Matrices", "Continuous Performance Test", "Motor Tasks", "Word List 1", "Stroop Test", "Cancellation Test", "Word List 2", "Naming Task", "Comprehension Task", "Eye Test"]
+    var tests = ["Questionnaire", "Orientation Task", "Complex Figure 1", "Clock Drawing Test", "Complex Figure 2", "Trail Making Test", "Melodies Recognition", "Digit Span", "Complex Figure 3", "Complex Figure 4", "Matrices", "Continuous Performance Test", "Motor Tasks", "Word List 1", "Color-Word Stroop Test", "Cancellation Test", "Word List 2", "Naming Test" ,"Comprehension Task", "Eyes Test"]
     var defaultTests = [String]()
     var confirm = [String]()
     
@@ -129,13 +128,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         if tableView == self.testListTable {
             cell = tableView.dequeueReusableCell(withIdentifier: "cellTest", for: indexPath)
             
-            cell.textLabel?.text = defaultTests[indexPath.row]
+            cell.textLabel?.text = defaultTests[indexPath.row].uppercased()
         }
         
         if tableView == self.confirmListTable {
             cell = tableView.dequeueReusableCell(withIdentifier: "cellConfirm", for: indexPath)
             
-            cell.textLabel?.text = confirm[indexPath.row]
+            cell.textLabel?.text = confirm[indexPath.row].uppercased()
         }
         
         return cell

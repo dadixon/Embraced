@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import AVKit
+import Alamofire
 
 class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
 
@@ -33,7 +34,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     var recordingSession: AVAudioSession!
     var soundRecorder: AVAudioRecorder!
     var fileName : String = "wordlistRecall.m4a"
-    var tasks = Array<String>()
+    var tasks = [String]()
     var startTime = TimeInterval()
     var timer = Timer()
     var count = 3
@@ -45,6 +46,12 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     var myString2 = ""
     var myMutableString = NSMutableAttributedString()
     var myMutableString2 = NSMutableAttributedString()
+    
+    let APIUrl = "http://www.embracedapi.ugr.es/"
+    let userDefaults = UserDefaults.standard
+    var token: String = ""
+    var id: String = ""
+    var headers: HTTPHeaders = [:]
     
     // MARK: - Private
     
@@ -69,20 +76,15 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         language = participant.string(forKey: "language")!
         showOrientationAlert(orientation: "landscape")
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(WordListViewController.next(_:)))
-        
         // Insert row in database
-        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
-            (data, response, error) in
-            // this is where the completion handler code goes
-            if let response = response {
-                print(response)
-            }
-            if let error = error {
-                print(error)
-            }
+        id = participant.string(forKey: "pid")!
+        token = userDefaults.string(forKey: "token")!
+        headers = [
+            "x-access-token": token
+        ]
+        
+        Alamofire.request(APIUrl + "api/wordlist/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
         }
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "wordlist2", data: ["id": participant.string(forKey: "pid")! as AnyObject], callback: myCompletionHandler)
         
         practiceView.translatesAutoresizingMaskIntoConstraints = false
         recognitionView.translatesAutoresizingMaskIntoConstraints = false
@@ -117,65 +119,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         
         
         // Fetch audios
-//        tasks = DataManager.sharedInstance.wordListTasks
-        let todoEndpoint: String = "http://www.embracedapi.ugr.es/stimuli/wordlist2"
-        
-        guard let url = URL(string: todoEndpoint) else {
-            //            print("Error: cannot create URL")
-            return
-        }
-        
-        let urlRequest = URLRequest(url: url)
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        let task = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
-            (data, response, error) -> Void in
-            
-            let httpResponse = response as! HTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            guard error == nil else {
-                //                print("error calling GET on stumiliNames")
-                //                print(error!)
-                return
-            }
-            // make sure we got data
-            guard let responseData = data else {
-                //                print("Error: did not receive data")
-                return
-            }
-            
-            if (statusCode == 200) {
-                //                print("Everyone is fine, file downloaded successfully.")
-                
-                do {
-                    guard let todo = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments) as? [String: Any] else {
-                        //                        print("error trying to convert data to JSON")
-                        return
-                    }
-                    var language = "en"
-                    var trial = ""
-                    
-                    if self.participant.string(forKey: "language") != nil {
-                        language = self.participant.string(forKey: "language")!
-                    }
-                    
-                    if language == "en" {
-                        trial = "trials"
-                    } else if language == "es" {
-                        trial = "trialsSp"
-                    }
-                    
-                    self.tasks = todo[trial]! as! Array<String>
-                    
-                } catch {
-                    //                    print("Error with Json: \(error)")
-                    return
-                }
-            }
-        })
-        
-        task.resume()
+        self.tasks = DataManager.sharedInstance.wordListRecognitions
 
         instructionText.text = "wordlist2_instruction".localized(lang: participant.string(forKey: "language")!)
         instructionText2.text = "wordlist2_instruction2".localized(lang: participant.string(forKey: "language")!)
@@ -234,53 +178,58 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     func createPostObject() -> [String: AnyObject] {
-        let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("wordlistRecall.m4a"))
-        let dataStr = soundData?.base64EncodedString(options: [])
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentsURL.appendingPathComponent("wordlistRecall.m4a")
         var jsonObject = [String: AnyObject]()
         
         // Gather data for post
         jsonObject = [
-            "soundByte": dataStr as AnyObject
+            "index": "8" as AnyObject,
+            "audio": fileURL as AnyObject
         ]
         
         return jsonObject
     }
     
-    func createPostObject2(index: Int, answer: String) -> [String: AnyObject] {
+    func createPostObject2(index: Int, answer: Bool) -> [String: AnyObject] {
         var jsonObject = [String: AnyObject]()
         
         // Gather data for post
         jsonObject = [
-            "index": index as AnyObject,
-            "answers": answer as AnyObject,
+            "name": "question\(index)" as AnyObject,
+            "answer": answer as AnyObject,
         ]
         
         return jsonObject
     }
     
-    func postToAPI(object: [String: AnyObject]) {
-        // Completion Handler
-        let myCompletionHandler: (Data?, URLResponse?, Error?) -> Void = {
-            (data, response, error) in
-            // this is where the completion handler code goes
-            if let response = response {
-                print(response)
-                // Clear audios
-                self.deleteFile("wordlistRecall.m4a")
-                print("Deleted temp file")
-                print("Done")
-//                DispatchQueue.main.async(execute: {
-//                    self.hideOverlayView()
-//                    self.next(self)
-//                })
-                
-            }
-            if let error = error {
-                print(error)
+    func postToAPI(object: [String: AnyObject], audio: Bool) {
+        if audio {
+            let index = object["index"] as! String
+            let fileURL = object["audio"] as! URL
+            
+            Alamofire.upload(
+                multipartFormData: { multipartFormData in
+                    multipartFormData.append(fileURL, withName: "audio")
+                    multipartFormData.append(index.data(using: String.Encoding.utf8)!, withName: "index")
+            }, usingThreshold: UInt64.init(),
+               to: APIUrl + "api/wordlist/uploadfile/" + id,
+               method: .post,
+               headers: headers,
+               encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        debugPrint(response)
+                    }
+                case .failure(let encodingError):
+                    print(encodingError)
+                }})
+        } else {
+            Alamofire.request(APIUrl + "api/wordlist/answers/" + id, method: .post, parameters: object, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+                            debugPrint(response)
             }
         }
-        
-        APIWrapper.post2(id: participant.string(forKey: "pid")!, test: "wordlist2", data: object, callback: myCompletionHandler)
     }
     
     
@@ -299,7 +248,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func moveToRecogniton(_ sender: AnyObject) {
-        postToAPI(object: createPostObject())
+        postToAPI(object: createPostObject(), audio: true)
         setSubview(practiceView, next: recognitionView)
         listenBtn.isEnabled = true
         firstListLabel.isHidden = true
@@ -337,20 +286,17 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func nextQuestion(_ sender: UISegmentedControl) {
-        var a: String
+        var a: Bool = false
         
-        switch answer {
-            case 0: a = "Yes"
-            case 1: a = "No"
-            default: a = ""
+        if answer == 0 {
+            a = true
         }
-        
         
         wordNext2Btn.isHidden = true
         
         position += 1
         
-        postToAPI(object: createPostObject2(index: position, answer: a))
+        postToAPI(object: createPostObject2(index: position, answer: a), audio: false)
         
         if position == tasks.count {
             setSubview(recognitionView, next: completeView)

@@ -26,12 +26,12 @@ class DataManager {
     var digitalSpanForwardPractice = String()
     var digitalSpanBackward = [String]()
     var digitalSpanBackwardPractice = String()
-    var wordListTrials = Array<String>()
-    var wordListTasks = Array<String>()
-    var stroopImages = Array<String>()
-    var stroopVideos = Array<String>()
-    var namingTaskPractice = Array<String>()
-    var namingTaskTask = Array<String>()
+    var wordListRecognitions = [String]()
+    var wordListTasks = [String]()
+    var stroopTasks = [String]()
+    var stroopVideos = [String]()
+    var namingTaskPractice = [String]()
+    var namingTaskTask = [String]()
     
     //MARK: Methods
     
@@ -92,11 +92,11 @@ class DataManager {
                         self.digitalSpanBackward = self.digitalSpanStimuli["backward"] as! Array<String>
                         
                         // Word List
-                        self.wordListTrials = self.wordlistStimuli["trials"] as! Array<String>
+                        self.wordListRecognitions = self.wordlistStimuli["trials"] as! Array<String>
                         self.wordListTasks = self.wordlistStimuli["tasks"] as! Array<String>
                         
                         // Stroop
-                        self.stroopImages = self.stroopStimuli["images"] as! Array<String>
+                        self.stroopTasks = self.stroopStimuli["images"] as! Array<String>
                         self.stroopVideos = self.stroopStimuli["videos"] as! Array<String>
                         
                         // Naming Task
