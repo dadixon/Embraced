@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import AVKit
+import Alamofire
 
 class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlayerViewControllerDelegate {
 
@@ -17,35 +18,70 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     @IBOutlet var introView: UIView!
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
+    @IBOutlet weak var practiceLabel: UILabel!
+    @IBOutlet weak var practiceInstruction1: UILabel!
+    @IBOutlet weak var practiceDoneBtn: NavigationButton!
     
     @IBOutlet var instructionsView: UIView!
+    @IBOutlet weak var practiceInstruction2: UILabel!
+    @IBOutlet weak var stroopNextBtn: NavigationButton!
     
     @IBOutlet var preTask1View: UIView!
     @IBOutlet var pTask1View: UIView!
     @IBOutlet var task1View: UIView!
     @IBOutlet weak var task1ImageView: UIImageView!
+    @IBOutlet weak var preTaskInstruction: UILabel!
+    @IBOutlet weak var previewBtn: NavigationButton!
+    @IBOutlet weak var nextBtn2: NavigationButton!
+    @IBOutlet weak var pTaskLabel: UILabel!
+    @IBOutlet weak var pTaskBtn: NavigationButton!
+    @IBOutlet weak var recordBtn1: UIButton!
+    @IBOutlet weak var doneBtn: NavigationButton!
     
     @IBOutlet var preTask2View: UIView!
     @IBOutlet var pTask2View: UIView!
     @IBOutlet var task2View: UIView!
     @IBOutlet weak var task2ImageView: UIImageView!
+    @IBOutlet weak var preTaskInstruction2: UILabel!
+    @IBOutlet weak var previewBtn2: NavigationButton!
+    @IBOutlet weak var nextBtn3: NavigationButton!
+    @IBOutlet weak var pTask2Label: UILabel!
+    @IBOutlet weak var pTaskBtn2: NavigationButton!
+    @IBOutlet weak var recordBtn2: UIButton!
+    @IBOutlet weak var doneBtn2: NavigationButton!
     
     @IBOutlet var preTask3View: UIView!
     @IBOutlet var pTask3View: UIView!
     @IBOutlet var task3View: UIView!
     @IBOutlet weak var task3ImageView: UIImageView!
+    @IBOutlet weak var preTaskInstruction3: UILabel!
+    @IBOutlet weak var previewBtn3: NavigationButton!
+    @IBOutlet weak var nextBtn4: NavigationButton!
+    @IBOutlet weak var pTask3Label: UILabel!
+    @IBOutlet weak var pTask3Btn: NavigationButton!
+    @IBOutlet weak var recordBtn3: UIButton!
+    @IBOutlet weak var doneBtn3: NavigationButton!
     
     @IBOutlet var preTask4View: UIView!
     @IBOutlet var pTask4View: UIView!
     @IBOutlet var task4View: UIView!
     @IBOutlet weak var task4ImageView: UIImageView!
     @IBOutlet weak var specialText: UILabel!
+    @IBOutlet weak var preTaskInstruction4: UILabel!
+    @IBOutlet weak var previewBtn4: NavigationButton!
+    @IBOutlet weak var nextBtn5: NavigationButton!
+    @IBOutlet weak var pTask4Label: UILabel!
+    @IBOutlet weak var pTask4Btn: NavigationButton!
+    @IBOutlet weak var recordBtn4: UIButton!
+    @IBOutlet weak var doneBtn4: NavigationButton!
     
     @IBOutlet weak var video1View: UIView!
     @IBOutlet weak var video2View: UIView!
     @IBOutlet weak var video3View: UIView!
     @IBOutlet weak var video4View: UIView!
-    @IBOutlet weak var completeView: UIView!
+    @IBOutlet var completeView: UIView!
+    @IBOutlet weak var completeLabel: UILabel!
+    @IBOutlet weak var completeBtn: UIButton!
 
     @IBOutlet weak var practiceText: UILabel!
     
@@ -53,15 +89,15 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     
     var soundRecorder: AVAudioRecorder!
     var playerController = AVPlayerViewController()
-    var fileName : String = "testAudioFile.m4a"
+    var fileName : String = "testStroopAudioFile.m4a"
     var stimuli = [String: Any]()
     var images = Array<String>()
     var videos = Array<String>()
+    var reactionTimes = [Int]()
     
     
-    
-    let myString: String = "For example, for the word: “blue”, which is written in red, you have to say “red”."
-    let myString2: String = "Please practice how to record your voice using the Start and Play buttons below. \nClick done when you are finished."
+    var myString = ""
+    var myString2 = ""
     var myMutableString = NSMutableAttributedString()
     var myMutableString2 = NSMutableAttributedString()
     
@@ -70,8 +106,15 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     var isRunning = false
     var reactionTime = ""
     var position = 0
+    var start: CFAbsoluteTime!
     
     var player = AVPlayer()
+    
+    let APIUrl = "http://www.embracedapi.ugr.es/"
+    let userDefaults = UserDefaults.standard
+    var token: String = ""
+    var id: String = ""
+    var headers: HTTPHeaders = [:]
     
     // MARK: - Private
     
@@ -89,13 +132,21 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     
     
     override func viewDidLoad() {
-        step = 15
+        step = AppDelegate.position
         super.viewDidLoad()
         
-        orientation = "landscape"
-        rotated()
+        language = participant.string(forKey: "language")!
+        showOrientationAlert(orientation: "landscape")
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(StroopViewController.next(_:)))
+        // Insert row in database
+        id = participant.string(forKey: "pid")!
+        token = userDefaults.string(forKey: "token")!
+        headers = [
+            "x-access-token": token
+        ]
+        
+        Alamofire.request(APIUrl + "api/stroop/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+        }
         
         introView.translatesAutoresizingMaskIntoConstraints = false
         instructionsView.translatesAutoresizingMaskIntoConstraints = false
@@ -140,16 +191,30 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         }
         
         // Grab images from the api
-        images = DataManager.sharedInstance.stroopImages
-        videos = DataManager.sharedInstance.stroopVideos
-        print(images)
+        self.images = DataManager.sharedInstance.stroopTasks
+        self.videos = DataManager.sharedInstance.stroopVideos
+
+        practiceText.text = "stroop_practice_instruction".localized(lang: language)
         
-        myMutableString2 = NSMutableAttributedString(string: myString2, attributes: [NSFontAttributeName:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
-        myMutableString2.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 18), range: NSRange(location:51,length:5))
-        myMutableString2.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: 18), range: NSRange(location:61,length:4))
-        practiceText.attributedText = myMutableString2
-        
+        practiceLabel.text = "Practice".localized(lang: language)
+        practiceDoneBtn.setTitle("Done".localized(lang: language), for: .normal)
         loadingView.stopAnimating()
+        recordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
+        playBtn.setTitle("Play".localized(lang: language), for: .normal)
+        playBtn.isEnabled = false
+        previewBtn.setTitle("Preview".localized(lang: language), for: .normal)
+        previewBtn2.setTitle("Preview".localized(lang: language), for: .normal)
+        previewBtn3.setTitle("Preview".localized(lang: language), for: .normal)
+        previewBtn4.setTitle("Preview".localized(lang: language), for: .normal)
+        recordBtn1.setTitle("Start_Record".localized(lang: language), for: .normal)
+        recordBtn2.setTitle("Start_Record".localized(lang: language), for: .normal)
+        recordBtn3.setTitle("Start_Record".localized(lang: language), for: .normal)
+        recordBtn4.setTitle("Start_Record".localized(lang: language), for: .normal)
+        
+        doneBtn.isHidden = true
+        doneBtn2.isHidden = true
+        doneBtn3.isHidden = true
+        doneBtn4.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -158,7 +223,9 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     }
     
     func loadImageFromUrl(_ filename: String, view: UIImageView){
-        view.image = UIImage(named: filename)
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentsURL.appendingPathComponent(filename)
+        view.image = UIImage(contentsOfFile: fileURL.path)
     }
     
     func startRecording(_ button: UIButton, fileName: String) {
@@ -176,8 +243,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
             soundRecorder.delegate = self
             soundRecorder.record()
             
-            button.setTitle("Stop", for: .normal)
-            startTimer()
+            button.setTitle("Stop_Recording".localized(lang: language), for: .normal)
         } catch {
             finishRecording(button: button, success: false)
         }
@@ -187,112 +253,84 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         soundRecorder.stop()
         soundRecorder = nil
         
-        if success {
-            button.setTitle("Re-record", for: .normal)
-        } else {
-            button.setTitle("Record", for: .normal)
-            // recording failed :(
-        }
-        
-        stopTime()
-        resetTimer()
-        startTimer()
+        button.isEnabled = false
+        playBtn.isEnabled = true
     }
     
     func finishPlaying() {
-        if soundPlayer.isPlaying {
-            soundPlayer.stop()
+        if (soundPlayer?.isPlaying)! {
+            soundPlayer?.stop()
         }
         
-        playBtn.setTitle("Play", for: .normal)
+        playBtn.setTitle("Play".localized(lang: language), for: .normal)
         recordBtn.isEnabled = true
     }
     
     func preparePlayer() {
         do {
             soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName))
-            soundPlayer.delegate = self
-            soundPlayer.prepareToPlay()
-            soundPlayer.volume = 1.0
+            soundPlayer?.delegate = self
+            soundPlayer?.prepareToPlay()
+            soundPlayer?.volume = 1.0
         } catch {
             log(logMessage: "Something went wrong")
         }
-    }
-    
-    func stopTime() {
-        
-        let currentTime = Date.timeIntervalSinceReferenceDate
-        
-        var elapsedTime : TimeInterval = currentTime - startTime
-        
-        //calculate the seconds in elapsed time
-        let seconds = UInt8(elapsedTime)
-        elapsedTime -= TimeInterval(seconds)
-
-        let strSeconds = seconds > 9 ? String(seconds): "0" + String(seconds)
-        
-        reactionTime = "\(strSeconds)"
-        
-        print(reactionTime)
-        
-    }
-    
-    func startTimer() {
-        if !timer.isValid {
-            startTime = Date.timeIntervalSinceReferenceDate
-        }
-    }
-    
-    func resetTimer() {
-        timer.invalidate()
     }
     
     func log(logMessage: String, functionName: String = #function) {
         print("\(functionName): \(logMessage)")
     }
     
-    func createPostObject() -> [String: AnyObject] {
+    func createPostObject(index: Int, reactionTime: Int) -> [String: AnyObject] {
         var jsonObject = [String: AnyObject]()
-        var jsonTask = [AnyObject]()
-        var jsonTaskObject = [String: AnyObject]()
-        
-        for i in 0...position-1 {
-            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("stroop\(i).m4a"))
-            let dataStr = soundData?.base64EncodedString(options: [])
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentsURL.appendingPathComponent("stroop\(index).m4a")
             
-            jsonTaskObject = [
-                "name": "stroop\(i+1)" as AnyObject,
-                "soundByte": dataStr as AnyObject
-            ]
-            
-            jsonTask.append(jsonTaskObject as AnyObject)
-        }
-        
-        
-        // Gather data for post
         jsonObject = [
-            "id": participant.string(forKey: "pid")! as AnyObject,
-            "task": jsonTask as AnyObject
+            "index": index as AnyObject,
+            "reaction": reactionTime as AnyObject,
+            "audio": fileURL as AnyObject
         ]
+
         
         return jsonObject
+    }
+    
+    func postToAPI(object: [String: AnyObject]) {
+        let index = object["index"] as! Int
+        let reaction = object["reaction"] as! Int
+        let fileURL = object["audio"] as! URL
+        
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(fileURL, withName: "audio")
+                multipartFormData.append(String(index).data(using: String.Encoding.utf8)!, withName: "index")
+                multipartFormData.append(String(reaction).data(using: String.Encoding.utf8)!, withName: "reaction")
+        }, usingThreshold: UInt64.init(),
+           to: APIUrl + "api/stroop/uploadfile/" + id,
+           method: .post,
+           headers: headers,
+           encodingCompletion: { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                upload.responseJSON { response in
+                    debugPrint(response)
+                }
+            case .failure(let encodingError):
+                print(encodingError)
+            }})
     }
     
     
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        let vc:CancellationTestViewController = CancellationTestViewController()
-        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        AppDelegate.testPosition += 1
+        self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
     }
     
     @IBAction func done(_ sender: AnyObject) {
-        let jsonObject = createPostObject()
-        
-        if (jsonObject.count > 0) {
-            APIWrapper.post(id: participant.string(forKey: "pid")!, test: "stroop", data: jsonObject)
-        }
-        
         self.next(self)
     }
     
@@ -311,105 +349,200 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
             startRecording(sender as! UIButton, fileName: "stroop\(position).m4a")
         } else {
             finishRecording(button: sender as! UIButton, success: true)
+            
+            switch position {
+            case 1:
+                doneBtn.isHidden = false
+            case 2:
+                doneBtn2.isHidden = false
+            case 3:
+                doneBtn3.isHidden = false
+            case 4:
+                doneBtn4.isHidden = false
+            default:
+                return
+            }
         }
     }
     
     @IBAction func playSound(_ sender: UIButton) {
-        if sender.titleLabel!.text == "Play" {
+        if sender.titleLabel!.text == "Play".localized(lang: language) {
             recordBtn.isEnabled = false
-            sender.setTitle("Stop", for: UIControlState())
+            sender.setTitle("Stop".localized(lang: language), for: UIControlState())
             preparePlayer()
-            soundPlayer.play()
+            soundPlayer?.play()
         } else {
-            soundPlayer.stop()
-            sender.setTitle("Play", for: UIControlState())
+            soundPlayer?.stop()
+            sender.setTitle("Play".localized(lang: language), for: UIControlState())
         }
     }
 
     @IBAction func moveToInstructions(_ sender: AnyObject) {
         setSubview(introView, next: instructionsView)
+        practiceInstruction2.text = "stroop_practice_instruction2".localized(lang: language)
+        stroopNextBtn.setTitle("Next".localized(lang: language), for: .normal)
     }
     
     @IBAction func moveToPreTask1(_ sender: AnyObject) {
         setSubview(instructionsView, next: preTask1View)
+        preTaskInstruction.text = "stroop_pretask_instruction".localized(lang: language)
+        previewBtn.setTitle("Preview".localized(lang: language), for: .normal)
+        nextBtn2.setTitle("Next".localized(lang: language), for: .normal)
     }
     
     @IBAction func moveToPTask1(_ sender: AnyObject) {
+        if player.rate != 0.0 {
+            player.pause()
+        }
         setSubview(preTask1View, next: pTask1View)
+        pTaskLabel.text = "stroop_ptask".localized(lang: language)
+        pTaskBtn.setTitle("Start".localized(lang: language), for: .normal)
     }
     
     @IBAction func moveToTask1(_ sender: AnyObject) {
-        player.pause()
+        if self.player.rate != 0.0 {
+            self.player.pause()
+        }
+        
         setSubview(pTask1View, next: task1View)
         self.loadImageFromUrl(images[position], view: self.task1ImageView)
+        doneBtn.setTitle("Done".localized(lang: language), for: .normal)
         position += 1
+        start = CFAbsoluteTimeGetCurrent()
     }
     
     @IBAction func moveToPreTask2(_ sender: AnyObject) {
+        let elapsed = CFAbsoluteTimeGetCurrent() - start
+        print(elapsed)
+        let mill = elapsed * 1000
+        postToAPI(object: createPostObject(index: 1, reactionTime: Int(mill)))
+//        reactionTimes.insert(Int(mill), at: 0)
         setSubview(task1View, next: preTask2View)
+        preTaskInstruction2.text = "stroop_pretask_instruction".localized(lang: language)
+        previewBtn2.setTitle("Preview".localized(lang: language), for: .normal)
+        nextBtn3.setTitle("Next".localized(lang: language), for: .normal)
     }
     
     @IBAction func moveToPTask2(_ sender: AnyObject) {
+        if player.rate != 0.0 {
+            player.pause()
+        }
         setSubview(preTask2View, next: pTask2View)
+        pTask2Label.text = "stroop_ptask".localized(lang: language)
+        pTaskBtn2.setTitle("Start".localized(lang: language), for: .normal)
     }
     
     @IBAction func moveToTask2(_ sender: AnyObject) {
-        player.pause()
+        if self.player.rate != 0.0 {
+            self.player.pause()
+        }
         setSubview(pTask2View, next: task2View)
         self.loadImageFromUrl(images[position], view: self.task2ImageView)
+        doneBtn2.setTitle("Done".localized(lang: language), for: .normal)
         position += 1
+        start = CFAbsoluteTimeGetCurrent()
     }
     
     @IBAction func moveToPreTask3(_ sender: AnyObject) {
+        let elapsed = CFAbsoluteTimeGetCurrent() - start
+        print(elapsed)
+        let mill = elapsed * 1000
+        postToAPI(object: createPostObject(index: 2, reactionTime: Int(mill)))
+//        reactionTimes.insert(Int(mill), at: 1)
         setSubview(task2View, next: preTask3View)
+        preTaskInstruction3.text = "stroop_pretask_instruction2".localized(lang: language)
+        previewBtn3.setTitle("Preview".localized(lang: language), for: .normal)
+        nextBtn4.setTitle("Next".localized(lang: language), for: .normal)
     }
     
     @IBAction func moveToPTask3(_ sender: AnyObject) {
+        if player.rate != 0.0 {
+            player.pause()
+        }
         setSubview(preTask3View, next: pTask3View)
+        pTask3Label.text = "stroop_ptask".localized(lang: language)
+        pTask3Btn.setTitle("Start".localized(lang: language), for: .normal)
     }
     
     @IBAction func moveToTask3(_ sender: AnyObject) {
-        player.pause()
         setSubview(pTask3View, next: task3View)
         self.loadImageFromUrl(images[position], view: self.task3ImageView)
+        doneBtn3.setTitle("Done".localized(lang: language), for: .normal)
         position += 1
+        start = CFAbsoluteTimeGetCurrent()
     }
     
     @IBAction func moveToPreTask4(_ sender: AnyObject) {
+        let elapsed = CFAbsoluteTimeGetCurrent() - start
+        print(elapsed)
+        let mill = elapsed * 1000
+        postToAPI(object: createPostObject(index: 3, reactionTime: Int(mill)))
+//        reactionTimes.insert(Int(mill), at: 2)
         setSubview(task3View, next: preTask4View)
         
-        myMutableString = NSMutableAttributedString(string: myString, attributes: [NSFontAttributeName:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
-        myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange(location:28,length:4))
-        specialText.attributedText = myMutableString
+        let myString = "stroop_pretask_instruction3".localized(lang: language)
+
+        if let range = myString.range(of: "blue".localized(lang: language)) {
+            let startPos = myString.characters.distance(from: myString.characters.startIndex, to: range.lowerBound)
+            let endPos = myString.characters.distance(from: myString.characters.startIndex, to: range.upperBound)
+            print(startPos, endPos)
+            
+            myMutableString = NSMutableAttributedString(string: myString, attributes: [NSAttributedStringKey.font:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
+            myMutableString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red, range: NSRange(location:startPos,length:endPos - startPos))
+            preTaskInstruction4.attributedText = myMutableString
+        }
+        
+        
+        previewBtn4.setTitle("Preview".localized(lang: language), for: .normal)
+        nextBtn5.setTitle("Next".localized(lang: language), for: .normal)
     }
     
     @IBAction func moveToPTask4(_ sender: AnyObject) {
+        if player.rate != 0.0 {
+            player.pause()
+        }
         setSubview(preTask4View, next: pTask4View)
+        pTask4Label.text = "stroop_ptask".localized(lang: language)
+        pTask4Btn.setTitle("Start".localized(lang: language), for: .normal)
     }
     
     @IBAction func moveToTask4(_ sender: AnyObject) {
-        player.pause()
+        if self.player.rate != 0.0 {
+            self.player.pause()
+        }
         setSubview(pTask4View, next: task4View)
         self.loadImageFromUrl(images[1], view: self.task4ImageView)
+        doneBtn4.setTitle("Done".localized(lang: language), for: .normal)
         position += 1
+        start = CFAbsoluteTimeGetCurrent()
     }
     
     @IBAction func submitTask(_ sender: AnyObject) {
-        player.pause()
+        let elapsed = CFAbsoluteTimeGetCurrent() - start
+        print(elapsed)
+        let mill = elapsed * 1000
+        postToAPI(object: createPostObject(index: 4, reactionTime: Int(mill)))
+//        reactionTimes.insert(Int(mill), at: 3)
         
-        setSubview(task4View, next: completeView)
+        if self.player.rate != 0.0 {
+            self.player.pause()
+        }
+        
+        setSubview(task4View, next: self.completeView)
+        completeLabel.text = "Test_complete".localized(lang: language)
+        completeBtn.setTitle("Submit".localized(lang: language), for: .normal)
     }
     
     @IBAction func playVideo(_ sender: AnyObject) {
-//        let fileURL = NSURL(string: videos[sender.tag])!
         playVideoFile(filename: videos[sender.tag], index: sender.tag)
     }
     
     func playVideoFile(filename: String, index: Int) {
-        let path = Bundle.main.path(forResource: filename, ofType: nil)
-        let url = URL(fileURLWithPath: path!)
+//        let path = Bundle.main.path(forResource: filename, ofType: nil)
+        let pathResource = getDocumentsDirectory().appendingPathComponent(filename)
+//        let url = URL(fileURLWithPath: pathResource!)
         
-        player = AVPlayer(url: url as URL)
+        player = AVPlayer(url: pathResource)
         
         playerController.delegate = self
         playerController.player = player

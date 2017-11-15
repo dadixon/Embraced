@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Stormpath
 import AVFoundation
 
 class FrontViewController: UIViewController, AVAudioPlayerDelegate {
@@ -19,10 +18,13 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var mainView: UIView!
     
     var loadingView = UIActivityIndicatorView()
+    var overlayView = UIView()
+    var activityIndicator = UIActivityIndicatorView()
     
     let participant = UserDefaults.standard
     
     var orientation = "portrait"
+    var language = String()
     
     var step = 1
     var totalSteps = 20
@@ -32,9 +34,11 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    var alertController = UIAlertController()
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var soundPlayer = AVAudioPlayer()
+    var soundPlayer: AVAudioPlayer?
+    var viewPosition = 0
+    var testsArray = [String]()
+    
     
     override func viewWillAppear(_ animated: Bool) {
         loadingView.center = mainView.center
@@ -44,8 +48,10 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        testsArray = participant.array(forKey: "Tests")! as! [String]
+        
         progressView.progress = progress
-        progressLabel.text = "Progress (\(step)/\(totalSteps))"
+        progressLabel.text = "Progress (\(step + 1)/\(testsArray.count + 1))"
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
         
@@ -53,12 +59,11 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         mainView.layer.shadowOpacity = 0.7
         mainView.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
         mainView.layer.shadowRadius = 10
-//        mainView.layer.shadowPath = UIBezierPath(rect: mainView.bounds).CGPath
         mainView.layer.shouldRasterize = true
         
         self.automaticallyAdjustsScrollViewInsets = false
         
-        NotificationCenter.default.addObserver(self, selector: #selector(FrontViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(FrontViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         
         mainView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -67,6 +72,11 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         let rightConstraint = mainView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8.0)
         let bottomConstraint = mainView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 8.0)
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
+        
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.isTranslucent = true
+//        self.navigationController?.view.backgroundColor = UIColor.clear
 
     }
 
@@ -79,29 +89,29 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         return true
     }
     
-    func rotated() {
+    func showOrientationAlert(orientation: String) {
+        language = participant.string(forKey: "language")!
+        
         if orientation == "landscape" {
-            if(UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
-                alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to landscaping orientation", preferredStyle: UIAlertControllerStyle.alert)
-                
-                let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
-                    self.alertController.dismiss(animated: true, completion: nil)
-                    self.rotated()
-                }
-                alertController.addAction(dismissAction)
-                self.present(alertController, animated: true, completion: nil)
+            let alertController = UIAlertController(title: "Rotation".localized(lang: language), message: "Rotation_landscpaing_prompt".localized(lang: language), preferredStyle: UIAlertControllerStyle.alert)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+                alertController.dismiss(animated: true, completion: nil)
             }
+            
+            alertController.addAction(dismissAction)
         } else if orientation == "portrait" {
-            if(UIDeviceOrientationIsLandscape(UIDevice.current.orientation)) {
-                alertController = UIAlertController(title: "Rotate", message: "Please rotate iPad to portrait orientation", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Rotation".localized(lang: language), message: "Rotation_portrait_prompt".localized(lang: language), preferredStyle: UIAlertControllerStyle.alert)
                 
-                let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
-                    self.alertController.dismiss(animated: true, completion: nil)
-                    self.rotated()
-                }
-                alertController.addAction(dismissAction)
-                self.present(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
+            
+            let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+                alertController.dismiss(animated: true, completion: nil)
             }
+            
+            alertController.addAction(dismissAction)
         }
     }
     
@@ -109,12 +119,74 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         var navigationArray = self.navigationController?.viewControllers
         
         navigationArray?.remove(at: 0)
-        
-//        let reyComplexFigure3ViewController:viewController = viewController()
         navigationArray?.append(viewController)
         
         self.navigationController?.setViewControllers(navigationArray!, animated: true)
-//        self.navigationController?.pushViewController(reyComplexFigure3ViewController, animated: true)
+    }
+    
+    func nextViewController2(position: Int) {
+        let vc: UIViewController!
+        
+        if position >= testsArray.count {
+            vc = FinishedViewController()
+        } else {
+            switch testsArray[position] {
+            case "Questionnaire":
+                vc = QuestionnaireViewController()
+            case "Orientation Task":
+                vc = MOCAMMSETestViewController()
+            case "Complex Figure 1":
+                vc = ReyComplexFigureViewController()
+            case "Clock Drawing Test":
+                vc = ClockDrawingTestViewController()
+            case "Complex Figure 2":
+                vc = ReyComplexFigure2ViewController()
+            case "Trail Making Test":
+                vc = TrailMakingTestViewController()
+            case "Melodies Recognition":
+                vc = PitchViewController()
+            case "Digit Span":
+                vc = DigitalSpanViewController()
+            case "Complex Figure 3":
+                vc = ReyComplexFigure3ViewController()
+            case "Complex Figure 4":
+                vc = ReyFigureComplex4ViewController()
+            case "Matrices":
+                vc = MatricesViewController()
+            case "Continuous Performance Test":
+                vc = CPTViewController()
+            case "Motor Tasks":
+                vc = PegboardViewController()
+            case "Word List 1":
+                vc = WordListViewController()
+            case "Color-Word Stroop Test":
+                vc = StroopViewController()
+            case "Cancellation Test":
+                vc = CancellationTestViewController()
+            case "Word List 2":
+                vc = WordList2ViewController()
+            case "Naming Test":
+                vc = NamingTaskViewController()
+            case "Comprehension Task":
+                vc = ComprehensionViewController()
+            case "Eyes Test":
+                vc = EyeTestViewController()
+            default:
+                vc = UserInputViewController()
+            }
+        }
+        
+        var navigationArray = self.navigationController?.viewControllers
+        
+        navigationArray?.remove(at: 0)
+        
+        //        let reyComplexFigure3ViewController:viewController = viewController()
+        navigationArray?.append(vc)
+        
+        self.navigationController?.setViewControllers(navigationArray!, animated: true)
+        //        self.navigationController?.pushViewController(reyComplexFigure3ViewController, animated: true)
+        
+        
     }
     
     func getDocumentsDirectory() -> URL {
@@ -129,17 +201,17 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         return paths[0]
     }
     
-    func play(_ filename:String) {
+    func playTest(_ filename:String) {
         let file = filename.characters.split(separator: ".").map(String.init)
         
-        if let pathResource = Bundle.main.path(forResource: file[0], ofType: "wav") {
+        if let pathResource = Bundle.main.path(forResource: file[0], ofType: file[1]) {
             let finishedStepSound = NSURL(fileURLWithPath: pathResource)
             do {
                 soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
-                if(soundPlayer.prepareToPlay()){
+                if(soundPlayer?.prepareToPlay())!{
                     print("preparation success")
-                    soundPlayer.delegate = self
-                    if(soundPlayer.play()){
+                    soundPlayer?.delegate = self
+                    if(soundPlayer?.play())!{
                         print("Sound play success")
                     }else{
                         print("Sound file could not be played")
@@ -154,5 +226,98 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         }else{
             print("path not found")
         }
+    }
+    
+    func play(_ filename:String) {
+        let pathResource = getDocumentsDirectory().appendingPathComponent(filename)
+            
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOf: pathResource)
+            if(soundPlayer?.prepareToPlay())!{
+                print("preparation success")
+                soundPlayer?.delegate = self
+                if(soundPlayer?.play())!{
+                    print("Sound play success")
+                }else{
+                    print("Sound file could not be played")
+                }
+            }else{
+                print("preparation failure")
+            }
+            
+        }catch{
+            print("Sound file could not be found")
+        }
+    }
+    
+    func fileExist(_ filename: String) -> Bool {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let url = NSURL(fileURLWithPath: path)
+        let filePath = url.appendingPathComponent(filename)?.path
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: filePath!) {
+            print("FILE \(filename) AVAILABLE")
+            return true
+        } else {
+            print("FILE \(filename) NOT AVAILABLE")
+        }
+        
+        return false
+    }
+    
+    func deleteFile(_ fileNameToDelete:String) {
+        var filePath = ""
+        
+        // Fine documents directory on device
+        let dirs : [String] = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
+        
+        if dirs.count > 0 {
+            let dir = dirs[0] //documents directory
+            filePath = dir.appendingFormat("/" + fileNameToDelete)
+            print("Local path = \(filePath)")
+            
+        } else {
+            print("Could not find local directory to store file")
+            return
+        }
+        
+        
+        do {
+            let fileManager = FileManager.default
+            
+            // Check if file exists
+            if fileManager.fileExists(atPath: filePath) {
+                // Delete file
+                try fileManager.removeItem(atPath: filePath)
+            } else {
+                print("File does not exist")
+            }
+            
+        }
+        catch let error as NSError {
+            print("An error took place: \(error)")
+        }
+    }
+    
+    public func showOverlay() {
+        overlayView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+        overlayView.center = self.view.center
+        overlayView.backgroundColor = UIColor.black
+        overlayView.clipsToBounds = true
+        overlayView.layer.cornerRadius = 10
+        
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        activityIndicator.activityIndicatorViewStyle = .whiteLarge
+        activityIndicator.center = CGPoint(x: overlayView.bounds.width / 2, y: overlayView.bounds.height / 2)
+        
+        overlayView.addSubview(activityIndicator)
+        view.addSubview(overlayView)
+        
+        activityIndicator.startAnimating()
+    }
+    
+    public func hideOverlayView() {
+        activityIndicator.stopAnimating()
+        overlayView.removeFromSuperview()
     }
 }

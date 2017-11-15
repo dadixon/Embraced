@@ -8,17 +8,18 @@
 
 import UIKit
 import WebKit
+import Alamofire
 
 class EyeTestViewController: WebViewController {
     
     override func viewDidLoad() {
-        step = 20
-        orientation = "portrait"
-        url = URL(string: "http://girlscouts.harryatwal.com/eyeTest.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
+        step = AppDelegate.position
+        showOrientationAlert(orientation: "portrait")
+        url = URL(string: "http://www.embraced.ugr.es/eyeTest.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")! + "&token=" + participant.string(forKey: "token")!)
         
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(EyeTestViewController.next(_:)))
+        contentController.add(self, name: "uploadData")
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,16 +31,33 @@ class EyeTestViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-        let vc:FinishedViewController = FinishedViewController()
-        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        AppDelegate.testPosition += 1
+        self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
     }
     
     // MARK: - Delegate
     
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if (message.name == "callbackHandler") {
-            next(self)
-        }
+        let id = participant.string(forKey: "pid")!
+        let token = participant.string(forKey: "token")!
+        let headers: HTTPHeaders = [
+            "x-access-token": token
+        ]
+        let APIUrl = "http://www.embracedapi.ugr.es/"
         
+        if message.name == "uploadData" {
+            let data = message.body as! [String:AnyObject]
+            
+            Alamofire.request(APIUrl + "api/eyetest/new/" + id, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+                debugPrint(response)
+                let statusCode = response.response?.statusCode
+                
+                if statusCode == 200 {
+                    self.hideOverlayView()
+                    self.next(self)
+                }
+            }
+        }
     }
 }

@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Alamofire
 
 class StartViewController: UIViewController {
 
     @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var welcomeText: UILabel!
+    @IBOutlet weak var nextBtn: UIButton!
     
     let participant = UserDefaults.standard
+    let APIUrl = "http://www.embracedapi.ugr.es/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +24,13 @@ class StartViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
         self.navigationController?.isNavigationBarHidden = true
         
-        let welcomeLabelText = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: "en")
-        welcomeLabel.text = welcomeLabelText
+        welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        welcomeText.text = "WELCOME_TEXT".localized(lang: participant.string(forKey: "TesterLanguage")!)
+        nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
+        
+        participant.setValue("en", forKey: "language")
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,28 +47,32 @@ class StartViewController: UIViewController {
     // MARK: - Navigation
     @IBAction func chooseLanguage(_ sender: AnyObject) {
         if sender.tag == 0 {
-            participant.set("en", forKey: "language")
+            participant.setValue("en", forKey: "language")
         } else if sender.tag == 1 {
-            participant.set("es", forKey: "langauge")
+            participant.setValue("es", forKey: "language")
         }
         
-        let welcomeLabelText = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "language")!)
-        welcomeLabel.text = welcomeLabelText
-        
-        var navigationArray = self.navigationController?.viewControllers
-        
-        navigationArray?.remove(at: 0)
-        
-        let vc = QuestionnaireViewController()
-//        let vc = PitchViewController()
-        navigationArray?.append(vc)
-        
-        self.navigationController?.setViewControllers(navigationArray!, animated: true)
-
+        welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "language")!)
+        welcomeText.text = "WELCOME_TEXT".localized(lang: participant.string(forKey: "language")!)
+        nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
     }
     
- 
-    
-    
+    @IBAction func startTest(_ sender: Any) {
+        // TODO: Update participant language chosen in the db
 
+        AppDelegate.testPosition += 1
+        self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
+        
+    }
+ 
+    private func createPostObject() -> [String: AnyObject] {
+        var jsonObject = [String: AnyObject]()
+        
+        // Gather data for post
+        jsonObject = [
+            "language": participant.string(forKey: "language")! as AnyObject
+        ]
+        
+        return jsonObject
+    }
 }

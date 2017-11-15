@@ -8,3 +8,105 @@
 
 "WELCOME_TO_EMBRACED_PROJECT" = "WELCOME TO EMBRACED PROJECT";
 "Next" = "Next";
+"Start" = "Start";
+"Example" = "Example";
+"Practice" = "Practice";
+"Same" = "Same";
+"Different" = "Different";
+"Submit" = "SUBMIT";
+"Test_complete" = "Test complete!";
+"Correct" = "Correct!";
+"Incorrect" = "Incorrect";
+"Incorrect_2" = "Sorry, that was an incorrect response. You can try again.";
+"Start_Record" = "Start Recording";
+"Stop_Recording" = "Stop Recording";
+"Play" = "Play";
+"Recording" = "Recording";
+"Stop" = "Stop";
+"Test" = "Test";
+"Settings" = "Settings";
+"Start_Test" = "Start Test";
+"Select_All" = "Select All";
+"Deselect_All" = "Deselect All";
+"Test_List" = "Test List";
+"Your_Test" = "Your Test";
+"Choose_Language" = "Choose Language";
+"Yes" = "Yes";
+"No" = "No";
+"Recognition" = "Recognition";
+"Done" = "Done";
+"Participant_ID" = "Participant ID";
+"Day_of_the_week" = "Day of the Week";
+"Country" = "Country";
+"County" = "County";
+"City" = "City";
+"Location" = "Location";
+"Floor" = "Floor";
+"Record" = "Record";
+"Listen" = "Listen";
+"Round" = "Round";
+"Trial" = "Trial";
+"Preview" = "Preview";
+"blue" = "blue";
+"Save" = "Save";
+"Saved" = "Saved";
+"Save_settings" = "Your settings have been saved.";
+"Rotation" = "Rotation";
+"Rotation_landscpaing_prompt" = "Please, rotate iPad to landscape orientation";
+"Rotation_portrait_prompt" = "Please, rotate iPad to portrait orientation";
+"Finished" = "Finished";
+"Start_over" = "Start Over";
+"UsernamePasswordEmpty" = "Both the username and password are required";
+"WrongUsernamePassword" = "Wrong username and password";
+
+"WELCOME_TEXT" = "We are going to be asking you some questions about yourself.\nPlease remember that you are free to skip any question that may bother you, although we kindly ask you to complete as much of this questionnaire as possible.\nThank you for your participation";
+
+// Pitch
+"pitch_intro" = "Next, you will hear pairs of melodies.\nIn some trials, the second one will be altered.\nThis change may be subtle or obvious.\n\nYou will have to indicate whether the second melody has been altered or not.\n\nIf both melodies are the same, you will tap the button “SAME”\nIf they are different, you will tap the button “DIFFERENT”\n\nTo aid you differentiate the two melodies, numbers 1 and 2 will be shown in the screen when playing the first and second melody respectively\n\nWe will start with some examples.\nPlease tap on START when you are ready.";
+"pitch_example_1" = "In this pair of melodies the second melody is identical to the first.\nWhen both melodies are the same, you should tap the button “SAME”\nTap on the button “SAME” to indicate that the melodies are the same.";
+"pitch_example_2" = "We will now continue to an example where the melodies are different.\n\nThis example uses the same melody as in Example 1, but now the second melody has been altered.\n\nTo hear the melodies again tap on the “SPEAKER BUTTON”\nWhen both melodies are different, you should tap the button “DIFFERENT”.\nTap on the button “DIFFERENT” to indicate that the melodies are different.";
+"pitch_example_3" = "We will now continue to an example where the difference between the melodies is more subtle.\n\nIn this example, the difference between the melodies is more subtle.\n\nTo hear the melodies again tap on the “SPEAKER BUTTON”\n\nTap on the button “DIFFERENT” to indicate that the melodies are different.";
+"pitch_practice_1" = "Now you will practice on your own.\n\nRemember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.\nThere will be 5 pairs of melodies for you to practice.\nWhen you are ready, tap on START button.";
+"pitch_practice_2" = "Now you will practice on your own.\nRemember: after hearing a pair of melodies, tap “SAME” if they are identical and tap “DIFFERENT” if they are different.\nWhen you are ready, tap on sound icon.";
+"pitch_tasks" = "You have completed the practice trials.\n\nDuring this task, the screen will show numbers 1 and 2 to help you differentiate the two melodies. Also, it will show the buttons “SAME” and “DIFFERENT” and information on whether your response was correct or not.\n\nThis task contains 24 trials and will take about 5 minutes to complete.\n\nPlease, tap the START button when you are ready to start.";
+
+// Digital
+"digital_practice_1" = "Next you will hear a series of numbers.\nAfter each series, you will repeat the numbers that you heard in the same order.\nYou can only hear the list of numbers once, so do the best you can from what you hear.\nYou will be recording your answers in this device.\nPlease practice recording your voice with the microphone button below";
+"digital_practice_2" = "You will have a practice round before starting with the series.\nPlease click LISTEN button when you are ready.";
+"digital_begin_round" = "Now we will start with the task.\nClick on LISTEN button when you are ready.";
+"digital_begin_round_start" = "Click on LISTEN button when you are ready.";
+"digital_practice_3" = "Next you will hear series of numbers, but this time you will have to repeat them in reverse order. For example, if you hear the numbers 2-5-8, you should then say 8-5-2.\nAgain, you will only hear each list of numbers once, so do the best you can from what you hear.\nYou will have a practice round before starting with the series.";
+"digital_begin_round2" = "Now we will start with the task.\nClick on LISTEN button when you are ready.";
+"digital_begin_round2_start" = "Click on LISTEN button when you are ready.";
+
+
+// WordList 1
+"wordlist1_practice_instruction" = "In the next task the objective is to remember words.\nYou will hear a list of words and once the list is finished you will be asked to recall them.\nYou will hear this list 5 times.\nAfter each time, you will be asked to repeat as many words as you can remember.\nYou will be recording your answers on this device.\n\nPlease practice recording your voice with the microphone button below";
+"wordlist1_instructionA1" = "There will be a 3 second countdown before the list starts. \nPlease tap the LISTEN button when you are ready to start";
+"wordlist1_instructionA2" = "Tap the LISTEN button to listen to the list again";
+"wordlist1_instructionA3" = "This is the last time that you are going to listen to this list. Tap the screen to listen to the list again";
+"wordlist1_instructionA4" = "Now you are going to listen to a different list of words. Again, once the list is finished say out loud all the words you can remember from this second list.\nTap the screen to listen to this new list";
+"wordlist1_instructionA5" = "Now say out loud all the words you can remember from the first list, the one that you heard 5 times.\nTap the microphone button to start recording";
+"wordlist1_instructionB1" = "Now say out loud all the words you can remember from the list. Tap the microphone button to start recording";
+"wordlist1_instructionB2" = "Now say out loud all the words you can remember from the list, including the ones you said before.\nTap the microphone button to start recording.";
+
+
+// WordList 2
+"wordlist2_instruction" = "Some time ago you listened to a list of words 5 times. Now say out loud all the words you can remember from that list. \nTap the microphone button to start recording.";
+"wordlist2_instruction2" = "Now you will hear a longer list of words, one by one.\nIf the word is one of the words in the first list you heard, the on you heard 5 times, click the button “YES”\nIf the word was NOT in the first list, the one you heard 5 times, click the button “NO”.\nTap the LISTEN icon to start";
+"wordlist2_in_first_list" = "Was this word in the first list?";
+
+// Stroop
+"stroop_practice_instruction" = "In the next task you will be recording your voice on this device.\nPlease, practice how to record your voice using the START and DONE buttons below.";
+"stroop_practice_instruction2" = "This task has 4 different parts.\nWe will provide instructions for each of them.\nThis is a timed task so remember to do it as fast as possible, but without committing errors.";
+"stroop_pretask_instruction" = "In this task you have to read the words presented on the screen.\nTry to do it as fast as you can, from left to right in each row.\nClick “Preview” for a demonstration";
+"stroop_pretask_instruction2" = "In this task you have to name the colors of the circles presented on the screen.\nTry to do it as fast as you can, from left to right in each row.\nClick “Preview” for a demonstration";
+"stroop_pretask_instruction3" = "In this task you have to name the colors in which the words are written, DO NOT READ the word.\nFor example, for the word: “blue”, which is written in red, you have to say “red”.\nDo not pay attention to the word itself, just name the color in which it is written.\nTry to do it as fast as you can, from left to right in each row.\nClick “Preview” for a demonstration";
+"stroop_ptask" = "When you are ready press START and read the words out loud as fast as you can.\nWhen you finish with the last word click DONE.";
+
+
+// Naming Task
+"naming_practice_instruction1" = "Next you will be shown a series of pictures and will have to recognize and name each picture out loud.\nYou will record your answer in this device.\nPlease practice recording your voice with the microphone button below";
+"naming_practice_instruction2" = "You will be shown each picture one at a time. If you cannot come up with the answer after the allowed time, you will have the option of skipping to the next picture.\n\nWe will start with some examples.\nClick START when you are ready";
+"naming_task_instruction" = "Now we will start with the task.\nPlease click START when you are ready";
+

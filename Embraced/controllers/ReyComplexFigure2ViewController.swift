@@ -8,17 +8,19 @@
 
 import UIKit
 import WebKit
+import Alamofire
 
 class ReyComplexFigure2ViewController: WebViewController {
     
     override func viewDidLoad() {
-        step = 5
-        orientation = "portrait"
-        url = URL (string: "http://girlscouts.harryatwal.com/reyComplexFigure2.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")!)
+        step = AppDelegate.position
+        showOrientationAlert(orientation: "portrait")
+        url = URL (string: "http://www.embraced.ugr.es/reyComplexFigure2.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")! + "&token=" + participant.string(forKey: "token")!)
         
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(lang: participant.string(forKey: "language")!), style: .plain, target: self, action: #selector(ReyComplexFigure2ViewController.next(_:)))
+        contentController.add(self, name: "addRCFHandler")
+        contentController.add(self, name: "uploadData")
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,16 +32,38 @@ class ReyComplexFigure2ViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-        let trailMakingTestViewController:TrailMakingTestViewController = TrailMakingTestViewController()
-        nextViewController(viewController: trailMakingTestViewController)
+//        let trailMakingTestViewController:TrailMakingTestViewController = TrailMakingTestViewController()
+//        nextViewController(viewController: trailMakingTestViewController)
+        AppDelegate.position += 1
+        AppDelegate.testPosition += 1
+        self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
     }
     
     // MARK: - Delegate
     
     override func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if (message.name == "callbackHandler") {
-            next(self)
-        }
+        let id = participant.string(forKey: "pid")!
+        let token = participant.string(forKey: "token")!
+        let headers: HTTPHeaders = [
+            "x-access-token": token
+        ]
+        let APIUrl = "http://www.embracedapi.ugr.es/"
         
+        if message.name == "addRCFHandler" {
+            Alamofire.request(APIUrl + "api/rcf/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            }
+        } else if message.name == "uploadData" {
+            let dict = message.body as! [String:AnyObject]
+            
+            Alamofire.request(APIUrl + "api/rcf/uploadfile/" + id, method: .post, parameters: dict, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+                debugPrint(response)
+                let statusCode = response.response?.statusCode
+                
+                if statusCode == 200 {
+                    self.hideOverlayView()
+                    self.next(self)
+                }
+            }
+        }
     }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,8 +17,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DigitalSpanViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
                 <outlet property="bRounds" destination="KBF-ll-4we" id="Nnk-o6-4P7"/>
+                <outlet property="backwardBtn" destination="ihh-pk-YgS" id="Nif-gn-USk"/>
+                <outlet property="completeLabel" destination="JDz-fl-CkV" id="ukE-bb-ua8"/>
                 <outlet property="completeView" destination="Tbg-TJ-DWN" id="hNY-2h-DkM"/>
                 <outlet property="containerView" destination="bru-dk-i0h" id="1T5-ce-Yb5"/>
+                <outlet property="doneBtn" destination="lOr-Fh-PI3" id="VG4-3O-gJy"/>
+                <outlet property="forwardBtn" destination="BnC-0d-Zfp" id="UvW-tm-dUY"/>
                 <outlet property="instructions" destination="W5d-aU-YUb" id="D8J-wH-4d0"/>
                 <outlet property="instructionsA" destination="dmM-P0-4MJ" id="FXX-6i-2Mw"/>
                 <outlet property="introView" destination="cVi-fu-JAH" id="ZYh-t5-glv"/>
@@ -28,6 +32,14 @@
                 <outlet property="listenPracticeBtn2" destination="WhN-gL-hFd" id="DoO-Op-PZ6"/>
                 <outlet property="mainView" destination="PpR-IV-LmM" id="qir-ei-Fte"/>
                 <outlet property="playBtn" destination="EKM-0V-z7N" id="I8l-Kf-lQl"/>
+                <outlet property="practice1Instructions" destination="fCB-98-gGJ" id="9qD-zN-npW"/>
+                <outlet property="practice1Label" destination="38b-Sn-sTG" id="svl-x0-MM0"/>
+                <outlet property="practice2Label" destination="c0j-U6-bRc" id="8aa-sb-qyo"/>
+                <outlet property="practice2NextBtn" destination="I6d-eY-aPO" id="7LX-6n-Dkt"/>
+                <outlet property="practice2instructions" destination="OyJ-lm-PN4" id="pOr-Vx-MYf"/>
+                <outlet property="practice3Instructions" destination="8Q1-nt-Lvd" id="cxj-qZ-o3X"/>
+                <outlet property="practice3Label" destination="NYE-DH-iub" id="GMg-sr-NSH"/>
+                <outlet property="practiceNextBtn" destination="Xes-FL-k9S" id="Qph-fa-v2W"/>
                 <outlet property="preTask1View" destination="Ep8-qV-Cvv" id="H7a-ND-yl8"/>
                 <outlet property="preTask2View" destination="mo0-Ba-4sC" id="eqP-Pc-hmz"/>
                 <outlet property="progressLabel" destination="g24-df-W8H" id="6Bo-m2-xJp"/>
@@ -38,6 +50,7 @@
                 <outlet property="recordPracitceBtn2" destination="sHy-8l-Oqs" id="x7H-q7-V00"/>
                 <outlet property="recordPracticeBtn" destination="AOr-uP-wO7" id="76v-1E-CWO"/>
                 <outlet property="rounds" destination="YZd-IO-sAI" id="DAf-8k-YaP"/>
+                <outlet property="submit" destination="gdG-on-Vyl" id="2RG-Lz-rRQ"/>
                 <outlet property="task1View" destination="7iD-ap-k0X" id="xxV-BB-ApT"/>
                 <outlet property="task2View" destination="TeY-My-cQ3" id="1jR-wZ-6A7"/>
                 <outlet property="view" destination="sx6-SJ-Dkr" id="okO-BJ-XzA"/>
@@ -118,13 +131,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38b-Sn-sTG">
-                    <rect key="frame" x="20" y="20" width="87.5" height="26.5"/>
+                    <rect key="frame" x="20" y="20" width="88" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCB-98-gGJ">
-                    <rect key="frame" x="20" y="54.5" width="728" height="101.5"/>
+                    <rect key="frame" x="20" y="55" width="728" height="102"/>
                     <string key="text">Next you will hear a series of numbers. 
 After each series, you will repeat the numbers that you heard in the same order. 
 You can only hear the list of numbers once, so do the best you can from what you hear.
@@ -135,10 +148,10 @@ Please practice recording your voice with the microphone button below</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bb-L5-Md9">
-                    <rect key="frame" x="112" y="388.5" width="544" height="247"/>
+                    <rect key="frame" x="112" y="389" width="544" height="247"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKM-0V-z7N">
-                            <rect key="frame" x="349" y="59.5" width="187" height="128"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKM-0V-z7N" customClass="PlayButton" customModule="Embraced" customModuleProvider="target">
+                            <rect key="frame" x="349" y="59" width="187" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="187" id="jnj-tZ-F6y"/>
                             </constraints>
@@ -149,8 +162,8 @@ Please practice recording your voice with the microphone button below</string>
                                 <action selector="playSound:" destination="-1" eventType="touchUpInside" id="vbh-yQ-6ux"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="p7l-UL-1Cg">
-                            <rect key="frame" x="8" y="59.5" width="162" height="128"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="p7l-UL-1Cg" customClass="RecordButton" customModule="Embraced" customModuleProvider="target">
+                            <rect key="frame" x="8" y="59" width="162" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="Dcp-qe-6Uq"/>
                             </constraints>
@@ -192,13 +205,13 @@ Please practice recording your voice with the microphone button below</string>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0j-U6-bRc">
-                    <rect key="frame" x="20" y="20" width="87.5" height="26.5"/>
+                    <rect key="frame" x="20" y="20" width="88" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyJ-lm-PN4">
-                    <rect key="frame" x="20" y="54.5" width="728" height="41"/>
+                    <rect key="frame" x="20" y="55" width="728" height="41"/>
                     <string key="text">You will have a practice round before starting with the series.
 Please click LISTEN button when you are ready.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -216,10 +229,10 @@ Please click LISTEN button when you are ready.</string>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPE-Zq-5xF">
-                    <rect key="frame" x="112" y="388.5" width="544" height="247"/>
+                    <rect key="frame" x="112" y="389" width="544" height="247"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="AOr-uP-wO7">
-                            <rect key="frame" x="374" y="59.5" width="162" height="128"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="AOr-uP-wO7" customClass="RecordButton" customModule="Embraced" customModuleProvider="target">
+                            <rect key="frame" x="374" y="60" width="162" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="MTj-0O-Ias"/>
                             </constraints>
@@ -230,11 +243,11 @@ Please click LISTEN button when you are ready.</string>
                                 <action selector="recordTapped:" destination="-1" eventType="touchUpInside" id="wtd-PF-VfW"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="bottomLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pba-QZ-kRp">
-                            <rect key="frame" x="8" y="59.5" width="177" height="128"/>
+                        <button opaque="NO" contentMode="bottomLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pba-QZ-kRp" customClass="ListenButton" customModule="Embraced" customModuleProvider="target">
+                            <rect key="frame" x="8" y="90" width="133" height="68"/>
                             <inset key="titleEdgeInsets" minX="-95" minY="0.0" maxX="0.0" maxY="-135"/>
                             <inset key="imageEdgeInsets" minX="-6" minY="-24" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Listen" image="listen.png">
+                            <state key="normal" title="Listen" image="speaker.png">
                                 <color key="titleColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
@@ -244,7 +257,6 @@ Please click LISTEN button when you are ready.</string>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="AOr-uP-wO7" firstAttribute="centerY" secondItem="tPE-Zq-5xF" secondAttribute="centerY" id="1Ge-Z1-8A9"/>
                         <constraint firstItem="Pba-QZ-kRp" firstAttribute="centerY" secondItem="tPE-Zq-5xF" secondAttribute="centerY" id="CSY-4y-BxJ"/>
                         <constraint firstItem="Pba-QZ-kRp" firstAttribute="leading" secondItem="tPE-Zq-5xF" secondAttribute="leading" constant="8" id="O2E-os-mQT"/>
                         <constraint firstAttribute="trailing" secondItem="AOr-uP-wO7" secondAttribute="trailing" constant="8" id="YW1-Is-Iif"/>
@@ -273,13 +285,13 @@ Please click LISTEN button when you are ready.</string>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYE-DH-iub">
-                    <rect key="frame" x="20" y="20" width="87.5" height="26.5"/>
+                    <rect key="frame" x="20" y="20" width="88" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Q1-nt-Lvd">
-                    <rect key="frame" x="20" y="54.5" width="728" height="81.5"/>
+                    <rect key="frame" x="20" y="55" width="728" height="81.5"/>
                     <string key="text">Next you will hear series of numbers, but this time you will have to repeat them in reverse order. For example, if you hear the numbers 2-5-8, you should then say 8-5-2.
 Again, you will only hear each list of numbers once, so do the best you can from what you hear.
 You will have a practice round before starting with the series.</string>
@@ -298,10 +310,10 @@ You will have a practice round before starting with the series.</string>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPq-37-0ei">
-                    <rect key="frame" x="112" y="388.5" width="544" height="247"/>
+                    <rect key="frame" x="112" y="389" width="544" height="247"/>
                     <subviews>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhN-gL-hFd">
-                            <rect key="frame" x="8" y="59.5" width="177" height="128"/>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhN-gL-hFd" customClass="ListenButton" customModule="Embraced" customModuleProvider="target">
+                            <rect key="frame" x="8" y="59" width="177" height="128"/>
                             <state key="normal" title="Listen" image="listen.png">
                                 <color key="titleColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -309,8 +321,8 @@ You will have a practice round before starting with the series.</string>
                                 <action selector="listenToSound:" destination="-1" eventType="touchUpInside" id="A0F-3n-pGy"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sHy-8l-Oqs">
-                            <rect key="frame" x="374" y="59.5" width="162" height="128"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sHy-8l-Oqs" customClass="RecordButton" customModule="Embraced" customModuleProvider="target">
+                            <rect key="frame" x="374" y="59" width="162" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="mpN-is-nDD"/>
                             </constraints>
@@ -362,10 +374,10 @@ You will have a practice round before starting with the series.</string>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPl-Ho-F0E">
-                    <rect key="frame" x="112" y="388.5" width="544" height="247"/>
+                    <rect key="frame" x="112" y="389" width="544" height="247"/>
                     <subviews>
-                        <button opaque="NO" tag="1" contentMode="bottomLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3b-f4-6b3">
-                            <rect key="frame" x="8" y="59.5" width="177" height="128"/>
+                        <button opaque="NO" tag="1" contentMode="bottomLeft" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3b-f4-6b3" customClass="ListenButton" customModule="Embraced" customModuleProvider="target">
+                            <rect key="frame" x="8" y="59" width="177" height="128"/>
                             <inset key="titleEdgeInsets" minX="-95" minY="0.0" maxX="0.0" maxY="-135"/>
                             <inset key="imageEdgeInsets" minX="-6" minY="-24" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="Listen" image="listen.png">
@@ -375,8 +387,8 @@ You will have a practice round before starting with the series.</string>
                                 <action selector="listenToSound:" destination="-1" eventType="touchUpInside" id="VK5-iG-NpC"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HcA-UX-jfn">
-                            <rect key="frame" x="374" y="59.5" width="162" height="128"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HcA-UX-jfn" customClass="RecordButton" customModule="Embraced" customModuleProvider="target">
+                            <rect key="frame" x="374" y="59" width="162" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="hVf-2E-Yuj"/>
                             </constraints>
@@ -399,13 +411,13 @@ You will have a practice round before starting with the series.</string>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZd-IO-sAI">
-                    <rect key="frame" x="323.5" y="55" width="121.5" height="38.5"/>
+                    <rect key="frame" x="323" y="55" width="122" height="39"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmM-P0-4MJ">
-                    <rect key="frame" x="20" y="101.5" width="728" height="41"/>
+                    <rect key="frame" x="20" y="102" width="728" height="41"/>
                     <string key="text">Now we will start with the task.
 Click on LISTEN button when you are ready.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -442,10 +454,10 @@ Click on LISTEN button when you are ready.</string>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGI-1Q-T42">
-                    <rect key="frame" x="112" y="388.5" width="544" height="247"/>
+                    <rect key="frame" x="112" y="389" width="544" height="247"/>
                     <subviews>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOM-Oj-VlA">
-                            <rect key="frame" x="8" y="59.5" width="177" height="128"/>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOM-Oj-VlA" customClass="ListenButton" customModule="Embraced" customModuleProvider="target">
+                            <rect key="frame" x="8" y="59" width="177" height="128"/>
                             <state key="normal" title="Listen" image="listen.png">
                                 <color key="titleColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -453,8 +465,8 @@ Click on LISTEN button when you are ready.</string>
                                 <action selector="listenToSound:" destination="-1" eventType="touchUpInside" id="fil-cH-EM2"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wIt-um-Ncc">
-                            <rect key="frame" x="374" y="59.5" width="162" height="128"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="wIt-um-Ncc" customClass="RecordButton" customModule="Embraced" customModuleProvider="target">
+                            <rect key="frame" x="374" y="59" width="162" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="Nzv-xX-sSU"/>
                             </constraints>
@@ -477,13 +489,13 @@ Click on LISTEN button when you are ready.</string>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBF-ll-4we">
-                    <rect key="frame" x="323.5" y="55" width="121.5" height="38.5"/>
+                    <rect key="frame" x="323" y="55" width="122" height="39"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5d-aU-YUb">
-                    <rect key="frame" x="20" y="101.5" width="728" height="41"/>
+                    <rect key="frame" x="20" y="102" width="728" height="41"/>
                     <string key="text">Now we will start with the task.
 Click on LISTEN button when you are ready.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -509,16 +521,18 @@ Click on LISTEN button when you are ready.</string>
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDz-fl-CkV">
-                    <rect key="frame" x="277" y="362" width="214" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDz-fl-CkV">
+                    <rect key="frame" x="292" y="362" width="184" height="32"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdG-on-Vyl">
-                    <rect key="frame" x="345" y="497" width="78" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdG-on-Vyl">
+                    <rect key="frame" x="345" y="508" width="78" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="EDJ-4o-jVU"/>
+                        <constraint firstAttribute="width" constant="78" id="off-w1-FO8"/>
+                    </constraints>
                     <state key="normal" title="SUBMIT"/>
                     <connections>
                         <action selector="done:" destination="-1" eventType="touchUpInside" id="fe0-t2-rG3"/>
@@ -526,6 +540,12 @@ Click on LISTEN button when you are ready.</string>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="gdG-on-Vyl" firstAttribute="top" secondItem="JDz-fl-CkV" secondAttribute="bottom" constant="114" id="HsH-PD-dkU"/>
+                <constraint firstItem="gdG-on-Vyl" firstAttribute="centerX" secondItem="Tbg-TJ-DWN" secondAttribute="centerX" id="M6X-Ly-W7e"/>
+                <constraint firstItem="JDz-fl-CkV" firstAttribute="top" secondItem="Tbg-TJ-DWN" secondAttribute="top" constant="362" id="deD-3P-44d"/>
+                <constraint firstItem="JDz-fl-CkV" firstAttribute="centerX" secondItem="Tbg-TJ-DWN" secondAttribute="centerX" id="vco-1R-cqA"/>
+            </constraints>
             <point key="canvasLocation" x="4203" y="-1030"/>
         </view>
     </objects>
@@ -533,5 +553,6 @@ Click on LISTEN button when you are ready.</string>
         <image name="listen.png" width="128" height="128"/>
         <image name="play.png" width="128" height="128"/>
         <image name="record.png" width="88" height="128"/>
+        <image name="speaker.png" width="84" height="68"/>
     </resources>
 </document>

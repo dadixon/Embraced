@@ -7,12 +7,10 @@
 //
 
 import UIKit
-import Stormpath
-import CoreData
+import Alamofire
 
 class UserInputViewController: UIViewController {
 
-    @IBOutlet weak var participantID: UILabel!
     @IBOutlet weak var dayOfTheWeekTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var countyTextField: UITextField!
@@ -20,10 +18,11 @@ class UserInputViewController: UIViewController {
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var floorTextField: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
+    @IBOutlet weak var participantLabel: UILabel!
     
     
-    let participant = UserDefaults.standard
-    let downloadManager = DownloadManager()
+    let userDefaults = UserDefaults.standard
+    let APIUrl = "http://www.embracedapi.ugr.es/"
     
     fileprivate func setBottomBorder(_ textfield: UITextField) {
         let border = CALayer()
@@ -42,15 +41,20 @@ class UserInputViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.navigationController?.isNavigationBarHidden = true
-        
-        DataManager.sharedInstance.fetchStimuli()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         submitBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
-
+        
+        dayOfTheWeekTextField.placeholder = "Day_of_the_week".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
+        countryTextField.placeholder = "Country".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
+        countyTextField.placeholder = "County".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
+        cityTextField.placeholder = "City".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
+        locationTextField.placeholder = "Location".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
+        floorTextField.placeholder = "Floor".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
+        submitBtn.setTitle("Submit".localized(lang: userDefaults.string(forKey: "TesterLanguage")!), for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,48 +67,43 @@ class UserInputViewController: UIViewController {
     }
     
     @IBAction func submit(_ sender: AnyObject) {
-        let uuid = UUID().uuidString
-        let index = uuid.characters.index(uuid.endIndex, offsetBy: -15)
-        
-        participant.setValue(uuid.substring(to: index), forKey: "pid")
-        participant.setValue(dayOfTheWeekTextField.text, forKey: "dayOfTheWeek")
-        participant.setValue(countryTextField.text, forKey: "country")
-        participant.setValue(countyTextField.text, forKey: "county")
-        participant.setValue(cityTextField.text, forKey: "city")
-        participant.setValue(locationTextField.text, forKey: "location")
-        participant.setValue(floorTextField.text, forKey: "floor")
-
         var jsonObject = [String: AnyObject]()
+        
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss a"
+        let dateString = dateFormatter.string(from:date)
         
         // Gather data for post
         jsonObject = [
-            "id": uuid.substring(to: index) as AnyObject
+            "pid": userDefaults.string(forKey: "pid")! as AnyObject,
+            "timeTaken": dateString as AnyObject,
+            "dayOfWeek": dayOfTheWeekTextField.text as AnyObject,
+            "country": countryTextField.text as AnyObject,
+            "county": countyTextField.text as AnyObject,
+            "city": cityTextField.text as AnyObject,
+            "location": locationTextField.text as AnyObject,
+            "floor": floorTextField.text as AnyObject
         ]
 
         
-//        print(jsonObject)
+        let token = userDefaults.string(forKey: "token")!
+        let pid = userDefaults.string(forKey: "pid")!
+        let headers: HTTPHeaders = [
+            "x-access-token": token
+        ]
         
-        // Push to API
-        APIWrapper.post(id: "", test: "", data: jsonObject)
-
+        Alamofire.request(APIUrl + "api/moca/new/" + pid, method: .post, parameters: jsonObject, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            debugPrint(response)
+            
+            let statusCode = response.response?.statusCode
+            
+            if statusCode == 200 {
+                AppDelegate.testPosition += 1
+                self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
+            }
+        }
         
-        let questionnaireViewController:StartViewController = StartViewController()
-        let navController = UINavigationController(rootViewController: questionnaireViewController)
-        self.present(navController, animated: true, completion: nil)
+        
     }
-    
-    
-//    func downloadFileFromURL(url:NSURL, x: Int, y: Int){
-//        var downloadTask:URLSessionDownloadTask
-//        downloadTask = URLSession.shared.downloadTask(with: url as URL, completionHandler: { (URL, response, error) -> Void in
-//            if error != nil {
-//                print(error!.localizedDescription)
-//            }
-//            print(URL! as NSURL)
-//            print(x)
-//            self.examples2[x][y] = URL! as URL
-//        })
-//        
-//        downloadTask.resume()
-//    }
 }

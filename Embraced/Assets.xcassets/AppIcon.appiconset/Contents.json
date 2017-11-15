@@ -50,6 +50,12 @@
       "idiom" : "ipad",
       "filename" : "logo_167 3.00.38 PM.png",
       "scale" : "2x"
+    },
+    {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "Embraced.jpeg",
+      "scale" : "1x"
     }
   ],
   "info" : {

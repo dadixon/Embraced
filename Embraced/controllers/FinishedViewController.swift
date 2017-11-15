@@ -10,10 +10,18 @@ import UIKit
 
 class FinishedViewController: FrontViewController {
 
+    @IBOutlet weak var finishedLabel: UILabel!
+    @IBOutlet weak var startOverBtn: NavigationButton!
+    
     override func viewDidLoad() {
+        step = AppDelegate.position
+        
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        language = participant.string(forKey: "language")!
+        
+        finishedLabel.text = "Finished".localized(lang: language)
+        startOverBtn.setTitle("Start_over".localized(lang: language), for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,9 +34,10 @@ class FinishedViewController: FrontViewController {
     // MARK: - Navigation
 
     @IBAction func startOver(_ sender: AnyObject) {
-        let reyComplexFigureViewController:UserInputViewController = UserInputViewController()
+        AppDelegate.position = 0
+        AppDelegate.testPosition = 0
         
-        self.navigationController?.pushViewController(reyComplexFigureViewController, animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
 

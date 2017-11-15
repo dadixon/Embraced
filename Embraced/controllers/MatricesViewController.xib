@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,19 +27,19 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uH-PD-Ydg">
-                    <rect key="frame" x="8" y="20" width="359" height="639"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2uH-PD-Ydg">
+                    <rect key="frame" x="8" y="8" width="359" height="651"/>
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eEj-sB-j0d">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEj-sB-j0d">
                             <rect key="frame" x="0.0" y="0.0" width="359" height="47"/>
                             <subviews>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JRZ-ZT-Kow">
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JRZ-ZT-Kow">
                                     <rect key="frame" x="8.5" y="32" width="342" height="2"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="342" id="x2g-Og-ICQ"/>
                                     </constraints>
                                 </progressView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcr-0u-ejv">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcr-0u-ejv">
                                     <rect key="frame" x="165.5" y="8" width="29" height="21"/>
                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -70,6 +70,7 @@
                 <constraint firstItem="2uH-PD-Ydg" firstAttribute="leading" secondItem="v9U-xX-ZvV" secondAttribute="leading" constant="8" id="DaL-Pl-7Ht"/>
                 <constraint firstAttribute="bottom" secondItem="2uH-PD-Ydg" secondAttribute="bottom" constant="8" id="KFy-f1-nft"/>
                 <constraint firstAttribute="trailing" secondItem="2uH-PD-Ydg" secondAttribute="trailing" constant="8" id="aDc-LC-tsO"/>
+                <constraint firstItem="2uH-PD-Ydg" firstAttribute="top" secondItem="v9U-xX-ZvV" secondAttribute="top" constant="8" id="rqe-1F-Wzg"/>
             </constraints>
             <point key="canvasLocation" x="0.5" y="-66.5"/>
         </view>

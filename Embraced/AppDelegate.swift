@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Stormpath
 import CoreData
 import SystemConfiguration
 
@@ -17,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var navController: UINavigationController?
     var window: UIWindow?
 
-    
     var pitchExamples = Array<Array<String>>()
     var pitchTrials = Array<Array<String>>()
     var pitchTasks = Array<Array<String>>()
@@ -30,13 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var namingTaskPractice = Array<String>()
     var namingTaskTask = Array<String>()
     
+    static var position = 0
+    static var testPosition = 0
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let APIURL = "http://api.girlscouts.harryatwal.com"
-        
-        Stormpath.sharedSession.configuration.APIURL = URL(string: APIURL)!
-        
-//        navController = UINavigationController()
-        
+                
         return true
     }
 
@@ -61,7 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-//        Stormpath.sharedSession.logout()
     }
 
 }

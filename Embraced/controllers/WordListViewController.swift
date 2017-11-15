@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import AVKit
+import Alamofire
 
 class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
 
@@ -20,16 +21,20 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var trialRecordBtn: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var InstructionsLabel: UILabel!
     @IBOutlet weak var instructions2Label: UILabel!
     @IBOutlet weak var listenBtn: UIButton!
-    
+    @IBOutlet weak var practiceLabel: UILabel!
+    @IBOutlet weak var practiceInstruction: UILabel!
+    @IBOutlet weak var trialLabel: UILabel!
+    @IBOutlet weak var completeLabel: UILabel!
+    @IBOutlet weak var completeBtn: UIButton!
+    @IBOutlet weak var startBtn: NavigationButton!
+    @IBOutlet weak var wordNextBtn: NavigationButton!
     
     var recordingSession: AVAudioSession!
-    
     var soundRecorder: AVAudioRecorder!
-    var fileName : [String] = ["testAudioFile.m4a", "trial1.m4a", "trial2.m4a", "trial3.m4a", "trial4.m4a", "trial5.m4a"]
+    var fileName = "testWordlistAudioFile.m4a"
     
     var startTime = TimeInterval()
     var timer = Timer()
@@ -37,21 +42,15 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     var trials = Array<String>()
     var sound = String()
     var practice = true
-    var position = 0
-    var instructions : [String] = ["There will be a 3 second countdown before the list starts. \nPlease tap the LISTEN button when you are ready to start",
-                                   "Tap the LISTEN button to listen to the list again",
-                                   "Tap the LISTEN button to listen to the list again",
-                                   "Tap the LISTEN button to listen to the list again",
-                                   "This is the last time that you are going to listen to this list. Tap the screen to listen to the list again",
-                                   "Now you are going to listen to a different list of words. Again, once the list is finished say out loud all the words you can remember from this second list.\nTap the screen to listen to this new list"]
-    var instructions2 : [String] = ["Now say out loud all the words you can remember from the list. Tap the microphone button to start recording",
-                                    "Now say out loud all the words you can remember from the list, including the ones you said before.\nTap the microphone button to start recording.",
-                                   "Now say out loud all the words you can remember from the list, including the ones you said before.\nTap the microphone button to start recording.",
-                                   "Now say out loud all the words you can remember from the list, including the ones you said before. \nTap the microphone button to start recording",
-                                   "Now say out loud all the words you can remember from the list, including the ones you said before. \nTap the microphone button to start recording",
-                                   "Now say out loud all the words you can remember from the list. \nTap the microphone button to start recording"]
+    var position = 1
+    var instructions = Array<String>()
+    var instructions2 = Array<String>()
     
-    
+    let APIUrl = "http://www.embracedapi.ugr.es/"
+    let userDefaults = UserDefaults.standard
+    var token: String = ""
+    var id: String = ""
+    var headers: HTTPHeaders = [:]
     
     // MARK: - Private
     
@@ -66,17 +65,23 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
     }
     
-    
-    
     override func viewDidLoad() {
-        step = 14
+        step = AppDelegate.position
         
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(WordListViewController.next(_:)))
+        language = participant.string(forKey: "language")!
+        showOrientationAlert(orientation: "landscape")
         
-        orientation = "landscape"
-        rotated()
+        // Insert row in database
+        id = participant.string(forKey: "pid")!
+        token = userDefaults.string(forKey: "token")!
+        headers = [
+            "x-access-token": token
+        ]
+        
+        Alamofire.request(APIUrl + "api/wordlist/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+        }
         
         practiceView.translatesAutoresizingMaskIntoConstraints = false
         trial1View.translatesAutoresizingMaskIntoConstraints = false
@@ -109,9 +114,37 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         }
         
         // Fetch audios
-        trials = DataManager.sharedInstance.wordListTrials
+        self.trials = DataManager.sharedInstance.wordListTasks
+
+        practiceLabel.text = "Practice".localized(lang: language)
+        practiceInstruction.text = "wordlist1_practice_instruction".localized(lang: language)
+        startBtn.setTitle("Start".localized(lang: language), for: .normal)
+        recordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
+        playBtn.setTitle("Play".localized(lang: language), for: .normal)
+        trialLabel.text = "Round".localized(lang: language) + " 1"
+        listenBtn.setTitle("Listen".localized(lang: language), for: .normal)
+        trialRecordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
+        wordNextBtn.setTitle("Done".localized(lang: language), for: .normal)
+        instructions = ["wordlist1_instructionA1".localized(lang: language),
+                        "wordlist1_instructionA2".localized(lang: language),
+                        "wordlist1_instructionA2".localized(lang: language),
+                        "wordlist1_instructionA2".localized(lang: language),
+                        "wordlist1_instructionA3".localized(lang: language),
+                        "wordlist1_instructionA4".localized(lang: language),
+                        "wordlist1_instructionA5".localized(lang: language)
+        ]
+        instructions2 = ["wordlist1_instructionB1".localized(lang: language),
+                        "wordlist1_instructionB2".localized(lang: language),
+                        "wordlist1_instructionB2".localized(lang: language),
+                        "wordlist1_instructionB2".localized(lang: language),
+                        "wordlist1_instructionB2".localized(lang: language),
+                        "wordlist1_instructionB1".localized(lang: language),
+                        ""
+        ]
         
         loadingView.stopAnimating()
+        
+        playBtn.isEnabled = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -122,16 +155,21 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     func setup() {
         instructions2Label.isHidden = true
         
-        if position < 5 {
-            titleLabel.text = "Trial \(position + 1)"
+        if position <= 6 {
+            trialLabel.text = "Round".localized(lang: language) + " " + String(position)
         } else {
-            titleLabel.text = "" //"Interference list"
+            trialLabel.text = "" //"Interference list"
         }
         
-        InstructionsLabel.text = instructions[position]
-        instructions2Label.text = instructions2[position]
+        InstructionsLabel.text = instructions[position-1]
+        instructions2Label.text = instructions2[position-1]
         trialRecordBtn.isEnabled = false
         listenBtn.isEnabled = true
+        
+        if position == 7 {
+            listenBtn.isHidden = true
+            trialRecordBtn.isEnabled = true
+        }
     }
     
     
@@ -150,32 +188,34 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
             soundRecorder.delegate = self
             soundRecorder.record()
             
-            button.setTitle("Stop", for: .normal)
+            button.setTitle("Stop_Recording".localized(lang: language), for: .normal)
         } catch {
-            finishRecording(button: button, success: false)
+            finishRecording(button, success: false)
         }
+        
+        playBtn.isEnabled = false
     }
     
     
-    func finishRecording(button: UIButton, success: Bool) {
-        soundRecorder.stop()
-        soundRecorder = nil
+    func finishRecording(_ button: UIButton, success: Bool) {
+        if soundRecorder.isRecording {
+            soundRecorder.stop()
+            soundRecorder = nil
+        }
         
         if success {
-            button.setTitle("Re-record", for: .normal)
-        } else {
-            button.setTitle("Record", for: .normal)
-            // recording failed :(
+            button.setTitle("Start_Record".localized(lang: language), for: .normal)
+            playBtn.isEnabled = true
         }
     }
     
     func finishPlaying() {
-        if soundPlayer.isPlaying {
-            soundPlayer.stop()
+        if (soundPlayer?.isPlaying)! {
+            soundPlayer?.stop()
         }
         
         if practice {
-            playBtn.setTitle("Play", for: .normal)
+            playBtn.setTitle("Play".localized(lang: language), for: .normal)
             recordBtn.isEnabled = true
         } else {
             instructions2Label.isHidden = false
@@ -186,10 +226,10 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     
     func preparePlayer() {
         do {
-            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName[0]))
-            soundPlayer.delegate = self
-            soundPlayer.prepareToPlay()
-            soundPlayer.volume = 1.0
+            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName))
+            soundPlayer?.delegate = self
+            soundPlayer?.prepareToPlay()
+            soundPlayer?.volume = 1.0
         } catch {
             log(logMessage: "Something went wrong")
         }
@@ -204,7 +244,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     func startTimer() {
         if !timer.isValid {
             
-            let aSelector : Selector = #selector(UIMenuController.update)
+            let aSelector : Selector = #selector(WordListViewController.update)
             
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
             
@@ -212,7 +252,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         }
     }
     
-    func update() {
+    @objc func update() {
         if(count > 0) {
             countLabel.text = String(count)
             count -= 1
@@ -220,7 +260,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
             resetTimer()
             countLabel.text = ""
             
-            if position < 5 {
+            if position <= 5 {
                 self.play(trials[0])
             } else {
                 self.play(trials[1])
@@ -231,47 +271,95 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     func resetTimer() {
         timer.invalidate()
     }
+
     
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
-        let vc:StroopViewController = StroopViewController()
-        nextViewController(viewController: vc)
+        AppDelegate.position += 1
+        AppDelegate.testPosition += 1
+        self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
     }
 
     @IBAction func done(_ sender: AnyObject) {
-        APIWrapper.post(id: participant.string(forKey: "pid")!, test: "wordlist", data: createPostObject())
-        next(self)
+        self.deleteFile(fileName)
+        self.next(self)
     }
     
     @IBAction func moveToTrial1(_ sender: AnyObject) {
+        if (soundPlayer != nil) {
+            if (soundPlayer?.isPlaying)! {
+                soundPlayer?.stop()
+            }
+        }
         setSubview(practiceView, next: trial1View)
         setup()
         practice = false
+        
+        wordNextBtn.setTitle("Next".localized(lang: language), for: .normal)
+        wordNextBtn.isHidden = true
     }
     
     
     // MARK: - Action
     
+    @IBAction func recordTappedTest(_ sender: UIButton) {
+        if soundRecorder == nil {
+            startRecording(sender, fileName: fileName)
+        } else {
+            finishRecording(sender, success: true)
+            trialRecordBtn.isEnabled = false
+        }
+    }
+    
     @IBAction func recordTapped(_ sender: UIButton) {
         if soundRecorder == nil {
             startRecording(sender, fileName: "wordlist\(position).m4a")
         } else {
-            finishRecording(button: sender, success: true)
+            finishRecording(sender, success: true)
+            trialRecordBtn.isEnabled = false
+            wordNextBtn.isHidden = false
         }
     }
     
+    
+    
+    func postToAPI(object: [String: AnyObject]) {
+        let index = object["index"] as! Int
+        let fileURL = object["audio"] as! URL
+        
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(fileURL, withName: "audio")
+                multipartFormData.append(String(index).data(using: String.Encoding.utf8)!, withName: "index")
+        }, usingThreshold: UInt64.init(),
+           to: APIUrl + "api/wordlist/uploadfile/" + id,
+           method: .post,
+           headers: headers,
+           encodingCompletion: { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                upload.responseJSON { response in
+                    debugPrint(response)
+                }
+            case .failure(let encodingError):
+                print(encodingError)
+            }})
+    }
+    
+    
+    
     @IBAction func playSound(_ sender: UIButton) {
-        if sender.titleLabel!.text == "Play" {
+        if sender.titleLabel!.text == "Play".localized(lang: language) {
             recordBtn.isEnabled = false
-            sender.setTitle("Stop", for: UIControlState())
+            sender.setTitle("Stop".localized(lang: language), for: UIControlState())
             preparePlayer()
-            soundPlayer.play()
+            soundPlayer?.play()
         } else {
-            if soundPlayer.isPlaying {
-                soundPlayer.stop()
+            if (soundPlayer?.isPlaying)! {
+                soundPlayer?.stop()
             }
-            sender.setTitle("Play", for: UIControlState())
+            sender.setTitle("Play".localized(lang: language), for: UIControlState())
         }
     }
     
@@ -282,41 +370,35 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func nextTrial(_ sender: AnyObject) {
+        postToAPI(object: createPostObject(index: position))
         position += 1
         
-        if soundPlayer.isPlaying {
-            soundPlayer.stop()
+        if soundPlayer != nil {
+            if (soundPlayer?.isPlaying)! {
+                soundPlayer?.stop()
+            }
         }
         
-        if position < instructions.count {
+        if position <= instructions.count {
             setup()
+            wordNextBtn.isHidden = true
         } else {
             setSubview(trial1View, next: completeView)
+            
+            completeLabel.text = "Test_complete".localized(lang: language)
+            completeBtn.setTitle("Submit".localized(lang: language), for: .normal)
         }
     }
     
-    func createPostObject() -> [String: AnyObject] {
+    func createPostObject(index: Int) -> [String: AnyObject] {
         var jsonObject = [String: AnyObject]()
-        var jsonTask = [AnyObject]()
-        var jsonTaskObject = [String: AnyObject]()
-        
-        for i in 0...position-2 {
-            let soundData = FileManager.default.contents(atPath: getCacheDirectory().stringByAppendingPathComponent("wordlist\(i).m4a"))
-            let dataStr = soundData?.base64EncodedString(options: [])
-            
-            jsonTaskObject = [
-                "name": "wordlist\(i+1)" as AnyObject,
-                "soundByte": dataStr as AnyObject
-            ]
-            
-            jsonTask.append(jsonTaskObject as AnyObject)
-        }
-        
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentsURL.appendingPathComponent("wordlist\(index).m4a")
         
         // Gather data for post
         jsonObject = [
-            "id": participant.string(forKey: "pid")! as AnyObject,
-            "task": jsonTask as AnyObject
+            "index": index as AnyObject,
+            "audio": fileURL as AnyObject
         ]
         
         return jsonObject
@@ -325,7 +407,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     // MARK: - Delegate
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        NSLog("finished playing")
+        print("finished playing")
         finishPlaying()
     }
 }
