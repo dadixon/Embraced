@@ -51,7 +51,7 @@ class AdminViewController: UITabBarController, UITabBarControllerDelegate {
     
     //Delegate methods
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        print("Should select viewController: \(String(describing: viewController.title)) ?")
+//        print("Should select viewController: \(String(describing: viewController.title)) ?")
         return true;
     }
 }

@@ -35,7 +35,8 @@ class ReyComplexFigure2ViewController: WebViewController {
 //        let trailMakingTestViewController:TrailMakingTestViewController = TrailMakingTestViewController()
 //        nextViewController(viewController: trailMakingTestViewController)
         AppDelegate.position += 1
-        nextViewController2(position: AppDelegate.position)
+        AppDelegate.testPosition += 1
+        self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
     }
     
     // MARK: - Delegate

@@ -29,6 +29,8 @@ class StartViewController: UIViewController {
         nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
         
         participant.setValue("en", forKey: "language")
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,14 +59,9 @@ class StartViewController: UIViewController {
     
     @IBAction func startTest(_ sender: Any) {
         // TODO: Update participant language chosen in the db
-        
-        var navigationArray = self.navigationController?.viewControllers
 
-        navigationArray?.remove(at: 0)
-
-        let vc = LoadingScreenViewController()
-        let navController = UINavigationController(rootViewController: vc)
-        self.present(navController, animated: true, completion: nil)
+        AppDelegate.testPosition += 1
+        self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
         
     }
  
@@ -78,6 +75,4 @@ class StartViewController: UIViewController {
         
         return jsonObject
     }
-    
-
 }

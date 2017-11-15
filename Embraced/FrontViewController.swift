@@ -169,7 +169,7 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
                 vc = NamingTaskViewController()
             case "Comprehension Task":
                 vc = ComprehensionViewController()
-            case "Eye Test":
+            case "Eyes Test":
                 vc = EyeTestViewController()
             default:
                 vc = UserInputViewController()

@@ -277,7 +277,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     
     @IBAction func next(_ sender: AnyObject) {
         AppDelegate.position += 1
-        nextViewController2(position: AppDelegate.position)
+        AppDelegate.testPosition += 1
+        self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
     }
 
     @IBAction func done(_ sender: AnyObject) {

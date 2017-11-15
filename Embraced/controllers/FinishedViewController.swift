@@ -35,10 +35,9 @@ class FinishedViewController: FrontViewController {
 
     @IBAction func startOver(_ sender: AnyObject) {
         AppDelegate.position = 0
+        AppDelegate.testPosition = 0
         
-        let vc = AdminViewController()
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     
 

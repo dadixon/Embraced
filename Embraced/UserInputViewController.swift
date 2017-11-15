@@ -68,8 +68,6 @@ class UserInputViewController: UIViewController {
     
     @IBAction func submit(_ sender: AnyObject) {
         var jsonObject = [String: AnyObject]()
-        let vc = StartViewController()
-        let navController = UINavigationController(rootViewController: vc)
         
         let date = Date()
         let dateFormatter = DateFormatter()
@@ -79,7 +77,7 @@ class UserInputViewController: UIViewController {
         // Gather data for post
         jsonObject = [
             "pid": userDefaults.string(forKey: "pid")! as AnyObject,
-            "time": dateString as AnyObject,
+            "timeTaken": dateString as AnyObject,
             "dayOfWeek": dayOfTheWeekTextField.text as AnyObject,
             "country": countryTextField.text as AnyObject,
             "county": countyTextField.text as AnyObject,
@@ -101,7 +99,8 @@ class UserInputViewController: UIViewController {
             let statusCode = response.response?.statusCode
             
             if statusCode == 200 {
-                self.present(navController, animated: true, completion: nil)
+                AppDelegate.testPosition += 1
+                self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
             }
         }
         

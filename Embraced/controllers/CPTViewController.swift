@@ -34,7 +34,8 @@ class CPTViewController: WebViewController {
 //        let vc:MatricesViewController = MatricesViewController()
 //        nextViewController(viewController: vc)
         AppDelegate.position += 1
-        nextViewController2(position: AppDelegate.position)
+        AppDelegate.testPosition += 1
+        self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
     }
     
     // MARK: - Delegate

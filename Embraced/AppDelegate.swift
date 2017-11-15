@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var namingTaskTask = Array<String>()
     
     static var position = 0
+    static var testPosition = 0
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
