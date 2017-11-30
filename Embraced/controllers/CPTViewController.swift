@@ -31,8 +31,6 @@ class CPTViewController: WebViewController {
     // MARK: - Navigation
     
     func next(_ sender:Any) {
-//        let vc:MatricesViewController = MatricesViewController()
-//        nextViewController(viewController: vc)
         AppDelegate.position += 1
         AppDelegate.testPosition += 1
         self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)

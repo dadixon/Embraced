@@ -360,7 +360,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         instructionsA.text = "digital_begin_round_start".localized(lang: language)
         postToAPI(object: createPostObject(direction: "F", index: forwardCount))
         
-        if (forwardCount < forward.count - 1) {
+        if (forwardCount < forward.count) {
             forwardCount += 1
             rounds.text = "Round".localized(lang: language) + " " + String(forwardCount)
             listenForwardBtn.isEnabled = true
@@ -389,7 +389,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         instructions.text = "digital_begin_round2_start".localized(lang: language)
         postToAPI(object: createPostObject(direction: "B", index: backwardCount))
         
-        if (backwardCount < backward.count - 1) {
+        if (backwardCount < backward.count) {
             backwardCount += 1
             bRounds.text = "Round".localized(lang: language) + " " + String(backwardCount)
             listenBackwardBtn.isEnabled = true

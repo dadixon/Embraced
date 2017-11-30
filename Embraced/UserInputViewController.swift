@@ -71,7 +71,8 @@ class UserInputViewController: UIViewController {
         
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss a"
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
         let dateString = dateFormatter.string(from:date)
         
         // Gather data for post

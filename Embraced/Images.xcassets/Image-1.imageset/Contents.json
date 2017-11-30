@@ -2,20 +2,16 @@
   "images" : [
     {
       "idiom" : "ipad",
-      "filename" : "iconTab1 copy.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "iconTab1 copy 2.png",
+      "filename" : "iconTab1.png",
       "scale" : "2x"
     }
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
-  },
-  "properties" : {
-    "preserves-vector-representation" : true
   }
 }
