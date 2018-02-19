@@ -127,6 +127,17 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         return paths[0]
     }
     
+    func deleteAudioFile(fileURL: URL) {
+        let fileManager = FileManager.default
+        
+        do {
+            try fileManager.removeItem(at: fileURL)
+        }
+        catch let error as NSError {
+            print("Ooops! Something went wrong: \(error)")
+        }
+    }
+    
     func playTest(_ filename:String) {
         let file = filename.characters.split(separator: ".").map(String.init)
         

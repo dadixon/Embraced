@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import JWTDecode
 
 class ViewController: UIViewController {
  
@@ -74,6 +75,17 @@ class ViewController: UIViewController {
                     
                     self.userDefaults.setValue(json["token"]!, forKey: "token")
                     self.userDefaults.setValue(json["id"]!, forKey: "id")
+                    
+                    do {
+                        let jwt = try decode(jwt: json["token"] as! String)
+                        
+                        print(jwt.body)
+                        self.userDefaults.setValue(jwt.body["admin"], forKey: "isAdmin")
+                    } catch {
+                        print("Cannot decode")
+                    }
+                    
+//                    self.userDefaults.setValue(isAdmin, forKey: "isAdmin")
 
                     DispatchQueue.main.async(execute: {
                         self.usernameTextfield.text = ""

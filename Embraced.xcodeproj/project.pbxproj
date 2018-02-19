@@ -74,6 +74,9 @@
 		A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DCB1CF9E7C700878928 /* Embraced.xcdatamodeld */; };
 		A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A48B4DCE1CF9E7C700878928 /* Assets.xcassets */; };
 		A48B4DD21CF9E7C700878928 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48B4DD01CF9E7C700878928 /* LaunchScreen.storyboard */; };
+		A48D60E81FF5AC4F0042FBCA /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48D60E71FF5AC4F0042FBCA /* LibraryAPI.swift */; };
+		A48D60F41FF704D60042FBCA /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48D60F21FF704D60042FBCA /* UserCollectionViewCell.swift */; };
+		A48D60F51FF704D60042FBCA /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48D60F31FF704D60042FBCA /* UserCollectionViewCell.xib */; };
 		A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A490D7C41D09162800D2B59D /* UserInputViewController.swift */; };
 		A490D7D21D0919CB00D2B59D /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7C61D0919CB00D2B59D /* Roboto-Black.ttf */; };
 		A490D7D31D0919CB00D2B59D /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7C71D0919CB00D2B59D /* Roboto-BlackItalic.ttf */; };
@@ -95,7 +98,6 @@
 		A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */; };
 		A4BB08ED1D7EDFFA00B76C64 /* QuestionnaireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */; };
 		A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */; };
-		A4C469A41E13409400FDD5D5 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C469A31E13409400FDD5D5 /* Speech.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A4C469A71E134B5900FDD5D5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C469A51E134B5900FDD5D5 /* UserViewController.swift */; };
 		A4C469A81E134B5900FDD5D5 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C469A61E134B5900FDD5D5 /* UserViewController.xib */; };
 		A4C71C0E1D33570100CD5FB1 /* Embraced_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A4C71C0D1D33570100CD5FB1 /* Embraced_bg.png */; };
@@ -183,6 +185,9 @@
 		A48B4DCE1CF9E7C700878928 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A48B4DD11CF9E7C700878928 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A48B4DD31CF9E7C700878928 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A48D60E71FF5AC4F0042FBCA /* LibraryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
+		A48D60F21FF704D60042FBCA /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		A48D60F31FF704D60042FBCA /* UserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCollectionViewCell.xib; sourceTree = "<group>"; };
 		A490D7C41D09162800D2B59D /* UserInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputViewController.swift; sourceTree = "<group>"; };
 		A490D7C61D0919CB00D2B59D /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		A490D7C71D0919CB00D2B59D /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -204,7 +209,6 @@
 		A4AE36E21DFC545400727DFD /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A4AE36E61DFC9EA600727DFD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		A4AE36E71DFC9EA600727DFD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		A4BB08E41D7EDB0900B76C64 /* ISRadioButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ISRadioButton.framework; path = "../../../Library/Developer/Xcode/DerivedData/Embraced-gpyewpmhwauogygclnkydouwsmur/Build/Products/Debug-iphonesimulator/ISRadioButton/ISRadioButton.framework"; sourceTree = "<group>"; };
 		A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireViewController.swift; path = controllers/QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuestionnaireViewController.xib; path = controllers/QuestionnaireViewController.xib; sourceTree = "<group>"; };
 		A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInputViewController.xib; sourceTree = "<group>"; };
@@ -232,7 +236,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4C469A41E13409400FDD5D5 /* Speech.framework in Frameworks */,
 				A46A2C641DD66108000AC66C /* SystemConfiguration.framework in Frameworks */,
 				DD7D49BC9E47B49E27EB6157 /* Pods_Embraced.framework in Frameworks */,
 			);
@@ -255,7 +258,6 @@
 			children = (
 				A4C469A31E13409400FDD5D5 /* Speech.framework */,
 				A46A2C631DD66108000AC66C /* SystemConfiguration.framework */,
-				A4BB08E41D7EDB0900B76C64 /* ISRadioButton.framework */,
 				EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */,
 			);
 			name = Frameworks;
@@ -329,6 +331,8 @@
 		A48B4DC31CF9E7C700878928 /* Embraced */ = {
 			isa = PBXGroup;
 			children = (
+				A48D60ED1FF6FF1A0042FBCA /* Views */,
+				A48D60E61FF5AC3B0042FBCA /* API */,
 				A4476ED71D13B1A5002722B4 /* Models */,
 				A48B4DD91CF9EEAB00878928 /* Resources */,
 				A490D7C11D0913C500D2B59D /* Controllers */,
@@ -367,6 +371,23 @@
 				A414247E1D02C3F60028933E /* LOGO_r1_c1.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		A48D60E61FF5AC3B0042FBCA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A48D60E71FF5AC4F0042FBCA /* LibraryAPI.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		A48D60ED1FF6FF1A0042FBCA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A48D60F21FF704D60042FBCA /* UserCollectionViewCell.swift */,
+				A48D60F31FF704D60042FBCA /* UserCollectionViewCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		A490D7C11D0913C500D2B59D /* Controllers */ = {
@@ -511,6 +532,7 @@
 				A490D7D61D0919CB00D2B59D /* Roboto-Italic.ttf in Resources */,
 				A4347FE41D7BCC170033306A /* MultipleErrandsViewController.xib in Resources */,
 				A46C14181D7999AF0066EF37 /* CancellationTestViewController.xib in Resources */,
+				A48D60F51FF704D60042FBCA /* UserCollectionViewCell.xib in Resources */,
 				A4632C731DAE4629004B71BD /* speaker.png in Resources */,
 				A4347FD61D7BCABC0033306A /* PegboardViewController.xib in Resources */,
 				A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */,
@@ -632,12 +654,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,11 +726,13 @@
 				A489D6181E0B535A001F56FE /* SettingsViewController.swift in Sources */,
 				A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */,
 				A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */,
+				A48D60E81FF5AC4F0042FBCA /* LibraryAPI.swift in Sources */,
 				A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */,
 				A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */,
 				A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */,
 				A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */,
 				A4347FD11D7BCA950033306A /* MatricesViewController.swift in Sources */,
+				A48D60F41FF704D60042FBCA /* UserCollectionViewCell.swift in Sources */,
 				A4347FCD1D7BCA570033306A /* ReyFigureComplex4ViewController.swift in Sources */,
 				A4C469A71E134B5900FDD5D5 /* UserViewController.swift in Sources */,
 				A4347FDD1D7BCB260033306A /* WordListViewController.swift in Sources */,

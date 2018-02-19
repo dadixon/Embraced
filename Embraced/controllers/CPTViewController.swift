@@ -14,7 +14,10 @@ class CPTViewController: WebViewController {
     
     override func viewDidLoad() {
         step = AppDelegate.position
-        showOrientationAlert(orientation: "landscape")
+//        showOrientationAlert(orientation: "landscape")
+        let value = UIInterfaceOrientation.landscapeRight.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        
         url = URL(string: "http://www.embraced.ugr.es/cpt.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")! + "&token=" + participant.string(forKey: "token")!)
         
         super.viewDidLoad()
@@ -27,6 +30,15 @@ class CPTViewController: WebViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppDelegate.AppUtility.lockOrientation(.landscape)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AppDelegate.AppUtility.lockOrientation(.all)
+    }
     
     // MARK: - Navigation
     

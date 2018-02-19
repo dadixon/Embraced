@@ -120,7 +120,10 @@ class PitchViewController: FrontViewController {
         language = participant.string(forKey: "language")!
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PitchViewController.next(_:)))
         
-        showOrientationAlert(orientation: "portrait")
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        
+//        showOrientationAlert(orientation: "portrait")
         
         introView.translatesAutoresizingMaskIntoConstraints = false
         example1View.translatesAutoresizingMaskIntoConstraints = false
@@ -157,6 +160,16 @@ class PitchViewController: FrontViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppDelegate.AppUtility.lockOrientation(.portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AppDelegate.AppUtility.lockOrientation(.all)
     }
     
     @objc func updateTime() {

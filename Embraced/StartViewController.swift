@@ -14,9 +14,11 @@ class StartViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var welcomeText: UILabel!
     @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var languagePicker: UIPickerView!
     
     let participant = UserDefaults.standard
     let APIUrl = "http://www.embracedapi.ugr.es/"
+    var pickerData: [String:String] = [String:String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +32,11 @@ class StartViewController: UIViewController {
         
         participant.setValue("en", forKey: "language")
         
+        languagePicker.delegate = self
+        languagePicker.dataSource = self
         
+        pickerData = ["English": "en", "Spanish": "es"]
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     override var prefersStatusBarHidden : Bool {
         return true
@@ -45,17 +44,6 @@ class StartViewController: UIViewController {
     
     
     // MARK: - Navigation
-    @IBAction func chooseLanguage(_ sender: AnyObject) {
-        if sender.tag == 0 {
-            participant.setValue("en", forKey: "language")
-        } else if sender.tag == 1 {
-            participant.setValue("es", forKey: "language")
-        }
-        
-        welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "language")!)
-        welcomeText.text = "WELCOME_TEXT".localized(lang: participant.string(forKey: "language")!)
-        nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
-    }
     
     @IBAction func startTest(_ sender: Any) {
         // TODO: Update participant language chosen in the db
@@ -74,5 +62,30 @@ class StartViewController: UIViewController {
         ]
         
         return jsonObject
+    }
+}
+
+extension StartViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let componentArray = Array(pickerData.keys)
+        return componentArray[row].localized(lang: participant.string(forKey: "language")!)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let componentArray = Array(pickerData.keys)
+        
+        participant.setValue(pickerData[componentArray[row]]!, forKey: "language")
+        
+        welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "language")!)
+        welcomeText.text = "WELCOME_TEXT".localized(lang: participant.string(forKey: "language")!)
+        nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
     }
 }

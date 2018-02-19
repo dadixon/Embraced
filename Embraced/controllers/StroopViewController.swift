@@ -136,7 +136,10 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         super.viewDidLoad()
         
         language = participant.string(forKey: "language")!
-        showOrientationAlert(orientation: "landscape")
+//        showOrientationAlert(orientation: "landscape")
+        let value = UIInterfaceOrientation.landscapeRight.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        
         
         // Insert row in database
         id = participant.string(forKey: "pid")!
@@ -220,6 +223,16 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppDelegate.AppUtility.lockOrientation(.landscape)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AppDelegate.AppUtility.lockOrientation(.all)
     }
     
     func loadImageFromUrl(_ filename: String, view: UIImageView){
@@ -315,6 +328,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
             case .success(let upload, _, _):
                 upload.responseJSON { response in
                     debugPrint(response)
+                    self.deleteAudioFile(fileURL: fileURL)
                 }
             case .failure(let encodingError):
                 print(encodingError)

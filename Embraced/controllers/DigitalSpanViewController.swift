@@ -92,7 +92,9 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
         
         language = participant.string(forKey: "language")!
-        showOrientationAlert(orientation: "portrait")
+//        showOrientationAlert(orientation: "portrait")
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         
         // Insert row in database        
         id = participant.string(forKey: "pid")!
@@ -119,7 +121,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         let bottomConstraint = introView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
 
-        
         recordingSession = AVAudioSession.sharedInstance()
 
         do {
@@ -171,6 +172,16 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppDelegate.AppUtility.lockOrientation(.portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AppDelegate.AppUtility.lockOrientation(.all)
     }
     
     func startRecording(_ button: UIButton, fileName: String) {
@@ -245,6 +256,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             case .success(let upload, _, _):
                 upload.responseJSON { response in
                     debugPrint(response)
+                    self.deleteAudioFile(fileURL: fileURL)
                 }
             case .failure(let encodingError):
                 print(encodingError)

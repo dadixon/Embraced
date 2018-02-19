@@ -9,5 +9,6 @@ target 'Embraced' do
   pod 'ChameleonFramework', '~> 2.1'
   pod 'ReachabilitySwift', '~> 3'
   pod 'Alamofire', '~> 4.5'
+  pod 'JWTDecode', '~> 2.1'
 
 end

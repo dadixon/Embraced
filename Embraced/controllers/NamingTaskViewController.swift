@@ -84,7 +84,10 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
 
         language = participant.string(forKey: "language")!
-        showOrientationAlert(orientation: "landscape")
+//        showOrientationAlert(orientation: "landscape")
+        let value = UIInterfaceOrientation.landscapeRight.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        
         
         id = participant.string(forKey: "pid")!
         token = userDefaults.string(forKey: "token")!
@@ -131,6 +134,16 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppDelegate.AppUtility.lockOrientation(.landscape)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AppDelegate.AppUtility.lockOrientation(.all)
+    }
+    
     private func downloadAudioFile(urlString: String, name: String) {
         let destination: DownloadRequest.DownloadFileDestination = { _, _ in
             let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -151,9 +164,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     func loadImageFromUrl(_ filename: String, view: UIImageView) {
-//        let strurl = URL(string: filename)
-//        let dtinternet = NSData(contentsOf: strurl!)
-//        view.image = UIImage(data: dtinternet! as Data)
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let fileURL = documentsURL.appendingPathComponent(filename)
         view.image = UIImage(contentsOfFile: fileURL.path)
@@ -206,7 +216,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         print("\(functionName): \(logMessage)")
     }
     
-    func updateTime() {
+    @objc func updateTime() {
         
         let currentTime = Date.timeIntervalSinceReferenceDate
         
@@ -247,7 +257,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     
     func startTimer() {
         if !timer.isValid {
-            
             let aSelector : Selector = #selector(updateTime)
             
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: aSelector, userInfo: nil, repeats: true)
@@ -286,6 +295,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
             case .success(let upload, _, _):
                 upload.responseJSON { response in
                     debugPrint(response)
+                    self.deleteAudioFile(fileURL: fileURL)
                 }
             case .failure(let encodingError):
                 print(encodingError)
