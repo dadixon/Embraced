@@ -47,7 +47,7 @@ class LoadingScreenViewController: UIViewController {
 
         self.navigationController?.isNavigationBarHidden = true
         
-        view.backgroundColor = UIColor(gradientStyle: UIGradientStyle.topToBottom, withFrame: view.frame, andColors: [UIColor(hexString:"6c7070"), UIColor(hexString:"a5b09c")])
+        view.backgroundColor = UIColor(gradientStyle: UIGradientStyle.topToBottom, withFrame: view.frame, andColors: [UIColor(hexString:"6c7070")!, UIColor(hexString:"a5b09c")!])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,12 +56,6 @@ class LoadingScreenViewController: UIViewController {
         logoView.image = UIImage(named: "LOGO_r1_c1.png")
         setupDownloadFiles()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     func setupDownloadFiles() {
         Alamofire.request(APIUrl + "api/stimuli/files/" + language, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
@@ -245,68 +239,11 @@ class LoadingScreenViewController: UIViewController {
     }
     
     func startTest() {
-        // TODO: Update participant language chosen in the db
+        // Save test timer
+        let date = Date()
+        participant.setValue(date, forKey: "StartDate")
+        
         AppDelegate.testPosition += 1
         self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
-//        var navigationArray = self.navigationController?.viewControllers
-//
-//        navigationArray?.remove(at: 0)
-//
-//        let vc: UIViewController!
-//
-//        var tests = ["Questionnaire", "Orientation Task", "Complex Figure 1", "Clock Drawing Test", "Complex Figure 2", "Trail Making Test", "Melodies Recognition", "Digit Span", "Complex Figure 3", "Complex Figure 4", "Matrices", "Continuous Performance Test", "Motor Tasks", "Word List 1", "Color-Word Stroop Test", "Cancellation Test", "Word List 2", "Naming Test" ,"Comprehension Task", "Eyes Test"]
-//        if let test = participant.array(forKey: "Tests") {
-//            tests = test as! [String]
-//        }
-//
-//        participant.set(tests, forKey: "Tests")
-//
-//        switch tests[0] {
-//        case "Questionnaire":
-//            vc = QuestionnaireViewController()
-//        case "Orientation Task":
-//            vc = MOCAMMSETestViewController()
-//        case "Complex Figure 1":
-//            vc = ReyComplexFigureViewController()
-//        case "Clock Drawing Test":
-//            vc = ClockDrawingTestViewController()
-//        case "Complex Figure 2":
-//            vc = ReyComplexFigure2ViewController()
-//        case "Trail Making Test":
-//            vc = TrailMakingTestViewController()
-//        case "Melodies Recognition":
-//            vc = PitchViewController()
-//        case "Digit Span":
-//            vc = DigitalSpanViewController()
-//        case "Complex Figure 3":
-//            vc = ReyComplexFigure3ViewController()
-//        case "Complex Figure 4":
-//            vc = ReyFigureComplex4ViewController()
-//        case "Matrices":
-//            vc = MatricesViewController()
-//        case "Continuous Performance Test":
-//            vc = CPTViewController()
-//        case "Motor Tasks":
-//            vc = PegboardViewController()
-//        case "Word List 1":
-//            vc = WordListViewController()
-//        case "Color-Word Stroop Test":
-//            vc = StroopViewController()
-//        case "Cancellation Test":
-//            vc = CancellationTestViewController()
-//        case "Word List 2":
-//            vc = WordList2ViewController()
-//        case "Naming Test":
-//            vc = NamingTaskViewController()
-//        case "Comprehension Task":
-//            vc = ComprehensionViewController()
-//        case "Eyes Test":
-//            vc = EyeTestViewController()
-//        default:
-//            vc = UserInputViewController()
-//        }
-//
-//        navigationArray?.append(vc)
-//        self.navigationController?.setViewControllers(navigationArray!, animated: true)
     }
 }

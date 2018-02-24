@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import JWTDecode
+import Firebase
 
 class ViewController: UIViewController {
  
@@ -43,9 +44,15 @@ class ViewController: UIViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // If user is logged in, go to next view
+        if let user = Auth.auth().currentUser {
+            print("User is logged in")
+            let vc = AdminViewController()
+            let navController = UINavigationController(rootViewController: vc)
+            self.present(navController, animated: true, completion: nil)
+        }
     }
 
     override var prefersStatusBarHidden : Bool {
@@ -58,6 +65,16 @@ class ViewController: UIViewController {
         if ((usernameTextfield.text?.isEmpty)! || (passwordTextfield.text?.isEmpty)!) {
             self.errorLabel.text = "UsernamePasswordEmpty".localized(lang: testerLanguage)
             return
+        }
+        
+        // Firebase register user
+//        Auth.auth().createUser(withEmail: "drocdix7@gmail.com", password: "shortpass", completion: nil)
+        
+        
+        
+        // Firebase sign user
+        Auth.auth().signIn(withEmail: "drocdix7@gmail.com", password: "shortpass") { (user, error) in
+            print("Logged")
         }
         
         let parameters = createPostObject()

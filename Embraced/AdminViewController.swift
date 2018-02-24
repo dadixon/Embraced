@@ -30,7 +30,7 @@ class AdminViewController: UITabBarController, UITabBarControllerDelegate {
         let icon2 = UITabBarItem(title: "Settings".localized(lang: testerLanguage), image: UIImage(named: "iconTab1.png"), selectedImage: UIImage(named: "iconTab1.png"))
         item1.tabBarItem = icon1
         item2.tabBarItem = icon2
-        var controllers = [item1, item2]
+        let controllers = [item1, item2]
         
         self.viewControllers = controllers
     }

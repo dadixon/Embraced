@@ -9,8 +9,11 @@
 import UIKit
 import WebKit
 import Alamofire
+import Firebase
 
 class MOCAMMSETestViewController: WebViewController {
+    
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         step = AppDelegate.position
@@ -23,11 +26,6 @@ class MOCAMMSETestViewController: WebViewController {
         super.viewDidLoad()
         
         contentController.add(self, name: "uploadData")
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -59,7 +57,13 @@ class MOCAMMSETestViewController: WebViewController {
         let APIUrl = "http://www.embracedapi.ugr.es/"
         
         if message.name == "uploadData" {
-            let dict = message.body as! [String:AnyObject]
+            let dict = message.body as! [String:Any]
+            
+            self.ref = Database.database().reference()
+            
+            let childUpdates = ["/participants/\(participant.string(forKey: "FBPID")!)/userInputs": message.body]
+            ref.updateChildValues(childUpdates)
+            
             
             Alamofire.request(APIUrl + "api/moca/user/" + id, method: .post, parameters: dict, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
                 debugPrint(response)

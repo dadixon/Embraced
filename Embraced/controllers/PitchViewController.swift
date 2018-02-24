@@ -9,6 +9,8 @@
 import UIKit
 import AVFoundation
 import Alamofire
+import Firebase
+import SVProgressHUD
 
 class PitchViewController: FrontViewController {
     
@@ -93,6 +95,8 @@ class PitchViewController: FrontViewController {
     var headers: HTTPHeaders = [:]
     
     let group = DispatchGroup()
+    
+    var ref: DatabaseReference!
     
     // MARK: - Private
     

@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Firebase
 
 class StartViewController: UIViewController {
 
@@ -19,6 +20,7 @@ class StartViewController: UIViewController {
     let participant = UserDefaults.standard
     let APIUrl = "http://www.embracedapi.ugr.es/"
     var pickerData: [String:String] = [String:String]()
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,19 +48,22 @@ class StartViewController: UIViewController {
     // MARK: - Navigation
     
     @IBAction func startTest(_ sender: Any) {
-        // TODO: Update participant language chosen in the db
-
+        let pid = participant.string(forKey: "FBPID")!
+        ref = Database.database().reference()
+        let childUpdates = ["/participants/\(pid)/language": participant.string(forKey: "language")!]
+        ref.updateChildValues(childUpdates)
+        
         AppDelegate.testPosition += 1
         self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
         
     }
  
-    private func createPostObject() -> [String: AnyObject] {
-        var jsonObject = [String: AnyObject]()
+    private func createPostObject() -> [String: Any] {
+        var jsonObject = [String: Any]()
         
         // Gather data for post
         jsonObject = [
-            "language": participant.string(forKey: "language")! as AnyObject
+            "language": participant.string(forKey: "language")!
         ]
         
         return jsonObject

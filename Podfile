@@ -6,9 +6,13 @@ target 'Embraced' do
   use_frameworks!
 
   # Pods for Embraced
-  pod 'ChameleonFramework', '~> 2.1'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'ReachabilitySwift', '~> 3'
   pod 'Alamofire', '~> 4.5'
   pod 'JWTDecode', '~> 2.1'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'SVProgressHUD'
 
 end

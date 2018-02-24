@@ -59,7 +59,7 @@ class PegboardViewController: WebViewController {
         let APIUrl = "http://www.embracedapi.ugr.es/"
         
         if message.name == "uploadData" {
-            let data = message.body as! [String:AnyObject]
+            let data = message.body as! [String:Any]
             
             Alamofire.request(APIUrl + "api/pegboard/new/" + id, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
                 debugPrint(response)
