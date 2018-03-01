@@ -21,7 +21,7 @@ class ListenButton: UIButton {
     }
     
     func createBorder() {
-        self.setImage(UIImage(named: "speaker.png"), for: .normal)
+        self.setImage(UIImage(named: "speaker"), for: .normal)
 //        self.setTitle("Listen", for: .normal)
         self.titleEdgeInsets = UIEdgeInsetsMake(150,-40,0,0)
         self.imageEdgeInsets = UIEdgeInsetsMake(0, 25, 0, 0)

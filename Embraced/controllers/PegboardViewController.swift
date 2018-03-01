@@ -62,7 +62,6 @@ class PegboardViewController: WebViewController {
             let data = message.body as! [String:Any]
             
             Alamofire.request(APIUrl + "api/pegboard/new/" + id, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-                debugPrint(response)
                 let statusCode = response.response?.statusCode
                 
                 if statusCode == 200 {

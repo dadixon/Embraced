@@ -143,10 +143,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         forwardPractice = DataManager.sharedInstance.digitalSpanForwardPractice
         backward = DataManager.sharedInstance.digitalSpanBackward
         backwardPractice = DataManager.sharedInstance.digitalSpanBackwardPractice
-        
-        if (fileExist(forwardPractice)) {
-            print("File Exits")
-        }
         practice1Label.text = "Practice".localized(lang: language)
         practice1Instructions.text = "digital_practice_1".localized(lang: language)
         recordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
@@ -255,7 +251,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             switch encodingResult {
             case .success(let upload, _, _):
                 upload.responseJSON { response in
-                    debugPrint(response)
                     self.deleteAudioFile(fileURL: fileURL)
                 }
             case .failure(let encodingError):

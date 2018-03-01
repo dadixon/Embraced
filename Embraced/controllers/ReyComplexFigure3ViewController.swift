@@ -67,7 +67,6 @@ class ReyComplexFigure3ViewController: WebViewController {
             let dict = message.body as! [String:AnyObject]
             
             Alamofire.request(APIUrl + "api/rcf/uploadfile/" + id, method: .post, parameters: dict, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-                debugPrint(response)
                 let statusCode = response.response?.statusCode
                 
                 if statusCode == 200 {

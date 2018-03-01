@@ -10,9 +10,6 @@ target 'Embraced' do
   pod 'ReachabilitySwift', '~> 3'
   pod 'Alamofire', '~> 4.5'
   pod 'JWTDecode', '~> 2.1'
-  pod 'Firebase/Core'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Database'
   pod 'SVProgressHUD'
 
 end

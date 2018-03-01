@@ -21,8 +21,7 @@ class PlayButton: UIButton {
     }
     
     func createBorder() {
-//        self.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
-        self.setImage(UIImage(named: "play2.png"), for: .normal)
+        self.setImage(UIImage(named: "play"), for: .normal)
         self.setTitle("Play", for: .normal)
         self.titleEdgeInsets = UIEdgeInsetsMake(150,-130,0,0)
         self.imageEdgeInsets = UIEdgeInsetsMake(0, 35, 0, 0)

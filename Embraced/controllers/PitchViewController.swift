@@ -9,7 +9,6 @@
 import UIKit
 import AVFoundation
 import Alamofire
-import Firebase
 import SVProgressHUD
 
 class PitchViewController: FrontViewController {
@@ -95,9 +94,7 @@ class PitchViewController: FrontViewController {
     var headers: HTTPHeaders = [:]
     
     let group = DispatchGroup()
-    
-    var ref: DatabaseReference!
-    
+        
     // MARK: - Private
     
     private func log(logMessage: String, functionName: String = #function) {
@@ -282,7 +279,6 @@ class PitchViewController: FrontViewController {
         ]
         
         Alamofire.request(APIUrl + "api/pitch/new/" + id, method: .post, parameters: createPostObject(), encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-//            debugPrint(response)
             let statusCode = response.response?.statusCode
             
             if statusCode == 200 {

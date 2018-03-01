@@ -62,7 +62,6 @@ class ComprehensionViewController: WebViewController {
             let data = message.body as! [String:AnyObject]
             
             Alamofire.request(APIUrl + "api/comprehension/new/" + id, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-                debugPrint(response)
                 let statusCode = response.response?.statusCode
                 
                 if statusCode == 200 {

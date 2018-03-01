@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import Firebase
 
 class StartViewController: UIViewController {
 
@@ -20,12 +19,11 @@ class StartViewController: UIViewController {
     let participant = UserDefaults.standard
     let APIUrl = "http://www.embracedapi.ugr.es/"
     var pickerData: [String:String] = [String:String]()
-    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.navigationController?.isNavigationBarHidden = true
         
         welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "TesterLanguage")!)
@@ -33,6 +31,8 @@ class StartViewController: UIViewController {
         nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
         
         participant.setValue("en", forKey: "language")
+        DataManager.sharedInstance.language = "en"
+        DataManager.sharedInstance.updateData()
         
         languagePicker.delegate = self
         languagePicker.dataSource = self
@@ -48,12 +48,11 @@ class StartViewController: UIViewController {
     // MARK: - Navigation
     
     @IBAction func startTest(_ sender: Any) {
-        let pid = participant.string(forKey: "FBPID")!
-        ref = Database.database().reference()
-        let childUpdates = ["/participants/\(pid)/language": participant.string(forKey: "language")!]
-        ref.updateChildValues(childUpdates)
+        // Save test timer
+        let date = Date()
+        participant.setValue(date, forKey: "StartDate")
         
-        AppDelegate.testPosition += 1
+        AppDelegate.testPosition += 2
         self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
         
     }
@@ -88,6 +87,8 @@ extension StartViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         let componentArray = Array(pickerData.keys)
         
         participant.setValue(pickerData[componentArray[row]]!, forKey: "language")
+        DataManager.sharedInstance.language = pickerData[componentArray[row]]!
+        DataManager.sharedInstance.updateData()
         
         welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "language")!)
         welcomeText.text = "WELCOME_TEXT".localized(lang: participant.string(forKey: "language")!)

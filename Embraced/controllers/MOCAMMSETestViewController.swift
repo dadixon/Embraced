@@ -9,11 +9,8 @@
 import UIKit
 import WebKit
 import Alamofire
-import Firebase
 
 class MOCAMMSETestViewController: WebViewController {
-    
-    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         step = AppDelegate.position
@@ -59,14 +56,7 @@ class MOCAMMSETestViewController: WebViewController {
         if message.name == "uploadData" {
             let dict = message.body as! [String:Any]
             
-            self.ref = Database.database().reference()
-            
-            let childUpdates = ["/participants/\(participant.string(forKey: "FBPID")!)/userInputs": message.body]
-            ref.updateChildValues(childUpdates)
-            
-            
             Alamofire.request(APIUrl + "api/moca/user/" + id, method: .post, parameters: dict, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-                debugPrint(response)
                 let statusCode = response.response?.statusCode
                 
                 if statusCode == 200 {

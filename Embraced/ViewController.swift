@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import JWTDecode
-import Firebase
 
 class ViewController: UIViewController {
  
@@ -17,8 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTextfield: EmbracedTextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var signInBtn: UIButton!
-    
     @IBOutlet weak var imageHeight: NSLayoutConstraint!
+    
     let userDefaults = UserDefaults.standard
     var testerLanguage = ""
     let APIUrl = "http://www.embracedapi.ugr.es/"
@@ -27,7 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         signInBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         
         usernameTextfield.delegate = self
         
@@ -43,17 +42,6 @@ class ViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // If user is logged in, go to next view
-        if let user = Auth.auth().currentUser {
-            print("User is logged in")
-            let vc = AdminViewController()
-            let navController = UINavigationController(rootViewController: vc)
-            self.present(navController, animated: true, completion: nil)
-        }
-    }
 
     override var prefersStatusBarHidden : Bool {
         return true
@@ -65,16 +53,6 @@ class ViewController: UIViewController {
         if ((usernameTextfield.text?.isEmpty)! || (passwordTextfield.text?.isEmpty)!) {
             self.errorLabel.text = "UsernamePasswordEmpty".localized(lang: testerLanguage)
             return
-        }
-        
-        // Firebase register user
-//        Auth.auth().createUser(withEmail: "drocdix7@gmail.com", password: "shortpass", completion: nil)
-        
-        
-        
-        // Firebase sign user
-        Auth.auth().signIn(withEmail: "drocdix7@gmail.com", password: "shortpass") { (user, error) in
-            print("Logged")
         }
         
         let parameters = createPostObject()

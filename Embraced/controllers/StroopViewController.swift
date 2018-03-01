@@ -327,7 +327,6 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
             switch encodingResult {
             case .success(let upload, _, _):
                 upload.responseJSON { response in
-                    debugPrint(response)
                     self.deleteAudioFile(fileURL: fileURL)
                 }
             case .failure(let encodingError):

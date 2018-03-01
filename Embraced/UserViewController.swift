@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import Firebase
 
 class UserViewController: UIViewController {
 
@@ -19,7 +18,6 @@ class UserViewController: UIViewController {
     var language = String()
     var tests = [String]()
     var navigationTests = [UIViewController!]()
-    var ref: DatabaseReference!
     
     override func viewWillAppear(_ animated: Bool) {
         if let language = userDefaults.string(forKey: "TesterLanguage") {
@@ -43,11 +41,6 @@ class UserViewController: UIViewController {
         TestOrder.sharedInstance.setTests()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction func startTest(_ sender: Any) {
         // Add a participant
         let token = userDefaults.string(forKey: "token")!
@@ -56,14 +49,7 @@ class UserViewController: UIViewController {
             "x-access-token": token
         ]
         
-        
-        // Firebase create a participant record
-        self.ref = Database.database().reference()
-        let key = self.ref.child("participants").childByAutoId().key
-        userDefaults.setValue(key, forKey: "FBPID")
-        
         Alamofire.request(APIUrl + "api/participant/" + uid, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            debugPrint(response)
             
             let statusCode = response.response?.statusCode
             

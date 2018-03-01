@@ -231,7 +231,6 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
                 switch encodingResult {
                 case .success(let upload, _, _):
                     upload.responseJSON { response in
-                        debugPrint(response)
                         self.deleteAudioFile(fileURL: fileURL)
                     }
                 case .failure(let encodingError):
@@ -239,7 +238,6 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
                 }})
         } else {
             Alamofire.request(APIUrl + "api/wordlist/answers/" + id, method: .post, parameters: object, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-                            debugPrint(response)
             }
         }
     }

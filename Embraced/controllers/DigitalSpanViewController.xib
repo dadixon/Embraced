@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -131,7 +131,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38b-Sn-sTG">
-                    <rect key="frame" x="20" y="20" width="88" height="27"/>
+                    <rect key="frame" x="20" y="20" width="85.5" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -155,7 +155,7 @@ Please practice recording your voice with the microphone button below</string>
                             <constraints>
                                 <constraint firstAttribute="width" constant="187" id="jnj-tZ-F6y"/>
                             </constraints>
-                            <state key="normal" title="Play" image="play.png">
+                            <state key="normal" title="Play" image="play">
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -167,7 +167,7 @@ Please practice recording your voice with the microphone button below</string>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="Dcp-qe-6Uq"/>
                             </constraints>
-                            <state key="normal" title="Start" image="record.png">
+                            <state key="normal" title="Start" image="record">
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -205,7 +205,7 @@ Please practice recording your voice with the microphone button below</string>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0j-U6-bRc">
-                    <rect key="frame" x="20" y="20" width="88" height="27"/>
+                    <rect key="frame" x="20" y="20" width="85.5" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -236,7 +236,7 @@ Please click LISTEN button when you are ready.</string>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="MTj-0O-Ias"/>
                             </constraints>
-                            <state key="normal" title="Start" image="record.png">
+                            <state key="normal" title="Start" image="record">
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -247,7 +247,7 @@ Please click LISTEN button when you are ready.</string>
                             <rect key="frame" x="8" y="90" width="133" height="68"/>
                             <inset key="titleEdgeInsets" minX="-95" minY="0.0" maxX="0.0" maxY="-135"/>
                             <inset key="imageEdgeInsets" minX="-6" minY="-24" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Listen" image="speaker.png">
+                            <state key="normal" title="Listen" image="speaker">
                                 <color key="titleColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
@@ -285,7 +285,7 @@ Please click LISTEN button when you are ready.</string>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYE-DH-iub">
-                    <rect key="frame" x="20" y="20" width="88" height="27"/>
+                    <rect key="frame" x="20" y="20" width="85.5" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -314,7 +314,7 @@ You will have a practice round before starting with the series.</string>
                     <subviews>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhN-gL-hFd" customClass="ListenButton" customModule="Embraced" customModuleProvider="target">
                             <rect key="frame" x="8" y="59" width="177" height="128"/>
-                            <state key="normal" title="Listen" image="listen.png">
+                            <state key="normal" title="Listen" image="listen">
                                 <color key="titleColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
@@ -326,7 +326,7 @@ You will have a practice round before starting with the series.</string>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="mpN-is-nDD"/>
                             </constraints>
-                            <state key="normal" title="Start" image="record.png">
+                            <state key="normal" title="Start" image="record">
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -380,7 +380,7 @@ You will have a practice round before starting with the series.</string>
                             <rect key="frame" x="8" y="59" width="177" height="128"/>
                             <inset key="titleEdgeInsets" minX="-95" minY="0.0" maxX="0.0" maxY="-135"/>
                             <inset key="imageEdgeInsets" minX="-6" minY="-24" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Listen" image="listen.png">
+                            <state key="normal" title="Listen" image="listen">
                                 <color key="titleColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
@@ -392,7 +392,7 @@ You will have a practice round before starting with the series.</string>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="hVf-2E-Yuj"/>
                             </constraints>
-                            <state key="normal" title="Start" image="record.png">
+                            <state key="normal" title="Start" image="record">
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -411,7 +411,7 @@ You will have a practice round before starting with the series.</string>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZd-IO-sAI">
-                    <rect key="frame" x="323" y="55" width="122" height="39"/>
+                    <rect key="frame" x="324.5" y="55" width="119" height="39"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -458,7 +458,7 @@ Click on LISTEN button when you are ready.</string>
                     <subviews>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOM-Oj-VlA" customClass="ListenButton" customModule="Embraced" customModuleProvider="target">
                             <rect key="frame" x="8" y="59" width="177" height="128"/>
-                            <state key="normal" title="Listen" image="listen.png">
+                            <state key="normal" title="Listen" image="listen">
                                 <color key="titleColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
@@ -470,7 +470,7 @@ Click on LISTEN button when you are ready.</string>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="Nzv-xX-sSU"/>
                             </constraints>
-                            <state key="normal" title="Start" image="record.png">
+                            <state key="normal" title="Start" image="record">
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -489,7 +489,7 @@ Click on LISTEN button when you are ready.</string>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBF-ll-4we">
-                    <rect key="frame" x="323" y="55" width="122" height="39"/>
+                    <rect key="frame" x="324.5" y="55" width="119" height="39"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -522,7 +522,7 @@ Click on LISTEN button when you are ready.</string>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDz-fl-CkV">
-                    <rect key="frame" x="292" y="362" width="184" height="32"/>
+                    <rect key="frame" x="294.5" y="362" width="179.5" height="32"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -550,9 +550,9 @@ Click on LISTEN button when you are ready.</string>
         </view>
     </objects>
     <resources>
-        <image name="listen.png" width="128" height="128"/>
-        <image name="play.png" width="128" height="128"/>
-        <image name="record.png" width="88" height="128"/>
-        <image name="speaker.png" width="84" height="68"/>
+        <image name="listen" width="128" height="128"/>
+        <image name="play" width="128" height="128"/>
+        <image name="record" width="88" height="128"/>
+        <image name="speaker" width="84" height="68"/>
     </resources>
 </document>

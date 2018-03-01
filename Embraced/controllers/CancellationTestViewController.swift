@@ -70,7 +70,6 @@ class CancellationTestViewController: WebViewController {
             let data = message.body as! [String:AnyObject]
             
             Alamofire.request(APIUrl + "api/cancellation/update/" + id, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-                debugPrint(response)
                 
             }
         }

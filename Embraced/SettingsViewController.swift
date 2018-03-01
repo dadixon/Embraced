@@ -44,7 +44,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         ]
         
         Alamofire.request(APIUrl + "api/data/tests", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            debugPrint(response)
             
             let statusCode = response.response?.statusCode
             

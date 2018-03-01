@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Alamofire
+import SVProgressHUD
 
 class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
 
@@ -84,7 +85,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
 
         language = participant.string(forKey: "language")!
-//        showOrientationAlert(orientation: "landscape")
         let value = UIInterfaceOrientation.landscapeRight.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         
@@ -94,10 +94,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         headers = [
             "x-access-token": token
         ]
-        
-        // Fetch images
-        Alamofire.request(APIUrl + "api/naming_task/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-        }
         
         self.practice = DataManager.sharedInstance.namingTaskPractice
         self.tasks = DataManager.sharedInstance.namingTaskTask
@@ -128,11 +124,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         exampleRecordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
         loadingView.stopAnimating()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -144,34 +135,8 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         AppDelegate.AppUtility.lockOrientation(.all)
     }
     
-    private func downloadAudioFile(urlString: String, name: String) {
-        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            let fileURL = documentsURL.appendingPathComponent(name)
-            
-            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
-        }
-        
-        Alamofire.download(urlString, to: destination)
-            .downloadProgress { progress in
-                print("Download Progress: \(progress.fractionCompleted)")
-            }.response { response in
-                if response.error == nil, let audioPath = response.destinationURL?.path {
-                    let url = URL(fileURLWithPath: audioPath)
-                    print(url)
-                }
-        }
-    }
-    
-    func loadImageFromUrl(_ filename: String, view: UIImageView) {
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let fileURL = documentsURL.appendingPathComponent(filename)
-        view.image = UIImage(contentsOfFile: fileURL.path)
-    }
-    
     func startRecording(_ button: UIButton, fileName: String) {
         let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName)
-        
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
@@ -208,12 +173,8 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
             soundPlayer?.prepareToPlay()
             soundPlayer?.volume = 1.0
         } catch {
-            log(logMessage: "Something went wrong")
+            SVProgressHUD.showError(withStatus: error.localizedDescription)
         }
-    }
-    
-    func log(logMessage: String, functionName: String = #function) {
-        print("\(functionName): \(logMessage)")
     }
     
     @objc func updateTime() {
@@ -294,7 +255,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
             switch encodingResult {
             case .success(let upload, _, _):
                 upload.responseJSON { response in
-                    debugPrint(response)
                     self.deleteAudioFile(fileURL: fileURL)
                 }
             case .failure(let encodingError):
@@ -352,7 +312,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     
     @IBAction func initialToTrial(_ sender: AnyObject) {
         setSubview(initialView, next: trialView)
-        loadImageFromUrl(practice[count], view: imageView)
+        imageView.image = UIImage(named: practice[count])
         
         exampleLabel.text = "Example".localized(lang: language)
         exampleNextBtn.setTitle("Next".localized(lang: language), for: .normal)
@@ -362,7 +322,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBAction func nextExample(_ sender: AnyObject) {
         count += 1
         if count < practice.count {
-            loadImageFromUrl(practice[count], view: imageView)
+            imageView.image = UIImage(named: practice[count])
             exampleRecordBtn.isEnabled = true
         } else {
             setSubview(trialView, next: preTaskView)
@@ -377,7 +337,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         setSubview(preTaskView, next: taskView)
         taskNextBtn.setTitle("Next".localized(lang: language), for: .normal)
         count = 0
-        loadImageFromUrl(tasks[count], view: taskImageView)
+        taskImageView.image = UIImage(named: tasks[count])
         startTimer()
         taskNextBtn.isHidden = true
     }
@@ -389,7 +349,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         
         if count < tasks.count {
             taskRecordBtn.isEnabled = true
-            loadImageFromUrl(tasks[count], view: taskImageView)
+            taskImageView.image = UIImage(named: tasks[count])
             resetTimer()
             startTimer()
         } else {

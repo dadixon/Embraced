@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -158,7 +158,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJN-IB-tBK">
-                    <rect key="frame" x="20" y="20" width="88" height="27"/>
+                    <rect key="frame" x="20" y="20" width="85.5" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -172,7 +172,7 @@
                                 <constraint firstAttribute="width" constant="162" id="twk-AT-Sfd"/>
                             </constraints>
                             <inset key="titleEdgeInsets" minX="-126" minY="0.0" maxX="0.0" maxY="-146"/>
-                            <state key="normal" title="Start" image="record.png">
+                            <state key="normal" title="Start" image="record">
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -185,7 +185,7 @@
                                 <constraint firstAttribute="width" constant="130" id="quf-z4-wrZ"/>
                             </constraints>
                             <inset key="titleEdgeInsets" minX="-132" minY="0.0" maxX="0.0" maxY="-152"/>
-                            <state key="normal" title="Play" image="play.png">
+                            <state key="normal" title="Play" image="play">
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -329,7 +329,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="ubz-6S-fT3"/>
                     </constraints>
-                    <state key="normal" title="Start" image="record.png">
+                    <state key="normal" title="Start" image="record">
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -423,7 +423,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="ME3-b6-bFV"/>
                     </constraints>
-                    <state key="normal" title="Start" image="record.png">
+                    <state key="normal" title="Start" image="record">
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -517,7 +517,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="P6H-T9-aWj"/>
                     </constraints>
-                    <state key="normal" title="Start" image="record.png">
+                    <state key="normal" title="Start" image="record">
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -610,7 +610,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="OV1-wQ-i6A"/>
                     </constraints>
-                    <state key="normal" title="Start" image="record.png">
+                    <state key="normal" title="Start" image="record">
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -771,7 +771,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-31-afy">
-                    <rect key="frame" x="420" y="318" width="184" height="32"/>
+                    <rect key="frame" x="422.5" y="318" width="179.5" height="32"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -788,7 +788,7 @@
         </view>
     </objects>
     <resources>
-        <image name="play.png" width="128" height="128"/>
-        <image name="record.png" width="88" height="128"/>
+        <image name="play" width="128" height="128"/>
+        <image name="record" width="88" height="128"/>
     </resources>
 </document>

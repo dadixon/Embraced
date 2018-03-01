@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad10_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingScreenViewController" customModule="Embraced" customModuleProvider="target">
             <connections>
+                <outlet property="fileFinishedLabel" destination="w9F-Ky-twT" id="1Qs-Ss-R0U"/>
                 <outlet property="logoView" destination="TGY-DB-l50" id="S1p-ag-jWk"/>
                 <outlet property="percentageLabel" destination="eSv-wR-z2k" id="Vni-Wp-0pW"/>
                 <outlet property="progressBar" destination="Wag-Kz-bK8" id="II0-I0-lUv"/>
@@ -24,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wag-Kz-bK8">
-                    <rect key="frame" x="259" y="1045" width="317" height="2"/>
+                    <rect key="frame" x="258.5" y="1045" width="317" height="2"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="317" id="XFW-yJ-S8l"/>
                     </constraints>
@@ -42,6 +43,15 @@
                         <constraint firstAttribute="height" constant="457" id="eeA-Wj-Plw"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9F-Ky-twT">
+                    <rect key="frame" x="93" y="964" width="648" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ZAa-d4-L9H"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -49,7 +59,12 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Wag-Kz-bK8" secondAttribute="bottom" constant="65" id="6CO-j1-nQr"/>
                 <constraint firstItem="Wag-Kz-bK8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7YP-aC-Sz8"/>
                 <constraint firstItem="eSv-wR-z2k" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Exz-U7-WKX"/>
+                <constraint firstItem="w9F-Ky-twT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="93" id="QNF-JS-MLO"/>
                 <constraint firstItem="TGY-DB-l50" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="dTp-iw-K0F"/>
+                <constraint firstItem="w9F-Ky-twT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="obJ-AF-syb"/>
+                <constraint firstItem="Wag-Kz-bK8" firstAttribute="top" secondItem="w9F-Ky-twT" secondAttribute="bottom" constant="51" id="wBS-h6-xXn"/>
+                <constraint firstAttribute="trailing" secondItem="w9F-Ky-twT" secondAttribute="trailing" constant="93" id="wLT-gE-lKY"/>
+                <constraint firstItem="Wag-Kz-bK8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xNK-Sa-ZeH"/>
                 <constraint firstItem="Wag-Kz-bK8" firstAttribute="top" secondItem="eSv-wR-z2k" secondAttribute="bottom" constant="8" id="xoy-WT-tYr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

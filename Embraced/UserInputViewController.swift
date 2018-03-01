@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import Firebase
 
 class UserInputViewController: UIViewController {
 
@@ -21,7 +20,6 @@ class UserInputViewController: UIViewController {
     
     let userDefaults = UserDefaults.standard
     let APIUrl = "http://www.embracedapi.ugr.es/"
-    var ref: DatabaseReference!
     
     fileprivate func setBottomBorder(_ textfield: UITextField) {
         let border = CALayer()
@@ -97,9 +95,6 @@ class UserInputViewController: UIViewController {
             "x-access-token": token
         ]
         
-        // Firebase save data
-        saveData()
-        
         Alamofire.request(APIUrl + "api/moca/new/" + pid, method: .post, parameters: jsonObject, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
             
             let statusCode = response.response?.statusCode
@@ -109,38 +104,6 @@ class UserInputViewController: UIViewController {
                 self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
             }
         }
-    }
-    
-    private func saveData() {
-        let date = Date()
-        let calendar = Calendar.current
-        let year = calendar.component(.year, from: date)
-        let month = calendar.component(.month, from: date)
-        let weekday = calendar.component(.weekdayOrdinal, from: date)
-        let day = calendar.component(.day, from: date)
-        let hour = calendar.component(.hour, from: date)
-        let minute = calendar.component(.minute, from: date)
-
-        var jsonObject = [String: Any]()
-        jsonObject = [
-            "year": year,
-            "month": month,
-            "day": formatWeekday(weekday),
-            "date": day,
-            "hour": hour,
-            "minute": minute,
-            "ampm": hour > 11 ? "PM" : "AM",
-            "country": countryTextField.text!,
-            "county": countyTextField.text!,
-            "city": cityTextField.text!,
-            "site": locationTextField.text!,
-            "floor": floorTextField.text!
-        ]
-        
-        let pid = userDefaults.string(forKey: "FBPID")!
-        ref = Database.database().reference()
-        let childUpdates = ["/participants/\(pid)/actual": jsonObject]
-        ref.updateChildValues(childUpdates)
     }
     
     private func formatWeekday(_ day: Int) -> String {

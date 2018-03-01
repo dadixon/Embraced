@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SVProgressHUD
 
 class FrontViewController: UIViewController, AVAudioPlayerDelegate {
 
@@ -53,7 +54,7 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         progressView.progress = progress
         progressLabel.text = "Progress (\(step + 1)/\(testsArray.count + 1))"
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         
         mainView.layer.shadowColor = UIColor.black.cgColor
         mainView.layer.shadowOpacity = 0.7
@@ -62,9 +63,6 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         mainView.layer.shouldRasterize = true
         
         self.automaticallyAdjustsScrollViewInsets = false
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(FrontViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-        
         mainView.translatesAutoresizingMaskIntoConstraints = false
         
         let leftConstraint = mainView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8.0)
@@ -77,12 +75,9 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
 //        self.navigationController?.navigationBar.shadowImage = UIImage()
 //        self.navigationController?.navigationBar.isTranslucent = true
 //        self.navigationController?.view.backgroundColor = UIColor.clear
+        
+        SVProgressHUD.setDefaultStyle(.dark)
 
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override var prefersStatusBarHidden : Bool {

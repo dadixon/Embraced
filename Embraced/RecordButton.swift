@@ -21,7 +21,7 @@ class RecordButton: UIButton {
     }
     
     func createBorder() {
-        self.setImage(UIImage(named: "record.png"), for: .normal)
+        self.setImage(UIImage(named: "record"), for: .normal)
 //        self.contentMode = 
         self.setTitle("Start", for: .normal)
         self.titleEdgeInsets = UIEdgeInsetsMake(150,-100,0,0)
