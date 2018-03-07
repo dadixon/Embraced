@@ -18,7 +18,28 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var deselectAllBtn: UIButton!
     @IBOutlet weak var chooseLanguage: UILabel!
     
-    var tests = ["Questionnaire", "Orientation Task", "Complex Figure 1", "Clock Drawing Test", "Complex Figure 2", "Trail Making Test", "Melodies Recognition", "Digit Span", "Complex Figure 3", "Complex Figure 4", "Matrices", "Continuous Performance Test", "Motor Tasks", "Word List 1", "Color-Word Stroop Test", "Cancellation Test", "Word List 2", "Naming Test" ,"Comprehension Task", "Eyes Test"]
+    var tests = [
+        "Questionnaire",
+        "Orientation Task",
+        "Complex Figure 1",
+        "Clock Drawing Test",
+        "Complex Figure 2",
+        "Trail Making Test",
+        "Melodies Recognition",
+        "Digit Span",
+        "Complex Figure 3",
+        "Complex Figure 4",
+        "Matrices",
+        "Continuous Performance Test",
+        "Motor Tasks",
+        "Word List 1",
+        "Color-Word Stroop Test",
+        "Cancellation Test",
+        "Word List 2",
+        "Naming Test",
+        "Comprehension Task",
+        "Eyes Test"
+    ]
     var defaultTests = [String]()
     var confirm = [String]()
     

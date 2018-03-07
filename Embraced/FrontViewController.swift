@@ -134,33 +134,6 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func playTest(_ filename:String) {
-        let file = filename.characters.split(separator: ".").map(String.init)
-        
-        if let pathResource = Bundle.main.path(forResource: file[0], ofType: file[1]) {
-            let finishedStepSound = NSURL(fileURLWithPath: pathResource)
-            do {
-                soundPlayer = try AVAudioPlayer(contentsOf: finishedStepSound as URL)
-                if(soundPlayer?.prepareToPlay())!{
-                    print("preparation success")
-                    soundPlayer?.delegate = self
-                    if(soundPlayer?.play())!{
-                        print("Sound play success")
-                    }else{
-                        print("Sound file could not be played")
-                    }
-                }else{
-                    print("preparation failure")
-                }
-                
-            }catch{
-                print("Sound file could not be found")
-            }
-        }else{
-            print("path not found")
-        }
-    }
-    
-    func play(_ filename:String) {
         let pathResource = getDocumentsDirectory().appendingPathComponent(filename)
             
         do {
@@ -180,6 +153,48 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         }catch{
             print("Sound file could not be found")
         }
+    }
+    
+    func play(_ filename:String) {
+        if let asset = NSDataAsset(name:filename){
+            do {
+                // Use NSDataAsset's data property to access the audio file stored in Sound.
+                soundPlayer = try AVAudioPlayer(data: asset.data)
+                if(soundPlayer?.prepareToPlay())!{
+                    print("preparation success")
+                    soundPlayer?.delegate = self
+                    if(soundPlayer?.play())!{
+                        print("Sound play success")
+                    }else{
+                        SVProgressHUD.showError(withStatus: "Sound file could not be played")
+                    }
+                }else{
+                    print("preparation failure")
+                }
+            } catch let error as NSError {
+                SVProgressHUD.showError(withStatus: error.localizedDescription)
+            }
+        }
+        
+//        let pathResource = getDocumentsDirectory().appendingPathComponent(filename)
+//
+//        do {
+//            soundPlayer = try AVAudioPlayer(contentsOf: pathResource)
+//            if(soundPlayer?.prepareToPlay())!{
+//                print("preparation success")
+//                soundPlayer?.delegate = self
+//                if(soundPlayer?.play())!{
+//                    print("Sound play success")
+//                }else{
+//                    print("Sound file could not be played")
+//                }
+//            }else{
+//                print("preparation failure")
+//            }
+//
+//        }catch{
+//            print("Sound file could not be found")
+//        }
     }
     
     func fileExist(_ filename: String) -> Bool {

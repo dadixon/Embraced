@@ -52,7 +52,7 @@ class StartViewController: UIViewController {
         let date = Date()
         participant.setValue(date, forKey: "StartDate")
         
-        AppDelegate.testPosition += 2
+        AppDelegate.testPosition += 1
         self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
         
     }
