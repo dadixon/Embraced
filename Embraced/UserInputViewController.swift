@@ -11,15 +11,12 @@ import Alamofire
 
 class UserInputViewController: UIViewController {
 
-    @IBOutlet weak var dayOfTheWeekTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var countyTextField: UITextField!
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var floorTextField: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
-    @IBOutlet weak var participantLabel: UILabel!
-    
     
     let userDefaults = UserDefaults.standard
     let APIUrl = "http://www.embracedapi.ugr.es/"
@@ -48,7 +45,6 @@ class UserInputViewController: UIViewController {
         
         submitBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
         
-        dayOfTheWeekTextField.placeholder = "Day_of_the_week".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
         countryTextField.placeholder = "Country".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
         countyTextField.placeholder = "County".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
         cityTextField.placeholder = "City".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
@@ -56,37 +52,43 @@ class UserInputViewController: UIViewController {
         floorTextField.placeholder = "Floor".localized(lang: userDefaults.string(forKey: "TesterLanguage")!)
         submitBtn.setTitle("Submit".localized(lang: userDefaults.string(forKey: "TesterLanguage")!), for: .normal)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override var prefersStatusBarHidden : Bool {
         return true
     }
     
     @IBAction func submit(_ sender: AnyObject) {
-        var jsonObject = [String: AnyObject]()
+        var jsonObject = [String: Any]()
         
         let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss a"
-        let dateString = dateFormatter.string(from:date)
+        var calendar = Calendar.current
+        calendar.locale = Locale.autoupdatingCurrent
+
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let weekday = calendar.component(.weekdayOrdinal, from: date)
+        let day = calendar.component(.day, from: date)
+        let hour = calendar.component(.hour, from: date)
+        let minute = calendar.component(.minute, from: date)
+        
         
         // Gather data for post
         jsonObject = [
-            "pid": userDefaults.string(forKey: "pid")! as AnyObject,
-            "timeTaken": dateString as AnyObject,
-            "dayOfWeek": dayOfTheWeekTextField.text as AnyObject,
-            "country": countryTextField.text as AnyObject,
-            "county": countyTextField.text as AnyObject,
-            "city": cityTextField.text as AnyObject,
-            "location": locationTextField.text as AnyObject,
-            "floor": floorTextField.text as AnyObject
+            "pid": userDefaults.string(forKey: "pid")!,
+            "year": year,
+            "month": month,
+            "dayOfWeek": formatWeekday(weekday),
+            "date": day,
+            "hour": hour,
+            "minute": minute,
+            "ampm": hour > 11 ? calendar.pmSymbol : calendar.amSymbol,
+            "country": countryTextField.text!,
+            "county": countyTextField.text!,
+            "city": cityTextField.text!,
+            "location": locationTextField.text!,
+            "floor": floorTextField.text!
         ]
 
-        
         let token = userDefaults.string(forKey: "token")!
         let pid = userDefaults.string(forKey: "pid")!
         let headers: HTTPHeaders = [
@@ -94,7 +96,6 @@ class UserInputViewController: UIViewController {
         ]
         
         Alamofire.request(APIUrl + "api/moca/new/" + pid, method: .post, parameters: jsonObject, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            debugPrint(response)
             
             let statusCode = response.response?.statusCode
             
@@ -103,7 +104,26 @@ class UserInputViewController: UIViewController {
                 self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
             }
         }
-        
-        
+    }
+    
+    private func formatWeekday(_ day: Int) -> String {
+        switch day {
+        case 0:
+            return "Monday"
+        case 1:
+            return "Tuesday"
+        case 2:
+            return "Wednesday"
+        case 3:
+            return "Thursday"
+        case 4:
+            return "Friday"
+        case 5:
+            return "Saturday"
+        case 6:
+            return "Sunday"
+        default:
+            return ""
+        }
     }
 }

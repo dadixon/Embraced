@@ -74,7 +74,9 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
         
         language = participant.string(forKey: "language")!
-        showOrientationAlert(orientation: "landscape")
+//        showOrientationAlert(orientation: "landscape")
+        let value = UIInterfaceOrientation.landscapeRight.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         
         // Insert row in database
         id = participant.string(forKey: "pid")!
@@ -136,7 +138,16 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppDelegate.AppUtility.lockOrientation(.landscape)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AppDelegate.AppUtility.lockOrientation(.all)
+    }
+    
     func startRecording(_ button: UIButton) {
         let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName)
         
@@ -220,14 +231,13 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
                 switch encodingResult {
                 case .success(let upload, _, _):
                     upload.responseJSON { response in
-                        debugPrint(response)
+                        self.deleteAudioFile(fileURL: fileURL)
                     }
                 case .failure(let encodingError):
                     print(encodingError)
                 }})
         } else {
             Alamofire.request(APIUrl + "api/wordlist/answers/" + id, method: .post, parameters: object, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-                            debugPrint(response)
             }
         }
     }

@@ -14,14 +14,16 @@ class StartViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var welcomeText: UILabel!
     @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var languagePicker: UIPickerView!
     
     let participant = UserDefaults.standard
     let APIUrl = "http://www.embracedapi.ugr.es/"
+    var pickerData: [String:String] = [String:String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.navigationController?.isNavigationBarHidden = true
         
         welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "TesterLanguage")!)
@@ -29,15 +31,14 @@ class StartViewController: UIViewController {
         nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
         
         participant.setValue("en", forKey: "language")
+        DataManager.sharedInstance.language = "en"
+        DataManager.sharedInstance.updateData()
         
+        languagePicker.delegate = self
+        languagePicker.dataSource = self
         
+        pickerData = ["English": "en", "Spanish": "es"]
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     override var prefersStatusBarHidden : Bool {
         return true
@@ -45,34 +46,52 @@ class StartViewController: UIViewController {
     
     
     // MARK: - Navigation
-    @IBAction func chooseLanguage(_ sender: AnyObject) {
-        if sender.tag == 0 {
-            participant.setValue("en", forKey: "language")
-        } else if sender.tag == 1 {
-            participant.setValue("es", forKey: "language")
-        }
-        
-        welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "language")!)
-        welcomeText.text = "WELCOME_TEXT".localized(lang: participant.string(forKey: "language")!)
-        nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
-    }
     
     @IBAction func startTest(_ sender: Any) {
-        // TODO: Update participant language chosen in the db
-
+        // Save test timer
+        let date = Date()
+        participant.setValue(date, forKey: "StartDate")
+        
         AppDelegate.testPosition += 1
         self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
         
     }
  
-    private func createPostObject() -> [String: AnyObject] {
-        var jsonObject = [String: AnyObject]()
+    private func createPostObject() -> [String: Any] {
+        var jsonObject = [String: Any]()
         
         // Gather data for post
         jsonObject = [
-            "language": participant.string(forKey: "language")! as AnyObject
+            "language": participant.string(forKey: "language")!
         ]
         
         return jsonObject
+    }
+}
+
+extension StartViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let componentArray = Array(pickerData.keys)
+        return componentArray[row].localized(lang: participant.string(forKey: "language")!)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let componentArray = Array(pickerData.keys)
+        
+        participant.setValue(pickerData[componentArray[row]]!, forKey: "language")
+        DataManager.sharedInstance.language = pickerData[componentArray[row]]!
+        DataManager.sharedInstance.updateData()
+        
+        welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "language")!)
+        welcomeText.text = "WELCOME_TEXT".localized(lang: participant.string(forKey: "language")!)
+        nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
     }
 }

@@ -92,7 +92,9 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
         
         language = participant.string(forKey: "language")!
-        showOrientationAlert(orientation: "portrait")
+//        showOrientationAlert(orientation: "portrait")
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         
         // Insert row in database        
         id = participant.string(forKey: "pid")!
@@ -119,7 +121,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         let bottomConstraint = introView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
 
-        
         recordingSession = AVAudioSession.sharedInstance()
 
         do {
@@ -142,10 +143,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         forwardPractice = DataManager.sharedInstance.digitalSpanForwardPractice
         backward = DataManager.sharedInstance.digitalSpanBackward
         backwardPractice = DataManager.sharedInstance.digitalSpanBackwardPractice
-        
-        if (fileExist(forwardPractice)) {
-            print("File Exits")
-        }
         practice1Label.text = "Practice".localized(lang: language)
         practice1Instructions.text = "digital_practice_1".localized(lang: language)
         recordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
@@ -171,6 +168,16 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppDelegate.AppUtility.lockOrientation(.portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AppDelegate.AppUtility.lockOrientation(.all)
     }
     
     func startRecording(_ button: UIButton, fileName: String) {
@@ -244,7 +251,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             switch encodingResult {
             case .success(let upload, _, _):
                 upload.responseJSON { response in
-                    debugPrint(response)
+                    self.deleteAudioFile(fileURL: fileURL)
                 }
             case .failure(let encodingError):
                 print(encodingError)
@@ -360,7 +367,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         instructionsA.text = "digital_begin_round_start".localized(lang: language)
         postToAPI(object: createPostObject(direction: "F", index: forwardCount))
         
-        if (forwardCount < forward.count - 1) {
+        if (forwardCount < forward.count) {
             forwardCount += 1
             rounds.text = "Round".localized(lang: language) + " " + String(forwardCount)
             listenForwardBtn.isEnabled = true
@@ -389,7 +396,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         instructions.text = "digital_begin_round2_start".localized(lang: language)
         postToAPI(object: createPostObject(direction: "B", index: backwardCount))
         
-        if (backwardCount < backward.count - 1) {
+        if (backwardCount < backward.count) {
             backwardCount += 1
             bRounds.text = "Round".localized(lang: language) + " " + String(backwardCount)
             listenBackwardBtn.isEnabled = true

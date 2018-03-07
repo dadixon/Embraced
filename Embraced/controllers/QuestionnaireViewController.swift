@@ -14,7 +14,10 @@ class QuestionnaireViewController: WebViewController {
     
     override func viewDidLoad() {
         step = AppDelegate.position
-        showOrientationAlert(orientation: "portrait")
+//        showOrientationAlert(orientation: "portrait")
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        
         url = URL(string: "http://www.embraced.ugr.es/initial.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")! + "&token=" + participant.string(forKey: "token")!)
 
         super.viewDidLoad()
@@ -25,6 +28,16 @@ class QuestionnaireViewController: WebViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppDelegate.AppUtility.lockOrientation(.portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AppDelegate.AppUtility.lockOrientation(.all)
     }
     
     // MARK: - Navigation
@@ -50,7 +63,6 @@ class QuestionnaireViewController: WebViewController {
             let data = message.body as! [String:AnyObject]
             
             Alamofire.request(APIUrl + "api/questionnaire/new/" + id, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-                debugPrint(response)
                 let statusCode = response.response?.statusCode
                 
                 if statusCode == 200 {

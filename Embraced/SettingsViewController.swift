@@ -13,13 +13,33 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var testListTable: UITableView!
     @IBOutlet weak var confirmListTable: UITableView!
-    @IBOutlet weak var saveBtn: NavigationButton!
     @IBOutlet weak var languageSegment: UISegmentedControl!
     @IBOutlet weak var selectAllBtn: UIButton!
     @IBOutlet weak var deselectAllBtn: UIButton!
     @IBOutlet weak var chooseLanguage: UILabel!
     
-    var tests = ["Questionnaire", "Orientation Task", "Complex Figure 1", "Clock Drawing Test", "Complex Figure 2", "Trail Making Test", "Melodies Recognition", "Digit Span", "Complex Figure 3", "Complex Figure 4", "Matrices", "Continuous Performance Test", "Motor Tasks", "Word List 1", "Color-Word Stroop Test", "Cancellation Test", "Word List 2", "Naming Test" ,"Comprehension Task", "Eyes Test"]
+    var tests = [
+        "Questionnaire",
+        "Orientation Task",
+        "Complex Figure 1",
+        "Clock Drawing Test",
+        "Complex Figure 2",
+        "Trail Making Test",
+        "Melodies Recognition",
+        "Digit Span",
+        "Complex Figure 3",
+        "Complex Figure 4",
+        "Matrices",
+        "Continuous Performance Test",
+        "Motor Tasks",
+        "Word List 1",
+        "Color-Word Stroop Test",
+        "Cancellation Test",
+        "Word List 2",
+        "Naming Test",
+        "Comprehension Task",
+        "Eyes Test"
+    ]
     var defaultTests = [String]()
     var confirm = [String]()
     
@@ -45,7 +65,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         ]
         
         Alamofire.request(APIUrl + "api/data/tests", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            debugPrint(response)
             
             let statusCode = response.response?.statusCode
             
@@ -94,7 +113,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         selectAllBtn.setTitle("Select_All".localized(lang: language), for: .normal)
         deselectAllBtn.setTitle("Deselect_All".localized(lang: language), for: .normal)
         chooseLanguage.text = "Choose_Language".localized(lang: language)
-        saveBtn.setTitle("Save".localized(lang: language), for: .normal)
         self.tabBarController?.tabBar.items![0].title = "Test".localized(lang: language)
         self.tabBarController?.tabBar.items![1].title = "Settings".localized(lang: language)
     }
@@ -153,6 +171,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             self.testListTable.beginUpdates()
             self.testListTable.deleteRows(at: [IndexPath.init(row: indexPath.row, section: 0)], with: .right)
             self.testListTable.endUpdates()
+            saveSettings()
         }
     }
     
@@ -168,12 +187,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             self.confirmListTable.beginUpdates()
             self.confirmListTable.deleteRows(at: [IndexPath.init(row: indexPath.row, section: 0)], with: .fade)
             self.confirmListTable.endUpdates()
+            saveSettings()
         }
     }
 
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         confirm.insert(confirm.remove(at: sourceIndexPath.row), at: destinationIndexPath.row)
         confirmListTable.reloadData()
+        saveSettings()
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -190,7 +211,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: Action
     
-    @IBAction func saveSettings(_ sender: Any) {
+    func saveSettings() {
         participant.set(confirm, forKey: "Tests")
         
         if testerLanguage != "" {
@@ -200,27 +221,20 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
 
         setControllerLanguage(participant.string(forKey: "TesterLanguage")!)
-//        self.tabBarController?.tabBar.items![0].title = "Test".localized(lang: participant.string(forKey: "TesterLanguage")!)
-//        self.tabBarController?.tabBar.items![1].title = "Settings".localized(lang: participant.string(forKey: "TesterLanguage")!)
-//        
-//        selectAllBtn.setTitle("Select_All".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
-//        deselectAllBtn.setTitle("Deselect_All".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
-//        
-//        chooseLanguage.text = "Choose_Language".localized(lang: participant.string(forKey: "TesterLanguage")!)
         
         self.testListTable.reloadData()
         self.confirmListTable.reloadData()
         
-        var alertController = UIAlertController()
-        
-        alertController = UIAlertController(title: "Saved".localized(lang: participant.string(forKey: "TesterLanguage")!), message: "Save_settings".localized(lang: participant.string(forKey: "TesterLanguage")!), preferredStyle: UIAlertControllerStyle.alert)
-        
-        let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
-            alertController.dismiss(animated: true, completion: nil)
-        }
-        
-        alertController.addAction(dismissAction)
-        self.present(alertController, animated: true, completion: nil)
+//        var alertController = UIAlertController()
+//
+//        alertController = UIAlertController(title: "Saved".localized(lang: participant.string(forKey: "TesterLanguage")!), message: "Save_settings".localized(lang: participant.string(forKey: "TesterLanguage")!), preferredStyle: UIAlertControllerStyle.alert)
+//
+//        let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+//            alertController.dismiss(animated: true, completion: nil)
+//        }
+//
+//        alertController.addAction(dismissAction)
+//        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func deselectAllTest(_ sender: Any) {
@@ -228,6 +242,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         confirm = []
         testListTable.reloadData()
         confirmListTable.reloadData()
+        saveSettings()
     }
     
     @IBAction func selectAllTest(_ sender: Any) {
@@ -235,6 +250,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         defaultTests = []
         testListTable.reloadData()
         confirmListTable.reloadData()
+        saveSettings()
     }
     
     @IBAction func languageChange(_ sender: UISegmentedControl) {
@@ -245,5 +261,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         setControllerLanguage(testerLanguage)
+        saveSettings()
     }
 }

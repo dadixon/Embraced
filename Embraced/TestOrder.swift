@@ -31,8 +31,6 @@ final class TestOrder {
         
         userDefaults.set(tests, forKey: "Tests")
         
-        navigationTests.append(LoadingScreenViewController())
-        
         for test in tests {
             switch test {
             case "Questionnaire":

@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Alamofire
+import SVProgressHUD
 
 class PitchViewController: FrontViewController {
     
@@ -93,7 +94,7 @@ class PitchViewController: FrontViewController {
     var headers: HTTPHeaders = [:]
     
     let group = DispatchGroup()
-    
+        
     // MARK: - Private
     
     private func log(logMessage: String, functionName: String = #function) {
@@ -120,7 +121,10 @@ class PitchViewController: FrontViewController {
         language = participant.string(forKey: "language")!
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(PitchViewController.next(_:)))
         
-        showOrientationAlert(orientation: "portrait")
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        
+//        showOrientationAlert(orientation: "portrait")
         
         introView.translatesAutoresizingMaskIntoConstraints = false
         example1View.translatesAutoresizingMaskIntoConstraints = false
@@ -157,6 +161,16 @@ class PitchViewController: FrontViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppDelegate.AppUtility.lockOrientation(.portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AppDelegate.AppUtility.lockOrientation(.all)
     }
     
     @objc func updateTime() {
@@ -265,7 +279,6 @@ class PitchViewController: FrontViewController {
         ]
         
         Alamofire.request(APIUrl + "api/pitch/new/" + id, method: .post, parameters: createPostObject(), encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-//            debugPrint(response)
             let statusCode = response.response?.statusCode
             
             if statusCode == 200 {

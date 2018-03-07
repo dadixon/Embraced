@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +14,6 @@
                 <outlet property="cityTextField" destination="rkr-Wf-rOF" id="0JC-n2-p9F"/>
                 <outlet property="countryTextField" destination="QsN-dd-AWG" id="dSu-5G-gTi"/>
                 <outlet property="countyTextField" destination="2AB-cr-heo" id="YrO-5I-Qw3"/>
-                <outlet property="dayOfTheWeekTextField" destination="uve-oQ-eUq" id="4po-hP-pol"/>
                 <outlet property="floorTextField" destination="CYl-RH-Wpe" id="L3n-4h-jDx"/>
                 <outlet property="locationTextField" destination="sMz-uO-SZt" id="J5n-ng-xr9"/>
                 <outlet property="submitBtn" destination="iiO-6c-sLC" id="32m-9V-u3G"/>
@@ -27,64 +26,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Qz-I0-V38">
-                    <rect key="frame" x="-4.5" y="124" width="384" height="419"/>
+                    <rect key="frame" x="16" y="124" width="343" height="419"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Day of the Week" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uve-oQ-eUq" customClass="EmbracedTextField" customModule="Embraced" customModuleProvider="target">
-                            <rect key="frame" x="31.5" y="8" width="321" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="DxK-YU-Bvw"/>
-                                <constraint firstAttribute="width" constant="321" id="KQJ-VV-42n"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="County" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2AB-cr-heo" customClass="EmbracedTextField" customModule="Embraced" customModuleProvider="target">
-                            <rect key="frame" x="31.5" y="84" width="321" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="4Vg-ro-LE0"/>
-                                <constraint firstAttribute="width" constant="321" id="egG-JW-ldJ"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rkr-Wf-rOF" customClass="EmbracedTextField" customModule="Embraced" customModuleProvider="target">
-                            <rect key="frame" x="31.5" y="122" width="321" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="321" id="Grb-sN-VKh"/>
-                                <constraint firstAttribute="height" constant="40" id="mxe-cE-Dp1"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMz-uO-SZt" customClass="EmbracedTextField" customModule="Embraced" customModuleProvider="target">
-                            <rect key="frame" x="31.5" y="160" width="321" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="321" id="4sx-vP-TwS"/>
-                                <constraint firstAttribute="height" constant="40" id="Y26-os-uMR"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Floor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CYl-RH-Wpe" customClass="EmbracedTextField" customModule="Embraced" customModuleProvider="target">
-                            <rect key="frame" x="31.5" y="198" width="321" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="C8Q-q3-GIH"/>
-                                <constraint firstAttribute="width" constant="321" id="zYo-Tp-VU8"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QsN-dd-AWG" customClass="EmbracedTextField" customModule="Embraced" customModuleProvider="target">
-                            <rect key="frame" x="31.5" y="46" width="321" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="sx8-Py-Io8"/>
-                                <constraint firstAttribute="width" constant="321" id="txX-6O-Wf4"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiO-6c-sLC">
-                            <rect key="frame" x="151.5" y="381" width="81" height="30"/>
+                            <rect key="frame" x="131" y="381" width="81" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="81" id="KHw-T2-gWY"/>
                             </constraints>
@@ -95,33 +40,69 @@
                                 <action selector="submit:" destination="-1" eventType="touchUpInside" id="yyH-0i-Rcq"/>
                             </connections>
                         </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="VzX-jp-pPa">
+                            <rect key="frame" x="32" y="32" width="279" height="296"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QsN-dd-AWG" customClass="EmbracedTextField" customModule="Embraced" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="279" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="sx8-Py-Io8"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="County" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2AB-cr-heo" customClass="EmbracedTextField" customModule="Embraced" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="64" width="279" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="4Vg-ro-LE0"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rkr-Wf-rOF" customClass="EmbracedTextField" customModule="Embraced" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="128" width="279" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="mxe-cE-Dp1"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMz-uO-SZt" customClass="EmbracedTextField" customModule="Embraced" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="192" width="279" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="Y26-os-uMR"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Floor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CYl-RH-Wpe" customClass="EmbracedTextField" customModule="Embraced" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="256" width="279" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="C8Q-q3-GIH"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="uve-oQ-eUq" firstAttribute="centerX" secondItem="7Qz-I0-V38" secondAttribute="centerX" id="2oH-7F-eS9"/>
                         <constraint firstAttribute="bottom" secondItem="iiO-6c-sLC" secondAttribute="bottom" constant="8" id="89E-Yk-EYt"/>
-                        <constraint firstItem="rkr-Wf-rOF" firstAttribute="top" secondItem="2AB-cr-heo" secondAttribute="bottom" constant="-2" id="9lM-XL-if5"/>
                         <constraint firstAttribute="height" constant="419" id="BnU-Us-tbU"/>
-                        <constraint firstItem="CYl-RH-Wpe" firstAttribute="centerX" secondItem="7Qz-I0-V38" secondAttribute="centerX" id="C8i-SO-FGQ"/>
-                        <constraint firstAttribute="width" constant="384" id="CA1-1d-u2s"/>
-                        <constraint firstItem="uve-oQ-eUq" firstAttribute="top" secondItem="7Qz-I0-V38" secondAttribute="top" constant="8" id="D5h-dt-Siw"/>
                         <constraint firstItem="iiO-6c-sLC" firstAttribute="centerX" secondItem="7Qz-I0-V38" secondAttribute="centerX" id="EV8-kV-JRg"/>
-                        <constraint firstItem="QsN-dd-AWG" firstAttribute="centerX" secondItem="7Qz-I0-V38" secondAttribute="centerX" id="FGJ-vb-LRM"/>
-                        <constraint firstItem="sMz-uO-SZt" firstAttribute="centerX" secondItem="7Qz-I0-V38" secondAttribute="centerX" id="Htf-mS-fvo"/>
-                        <constraint firstItem="CYl-RH-Wpe" firstAttribute="centerX" secondItem="iiO-6c-sLC" secondAttribute="centerX" id="Ivn-LU-RZ0"/>
-                        <constraint firstItem="2AB-cr-heo" firstAttribute="top" secondItem="QsN-dd-AWG" secondAttribute="bottom" constant="-2" id="NAK-Sb-L4e"/>
-                        <constraint firstItem="QsN-dd-AWG" firstAttribute="top" secondItem="uve-oQ-eUq" secondAttribute="bottom" constant="-2" id="P8v-11-1kb"/>
-                        <constraint firstItem="rkr-Wf-rOF" firstAttribute="centerX" secondItem="7Qz-I0-V38" secondAttribute="centerX" id="cK1-vC-saD"/>
-                        <constraint firstItem="CYl-RH-Wpe" firstAttribute="top" secondItem="sMz-uO-SZt" secondAttribute="bottom" constant="-2" id="jOc-xy-zaE"/>
-                        <constraint firstItem="2AB-cr-heo" firstAttribute="centerX" secondItem="7Qz-I0-V38" secondAttribute="centerX" id="qmR-NS-3v1"/>
-                        <constraint firstItem="sMz-uO-SZt" firstAttribute="top" secondItem="rkr-Wf-rOF" secondAttribute="bottom" constant="-2" id="qxW-bK-xFs"/>
+                        <constraint firstItem="VzX-jp-pPa" firstAttribute="leading" secondItem="7Qz-I0-V38" secondAttribute="leading" constant="32" id="bUH-ec-Exr"/>
+                        <constraint firstItem="VzX-jp-pPa" firstAttribute="top" secondItem="7Qz-I0-V38" secondAttribute="top" constant="32" id="hMF-2r-hZr"/>
+                        <constraint firstAttribute="trailing" secondItem="VzX-jp-pPa" secondAttribute="trailing" constant="32" id="urm-wI-2Zw"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="7Qz-I0-V38" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="AwH-8u-2cn"/>
+                <constraint firstItem="7Qz-I0-V38" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="OkV-GM-LQW"/>
                 <constraint firstItem="7Qz-I0-V38" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eDr-XJ-UPN"/>
+                <constraint firstAttribute="trailing" secondItem="7Qz-I0-V38" secondAttribute="trailing" constant="16" id="nC9-MZ-DDY"/>
             </constraints>
             <point key="canvasLocation" x="856.5" y="593.5"/>
         </view>

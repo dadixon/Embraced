@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -130,7 +130,7 @@ Tap the microphone button to start recording</string>
                     <constraints>
                         <constraint firstAttribute="width" constant="162" id="9Vn-zS-dWV"/>
                     </constraints>
-                    <state key="normal" title="Start" image="record.png">
+                    <state key="normal" title="Start" image="record">
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -165,7 +165,7 @@ Tap the microphone button to start recording</string>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Recognition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7Y-zP-p1n">
-                    <rect key="frame" x="20" y="20" width="127" height="27"/>
+                    <rect key="frame" x="20" y="20" width="124" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -211,7 +211,7 @@ Tap the LISTEN icon to start</string>
                         <constraint firstAttribute="height" constant="127" id="hdN-z6-xxH"/>
                         <constraint firstAttribute="width" constant="200" id="neH-wd-QCH"/>
                     </constraints>
-                    <state key="normal" image="listen.png">
+                    <state key="normal" image="listen">
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -255,7 +255,7 @@ Tap the LISTEN icon to start</string>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfZ-GD-Cq1">
-                    <rect key="frame" x="420" y="318" width="184" height="32"/>
+                    <rect key="frame" x="422.5" y="318" width="179.5" height="32"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -272,7 +272,7 @@ Tap the LISTEN icon to start</string>
         </view>
     </objects>
     <resources>
-        <image name="listen.png" width="128" height="128"/>
-        <image name="record.png" width="88" height="128"/>
+        <image name="listen" width="128" height="128"/>
+        <image name="record" width="88" height="128"/>
     </resources>
 </document>

@@ -14,7 +14,10 @@ class ReyComplexFigure3ViewController: WebViewController {
     
     override func viewDidLoad() {
         step = AppDelegate.position
-        showOrientationAlert(orientation: "portrait")
+//        showOrientationAlert(orientation: "portrait")
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        
         url = URL(string: "http://www.embraced.ugr.es/reyComplexFigure3.php?id=" + participant.string(forKey: "pid")! + "&lang=" + participant.string(forKey: "language")! + "&token=" + participant.string(forKey: "token")!)
         
         super.viewDidLoad()
@@ -26,6 +29,16 @@ class ReyComplexFigure3ViewController: WebViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppDelegate.AppUtility.lockOrientation(.portrait)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AppDelegate.AppUtility.lockOrientation(.all)
     }
     
     // MARK: - Navigation
@@ -54,7 +67,6 @@ class ReyComplexFigure3ViewController: WebViewController {
             let dict = message.body as! [String:AnyObject]
             
             Alamofire.request(APIUrl + "api/rcf/uploadfile/" + id, method: .post, parameters: dict, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-                debugPrint(response)
                 let statusCode = response.response?.statusCode
                 
                 if statusCode == 200 {

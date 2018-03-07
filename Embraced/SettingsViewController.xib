@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,7 +15,6 @@
                 <outlet property="confirmListTable" destination="TLW-Os-k4U" id="YmW-Up-qMn"/>
                 <outlet property="deselectAllBtn" destination="RvK-cl-LFX" id="qeK-hR-HXG"/>
                 <outlet property="languageSegment" destination="3ij-kM-yD6" id="lxc-EQ-GE6"/>
-                <outlet property="saveBtn" destination="oxB-rh-hIF" id="oI2-Mx-R7B"/>
                 <outlet property="selectAllBtn" destination="YRM-vQ-gYC" id="dx9-6Y-30j"/>
                 <outlet property="testListTable" destination="Ml6-9K-fn8" id="BF4-8a-ZFg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -26,17 +25,6 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxB-rh-hIF" customClass="NavigationButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="337" y="922" width="94" height="33"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="33" id="YHB-ci-Y5c"/>
-                        <constraint firstAttribute="width" constant="94" id="ov3-0b-N1R"/>
-                    </constraints>
-                    <state key="normal" title="Save"/>
-                    <connections>
-                        <action selector="saveSettings:" destination="-2" eventType="touchUpInside" id="hja-lb-H69"/>
-                    </connections>
-                </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TLW-Os-k4U">
                     <rect key="frame" x="408" y="68" width="340" height="764"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,7 +85,6 @@
             <constraints>
                 <constraint firstItem="TLW-Os-k4U" firstAttribute="top" secondItem="RvK-cl-LFX" secondAttribute="bottom" constant="8" id="3U7-oM-B5L"/>
                 <constraint firstItem="RvK-cl-LFX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="4LB-zs-Ypk"/>
-                <constraint firstItem="oxB-rh-hIF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5vW-cB-8PN"/>
                 <constraint firstItem="3ij-kM-yD6" firstAttribute="leading" secondItem="byc-Hg-roh" secondAttribute="trailing" constant="58" id="71g-Sv-uXu"/>
                 <constraint firstItem="byc-Hg-roh" firstAttribute="top" secondItem="Ml6-9K-fn8" secondAttribute="bottom" constant="43" id="7Xb-cd-SJZ"/>
                 <constraint firstItem="Ml6-9K-fn8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="89S-bN-MHc"/>
@@ -106,11 +93,10 @@
                 <constraint firstItem="TLW-Os-k4U" firstAttribute="top" secondItem="Ml6-9K-fn8" secondAttribute="top" id="F2J-Qr-BnZ"/>
                 <constraint firstItem="YRM-vQ-gYC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="KSZ-qp-x3R"/>
                 <constraint firstItem="YRM-vQ-gYC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="QqS-t3-9Kq"/>
-                <constraint firstItem="oxB-rh-hIF" firstAttribute="top" secondItem="TLW-Os-k4U" secondAttribute="bottom" constant="90" id="dcz-7W-TTw"/>
-                <constraint firstAttribute="bottom" secondItem="oxB-rh-hIF" secondAttribute="bottom" constant="69" id="itt-SB-wtg"/>
+                <constraint firstItem="TLW-Os-k4U" firstAttribute="bottom" secondItem="Ml6-9K-fn8" secondAttribute="bottom" id="SHn-Qe-hzs"/>
+                <constraint firstAttribute="bottom" secondItem="TLW-Os-k4U" secondAttribute="bottom" constant="192" id="bjj-Kh-eBf"/>
                 <constraint firstItem="TLW-Os-k4U" firstAttribute="leading" secondItem="RvK-cl-LFX" secondAttribute="leading" id="kxR-ha-cjE"/>
                 <constraint firstAttribute="trailing" secondItem="TLW-Os-k4U" secondAttribute="trailing" constant="20" id="lOU-F8-PMi"/>
-                <constraint firstItem="oxB-rh-hIF" firstAttribute="top" secondItem="Ml6-9K-fn8" secondAttribute="bottom" constant="90" id="lTi-zT-aPG"/>
                 <constraint firstItem="3ij-kM-yD6" firstAttribute="centerY" secondItem="byc-Hg-roh" secondAttribute="centerY" id="tdB-uG-8aC"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>

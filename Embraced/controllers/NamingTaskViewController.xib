@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -126,7 +126,7 @@
                         <constraint firstAttribute="height" constant="128" id="WNL-Bj-6EV"/>
                         <constraint firstAttribute="width" constant="162" id="fy1-OW-7ux"/>
                     </constraints>
-                    <state key="normal" title="Start" image="record.png">
+                    <state key="normal" title="Start" image="record">
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -165,7 +165,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6u-tG-NNy">
-                    <rect key="frame" x="20" y="8" width="90" height="27"/>
+                    <rect key="frame" x="20" y="8" width="88.5" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -193,7 +193,7 @@
                         <constraint firstAttribute="width" constant="162" id="LCW-ZC-f0T"/>
                         <constraint firstAttribute="height" constant="128" id="qDV-LX-r11"/>
                     </constraints>
-                    <state key="normal" title="Start" image="record.png">
+                    <state key="normal" title="Start" image="record">
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -229,7 +229,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggb-un-w6P">
-                    <rect key="frame" x="20" y="20" width="88" height="27"/>
+                    <rect key="frame" x="20" y="20" width="85.5" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -251,7 +251,7 @@ Please practice recording your voice with the microphone button below</string>
                             <constraints>
                                 <constraint firstAttribute="width" constant="187" id="G55-G3-s9a"/>
                             </constraints>
-                            <state key="normal" title="Play" image="play.png">
+                            <state key="normal" title="Play" image="play">
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -263,7 +263,7 @@ Please practice recording your voice with the microphone button below</string>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="gdk-6M-XvV"/>
                             </constraints>
-                            <state key="normal" title="Start" image="record.png">
+                            <state key="normal" title="Start" image="record">
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -357,7 +357,7 @@ Please click START when you are ready</string>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUq-LZ-Yax">
-                    <rect key="frame" x="420" y="318" width="184" height="31.5"/>
+                    <rect key="frame" x="422.5" y="318" width="179.5" height="31.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -374,7 +374,7 @@ Please click START when you are ready</string>
         </view>
     </objects>
     <resources>
-        <image name="play.png" width="128" height="128"/>
-        <image name="record.png" width="88" height="128"/>
+        <image name="play" width="128" height="128"/>
+        <image name="record" width="88" height="128"/>
     </resources>
 </document>

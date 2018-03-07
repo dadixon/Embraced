@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -226,7 +226,7 @@ Tap on the button “SAME” to indicate that the melodies are the same.</string
                         <constraint firstAttribute="width" constant="49" id="VT7-xW-g6a"/>
                         <constraint firstAttribute="height" constant="38" id="hhm-5S-uzg"/>
                     </constraints>
-                    <state key="normal" image="speaker.png"/>
+                    <state key="normal" image="speaker"/>
                     <connections>
                         <action selector="replay:" destination="-1" eventType="touchUpInside" id="jge-rh-W7u"/>
                     </connections>
@@ -360,7 +360,7 @@ When you are ready, tap on START button.</string>
                         <constraint firstAttribute="height" constant="38" id="N8b-KX-gig"/>
                         <constraint firstAttribute="width" constant="49" id="bZM-bj-oYJ"/>
                     </constraints>
-                    <state key="normal" image="speaker.png"/>
+                    <state key="normal" image="speaker"/>
                     <connections>
                         <action selector="replay:" destination="-1" eventType="touchUpInside" id="twb-gi-gcN"/>
                     </connections>
@@ -514,7 +514,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                         <constraint firstAttribute="height" constant="38" id="OO7-4k-MX9"/>
                         <constraint firstAttribute="width" constant="49" id="TyA-0D-0sh"/>
                     </constraints>
-                    <state key="normal" image="speaker.png"/>
+                    <state key="normal" image="speaker"/>
                     <connections>
                         <action selector="replay:" destination="-1" eventType="touchUpInside" id="Jyp-WV-lVm"/>
                     </connections>
@@ -612,7 +612,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                         <constraint firstAttribute="height" constant="38" id="gfM-l2-hMP"/>
                         <constraint firstAttribute="width" constant="49" id="t4K-MS-DkF"/>
                     </constraints>
-                    <state key="normal" image="speaker.png"/>
+                    <state key="normal" image="speaker"/>
                     <connections>
                         <action selector="replay:" destination="-1" eventType="touchUpInside" id="CTk-pb-oIV"/>
                     </connections>
@@ -681,6 +681,6 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
         </view>
     </objects>
     <resources>
-        <image name="speaker.png" width="84" height="68"/>
+        <image name="speaker" width="84" height="68"/>
     </resources>
 </document>

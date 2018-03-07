@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import JWTDecode
 
 class ViewController: UIViewController {
  
@@ -15,8 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTextfield: EmbracedTextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var signInBtn: UIButton!
-    
     @IBOutlet weak var imageHeight: NSLayoutConstraint!
+    
     let userDefaults = UserDefaults.standard
     var testerLanguage = ""
     let APIUrl = "http://www.embracedapi.ugr.es/"
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         signInBtn.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Embraced_bg.png")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         
         usernameTextfield.delegate = self
         
@@ -40,11 +41,6 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override var prefersStatusBarHidden : Bool {
@@ -74,6 +70,17 @@ class ViewController: UIViewController {
                     
                     self.userDefaults.setValue(json["token"]!, forKey: "token")
                     self.userDefaults.setValue(json["id"]!, forKey: "id")
+                    
+                    do {
+                        let jwt = try decode(jwt: json["token"] as! String)
+                        
+                        print(jwt.body)
+                        self.userDefaults.setValue(jwt.body["admin"], forKey: "isAdmin")
+                    } catch {
+                        print("Cannot decode")
+                    }
+                    
+//                    self.userDefaults.setValue(isAdmin, forKey: "isAdmin")
 
                     DispatchQueue.main.async(execute: {
                         self.usernameTextfield.text = ""

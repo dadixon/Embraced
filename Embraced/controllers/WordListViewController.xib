@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -115,7 +115,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="han-Z8-s4b">
-                    <rect key="frame" x="20" y="20" width="88" height="27"/>
+                    <rect key="frame" x="20" y="20" width="85.5" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -141,7 +141,7 @@ Please practice recording your voice with the microphone button below</string>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="UGf-Kj-30J"/>
                             </constraints>
-                            <state key="normal" title="Start" image="record.png">
+                            <state key="normal" title="Start" image="record">
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -153,7 +153,7 @@ Please practice recording your voice with the microphone button below</string>
                             <constraints>
                                 <constraint firstAttribute="width" constant="187" id="Qib-r7-J3V"/>
                             </constraints>
-                            <state key="normal" title="Play" image="play.png">
+                            <state key="normal" title="Play" image="play">
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -202,7 +202,7 @@ Please practice recording your voice with the microphone button below</string>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trial 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMB-hw-R1N">
-                    <rect key="frame" x="20" y="20" width="62" height="27"/>
+                    <rect key="frame" x="20" y="20" width="60" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -220,7 +220,7 @@ Please tap the LISTEN button when you are ready to start</string>
                     <constraints>
                         <constraint firstAttribute="width" constant="162" id="akS-PY-LCq"/>
                     </constraints>
-                    <state key="normal" title="Start" image="record.png">
+                    <state key="normal" title="Start" image="record">
                         <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -235,7 +235,7 @@ Please tap the LISTEN button when you are ready to start</string>
                             <constraints>
                                 <constraint firstAttribute="width" constant="200" id="0B5-1u-oyf"/>
                             </constraints>
-                            <state key="normal" title="Listen" image="listen.png">
+                            <state key="normal" title="Listen" image="listen">
                                 <color key="titleColor" red="0.27450980390000002" green="0.32156862749999998" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -293,7 +293,7 @@ Please tap the LISTEN button when you are ready to start</string>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZh-ix-gRL">
-                    <rect key="frame" x="420" y="318" width="184" height="31.5"/>
+                    <rect key="frame" x="422.5" y="318" width="179.5" height="31.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -321,8 +321,8 @@ Please tap the LISTEN button when you are ready to start</string>
         </view>
     </objects>
     <resources>
-        <image name="listen.png" width="128" height="128"/>
-        <image name="play.png" width="128" height="128"/>
-        <image name="record.png" width="88" height="128"/>
+        <image name="listen" width="128" height="128"/>
+        <image name="play" width="128" height="128"/>
+        <image name="record" width="88" height="128"/>
     </resources>
 </document>
