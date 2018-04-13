@@ -418,7 +418,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         }
         
         setSubview(pTask1View, next: task1View)
-        self.loadImageFromUrl(images[position], view: self.task1ImageView)
+        self.task1ImageView.image = UIImage(named: images[position])
         doneBtn.setTitle("Done".localized(lang: language), for: .normal)
         position += 1
         start = CFAbsoluteTimeGetCurrent()
@@ -450,7 +450,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
             self.player.pause()
         }
         setSubview(pTask2View, next: task2View)
-        self.loadImageFromUrl(images[position], view: self.task2ImageView)
+        self.task2ImageView.image = UIImage(named: images[position])
         doneBtn2.setTitle("Done".localized(lang: language), for: .normal)
         position += 1
         start = CFAbsoluteTimeGetCurrent()
@@ -479,7 +479,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     
     @IBAction func moveToTask3(_ sender: AnyObject) {
         setSubview(pTask3View, next: task3View)
-        self.loadImageFromUrl(images[position], view: self.task3ImageView)
+        self.task3ImageView.image = UIImage(named: images[position])
         doneBtn3.setTitle("Done".localized(lang: language), for: .normal)
         position += 1
         start = CFAbsoluteTimeGetCurrent()
@@ -498,7 +498,6 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         if let range = myString.range(of: "blue".localized(lang: language)) {
             let startPos = myString.characters.distance(from: myString.characters.startIndex, to: range.lowerBound)
             let endPos = myString.characters.distance(from: myString.characters.startIndex, to: range.upperBound)
-            print(startPos, endPos)
             
             myMutableString = NSMutableAttributedString(string: myString, attributes: [NSAttributedStringKey.font:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
             myMutableString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red, range: NSRange(location:startPos,length:endPos - startPos))
@@ -524,7 +523,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
             self.player.pause()
         }
         setSubview(pTask4View, next: task4View)
-        self.loadImageFromUrl(images[1], view: self.task4ImageView)
+        self.task4ImageView.image = UIImage(named: images[1])
         doneBtn4.setTitle("Done".localized(lang: language), for: .normal)
         position += 1
         start = CFAbsoluteTimeGetCurrent()
@@ -551,11 +550,14 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     }
     
     func playVideoFile(filename: String, index: Int) {
-//        let path = Bundle.main.path(forResource: filename, ofType: nil)
-        let pathResource = getDocumentsDirectory().appendingPathComponent(filename)
-//        let url = URL(fileURLWithPath: pathResource!)
+        guard let path = Bundle.main.path(forResource: filename, ofType: nil) else {
+            return
+        }
         
-        player = AVPlayer(url: pathResource)
+        let url = URL(fileURLWithPath: path)
+        
+        player = AVPlayer(url: url)
+        player.actionAtItemEnd = .none
         
         playerController.delegate = self
         playerController.player = player

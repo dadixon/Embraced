@@ -305,7 +305,7 @@ class DataManager {
         stroopTasks = [
             "STIMULI_1_SPA",
             "STIMULI_2&4_SPA",
-            "STIMULI_3"
+            "STIMULI_3-1"
         ]
         
         namingTaskPractice = [

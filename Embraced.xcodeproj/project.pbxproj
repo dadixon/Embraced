@@ -89,6 +89,14 @@
 		A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */; };
 		A4BB08ED1D7EDFFA00B76C64 /* QuestionnaireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */; };
 		A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */; };
+		A4C3287E20815CD600DEC460 /* STROOP_ENG_TASK1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287920815B5600DEC460 /* STROOP_ENG_TASK1.mp4 */; };
+		A4C3287F20815CD600DEC460 /* STROOP_ENG_TASK2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287A20815B5D00DEC460 /* STROOP_ENG_TASK2.mp4 */; };
+		A4C3288020815CD600DEC460 /* STROOP_ENG_TASK3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287B20815B6400DEC460 /* STROOP_ENG_TASK3.mp4 */; };
+		A4C3288120815CD600DEC460 /* STROOP_ENG_TASK4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287C20815B6A00DEC460 /* STROOP_ENG_TASK4.mp4 */; };
+		A4C3288220815CD600DEC460 /* STROOP_SPA_TASK1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287D20815CC500DEC460 /* STROOP_SPA_TASK1.mp4 */; };
+		A4C3288320815CD600DEC460 /* STROOP_SPA_TASK2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287620815B4200DEC460 /* STROOP_SPA_TASK2.mp4 */; };
+		A4C3288420815CD600DEC460 /* STROOP_SPA_TASK3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287720815B4900DEC460 /* STROOP_SPA_TASK3.mp4 */; };
+		A4C3288520815CD600DEC460 /* STROOP_SPA_TASK4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287820815B4F00DEC460 /* STROOP_SPA_TASK4.mp4 */; };
 		A4C469A71E134B5900FDD5D5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C469A51E134B5900FDD5D5 /* UserViewController.swift */; };
 		A4C469A81E134B5900FDD5D5 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C469A61E134B5900FDD5D5 /* UserViewController.xib */; };
 		A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9041D1D2380380092D6AA /* FrontViewController.swift */; };
@@ -193,6 +201,14 @@
 		A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireViewController.swift; path = controllers/QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuestionnaireViewController.xib; path = controllers/QuestionnaireViewController.xib; sourceTree = "<group>"; };
 		A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInputViewController.xib; sourceTree = "<group>"; };
+		A4C3287620815B4200DEC460 /* STROOP_SPA_TASK2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_SPA_TASK2.mp4; path = Assets.xcassets/Stroop/STROOP_SPA_TASK2.dataset/STROOP_SPA_TASK2.mp4; sourceTree = "<group>"; };
+		A4C3287720815B4900DEC460 /* STROOP_SPA_TASK3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_SPA_TASK3.mp4; path = Assets.xcassets/Stroop/STROOP_SPA_TASK3.dataset/STROOP_SPA_TASK3.mp4; sourceTree = "<group>"; };
+		A4C3287820815B4F00DEC460 /* STROOP_SPA_TASK4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_SPA_TASK4.mp4; path = Assets.xcassets/Stroop/STROOP_SPA_TASK4.dataset/STROOP_SPA_TASK4.mp4; sourceTree = "<group>"; };
+		A4C3287920815B5600DEC460 /* STROOP_ENG_TASK1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_ENG_TASK1.mp4; path = Assets.xcassets/Stroop/STROOP_ENG_TASK1.dataset/STROOP_ENG_TASK1.mp4; sourceTree = "<group>"; };
+		A4C3287A20815B5D00DEC460 /* STROOP_ENG_TASK2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_ENG_TASK2.mp4; path = Assets.xcassets/Stroop/STROOP_ENG_TASK2.dataset/STROOP_ENG_TASK2.mp4; sourceTree = "<group>"; };
+		A4C3287B20815B6400DEC460 /* STROOP_ENG_TASK3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_ENG_TASK3.mp4; path = Assets.xcassets/Stroop/STROOP_ENG_TASK3.dataset/STROOP_ENG_TASK3.mp4; sourceTree = "<group>"; };
+		A4C3287C20815B6A00DEC460 /* STROOP_ENG_TASK4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_ENG_TASK4.mp4; path = Assets.xcassets/Stroop/STROOP_ENG_TASK4.dataset/STROOP_ENG_TASK4.mp4; sourceTree = "<group>"; };
+		A4C3287D20815CC500DEC460 /* STROOP_SPA_TASK1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_SPA_TASK1.mp4; path = Assets.xcassets/Stroop/STROOP_SPA_TASK1.dataset/STROOP_SPA_TASK1.mp4; sourceTree = "<group>"; };
 		A4C469A31E13409400FDD5D5 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		A4C469A51E134B5900FDD5D5 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		A4C469A61E134B5900FDD5D5 /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
@@ -340,6 +356,14 @@
 				A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */,
 				A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */,
 				A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */,
+				A4C3287920815B5600DEC460 /* STROOP_ENG_TASK1.mp4 */,
+				A4C3287A20815B5D00DEC460 /* STROOP_ENG_TASK2.mp4 */,
+				A4C3287B20815B6400DEC460 /* STROOP_ENG_TASK3.mp4 */,
+				A4C3287C20815B6A00DEC460 /* STROOP_ENG_TASK4.mp4 */,
+				A4C3287D20815CC500DEC460 /* STROOP_SPA_TASK1.mp4 */,
+				A4C3287620815B4200DEC460 /* STROOP_SPA_TASK2.mp4 */,
+				A4C3287720815B4900DEC460 /* STROOP_SPA_TASK3.mp4 */,
+				A4C3287820815B4F00DEC460 /* STROOP_SPA_TASK4.mp4 */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -460,7 +484,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Domonique Dixon";
 				TargetAttributes = {
 					A48B4DC01CF9E7C600878928 = {
@@ -493,6 +517,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C3287E20815CD600DEC460 /* STROOP_ENG_TASK1.mp4 in Resources */,
+				A4C3287F20815CD600DEC460 /* STROOP_ENG_TASK2.mp4 in Resources */,
+				A4C3288020815CD600DEC460 /* STROOP_ENG_TASK3.mp4 in Resources */,
+				A4C3288120815CD600DEC460 /* STROOP_ENG_TASK4.mp4 in Resources */,
+				A4C3288220815CD600DEC460 /* STROOP_SPA_TASK1.mp4 in Resources */,
+				A4C3288320815CD600DEC460 /* STROOP_SPA_TASK2.mp4 in Resources */,
+				A4C3288420815CD600DEC460 /* STROOP_SPA_TASK3.mp4 in Resources */,
+				A4C3288520815CD600DEC460 /* STROOP_SPA_TASK4.mp4 in Resources */,
 				A490D7D41D0919CB00D2B59D /* Roboto-Bold.ttf in Resources */,
 				A490D7D81D0919CB00D2B59D /* Roboto-LightItalic.ttf in Resources */,
 				A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */,
@@ -769,12 +801,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -825,12 +859,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
