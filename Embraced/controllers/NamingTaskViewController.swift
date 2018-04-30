@@ -91,9 +91,11 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         
         id = participant.string(forKey: "pid")!
         token = userDefaults.string(forKey: "token")!
-        headers = [
-            "x-access-token": token
-        ]
+        
+        // Store user token
+        StorageManager.sharedInstance.token = token
+        
+        StorageManager.sharedInstance.newNamingTask(id: id)
         
         self.practice = DataManager.sharedInstance.namingTaskPractice
         self.tasks = DataManager.sharedInstance.namingTaskTask
@@ -240,26 +242,31 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     func postToAPI(object: [String: AnyObject]) {
-        let name = object["name"] as! String
-        let fileURL = object["audio"] as! URL
-        
-        Alamofire.upload(
-            multipartFormData: { multipartFormData in
-                multipartFormData.append(fileURL, withName: "audio")
-                multipartFormData.append(name.data(using: String.Encoding.utf8)!, withName: "name")
-        }, usingThreshold: UInt64.init(),
-           to: APIUrl + "api/naming_task/uploadfile/" + id,
-           method: .post,
-           headers: headers,
-           encodingCompletion: { encodingResult in
-            switch encodingResult {
-            case .success(let upload, _, _):
-                upload.responseJSON { response in
-                    self.deleteAudioFile(fileURL: fileURL)
-                }
-            case .failure(let encodingError):
-                print(encodingError)
-            }})
+//        let name = object["name"] as! String
+//        let fileURL = object["audio"] as! URL
+//
+//        Alamofire.upload(
+//            multipartFormData: { multipartFormData in
+//                multipartFormData.append(fileURL, withName: "audio")
+//                multipartFormData.append(name.data(using: String.Encoding.utf8)!, withName: "name")
+//        }, usingThreshold: UInt64.init(),
+//           to: APIUrl + "api/naming_task/uploadfile/" + id,
+//           method: .post,
+//           headers: headers,
+//           encodingCompletion: { encodingResult in
+//            switch encodingResult {
+//            case .success(let upload, _, _):
+//                upload.responseJSON { response in
+//                    self.deleteAudioFile(fileURL: fileURL)
+//                }
+//            case .failure(let encodingError):
+//                print(encodingError)
+//            }})
+        do {
+            try StorageManager.sharedInstance.postToNamingTask(id: id, data: object)
+        } catch let error {
+            print(error)
+        }
     }
     
     // MARK: - Navigation
