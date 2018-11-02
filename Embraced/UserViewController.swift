@@ -17,7 +17,7 @@ class UserViewController: UIViewController {
     let APIUrl = "http://www.embracedapi.ugr.es/"
     var language = String()
     var tests = [String]()
-    var navigationTests = [UIViewController!]()
+    var navigationTests = [UIViewController]()
     
     override func viewWillAppear(_ animated: Bool) {
         if let language = userDefaults.string(forKey: "TesterLanguage") {
@@ -58,6 +58,7 @@ class UserViewController: UIViewController {
                     return
                 }
                 self.userDefaults.setValue(json["_id"]!, forKey: "pid")
+                print(self.userDefaults.string(forKey: "pid")!)
                 
                 let alertController = UIAlertController(title: "Participant_ID".localized(lang: self.language), message: self.userDefaults.string(forKey: "pid"), preferredStyle: UIAlertControllerStyle.alert)
                 
@@ -67,17 +68,15 @@ class UserViewController: UIViewController {
                     alertController.dismiss(animated: true, completion: nil)
                     
                     if self.tests.contains(where: { String($0) == "Orientation Task"}) {
-//                        self.navigationTests.insert(UserInputViewController(), at: 0)
                         TestOrder.sharedInstance.addTest(viewController: UserInputViewController(), at: 0)
                         TestOrder.sharedInstance.addTest(viewController: StartViewController(), at: 1)
                     } else {
-//                        self.navigationTests.insert(StartViewController(), at: 0)
                         TestOrder.sharedInstance.addTest(viewController: StartViewController(), at: 0)
                     }
                     
                     
                     let navController = UINavigationController(rootViewController: TestOrder.sharedInstance.getTest(0))
-//                    navController.setViewControllers(TestOrder.sharedInstance.getTests().reversed(), animated: true)
+
                     self.present(navController, animated: true, completion: nil)
                 }
                 

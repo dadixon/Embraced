@@ -15,7 +15,7 @@ enum StorageManagerError: Error {
 
 class StorageManager {
     static let sharedInstance = StorageManager()
-    private let APIURL = "http://www.embracedapi.ugr.es/"
+    private let APIURL = "http://www.embracedapi.ugr.es/api/"
     private var headers = [String : String]()
     var token : String = "" {
         willSet(newToken) {
@@ -25,12 +25,29 @@ class StorageManager {
         }
     }
     
-    private let namingTaskEndpoint = "api/naming_task"
+    private let namingTaskEndpoint = "naming_task"
     
     private init() {}
     
     public func newNamingTask(id: String) {
         Alamofire.request(APIURL + namingTaskEndpoint + "/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+        }
+    }
+    
+    public func putToAPI(endpoint: String, id: String, data: [String: Any]) throws {
+        Alamofire.request(APIURL + endpoint + id, method: .put, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            
+            switch response.result {
+            case .success:
+                print(response)
+            case .failure(let error):
+                do {
+                    throw StorageManagerError.failure(message: error as! String)
+                    //                    throw NSError(domain: "howdy", code: 1, userInfo:nil)
+                } catch let error as NSError {
+                    print( "entrato nel catch primo \(error)")
+                }
+            }
         }
     }
     
@@ -51,9 +68,9 @@ class StorageManager {
             case .success(let upload, _, _):
                 upload.responseJSON { response in
                 }
-            case .failure(let encodingError):
+            case .failure(let error):
                 do {
-                    throw StorageManagerError.failure(message: encodingError as! String)
+                    throw StorageManagerError.failure(message: error as! String)
 //                    throw NSError(domain: "howdy", code: 1, userInfo:nil)
                 } catch let error as NSError {
                     print( "entrato nel catch primo \(error)")

@@ -157,8 +157,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         }
     }
     
-    
-    
     func finishRecording(_ button: UIButton, success: Bool) {
         soundRecorder.stop()
         soundRecorder = nil
@@ -242,26 +240,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     func postToAPI(object: [String: AnyObject]) {
-//        let name = object["name"] as! String
-//        let fileURL = object["audio"] as! URL
-//
-//        Alamofire.upload(
-//            multipartFormData: { multipartFormData in
-//                multipartFormData.append(fileURL, withName: "audio")
-//                multipartFormData.append(name.data(using: String.Encoding.utf8)!, withName: "name")
-//        }, usingThreshold: UInt64.init(),
-//           to: APIUrl + "api/naming_task/uploadfile/" + id,
-//           method: .post,
-//           headers: headers,
-//           encodingCompletion: { encodingResult in
-//            switch encodingResult {
-//            case .success(let upload, _, _):
-//                upload.responseJSON { response in
-//                    self.deleteAudioFile(fileURL: fileURL)
-//                }
-//            case .failure(let encodingError):
-//                print(encodingError)
-//            }})
         do {
             try StorageManager.sharedInstance.postToNamingTask(id: id, data: object)
         } catch let error {
@@ -278,10 +256,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func done(_ sender:AnyObject) {
-//        showOverlay()
-        
-        // Push to the API
-//        postToAPI()
         self.next(self)
     }
     

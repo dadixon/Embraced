@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     
     let userDefaults = UserDefaults.standard
     var testerLanguage = ""
-    let APIUrl = "http://www.embracedapi.ugr.es/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +55,7 @@ class ViewController: UIViewController {
         }
         
         let parameters = createPostObject()
-        let url = APIUrl + "api/user/authenticate"
+        let url = Constants.API_ENDPOINT + "api/user/authenticate"
         
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .responseJSON { response in

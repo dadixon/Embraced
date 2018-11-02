@@ -55,6 +55,7 @@
 		A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */; };
 		A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */; };
 		A47EB6E41DA65FFB00A68AF6 /* FinishedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */; };
+		A47FF4AE211363AA00665E20 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47FF4AD211363AA00665E20 /* Constants.swift */; };
 		A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */; };
 		A4828EB71F967ED700406F19 /* LoadingScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */; };
 		A489D6181E0B535A001F56FE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D6161E0B535A001F56FE /* SettingsViewController.swift */; };
@@ -163,6 +164,7 @@
 		A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishedViewController.swift; path = controllers/FinishedViewController.swift; sourceTree = "<group>"; };
 		A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinishedViewController.xib; path = controllers/FinishedViewController.xib; sourceTree = "<group>"; };
+		A47FF4AD211363AA00665E20 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadingScreenViewController.swift; path = controllers/LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoadingScreenViewController.xib; path = controllers/LoadingScreenViewController.xib; sourceTree = "<group>"; };
 		A489D6161E0B535A001F56FE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */,
+				A47FF4AD211363AA00665E20 /* Constants.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -752,6 +755,7 @@
 				A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */,
 				A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */,
 				A4AE36E31DFC545400727DFD /* WebViewController.swift in Sources */,
+				A47FF4AE211363AA00665E20 /* Constants.swift in Sources */,
 				A44669381E16457600EA7E2E /* RecordButton.swift in Sources */,
 				A4347FC11D7BC9E20033306A /* StroopViewController.swift in Sources */,
 			);
