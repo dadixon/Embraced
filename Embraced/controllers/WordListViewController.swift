@@ -100,7 +100,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         recordingSession = AVAudioSession.sharedInstance()
         
         do {
-            try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try recordingSession.setCategory(convertFromAVAudioSessionCategory(AVAudioSession.Category.playAndRecord))
             try recordingSession.setActive(true)
             recordingSession.requestRecordPermission() { [unowned self] allowed in
                 DispatchQueue.main.async {
@@ -364,14 +364,14 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBAction func playSound(_ sender: UIButton) {
         if sender.titleLabel!.text == "Play".localized(lang: language) {
             recordBtn.isEnabled = false
-            sender.setTitle("Stop".localized(lang: language), for: UIControlState())
+            sender.setTitle("Stop".localized(lang: language), for: UIControl.State())
             preparePlayer()
             soundPlayer?.play()
         } else {
             if (soundPlayer?.isPlaying)! {
                 soundPlayer?.stop()
             }
-            sender.setTitle("Play".localized(lang: language), for: UIControlState())
+            sender.setTitle("Play".localized(lang: language), for: UIControl.State())
         }
     }
     
@@ -422,4 +422,9 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         print("finished playing")
         finishPlaying()
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
 }

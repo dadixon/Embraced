@@ -60,7 +60,7 @@ class UserViewController: UIViewController {
                 self.userDefaults.setValue(json["_id"]!, forKey: "pid")
                 print(self.userDefaults.string(forKey: "pid")!)
                 
-                let alertController = UIAlertController(title: "Participant_ID".localized(lang: self.language), message: self.userDefaults.string(forKey: "pid"), preferredStyle: UIAlertControllerStyle.alert)
+                let alertController = UIAlertController(title: "Participant_ID".localized(lang: self.language), message: self.userDefaults.string(forKey: "pid"), preferredStyle: UIAlertController.Style.alert)
                 
                 self.present(alertController, animated: true, completion: nil)
                 

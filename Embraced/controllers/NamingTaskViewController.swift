@@ -235,7 +235,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         recordBtn.isEnabled = true
-        playBtn.setTitle("Play".localized(lang: language), for: UIControlState())
+        playBtn.setTitle("Play".localized(lang: language), for: UIControl.State())
         playBtn.isEnabled = false
     }
     
@@ -282,12 +282,12 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBAction func playSound(_ sender: UIButton) {
         if sender.titleLabel!.text == "Play".localized(lang: language) {
             recordBtn.isEnabled = false
-            sender.setTitle("Stop_Recording".localized(lang: language), for: UIControlState())
+            sender.setTitle("Stop_Recording".localized(lang: language), for: UIControl.State())
             preparePlayer()
             soundPlayer?.play()
         } else {
             soundPlayer?.stop()
-            sender.setTitle("Play".localized(lang: language), for: UIControlState())
+            sender.setTitle("Play".localized(lang: language), for: UIControl.State())
         }
     }
     

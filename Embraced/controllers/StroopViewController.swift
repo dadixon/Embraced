@@ -178,7 +178,12 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         recordingSession = AVAudioSession.sharedInstance()
         
         do {
-            try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            if #available(iOS 10.0, *) {
+                try recordingSession.setCategory(AVAudioSession.Category(rawValue: convertFromAVAudioSessionCategory(AVAudioSession.Category.playAndRecord)), mode: .default)
+            } else {
+                // Fallback on earlier versions
+//                try recordingSession.setCategory(convertFromAVAudioSessionCategory(AVAudioSession.Category.playAndRecord))
+            }
             try recordingSession.setActive(true)
             recordingSession.requestRecordPermission() { [unowned self] allowed in
                 DispatchQueue.main.async {
@@ -381,12 +386,12 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     @IBAction func playSound(_ sender: UIButton) {
         if sender.titleLabel!.text == "Play".localized(lang: language) {
             recordBtn.isEnabled = false
-            sender.setTitle("Stop".localized(lang: language), for: UIControlState())
+            sender.setTitle("Stop".localized(lang: language), for: UIControl.State())
             preparePlayer()
             soundPlayer?.play()
         } else {
             soundPlayer?.stop()
-            sender.setTitle("Play".localized(lang: language), for: UIControlState())
+            sender.setTitle("Play".localized(lang: language), for: UIControl.State())
         }
     }
 
@@ -496,11 +501,11 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
         let myString = "stroop_pretask_instruction3".localized(lang: language)
 
         if let range = myString.range(of: "blue".localized(lang: language)) {
-            let startPos = myString.characters.distance(from: myString.characters.startIndex, to: range.lowerBound)
-            let endPos = myString.characters.distance(from: myString.characters.startIndex, to: range.upperBound)
+            let startPos = myString.distance(from: myString.startIndex, to: range.lowerBound)
+            let endPos = myString.distance(from: myString.startIndex, to: range.upperBound)
             
-            myMutableString = NSMutableAttributedString(string: myString, attributes: [NSAttributedStringKey.font:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
-            myMutableString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red, range: NSRange(location:startPos,length:endPos - startPos))
+            myMutableString = NSMutableAttributedString(string: myString, attributes: [NSAttributedString.Key.font:UIFont.init(name: "HelveticaNeue", size: 17.0)!])
+            myMutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSRange(location:startPos,length:endPos - startPos))
             preTaskInstruction4.attributedText = myMutableString
         }
         
@@ -604,4 +609,9 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     func playerViewControllerDidStopPictureInPicture(_ playerViewController: AVPlayerViewController) {
         NSLog("video stopped")
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
 }

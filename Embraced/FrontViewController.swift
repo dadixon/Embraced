@@ -88,7 +88,7 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         language = participant.string(forKey: "language")!
         
         if orientation == "landscape" {
-            let alertController = UIAlertController(title: "Rotation".localized(lang: language), message: "Rotation_landscpaing_prompt".localized(lang: language), preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Rotation".localized(lang: language), message: "Rotation_landscpaing_prompt".localized(lang: language), preferredStyle: UIAlertController.Style.alert)
             
             self.present(alertController, animated: true, completion: nil)
             
@@ -98,7 +98,7 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
             
             alertController.addAction(dismissAction)
         } else if orientation == "portrait" {
-            let alertController = UIAlertController(title: "Rotation".localized(lang: language), message: "Rotation_portrait_prompt".localized(lang: language), preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Rotation".localized(lang: language), message: "Rotation_portrait_prompt".localized(lang: language), preferredStyle: UIAlertController.Style.alert)
                 
             self.present(alertController, animated: true, completion: nil)
             
@@ -254,7 +254,7 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         overlayView.layer.cornerRadius = 10
         
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        activityIndicator.activityIndicatorViewStyle = .whiteLarge
+        activityIndicator.style = .whiteLarge
         activityIndicator.center = CGPoint(x: overlayView.bounds.width / 2, y: overlayView.bounds.height / 2)
         
         overlayView.addSubview(activityIndicator)
