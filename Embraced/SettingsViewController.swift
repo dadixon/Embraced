@@ -40,6 +40,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         "Comprehension Task",
         "Eyes Test"
     ]
+    
     var defaultTests = [String]()
     var confirm = [String]()
     
@@ -57,35 +58,17 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         confirmListTable.tableFooterView = UIView(frame: .zero)
         
         confirmListTable.setEditing(true, animated: true)
+        defaultTests = tests
         
-        // Grab only available tests
-        let token = participant.string(forKey: "token")!
-        let headers: HTTPHeaders = [
-            "x-access-token": token
-        ]
-        
-        Alamofire.request(APIUrl + "api/data/tests", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            
-            let statusCode = response.response?.statusCode
-            
-            if statusCode == 200 {
-                guard let json = response.result.value as? [String: Any] else {
-                    return
-                }
-                self.tests = json["tests"] as! [String]
-                self.defaultTests = self.tests
-                
-                if self.participant.array(forKey: "Tests") != nil {
-                    self.confirm = self.participant.array(forKey: "Tests") as! [String]
-                    self.confirm = self.confirm.filter {self.tests.contains($0)}
-                }
-                
-                self.defaultTests = self.defaultTests.filter {!self.confirm.contains($0)}
-                
-                self.confirmListTable.reloadData()
-                self.testListTable.reloadData()
-            }
+        if participant.array(forKey: "Tests") != nil {
+            confirm = participant.array(forKey: "Tests") as! [String]
+            confirm = confirm.filter {tests.contains($0)}
         }
+        
+        defaultTests = defaultTests.filter {!confirm.contains($0)}
+        
+        confirmListTable.reloadData()
+        testListTable.reloadData()
         
         var testerLanguage = participant.string(forKey: "TesterLanguage")
         

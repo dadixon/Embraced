@@ -99,21 +99,21 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         
         recordingSession = AVAudioSession.sharedInstance()
         
-        do {
-            try recordingSession.setCategory(convertFromAVAudioSessionCategory(AVAudioSession.Category.playAndRecord))
-            try recordingSession.setActive(true)
-            recordingSession.requestRecordPermission() { [unowned self] allowed in
-                DispatchQueue.main.async {
-                    if allowed {
-                        self.recordBtn.isEnabled = true
-                    } else {
-                        // failed to record!
-                    }
-                }
-            }
-        } catch {
-            // failed to record!
-        }
+//        do {
+//            try recordingSession.setCategory(convertFromAVAudioSessionCategory(AVAudioSession.Category.playAndRecord))
+//            try recordingSession.setActive(true)
+//            recordingSession.requestRecordPermission() { [unowned self] allowed in
+//                DispatchQueue.main.async {
+//                    if allowed {
+//                        self.recordBtn.isEnabled = true
+//                    } else {
+//                        // failed to record!
+//                    }
+//                }
+//            }
+//        } catch {
+//            // failed to record!
+//        }
         
         // Fetch audios
         self.trials = DataManager.sharedInstance.wordListTasks

@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import Alamofire
 
-class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
+class DigitalSpanViewController: FrontViewController {
 
     
     @IBOutlet weak var containerView: UIView!
@@ -53,9 +53,10 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var completeLabel: UILabel!
     
     @IBOutlet weak var submit: UIButton!
-    var recordingSession: AVAudioSession!
     
-    var soundRecorder: AVAudioRecorder!
+    var audioPlayer: AVAudioPlayer!
+    var audioRecorder: AVAudioRecorder!
+    var recordedAudioURL: URL!
     var fileName = "testDigitSpanAudioFile.m4a"
     
     var stimuli = [String: Any]()
@@ -103,8 +104,8 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             "x-access-token": token
         ]
         
-        Alamofire.request(APIUrl + "api/digit_span/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-        }
+//        Alamofire.request(APIUrl + "api/digit_span/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+//        }
         
         introView.translatesAutoresizingMaskIntoConstraints = false
         preTask1View.translatesAutoresizingMaskIntoConstraints = false
@@ -120,24 +121,6 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         let rightConstraint = introView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
         let bottomConstraint = introView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
-
-        recordingSession = AVAudioSession.sharedInstance()
-
-        do {
-            try recordingSession.setCategory(convertFromAVAudioSessionCategory(AVAudioSession.Category.playAndRecord))
-            try recordingSession.setActive(true)
-            recordingSession.requestRecordPermission() { [unowned self] allowed in
-                DispatchQueue.main.async {
-                    if allowed {
-                        self.recordBtn.isEnabled = true
-                    } else {
-                        // failed to record!
-                    }
-                }
-            }
-        } catch {
-            // failed to record!
-        }
         
         forward = DataManager.sharedInstance.digitalSpanForward
         forwardPractice = DataManager.sharedInstance.digitalSpanForwardPractice
@@ -190,42 +173,49 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
         
+        recordedAudioURL = audioFilename
+        
+        let session = AVAudioSession.sharedInstance()
+        try! session.setActive(true)
+        try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
+        
         do {
-            soundRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
-            soundRecorder.delegate = self
-            soundRecorder.record()
-            
+            try audioRecorder = AVAudioRecorder(url: audioFilename, settings: settings)
+            audioRecorder.delegate = self
+            audioRecorder.isMeteringEnabled = true
+            audioRecorder.prepareToRecord()
+            audioRecorder.record()
             button.setTitle("Stop_Recording".localized(lang: language), for: .normal)
-        } catch {
-            finishRecording(button, success: false)
+        } catch let error {
+            print("Error: \(error)")
         }
+        
+//        do {
+//            soundRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+//            soundRecorder.delegate = self
+//            soundRecorder.record()
+//
+//            button.setTitle("Stop_Recording".localized(lang: language), for: .normal)
+//        } catch {
+//            finishRecording(button, success: false)
+//        }
     }
     
     func finishRecording(_ button: UIButton, success: Bool) {
-        if soundRecorder.isRecording {
-            soundRecorder.stop()
-            soundRecorder = nil
-        }
+//        if soundRecorder.isRecording {
+//            soundRecorder.stop()
+//            soundRecorder = nil
+//        }
+        
+        audioRecorder.stop()
+        audioRecorder = nil
+        let audioSession = AVAudioSession.sharedInstance()
+        try! audioSession.setActive(false)
         
         if success {
             button.setTitle("Start_Record".localized(lang: language), for: .normal)
             playBtn.isEnabled = true
         }
-    }
-    
-    func preparePlayer() {
-        do {
-            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName))
-            soundPlayer?.delegate = self
-            soundPlayer?.prepareToPlay()
-            soundPlayer?.volume = 1.0
-        } catch {
-            log(logMessage: "Something went wrong")
-        }
-    }
-    
-    func log(logMessage: String, functionName: String = #function) {
-        print("\(#function): \(logMessage)")
     }
     
     func finishedPlaying() {
@@ -239,25 +229,39 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         let name = object["name"] as! String
         let fileURL = object["audio"] as! URL
         
-        Alamofire.upload(
-            multipartFormData: { multipartFormData in
-                multipartFormData.append(fileURL, withName: "audio")
-                multipartFormData.append(name.data(using: String.Encoding.utf8)!, withName: "name")
-        }, usingThreshold: UInt64.init(),
-           to: APIUrl + "api/digit_span/uploadfile/" + id,
-           method: .post,
-           headers: headers,
-           encodingCompletion: { encodingResult in
-            switch encodingResult {
-            case .success(let upload, _, _):
-                upload.responseJSON { response in
-                    self.deleteAudioFile(fileURL: fileURL)
-                }
-            case .failure(let encodingError):
-                print(encodingError)
-            }})
+        // Testing Firebase storage
+//        FirebaseStorageManager.sharedInstance.storeDigitSpan(data: object)
+        
+//        Alamofire.upload(
+//            multipartFormData: { multipartFormData in
+//                multipartFormData.append(fileURL, withName: "audio")
+//                multipartFormData.append(name.data(using: String.Encoding.utf8)!, withName: "name")
+//        }, usingThreshold: UInt64.init(),
+//           to: APIUrl + "api/digit_span/uploadfile/" + id,
+//           method: .post,
+//           headers: headers,
+//           encodingCompletion: { encodingResult in
+//            switch encodingResult {
+//            case .success(let upload, _, _):
+//                upload.responseJSON { response in
+//                    self.deleteAudioFile(fileURL: fileURL)
+//                }
+//            case .failure(let encodingError):
+//                print(encodingError)
+//            }})
     }
     
+    override func play(_ filename: String) {
+        let audioFilename = getDocumentsDirectory().appendingPathComponent(filename)
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: audioFilename)
+            audioPlayer.delegate = self
+            audioPlayer.play()
+        } catch {
+            print("No Audio")
+        }
+    }
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
@@ -276,7 +280,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     // MARK: - Actions
     
     @IBAction func recordTapped(_ sender: UIButton) {
-        if soundRecorder == nil {
+        if audioRecorder == nil {
             startRecording(sender, fileName: fileName)
         } else {
             finishRecording(sender, success: true)
@@ -290,7 +294,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func recordForward(_ sender: AnyObject) {
-        if soundRecorder == nil {
+        if audioRecorder == nil {
             startRecording(sender as! UIButton, fileName: "forward\(forwardCount).m4a")
         } else {
             finishRecording(sender as! UIButton, success: true)
@@ -303,7 +307,7 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func recordBackward(_ sender: AnyObject) {
-        if soundRecorder == nil {
+        if audioRecorder == nil {
             startRecording(sender as! UIButton, fileName: "backward\(backwardCount).m4a")
         } else {
             finishRecording(sender as! UIButton, success: true)
@@ -319,12 +323,15 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         if sender.titleLabel!.text == "Play".localized(lang: language) {
             recordBtn.isEnabled = false
             sender.setTitle("Stop".localized(lang: language), for: UIControl.State())
-            preparePlayer()
-            soundPlayer?.play()
-        } else {
-            if (soundPlayer?.isPlaying)! {
-                soundPlayer?.stop()
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: recordedAudioURL)
+                audioPlayer.delegate = self
+                audioPlayer.play()
+            } catch {
+                print("No Audio")
             }
+        } else {
+            audioPlayer.stop()
             sender.setTitle("Play".localized(lang: language), for: UIControl.State())
         }
     }
@@ -434,17 +441,33 @@ class DigitalSpanViewController: FrontViewController, AVAudioRecorderDelegate {
         return jsonObject
     }
     
-    
-    // MARK: - Delegate
-    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        recordBtn.isEnabled = true
-        playBtn.setTitle("Play".localized(lang: language), for: UIControl.State())
-        finishedPlaying()
+        if flag {
+            recordBtn.isEnabled = true
+            playBtn.setTitle("Play".localized(lang: language), for: UIControl.State())
+            playBtn.isEnabled = false
+            listenBtn.isEnabled = true
+            recordPracticeBtn.isEnabled = true
+        } else {
+            print("Player failed")
+        }
     }
 }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
 	return input.rawValue
+}
+
+extension DigitalSpanViewController: AVAudioRecorderDelegate {
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if flag {
+            print("Finished recording")
+            recordBtn.isEnabled = true
+            playBtn.setTitle("Play".localized(lang: language), for: UIControl.State())
+            finishedPlaying()
+        } else {
+            print("Recording failed")
+        }
+    }
 }

@@ -10,8 +10,9 @@ import UIKit
 import AVFoundation
 import Alamofire
 import SVProgressHUD
+import Firebase
 
-class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
+class NamingTaskViewController: FrontViewController {
 
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var recordBtn: UIButton!
@@ -44,10 +45,10 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var completeLabel: UILabel!
     @IBOutlet weak var completeSubmitBtn: UIButton!
     
-    var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
+    var recordedAudioURL: URL!
+    var audioPlayer: AVAudioPlayer!
     
-    var soundRecorder: AVAudioRecorder!
     var fileName = "testNamingAudioFile.m4a"
     
     var practice = [String]()
@@ -114,8 +115,6 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         let bottomConstraint = initialView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
         NSLayoutConstraint.activate([leftConstraint, topConstraint, rightConstraint, bottomConstraint])
         
-        recordingSession = AVAudioSession.sharedInstance()
-        
         practiceLabel.text = "Practice".localized(lang: language)
         practiceInstruction1.text = "naming_practice_instruction1".localized(lang: language)
         pracitceInstruction2.text = "naming_practice_instruction2".localized(lang: language)
@@ -145,37 +144,51 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
             AVNumberOfChannelsKey: 1,
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
+//        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
+//        let pathArray = [dirPath, fileName]
+//        let filePath = URL(string: pathArray.joined(separator: "/"))
+//        print(filePath!.absoluteURL)
+        recordedAudioURL = audioFilename
+        
+        let session = AVAudioSession.sharedInstance()
+        try! session.setActive(true)
+        try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
         
         do {
-            soundRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
-            soundRecorder.delegate = self
-            soundRecorder.record()
-            
+            try audioRecorder = AVAudioRecorder(url: audioFilename, settings: settings)
+            audioRecorder.delegate = self
+            audioRecorder.isMeteringEnabled = true
+            audioRecorder.prepareToRecord()
+            audioRecorder.record()
             button.setTitle("Stop_Recording".localized(lang: language), for: .normal)
-        } catch {
-            finishRecording(button, success: false)
+        } catch let error {
+            print("Error: \(error)")
         }
     }
     
     func finishRecording(_ button: UIButton, success: Bool) {
-        soundRecorder.stop()
-        soundRecorder = nil
+//        soundRecorder.stop()
+//        soundRecorder = nil
+        audioRecorder.stop()
+        audioRecorder = nil
+        let audioSession = AVAudioSession.sharedInstance()
+        try! audioSession.setActive(false)
         
         if success {
             button.setTitle("Start_Record".localized(lang: language), for: .normal)
         }
     }
     
-    func preparePlayer() {
-        do {
-            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName))
-            soundPlayer?.delegate = self
-            soundPlayer?.prepareToPlay()
-            soundPlayer?.volume = 1.0
-        } catch {
-            SVProgressHUD.showError(withStatus: error.localizedDescription)
-        }
-    }
+//    func preparePlayer() {
+//        do {
+//            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName))
+//            soundPlayer?.delegate = self
+//            soundPlayer?.prepareToPlay()
+//            soundPlayer?.volume = 1.0
+//        } catch {
+//            SVProgressHUD.showError(withStatus: error.localizedDescription)
+//        }
+//    }
     
     @objc func updateTime() {
         
@@ -197,9 +210,11 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
             timerCount.text = String(timeCount)
             
             if timeCount == 0 {
-                if soundRecorder != nil {
-                    soundRecorder.stop()
-                    soundRecorder = nil
+                if audioRecorder != nil {
+                    audioRecorder.stop()
+                    audioRecorder = nil
+                    let audioSession = AVAudioSession.sharedInstance()
+                    try! audioSession.setActive(false)
                 }
 
                 taskRecordBtn.setTitle("Start_Record".localized(lang: language), for: .normal)
@@ -229,17 +244,20 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
         timer.invalidate()
     }
     
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        playBtn.isEnabled = true
-    }
-    
+    // TODO: This needs to be an extension instead
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        recordBtn.isEnabled = true
-        playBtn.setTitle("Play".localized(lang: language), for: UIControl.State())
-        playBtn.isEnabled = false
+        if flag {
+            recordBtn.isEnabled = true
+            playBtn.setTitle("Play".localized(lang: language), for: UIControl.State())
+            playBtn.isEnabled = false
+        } else {
+            print("Player failed")
+        }
     }
     
     func postToAPI(object: [String: AnyObject]) {
+        // Test Firebase Database
+        FirebaseStorageManager.sharedInstance.storeNamingTask(data: object)
         do {
             try StorageManager.sharedInstance.postToNamingTask(id: id, data: object)
         } catch let error {
@@ -261,7 +279,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     
     // MARK: - Actions
     @IBAction func recordTapped(_ sender: UIButton) {
-        if soundRecorder == nil {
+        if audioRecorder == nil {
             startRecording(sender, fileName: fileName)
         } else {
             finishRecording(sender, success: true)
@@ -270,7 +288,7 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func recordTask(_ sender: AnyObject) {
-        if soundRecorder == nil {
+        if audioRecorder == nil {
             startRecording(sender as! UIButton, fileName: "namingTask\(count).m4a")
         } else {
             finishRecording(sender as! UIButton, success: true)
@@ -282,11 +300,17 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBAction func playSound(_ sender: UIButton) {
         if sender.titleLabel!.text == "Play".localized(lang: language) {
             recordBtn.isEnabled = false
-            sender.setTitle("Stop_Recording".localized(lang: language), for: UIControl.State())
-            preparePlayer()
-            soundPlayer?.play()
+//            sender.setTitle("Stop_Recording".localized(lang: language), for: UIControl.State())
+            
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: recordedAudioURL)
+                audioPlayer.delegate = self
+                audioPlayer.play()
+            } catch {
+                print("No Audio")
+            }
         } else {
-            soundPlayer?.stop()
+            audioPlayer.stop()
             sender.setTitle("Play".localized(lang: language), for: UIControl.State())
         }
     }
@@ -344,16 +368,28 @@ class NamingTaskViewController: FrontViewController, AVAudioRecorderDelegate {
     func createPostObject(index: Int) -> [String: AnyObject] {
         var jsonObject = [String: AnyObject]()
         let name = "stimuli\(index)"
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let fileURL = documentsURL.appendingPathComponent("namingTask\(index-1).m4a")
+//        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+//        let fileURL = documentsURL.appendingPathComponent("namingTask\(index-1).m4a")
         
         // Gather data for post
         jsonObject = [
+            "index": index as AnyObject,
             "name": name as AnyObject,
-            "audio": fileURL as AnyObject
+            "audio": recordedAudioURL as AnyObject
         ]
         
         return jsonObject
+    }
+}
+
+extension NamingTaskViewController: AVAudioRecorderDelegate {
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if flag {
+            print("Finished recording")
+            playBtn.isEnabled = true
+        } else {
+            print("Recording failed")
+        }
     }
 }
 

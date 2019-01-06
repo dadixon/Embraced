@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A401C9D221D9DFA6002C07DE /* ENG-PRACTICE-FWD.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A401C9D121D9DFA6002C07DE /* ENG-PRACTICE-FWD.mp3 */; };
 		A41AE3C11DCA57150089231D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A41AE3C01DCA57150089231D /* Images.xcassets */; };
+		A42041EE21E1CFC800021EDB /* MelodyRecognition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42041ED21E1CFC800021EDB /* MelodyRecognition.storyboard */; };
+		A42041F121E1D09E00021EDB /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041EF21E1D09E00021EDB /* InstructionsViewController.swift */; };
+		A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */; };
+		A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */; };
+		A42041F821E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F721E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift */; };
 		A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */; };
 		A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */; };
 		A4347FC11D7BC9E20033306A /* StroopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FBF1D7BC9E20033306A /* StroopViewController.swift */; };
@@ -35,6 +41,13 @@
 		A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669311E1631A600EA7E2E /* ListenButton.swift */; };
 		A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669331E16435C00EA7E2E /* PlayButton.swift */; };
 		A44669381E16457600EA7E2E /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669371E16457600EA7E2E /* RecordButton.swift */; };
+		A460CE3C21CCD49200E52F8B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A460CE3B21CCD49100E52F8B /* GoogleService-Info.plist */; };
+		A460CE3E21CCD98F00E52F8B /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE3D21CCD98F00E52F8B /* FirebaseStorageManager.swift */; };
+		A460CE4121D0C0E300E52F8B /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE3F21D0C0E300E52F8B /* CanvasViewController.swift */; };
+		A460CE4221D0C0E300E52F8B /* CanvasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A460CE4021D0C0E300E52F8B /* CanvasViewController.xib */; };
+		A460CE4521D0C72900E52F8B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE4421D0C72900E52F8B /* TestViewController.swift */; };
+		A460CE4721D0C75E00E52F8B /* InstructionsStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */; };
+		A460CE4921D0C77300E52F8B /* InstructionsStep.xib in Resources */ = {isa = PBXBuildFile; fileRef = A460CE4821D0C77300E52F8B /* InstructionsStep.xib */; };
 		A46A2C641DD66108000AC66C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46A2C631DD66108000AC66C /* SystemConfiguration.framework */; };
 		A46A2C661DD7AB91000AC66C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A2C651DD7AB91000AC66C /* Reachability.swift */; };
 		A46A2C681DD96FF0000AC66C /* APIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A2C671DD96FF0000AC66C /* APIWrapper.swift */; };
@@ -109,6 +122,7 @@
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
 		A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */; };
 		A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */; };
+		A4EEAEA421C1366C0080FA22 /* melodies 320ms orig(16).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4EEAEA321C1366C0080FA22 /* melodies 320ms orig(16).wav */; };
 		A4FC1E991DD2BE4500F19D95 /* WordList2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */; };
 		A4FC1E9A1DD2BE4500F19D95 /* WordList2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */; };
 		DD7D49BC9E47B49E27EB6157 /* Pods_Embraced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */; };
@@ -116,7 +130,13 @@
 
 /* Begin PBXFileReference section */
 		9F375DDA1676C302A2C3E45B /* Pods-Embraced.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.debug.xcconfig"; sourceTree = "<group>"; };
+		A401C9D121D9DFA6002C07DE /* ENG-PRACTICE-FWD.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "ENG-PRACTICE-FWD.mp3"; path = "../../../Downloads/ENG-PRACTICE-FWD.mp3"; sourceTree = "<group>"; };
 		A41AE3C01DCA57150089231D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A42041ED21E1CFC800021EDB /* MelodyRecognition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MelodyRecognition.storyboard; sourceTree = "<group>"; };
+		A42041EF21E1D09E00021EDB /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionInstructionsViewController.swift; sourceTree = "<group>"; };
+		A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveStepViewController.swift; sourceTree = "<group>"; };
+		A42041F721E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionExample1ViewController.swift; sourceTree = "<group>"; };
 		A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigure2ViewController.swift; path = controllers/ReyComplexFigure2ViewController.swift; sourceTree = "<group>"; };
 		A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyComplexFigure2ViewController.xib; path = controllers/ReyComplexFigure2ViewController.xib; sourceTree = "<group>"; };
 		A4347FBF1D7BC9E20033306A /* StroopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StroopViewController.swift; path = controllers/StroopViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +164,13 @@
 		A44669311E1631A600EA7E2E /* ListenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenButton.swift; sourceTree = "<group>"; };
 		A44669331E16435C00EA7E2E /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		A44669371E16457600EA7E2E /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		A460CE3B21CCD49100E52F8B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A460CE3D21CCD98F00E52F8B /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
+		A460CE3F21D0C0E300E52F8B /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CanvasViewController.swift; path = controllers/CanvasViewController.swift; sourceTree = "<group>"; };
+		A460CE4021D0C0E300E52F8B /* CanvasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CanvasViewController.xib; path = controllers/CanvasViewController.xib; sourceTree = "<group>"; };
+		A460CE4421D0C72900E52F8B /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = controllers/TestViewController.swift; sourceTree = "<group>"; };
+		A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsStep.swift; sourceTree = "<group>"; };
+		A460CE4821D0C77300E52F8B /* InstructionsStep.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionsStep.xib; sourceTree = "<group>"; };
 		A46A2C631DD66108000AC66C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A46A2C651DD7AB91000AC66C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A46A2C671DD96FF0000AC66C /* APIWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIWrapper.swift; sourceTree = "<group>"; };
@@ -225,6 +252,7 @@
 		A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOrder.swift; sourceTree = "<group>"; };
+		A4EEAEA321C1366C0080FA22 /* melodies 320ms orig(16).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(16).wav"; sourceTree = "<group>"; };
 		A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordList2ViewController.swift; path = controllers/WordList2ViewController.swift; sourceTree = "<group>"; };
 		A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordList2ViewController.xib; path = controllers/WordList2ViewController.xib; sourceTree = "<group>"; };
 		B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.release.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.release.xcconfig"; sourceTree = "<group>"; };
@@ -261,6 +289,25 @@
 				EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A42041EB21E1CF8300021EDB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A48B4DC81CF9E7C700878928 /* Main.storyboard */,
+				A48B4DD01CF9E7C700878928 /* LaunchScreen.storyboard */,
+				A42041ED21E1CFC800021EDB /* MelodyRecognition.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		A42041F921E1F1E500021EDB /* MelodyRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */,
+				A42041F721E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift */,
+			);
+			name = MelodyRecognition;
 			sourceTree = "<group>";
 		};
 		A42AB5C51D2DE0F4001387BB /* Test */ = {
@@ -330,17 +377,17 @@
 		A48B4DC31CF9E7C700878928 /* Embraced */ = {
 			isa = PBXGroup;
 			children = (
+				A42041EB21E1CF8300021EDB /* Storyboards */,
 				A48D60ED1FF6FF1A0042FBCA /* Views */,
 				A48D60E61FF5AC3B0042FBCA /* API */,
 				A4476ED71D13B1A5002722B4 /* Models */,
 				A48B4DD91CF9EEAB00878928 /* Resources */,
 				A490D7C11D0913C500D2B59D /* Controllers */,
-				A48B4DC81CF9E7C700878928 /* Main.storyboard */,
 				A48B4DCE1CF9E7C700878928 /* Assets.xcassets */,
-				A48B4DD01CF9E7C700878928 /* LaunchScreen.storyboard */,
 				A4DF9F241E08FBC90084EAF9 /* Localizable.strings */,
 				A48B4DD31CF9E7C700878928 /* Info.plist */,
 				A48B4DCB1CF9E7C700878928 /* Embraced.xcdatamodeld */,
+				A460CE3B21CCD49100E52F8B /* GoogleService-Info.plist */,
 				A41AE3C01DCA57150089231D /* Images.xcassets */,
 			);
 			path = Embraced;
@@ -349,6 +396,8 @@
 		A48B4DD91CF9EEAB00878928 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A4EEAEA321C1366C0080FA22 /* melodies 320ms orig(16).wav */,
+				A401C9D121D9DFA6002C07DE /* ENG-PRACTICE-FWD.mp3 */,
 				A490D7C61D0919CB00D2B59D /* Roboto-Black.ttf */,
 				A490D7C71D0919CB00D2B59D /* Roboto-BlackItalic.ttf */,
 				A490D7C81D0919CB00D2B59D /* Roboto-Bold.ttf */,
@@ -378,6 +427,7 @@
 			children = (
 				A48D60E71FF5AC4F0042FBCA /* LibraryAPI.swift */,
 				A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */,
+				A460CE3D21CCD98F00E52F8B /* FirebaseStorageManager.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -394,6 +444,7 @@
 		A490D7C11D0913C500D2B59D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A42041F921E1F1E500021EDB /* MelodyRecognition */,
 				A4D904231D2384010092D6AA /* Customizations */,
 				A48B4DC41CF9E7C700878928 /* AppDelegate.swift */,
 				A48B4DC61CF9E7C700878928 /* ViewController.swift */,
@@ -413,6 +464,13 @@
 				A42AB5C51D2DE0F4001387BB /* Test */,
 				A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */,
 				A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */,
+				A460CE3F21D0C0E300E52F8B /* CanvasViewController.swift */,
+				A460CE4021D0C0E300E52F8B /* CanvasViewController.xib */,
+				A460CE4421D0C72900E52F8B /* TestViewController.swift */,
+				A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */,
+				A460CE4821D0C77300E52F8B /* InstructionsStep.xib */,
+				A42041EF21E1D09E00021EDB /* InstructionsViewController.swift */,
+				A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -470,9 +528,8 @@
 				A48B4DBE1CF9E7C600878928 /* Frameworks */,
 				A48B4DBF1CF9E7C600878928 /* Resources */,
 				C90CDE91F5A86DBE2B374296 /* [CP] Embed Pods Frameworks */,
-				C7F38120F030A165D5C8C102 /* [CP] Copy Pods Resources */,
 				EC05DDA4DDE8CF52B4975F46 /* 📦 Embed Pods Frameworks */,
-				F2EE9097EA98D93B1AFC7A4A /* 📦 Copy Pods Resources */,
+				241A8DDF3B75DF09AFACAA07 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -531,6 +588,7 @@
 				A4C3288320815CD600DEC460 /* STROOP_SPA_TASK2.mp4 in Resources */,
 				A4C3288420815CD600DEC460 /* STROOP_SPA_TASK3.mp4 in Resources */,
 				A4C3288520815CD600DEC460 /* STROOP_SPA_TASK4.mp4 in Resources */,
+				A460CE4921D0C77300E52F8B /* InstructionsStep.xib in Resources */,
 				A490D7D41D0919CB00D2B59D /* Roboto-Bold.ttf in Resources */,
 				A490D7D81D0919CB00D2B59D /* Roboto-LightItalic.ttf in Resources */,
 				A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */,
@@ -556,13 +614,17 @@
 				A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */,
 				A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */,
 				A4347FC21D7BC9E20033306A /* StroopViewController.xib in Resources */,
+				A460CE4221D0C0E300E52F8B /* CanvasViewController.xib in Resources */,
 				A489D61D1E0BA255001F56FE /* AdminViewController.xib in Resources */,
 				A4C469A81E134B5900FDD5D5 /* UserViewController.xib in Resources */,
 				A4347FE01D7BCB800033306A /* NamingTaskViewController.xib in Resources */,
+				A401C9D221D9DFA6002C07DE /* ENG-PRACTICE-FWD.mp3 in Resources */,
 				A4BB08ED1D7EDFFA00B76C64 /* QuestionnaireViewController.xib in Resources */,
+				A4EEAEA421C1366C0080FA22 /* melodies 320ms orig(16).wav in Resources */,
 				A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */,
 				A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */,
 				A490D7D91D0919CB00D2B59D /* Roboto-Medium.ttf in Resources */,
+				A460CE3C21CCD49200E52F8B /* GoogleService-Info.plist in Resources */,
 				A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */,
 				A4347FE81D7BCC4C0033306A /* ComprehensionViewController.xib in Resources */,
 				A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */,
@@ -572,6 +634,7 @@
 				A489D6191E0B535A001F56FE /* SettingsViewController.xib in Resources */,
 				A4347FDE1D7BCB260033306A /* WordListViewController.xib in Resources */,
 				A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */,
+				A42041EE21E1CFC800021EDB /* MelodyRecognition.storyboard in Resources */,
 				A41AE3C11DCA57150089231D /* Images.xcassets in Resources */,
 				A4347FCA1D7BCA280033306A /* DigitalSpanViewController.xib in Resources */,
 				A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */,
@@ -583,6 +646,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		241A8DDF3B75DF09AFACAA07 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5E743F95A972D997F54D05F4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -631,21 +712,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C7F38120F030A165D5C8C102 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C90CDE91F5A86DBE2B374296 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -654,18 +720,36 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -687,21 +771,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F2EE9097EA98D93B1AFC7A4A /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -709,6 +778,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */,
 				A4347FE71D7BCC4C0033306A /* ComprehensionViewController.swift in Sources */,
 				A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */,
 				A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */,
@@ -727,14 +797,19 @@
 				A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */,
 				A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */,
 				A489D6181E0B535A001F56FE /* SettingsViewController.swift in Sources */,
+				A460CE4521D0C72900E52F8B /* TestViewController.swift in Sources */,
+				A460CE4721D0C75E00E52F8B /* InstructionsStep.swift in Sources */,
 				A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */,
+				A460CE4121D0C0E300E52F8B /* CanvasViewController.swift in Sources */,
 				A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */,
 				A48D60E81FF5AC4F0042FBCA /* LibraryAPI.swift in Sources */,
 				A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */,
+				A460CE3E21CCD98F00E52F8B /* FirebaseStorageManager.swift in Sources */,
 				A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */,
 				A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */,
 				A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */,
 				A4347FD11D7BCA950033306A /* MatricesViewController.swift in Sources */,
+				A42041F121E1D09E00021EDB /* InstructionsViewController.swift in Sources */,
 				A48D60F41FF704D60042FBCA /* UserCollectionViewCell.swift in Sources */,
 				A4347FCD1D7BCA570033306A /* ReyFigureComplex4ViewController.swift in Sources */,
 				A4C469A71E134B5900FDD5D5 /* UserViewController.swift in Sources */,
@@ -744,7 +819,9 @@
 				A4AB688B1DE4BE9A0009808D /* DownloadOperation.swift in Sources */,
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
 				A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */,
+				A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
+				A42041F821E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift in Sources */,
 				A46A2C681DD96FF0000AC66C /* APIWrapper.swift in Sources */,
 				A46C14231D79AA7C0066EF37 /* ClockDrawingTestViewController.swift in Sources */,
 				A4347FC91D7BCA280033306A /* DigitalSpanViewController.swift in Sources */,
@@ -915,6 +992,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -933,6 +1011,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
