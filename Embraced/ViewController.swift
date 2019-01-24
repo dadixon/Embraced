@@ -46,11 +46,7 @@ class ViewController: UIViewController {
         return true
     }
     
-    @IBAction func login(_ sender: AnyObject) {
-        // Test users
-        usernameTextfield.text = "testuser"
-        passwordTextfield.text = "shortpass"
-        
+    @IBAction func login(_ sender: AnyObject) {        
         if ((usernameTextfield.text?.isEmpty)! || (passwordTextfield.text?.isEmpty)!) {
             self.errorLabel.text = "UsernamePasswordEmpty".localized(lang: testerLanguage)
             return
@@ -61,9 +57,7 @@ class ViewController: UIViewController {
         
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .responseJSON { response in
-                
-                print(response.response)
-                
+                                
                 let statusCode = response.response?.statusCode
                 
                 if statusCode == 200 {
