@@ -112,3 +112,7 @@
 "naming_practice_instruction2" = "You will be shown each picture one at a time. If you cannot come up with the answer after the allowed time, you will have the option of skipping to the next picture.\n\nWe will start with some examples.\nClick START when you are ready";
 "naming_task_instruction" = "Now we will start with the task.\nPlease click START when you are ready";
 
+// Cancellation Test
+"cancellation_instructions_1" = "The objective now is to identify specific numbers hidden in a block of characters.\nWork through the lines, from left to right. When you see a 5 or a 9, click on it and it will be marked. If you click something incorrect, it cannot be changed.";
+"cancellation_instructions_2" = "The goal is to cross out every 5 and 9 that you see hidden in the lines as fast as you can, without committing any errors.\nYou cannot work backwards (towards the left); you must continue moving forwards (left to right) at all times, even if you realize later that you missed something.\nYou will have 15 seconds for each block.";
+"cancellation_instructions_3" = "There will be a 3 second countdown before each block of characters appears.\nAfter 15 seconds, the screen will clear and another 3 second countdown will begin.\nWe will start with a sample\nWhen you are ready, tap the button START to start the task";

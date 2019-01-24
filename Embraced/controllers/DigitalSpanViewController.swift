@@ -164,7 +164,7 @@ class DigitalSpanViewController: FrontViewController {
     }
     
     func startRecording(_ button: UIButton, fileName: String) {
-        let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName)
+        let audioFilename = Utility.getDocumentsDirectory().appendingPathComponent(fileName)
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),

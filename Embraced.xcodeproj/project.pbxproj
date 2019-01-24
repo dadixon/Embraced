@@ -75,6 +75,9 @@
 		A489D6191E0B535A001F56FE /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A489D6171E0B535A001F56FE /* SettingsViewController.xib */; };
 		A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D61A1E0BA255001F56FE /* AdminViewController.swift */; };
 		A489D61D1E0BA255001F56FE /* AdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A489D61B1E0BA255001F56FE /* AdminViewController.xib */; };
+		A48A12C221F740ED0044AF08 /* DoneStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */; };
+		A48A12C421F7414A0044AF08 /* CancellationDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C321F7414A0044AF08 /* CancellationDoneViewController.swift */; };
+		A48A12C621F74FE60044AF08 /* CancellationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C521F74FE60044AF08 /* CancellationModel.swift */; };
 		A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC41CF9E7C700878928 /* AppDelegate.swift */; };
 		A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC61CF9E7C700878928 /* ViewController.swift */; };
 		A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48B4DC81CF9E7C700878928 /* Main.storyboard */; };
@@ -97,6 +100,20 @@
 		A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */; };
 		A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */; };
 		A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */; };
+		A4969D1221E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1121E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift */; };
+		A4969D1421E544C10063FF40 /* DigitSpan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4969D1321E544C10063FF40 /* DigitSpan.storyboard */; };
+		A4969D1721E5454B0063FF40 /* DigitSpanInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1621E5454B0063FF40 /* DigitSpanInstructionsViewController.swift */; };
+		A4969D1921E545630063FF40 /* DigitSpanDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1821E545630063FF40 /* DigitSpanDoneViewController.swift */; };
+		A4969D1B21E67B960063FF40 /* AudioPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1A21E67B960063FF40 /* AudioPlaybackViewController.swift */; };
+		A4969D1E21E697B50063FF40 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1D21E697B50063FF40 /* Utility.swift */; };
+		A4969D2121E7D7E90063FF40 /* CancellationInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D2021E7D7E90063FF40 /* CancellationInstructionsViewController.swift */; };
+		A4969D2321E7D8F50063FF40 /* Cancellation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4969D2221E7D8F50063FF40 /* Cancellation.storyboard */; };
+		A4969D2521E7DA340063FF40 /* CancellationInstructions2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D2421E7DA340063FF40 /* CancellationInstructions2ViewController.swift */; };
+		A4969D2721E7DB2D0063FF40 /* CancellationInstructions3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D2621E7DB2D0063FF40 /* CancellationInstructions3ViewController.swift */; };
+		A4969D2921E7F6B50063FF40 /* CancellationPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D2821E7F6B50063FF40 /* CancellationPracticeViewController.swift */; };
+		A4969D3421E926BE0063FF40 /* CancellationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D3221E926BE0063FF40 /* CancellationViewCell.swift */; };
+		A4969D3521E926BE0063FF40 /* CancellationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4969D3321E926BE0063FF40 /* CancellationViewCell.xib */; };
+		A4969D3721F276210063FF40 /* CancellationBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D3621F276210063FF40 /* CancellationBlockViewController.swift */; };
 		A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */; };
 		A4AB688B1DE4BE9A0009808D /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB688A1DE4BE9A0009808D /* DownloadOperation.swift */; };
 		A4AB688D1DE4D4730009808D /* DownloadMangager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB688C1DE4D4730009808D /* DownloadMangager.swift */; };
@@ -123,6 +140,8 @@
 		A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */; };
 		A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */; };
 		A4EEAEA421C1366C0080FA22 /* melodies 320ms orig(16).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4EEAEA321C1366C0080FA22 /* melodies 320ms orig(16).wav */; };
+		A4F067AF21E3E28A00ECEF6F /* TestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */; };
+		A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */; };
 		A4FC1E991DD2BE4500F19D95 /* WordList2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */; };
 		A4FC1E9A1DD2BE4500F19D95 /* WordList2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */; };
 		DD7D49BC9E47B49E27EB6157 /* Pods_Embraced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */; };
@@ -198,6 +217,9 @@
 		A489D6171E0B535A001F56FE /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		A489D61A1E0BA255001F56FE /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		A489D61B1E0BA255001F56FE /* AdminViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminViewController.xib; sourceTree = "<group>"; };
+		A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneStepViewController.swift; sourceTree = "<group>"; };
+		A48A12C321F7414A0044AF08 /* CancellationDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationDoneViewController.swift; sourceTree = "<group>"; };
+		A48A12C521F74FE60044AF08 /* CancellationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationModel.swift; sourceTree = "<group>"; };
 		A48B4DC11CF9E7C600878928 /* Embraced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embraced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48B4DC41CF9E7C700878928 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A48B4DC61CF9E7C700878928 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +244,20 @@
 		A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		A4969D1121E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionDoneViewController.swift; sourceTree = "<group>"; };
+		A4969D1321E544C10063FF40 /* DigitSpan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DigitSpan.storyboard; sourceTree = "<group>"; };
+		A4969D1621E5454B0063FF40 /* DigitSpanInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSpanInstructionsViewController.swift; sourceTree = "<group>"; };
+		A4969D1821E545630063FF40 /* DigitSpanDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSpanDoneViewController.swift; sourceTree = "<group>"; };
+		A4969D1A21E67B960063FF40 /* AudioPlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlaybackViewController.swift; sourceTree = "<group>"; };
+		A4969D1D21E697B50063FF40 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		A4969D2021E7D7E90063FF40 /* CancellationInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationInstructionsViewController.swift; sourceTree = "<group>"; };
+		A4969D2221E7D8F50063FF40 /* Cancellation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cancellation.storyboard; sourceTree = "<group>"; };
+		A4969D2421E7DA340063FF40 /* CancellationInstructions2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationInstructions2ViewController.swift; sourceTree = "<group>"; };
+		A4969D2621E7DB2D0063FF40 /* CancellationInstructions3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationInstructions3ViewController.swift; sourceTree = "<group>"; };
+		A4969D2821E7F6B50063FF40 /* CancellationPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationPracticeViewController.swift; sourceTree = "<group>"; };
+		A4969D3221E926BE0063FF40 /* CancellationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationViewCell.swift; sourceTree = "<group>"; };
+		A4969D3321E926BE0063FF40 /* CancellationViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CancellationViewCell.xib; sourceTree = "<group>"; };
+		A4969D3621F276210063FF40 /* CancellationBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationBlockViewController.swift; sourceTree = "<group>"; };
 		A4A30B551FA25C9D00F07AA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		A4AB688A1DE4BE9A0009808D /* DownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadOperation.swift; sourceTree = "<group>"; };
@@ -253,6 +289,8 @@
 		A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOrder.swift; sourceTree = "<group>"; };
 		A4EEAEA321C1366C0080FA22 /* melodies 320ms orig(16).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(16).wav"; sourceTree = "<group>"; };
+		A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfig.swift; sourceTree = "<group>"; };
+		A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionModel.swift; sourceTree = "<group>"; };
 		A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordList2ViewController.swift; path = controllers/WordList2ViewController.swift; sourceTree = "<group>"; };
 		A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordList2ViewController.xib; path = controllers/WordList2ViewController.xib; sourceTree = "<group>"; };
 		B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.release.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.release.xcconfig"; sourceTree = "<group>"; };
@@ -297,6 +335,8 @@
 				A48B4DC81CF9E7C700878928 /* Main.storyboard */,
 				A48B4DD01CF9E7C700878928 /* LaunchScreen.storyboard */,
 				A42041ED21E1CFC800021EDB /* MelodyRecognition.storyboard */,
+				A4969D1321E544C10063FF40 /* DigitSpan.storyboard */,
+				A4969D2221E7D8F50063FF40 /* Cancellation.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -306,6 +346,7 @@
 			children = (
 				A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */,
 				A42041F721E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift */,
+				A4969D1121E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift */,
 			);
 			name = MelodyRecognition;
 			sourceTree = "<group>";
@@ -352,6 +393,9 @@
 			children = (
 				A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */,
 				A47FF4AD211363AA00665E20 /* Constants.swift */,
+				A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */,
+				A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */,
+				A48A12C521F74FE60044AF08 /* CancellationModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -377,6 +421,7 @@
 		A48B4DC31CF9E7C700878928 /* Embraced */ = {
 			isa = PBXGroup;
 			children = (
+				A4969D1C21E6979E0063FF40 /* Helper */,
 				A42041EB21E1CF8300021EDB /* Storyboards */,
 				A48D60ED1FF6FF1A0042FBCA /* Views */,
 				A48D60E61FF5AC3B0042FBCA /* API */,
@@ -437,6 +482,8 @@
 			children = (
 				A48D60F21FF704D60042FBCA /* UserCollectionViewCell.swift */,
 				A48D60F31FF704D60042FBCA /* UserCollectionViewCell.xib */,
+				A4969D3221E926BE0063FF40 /* CancellationViewCell.swift */,
+				A4969D3321E926BE0063FF40 /* CancellationViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -444,6 +491,8 @@
 		A490D7C11D0913C500D2B59D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4969D1F21E7D7BF0063FF40 /* Cancellation */,
+				A4969D1521E545290063FF40 /* DigitSpan */,
 				A42041F921E1F1E500021EDB /* MelodyRecognition */,
 				A4D904231D2384010092D6AA /* Customizations */,
 				A48B4DC41CF9E7C700878928 /* AppDelegate.swift */,
@@ -471,8 +520,40 @@
 				A460CE4821D0C77300E52F8B /* InstructionsStep.xib */,
 				A42041EF21E1D09E00021EDB /* InstructionsViewController.swift */,
 				A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */,
+				A4969D1A21E67B960063FF40 /* AudioPlaybackViewController.swift */,
+				A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A4969D1521E545290063FF40 /* DigitSpan */ = {
+			isa = PBXGroup;
+			children = (
+				A4969D1621E5454B0063FF40 /* DigitSpanInstructionsViewController.swift */,
+				A4969D1821E545630063FF40 /* DigitSpanDoneViewController.swift */,
+			);
+			name = DigitSpan;
+			sourceTree = "<group>";
+		};
+		A4969D1C21E6979E0063FF40 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A4969D1D21E697B50063FF40 /* Utility.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		A4969D1F21E7D7BF0063FF40 /* Cancellation */ = {
+			isa = PBXGroup;
+			children = (
+				A4969D2021E7D7E90063FF40 /* CancellationInstructionsViewController.swift */,
+				A4969D2421E7DA340063FF40 /* CancellationInstructions2ViewController.swift */,
+				A4969D2621E7DB2D0063FF40 /* CancellationInstructions3ViewController.swift */,
+				A4969D2821E7F6B50063FF40 /* CancellationPracticeViewController.swift */,
+				A4969D3621F276210063FF40 /* CancellationBlockViewController.swift */,
+				A48A12C321F7414A0044AF08 /* CancellationDoneViewController.swift */,
+			);
+			name = Cancellation;
 			sourceTree = "<group>";
 		};
 		A4C72F031E6A1B4F00ADC405 /* AppsideTest */ = {
@@ -598,6 +679,7 @@
 				A4347FE41D7BCC170033306A /* MultipleErrandsViewController.xib in Resources */,
 				A46C14181D7999AF0066EF37 /* CancellationTestViewController.xib in Resources */,
 				A48D60F51FF704D60042FBCA /* UserCollectionViewCell.xib in Resources */,
+				A4969D1421E544C10063FF40 /* DigitSpan.storyboard in Resources */,
 				A4347FD61D7BCABC0033306A /* PegboardViewController.xib in Resources */,
 				A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */,
 				A490D7D71D0919CB00D2B59D /* Roboto-Light.ttf in Resources */,
@@ -624,6 +706,7 @@
 				A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */,
 				A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */,
 				A490D7D91D0919CB00D2B59D /* Roboto-Medium.ttf in Resources */,
+				A4969D2321E7D8F50063FF40 /* Cancellation.storyboard in Resources */,
 				A460CE3C21CCD49200E52F8B /* GoogleService-Info.plist in Resources */,
 				A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */,
 				A4347FE81D7BCC4C0033306A /* ComprehensionViewController.xib in Resources */,
@@ -635,6 +718,7 @@
 				A4347FDE1D7BCB260033306A /* WordListViewController.xib in Resources */,
 				A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */,
 				A42041EE21E1CFC800021EDB /* MelodyRecognition.storyboard in Resources */,
+				A4969D3521E926BE0063FF40 /* CancellationViewCell.xib in Resources */,
 				A41AE3C11DCA57150089231D /* Images.xcassets in Resources */,
 				A4347FCA1D7BCA280033306A /* DigitalSpanViewController.xib in Resources */,
 				A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */,
@@ -779,6 +863,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */,
+				A48A12C421F7414A0044AF08 /* CancellationDoneViewController.swift in Sources */,
 				A4347FE71D7BCC4C0033306A /* ComprehensionViewController.swift in Sources */,
 				A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */,
 				A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */,
@@ -786,6 +871,7 @@
 				A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
 				A46A2C661DD7AB91000AC66C /* Reachability.swift in Sources */,
+				A4969D1221E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift in Sources */,
 				A4FC1E991DD2BE4500F19D95 /* WordList2ViewController.swift in Sources */,
 				A4347FE31D7BCC170033306A /* MultipleErrandsViewController.swift in Sources */,
 				A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */,
@@ -800,18 +886,25 @@
 				A460CE4521D0C72900E52F8B /* TestViewController.swift in Sources */,
 				A460CE4721D0C75E00E52F8B /* InstructionsStep.swift in Sources */,
 				A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */,
+				A4969D1721E5454B0063FF40 /* DigitSpanInstructionsViewController.swift in Sources */,
 				A460CE4121D0C0E300E52F8B /* CanvasViewController.swift in Sources */,
 				A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */,
 				A48D60E81FF5AC4F0042FBCA /* LibraryAPI.swift in Sources */,
 				A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */,
+				A4969D1E21E697B50063FF40 /* Utility.swift in Sources */,
 				A460CE3E21CCD98F00E52F8B /* FirebaseStorageManager.swift in Sources */,
 				A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */,
 				A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */,
 				A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */,
 				A4347FD11D7BCA950033306A /* MatricesViewController.swift in Sources */,
+				A4F067AF21E3E28A00ECEF6F /* TestConfig.swift in Sources */,
 				A42041F121E1D09E00021EDB /* InstructionsViewController.swift in Sources */,
 				A48D60F41FF704D60042FBCA /* UserCollectionViewCell.swift in Sources */,
+				A4969D3721F276210063FF40 /* CancellationBlockViewController.swift in Sources */,
 				A4347FCD1D7BCA570033306A /* ReyFigureComplex4ViewController.swift in Sources */,
+				A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */,
+				A4969D2521E7DA340063FF40 /* CancellationInstructions2ViewController.swift in Sources */,
+				A4969D1B21E67B960063FF40 /* AudioPlaybackViewController.swift in Sources */,
 				A4C469A71E134B5900FDD5D5 /* UserViewController.swift in Sources */,
 				A4347FDD1D7BCB260033306A /* WordListViewController.swift in Sources */,
 				A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */,
@@ -820,20 +913,27 @@
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
 				A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */,
 				A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */,
+				A4969D2121E7D7E90063FF40 /* CancellationInstructionsViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
 				A42041F821E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift in Sources */,
 				A46A2C681DD96FF0000AC66C /* APIWrapper.swift in Sources */,
+				A4969D2721E7DB2D0063FF40 /* CancellationInstructions3ViewController.swift in Sources */,
 				A46C14231D79AA7C0066EF37 /* ClockDrawingTestViewController.swift in Sources */,
 				A4347FC91D7BCA280033306A /* DigitalSpanViewController.swift in Sources */,
 				A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */,
 				A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */,
+				A4969D2921E7F6B50063FF40 /* CancellationPracticeViewController.swift in Sources */,
 				A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */,
 				A4DB0FB41DFB2CA1000811B6 /* DataManager.swift in Sources */,
+				A48A12C621F74FE60044AF08 /* CancellationModel.swift in Sources */,
+				A48A12C221F740ED0044AF08 /* DoneStepViewController.swift in Sources */,
 				A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */,
 				A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */,
 				A4AE36E31DFC545400727DFD /* WebViewController.swift in Sources */,
 				A47FF4AE211363AA00665E20 /* Constants.swift in Sources */,
 				A44669381E16457600EA7E2E /* RecordButton.swift in Sources */,
+				A4969D1921E545630063FF40 /* DigitSpanDoneViewController.swift in Sources */,
+				A4969D3421E926BE0063FF40 /* CancellationViewCell.swift in Sources */,
 				A4347FC11D7BC9E20033306A /* StroopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,19 +1,19 @@
 //
-//  MelodyRecognitionInstructionsViewController.swift
+//  DigitSpanInstructionsViewController.swift
 //  Embraced
 //
-//  Created by Domonique Dixon on 1/6/19.
+//  Created by Domonique Dixon on 1/8/19.
 //  Copyright © 2019 Domonique Dixon. All rights reserved.
 //
 
 import UIKit
 
-class MelodyRecognitionInstructionsViewController: InstructionsViewController {
+class DigitSpanInstructionsViewController: AudioPlaybackViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        instructionsLabel.text = "pitch_intro".localized(lang: language)
+        instructionsLabel.text = "digital_practice_1".localized(lang: language)
         nextBtn.setTitle("Next".localized(lang: language), for: .normal)
         
         title = "Step 1 of 3"
@@ -22,7 +22,7 @@ class MelodyRecognitionInstructionsViewController: InstructionsViewController {
     }
     
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToExample1", sender: nil)
+        self.performSegue(withIdentifier: "moveToDone", sender: nil)
     }
     
 

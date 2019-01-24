@@ -10,6 +10,9 @@ import UIKit
 
 class InstructionsViewController: UIViewController {
     
+    let userDefaults = UserDefaults.standard
+    var language = String()
+    
     let titleLabel: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -27,11 +30,9 @@ class InstructionsViewController: UIViewController {
         return label
     }()
     
-    let nextBtn: UIButton = {
-        var button = UIButton()
+    let nextBtn: NavigationButton = {
+        var button = NavigationButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .blue
-        button.setTitleColor(.white, for: .normal)
         return button
     }()
     
@@ -39,6 +40,8 @@ class InstructionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        language = userDefaults.string(forKey: "language")!
+        
         navigationItem.hidesBackButton = true
         
         view.addSubview(titleLabel)
@@ -46,29 +49,30 @@ class InstructionsViewController: UIViewController {
         view.addSubview(nextBtn)
         
         titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100.0).isActive = true
-        titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0).isActive = true
-        titleLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30.0).isActive = true
+        titleLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30.0).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: instructionsLabel.topAnchor, constant: -8.0).isActive = true
         
         instructionsLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0).isActive = true
-        instructionsLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16.0).isActive = true
-        instructionsLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16.0).isActive = true
+        instructionsLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30.0).isActive = true
+        instructionsLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30.0).isActive = true
 
-        nextBtn.widthAnchor.constraint(equalToConstant: 120.0).isActive = true
+        nextBtn.widthAnchor.constraint(equalToConstant: nextBtn.intrinsicContentSize.width + 30.0).isActive = true
         nextBtn.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
         nextBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         nextBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20.0).isActive = true
     }
 
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
     }
-    */
+ 
 
 }
