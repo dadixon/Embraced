@@ -102,21 +102,24 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         
         recordingSession = AVAudioSession.sharedInstance()
         
-        do {
-            try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
-            try recordingSession.setActive(true)
-            recordingSession.requestRecordPermission() { [unowned self] allowed in
-                DispatchQueue.main.async {
-                    if allowed {
-                        self.recordBtn.isEnabled = true
-                    } else {
-                        // failed to record!
-                    }
-                }
-            }
-        } catch {
-            // failed to record!
-        }
+//        let session = AVAudioSession.sharedInstance()
+//        try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
+//
+//        try! soundRecorder = AVAudioRecorder(url: audioFilename, settings: [:])
+//        soundRecorder.isMeteringEnabled = true
+//        soundRecorder.prepareToRecord()
+//        soundRecorder.record()
+////            try! recordingSession.setCategory(convertFromAVAudioSessionCategory(AVAudioSession.Category.playAndRecord))
+////            try recordingSession.setActive(true)
+//            recordingSession.requestRecordPermission() { [unowned self] allowed in
+//                DispatchQueue.main.async {
+//                    if allowed {
+//                        self.recordBtn.isEnabled = true
+//                    } else {
+//                        // failed to record!
+//                    }
+//                }
+//            }
         
         
         
@@ -131,11 +134,6 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
         wordNextBtn.isHidden = true
         
         loadingView.stopAnimating()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -330,4 +328,9 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
 //        print("finished playing")
         finishPlaying()
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
 }

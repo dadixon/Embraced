@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A401C9D221D9DFA6002C07DE /* ENG-PRACTICE-FWD.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A401C9D121D9DFA6002C07DE /* ENG-PRACTICE-FWD.mp3 */; };
 		A41AE3C11DCA57150089231D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A41AE3C01DCA57150089231D /* Images.xcassets */; };
+		A42041EE21E1CFC800021EDB /* MelodyRecognition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42041ED21E1CFC800021EDB /* MelodyRecognition.storyboard */; };
+		A42041F121E1D09E00021EDB /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041EF21E1D09E00021EDB /* InstructionsViewController.swift */; };
+		A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */; };
+		A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */; };
+		A42041F821E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F721E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift */; };
 		A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */; };
 		A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */; };
 		A4347FC11D7BC9E20033306A /* StroopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FBF1D7BC9E20033306A /* StroopViewController.swift */; };
@@ -35,6 +41,13 @@
 		A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669311E1631A600EA7E2E /* ListenButton.swift */; };
 		A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669331E16435C00EA7E2E /* PlayButton.swift */; };
 		A44669381E16457600EA7E2E /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669371E16457600EA7E2E /* RecordButton.swift */; };
+		A460CE3C21CCD49200E52F8B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A460CE3B21CCD49100E52F8B /* GoogleService-Info.plist */; };
+		A460CE3E21CCD98F00E52F8B /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE3D21CCD98F00E52F8B /* FirebaseStorageManager.swift */; };
+		A460CE4121D0C0E300E52F8B /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE3F21D0C0E300E52F8B /* CanvasViewController.swift */; };
+		A460CE4221D0C0E300E52F8B /* CanvasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A460CE4021D0C0E300E52F8B /* CanvasViewController.xib */; };
+		A460CE4521D0C72900E52F8B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE4421D0C72900E52F8B /* TestViewController.swift */; };
+		A460CE4721D0C75E00E52F8B /* InstructionsStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */; };
+		A460CE4921D0C77300E52F8B /* InstructionsStep.xib in Resources */ = {isa = PBXBuildFile; fileRef = A460CE4821D0C77300E52F8B /* InstructionsStep.xib */; };
 		A46A2C641DD66108000AC66C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46A2C631DD66108000AC66C /* SystemConfiguration.framework */; };
 		A46A2C661DD7AB91000AC66C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A2C651DD7AB91000AC66C /* Reachability.swift */; };
 		A46A2C681DD96FF0000AC66C /* APIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A2C671DD96FF0000AC66C /* APIWrapper.swift */; };
@@ -52,14 +65,68 @@
 		A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */; };
 		A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */; };
 		A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */; };
+		A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */; };
 		A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */; };
 		A47EB6E41DA65FFB00A68AF6 /* FinishedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */; };
+		A47FF4AE211363AA00665E20 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47FF4AD211363AA00665E20 /* Constants.swift */; };
 		A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */; };
 		A4828EB71F967ED700406F19 /* LoadingScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */; };
 		A489D6181E0B535A001F56FE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D6161E0B535A001F56FE /* SettingsViewController.swift */; };
 		A489D6191E0B535A001F56FE /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A489D6171E0B535A001F56FE /* SettingsViewController.xib */; };
 		A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D61A1E0BA255001F56FE /* AdminViewController.swift */; };
 		A489D61D1E0BA255001F56FE /* AdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A489D61B1E0BA255001F56FE /* AdminViewController.xib */; };
+		A48A12C221F740ED0044AF08 /* DoneStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */; };
+		A48A12C421F7414A0044AF08 /* CancellationDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C321F7414A0044AF08 /* CancellationDoneViewController.swift */; };
+		A48A12C621F74FE60044AF08 /* CancellationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C521F74FE60044AF08 /* CancellationModel.swift */; };
+		A48A12CA21FA4B330044AF08 /* melodies 320ms diff(16).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12C921FA4B330044AF08 /* melodies 320ms diff(16).wav */; };
+		A48A12CD21FA4B450044AF08 /* melodies 320ms orig(61).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12CB21FA4B440044AF08 /* melodies 320ms orig(61).wav */; };
+		A48A12CE21FA4B450044AF08 /* melodies 320ms diff(61).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12CC21FA4B450044AF08 /* melodies 320ms diff(61).wav */; };
+		A48A12D021FA4B4F0044AF08 /* melodies 320ms orig(16).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12CF21FA4B4F0044AF08 /* melodies 320ms orig(16).wav */; };
+		A48A12D321FA4BA00044AF08 /* melodies 320ms diff(68).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12D121FA4B9F0044AF08 /* melodies 320ms diff(68).wav */; };
+		A48A12D421FA4BA00044AF08 /* melodies 320ms orig(68).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12D221FA4B9F0044AF08 /* melodies 320ms orig(68).wav */; };
+		A48A12D721FA4BAA0044AF08 /* melodies 320ms orig(21).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12D521FA4BA90044AF08 /* melodies 320ms orig(21).wav */; };
+		A48A12D821FA4BAA0044AF08 /* melodies 320ms diff(21).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12D621FA4BAA0044AF08 /* melodies 320ms diff(21).wav */; };
+		A48A12DA21FA4BB80044AF08 /* melodies 320ms orig(26).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12D921FA4BB80044AF08 /* melodies 320ms orig(26).wav */; };
+		A48A12DD21FA4BC00044AF08 /* melodies 320ms diff(62).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12DB21FA4BBF0044AF08 /* melodies 320ms diff(62).wav */; };
+		A48A12DE21FA4BC00044AF08 /* melodies 320ms orig(62).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12DC21FA4BC00044AF08 /* melodies 320ms orig(62).wav */; };
+		A48A12E121FA4BC80044AF08 /* melodies 320ms orig(44).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12DF21FA4BC80044AF08 /* melodies 320ms orig(44).wav */; };
+		A48A12E221FA4BC80044AF08 /* melodies 320ms diff(44).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12E021FA4BC80044AF08 /* melodies 320ms diff(44).wav */; };
+		A48A12E521FA4BD10044AF08 /* melodies 320ms orig(52).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12E321FA4BD00044AF08 /* melodies 320ms orig(52).wav */; };
+		A48A12E621FA4BD10044AF08 /* melodies 320ms diff(52).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12E421FA4BD10044AF08 /* melodies 320ms diff(52).wav */; };
+		A48A12E821FA4BD70044AF08 /* melodies 320ms orig(49).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12E721FA4BD70044AF08 /* melodies 320ms orig(49).wav */; };
+		A48A12EA21FA4BDE0044AF08 /* melodies 320ms orig(91).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12E921FA4BDE0044AF08 /* melodies 320ms orig(91).wav */; };
+		A48A12EC21FA4BE50044AF08 /* melodies 320ms orig(89).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12EB21FA4BE40044AF08 /* melodies 320ms orig(89).wav */; };
+		A48A12EE21FA4BEB0044AF08 /* melodies 320ms orig(82).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12ED21FA4BEB0044AF08 /* melodies 320ms orig(82).wav */; };
+		A48A12F121FA4BF60044AF08 /* melodies 320ms diff(66).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12EF21FA4BF50044AF08 /* melodies 320ms diff(66).wav */; };
+		A48A12F221FA4BF60044AF08 /* melodies 320ms orig(66).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12F021FA4BF50044AF08 /* melodies 320ms orig(66).wav */; };
+		A48A12F521FA4BFD0044AF08 /* melodies 320ms diff(51).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12F321FA4BFC0044AF08 /* melodies 320ms diff(51).wav */; };
+		A48A12F621FA4BFD0044AF08 /* melodies 320ms orig(51).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12F421FA4BFC0044AF08 /* melodies 320ms orig(51).wav */; };
+		A48A12F921FA4C040044AF08 /* melodies 320ms diff(07).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12F721FA4C030044AF08 /* melodies 320ms diff(07).wav */; };
+		A48A12FA21FA4C040044AF08 /* melodies 320ms orig(07).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12F821FA4C030044AF08 /* melodies 320ms orig(07).wav */; };
+		A48A12FD21FA4C0A0044AF08 /* melodies 320ms diff(85).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12FB21FA4C090044AF08 /* melodies 320ms diff(85).wav */; };
+		A48A12FE21FA4C0A0044AF08 /* melodies 320ms orig(85).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12FC21FA4C0A0044AF08 /* melodies 320ms orig(85).wav */; };
+		A48A130121FA4C130044AF08 /* melodies 320ms diff(40).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A12FF21FA4C130044AF08 /* melodies 320ms diff(40).wav */; };
+		A48A130221FA4C130044AF08 /* melodies 320ms orig(40).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A130021FA4C130044AF08 /* melodies 320ms orig(40).wav */; };
+		A48A130421FA4C190044AF08 /* melodies 320ms orig(17).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A130321FA4C190044AF08 /* melodies 320ms orig(17).wav */; };
+		A48A130621FA4C200044AF08 /* melodies 320ms orig(05).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A130521FA4C200044AF08 /* melodies 320ms orig(05).wav */; };
+		A48A130821FA4C260044AF08 /* melodies 320ms orig(46).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A130721FA4C260044AF08 /* melodies 320ms orig(46).wav */; };
+		A48A130A21FA4C2C0044AF08 /* melodies 320ms orig(33).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A130921FA4C2C0044AF08 /* melodies 320ms orig(33).wav */; };
+		A48A130D21FA4C360044AF08 /* melodies 320ms orig(24).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A130B21FA4C350044AF08 /* melodies 320ms orig(24).wav */; };
+		A48A130E21FA4C360044AF08 /* melodies 320ms diff(24).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A130C21FA4C350044AF08 /* melodies 320ms diff(24).wav */; };
+		A48A131121FA4C3D0044AF08 /* melodies 320ms orig(06).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A130F21FA4C3C0044AF08 /* melodies 320ms orig(06).wav */; };
+		A48A131221FA4C3D0044AF08 /* melodies 320ms diff(06).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A131021FA4C3D0044AF08 /* melodies 320ms diff(06).wav */; };
+		A48A131421FA4C450044AF08 /* melodies 320ms orig(90).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A131321FA4C440044AF08 /* melodies 320ms orig(90).wav */; };
+		A48A131721FA4C4C0044AF08 /* melodies 320ms diff(74).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A131521FA4C4B0044AF08 /* melodies 320ms diff(74).wav */; };
+		A48A131821FA4C4C0044AF08 /* melodies 320ms orig(74).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A131621FA4C4C0044AF08 /* melodies 320ms orig(74).wav */; };
+		A48A131A21FA4C520044AF08 /* melodies 320ms orig(60).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A131921FA4C520044AF08 /* melodies 320ms orig(60).wav */; };
+		A48A131D21FA4C590044AF08 /* melodies 320ms diff(54).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A131B21FA4C580044AF08 /* melodies 320ms diff(54).wav */; };
+		A48A131E21FA4C590044AF08 /* melodies 320ms orig(54).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A131C21FA4C580044AF08 /* melodies 320ms orig(54).wav */; };
+		A48A132121FA4C620044AF08 /* melodies 320ms diff(45).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A131F21FA4C600044AF08 /* melodies 320ms diff(45).wav */; };
+		A48A132221FA4C620044AF08 /* melodies 320ms orig(45).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A132021FA4C610044AF08 /* melodies 320ms orig(45).wav */; };
+		A48A132421FA4C680044AF08 /* melodies 320ms orig(27).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A132321FA4C680044AF08 /* melodies 320ms orig(27).wav */; };
+		A48A132721FA4C6F0044AF08 /* melodies 320ms diff(32).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A132521FA4C6F0044AF08 /* melodies 320ms diff(32).wav */; };
+		A48A132821FA4C6F0044AF08 /* melodies 320ms orig(32).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A132621FA4C6F0044AF08 /* melodies 320ms orig(32).wav */; };
+		A48A132A21FA4C750044AF08 /* melodies 320ms orig(01).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A132921FA4C750044AF08 /* melodies 320ms orig(01).wav */; };
 		A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC41CF9E7C700878928 /* AppDelegate.swift */; };
 		A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC61CF9E7C700878928 /* ViewController.swift */; };
 		A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48B4DC81CF9E7C700878928 /* Main.storyboard */; };
@@ -82,6 +149,20 @@
 		A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */; };
 		A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */; };
 		A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */; };
+		A4969D1221E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1121E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift */; };
+		A4969D1421E544C10063FF40 /* DigitSpan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4969D1321E544C10063FF40 /* DigitSpan.storyboard */; };
+		A4969D1721E5454B0063FF40 /* DigitSpanInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1621E5454B0063FF40 /* DigitSpanInstructionsViewController.swift */; };
+		A4969D1921E545630063FF40 /* DigitSpanDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1821E545630063FF40 /* DigitSpanDoneViewController.swift */; };
+		A4969D1B21E67B960063FF40 /* AudioPlaybackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1A21E67B960063FF40 /* AudioPlaybackViewController.swift */; };
+		A4969D1E21E697B50063FF40 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1D21E697B50063FF40 /* Utility.swift */; };
+		A4969D2121E7D7E90063FF40 /* CancellationInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D2021E7D7E90063FF40 /* CancellationInstructionsViewController.swift */; };
+		A4969D2321E7D8F50063FF40 /* Cancellation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4969D2221E7D8F50063FF40 /* Cancellation.storyboard */; };
+		A4969D2521E7DA340063FF40 /* CancellationInstructions2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D2421E7DA340063FF40 /* CancellationInstructions2ViewController.swift */; };
+		A4969D2721E7DB2D0063FF40 /* CancellationInstructions3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D2621E7DB2D0063FF40 /* CancellationInstructions3ViewController.swift */; };
+		A4969D2921E7F6B50063FF40 /* CancellationPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D2821E7F6B50063FF40 /* CancellationPracticeViewController.swift */; };
+		A4969D3421E926BE0063FF40 /* CancellationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D3221E926BE0063FF40 /* CancellationViewCell.swift */; };
+		A4969D3521E926BE0063FF40 /* CancellationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4969D3321E926BE0063FF40 /* CancellationViewCell.xib */; };
+		A4969D3721F276210063FF40 /* CancellationBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D3621F276210063FF40 /* CancellationBlockViewController.swift */; };
 		A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */; };
 		A4AB688B1DE4BE9A0009808D /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB688A1DE4BE9A0009808D /* DownloadOperation.swift */; };
 		A4AB688D1DE4D4730009808D /* DownloadMangager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB688C1DE4D4730009808D /* DownloadMangager.swift */; };
@@ -89,6 +170,14 @@
 		A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */; };
 		A4BB08ED1D7EDFFA00B76C64 /* QuestionnaireViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */; };
 		A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */; };
+		A4C3287E20815CD600DEC460 /* STROOP_ENG_TASK1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287920815B5600DEC460 /* STROOP_ENG_TASK1.mp4 */; };
+		A4C3287F20815CD600DEC460 /* STROOP_ENG_TASK2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287A20815B5D00DEC460 /* STROOP_ENG_TASK2.mp4 */; };
+		A4C3288020815CD600DEC460 /* STROOP_ENG_TASK3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287B20815B6400DEC460 /* STROOP_ENG_TASK3.mp4 */; };
+		A4C3288120815CD600DEC460 /* STROOP_ENG_TASK4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287C20815B6A00DEC460 /* STROOP_ENG_TASK4.mp4 */; };
+		A4C3288220815CD600DEC460 /* STROOP_SPA_TASK1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287D20815CC500DEC460 /* STROOP_SPA_TASK1.mp4 */; };
+		A4C3288320815CD600DEC460 /* STROOP_SPA_TASK2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287620815B4200DEC460 /* STROOP_SPA_TASK2.mp4 */; };
+		A4C3288420815CD600DEC460 /* STROOP_SPA_TASK3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287720815B4900DEC460 /* STROOP_SPA_TASK3.mp4 */; };
+		A4C3288520815CD600DEC460 /* STROOP_SPA_TASK4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287820815B4F00DEC460 /* STROOP_SPA_TASK4.mp4 */; };
 		A4C469A71E134B5900FDD5D5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C469A51E134B5900FDD5D5 /* UserViewController.swift */; };
 		A4C469A81E134B5900FDD5D5 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C469A61E134B5900FDD5D5 /* UserViewController.xib */; };
 		A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9041D1D2380380092D6AA /* FrontViewController.swift */; };
@@ -99,6 +188,8 @@
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
 		A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */; };
 		A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */; };
+		A4F067AF21E3E28A00ECEF6F /* TestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */; };
+		A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */; };
 		A4FC1E991DD2BE4500F19D95 /* WordList2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */; };
 		A4FC1E9A1DD2BE4500F19D95 /* WordList2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */; };
 		DD7D49BC9E47B49E27EB6157 /* Pods_Embraced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */; };
@@ -106,7 +197,13 @@
 
 /* Begin PBXFileReference section */
 		9F375DDA1676C302A2C3E45B /* Pods-Embraced.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.debug.xcconfig"; sourceTree = "<group>"; };
+		A401C9D121D9DFA6002C07DE /* ENG-PRACTICE-FWD.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "ENG-PRACTICE-FWD.mp3"; path = "../../../Downloads/ENG-PRACTICE-FWD.mp3"; sourceTree = "<group>"; };
 		A41AE3C01DCA57150089231D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A42041ED21E1CFC800021EDB /* MelodyRecognition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MelodyRecognition.storyboard; sourceTree = "<group>"; };
+		A42041EF21E1D09E00021EDB /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionInstructionsViewController.swift; sourceTree = "<group>"; };
+		A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveStepViewController.swift; sourceTree = "<group>"; };
+		A42041F721E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionExample1ViewController.swift; sourceTree = "<group>"; };
 		A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigure2ViewController.swift; path = controllers/ReyComplexFigure2ViewController.swift; sourceTree = "<group>"; };
 		A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyComplexFigure2ViewController.xib; path = controllers/ReyComplexFigure2ViewController.xib; sourceTree = "<group>"; };
 		A4347FBF1D7BC9E20033306A /* StroopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StroopViewController.swift; path = controllers/StroopViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +231,13 @@
 		A44669311E1631A600EA7E2E /* ListenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenButton.swift; sourceTree = "<group>"; };
 		A44669331E16435C00EA7E2E /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		A44669371E16457600EA7E2E /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		A460CE3B21CCD49100E52F8B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A460CE3D21CCD98F00E52F8B /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
+		A460CE3F21D0C0E300E52F8B /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CanvasViewController.swift; path = controllers/CanvasViewController.swift; sourceTree = "<group>"; };
+		A460CE4021D0C0E300E52F8B /* CanvasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CanvasViewController.xib; path = controllers/CanvasViewController.xib; sourceTree = "<group>"; };
+		A460CE4421D0C72900E52F8B /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = controllers/TestViewController.swift; sourceTree = "<group>"; };
+		A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsStep.swift; sourceTree = "<group>"; };
+		A460CE4821D0C77300E52F8B /* InstructionsStep.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionsStep.xib; sourceTree = "<group>"; };
 		A46A2C631DD66108000AC66C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A46A2C651DD7AB91000AC66C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A46A2C671DD96FF0000AC66C /* APIWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIWrapper.swift; sourceTree = "<group>"; };
@@ -151,14 +255,68 @@
 		A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrailMakingTestViewController.xib; path = controllers/TrailMakingTestViewController.xib; sourceTree = "<group>"; };
 		A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOCAMMSETestViewController.swift; path = controllers/MOCAMMSETestViewController.swift; sourceTree = "<group>"; };
 		A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MOCAMMSETestViewController.xib; path = controllers/MOCAMMSETestViewController.xib; sourceTree = "<group>"; };
+		A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishedViewController.swift; path = controllers/FinishedViewController.swift; sourceTree = "<group>"; };
 		A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinishedViewController.xib; path = controllers/FinishedViewController.xib; sourceTree = "<group>"; };
+		A47FF4AD211363AA00665E20 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadingScreenViewController.swift; path = controllers/LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoadingScreenViewController.xib; path = controllers/LoadingScreenViewController.xib; sourceTree = "<group>"; };
 		A489D6161E0B535A001F56FE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A489D6171E0B535A001F56FE /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		A489D61A1E0BA255001F56FE /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		A489D61B1E0BA255001F56FE /* AdminViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminViewController.xib; sourceTree = "<group>"; };
+		A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneStepViewController.swift; sourceTree = "<group>"; };
+		A48A12C321F7414A0044AF08 /* CancellationDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationDoneViewController.swift; sourceTree = "<group>"; };
+		A48A12C521F74FE60044AF08 /* CancellationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationModel.swift; sourceTree = "<group>"; };
+		A48A12C921FA4B330044AF08 /* melodies 320ms diff(16).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(16).wav"; sourceTree = "<group>"; };
+		A48A12CB21FA4B440044AF08 /* melodies 320ms orig(61).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(61).wav"; sourceTree = "<group>"; };
+		A48A12CC21FA4B450044AF08 /* melodies 320ms diff(61).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(61).wav"; sourceTree = "<group>"; };
+		A48A12CF21FA4B4F0044AF08 /* melodies 320ms orig(16).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "melodies 320ms orig(16).wav"; path = "../../../Downloads/Audio Files/EXAMPLES/EXAMPLE 1/melodies 320ms orig(16).wav"; sourceTree = "<group>"; };
+		A48A12D121FA4B9F0044AF08 /* melodies 320ms diff(68).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(68).wav"; sourceTree = "<group>"; };
+		A48A12D221FA4B9F0044AF08 /* melodies 320ms orig(68).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(68).wav"; sourceTree = "<group>"; };
+		A48A12D521FA4BA90044AF08 /* melodies 320ms orig(21).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(21).wav"; sourceTree = "<group>"; };
+		A48A12D621FA4BAA0044AF08 /* melodies 320ms diff(21).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(21).wav"; sourceTree = "<group>"; };
+		A48A12D921FA4BB80044AF08 /* melodies 320ms orig(26).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(26).wav"; sourceTree = "<group>"; };
+		A48A12DB21FA4BBF0044AF08 /* melodies 320ms diff(62).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(62).wav"; sourceTree = "<group>"; };
+		A48A12DC21FA4BC00044AF08 /* melodies 320ms orig(62).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(62).wav"; sourceTree = "<group>"; };
+		A48A12DF21FA4BC80044AF08 /* melodies 320ms orig(44).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(44).wav"; sourceTree = "<group>"; };
+		A48A12E021FA4BC80044AF08 /* melodies 320ms diff(44).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(44).wav"; sourceTree = "<group>"; };
+		A48A12E321FA4BD00044AF08 /* melodies 320ms orig(52).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(52).wav"; sourceTree = "<group>"; };
+		A48A12E421FA4BD10044AF08 /* melodies 320ms diff(52).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(52).wav"; sourceTree = "<group>"; };
+		A48A12E721FA4BD70044AF08 /* melodies 320ms orig(49).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(49).wav"; sourceTree = "<group>"; };
+		A48A12E921FA4BDE0044AF08 /* melodies 320ms orig(91).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(91).wav"; sourceTree = "<group>"; };
+		A48A12EB21FA4BE40044AF08 /* melodies 320ms orig(89).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(89).wav"; sourceTree = "<group>"; };
+		A48A12ED21FA4BEB0044AF08 /* melodies 320ms orig(82).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(82).wav"; sourceTree = "<group>"; };
+		A48A12EF21FA4BF50044AF08 /* melodies 320ms diff(66).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(66).wav"; sourceTree = "<group>"; };
+		A48A12F021FA4BF50044AF08 /* melodies 320ms orig(66).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(66).wav"; sourceTree = "<group>"; };
+		A48A12F321FA4BFC0044AF08 /* melodies 320ms diff(51).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(51).wav"; sourceTree = "<group>"; };
+		A48A12F421FA4BFC0044AF08 /* melodies 320ms orig(51).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(51).wav"; sourceTree = "<group>"; };
+		A48A12F721FA4C030044AF08 /* melodies 320ms diff(07).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(07).wav"; sourceTree = "<group>"; };
+		A48A12F821FA4C030044AF08 /* melodies 320ms orig(07).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(07).wav"; sourceTree = "<group>"; };
+		A48A12FB21FA4C090044AF08 /* melodies 320ms diff(85).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(85).wav"; sourceTree = "<group>"; };
+		A48A12FC21FA4C0A0044AF08 /* melodies 320ms orig(85).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(85).wav"; sourceTree = "<group>"; };
+		A48A12FF21FA4C130044AF08 /* melodies 320ms diff(40).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(40).wav"; sourceTree = "<group>"; };
+		A48A130021FA4C130044AF08 /* melodies 320ms orig(40).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(40).wav"; sourceTree = "<group>"; };
+		A48A130321FA4C190044AF08 /* melodies 320ms orig(17).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(17).wav"; sourceTree = "<group>"; };
+		A48A130521FA4C200044AF08 /* melodies 320ms orig(05).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(05).wav"; sourceTree = "<group>"; };
+		A48A130721FA4C260044AF08 /* melodies 320ms orig(46).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(46).wav"; sourceTree = "<group>"; };
+		A48A130921FA4C2C0044AF08 /* melodies 320ms orig(33).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(33).wav"; sourceTree = "<group>"; };
+		A48A130B21FA4C350044AF08 /* melodies 320ms orig(24).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(24).wav"; sourceTree = "<group>"; };
+		A48A130C21FA4C350044AF08 /* melodies 320ms diff(24).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(24).wav"; sourceTree = "<group>"; };
+		A48A130F21FA4C3C0044AF08 /* melodies 320ms orig(06).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(06).wav"; sourceTree = "<group>"; };
+		A48A131021FA4C3D0044AF08 /* melodies 320ms diff(06).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(06).wav"; sourceTree = "<group>"; };
+		A48A131321FA4C440044AF08 /* melodies 320ms orig(90).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(90).wav"; sourceTree = "<group>"; };
+		A48A131521FA4C4B0044AF08 /* melodies 320ms diff(74).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(74).wav"; sourceTree = "<group>"; };
+		A48A131621FA4C4C0044AF08 /* melodies 320ms orig(74).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(74).wav"; sourceTree = "<group>"; };
+		A48A131921FA4C520044AF08 /* melodies 320ms orig(60).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(60).wav"; sourceTree = "<group>"; };
+		A48A131B21FA4C580044AF08 /* melodies 320ms diff(54).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(54).wav"; sourceTree = "<group>"; };
+		A48A131C21FA4C580044AF08 /* melodies 320ms orig(54).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(54).wav"; sourceTree = "<group>"; };
+		A48A131F21FA4C600044AF08 /* melodies 320ms diff(45).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(45).wav"; sourceTree = "<group>"; };
+		A48A132021FA4C610044AF08 /* melodies 320ms orig(45).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(45).wav"; sourceTree = "<group>"; };
+		A48A132321FA4C680044AF08 /* melodies 320ms orig(27).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(27).wav"; sourceTree = "<group>"; };
+		A48A132521FA4C6F0044AF08 /* melodies 320ms diff(32).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(32).wav"; sourceTree = "<group>"; };
+		A48A132621FA4C6F0044AF08 /* melodies 320ms orig(32).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(32).wav"; sourceTree = "<group>"; };
+		A48A132921FA4C750044AF08 /* melodies 320ms orig(01).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "melodies 320ms orig(01).wav"; path = "../../../Downloads/Audio Files/1/melodies 320ms orig(01).wav"; sourceTree = "<group>"; };
 		A48B4DC11CF9E7C600878928 /* Embraced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embraced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48B4DC41CF9E7C700878928 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A48B4DC61CF9E7C700878928 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +341,20 @@
 		A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		A4969D1121E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionDoneViewController.swift; sourceTree = "<group>"; };
+		A4969D1321E544C10063FF40 /* DigitSpan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DigitSpan.storyboard; sourceTree = "<group>"; };
+		A4969D1621E5454B0063FF40 /* DigitSpanInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSpanInstructionsViewController.swift; sourceTree = "<group>"; };
+		A4969D1821E545630063FF40 /* DigitSpanDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSpanDoneViewController.swift; sourceTree = "<group>"; };
+		A4969D1A21E67B960063FF40 /* AudioPlaybackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlaybackViewController.swift; sourceTree = "<group>"; };
+		A4969D1D21E697B50063FF40 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		A4969D2021E7D7E90063FF40 /* CancellationInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationInstructionsViewController.swift; sourceTree = "<group>"; };
+		A4969D2221E7D8F50063FF40 /* Cancellation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cancellation.storyboard; sourceTree = "<group>"; };
+		A4969D2421E7DA340063FF40 /* CancellationInstructions2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationInstructions2ViewController.swift; sourceTree = "<group>"; };
+		A4969D2621E7DB2D0063FF40 /* CancellationInstructions3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationInstructions3ViewController.swift; sourceTree = "<group>"; };
+		A4969D2821E7F6B50063FF40 /* CancellationPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationPracticeViewController.swift; sourceTree = "<group>"; };
+		A4969D3221E926BE0063FF40 /* CancellationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationViewCell.swift; sourceTree = "<group>"; };
+		A4969D3321E926BE0063FF40 /* CancellationViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CancellationViewCell.xib; sourceTree = "<group>"; };
+		A4969D3621F276210063FF40 /* CancellationBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationBlockViewController.swift; sourceTree = "<group>"; };
 		A4A30B551FA25C9D00F07AA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		A4AB688A1DE4BE9A0009808D /* DownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadOperation.swift; sourceTree = "<group>"; };
@@ -193,6 +365,14 @@
 		A4BB08EA1D7EDFFA00B76C64 /* QuestionnaireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionnaireViewController.swift; path = controllers/QuestionnaireViewController.swift; sourceTree = "<group>"; };
 		A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuestionnaireViewController.xib; path = controllers/QuestionnaireViewController.xib; sourceTree = "<group>"; };
 		A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInputViewController.xib; sourceTree = "<group>"; };
+		A4C3287620815B4200DEC460 /* STROOP_SPA_TASK2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_SPA_TASK2.mp4; path = Assets.xcassets/Stroop/STROOP_SPA_TASK2.dataset/STROOP_SPA_TASK2.mp4; sourceTree = "<group>"; };
+		A4C3287720815B4900DEC460 /* STROOP_SPA_TASK3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_SPA_TASK3.mp4; path = Assets.xcassets/Stroop/STROOP_SPA_TASK3.dataset/STROOP_SPA_TASK3.mp4; sourceTree = "<group>"; };
+		A4C3287820815B4F00DEC460 /* STROOP_SPA_TASK4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_SPA_TASK4.mp4; path = Assets.xcassets/Stroop/STROOP_SPA_TASK4.dataset/STROOP_SPA_TASK4.mp4; sourceTree = "<group>"; };
+		A4C3287920815B5600DEC460 /* STROOP_ENG_TASK1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_ENG_TASK1.mp4; path = Assets.xcassets/Stroop/STROOP_ENG_TASK1.dataset/STROOP_ENG_TASK1.mp4; sourceTree = "<group>"; };
+		A4C3287A20815B5D00DEC460 /* STROOP_ENG_TASK2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_ENG_TASK2.mp4; path = Assets.xcassets/Stroop/STROOP_ENG_TASK2.dataset/STROOP_ENG_TASK2.mp4; sourceTree = "<group>"; };
+		A4C3287B20815B6400DEC460 /* STROOP_ENG_TASK3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_ENG_TASK3.mp4; path = Assets.xcassets/Stroop/STROOP_ENG_TASK3.dataset/STROOP_ENG_TASK3.mp4; sourceTree = "<group>"; };
+		A4C3287C20815B6A00DEC460 /* STROOP_ENG_TASK4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_ENG_TASK4.mp4; path = Assets.xcassets/Stroop/STROOP_ENG_TASK4.dataset/STROOP_ENG_TASK4.mp4; sourceTree = "<group>"; };
+		A4C3287D20815CC500DEC460 /* STROOP_SPA_TASK1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_SPA_TASK1.mp4; path = Assets.xcassets/Stroop/STROOP_SPA_TASK1.dataset/STROOP_SPA_TASK1.mp4; sourceTree = "<group>"; };
 		A4C469A31E13409400FDD5D5 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		A4C469A51E134B5900FDD5D5 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		A4C469A61E134B5900FDD5D5 /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
@@ -205,6 +385,8 @@
 		A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOrder.swift; sourceTree = "<group>"; };
+		A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfig.swift; sourceTree = "<group>"; };
+		A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionModel.swift; sourceTree = "<group>"; };
 		A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordList2ViewController.swift; path = controllers/WordList2ViewController.swift; sourceTree = "<group>"; };
 		A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordList2ViewController.xib; path = controllers/WordList2ViewController.xib; sourceTree = "<group>"; };
 		B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.release.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.release.xcconfig"; sourceTree = "<group>"; };
@@ -241,6 +423,28 @@
 				EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A42041EB21E1CF8300021EDB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A48B4DC81CF9E7C700878928 /* Main.storyboard */,
+				A48B4DD01CF9E7C700878928 /* LaunchScreen.storyboard */,
+				A42041ED21E1CFC800021EDB /* MelodyRecognition.storyboard */,
+				A4969D1321E544C10063FF40 /* DigitSpan.storyboard */,
+				A4969D2221E7D8F50063FF40 /* Cancellation.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		A42041F921E1F1E500021EDB /* MelodyRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */,
+				A42041F721E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift */,
+				A4969D1121E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift */,
+			);
+			name = MelodyRecognition;
 			sourceTree = "<group>";
 		};
 		A42AB5C51D2DE0F4001387BB /* Test */ = {
@@ -284,6 +488,10 @@
 			isa = PBXGroup;
 			children = (
 				A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */,
+				A47FF4AD211363AA00665E20 /* Constants.swift */,
+				A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */,
+				A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */,
+				A48A12C521F74FE60044AF08 /* CancellationModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -309,17 +517,18 @@
 		A48B4DC31CF9E7C700878928 /* Embraced */ = {
 			isa = PBXGroup;
 			children = (
+				A4969D1C21E6979E0063FF40 /* Helper */,
+				A42041EB21E1CF8300021EDB /* Storyboards */,
 				A48D60ED1FF6FF1A0042FBCA /* Views */,
 				A48D60E61FF5AC3B0042FBCA /* API */,
 				A4476ED71D13B1A5002722B4 /* Models */,
 				A48B4DD91CF9EEAB00878928 /* Resources */,
 				A490D7C11D0913C500D2B59D /* Controllers */,
-				A48B4DC81CF9E7C700878928 /* Main.storyboard */,
 				A48B4DCE1CF9E7C700878928 /* Assets.xcassets */,
-				A48B4DD01CF9E7C700878928 /* LaunchScreen.storyboard */,
 				A4DF9F241E08FBC90084EAF9 /* Localizable.strings */,
 				A48B4DD31CF9E7C700878928 /* Info.plist */,
 				A48B4DCB1CF9E7C700878928 /* Embraced.xcdatamodeld */,
+				A460CE3B21CCD49100E52F8B /* GoogleService-Info.plist */,
 				A41AE3C01DCA57150089231D /* Images.xcassets */,
 			);
 			path = Embraced;
@@ -328,6 +537,56 @@
 		A48B4DD91CF9EEAB00878928 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A48A132921FA4C750044AF08 /* melodies 320ms orig(01).wav */,
+				A48A130521FA4C200044AF08 /* melodies 320ms orig(05).wav */,
+				A48A131021FA4C3D0044AF08 /* melodies 320ms diff(06).wav */,
+				A48A130F21FA4C3C0044AF08 /* melodies 320ms orig(06).wav */,
+				A48A12F721FA4C030044AF08 /* melodies 320ms diff(07).wav */,
+				A48A12F821FA4C030044AF08 /* melodies 320ms orig(07).wav */,
+				A48A12CF21FA4B4F0044AF08 /* melodies 320ms orig(16).wav */,
+				A48A12C921FA4B330044AF08 /* melodies 320ms diff(16).wav */,
+				A48A130321FA4C190044AF08 /* melodies 320ms orig(17).wav */,
+				A48A12D621FA4BAA0044AF08 /* melodies 320ms diff(21).wav */,
+				A48A12D521FA4BA90044AF08 /* melodies 320ms orig(21).wav */,
+				A48A130C21FA4C350044AF08 /* melodies 320ms diff(24).wav */,
+				A48A130B21FA4C350044AF08 /* melodies 320ms orig(24).wav */,
+				A48A12D921FA4BB80044AF08 /* melodies 320ms orig(26).wav */,
+				A48A132321FA4C680044AF08 /* melodies 320ms orig(27).wav */,
+				A48A132521FA4C6F0044AF08 /* melodies 320ms diff(32).wav */,
+				A48A132621FA4C6F0044AF08 /* melodies 320ms orig(32).wav */,
+				A48A130921FA4C2C0044AF08 /* melodies 320ms orig(33).wav */,
+				A48A12FF21FA4C130044AF08 /* melodies 320ms diff(40).wav */,
+				A48A130021FA4C130044AF08 /* melodies 320ms orig(40).wav */,
+				A48A12E021FA4BC80044AF08 /* melodies 320ms diff(44).wav */,
+				A48A12DF21FA4BC80044AF08 /* melodies 320ms orig(44).wav */,
+				A48A131F21FA4C600044AF08 /* melodies 320ms diff(45).wav */,
+				A48A132021FA4C610044AF08 /* melodies 320ms orig(45).wav */,
+				A48A130721FA4C260044AF08 /* melodies 320ms orig(46).wav */,
+				A48A12E721FA4BD70044AF08 /* melodies 320ms orig(49).wav */,
+				A48A12F321FA4BFC0044AF08 /* melodies 320ms diff(51).wav */,
+				A48A12F421FA4BFC0044AF08 /* melodies 320ms orig(51).wav */,
+				A48A12E421FA4BD10044AF08 /* melodies 320ms diff(52).wav */,
+				A48A12E321FA4BD00044AF08 /* melodies 320ms orig(52).wav */,
+				A48A131B21FA4C580044AF08 /* melodies 320ms diff(54).wav */,
+				A48A131C21FA4C580044AF08 /* melodies 320ms orig(54).wav */,
+				A48A131921FA4C520044AF08 /* melodies 320ms orig(60).wav */,
+				A48A12CC21FA4B450044AF08 /* melodies 320ms diff(61).wav */,
+				A48A12CB21FA4B440044AF08 /* melodies 320ms orig(61).wav */,
+				A48A12DB21FA4BBF0044AF08 /* melodies 320ms diff(62).wav */,
+				A48A12DC21FA4BC00044AF08 /* melodies 320ms orig(62).wav */,
+				A48A12EF21FA4BF50044AF08 /* melodies 320ms diff(66).wav */,
+				A48A12F021FA4BF50044AF08 /* melodies 320ms orig(66).wav */,
+				A48A12D121FA4B9F0044AF08 /* melodies 320ms diff(68).wav */,
+				A48A12D221FA4B9F0044AF08 /* melodies 320ms orig(68).wav */,
+				A48A131521FA4C4B0044AF08 /* melodies 320ms diff(74).wav */,
+				A48A131621FA4C4C0044AF08 /* melodies 320ms orig(74).wav */,
+				A48A12ED21FA4BEB0044AF08 /* melodies 320ms orig(82).wav */,
+				A48A12FB21FA4C090044AF08 /* melodies 320ms diff(85).wav */,
+				A48A12FC21FA4C0A0044AF08 /* melodies 320ms orig(85).wav */,
+				A48A12EB21FA4BE40044AF08 /* melodies 320ms orig(89).wav */,
+				A48A131321FA4C440044AF08 /* melodies 320ms orig(90).wav */,
+				A48A12E921FA4BDE0044AF08 /* melodies 320ms orig(91).wav */,
+				A401C9D121D9DFA6002C07DE /* ENG-PRACTICE-FWD.mp3 */,
 				A490D7C61D0919CB00D2B59D /* Roboto-Black.ttf */,
 				A490D7C71D0919CB00D2B59D /* Roboto-BlackItalic.ttf */,
 				A490D7C81D0919CB00D2B59D /* Roboto-Bold.ttf */,
@@ -340,6 +599,14 @@
 				A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */,
 				A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */,
 				A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */,
+				A4C3287920815B5600DEC460 /* STROOP_ENG_TASK1.mp4 */,
+				A4C3287A20815B5D00DEC460 /* STROOP_ENG_TASK2.mp4 */,
+				A4C3287B20815B6400DEC460 /* STROOP_ENG_TASK3.mp4 */,
+				A4C3287C20815B6A00DEC460 /* STROOP_ENG_TASK4.mp4 */,
+				A4C3287D20815CC500DEC460 /* STROOP_SPA_TASK1.mp4 */,
+				A4C3287620815B4200DEC460 /* STROOP_SPA_TASK2.mp4 */,
+				A4C3287720815B4900DEC460 /* STROOP_SPA_TASK3.mp4 */,
+				A4C3287820815B4F00DEC460 /* STROOP_SPA_TASK4.mp4 */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -348,6 +615,8 @@
 			isa = PBXGroup;
 			children = (
 				A48D60E71FF5AC4F0042FBCA /* LibraryAPI.swift */,
+				A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */,
+				A460CE3D21CCD98F00E52F8B /* FirebaseStorageManager.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -357,6 +626,8 @@
 			children = (
 				A48D60F21FF704D60042FBCA /* UserCollectionViewCell.swift */,
 				A48D60F31FF704D60042FBCA /* UserCollectionViewCell.xib */,
+				A4969D3221E926BE0063FF40 /* CancellationViewCell.swift */,
+				A4969D3321E926BE0063FF40 /* CancellationViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -364,6 +635,9 @@
 		A490D7C11D0913C500D2B59D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4969D1F21E7D7BF0063FF40 /* Cancellation */,
+				A4969D1521E545290063FF40 /* DigitSpan */,
+				A42041F921E1F1E500021EDB /* MelodyRecognition */,
 				A4D904231D2384010092D6AA /* Customizations */,
 				A48B4DC41CF9E7C700878928 /* AppDelegate.swift */,
 				A48B4DC61CF9E7C700878928 /* ViewController.swift */,
@@ -383,8 +657,47 @@
 				A42AB5C51D2DE0F4001387BB /* Test */,
 				A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */,
 				A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */,
+				A460CE3F21D0C0E300E52F8B /* CanvasViewController.swift */,
+				A460CE4021D0C0E300E52F8B /* CanvasViewController.xib */,
+				A460CE4421D0C72900E52F8B /* TestViewController.swift */,
+				A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */,
+				A460CE4821D0C77300E52F8B /* InstructionsStep.xib */,
+				A42041EF21E1D09E00021EDB /* InstructionsViewController.swift */,
+				A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */,
+				A4969D1A21E67B960063FF40 /* AudioPlaybackViewController.swift */,
+				A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A4969D1521E545290063FF40 /* DigitSpan */ = {
+			isa = PBXGroup;
+			children = (
+				A4969D1621E5454B0063FF40 /* DigitSpanInstructionsViewController.swift */,
+				A4969D1821E545630063FF40 /* DigitSpanDoneViewController.swift */,
+			);
+			name = DigitSpan;
+			sourceTree = "<group>";
+		};
+		A4969D1C21E6979E0063FF40 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A4969D1D21E697B50063FF40 /* Utility.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		A4969D1F21E7D7BF0063FF40 /* Cancellation */ = {
+			isa = PBXGroup;
+			children = (
+				A4969D2021E7D7E90063FF40 /* CancellationInstructionsViewController.swift */,
+				A4969D2421E7DA340063FF40 /* CancellationInstructions2ViewController.swift */,
+				A4969D2621E7DB2D0063FF40 /* CancellationInstructions3ViewController.swift */,
+				A4969D2821E7F6B50063FF40 /* CancellationPracticeViewController.swift */,
+				A4969D3621F276210063FF40 /* CancellationBlockViewController.swift */,
+				A48A12C321F7414A0044AF08 /* CancellationDoneViewController.swift */,
+			);
+			name = Cancellation;
 			sourceTree = "<group>";
 		};
 		A4C72F031E6A1B4F00ADC405 /* AppsideTest */ = {
@@ -440,9 +753,8 @@
 				A48B4DBE1CF9E7C600878928 /* Frameworks */,
 				A48B4DBF1CF9E7C600878928 /* Resources */,
 				C90CDE91F5A86DBE2B374296 /* [CP] Embed Pods Frameworks */,
-				C7F38120F030A165D5C8C102 /* [CP] Copy Pods Resources */,
 				EC05DDA4DDE8CF52B4975F46 /* 📦 Embed Pods Frameworks */,
-				F2EE9097EA98D93B1AFC7A4A /* 📦 Copy Pods Resources */,
+				241A8DDF3B75DF09AFACAA07 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -460,13 +772,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Domonique Dixon";
 				TargetAttributes = {
 					A48B4DC01CF9E7C600878928 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = PUVE8AV9GJ;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -493,15 +805,48 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A48A12F221FA4BF60044AF08 /* melodies 320ms orig(66).wav in Resources */,
+				A4C3287E20815CD600DEC460 /* STROOP_ENG_TASK1.mp4 in Resources */,
+				A48A131D21FA4C590044AF08 /* melodies 320ms diff(54).wav in Resources */,
+				A48A131821FA4C4C0044AF08 /* melodies 320ms orig(74).wav in Resources */,
+				A4C3287F20815CD600DEC460 /* STROOP_ENG_TASK2.mp4 in Resources */,
+				A48A12D021FA4B4F0044AF08 /* melodies 320ms orig(16).wav in Resources */,
+				A48A132421FA4C680044AF08 /* melodies 320ms orig(27).wav in Resources */,
+				A4C3288020815CD600DEC460 /* STROOP_ENG_TASK3.mp4 in Resources */,
+				A4C3288120815CD600DEC460 /* STROOP_ENG_TASK4.mp4 in Resources */,
+				A48A132A21FA4C750044AF08 /* melodies 320ms orig(01).wav in Resources */,
+				A4C3288220815CD600DEC460 /* STROOP_SPA_TASK1.mp4 in Resources */,
+				A4C3288320815CD600DEC460 /* STROOP_SPA_TASK2.mp4 in Resources */,
+				A48A12E121FA4BC80044AF08 /* melodies 320ms orig(44).wav in Resources */,
+				A48A12E221FA4BC80044AF08 /* melodies 320ms diff(44).wav in Resources */,
+				A4C3288420815CD600DEC460 /* STROOP_SPA_TASK3.mp4 in Resources */,
+				A48A12DA21FA4BB80044AF08 /* melodies 320ms orig(26).wav in Resources */,
+				A4C3288520815CD600DEC460 /* STROOP_SPA_TASK4.mp4 in Resources */,
+				A48A12D421FA4BA00044AF08 /* melodies 320ms orig(68).wav in Resources */,
+				A48A131421FA4C450044AF08 /* melodies 320ms orig(90).wav in Resources */,
+				A460CE4921D0C77300E52F8B /* InstructionsStep.xib in Resources */,
 				A490D7D41D0919CB00D2B59D /* Roboto-Bold.ttf in Resources */,
 				A490D7D81D0919CB00D2B59D /* Roboto-LightItalic.ttf in Resources */,
+				A48A12DE21FA4BC00044AF08 /* melodies 320ms orig(62).wav in Resources */,
+				A48A12FD21FA4C0A0044AF08 /* melodies 320ms diff(85).wav in Resources */,
+				A48A130121FA4C130044AF08 /* melodies 320ms diff(40).wav in Resources */,
 				A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */,
 				A4347FD21D7BCA950033306A /* MatricesViewController.xib in Resources */,
 				A490D7DA1D0919CB00D2B59D /* Roboto-MediumItalic.ttf in Resources */,
+				A48A12E521FA4BD10044AF08 /* melodies 320ms orig(52).wav in Resources */,
+				A48A12CD21FA4B450044AF08 /* melodies 320ms orig(61).wav in Resources */,
 				A490D7D61D0919CB00D2B59D /* Roboto-Italic.ttf in Resources */,
 				A4347FE41D7BCC170033306A /* MultipleErrandsViewController.xib in Resources */,
 				A46C14181D7999AF0066EF37 /* CancellationTestViewController.xib in Resources */,
 				A48D60F51FF704D60042FBCA /* UserCollectionViewCell.xib in Resources */,
+				A48A131721FA4C4C0044AF08 /* melodies 320ms diff(74).wav in Resources */,
+				A4969D1421E544C10063FF40 /* DigitSpan.storyboard in Resources */,
+				A48A12F121FA4BF60044AF08 /* melodies 320ms diff(66).wav in Resources */,
+				A48A132821FA4C6F0044AF08 /* melodies 320ms orig(32).wav in Resources */,
+				A48A12EA21FA4BDE0044AF08 /* melodies 320ms orig(91).wav in Resources */,
+				A48A12F921FA4C040044AF08 /* melodies 320ms diff(07).wav in Resources */,
+				A48A12CE21FA4B450044AF08 /* melodies 320ms diff(61).wav in Resources */,
+				A48A131221FA4C3D0044AF08 /* melodies 320ms diff(06).wav in Resources */,
 				A4347FD61D7BCABC0033306A /* PegboardViewController.xib in Resources */,
 				A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */,
 				A490D7D71D0919CB00D2B59D /* Roboto-Light.ttf in Resources */,
@@ -509,42 +854,92 @@
 				A4347FCE1D7BCA570033306A /* ReyFigureComplex4ViewController.xib in Resources */,
 				A46C14241D79AA7C0066EF37 /* ClockDrawingTestViewController.xib in Resources */,
 				A48B4DD21CF9E7C700878928 /* LaunchScreen.storyboard in Resources */,
+				A48A130821FA4C260044AF08 /* melodies 320ms orig(46).wav in Resources */,
 				A4828EB71F967ED700406F19 /* LoadingScreenViewController.xib in Resources */,
 				A4347FC61D7BC9FC0033306A /* ReyComplexFigure3ViewController.xib in Resources */,
 				A490D7D51D0919CB00D2B59D /* Roboto-BoldItalic.ttf in Resources */,
 				A47EB6E41DA65FFB00A68AF6 /* FinishedViewController.xib in Resources */,
+				A48A131E21FA4C590044AF08 /* melodies 320ms orig(54).wav in Resources */,
 				A490D7D31D0919CB00D2B59D /* Roboto-BlackItalic.ttf in Resources */,
 				A4FC1E9A1DD2BE4500F19D95 /* WordList2ViewController.xib in Resources */,
+				A48A130621FA4C200044AF08 /* melodies 320ms orig(05).wav in Resources */,
 				A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */,
+				A48A130A21FA4C2C0044AF08 /* melodies 320ms orig(33).wav in Resources */,
 				A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */,
 				A4347FC21D7BC9E20033306A /* StroopViewController.xib in Resources */,
+				A48A130E21FA4C360044AF08 /* melodies 320ms diff(24).wav in Resources */,
+				A48A12E821FA4BD70044AF08 /* melodies 320ms orig(49).wav in Resources */,
+				A48A12FE21FA4C0A0044AF08 /* melodies 320ms orig(85).wav in Resources */,
+				A460CE4221D0C0E300E52F8B /* CanvasViewController.xib in Resources */,
+				A48A130421FA4C190044AF08 /* melodies 320ms orig(17).wav in Resources */,
+				A48A12CA21FA4B330044AF08 /* melodies 320ms diff(16).wav in Resources */,
 				A489D61D1E0BA255001F56FE /* AdminViewController.xib in Resources */,
 				A4C469A81E134B5900FDD5D5 /* UserViewController.xib in Resources */,
+				A48A12EE21FA4BEB0044AF08 /* melodies 320ms orig(82).wav in Resources */,
+				A48A130221FA4C130044AF08 /* melodies 320ms orig(40).wav in Resources */,
 				A4347FE01D7BCB800033306A /* NamingTaskViewController.xib in Resources */,
+				A401C9D221D9DFA6002C07DE /* ENG-PRACTICE-FWD.mp3 in Resources */,
+				A48A12D721FA4BAA0044AF08 /* melodies 320ms orig(21).wav in Resources */,
+				A48A131A21FA4C520044AF08 /* melodies 320ms orig(60).wav in Resources */,
+				A48A12DD21FA4BC00044AF08 /* melodies 320ms diff(62).wav in Resources */,
+				A48A12E621FA4BD10044AF08 /* melodies 320ms diff(52).wav in Resources */,
+				A48A12F621FA4BFD0044AF08 /* melodies 320ms orig(51).wav in Resources */,
+				A48A132121FA4C620044AF08 /* melodies 320ms diff(45).wav in Resources */,
 				A4BB08ED1D7EDFFA00B76C64 /* QuestionnaireViewController.xib in Resources */,
+				A48A130D21FA4C360044AF08 /* melodies 320ms orig(24).wav in Resources */,
 				A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */,
 				A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */,
+				A48A12D821FA4BAA0044AF08 /* melodies 320ms diff(21).wav in Resources */,
 				A490D7D91D0919CB00D2B59D /* Roboto-Medium.ttf in Resources */,
+				A4969D2321E7D8F50063FF40 /* Cancellation.storyboard in Resources */,
+				A48A131121FA4C3D0044AF08 /* melodies 320ms orig(06).wav in Resources */,
+				A48A132221FA4C620044AF08 /* melodies 320ms orig(45).wav in Resources */,
+				A460CE3C21CCD49200E52F8B /* GoogleService-Info.plist in Resources */,
 				A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */,
+				A48A12D321FA4BA00044AF08 /* melodies 320ms diff(68).wav in Resources */,
 				A4347FE81D7BCC4C0033306A /* ComprehensionViewController.xib in Resources */,
 				A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */,
 				A46C14201D79AA110066EF37 /* ReyComplexFigureViewController.xib in Resources */,
 				A4347FDA1D7BCAFB0033306A /* PitchViewController.xib in Resources */,
 				A490D7D21D0919CB00D2B59D /* Roboto-Black.ttf in Resources */,
+				A48A12F521FA4BFD0044AF08 /* melodies 320ms diff(51).wav in Resources */,
 				A489D6191E0B535A001F56FE /* SettingsViewController.xib in Resources */,
 				A4347FDE1D7BCB260033306A /* WordListViewController.xib in Resources */,
+				A48A12FA21FA4C040044AF08 /* melodies 320ms orig(07).wav in Resources */,
 				A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */,
+				A42041EE21E1CFC800021EDB /* MelodyRecognition.storyboard in Resources */,
+				A4969D3521E926BE0063FF40 /* CancellationViewCell.xib in Resources */,
 				A41AE3C11DCA57150089231D /* Images.xcassets in Resources */,
+				A48A12EC21FA4BE50044AF08 /* melodies 320ms orig(89).wav in Resources */,
 				A4347FCA1D7BCA280033306A /* DigitalSpanViewController.xib in Resources */,
 				A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */,
 				A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */,
 				A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */,
+				A48A132721FA4C6F0044AF08 /* melodies 320ms diff(32).wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		241A8DDF3B75DF09AFACAA07 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5E743F95A972D997F54D05F4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -593,21 +988,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C7F38120F030A165D5C8C102 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C90CDE91F5A86DBE2B374296 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -616,18 +996,36 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -649,21 +1047,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F2EE9097EA98D93B1AFC7A4A /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -671,6 +1054,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */,
+				A48A12C421F7414A0044AF08 /* CancellationDoneViewController.swift in Sources */,
 				A4347FE71D7BCC4C0033306A /* ComprehensionViewController.swift in Sources */,
 				A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */,
 				A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */,
@@ -678,6 +1063,7 @@
 				A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
 				A46A2C661DD7AB91000AC66C /* Reachability.swift in Sources */,
+				A4969D1221E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift in Sources */,
 				A4FC1E991DD2BE4500F19D95 /* WordList2ViewController.swift in Sources */,
 				A4347FE31D7BCC170033306A /* MultipleErrandsViewController.swift in Sources */,
 				A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */,
@@ -686,18 +1072,31 @@
 				A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */,
 				A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */,
 				A4347FD51D7BCABC0033306A /* PegboardViewController.swift in Sources */,
+				A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */,
 				A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */,
 				A489D6181E0B535A001F56FE /* SettingsViewController.swift in Sources */,
+				A460CE4521D0C72900E52F8B /* TestViewController.swift in Sources */,
+				A460CE4721D0C75E00E52F8B /* InstructionsStep.swift in Sources */,
 				A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */,
+				A4969D1721E5454B0063FF40 /* DigitSpanInstructionsViewController.swift in Sources */,
+				A460CE4121D0C0E300E52F8B /* CanvasViewController.swift in Sources */,
 				A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */,
 				A48D60E81FF5AC4F0042FBCA /* LibraryAPI.swift in Sources */,
 				A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */,
+				A4969D1E21E697B50063FF40 /* Utility.swift in Sources */,
+				A460CE3E21CCD98F00E52F8B /* FirebaseStorageManager.swift in Sources */,
 				A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */,
 				A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */,
 				A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */,
 				A4347FD11D7BCA950033306A /* MatricesViewController.swift in Sources */,
+				A4F067AF21E3E28A00ECEF6F /* TestConfig.swift in Sources */,
+				A42041F121E1D09E00021EDB /* InstructionsViewController.swift in Sources */,
 				A48D60F41FF704D60042FBCA /* UserCollectionViewCell.swift in Sources */,
+				A4969D3721F276210063FF40 /* CancellationBlockViewController.swift in Sources */,
 				A4347FCD1D7BCA570033306A /* ReyFigureComplex4ViewController.swift in Sources */,
+				A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */,
+				A4969D2521E7DA340063FF40 /* CancellationInstructions2ViewController.swift in Sources */,
+				A4969D1B21E67B960063FF40 /* AudioPlaybackViewController.swift in Sources */,
 				A4C469A71E134B5900FDD5D5 /* UserViewController.swift in Sources */,
 				A4347FDD1D7BCB260033306A /* WordListViewController.swift in Sources */,
 				A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */,
@@ -705,18 +1104,28 @@
 				A4AB688B1DE4BE9A0009808D /* DownloadOperation.swift in Sources */,
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
 				A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */,
+				A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */,
+				A4969D2121E7D7E90063FF40 /* CancellationInstructionsViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
+				A42041F821E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift in Sources */,
 				A46A2C681DD96FF0000AC66C /* APIWrapper.swift in Sources */,
+				A4969D2721E7DB2D0063FF40 /* CancellationInstructions3ViewController.swift in Sources */,
 				A46C14231D79AA7C0066EF37 /* ClockDrawingTestViewController.swift in Sources */,
 				A4347FC91D7BCA280033306A /* DigitalSpanViewController.swift in Sources */,
 				A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */,
 				A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */,
+				A4969D2921E7F6B50063FF40 /* CancellationPracticeViewController.swift in Sources */,
 				A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */,
 				A4DB0FB41DFB2CA1000811B6 /* DataManager.swift in Sources */,
+				A48A12C621F74FE60044AF08 /* CancellationModel.swift in Sources */,
+				A48A12C221F740ED0044AF08 /* DoneStepViewController.swift in Sources */,
 				A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */,
 				A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */,
 				A4AE36E31DFC545400727DFD /* WebViewController.swift in Sources */,
+				A47FF4AE211363AA00665E20 /* Constants.swift in Sources */,
 				A44669381E16457600EA7E2E /* RecordButton.swift in Sources */,
+				A4969D1921E545630063FF40 /* DigitSpanDoneViewController.swift in Sources */,
+				A4969D3421E926BE0063FF40 /* CancellationViewCell.swift in Sources */,
 				A4347FC11D7BC9E20033306A /* StroopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -769,12 +1178,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -825,12 +1236,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -871,12 +1284,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -890,12 +1303,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

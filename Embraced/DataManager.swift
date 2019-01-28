@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class DataManager {
     static let sharedInstance = DataManager()
@@ -45,49 +46,84 @@ class DataManager {
         }
     }
     
+    private func downloadFiles(path: String, name: String) {
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let localURL = documentsURL.appendingPathComponent(name)
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let fileRef = storageRef.child(path)
+        
+        
+        let downloadTask = fileRef.write(toFile: localURL) { url, error in
+            if let error = error {
+                print(error)
+            } else {
+                print("File is downloaded")
+            }
+        }
+    }
+    
     private func setEnData() {
+        // Download digit span practice
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let localURL = documentsURL.appendingPathComponent("digitSpanEngForwardPractice.mp3")
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let digitSpanForwardPracticeRef = storageRef.child("data/digitSpan/eng/ENG-PRACTICE-FWD.mp3")
+        let digitSpanForwardPractice = URL(string: "digitSpanEngForwardPractice.mp3")
+        
+        
+        let downloadTask = digitSpanForwardPracticeRef.write(toFile: localURL) { url, error in
+            if let error = error {
+                print(error)
+            } else {
+                print("File is downloaded")
+                self.digitalSpanForwardPractice = "digitSpanEngForwardPractice.mp3"
+            }
+        }
+        
         pitchExamples = [
-            ["melodies 320ms orig(16)"],
-            ["melodies 320ms diff(16)", "melodies 320ms orig(16)"],
-            ["melodies 320ms diff(61)", "melodies 320ms orig(61)"]
+            ["melodies 320ms orig(16).wav"],
+            ["melodies 320ms diff(16).wav", "melodies 320ms orig(16).wav"],
+            ["melodies 320ms diff(61).wav", "melodies 320ms orig(61).wav"]
         ]
         
         pitchPractices = [
-            ["melodies 320ms diff(68)", "melodies 320ms orig(68)"],
-            ["melodies 320ms diff(21)", "melodies 320ms orig(21)"],
-            ["melodies 320ms orig(26)"],
-            ["melodies 320ms diff(62)", "melodies 320ms orig(62)"],
-            ["melodies 320ms diff(44)", "melodies 320ms orig(44)"],
+            ["melodies 320ms diff(68).wav", "melodies 320ms orig(68).wav"],
+            ["melodies 320ms diff(21).wav", "melodies 320ms orig(21).wav"],
+            ["melodies 320ms orig(26).wav"],
+            ["melodies 320ms diff(62).wav", "melodies 320ms orig(62).wav"],
+            ["melodies 320ms diff(44).wav", "melodies 320ms orig(44).wav"],
         ]
         
         pitchTasks = [
-            ["melodies 320ms orig(01)"],
-            ["melodies 320ms diff(24)", "melodies 320ms orig(24)"],
-            ["melodies 320ms orig(33)"],
-            ["melodies 320ms orig(46)"],
-            ["melodies 320ms orig(05)"],
-            ["melodies 320ms orig(17)"],
-            ["melodies 320ms diff(40)", "melodies 320ms orig(40)"],
-            ["melodies 320ms diff(85)", "melodies 320ms orig(85)"],
-            ["melodies 320ms diff(07)", "melodies 320ms orig(07)"],
-            ["melodies 320ms diff(51)", "melodies 320ms orig(51)"],
-            ["melodies 320ms diff(66)", "melodies 320ms orig(66)"],
-            ["melodies 320ms diff(32)", "melodies 320ms orig(32)"],
-            ["melodies 320ms orig(82)"],
-            ["melodies 320ms orig(89)"],
-            ["melodies 320ms orig(91)"],
-            ["melodies 320ms orig(49)"],
-            ["melodies 320ms diff(52)", "melodies 320ms orig(52)"],
-            ["melodies 320ms orig(27)"],
-            ["melodies 320ms diff(45)", "melodies 320ms orig(45)"],
-            ["melodies 320ms diff(54)", "melodies 320ms orig(54)"],
-            ["melodies 320ms orig(60)"],
-            ["melodies 320ms diff(74)", "melodies 320ms orig(74)"],
-            ["melodies 320ms orig(90)"],
-            ["melodies 320ms diff(06)", "melodies 320ms orig(06)"]
+            ["melodies 320ms orig(01).wav"],
+            ["melodies 320ms diff(24).wav", "melodies 320ms orig(24).wav"],
+            ["melodies 320ms orig(33).wav"],
+            ["melodies 320ms orig(46).wav"],
+            ["melodies 320ms orig(05).wav"],
+            ["melodies 320ms orig(17).wav"],
+            ["melodies 320ms diff(40).wav", "melodies 320ms orig(40).wav"],
+            ["melodies 320ms diff(85).wav", "melodies 320ms orig(85).wav"],
+            ["melodies 320ms diff(07).wav", "melodies 320ms orig(07).wav"],
+            ["melodies 320ms diff(51).wav", "melodies 320ms orig(51).wav"],
+            ["melodies 320ms diff(66).wav", "melodies 320ms orig(66).wav"],
+            ["melodies 320ms diff(32).wav", "melodies 320ms orig(32).wav"],
+            ["melodies 320ms orig(82).wav"],
+            ["melodies 320ms orig(89).wav"],
+            ["melodies 320ms orig(91).wav"],
+            ["melodies 320ms orig(49).wav"],
+            ["melodies 320ms diff(52).wav", "melodies 320ms orig(52).wav"],
+            ["melodies 320ms orig(27).wav"],
+            ["melodies 320ms diff(45).wav", "melodies 320ms orig(45).wav"],
+            ["melodies 320ms diff(54).wav", "melodies 320ms orig(54).wav"],
+            ["melodies 320ms orig(60).wav"],
+            ["melodies 320ms diff(74).wav", "melodies 320ms orig(74).wav"],
+            ["melodies 320ms orig(90).wav"],
+            ["melodies 320ms diff(06).wav", "melodies 320ms orig(06).wav"]
         ]
         
-        digitalSpanForwardPractice = "ENG-PRACTICE-FWD"
+        digitalSpanForwardPractice = "digitSpanEngForwardPractice.mp3"
         digitalSpanForward = [
             "ENG-FWD-1",
             "ENG-FWD-2",
@@ -219,44 +255,44 @@ class DataManager {
     
     private func setEsData() {
         pitchExamples = [
-            ["melodies 320ms orig(16)"],
-            ["melodies 320ms diff(16)", "melodies 320ms orig(16)"],
-            ["melodies 320ms diff(61)", "melodies 320ms orig(61)"]
+            ["melodies 320ms orig(16).wav"],
+            ["melodies 320ms diff(16).wav", "melodies 320ms orig(16).wav"],
+            ["melodies 320ms diff(61).wav", "melodies 320ms orig(61).wav"]
         ]
         
         pitchPractices = [
-            ["melodies 320ms diff(68)", "melodies 320ms orig(68)"],
-            ["melodies 320ms diff(21)", "melodies 320ms orig(21)"],
-            ["melodies 320ms orig(26)"],
-            ["melodies 320ms diff(62)", "melodies 320ms orig(62)"],
-            ["melodies 320ms diff(44)", "melodies 320ms orig(44)"],
+            ["melodies 320ms diff(68).wav", "melodies 320ms orig(68).wav"],
+            ["melodies 320ms diff(21).wav", "melodies 320ms orig(21).wav"],
+            ["melodies 320ms orig(26).wav"],
+            ["melodies 320ms diff(62).wav", "melodies 320ms orig(62).wav"],
+            ["melodies 320ms diff(44).wav", "melodies 320ms orig(44).wav"],
         ]
         
         pitchTasks = [
-            ["melodies 320ms orig(01)"],
-            ["melodies 320ms diff(24)", "melodies 320ms orig(24)"],
-            ["melodies 320ms orig(33)"],
-            ["melodies 320ms orig(46)"],
-            ["melodies 320ms orig(05)"],
-            ["melodies 320ms orig(17)"],
-            ["melodies 320ms diff(40)", "melodies 320ms orig(40)"],
-            ["melodies 320ms diff(85)", "melodies 320ms orig(85)"],
-            ["melodies 320ms diff(07)", "melodies 320ms orig(07)"],
-            ["melodies 320ms diff(51)", "melodies 320ms orig(51)"],
-            ["melodies 320ms diff(66)", "melodies 320ms orig(66)"],
-            ["melodies 320ms diff(32)", "melodies 320ms orig(32)"],
-            ["melodies 320ms orig(82)"],
-            ["melodies 320ms orig(89)"],
-            ["melodies 320ms orig(91)"],
-            ["melodies 320ms orig(49)"],
-            ["melodies 320ms diff(52)", "melodies 320ms orig(52)"],
-            ["melodies 320ms orig(27)"],
-            ["melodies 320ms diff(45)", "melodies 320ms orig(45)"],
-            ["melodies 320ms diff(54)", "melodies 320ms orig(54)"],
-            ["melodies 320ms orig(60)"],
-            ["melodies 320ms diff(74)", "melodies 320ms orig(74)"],
-            ["melodies 320ms orig(90)"],
-            ["melodies 320ms diff(06)", "melodies 320ms orig(06)"]
+            ["melodies 320ms orig(01).wav"],
+            ["melodies 320ms diff(24).wav", "melodies 320ms orig(24).wav"],
+            ["melodies 320ms orig(33).wav"],
+            ["melodies 320ms orig(46).wav"],
+            ["melodies 320ms orig(05).wav"],
+            ["melodies 320ms orig(17).wav"],
+            ["melodies 320ms diff(40).wav", "melodies 320ms orig(40).wav"],
+            ["melodies 320ms diff(85).wav", "melodies 320ms orig(85).wav"],
+            ["melodies 320ms diff(07).wav", "melodies 320ms orig(07).wav"],
+            ["melodies 320ms diff(51).wav", "melodies 320ms orig(51).wav"],
+            ["melodies 320ms diff(66).wav", "melodies 320ms orig(66).wav"],
+            ["melodies 320ms diff(32).wav", "melodies 320ms orig(32).wav"],
+            ["melodies 320ms orig(82).wav"],
+            ["melodies 320ms orig(89).wav"],
+            ["melodies 320ms orig(91).wav"],
+            ["melodies 320ms orig(49).wav"],
+            ["melodies 320ms diff(52).wav", "melodies 320ms orig(52).wav"],
+            ["melodies 320ms orig(27).wav"],
+            ["melodies 320ms diff(45).wav", "melodies 320ms orig(45).wav"],
+            ["melodies 320ms diff(54).wav", "melodies 320ms orig(54).wav"],
+            ["melodies 320ms orig(60).wav"],
+            ["melodies 320ms diff(74).wav", "melodies 320ms orig(74).wav"],
+            ["melodies 320ms orig(90).wav"],
+            ["melodies 320ms diff(06).wav", "melodies 320ms orig(06).wav"]
         ]
         
         digitalSpanForwardPractice = "SPA-PRACTICE-FWD"
@@ -305,7 +341,7 @@ class DataManager {
         stroopTasks = [
             "STIMULI_1_SPA",
             "STIMULI_2&4_SPA",
-            "STIMULI_3"
+            "STIMULI_3-1"
         ]
         
         namingTaskPractice = [

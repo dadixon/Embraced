@@ -38,6 +38,9 @@ class StartViewController: UIViewController {
         languagePicker.dataSource = self
         
         pickerData = ["English": "en", "Spanish": "es"]
+        
+        let token = participant.string(forKey: "token")!
+        StorageManager.sharedInstance.token = token
     }
 
     override var prefersStatusBarHidden : Bool {
@@ -48,13 +51,23 @@ class StartViewController: UIViewController {
     // MARK: - Navigation
     
     @IBAction func startTest(_ sender: Any) {
-        // Save test timer
-        let date = Date()
-        participant.setValue(date, forKey: "StartDate")
-        
-        AppDelegate.testPosition += 1
-        self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
-        
+        // Save participant language
+        do {
+            let id = participant.string(forKey: "pid")!
+            
+            try StorageManager.sharedInstance.putToAPI(endpoint: "participant/update/", id: id, data: createPostObject())
+            
+            // Save test timer
+//            let date = Date()
+            let date = Date().millisecondsSince1970
+            participant.setValue(date, forKey: "StartDate")
+            
+            AppDelegate.testPosition += 1
+            self.navigationController?.pushViewController(
+                TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
+        } catch let error {
+            print(error)
+        }
     }
  
     private func createPostObject() -> [String: Any] {
@@ -93,5 +106,15 @@ extension StartViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "language")!)
         welcomeText.text = "WELCOME_TEXT".localized(lang: participant.string(forKey: "language")!)
         nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
+    }
+}
+
+extension Date {
+    var millisecondsSince1970:Int {
+        return Int((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+    
+    init(milliseconds:Int) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds / 1000))
     }
 }

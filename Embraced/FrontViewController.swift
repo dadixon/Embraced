@@ -88,7 +88,7 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         language = participant.string(forKey: "language")!
         
         if orientation == "landscape" {
-            let alertController = UIAlertController(title: "Rotation".localized(lang: language), message: "Rotation_landscpaing_prompt".localized(lang: language), preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Rotation".localized(lang: language), message: "Rotation_landscpaing_prompt".localized(lang: language), preferredStyle: UIAlertController.Style.alert)
             
             self.present(alertController, animated: true, completion: nil)
             
@@ -98,7 +98,7 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
             
             alertController.addAction(dismissAction)
         } else if orientation == "portrait" {
-            let alertController = UIAlertController(title: "Rotation".localized(lang: language), message: "Rotation_portrait_prompt".localized(lang: language), preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Rotation".localized(lang: language), message: "Rotation_portrait_prompt".localized(lang: language), preferredStyle: UIAlertController.Style.alert)
                 
             self.present(alertController, animated: true, completion: nil)
             
@@ -156,45 +156,43 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func play(_ filename:String) {
-        if let asset = NSDataAsset(name:filename){
+//        if let asset = NSDataAsset(name:filename){
+//            do {
+//                // Use NSDataAsset's data property to access the audio file stored in Sound.
+//                soundPlayer = try AVAudioPlayer(data: asset.data)
+//                if(soundPlayer?.prepareToPlay())!{
+//                    print("preparation success")
+//                    soundPlayer?.delegate = self
+//                    if(soundPlayer?.play())!{
+//                        print("Sound play success")
+//                    }else{
+//                        SVProgressHUD.showError(withStatus: "Sound file could not be played")
+//                    }
+//                }else{
+//                    print("preparation failure")
+//                }
+//            } catch let error as NSError {
+//                SVProgressHUD.showError(withStatus: error.localizedDescription)
+//            }
+//        }
+        let fileNameArray = filename.components(separatedBy: ".")
+        
+        if let dirPath = Bundle.main.path(forResource: fileNameArray[0], ofType: fileNameArray[1]) {
+            let filePath = URL(fileURLWithPath: dirPath)
+
             do {
-                // Use NSDataAsset's data property to access the audio file stored in Sound.
-                soundPlayer = try AVAudioPlayer(data: asset.data)
-                if(soundPlayer?.prepareToPlay())!{
-                    print("preparation success")
-                    soundPlayer?.delegate = self
-                    if(soundPlayer?.play())!{
-                        print("Sound play success")
-                    }else{
-                        SVProgressHUD.showError(withStatus: "Sound file could not be played")
-                    }
+                soundPlayer = try AVAudioPlayer(contentsOf: filePath)
+                soundPlayer?.delegate = self
+                
+                if(soundPlayer?.play())!{
+                    print("Sound play success")
                 }else{
-                    print("preparation failure")
+                    print("Sound file could not be played")
                 }
-            } catch let error as NSError {
-                SVProgressHUD.showError(withStatus: error.localizedDescription)
+            }catch{
+                print("Sound file could not be found")
             }
         }
-        
-//        let pathResource = getDocumentsDirectory().appendingPathComponent(filename)
-//
-//        do {
-//            soundPlayer = try AVAudioPlayer(contentsOf: pathResource)
-//            if(soundPlayer?.prepareToPlay())!{
-//                print("preparation success")
-//                soundPlayer?.delegate = self
-//                if(soundPlayer?.play())!{
-//                    print("Sound play success")
-//                }else{
-//                    print("Sound file could not be played")
-//                }
-//            }else{
-//                print("preparation failure")
-//            }
-//
-//        }catch{
-//            print("Sound file could not be found")
-//        }
     }
     
     func fileExist(_ filename: String) -> Bool {
@@ -254,7 +252,7 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
         overlayView.layer.cornerRadius = 10
         
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        activityIndicator.activityIndicatorViewStyle = .whiteLarge
+        activityIndicator.style = .whiteLarge
         activityIndicator.center = CGPoint(x: overlayView.bounds.width / 2, y: overlayView.bounds.height / 2)
         
         overlayView.addSubview(activityIndicator)

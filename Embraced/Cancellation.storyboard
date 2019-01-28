@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cl8-3v-nkk">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cancellation Instructions View Controller-->
+        <scene sceneID="zvc-H7-iUV">
+            <objects>
+                <viewController storyboardIdentifier="CancellationTest" id="cl8-3v-nkk" customClass="CancellationInstructionsViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4CT-cg-noq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0qV-Ut-y2Z"/>
+                    </view>
+                    <connections>
+                        <segue destination="dDc-3U-6EL" kind="show" identifier="moveToInstructions2" id="Ibs-Wj-g9J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ckN-tw-Pto" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106" y="134"/>
+        </scene>
+        <!--Cancellation Instructions2 View Controller-->
+        <scene sceneID="ld7-iF-kvO">
+            <objects>
+                <viewController id="dDc-3U-6EL" customClass="CancellationInstructions2ViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8CO-tP-ArH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="WFB-Ty-10M"/>
+                    </view>
+                    <connections>
+                        <segue destination="vFV-xx-Dps" kind="show" identifier="moveToInstructions3" id="lRR-uw-EIl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RSX-Qo-JGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810" y="134"/>
+        </scene>
+        <!--Cancellation Instructions3 View Controller-->
+        <scene sceneID="vsE-9a-XJe">
+            <objects>
+                <viewController id="vFV-xx-Dps" customClass="CancellationInstructions3ViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b2w-Wd-e2j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kHY-A6-m60"/>
+                    </view>
+                    <connections>
+                        <segue destination="VBh-aU-GSV" kind="show" identifier="moveToPractice" id="z3q-Yf-7Sf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y3g-I9-DMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1513" y="134"/>
+        </scene>
+        <!--Cancellation Practice View Controller-->
+        <scene sceneID="m4R-K5-Y0I">
+            <objects>
+                <viewController id="VBh-aU-GSV" customClass="CancellationPracticeViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kt6-Wa-5RC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hVp-sl-UMV"/>
+                    </view>
+                    <connections>
+                        <segue destination="s3P-Cn-Wg2" kind="show" identifier="moveToBlocks" id="1uP-h9-WoH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AG9-zd-6iJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2240.8000000000002" y="133.5832083958021"/>
+        </scene>
+        <!--Cancellation Block View Controller-->
+        <scene sceneID="83U-zg-tpu">
+            <objects>
+                <viewController id="s3P-Cn-Wg2" customClass="CancellationBlockViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yGA-04-eYr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="QHH-kF-d4O"/>
+                    </view>
+                    <connections>
+                        <segue destination="vRm-cu-I1f" kind="show" identifier="moveToDone" id="fMw-Xn-A3T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7wY-IP-p8B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2935" y="134"/>
+        </scene>
+        <!--Cancellation Done View Controller-->
+        <scene sceneID="Ieu-VW-Lon">
+            <objects>
+                <viewController id="vRm-cu-I1f" customClass="CancellationDoneViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tvy-OE-8tt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="faS-PH-y9h"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OVf-KT-D5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3649" y="134"/>
+        </scene>
+    </scenes>
+</document>

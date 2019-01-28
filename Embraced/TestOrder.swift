@@ -12,7 +12,7 @@ import UIKit
 final class TestOrder {
     static let sharedInstance = TestOrder()
     private let userDefaults = UserDefaults.standard
-    private var navigationTests = [UIViewController!]()
+    private var navigationTests = [UIViewController]()
     
     private init() {
         
