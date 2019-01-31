@@ -322,7 +322,7 @@ class DigitalSpanViewController: FrontViewController {
     @IBAction func playSound(_ sender: UIButton) {
         if sender.titleLabel!.text == "Play".localized(lang: language) {
             recordBtn.isEnabled = false
-            sender.setTitle("Stop".localized(lang: language), for: UIControl.State())
+            sender.setTitle("Stop".localized(lang: language), for: .normal)
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: recordedAudioURL)
                 audioPlayer.delegate = self
@@ -332,7 +332,7 @@ class DigitalSpanViewController: FrontViewController {
             }
         } else {
             audioPlayer.stop()
-            sender.setTitle("Play".localized(lang: language), for: UIControl.State())
+            sender.setTitle("Play".localized(lang: language), for: .normal)
         }
     }
     
@@ -444,7 +444,7 @@ class DigitalSpanViewController: FrontViewController {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
             recordBtn.isEnabled = true
-            playBtn.setTitle("Play".localized(lang: language), for: UIControl.State())
+            playBtn.setTitle("Play".localized(lang: language), for: .normal)
             playBtn.isEnabled = false
             listenBtn.isEnabled = true
             recordPracticeBtn.isEnabled = true
@@ -464,7 +464,7 @@ extension DigitalSpanViewController: AVAudioRecorderDelegate {
         if flag {
             print("Finished recording")
             recordBtn.isEnabled = true
-            playBtn.setTitle("Play".localized(lang: language), for: UIControl.State())
+            playBtn.setTitle("Play".localized(lang: language), for: .normal)
             finishedPlaying()
         } else {
             print("Recording failed")

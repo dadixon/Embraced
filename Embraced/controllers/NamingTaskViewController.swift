@@ -248,7 +248,7 @@ class NamingTaskViewController: FrontViewController {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
             recordBtn.isEnabled = true
-            playBtn.setTitle("Play".localized(lang: language), for: UIControl.State())
+            playBtn.setTitle("Play".localized(lang: language), for: .normal)
             playBtn.isEnabled = false
         } else {
             print("Player failed")
@@ -311,7 +311,7 @@ class NamingTaskViewController: FrontViewController {
             }
         } else {
             audioPlayer.stop()
-            sender.setTitle("Play".localized(lang: language), for: UIControl.State())
+            sender.setTitle("Play".localized(lang: language), for: .normal)
         }
     }
     

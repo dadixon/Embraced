@@ -364,14 +364,14 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     @IBAction func playSound(_ sender: UIButton) {
         if sender.titleLabel!.text == "Play".localized(lang: language) {
             recordBtn.isEnabled = false
-            sender.setTitle("Stop".localized(lang: language), for: UIControl.State())
+            sender.setTitle("Stop".localized(lang: language), for: .normal)
             preparePlayer()
             soundPlayer?.play()
         } else {
             if (soundPlayer?.isPlaying)! {
                 soundPlayer?.stop()
             }
-            sender.setTitle("Play".localized(lang: language), for: UIControl.State())
+            sender.setTitle("Play".localized(lang: language), for: .normal)
         }
     }
     
