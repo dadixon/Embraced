@@ -104,8 +104,8 @@ class DigitalSpanViewController: FrontViewController {
             "x-access-token": token
         ]
         
-//        Alamofire.request(APIUrl + "api/digit_span/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-//        }
+        Alamofire.request(APIUrl + "api/digit_span/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+        }
         
         introView.translatesAutoresizingMaskIntoConstraints = false
         preTask1View.translatesAutoresizingMaskIntoConstraints = false
@@ -232,36 +232,36 @@ class DigitalSpanViewController: FrontViewController {
         // Testing Firebase storage
 //        FirebaseStorageManager.sharedInstance.storeDigitSpan(data: object)
         
-//        Alamofire.upload(
-//            multipartFormData: { multipartFormData in
-//                multipartFormData.append(fileURL, withName: "audio")
-//                multipartFormData.append(name.data(using: String.Encoding.utf8)!, withName: "name")
-//        }, usingThreshold: UInt64.init(),
-//           to: APIUrl + "api/digit_span/uploadfile/" + id,
-//           method: .post,
-//           headers: headers,
-//           encodingCompletion: { encodingResult in
-//            switch encodingResult {
-//            case .success(let upload, _, _):
-//                upload.responseJSON { response in
-//                    self.deleteAudioFile(fileURL: fileURL)
-//                }
-//            case .failure(let encodingError):
-//                print(encodingError)
-//            }})
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                multipartFormData.append(fileURL, withName: "audio")
+                multipartFormData.append(name.data(using: String.Encoding.utf8)!, withName: "name")
+        }, usingThreshold: UInt64.init(),
+           to: APIUrl + "api/digit_span/uploadfile/" + id,
+           method: .post,
+           headers: headers,
+           encodingCompletion: { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                upload.responseJSON { response in
+                    self.deleteAudioFile(fileURL: fileURL)
+                }
+            case .failure(let encodingError):
+                print(encodingError)
+            }})
     }
     
-    override func play(_ filename: String) {
-        let audioFilename = getDocumentsDirectory().appendingPathComponent(filename)
-        
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: audioFilename)
-            audioPlayer.delegate = self
-            audioPlayer.play()
-        } catch {
-            print("No Audio")
-        }
-    }
+//    override func play(_ filename: String) {
+//        let audioFilename = getDocumentsDirectory().appendingPathComponent(filename)
+//
+//        do {
+//            audioPlayer = try AVAudioPlayer(contentsOf: audioFilename)
+//            audioPlayer.delegate = self
+//            audioPlayer.play()
+//        } catch {
+//            print("No Audio")
+//        }
+//    }
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
