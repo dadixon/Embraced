@@ -448,6 +448,7 @@ class DigitalSpanViewController: FrontViewController {
             playBtn.isEnabled = false
             listenBtn.isEnabled = true
             recordPracticeBtn.isEnabled = true
+            recordForwardBtn.isEnabled = true
         } else {
             print("Player failed")
         }
