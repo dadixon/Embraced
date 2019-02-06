@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 import Alamofire
 import SVProgressHUD
-import Firebase
 
 class NamingTaskViewController: FrontViewController {
 
@@ -256,8 +255,6 @@ class NamingTaskViewController: FrontViewController {
     }
     
     func postToAPI(object: [String: AnyObject]) {
-        // Test Firebase Database
-        FirebaseStorageManager.sharedInstance.storeNamingTask(data: object)
         do {
             try StorageManager.sharedInstance.postToNamingTask(id: id, data: object)
         } catch let error {

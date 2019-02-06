@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 import Alamofire
 import SVProgressHUD
-import Firebase
 
 class PitchViewController: FrontViewController {
     
@@ -157,9 +156,6 @@ class PitchViewController: FrontViewController {
         
         introBtn.setTitle("Start".localized(lang: language), for: .normal)
         introLabel.text = "pitch_intro".localized(lang: language)
-        
-        // Test Firebase Database
-//        FirebaseStorageManager.sharedInstance.storeMelodies(data: ["c", "c"])
     }
     
     override func didReceiveMemoryWarning() {
@@ -289,9 +285,6 @@ class PitchViewController: FrontViewController {
                 self.next(self)
             }
         }
-        
-        // Test Firebase Database
-//        FirebaseStorageManager.sharedInstance.storeMelodies(data: userAnswers)
     }
     
     // MARK: - Navigation

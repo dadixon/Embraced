@@ -229,8 +229,6 @@ class DigitalSpanViewController: FrontViewController {
         let name = object["name"] as! String
         let fileURL = object["audio"] as! URL
         
-        // Testing Firebase storage
-//        FirebaseStorageManager.sharedInstance.storeDigitSpan(data: object)
         
         Alamofire.upload(
             multipartFormData: { multipartFormData in

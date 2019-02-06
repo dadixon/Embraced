@@ -40,7 +40,6 @@
 		A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669311E1631A600EA7E2E /* ListenButton.swift */; };
 		A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669331E16435C00EA7E2E /* PlayButton.swift */; };
 		A44669381E16457600EA7E2E /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669371E16457600EA7E2E /* RecordButton.swift */; };
-		A460CE3E21CCD98F00E52F8B /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE3D21CCD98F00E52F8B /* FirebaseStorageManager.swift */; };
 		A460CE4121D0C0E300E52F8B /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE3F21D0C0E300E52F8B /* CanvasViewController.swift */; };
 		A460CE4221D0C0E300E52F8B /* CanvasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A460CE4021D0C0E300E52F8B /* CanvasViewController.xib */; };
 		A460CE4521D0C72900E52F8B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE4421D0C72900E52F8B /* TestViewController.swift */; };
@@ -328,7 +327,6 @@
 		A4CA157B22031EBE00F6CF0A /* SPA-29.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4CA154F22031EBD00F6CF0A /* SPA-29.mp3 */; };
 		A4CA157C22031EBE00F6CF0A /* SPA-25.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4CA155022031EBE00F6CF0A /* SPA-25.mp3 */; };
 		A4CA157E220321E100F6CF0A /* ENG-PRACTICE-BWD.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4CA157D220321E000F6CF0A /* ENG-PRACTICE-BWD.mp3 */; };
-		A4CA1580220324A500F6CF0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4CA157F220324A500F6CF0A /* GoogleService-Info.plist */; };
 		A4CA1582220324C100F6CF0A /* melodies 320ms orig(01).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4CA1581220324C100F6CF0A /* melodies 320ms orig(01).wav */; };
 		A4CA1584220324E300F6CF0A /* melodies 320ms orig(16).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4CA1583220324E300F6CF0A /* melodies 320ms orig(16).wav */; };
 		A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9041D1D2380380092D6AA /* FrontViewController.swift */; };
@@ -381,7 +379,6 @@
 		A44669311E1631A600EA7E2E /* ListenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenButton.swift; sourceTree = "<group>"; };
 		A44669331E16435C00EA7E2E /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		A44669371E16457600EA7E2E /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
-		A460CE3D21CCD98F00E52F8B /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
 		A460CE3F21D0C0E300E52F8B /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CanvasViewController.swift; path = controllers/CanvasViewController.swift; sourceTree = "<group>"; };
 		A460CE4021D0C0E300E52F8B /* CanvasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CanvasViewController.xib; path = controllers/CanvasViewController.xib; sourceTree = "<group>"; };
 		A460CE4421D0C72900E52F8B /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = controllers/TestViewController.swift; sourceTree = "<group>"; };
@@ -675,7 +672,6 @@
 		A4CA154F22031EBD00F6CF0A /* SPA-29.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-29.mp3"; sourceTree = "<group>"; };
 		A4CA155022031EBE00F6CF0A /* SPA-25.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SPA-25.mp3"; sourceTree = "<group>"; };
 		A4CA157D220321E000F6CF0A /* ENG-PRACTICE-BWD.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-PRACTICE-BWD.mp3"; sourceTree = "<group>"; };
-		A4CA157F220324A500F6CF0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4CA1581220324C100F6CF0A /* melodies 320ms orig(01).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(01).wav"; sourceTree = "<group>"; };
 		A4CA1583220324E300F6CF0A /* melodies 320ms orig(16).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(16).wav"; sourceTree = "<group>"; };
 		A4D9041D1D2380380092D6AA /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
@@ -830,7 +826,6 @@
 				A4DF9F241E08FBC90084EAF9 /* Localizable.strings */,
 				A48B4DD31CF9E7C700878928 /* Info.plist */,
 				A48B4DCB1CF9E7C700878928 /* Embraced.xcdatamodeld */,
-				A4CA157F220324A500F6CF0A /* GoogleService-Info.plist */,
 				A41AE3C01DCA57150089231D /* Images.xcassets */,
 			);
 			path = Embraced;
@@ -1069,7 +1064,6 @@
 			children = (
 				A48D60E71FF5AC4F0042FBCA /* LibraryAPI.swift */,
 				A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */,
-				A460CE3D21CCD98F00E52F8B /* FirebaseStorageManager.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -1207,7 +1201,6 @@
 				A48B4DBF1CF9E7C600878928 /* Resources */,
 				C90CDE91F5A86DBE2B374296 /* [CP] Embed Pods Frameworks */,
 				EC05DDA4DDE8CF52B4975F46 /* 📦 Embed Pods Frameworks */,
-				241A8DDF3B75DF09AFACAA07 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1513,7 +1506,6 @@
 				A4CA155F22031EBE00F6CF0A /* SPA-37.mp3 in Resources */,
 				A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */,
 				A4CA151722031E9D00F6CF0A /* ENG-07.mp3 in Resources */,
-				A4CA1580220324A500F6CF0A /* GoogleService-Info.plist in Resources */,
 				A4CA156722031EBE00F6CF0A /* SPA-30.mp3 in Resources */,
 				A4CA14A622031C1900F6CF0A /* SPA-BWD-09.mp3 in Resources */,
 				A4CA156D22031EBE00F6CF0A /* SPA-20.mp3 in Resources */,
@@ -1526,24 +1518,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		241A8DDF3B75DF09AFACAA07 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5E743F95A972D997F54D05F4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1600,36 +1574,18 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1688,7 +1644,6 @@
 				A48D60E81FF5AC4F0042FBCA /* LibraryAPI.swift in Sources */,
 				A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */,
 				A4969D1E21E697B50063FF40 /* Utility.swift in Sources */,
-				A460CE3E21CCD98F00E52F8B /* FirebaseStorageManager.swift in Sources */,
 				A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */,
 				A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */,
 				A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */,

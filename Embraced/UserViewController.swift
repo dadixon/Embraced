@@ -42,30 +42,6 @@ class UserViewController: UIViewController {
     }
 
     @IBAction func startTest(_ sender: Any) {
-//        print(FirebaseStorageManager.sharedInstance.getId())
-//        FirebaseStorageManager.sharedInstance.addDataToDocument(payload: FirebaseStorageManager.sharedInstance.testPayload)
-        
-//        if let vc = UIStoryboard(name: "MelodyRecognition", bundle: nil).instantiateViewController(withIdentifier: "MelodyRecognitionTest") as? MelodyRecognitionInstructionsViewController {
-//
-//            TestConfig.sharedInstance.testList.append(vc)
-//        }
-        
-//        if let vc = UIStoryboard(name: "DigitSpan", bundle: nil).instantiateViewController(withIdentifier: "DigitSpanTest") as? DigitSpanInstructionsViewController {
-//
-//            TestConfig.sharedInstance.testList.append(vc)
-//        }
-        
-//        if let vc = UIStoryboard(name: "Cancellation", bundle: nil).instantiateViewController(withIdentifier: "CancellationTest") as? CancellationInstructionsViewController {
-//            TestConfig.sharedInstance.testList.append(vc)
-//        }
-//
-//
-//        if TestConfig.sharedInstance.testList.count > 0 {
-//            let nav = UINavigationController(rootViewController: TestConfig.sharedInstance.testList[0])
-//
-//            self.present(nav, animated: true) {}
-//        }
-        
         // Add a participant
         let token = userDefaults.string(forKey: "token")!
         let uid = userDefaults.string(forKey: "id")!

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Firebase
 
 class DataManager {
     static let sharedInstance = DataManager()
@@ -46,42 +45,7 @@ class DataManager {
         }
     }
     
-    private func downloadFiles(path: String, name: String) {
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let localURL = documentsURL.appendingPathComponent(name)
-        let storage = Storage.storage()
-        let storageRef = storage.reference()
-        let fileRef = storageRef.child(path)
-        
-        
-        let downloadTask = fileRef.write(toFile: localURL) { url, error in
-            if let error = error {
-                print(error)
-            } else {
-                print("File is downloaded")
-            }
-        }
-    }
-    
     private func setEnData() {
-        // Download digit span practice
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let localURL = documentsURL.appendingPathComponent("digitSpanEngForwardPractice.mp3")
-        let storage = Storage.storage()
-        let storageRef = storage.reference()
-        let digitSpanForwardPracticeRef = storageRef.child("data/digitSpan/eng/ENG-PRACTICE-FWD.mp3")
-        let digitSpanForwardPractice = URL(string: "digitSpanEngForwardPractice.mp3")
-        
-        
-        let downloadTask = digitSpanForwardPracticeRef.write(toFile: localURL) { url, error in
-            if let error = error {
-                print(error)
-            } else {
-                print("File is downloaded")
-                self.digitalSpanForwardPractice = "digitSpanEngForwardPractice.mp3"
-            }
-        }
-        
         pitchExamples = [
             ["melodies 320ms orig(16).wav"],
             ["melodies 320ms diff(16).wav", "melodies 320ms orig(16).wav"],
