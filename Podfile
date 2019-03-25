@@ -11,5 +11,8 @@ target 'Embraced' do
   pod 'Alamofire', '~> 4.5'
   pod 'JWTDecode', '~> 2.1'
   pod 'SVProgressHUD'
+  pod 'Firebase/Core'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
  
 end

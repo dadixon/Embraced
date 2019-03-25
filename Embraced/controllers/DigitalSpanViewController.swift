@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Alamofire
+import Firebase
 
 class DigitalSpanViewController: FrontViewController {
 
@@ -177,7 +178,11 @@ class DigitalSpanViewController: FrontViewController {
         
         let session = AVAudioSession.sharedInstance()
         try! session.setActive(true)
-        try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
+        if #available(iOS 10.0, *) {
+            try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
+        } else {
+            // Fallback on earlier versions
+        }
         
         do {
             try audioRecorder = AVAudioRecorder(url: audioFilename, settings: settings)
@@ -227,28 +232,72 @@ class DigitalSpanViewController: FrontViewController {
     
     func postToAPI(object: [String: AnyObject]) {
         let name = object["name"] as! String
-        let fileURL = object["audio"] as! URL
+        let fileURL = object["audio"] as! String
         
+        Alamofire.request(APIUrl + "api/digit_span/" + id, method: .post, parameters: object, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+        }
         
-        Alamofire.upload(
-            multipartFormData: { multipartFormData in
-                multipartFormData.append(fileURL, withName: "audio")
-                multipartFormData.append(name.data(using: String.Encoding.utf8)!, withName: "name")
-        }, usingThreshold: UInt64.init(),
-           to: APIUrl + "api/digit_span/uploadfile/" + id,
-           method: .post,
-           headers: headers,
-           encodingCompletion: { encodingResult in
-            switch encodingResult {
-            case .success(let upload, _, _):
-                upload.responseJSON { response in
-                    self.deleteAudioFile(fileURL: fileURL)
-                }
-            case .failure(let encodingError):
-                print(encodingError)
-            }})
+//        Alamofire.upload(
+//            multipartFormData: { multipartFormData in
+//                multipartFormData.append(fileURL, withName: "audio")
+//                multipartFormData.append(name.data(using: String.Encoding.utf8)!, withName: "name")
+//        }, usingThreshold: UInt64.init(),
+//           to: APIUrl + "api/digit_span/uploadfile/" + id,
+//           method: .post,
+//           headers: headers,
+//           encodingCompletion: { encodingResult in
+//            switch encodingResult {
+//            case .success(let upload, _, _):
+//                upload.responseJSON { response in
+//                    self.deleteAudioFile(fileURL: fileURL)
+//                }
+//            case .failure(let encodingError):
+//                print(encodingError)
+//            }})
     }
     
+    func createPostObject(direction: String, index: Int) {
+        var jsonObject = [String: AnyObject]()
+        var directionName = ""
+        
+        if direction == "F" {
+            directionName = "forward"
+        } else if direction == "B" {
+            directionName = "backward"
+        }
+        
+        if fileExist(directionName + "\(index).m4a") {
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileURL = documentsURL.appendingPathComponent("\(directionName)\(index).m4a")
+            
+            //            FirebaseStorageManager.sharedInstance.addFileToStorage(fileName: directionName + "\(index).mp4", path: fileURL, test: "DigitSpan", labelName: "DIGIT_SPAN_\(directionName.uppercased())_\(index)")
+            
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            let participantRef = storageRef.child("\(FirebaseStorageManager.sharedInstance.pid!)/DigitSpan/\(directionName)\(index).m4a")
+            
+            participantRef.putFile(from: fileURL, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    print("Error: \(error?.localizedDescription)")
+                }
+                
+                participantRef.downloadURL { (url, error) in
+                    if error != nil {
+                        print("Error: \(error?.localizedDescription)")
+                    }
+                    guard let downloadURL = url else { return }
+                    
+                    jsonObject = [
+                        "name": "\(directionName)\(index)" as AnyObject,
+                        "audio": downloadURL.absoluteString as AnyObject
+                    ]
+                    
+                    self.postToAPI(object: jsonObject)
+                }
+                
+            }
+        }
+    }
 //    override func play(_ filename: String) {
 //        let audioFilename = getDocumentsDirectory().appendingPathComponent(filename)
 //
@@ -370,7 +419,7 @@ class DigitalSpanViewController: FrontViewController {
     
     @IBAction func nextSound(_ sender: AnyObject) {
         instructionsA.text = "digital_begin_round_start".localized(lang: language)
-        postToAPI(object: createPostObject(direction: "F", index: forwardCount))
+        createPostObject(direction: "F", index: forwardCount)
         
         if (forwardCount < forward.count) {
             forwardCount += 1
@@ -399,7 +448,7 @@ class DigitalSpanViewController: FrontViewController {
     
     @IBAction func nextBSound(_ sender: AnyObject) {
         instructions.text = "digital_begin_round2_start".localized(lang: language)
-        postToAPI(object: createPostObject(direction: "B", index: backwardCount))
+        createPostObject(direction: "B", index: backwardCount)
         
         if (backwardCount < backward.count) {
             backwardCount += 1
@@ -414,30 +463,6 @@ class DigitalSpanViewController: FrontViewController {
         }
     }
     
-    func createPostObject(direction: String, index: Int) -> [String: AnyObject] {
-        var jsonObject = [String: AnyObject]()
-        var directionName = ""
-        
-        if direction == "F" {
-            directionName = "forward"
-        } else if direction == "B" {
-            directionName = "backward"
-        }
-        
-        print(directionName + "\(index).m4a")
-        
-        if fileExist(directionName + "\(index).m4a") {
-            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            let fileURL = documentsURL.appendingPathComponent("\(directionName)\(index).m4a")
-            
-            jsonObject = [
-                "name": "\(directionName)\(index)" as AnyObject,
-                "audio": fileURL as AnyObject
-            ]
-        }
-        
-        return jsonObject
-    }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {

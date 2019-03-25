@@ -88,19 +88,23 @@ class CancellationBlockViewController: ActiveStepViewController {
         self.currentTime = CFAbsoluteTimeGetCurrent()
         index += 1
         // Start timer
-        Timer.scheduledTimer(withTimeInterval: 15.0, repeats: true) { timer in
-            self.currentTime = CFAbsoluteTimeGetCurrent()
-            if self.index == self.stimulis.count {
-                // View calculated answers
-                print(CancellationModel.sharedInstance.printModel())
-                timer.invalidate()
-                self.performSegue(withIdentifier: "moveToDone", sender: nil)
-            } else {
-                // View calculated answers
-                print(CancellationModel.sharedInstance.printModel())
-                self.refreshCollection(data: self.stimulis[self.index])
-                self.index += 1
+        if #available(iOS 10.0, *) {
+            Timer.scheduledTimer(withTimeInterval: 15.0, repeats: true) { timer in
+                self.currentTime = CFAbsoluteTimeGetCurrent()
+                if self.index == self.stimulis.count {
+                    // View calculated answers
+                    print(CancellationModel.sharedInstance.printModel())
+                    timer.invalidate()
+                    self.performSegue(withIdentifier: "moveToDone", sender: nil)
+                } else {
+                    // View calculated answers
+                    print(CancellationModel.sharedInstance.printModel())
+                    self.refreshCollection(data: self.stimulis[self.index])
+                    self.index += 1
+                }
             }
+        } else {
+            // Fallback on earlier versions
         }
         
     }

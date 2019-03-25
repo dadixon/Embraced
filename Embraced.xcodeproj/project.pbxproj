@@ -36,6 +36,8 @@
 		A4347FE41D7BCC170033306A /* MultipleErrandsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FE21D7BCC170033306A /* MultipleErrandsViewController.xib */; };
 		A4347FE71D7BCC4C0033306A /* ComprehensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FE51D7BCC4C0033306A /* ComprehensionViewController.swift */; };
 		A4347FE81D7BCC4C0033306A /* ComprehensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FE61D7BCC4C0033306A /* ComprehensionViewController.xib */; };
+		A4396F0E223C1415009B1EDC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4396F0D223C1414009B1EDC /* GoogleService-Info.plist */; };
+		A4396F10223C142B009B1EDC /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4396F0F223C142B009B1EDC /* FirebaseStorageManager.swift */; };
 		A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */; };
 		A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669311E1631A600EA7E2E /* ListenButton.swift */; };
 		A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669331E16435C00EA7E2E /* PlayButton.swift */; };
@@ -375,6 +377,8 @@
 		A4347FE21D7BCC170033306A /* MultipleErrandsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MultipleErrandsViewController.xib; path = controllers/MultipleErrandsViewController.xib; sourceTree = "<group>"; };
 		A4347FE51D7BCC4C0033306A /* ComprehensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComprehensionViewController.swift; path = controllers/ComprehensionViewController.swift; sourceTree = "<group>"; };
 		A4347FE61D7BCC4C0033306A /* ComprehensionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComprehensionViewController.xib; path = controllers/ComprehensionViewController.xib; sourceTree = "<group>"; };
+		A4396F0D223C1414009B1EDC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A4396F0F223C142B009B1EDC /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
 		A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NamingTaskViewController.swift; path = controllers/NamingTaskViewController.swift; sourceTree = "<group>"; };
 		A44669311E1631A600EA7E2E /* ListenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenButton.swift; sourceTree = "<group>"; };
 		A44669331E16435C00EA7E2E /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
@@ -825,6 +829,7 @@
 				A48B4DCE1CF9E7C700878928 /* Assets.xcassets */,
 				A4DF9F241E08FBC90084EAF9 /* Localizable.strings */,
 				A48B4DD31CF9E7C700878928 /* Info.plist */,
+				A4396F0D223C1414009B1EDC /* GoogleService-Info.plist */,
 				A48B4DCB1CF9E7C700878928 /* Embraced.xcdatamodeld */,
 				A41AE3C01DCA57150089231D /* Images.xcassets */,
 			);
@@ -1064,6 +1069,7 @@
 			children = (
 				A48D60E71FF5AC4F0042FBCA /* LibraryAPI.swift */,
 				A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */,
+				A4396F0F223C142B009B1EDC /* FirebaseStorageManager.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -1201,6 +1207,7 @@
 				A48B4DBF1CF9E7C600878928 /* Resources */,
 				C90CDE91F5A86DBE2B374296 /* [CP] Embed Pods Frameworks */,
 				EC05DDA4DDE8CF52B4975F46 /* 📦 Embed Pods Frameworks */,
+				E75D2DE88578DA93FACF2221 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1506,6 +1513,7 @@
 				A4CA155F22031EBE00F6CF0A /* SPA-37.mp3 in Resources */,
 				A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */,
 				A4CA151722031E9D00F6CF0A /* ENG-07.mp3 in Resources */,
+				A4396F0E223C1415009B1EDC /* GoogleService-Info.plist in Resources */,
 				A4CA156722031EBE00F6CF0A /* SPA-30.mp3 in Resources */,
 				A4CA14A622031C1900F6CF0A /* SPA-BWD-09.mp3 in Resources */,
 				A4CA156D22031EBE00F6CF0A /* SPA-20.mp3 in Resources */,
@@ -1574,22 +1582,56 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E75D2DE88578DA93FACF2221 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC05DDA4DDE8CF52B4975F46 /* 📦 Embed Pods Frameworks */ = {
@@ -1661,6 +1703,7 @@
 				A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */,
 				A4347FD91D7BCAFB0033306A /* PitchViewController.swift in Sources */,
 				A4AB688B1DE4BE9A0009808D /* DownloadOperation.swift in Sources */,
+				A4396F10223C142B009B1EDC /* FirebaseStorageManager.swift in Sources */,
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
 				A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */,
 				A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */,
@@ -1843,7 +1886,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1862,7 +1905,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
