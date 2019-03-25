@@ -17,6 +17,7 @@ struct Response {
 class CancellationBlockViewController: ActiveStepViewController {
 
     var stimuliCollection: UICollectionView!
+    var timer = Timer()
     
     let startTest: NavigationButton = {
         var button = NavigationButton()
@@ -87,26 +88,29 @@ class CancellationBlockViewController: ActiveStepViewController {
         refreshCollection(data: stimulis[index])
         self.currentTime = CFAbsoluteTimeGetCurrent()
         index += 1
-        // Start timer
+        
+        
         if #available(iOS 10.0, *) {
             Timer.scheduledTimer(withTimeInterval: 15.0, repeats: true) { timer in
-                self.currentTime = CFAbsoluteTimeGetCurrent()
-                if self.index == self.stimulis.count {
-                    // View calculated answers
-                    print(CancellationModel.sharedInstance.printModel())
-                    timer.invalidate()
-                    self.performSegue(withIdentifier: "moveToDone", sender: nil)
-                } else {
-                    // View calculated answers
-                    print(CancellationModel.sharedInstance.printModel())
-                    self.refreshCollection(data: self.stimulis[self.index])
-                    self.index += 1
-                }
+                self.timer = timer
+                self.timerHandler()
             }
         } else {
             // Fallback on earlier versions
+            timer = Timer.scheduledTimer(timeInterval: 15.0, target: self, selector: #selector(timerHandler), userInfo: nil, repeats: true)
         }
         
+    }
+    
+    @objc func timerHandler() {
+        self.currentTime = CFAbsoluteTimeGetCurrent()
+        if self.index == self.stimulis.count {
+            timer.invalidate()
+            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+        } else {
+            self.refreshCollection(data: self.stimulis[self.index])
+            self.index += 1
+        }
     }
     
     private func refreshCollection(data: [String]) {
