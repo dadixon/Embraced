@@ -60,6 +60,7 @@ class UserViewController: UIViewController {
                 self.userDefaults.setValue(json["_id"]!, forKey: "pid")
                 print(self.userDefaults.string(forKey: "pid")!)
                 FirebaseStorageManager.sharedInstance.pid = self.userDefaults.string(forKey: "pid")!
+                FirebaseStorageManager.sharedInstance.createParticipantDocument()
 
                 let alertController = UIAlertController(title: "Participant_ID".localized(lang: self.language), message: self.userDefaults.string(forKey: "pid"), preferredStyle: UIAlertController.Style.alert)
 

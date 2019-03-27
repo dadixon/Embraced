@@ -25,7 +25,9 @@ class FirebaseStorageManager {
     }
     
     private func getId() -> String {
-        pid = db.collection(collectionName).document().documentID
+        if pid == nil {
+            pid = db.collection(collectionName).document().documentID
+        }
         return pid!
     }
     
