@@ -104,7 +104,6 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.6.1)
-  - ReachabilitySwift (3)
   - SVProgressHUD (2.2.2)
 
 DEPENDENCIES:
@@ -114,7 +113,6 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - JWTDecode (~> 2.1)
-  - ReachabilitySwift (~> 3)
   - SVProgressHUD
 
 SPEC REPOS:
@@ -137,7 +135,6 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
-    - ReachabilitySwift
     - SVProgressHUD
 
 EXTERNAL SOURCES:
@@ -169,9 +166,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
-  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
 
-PODFILE CHECKSUM: d3a922acc420977815b37dbb1cabbf3f68291275
+PODFILE CHECKSUM: d4f74b9d7c9188adf37e5005415903c22d88a73f
 
 COCOAPODS: 1.5.3
