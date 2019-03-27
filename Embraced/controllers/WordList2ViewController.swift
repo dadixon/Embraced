@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import AVKit
 import Alamofire
+import Firebase
 
 class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
 
@@ -215,28 +216,52 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     func postToAPI(object: [String: AnyObject], audio: Bool) {
         if audio {
             let index = object["index"] as! String
-            let fileURL = object["audio"] as! URL
+//            let fileURL = object["audio"] as! URL
             
-            Alamofire.upload(
-                multipartFormData: { multipartFormData in
-                    multipartFormData.append(fileURL, withName: "audio")
-                    multipartFormData.append(index.data(using: String.Encoding.utf8)!, withName: "index")
-            }, usingThreshold: UInt64.init(),
-               to: APIUrl + "api/wordlist/uploadfile/" + id,
-               method: .post,
-               headers: headers,
-               encodingCompletion: { encodingResult in
-                switch encodingResult {
-                case .success(let upload, _, _):
-                    upload.responseJSON { response in
-                        self.deleteAudioFile(fileURL: fileURL)
+            
+            if fileExist("wordlistRecall.m4a") {
+                var jsonObject = [String: AnyObject]()
+                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                let fileURL = documentsURL.appendingPathComponent("wordlistRecall.m4a")
+                let storage = Storage.storage()
+                let storageRef = storage.reference()
+                let participantRef = storageRef.child("\(FirebaseStorageManager.sharedInstance.pid!)/WordList/wordlistRecall.m4a")
+                
+                participantRef.putFile(from: fileURL, metadata: nil) { (metadata, error) in
+                    if error != nil {
+                        print("Error: \(error?.localizedDescription)")
                     }
-                case .failure(let encodingError):
-                    print(encodingError)
-                }})
+                    
+                    participantRef.downloadURL { (url, error) in
+                        if error != nil {
+                            print("Error: \(error?.localizedDescription)")
+                        }
+                        guard let downloadURL = url else { return }
+                        
+                        jsonObject = [
+                            "name": "wordList\(index)" as AnyObject,
+                            "audio": downloadURL.absoluteString as AnyObject
+                        ]
+                        
+                        // Deprecate
+                        Alamofire.request(self.APIUrl + "api/wordlist/" + self.id, method: .post, parameters: jsonObject, encoding: JSONEncoding.default, headers: self.headers).responseJSON { response in
+                        }
+                        
+                        WordListModel.shared.longTerm = downloadURL.absoluteString
+                        
+                        FirebaseStorageManager.sharedInstance.addDataToDocument(payload: [
+                            "wordList": WordListModel.shared.printModel()
+                            ])
+                    }
+                    
+                }
+            }
         } else {
+            // Deprecate
             Alamofire.request(APIUrl + "api/wordlist/answers/" + id, method: .post, parameters: object, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
             }
+            
+            WordListModel.shared.questions?.append([object["name"] as! String: object["answer"] as! Bool])
         }
     }
     
@@ -250,9 +275,11 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func done(_ sender: AnyObject) {
-//        showOverlay()
         
-        // Push to the API
+        FirebaseStorageManager.sharedInstance.addDataToDocument(payload: [
+            "wordList": WordListModel.shared.printModel()
+            ])
+        
         self.next(self)
     }
     

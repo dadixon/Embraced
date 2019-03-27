@@ -9,28 +9,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Embraced/controllers/DigitalSpanViewController.swift"
-            timestampString = "571148445.256704"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
-            landmarkName = "DigitalSpanViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Embraced/controllers/NamingTaskViewController.swift"
-            timestampString = "571148445.256766"
+            timestampString = "574888565.979166"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
             landmarkName = "postToAPI(object:)"
             landmarkType = "7">
          </BreakpointContent>

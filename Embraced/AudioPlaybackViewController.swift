@@ -107,7 +107,11 @@ class AudioPlaybackViewController: ActiveStepViewController {
         
         let session = AVAudioSession.sharedInstance()
         try! session.setActive(true)
-        try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
+        if #available(iOS 10.0, *) {
+            try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
+        } else {
+            // Fallback on earlier versions
+        }
         
         do {
             try audioRecorder = AVAudioRecorder(url: audioFilename, settings: settings)
