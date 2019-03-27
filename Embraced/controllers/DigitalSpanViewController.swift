@@ -269,7 +269,9 @@ class DigitalSpanViewController: FrontViewController {
                         "audio": downloadURL.absoluteString as AnyObject
                     ]
                     
+                    // Deprecate
                     self.postToAPI(object: jsonObject)
+                    FirebaseStorageManager.sharedInstance.addDataToDocument(payload: ["digitSpan": ["\(directionName)\(index)": downloadURL.absoluteString]])
                 }
                 
             }

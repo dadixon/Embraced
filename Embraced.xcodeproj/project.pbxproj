@@ -339,6 +339,7 @@
 		A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */; };
 		A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */; };
 		A4E67413224B2A6500B29D80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4E67412224B2A6500B29D80 /* GoogleService-Info.plist */; };
+		A4E67AFB224B4D430002D127 /* WordListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E67AFA224B4D430002D127 /* WordListModel.swift */; };
 		A4F067AF21E3E28A00ECEF6F /* TestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */; };
 		A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */; };
 		A4FC1E991DD2BE4500F19D95 /* WordList2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */; };
@@ -687,6 +688,7 @@
 		A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOrder.swift; sourceTree = "<group>"; };
 		A4E67412224B2A6500B29D80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A4E67AFA224B4D430002D127 /* WordListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListModel.swift; sourceTree = "<group>"; };
 		A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfig.swift; sourceTree = "<group>"; };
 		A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionModel.swift; sourceTree = "<group>"; };
 		A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordList2ViewController.swift; path = controllers/WordList2ViewController.swift; sourceTree = "<group>"; };
@@ -794,6 +796,7 @@
 				A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */,
 				A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */,
 				A48A12C521F74FE60044AF08 /* CancellationModel.swift */,
+				A4E67AFA224B4D430002D127 /* WordListModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1722,6 +1725,7 @@
 				A48A12C221F740ED0044AF08 /* DoneStepViewController.swift in Sources */,
 				A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */,
 				A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */,
+				A4E67AFB224B4D430002D127 /* WordListModel.swift in Sources */,
 				A4AE36E31DFC545400727DFD /* WebViewController.swift in Sources */,
 				A47FF4AE211363AA00665E20 /* Constants.swift in Sources */,
 				A44669381E16457600EA7E2E /* RecordButton.swift in Sources */,
