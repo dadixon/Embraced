@@ -7,7 +7,6 @@ target 'Embraced' do
 
   # Pods for Embraced
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
-  pod 'ReachabilitySwift', '~> 3'
   pod 'Alamofire', '~> 4.5'
   pod 'JWTDecode', '~> 2.1'
   pod 'SVProgressHUD'

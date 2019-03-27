@@ -148,11 +148,6 @@ class DigitalSpanViewController: FrontViewController {
         
         playBtn.isEnabled = false
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -194,24 +189,9 @@ class DigitalSpanViewController: FrontViewController {
         } catch let error {
             print("Error: \(error)")
         }
-        
-//        do {
-//            soundRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
-//            soundRecorder.delegate = self
-//            soundRecorder.record()
-//
-//            button.setTitle("Stop_Recording".localized(lang: language), for: .normal)
-//        } catch {
-//            finishRecording(button, success: false)
-//        }
     }
     
     func finishRecording(_ button: UIButton, success: Bool) {
-//        if soundRecorder.isRecording {
-//            soundRecorder.stop()
-//            soundRecorder = nil
-//        }
-        
         audioRecorder.stop()
         audioRecorder = nil
         let audioSession = AVAudioSession.sharedInstance()
@@ -269,9 +249,6 @@ class DigitalSpanViewController: FrontViewController {
         if fileExist(directionName + "\(index).m4a") {
             let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             let fileURL = documentsURL.appendingPathComponent("\(directionName)\(index).m4a")
-            
-            //            FirebaseStorageManager.sharedInstance.addFileToStorage(fileName: directionName + "\(index).mp4", path: fileURL, test: "DigitSpan", labelName: "DIGIT_SPAN_\(directionName.uppercased())_\(index)")
-            
             let storage = Storage.storage()
             let storageRef = storage.reference()
             let participantRef = storageRef.child("\(FirebaseStorageManager.sharedInstance.pid!)/DigitSpan/\(directionName)\(index).m4a")
@@ -298,17 +275,7 @@ class DigitalSpanViewController: FrontViewController {
             }
         }
     }
-//    override func play(_ filename: String) {
-//        let audioFilename = getDocumentsDirectory().appendingPathComponent(filename)
-//
-//        do {
-//            audioPlayer = try AVAudioPlayer(contentsOf: audioFilename)
-//            audioPlayer.delegate = self
-//            audioPlayer.play()
-//        } catch {
-//            print("No Audio")
-//        }
-//    }
+
     // MARK: - Navigation
     
     @IBAction func next(_ sender: AnyObject) {
@@ -318,12 +285,10 @@ class DigitalSpanViewController: FrontViewController {
     }
 
     @IBAction func done(_ sender:AnyObject) {
-//        showOverlay()
-        
-        // Push to the API
-//        postToAPI()
         self.next(self)
     }
+    
+    
     // MARK: - Actions
     
     @IBAction func recordTapped(_ sender: UIButton) {
@@ -472,6 +437,8 @@ class DigitalSpanViewController: FrontViewController {
             listenBtn.isEnabled = true
             recordPracticeBtn.isEnabled = true
             recordForwardBtn.isEnabled = true
+            recordPracitceBtn2.isEnabled = true
+            recordBackwardBtn.isEnabled = true
         } else {
             print("Player failed")
         }
