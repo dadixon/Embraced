@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import AVKit
 import Alamofire
-import Firebase
+import FirebaseStorage
 
 class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
 
@@ -253,7 +253,6 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
                             "wordList": WordListModel.shared.printModel()
                             ])
                     }
-                    
                 }
             }
         } else {
@@ -351,7 +350,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     
     // MARK: - Delegate
     
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+    override func audioPlayerDidFinishPlaying(successfully flag: Bool) {
 //        print("finished playing")
         finishPlaying()
     }

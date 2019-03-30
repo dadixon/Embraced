@@ -482,7 +482,7 @@ class PitchViewController: FrontViewController {
     
     // MARK: - Delegate
     
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+    override func audioPlayerDidFinishPlaying(successfully flag: Bool) {
         startTimer()
         
         if self.played {

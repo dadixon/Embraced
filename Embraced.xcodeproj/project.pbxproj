@@ -159,6 +159,7 @@
 		A4969D3421E926BE0063FF40 /* CancellationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D3221E926BE0063FF40 /* CancellationViewCell.swift */; };
 		A4969D3521E926BE0063FF40 /* CancellationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4969D3321E926BE0063FF40 /* CancellationViewCell.xib */; };
 		A4969D3721F276210063FF40 /* CancellationBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D3621F276210063FF40 /* CancellationBlockViewController.swift */; };
+		A49C0F8B224C1D6D00094588 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A49C0F8A224C1D6C00094588 /* GoogleService-Info.plist */; };
 		A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */; };
 		A4AB688B1DE4BE9A0009808D /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB688A1DE4BE9A0009808D /* DownloadOperation.swift */; };
 		A4AB688D1DE4D4730009808D /* DownloadMangager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB688C1DE4D4730009808D /* DownloadMangager.swift */; };
@@ -338,7 +339,6 @@
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
 		A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */; };
 		A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */; };
-		A4E67413224B2A6500B29D80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4E67412224B2A6500B29D80 /* GoogleService-Info.plist */; };
 		A4E67AFB224B4D430002D127 /* WordListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E67AFA224B4D430002D127 /* WordListModel.swift */; };
 		A4F067AF21E3E28A00ECEF6F /* TestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */; };
 		A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */; };
@@ -503,6 +503,7 @@
 		A4969D3221E926BE0063FF40 /* CancellationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationViewCell.swift; sourceTree = "<group>"; };
 		A4969D3321E926BE0063FF40 /* CancellationViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CancellationViewCell.xib; sourceTree = "<group>"; };
 		A4969D3621F276210063FF40 /* CancellationBlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationBlockViewController.swift; sourceTree = "<group>"; };
+		A49C0F8A224C1D6C00094588 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4A30B551FA25C9D00F07AA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		A4AB688A1DE4BE9A0009808D /* DownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadOperation.swift; sourceTree = "<group>"; };
@@ -687,7 +688,6 @@
 		A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOrder.swift; sourceTree = "<group>"; };
-		A4E67412224B2A6500B29D80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4E67AFA224B4D430002D127 /* WordListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListModel.swift; sourceTree = "<group>"; };
 		A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfig.swift; sourceTree = "<group>"; };
 		A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionModel.swift; sourceTree = "<group>"; };
@@ -832,7 +832,7 @@
 				A48B4DCE1CF9E7C700878928 /* Assets.xcassets */,
 				A4DF9F241E08FBC90084EAF9 /* Localizable.strings */,
 				A48B4DD31CF9E7C700878928 /* Info.plist */,
-				A4E67412224B2A6500B29D80 /* GoogleService-Info.plist */,
+				A49C0F8A224C1D6C00094588 /* GoogleService-Info.plist */,
 				A48B4DCB1CF9E7C700878928 /* Embraced.xcdatamodeld */,
 				A41AE3C01DCA57150089231D /* Images.xcassets */,
 			);
@@ -1293,7 +1293,6 @@
 				A4C3288220815CD600DEC460 /* STROOP_SPA_TASK1.mp4 in Resources */,
 				A4CA146622031BEE00F6CF0A /* ENG-BWD-06.mp3 in Resources */,
 				A4C3288320815CD600DEC460 /* STROOP_SPA_TASK2.mp4 in Resources */,
-				A4E67413224B2A6500B29D80 /* GoogleService-Info.plist in Resources */,
 				A4CA156A22031EBE00F6CF0A /* SPA-41.mp3 in Resources */,
 				A48A12E121FA4BC80044AF08 /* melodies 320ms orig(44).wav in Resources */,
 				A48A12E221FA4BC80044AF08 /* melodies 320ms diff(44).wav in Resources */,
@@ -1519,6 +1518,7 @@
 				A4CA155F22031EBE00F6CF0A /* SPA-37.mp3 in Resources */,
 				A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */,
 				A4CA151722031E9D00F6CF0A /* ENG-07.mp3 in Resources */,
+				A49C0F8B224C1D6D00094588 /* GoogleService-Info.plist in Resources */,
 				A4CA156722031EBE00F6CF0A /* SPA-30.mp3 in Resources */,
 				A4CA14A622031C1900F6CF0A /* SPA-BWD-09.mp3 in Resources */,
 				A4CA156D22031EBE00F6CF0A /* SPA-20.mp3 in Resources */,

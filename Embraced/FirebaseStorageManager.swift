@@ -7,14 +7,14 @@
 //
 
 import Foundation
-import Firebase
 import SVProgressHUD
+import FirebaseFirestore
+import FirebaseStorage
 
 let collectionName = "participants"
 
 class FirebaseStorageManager {
     static let sharedInstance = FirebaseStorageManager()
-    private var ref: DocumentReference? = nil
     private let db = Firestore.firestore()
     var pid: String?
     

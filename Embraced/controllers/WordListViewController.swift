@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import AVKit
 import Alamofire
+import FirebaseStorage
 
 class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
 
@@ -340,23 +341,50 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         let index = object["index"] as! Int
         let fileURL = object["audio"] as! URL
         
-        Alamofire.upload(
-            multipartFormData: { multipartFormData in
-                multipartFormData.append(fileURL, withName: "audio")
-                multipartFormData.append(String(index).data(using: String.Encoding.utf8)!, withName: "index")
-        }, usingThreshold: UInt64.init(),
-           to: APIUrl + "api/wordlist/uploadfile/" + id,
-           method: .post,
-           headers: headers,
-           encodingCompletion: { encodingResult in
-            switch encodingResult {
-            case .success(let upload, _, _):
-                upload.responseJSON { response in
-                    self.deleteAudioFile(fileURL: fileURL)
+        if fileExist("wordlist\(index).m4a") {
+            var jsonObject = [String: AnyObject]()
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            let participantRef = storageRef.child("\(FirebaseStorageManager.sharedInstance.pid!)/WordList/wordlist\(index).m4a")
+
+            participantRef.putFile(from: fileURL, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    print("Error: \(error?.localizedDescription)")
                 }
-            case .failure(let encodingError):
-                print(encodingError)
-            }})
+
+                participantRef.downloadURL { (url, error) in
+                    if error != nil {
+                        print("Error: \(error?.localizedDescription)")
+                    }
+                    guard let downloadURL = url else { return }
+
+                    jsonObject = [
+                        "name": "wordList\(index)" as AnyObject,
+                        "audio": downloadURL.absoluteString as AnyObject
+                    ]
+
+                    // Deprecate
+                    Alamofire.request(self.APIUrl + "api/wordlist/" + self.id, method: .post, parameters: jsonObject, encoding: JSONEncoding.default, headers: self.headers).responseJSON { response in
+                    }
+
+                    switch (index) {
+                        case 1: WordListModel.shared.task_1 = downloadURL.absoluteString
+                        case 2: WordListModel.shared.task_2 = downloadURL.absoluteString
+                        case 3: WordListModel.shared.task_3 = downloadURL.absoluteString
+                        case 4: WordListModel.shared.task_4 = downloadURL.absoluteString
+                        case 5: WordListModel.shared.task_5 = downloadURL.absoluteString
+                        case 6: WordListModel.shared.interference = downloadURL.absoluteString
+                        case 7: WordListModel.shared.shortTerm = downloadURL.absoluteString
+                        default: break
+                    }
+                    
+
+                    FirebaseStorageManager.sharedInstance.addDataToDocument(payload: [
+                        "wordList": WordListModel.shared.printModel()
+                        ])
+                }
+            }
+        }
     }
     
     
@@ -418,7 +446,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     
     // MARK: - Delegate
     
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+    override func audioPlayerDidFinishPlaying(successfully flag: Bool) {
         print("finished playing")
         finishPlaying()
     }

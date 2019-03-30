@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import Alamofire
 import Firebase
+import SVProgressHUD
 
 class DigitalSpanViewController: FrontViewController {
 
@@ -55,7 +56,6 @@ class DigitalSpanViewController: FrontViewController {
     
     @IBOutlet weak var submit: UIButton!
     
-    var audioPlayer: AVAudioPlayer!
     var audioRecorder: AVAudioRecorder!
     var recordedAudioURL: URL!
     var fileName = "testDigitSpanAudioFile.m4a"
@@ -338,14 +338,20 @@ class DigitalSpanViewController: FrontViewController {
             recordBtn.isEnabled = false
             sender.setTitle("Stop".localized(lang: language), for: .normal)
             do {
-                audioPlayer = try AVAudioPlayer(contentsOf: recordedAudioURL)
-                audioPlayer.delegate = self
-                audioPlayer.play()
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            }
+            catch {
+                // report for an error
+            }
+            do {
+                soundPlayer = try AVAudioPlayer(contentsOf: recordedAudioURL)
+                soundPlayer?.delegate = self
+                soundPlayer?.play()
             } catch {
                 print("No Audio")
             }
         } else {
-            audioPlayer.stop()
+            soundPlayer?.stop()
             sender.setTitle("Play".localized(lang: language), for: .normal)
         }
     }
@@ -431,7 +437,7 @@ class DigitalSpanViewController: FrontViewController {
     }
     
     
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+    override func audioPlayerDidFinishPlaying(successfully flag: Bool) {
         if flag {
             recordBtn.isEnabled = true
             playBtn.setTitle("Play".localized(lang: language), for: .normal)
@@ -442,14 +448,9 @@ class DigitalSpanViewController: FrontViewController {
             recordPracitceBtn2.isEnabled = true
             recordBackwardBtn.isEnabled = true
         } else {
-            print("Player failed")
+            SVProgressHUD.showError(withStatus: "Did not successfully finish playing")
         }
     }
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
-	return input.rawValue
 }
 
 extension DigitalSpanViewController: AVAudioRecorderDelegate {

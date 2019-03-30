@@ -248,7 +248,7 @@ class NamingTaskViewController: FrontViewController {
     }
     
     // TODO: This needs to be an extension instead
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+    override func audioPlayerDidFinishPlaying(successfully flag: Bool) {
         if flag {
             recordBtn.isEnabled = true
             playBtn.setTitle("Play".localized(lang: language), for: .normal)

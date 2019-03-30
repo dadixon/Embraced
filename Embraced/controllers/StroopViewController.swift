@@ -588,7 +588,7 @@ class StroopViewController: FrontViewController, AVAudioRecorderDelegate, AVPlay
     
     // MARK: - Delegate
 
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+    override func audioPlayerDidFinishPlaying(successfully flag: Bool) {
         NSLog("finished playing")
         finishPlaying()
     }

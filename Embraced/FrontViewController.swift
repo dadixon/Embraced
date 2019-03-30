@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import SVProgressHUD
 
-class FrontViewController: UIViewController, AVAudioPlayerDelegate {
+class FrontViewController: UIViewController {
 
     @IBOutlet weak var backBtn: UIBarButtonItem!
     @IBOutlet weak var nextBtn: UIBarButtonItem!
@@ -181,6 +181,12 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
             let filePath = URL(fileURLWithPath: dirPath)
 
             do {
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            }
+            catch {
+                // report for an error
+            }
+            do {
                 soundPlayer = try AVAudioPlayer(contentsOf: filePath)
                 soundPlayer?.delegate = self
                 
@@ -264,5 +270,15 @@ class FrontViewController: UIViewController, AVAudioPlayerDelegate {
     public func hideOverlayView() {
         activityIndicator.stopAnimating()
         overlayView.removeFromSuperview()
+    }
+    
+    func audioPlayerDidFinishPlaying(successfully flag: Bool) {
+        
+    }
+}
+
+extension FrontViewController: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        self.audioPlayerDidFinishPlaying(successfully: flag)
     }
 }
