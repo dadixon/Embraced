@@ -33,12 +33,12 @@ class ReyFigureComplex4ViewController: WebViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AppDelegate.AppUtility.lockOrientation(.portrait)
+        AppUtility.lockOrientation(.portrait)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        AppDelegate.AppUtility.lockOrientation(.all)
+        AppUtility.lockOrientation(.all)
     }
     
     // MARK: - Navigation

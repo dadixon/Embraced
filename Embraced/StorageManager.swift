@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import CoreData
 
 enum StorageManagerError: Error {
     case failure(message: String)
@@ -26,8 +27,27 @@ class StorageManager {
     }
     
     private let namingTaskEndpoint = "naming_task"
+    let context = DatabaseController.persistentContainer.viewContext
     
     private init() {}
+    
+    public func pushStoredFiles() {
+        print(getStoredFiles())
+    }
+    
+    private func getStoredFiles() -> [StoredFile] {
+        var rv = [StoredFile]()
+        
+        let request: NSFetchRequest<StoredFile> = StoredFile.fetchRequest()
+        
+        do {
+            rv = try context.fetch(request)
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+        
+        return rv
+    }
     
     public func newNamingTask(id: String) {
         Alamofire.request(APIURL + namingTaskEndpoint + "/new/" + id, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in

@@ -47,7 +47,6 @@
 		A460CE4721D0C75E00E52F8B /* InstructionsStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */; };
 		A460CE4921D0C77300E52F8B /* InstructionsStep.xib in Resources */ = {isa = PBXBuildFile; fileRef = A460CE4821D0C77300E52F8B /* InstructionsStep.xib */; };
 		A46A2C641DD66108000AC66C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46A2C631DD66108000AC66C /* SystemConfiguration.framework */; };
-		A46A2C661DD7AB91000AC66C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A2C651DD7AB91000AC66C /* Reachability.swift */; };
 		A46A2C681DD96FF0000AC66C /* APIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A2C671DD96FF0000AC66C /* APIWrapper.swift */; };
 		A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C140D1D798FC30066EF37 /* CPTViewController.swift */; };
 		A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C140E1D798FC30066EF37 /* CPTViewController.xib */; };
@@ -331,9 +330,13 @@
 		A4CA157E220321E100F6CF0A /* ENG-PRACTICE-BWD.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4CA157D220321E000F6CF0A /* ENG-PRACTICE-BWD.mp3 */; };
 		A4CA1582220324C100F6CF0A /* melodies 320ms orig(01).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4CA1581220324C100F6CF0A /* melodies 320ms orig(01).wav */; };
 		A4CA1584220324E300F6CF0A /* melodies 320ms orig(16).wav in Resources */ = {isa = PBXBuildFile; fileRef = A4CA1583220324E300F6CF0A /* melodies 320ms orig(16).wav */; };
+		A4D7C78E2269E1CD004BF326 /* WordListTrialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7C78D2269E1CD004BF326 /* WordListTrialsViewController.swift */; };
+		A4D7C7902269E394004BF326 /* WordListDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7C78F2269E394004BF326 /* WordListDoneViewController.swift */; };
 		A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D9041D1D2380380092D6AA /* FrontViewController.swift */; };
 		A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D904211D23810C0092D6AA /* EmbracedTextField.swift */; };
 		A4DB0FB41DFB2CA1000811B6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */; };
+		A4DDA8D0225E72DF0000395D /* WordList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4DDA8CF225E72DF0000395D /* WordList.storyboard */; };
+		A4DDA8D3225E828F0000395D /* WordListInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DDA8D2225E828F0000395D /* WordListInstructionsViewController.swift */; };
 		A4DF9F221E08FBC90084EAF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4DF9F241E08FBC90084EAF9 /* Localizable.strings */; };
 		A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */; };
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
@@ -342,6 +345,8 @@
 		A4E67AFB224B4D430002D127 /* WordListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E67AFA224B4D430002D127 /* WordListModel.swift */; };
 		A4F067AF21E3E28A00ECEF6F /* TestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */; };
 		A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */; };
+		A4F810E52252ADBA001F9503 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F810E42252ADBA001F9503 /* DatabaseController.swift */; };
+		A4FAB44A2256334500E6C68A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAB4492256334500E6C68A /* NetworkManager.swift */; };
 		A4FC1E991DD2BE4500F19D95 /* WordList2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */; };
 		A4FC1E9A1DD2BE4500F19D95 /* WordList2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */; };
 		DD7D49BC9E47B49E27EB6157 /* Pods_Embraced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */; };
@@ -389,7 +394,6 @@
 		A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsStep.swift; sourceTree = "<group>"; };
 		A460CE4821D0C77300E52F8B /* InstructionsStep.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionsStep.xib; sourceTree = "<group>"; };
 		A46A2C631DD66108000AC66C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		A46A2C651DD7AB91000AC66C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A46A2C671DD96FF0000AC66C /* APIWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIWrapper.swift; sourceTree = "<group>"; };
 		A46C140D1D798FC30066EF37 /* CPTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPTViewController.swift; path = controllers/CPTViewController.swift; sourceTree = "<group>"; };
 		A46C140E1D798FC30066EF37 /* CPTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPTViewController.xib; path = controllers/CPTViewController.xib; sourceTree = "<group>"; };
@@ -679,9 +683,13 @@
 		A4CA157D220321E000F6CF0A /* ENG-PRACTICE-BWD.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ENG-PRACTICE-BWD.mp3"; sourceTree = "<group>"; };
 		A4CA1581220324C100F6CF0A /* melodies 320ms orig(01).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(01).wav"; sourceTree = "<group>"; };
 		A4CA1583220324E300F6CF0A /* melodies 320ms orig(16).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(16).wav"; sourceTree = "<group>"; };
+		A4D7C78D2269E1CD004BF326 /* WordListTrialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListTrialsViewController.swift; sourceTree = "<group>"; };
+		A4D7C78F2269E394004BF326 /* WordListDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListDoneViewController.swift; sourceTree = "<group>"; };
 		A4D9041D1D2380380092D6AA /* FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
 		A4D904211D23810C0092D6AA /* EmbracedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbracedTextField.swift; sourceTree = "<group>"; };
 		A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A4DDA8CF225E72DF0000395D /* WordList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WordList.storyboard; sourceTree = "<group>"; };
+		A4DDA8D2225E828F0000395D /* WordListInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListInstructionsViewController.swift; sourceTree = "<group>"; };
 		A4DF9F231E08FBC90084EAF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F251E08FBF60084EAF9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -691,6 +699,8 @@
 		A4E67AFA224B4D430002D127 /* WordListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListModel.swift; sourceTree = "<group>"; };
 		A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfig.swift; sourceTree = "<group>"; };
 		A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionModel.swift; sourceTree = "<group>"; };
+		A4F810E42252ADBA001F9503 /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
+		A4FAB4492256334500E6C68A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordList2ViewController.swift; path = controllers/WordList2ViewController.swift; sourceTree = "<group>"; };
 		A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordList2ViewController.xib; path = controllers/WordList2ViewController.xib; sourceTree = "<group>"; };
 		B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.release.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.release.xcconfig"; sourceTree = "<group>"; };
@@ -737,6 +747,7 @@
 				A42041ED21E1CFC800021EDB /* MelodyRecognition.storyboard */,
 				A4969D1321E544C10063FF40 /* DigitSpan.storyboard */,
 				A4969D2221E7D8F50063FF40 /* Cancellation.storyboard */,
+				A4DDA8CF225E72DF0000395D /* WordList.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -1073,6 +1084,8 @@
 				A48D60E71FF5AC4F0042FBCA /* LibraryAPI.swift */,
 				A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */,
 				A4396F0F223C142B009B1EDC /* FirebaseStorageManager.swift */,
+				A4F810E42252ADBA001F9503 /* DatabaseController.swift */,
+				A4FAB4492256334500E6C68A /* NetworkManager.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -1091,6 +1104,7 @@
 		A490D7C11D0913C500D2B59D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4DDA8D1225E82360000395D /* WordList */,
 				A4969D1F21E7D7BF0063FF40 /* Cancellation */,
 				A4969D1521E545290063FF40 /* DigitSpan */,
 				A42041F921E1F1E500021EDB /* MelodyRecognition */,
@@ -1182,7 +1196,6 @@
 				A4D9041D1D2380380092D6AA /* FrontViewController.swift */,
 				A4D904211D23810C0092D6AA /* EmbracedTextField.swift */,
 				A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */,
-				A46A2C651DD7AB91000AC66C /* Reachability.swift */,
 				A46A2C671DD96FF0000AC66C /* APIWrapper.swift */,
 				A4AB688A1DE4BE9A0009808D /* DownloadOperation.swift */,
 				A4AB688C1DE4D4730009808D /* DownloadMangager.swift */,
@@ -1193,6 +1206,16 @@
 				A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */,
 			);
 			name = Customizations;
+			sourceTree = "<group>";
+		};
+		A4DDA8D1225E82360000395D /* WordList */ = {
+			isa = PBXGroup;
+			children = (
+				A4DDA8D2225E828F0000395D /* WordListInstructionsViewController.swift */,
+				A4D7C78D2269E1CD004BF326 /* WordListTrialsViewController.swift */,
+				A4D7C78F2269E394004BF326 /* WordListDoneViewController.swift */,
+			);
+			name = WordList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1357,6 +1380,7 @@
 				A4CA156C22031EBE00F6CF0A /* SPA-13.mp3 in Resources */,
 				A4CA14FE22031E9D00F6CF0A /* ENG-28.mp3 in Resources */,
 				A4CA14FD22031E9D00F6CF0A /* ENG-27.mp3 in Resources */,
+				A4DDA8D0225E72DF0000395D /* WordList.storyboard in Resources */,
 				A4CA151822031E9D00F6CF0A /* ENG-44.mp3 in Resources */,
 				A4CA155D22031EBE00F6CF0A /* SPA-02.mp3 in Resources */,
 				A48A131221FA4C3D0044AF08 /* melodies 320ms diff(06).wav in Resources */,
@@ -1593,6 +1617,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -1608,6 +1633,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -1659,6 +1685,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4FAB44A2256334500E6C68A /* NetworkManager.swift in Sources */,
 				A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */,
 				A48A12C421F7414A0044AF08 /* CancellationDoneViewController.swift in Sources */,
 				A4347FE71D7BCC4C0033306A /* ComprehensionViewController.swift in Sources */,
@@ -1667,8 +1694,8 @@
 				A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */,
 				A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
-				A46A2C661DD7AB91000AC66C /* Reachability.swift in Sources */,
 				A4969D1221E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift in Sources */,
+				A4D7C7902269E394004BF326 /* WordListDoneViewController.swift in Sources */,
 				A4FC1E991DD2BE4500F19D95 /* WordList2ViewController.swift in Sources */,
 				A4347FE31D7BCC170033306A /* MultipleErrandsViewController.swift in Sources */,
 				A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */,
@@ -1679,6 +1706,7 @@
 				A4347FD51D7BCABC0033306A /* PegboardViewController.swift in Sources */,
 				A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */,
 				A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */,
+				A4F810E52252ADBA001F9503 /* DatabaseController.swift in Sources */,
 				A489D6181E0B535A001F56FE /* SettingsViewController.swift in Sources */,
 				A460CE4521D0C72900E52F8B /* TestViewController.swift in Sources */,
 				A460CE4721D0C75E00E52F8B /* InstructionsStep.swift in Sources */,
@@ -1697,6 +1725,7 @@
 				A42041F121E1D09E00021EDB /* InstructionsViewController.swift in Sources */,
 				A48D60F41FF704D60042FBCA /* UserCollectionViewCell.swift in Sources */,
 				A4969D3721F276210063FF40 /* CancellationBlockViewController.swift in Sources */,
+				A4D7C78E2269E1CD004BF326 /* WordListTrialsViewController.swift in Sources */,
 				A4347FCD1D7BCA570033306A /* ReyFigureComplex4ViewController.swift in Sources */,
 				A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */,
 				A4969D2521E7DA340063FF40 /* CancellationInstructions2ViewController.swift in Sources */,
@@ -1709,6 +1738,7 @@
 				A4396F10223C142B009B1EDC /* FirebaseStorageManager.swift in Sources */,
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
 				A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */,
+				A4DDA8D3225E828F0000395D /* WordListInstructionsViewController.swift in Sources */,
 				A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */,
 				A4969D2121E7D7E90063FF40 /* CancellationInstructionsViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
@@ -1818,7 +1848,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1870,7 +1900,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1890,7 +1920,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1909,7 +1939,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";

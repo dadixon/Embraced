@@ -31,6 +31,7 @@ class WordListModel {
         rv["task_3"] = task_3
         rv["task_4"] = task_4
         rv["task_5"] = task_5
+
         rv["interference"] = interference
         rv["shortTerm"] = shortTerm
         rv["longTerm"] = longTerm

@@ -195,7 +195,10 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: Action
     
     func saveSettings() {
+        // Deprecate
         participant.set(confirm, forKey: "Tests")
+        
+        TestConfig.shared.testListName = confirm
         
         if testerLanguage != "" {
             participant.setValue(testerLanguage, forKey: "TesterLanguage")

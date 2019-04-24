@@ -30,6 +30,7 @@ final class TestOrder {
         }
         
         userDefaults.set(tests, forKey: "Tests")
+        TestConfig.shared.testListName = tests
         
         for test in tests {
             switch test {
@@ -60,7 +61,13 @@ final class TestOrder {
             case "Motor Tasks":
                 navigationTests.append(PegboardViewController())
             case "Word List 1":
-                navigationTests.append(WordListViewController())
+                if TestConfig.shared.testList.count > 0 {
+                    TestConfig.shared.testStartTime = CFAbsoluteTimeGetCurrent()
+                    //                    self.navigationController?.pushViewController(TestConfig.sharedInstance.testList[0], animated: true)
+                    navigationTests.append(TestConfig.shared.testList[0])
+                } else {
+                    navigationTests.append(WordListViewController())
+                }
             case "Color-Word Stroop Test":
                 navigationTests.append(StroopViewController())
             case "Cancellation Test":

@@ -139,12 +139,12 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AppDelegate.AppUtility.lockOrientation(.landscape)
+        AppUtility.lockOrientation(.landscape)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        AppDelegate.AppUtility.lockOrientation(.all)
+        AppUtility.lockOrientation(.all)
     }
     
     func startRecording(_ button: UIButton) {
@@ -225,7 +225,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
                 let fileURL = documentsURL.appendingPathComponent("wordlistRecall.m4a")
                 let storage = Storage.storage()
                 let storageRef = storage.reference()
-                let participantRef = storageRef.child("\(FirebaseStorageManager.sharedInstance.pid!)/WordList/wordlistRecall.m4a")
+                let participantRef = storageRef.child("\(FirebaseStorageManager.shared.pid!)/WordList/wordlistRecall.m4a")
                 
                 participantRef.putFile(from: fileURL, metadata: nil) { (metadata, error) in
                     if error != nil {
@@ -249,7 +249,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
                         
                         WordListModel.shared.longTerm = downloadURL.absoluteString
                         
-                        FirebaseStorageManager.sharedInstance.addDataToDocument(payload: [
+                        FirebaseStorageManager.shared.addDataToDocument(payload: [
                             "wordList": WordListModel.shared.printModel()
                             ])
                     }
@@ -275,7 +275,7 @@ class WordList2ViewController: FrontViewController, AVAudioRecorderDelegate {
     
     @IBAction func done(_ sender: AnyObject) {
         
-        FirebaseStorageManager.sharedInstance.addDataToDocument(payload: [
+        FirebaseStorageManager.shared.addDataToDocument(payload: [
             "wordList": WordListModel.shared.printModel()
             ])
         

@@ -38,7 +38,7 @@ class AudioPlaybackViewController: ActiveStepViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupView()
         
         playBtn.isEnabled = false
@@ -73,7 +73,7 @@ class AudioPlaybackViewController: ActiveStepViewController {
         playBtn.heightAnchor.constraint(equalToConstant: 165.0).isActive = true
     }
     
-
+    
     @objc func recordPressed() {
         if isRecording {
             finishRecording()
@@ -124,7 +124,7 @@ class AudioPlaybackViewController: ActiveStepViewController {
         }
     }
     
-    private func finishRecording() {        
+    private func finishRecording() {
         audioRecorder.stop()
         audioRecorder = nil
         let audioSession = AVAudioSession.sharedInstance()

@@ -11,6 +11,7 @@ import AVFoundation
 import AVKit
 import Alamofire
 import FirebaseStorage
+import CoreData
 
 class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
 
@@ -52,6 +53,9 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     var token: String = ""
     var id: String = ""
     var headers: HTTPHeaders = [:]
+    var documentPath: URL?
+    let context = DatabaseController.persistentContainer.viewContext
+    let network: NetworkManager = NetworkManager.sharedInstance
     
     // MARK: - Private
     
@@ -148,6 +152,16 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         loadingView.stopAnimating()
         
         playBtn.isEnabled = false
+        
+//        let documentsPath1 = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])
+        documentPath = getDocumentsDirectory().appendingPathComponent("\(FirebaseStorageManager.shared.pid!)/WordList")
+        
+        do
+        {
+            try FileManager.default.createDirectory(atPath: documentPath!.path, withIntermediateDirectories: true, attributes: nil)
+        } catch let error as NSError {
+            NSLog("Unable to create directory \(error.debugDescription)")
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -157,12 +171,14 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AppDelegate.AppUtility.lockOrientation(.landscape)
+        AppUtility.lockOrientation(.landscape)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        AppDelegate.AppUtility.lockOrientation(.all)
+        AppUtility.lockOrientation(.all)
+        
+        deleteAudioFile(fileURL: getDocumentsDirectory().appendingPathComponent("\(FirebaseStorageManager.shared.pid!)/WordList").appendingPathComponent(fileName))
     }
     
     func setup() {
@@ -187,7 +203,8 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     
     
     func startRecording(_ button: UIButton, fileName: String) {
-        let audioFilename = getDocumentsDirectory().appendingPathComponent(fileName)
+        let audioFilename = documentPath?.appendingPathComponent(fileName)
+        print(audioFilename)
         
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
@@ -197,7 +214,7 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
         ]
         
         do {
-            soundRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            soundRecorder = try AVAudioRecorder(url: audioFilename!, settings: settings)
             soundRecorder.delegate = self
             soundRecorder.record()
             
@@ -238,13 +255,15 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     }
     
     func preparePlayer() {
+        print(documentPath?.appendingPathComponent(fileName))
+        
         do {
-            soundPlayer = try AVAudioPlayer(contentsOf: getDocumentsDirectory().appendingPathComponent(fileName))
+            soundPlayer = try AVAudioPlayer(contentsOf: (documentPath?.appendingPathComponent(fileName))!)
             soundPlayer?.delegate = self
-            soundPlayer?.prepareToPlay()
+//            soundPlayer?.prepareToPlay()
             soundPlayer?.volume = 1.0
-        } catch {
-            log(logMessage: "Something went wrong")
+        } catch let error as NSError{
+            print("Error: \(error.localizedDescription)")
         }
     }
     
@@ -339,57 +358,88 @@ class WordListViewController: FrontViewController, AVAudioRecorderDelegate {
     
     func postToAPI(object: [String: AnyObject]) {
         let index = object["index"] as! Int
-        let fileURL = object["audio"] as! URL
         
-        if fileExist("wordlist\(index).m4a") {
+        NetworkManager.isUnreachable { _ in
+            self.internalStorage(index: index)
+        }
+        
+        NetworkManager.isReachable { _ in
+            self.externalStorage(index: index)
+        }
+    }
+    
+    private func internalStorage(index: Int) {
+        let fileURL = getDocumentsDirectory().appendingPathComponent("\(FirebaseStorageManager.shared.pid!)/WordList/wordlist\(index).m4a")
+        let newStoredFile = StoredFile(context: context)
+        
+        newStoredFile.pid = FirebaseStorageManager.shared.pid!
+        newStoredFile.test = "WordList"
+        newStoredFile.path = "\(FirebaseStorageManager.shared.pid!)/WordList/wordlist\(index).m4a"
+        
+        do {
+            try DatabaseController.saveContext()
+            print("saved")
+        } catch {
+            print("Error saving context \(error)")
+        }
+    }
+    
+    private func externalStorage(index: Int) {
+        let filePath = "\(FirebaseStorageManager.shared.pid!)/WordList/wordlist\(index).m4a"
+        let fileURL = getDocumentsDirectory().appendingPathComponent(filePath)
+        
+        if fileExist(filePath) {
             var jsonObject = [String: AnyObject]()
             let storage = Storage.storage()
             let storageRef = storage.reference()
-            let participantRef = storageRef.child("\(FirebaseStorageManager.sharedInstance.pid!)/WordList/wordlist\(index).m4a")
-
+            let participantRef = storageRef.child(filePath)
+            
             participantRef.putFile(from: fileURL, metadata: nil) { (metadata, error) in
                 if error != nil {
                     print("Error: \(error?.localizedDescription)")
                 }
-
+                
                 participantRef.downloadURL { (url, error) in
                     if error != nil {
                         print("Error: \(error?.localizedDescription)")
                     }
                     guard let downloadURL = url else { return }
-
+                    
+                    // Deprecate
                     jsonObject = [
                         "name": "wordList\(index)" as AnyObject,
                         "audio": downloadURL.absoluteString as AnyObject
                     ]
-
-                    // Deprecate
+                    
                     Alamofire.request(self.APIUrl + "api/wordlist/" + self.id, method: .post, parameters: jsonObject, encoding: JSONEncoding.default, headers: self.headers).responseJSON { response in
                     }
-
+                    
                     switch (index) {
-                        case 1: WordListModel.shared.task_1 = downloadURL.absoluteString
-                        case 2: WordListModel.shared.task_2 = downloadURL.absoluteString
-                        case 3: WordListModel.shared.task_3 = downloadURL.absoluteString
-                        case 4: WordListModel.shared.task_4 = downloadURL.absoluteString
-                        case 5: WordListModel.shared.task_5 = downloadURL.absoluteString
-                        case 6: WordListModel.shared.interference = downloadURL.absoluteString
-                        case 7: WordListModel.shared.shortTerm = downloadURL.absoluteString
-                        default: break
+                    case 1: WordListModel.shared.task_1 = downloadURL.absoluteString
+                    case 2: WordListModel.shared.task_2 = downloadURL.absoluteString
+                    case 3: WordListModel.shared.task_3 = downloadURL.absoluteString
+                    case 4: WordListModel.shared.task_4 = downloadURL.absoluteString
+                    case 5: WordListModel.shared.task_5 = downloadURL.absoluteString
+                    case 6: WordListModel.shared.interference = downloadURL.absoluteString
+                    case 7: WordListModel.shared.shortTerm = downloadURL.absoluteString
+                    default: break
                     }
                     
-
-                    FirebaseStorageManager.sharedInstance.addDataToDocument(payload: [
+                    
+                    FirebaseStorageManager.shared.addDataToDocument(payload: [
                         "wordList": WordListModel.shared.printModel()
-                        ])
+                    ])
+                    
+                    // Delete file from device
+                    self.deleteAudioFile(fileURL: fileURL)
                 }
             }
         }
     }
     
-    
-    
     @IBAction func playSound(_ sender: UIButton) {
+        self.play((documentPath?.appendingPathComponent(fileName).absoluteString)!)
+        
         if sender.titleLabel!.text == "Play".localized(lang: language) {
             recordBtn.isEnabled = false
             sender.setTitle("Stop".localized(lang: language), for: .normal)

@@ -151,12 +151,12 @@ class DigitalSpanViewController: FrontViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AppDelegate.AppUtility.lockOrientation(.portrait)
+        AppUtility.lockOrientation(.portrait)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        AppDelegate.AppUtility.lockOrientation(.all)
+        AppUtility.lockOrientation(.all)
     }
     
     func startRecording(_ button: UIButton, fileName: String) {
@@ -173,11 +173,8 @@ class DigitalSpanViewController: FrontViewController {
         
         let session = AVAudioSession.sharedInstance()
         try! session.setActive(true)
-        if #available(iOS 10.0, *) {
-            try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
-        } else {
-            // Fallback on earlier versions
-        }
+ 
+        try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
         
         do {
             try audioRecorder = AVAudioRecorder(url: audioFilename, settings: settings)
@@ -251,7 +248,7 @@ class DigitalSpanViewController: FrontViewController {
             let fileURL = documentsURL.appendingPathComponent("\(directionName)\(index).m4a")
             let storage = Storage.storage()
             let storageRef = storage.reference()
-            let participantRef = storageRef.child("\(FirebaseStorageManager.sharedInstance.pid!)/DigitSpan/\(directionName)\(index).m4a")
+            let participantRef = storageRef.child("\(FirebaseStorageManager.shared.pid!)/DigitSpan/\(directionName)\(index).m4a")
             
             participantRef.putFile(from: fileURL, metadata: nil) { (metadata, error) in
                 if error != nil {
@@ -271,7 +268,7 @@ class DigitalSpanViewController: FrontViewController {
                     
                     // Deprecate
                     self.postToAPI(object: jsonObject)
-                    FirebaseStorageManager.sharedInstance.addDataToDocument(payload: ["digitSpan": ["\(directionName)\(index)": downloadURL.absoluteString]])
+                    FirebaseStorageManager.shared.addDataToDocument(payload: ["digitSpan": ["\(directionName)\(index)": downloadURL.absoluteString]])
                 }
                 
             }

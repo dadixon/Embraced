@@ -14,7 +14,7 @@ import FirebaseStorage
 let collectionName = "participants"
 
 class FirebaseStorageManager {
-    static let sharedInstance = FirebaseStorageManager()
+    static let shared = FirebaseStorageManager()
     private let db = Firestore.firestore()
     var pid: String?
     
@@ -33,7 +33,12 @@ class FirebaseStorageManager {
     
     func createParticipantDocument() {
         let id = getId()
-        db.collection(collectionName).document(id).setData(["created": FieldValue.serverTimestamp()]) { (err) in
+        let startPayload = [
+            "created": FieldValue.serverTimestamp(),
+            "author": "Dom"
+            ] as [String : Any]
+        
+        db.collection(collectionName).document(id).setData(startPayload) { (err) in
             if let err = err {
                 print("Error: \(err)")
                 SVProgressHUD.showError(withStatus: "test is throwing an error")

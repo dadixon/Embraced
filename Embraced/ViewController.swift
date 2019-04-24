@@ -9,6 +9,9 @@
 import UIKit
 import Alamofire
 import JWTDecode
+import Reachability
+import SVProgressHUD
+import Firebase
 
 class ViewController: UIViewController {
  
@@ -34,7 +37,6 @@ class ViewController: UIViewController {
         } else {
             testerLanguage = "en"
         }
-        
     }
 
     override func viewDidLayoutSubviews() {
@@ -52,47 +54,62 @@ class ViewController: UIViewController {
             return
         }
         
-        let parameters = createPostObject()
-        let url = Constants.API_ENDPOINT + "api/user/authenticate"
+//        let parameters = createPostObject()
+//        let url = Constants.API_ENDPOINT + "api/user/authenticate"
         
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
-            .responseJSON { response in
-                                
-                let statusCode = response.response?.statusCode
-                
-                if statusCode == 200 {
-                    guard let json = response.result.value as? [String: Any] else {
-                        return
-                    }
-                    
-                    self.userDefaults.setValue(json["token"]!, forKey: "token")
-                    self.userDefaults.setValue(json["id"]!, forKey: "id")
-                    
-                    do {
-                        let jwt = try decode(jwt: json["token"] as! String)
-                        
-                        print(jwt.body)
-                        self.userDefaults.setValue(jwt.body["admin"], forKey: "isAdmin")
-                    } catch {
-                        print("Cannot decode")
-                    }
-                    
-//                    self.userDefaults.setValue(isAdmin, forKey: "isAdmin")
-
-                    DispatchQueue.main.async(execute: {
-                        self.usernameTextfield.text = ""
-                        self.passwordTextfield.text = ""
-
-                        let vc = AdminViewController()
-                        let navController = UINavigationController(rootViewController: vc)
-                        self.present(navController, animated: true, completion: nil)
-                    })
-                } else if statusCode == 403 {
-                    DispatchQueue.main.async(execute: {
-                        self.errorLabel.text = "WrongUsernamePassword".localized(lang: self.testerLanguage)
-                    })
-                }
-        }
+        let email = "drocdix7@gmail.com"
+        let password = "dadixon"
+        
+        Auth.auth().signIn(withEmail: email,
+                           password: password,
+                           completion: { (user, error) in
+        })
+        
+//        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+//            .responseJSON { response in
+//
+//                let statusCode = response.response?.statusCode
+//
+//                if statusCode == 200 {
+//                    guard let json = response.result.value as? [String: Any] else {
+//                        return
+//                    }
+//
+//                    self.userDefaults.setValue(json["token"]!, forKey: "token")
+//                    self.userDefaults.setValue(json["id"]!, forKey: "id")
+//
+//                    do {
+//                        let jwt = try decode(jwt: json["token"] as! String)
+//
+//                        print(jwt.body)
+//                        self.userDefaults.setValue(jwt.body["admin"], forKey: "isAdmin")
+//                    } catch {
+//                        print("Cannot decode")
+//                    }
+//
+////                    self.userDefaults.setValue(isAdmin, forKey: "isAdmin")
+//
+//                    DispatchQueue.main.async(execute: {
+//                        self.usernameTextfield.text = ""
+//                        self.passwordTextfield.text = ""
+//
+//                        let vc = AdminViewController()
+//                        let navController = UINavigationController(rootViewController: vc)
+//                        self.present(navController, animated: true, completion: nil)
+//                    })
+//                } else if statusCode == 403 {
+//                    DispatchQueue.main.async(execute: {
+//                        self.errorLabel.text = "WrongUsernamePassword".localized(lang: self.testerLanguage)
+//                    })
+//                }
+//        }
+        
+        self.usernameTextfield.text = ""
+        self.passwordTextfield.text = ""
+        
+        let vc = AdminViewController()
+        let navController = UINavigationController(rootViewController: vc)
+        self.present(navController, animated: true, completion: nil)
     }
     
     private func createPostObject() -> [String: AnyObject] {

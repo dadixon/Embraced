@@ -17,7 +17,7 @@ class DoneStepViewController: ActiveStepViewController {
         
         nextBtn.addTarget(self, action: #selector(moveOn), for: .touchUpInside)
         
-        if TestConfig.sharedInstance.testList.count > 1 {
+        if TestConfig.shared.testList.count > 1 {
             nextBtn.setTitle("Next".localized(lang: language), for: .normal)
         } else {
             nextBtn.setTitle("Done".localized(lang: language), for: .normal)
@@ -25,10 +25,10 @@ class DoneStepViewController: ActiveStepViewController {
     }
     
     @objc func moveOn() {
-        TestConfig.sharedInstance.testList.remove(at: 0)
+        TestConfig.shared.testList.remove(at: 0)
         
-        if TestConfig.sharedInstance.testList.count > 0 {
-            navigationController?.pushViewController(TestConfig.sharedInstance.testList[0], animated: true)
+        if TestConfig.shared.testList.count > 0 {
+            navigationController?.pushViewController(TestConfig.shared.testList[0], animated: true)
         } else {
             self.dismiss(animated: true) {}
         }
