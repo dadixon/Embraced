@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CountdownView
 
 class WordListTrialsViewController: ActiveStepViewController {
 
@@ -19,5 +20,9 @@ class WordListTrialsViewController: ActiveStepViewController {
         
         titleLabel.text = "Trial".localized(lang: language) + " \(index)"
         instructionsLabel.text = "wordlist1_instructionA1".localized(lang: language)
+        
+        CountdownView.show(countdownFrom: 3.0, spin: true, animation: .fadeIn, autoHide: true) {
+            print("Done with counter")
+        }
     }
 }

@@ -15,5 +15,5 @@ target 'Embraced' do
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
-  
+  pod 'CountdownView'
 end

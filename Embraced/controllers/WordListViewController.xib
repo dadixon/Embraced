@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -58,7 +58,7 @@
                                     </constraints>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iE3-Lm-HGr">
-                                    <rect key="frame" x="490" y="8" width="29" height="21"/>
+                                    <rect key="frame" x="489.5" y="8" width="29" height="21"/>
                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -121,7 +121,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uw-Yf-fzR">
-                    <rect key="frame" x="20" y="55" width="984" height="143"/>
+                    <rect key="frame" x="20" y="55" width="984" height="142.5"/>
                     <string key="text">In the next task the objective is to remember words.
 You will hear a list of words and once the list is finished you will be asked to recall them.
 You will hear this list 5 times.
@@ -134,10 +134,10 @@ Please practice recording your voice with the microphone button below</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHK-SS-xav">
-                    <rect key="frame" x="240" y="261" width="544" height="247"/>
+                    <rect key="frame" x="240" y="260.5" width="544" height="247"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zCn-Eg-qyk" customClass="RecordButton" customModule="Embraced" customModuleProvider="target">
-                            <rect key="frame" x="8" y="60" width="162" height="128"/>
+                            <rect key="frame" x="8" y="91.5" width="162" height="64"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="162" id="UGf-Kj-30J"/>
                             </constraints>
@@ -149,7 +149,7 @@ Please practice recording your voice with the microphone button below</string>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GS2-EV-A6d" customClass="PlayButton" customModule="Embraced" customModuleProvider="target">
-                            <rect key="frame" x="349" y="60" width="187" height="128"/>
+                            <rect key="frame" x="349" y="91.5" width="187" height="64"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="187" id="Qib-r7-J3V"/>
                             </constraints>
@@ -185,7 +185,7 @@ Please practice recording your voice with the microphone button below</string>
                 <constraint firstItem="han-Z8-s4b" firstAttribute="top" secondItem="Vr4-Mj-e6s" secondAttribute="top" constant="20" id="xEB-e1-1rg"/>
                 <constraint firstItem="dHK-SS-xav" firstAttribute="centerX" secondItem="Vr4-Mj-e6s" secondAttribute="centerX" id="yKY-JG-Vk4"/>
             </constraints>
-            <point key="canvasLocation" x="574" y="-791"/>
+            <point key="canvasLocation" x="1044" y="-791"/>
         </view>
         <view contentMode="scaleToFill" id="kSe-9b-lPj">
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
@@ -216,7 +216,7 @@ Please tap the LISTEN button when you are ready to start</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bic-uz-Yoc" customClass="RecordButton" customModule="Embraced" customModuleProvider="target">
-                    <rect key="frame" x="431" y="567" width="162" height="128"/>
+                    <rect key="frame" x="431" y="631" width="162" height="64"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="162" id="akS-PY-LCq"/>
                     </constraints>
@@ -261,7 +261,7 @@ Please tap the LISTEN button when you are ready to start</string>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now say out loud all the words you can remember from the list. Tap the microphone button to start recording." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSd-Ri-ZDi">
-                    <rect key="frame" x="20" y="320" width="984" height="21"/>
+                    <rect key="frame" x="20" y="320" width="984" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -317,12 +317,12 @@ Please tap the LISTEN button when you are ready to start</string>
                 <constraint firstItem="Asv-Dm-bVm" firstAttribute="top" secondItem="HZh-ix-gRL" secondAttribute="bottom" constant="78" id="HUj-fx-5Qy"/>
                 <constraint firstItem="HZh-ix-gRL" firstAttribute="top" secondItem="sZF-Yg-zBs" secondAttribute="top" constant="318" id="v5Y-dT-keJ"/>
             </constraints>
-            <point key="canvasLocation" x="2963" y="-791"/>
+            <point key="canvasLocation" x="2324" y="-791"/>
         </view>
     </objects>
     <resources>
         <image name="listen" width="128" height="128"/>
-        <image name="play" width="128" height="128"/>
-        <image name="record" width="88" height="128"/>
+        <image name="play" width="64" height="64"/>
+        <image name="record" width="44" height="64"/>
     </resources>
 </document>

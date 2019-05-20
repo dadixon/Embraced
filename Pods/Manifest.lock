@@ -9,6 +9,7 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - CountdownView (0.1.2)
   - Firebase/Auth (5.15.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.2.0)
@@ -118,6 +119,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - CountdownView
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
@@ -130,6 +132,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - BoringSSL
+    - CountdownView
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -163,6 +166,7 @@ SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  CountdownView: 0f0f5cb346ca5d99342703c834d89598ca1893bd
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
   FirebaseAuth: 02e969ff430e156d99d4cb842d77b806b71ad7bb
@@ -183,6 +187,6 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 74b9e65116b214e95fa0709e1e5f83dd5c89a1db
+PODFILE CHECKSUM: 1d5a8b6ef3e3f50e9daec8dd1fe4a82415be2b24
 
 COCOAPODS: 1.5.3

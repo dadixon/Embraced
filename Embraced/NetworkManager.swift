@@ -39,10 +39,14 @@ class NetworkManager: NSObject {
         
         switch reachability.connection {
         case .none:
-            SVProgressHUD.showInfo(withStatus: "No internet connection")
+//            SVProgressHUD.showInfo(withStatus: "No internet connection")
+            print("No internet connection")
+            break
         default:
-            SVProgressHUD.showInfo(withStatus: "Internet Available")
+//            SVProgressHUD.showInfo(withStatus: "Internet Available")
+            print("Internet Available")
             StorageManager.sharedInstance.pushStoredFiles()
+            break
         }
     }
     
