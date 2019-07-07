@@ -13,11 +13,11 @@ class CancellationInstructionsViewController: InstructionsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        orientation = .landscapeLeft
+        rotateOrientation = .landscapeLeft
+        
         instructionsLabel.text = "cancellation_instructions_1".localized(lang: language)
         nextBtn.setTitle("Next".localized(lang: language), for: .normal)
-        
-        title = "Step 1 of 3"
-        
         nextBtn.addTarget(self, action: #selector(moveOn), for: .touchUpInside)
     }
     

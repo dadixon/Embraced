@@ -10,19 +10,16 @@ import UIKit
 
 class NavigationButton: UIButton {
 
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-        createBorder()
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        layoutRoundRectLayer()
     }
     
-    required override init(frame: CGRect) {
-        super.init(frame: frame)
-        createBorder()
-    }
-    
-    func createBorder(){
-        self.backgroundColor = UIColor(red: 23.0/225.0, green: 145.0/255.0, blue: 242.0/255.0, alpha: 1.0)
+    private func layoutRoundRectLayer() {
         self.setTitleColor(UIColor.white, for: .normal)
+        self.layer.cornerRadius = 10.0
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
+        self.backgroundColor = UIColor.appleBlue
     }
 
 }

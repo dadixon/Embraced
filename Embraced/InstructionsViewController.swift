@@ -67,8 +67,8 @@ class InstructionsViewController: UIViewController {
         instructionsLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30.0).isActive = true
         instructionsLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30.0).isActive = true
         
-        nextBtn.widthAnchor.constraint(equalToConstant: nextBtn.intrinsicContentSize.width + 30.0).isActive = true
-        nextBtn.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
+        nextBtn.widthAnchor.constraint(equalToConstant: nextBtn.intrinsicContentSize.width + 100.0).isActive = true
+        nextBtn.heightAnchor.constraint(equalToConstant: 45.0).isActive = true
         nextBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         nextBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20.0).isActive = true
     }

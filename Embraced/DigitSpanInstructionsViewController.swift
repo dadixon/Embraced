@@ -12,7 +12,10 @@ class DigitSpanInstructionsViewController: AudioPlaybackViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        orientation = .portrait
+        rotateOrientation = .portrait
+        
         instructionsLabel.text = "digital_practice_1".localized(lang: language)
         nextBtn.setTitle("Next".localized(lang: language), for: .normal)
         

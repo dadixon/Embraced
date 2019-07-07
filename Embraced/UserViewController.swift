@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import SVProgressHUD
+import FirebaseFirestore
 
 class UserViewController: UIViewController {
 
@@ -38,78 +40,86 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TestOrder.sharedInstance.setTests()
+//        FirebaseStorageManager.shared.fetchDocuments { (data, error) in
+//            print(data)
+//        }
+        
+        
     }
 
     @IBAction func startTest(_ sender: Any) {
         // Add a participant
-        let token = userDefaults.string(forKey: "token")!
-        let uid = userDefaults.string(forKey: "id")!
-        let headers: HTTPHeaders = [
-            "x-access-token": token
-        ]
-
-        Alamofire.request(APIUrl + "api/participant/" + uid, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-
-            let statusCode = response.response?.statusCode
-
-            if statusCode == 200 {
-                guard let json = response.result.value as? [String: Any] else {
-                    return
-                }
-                self.userDefaults.setValue(json["_id"]!, forKey: "pid")
-
-                FirebaseStorageManager.shared.pid = self.userDefaults.string(forKey: "pid")!
-                FirebaseStorageManager.shared.createParticipantDocument()
-
-                let alertController = UIAlertController(title: "Participant_ID".localized(lang: self.language), message: self.userDefaults.string(forKey: "pid"), preferredStyle: UIAlertController.Style.alert)
-
-                self.present(alertController, animated: true, completion: nil)
-
-                let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
-                    alertController.dismiss(animated: true, completion: nil)
-
-                    if self.tests.contains(where: { String($0) == "Orientation Task"}) {
-                        TestOrder.sharedInstance.addTest(viewController: UserInputViewController(), at: 0)
-                        TestOrder.sharedInstance.addTest(viewController: StartViewController(), at: 1)
-                    } else {
-                        TestOrder.sharedInstance.addTest(viewController: StartViewController(), at: 0)
-                    }
-
-
-                    let navController = UINavigationController(rootViewController: TestOrder.sharedInstance.getTest(0))
-
-                    self.present(navController, animated: true, completion: nil)
-                }
-
-                alertController.addAction(dismissAction)
-            }
-        }
-        
-//        self.userDefaults.setValue("testing", forKey: "pid")
+//        let token = userDefaults.string(forKey: "token")!
+//        let uid = userDefaults.string(forKey: "id")!
+//        let headers: HTTPHeaders = [
+//            "x-access-token": token
+//        ]
 //
-//        FirebaseStorageManager.shared.pid = self.userDefaults.string(forKey: "pid")!
-//        FirebaseStorageManager.shared.createParticipantDocument()
+//        Alamofire.request(APIUrl + "api/participant/" + uid, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
 //
-//        let alertController = UIAlertController(title: "Participant_ID".localized(lang: self.language), message: self.userDefaults.string(forKey: "pid"), preferredStyle: UIAlertController.Style.alert)
+//            let statusCode = response.response?.statusCode
 //
-//        self.present(alertController, animated: true, completion: nil)
+//            if statusCode == 200 {
+//                guard let json = response.result.value as? [String: Any] else {
+//                    return
+//                }
+//                self.userDefaults.setValue(json["_id"]!, forKey: "pid")
 //
-//        let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
-//            alertController.dismiss(animated: true, completion: nil)
+//                FirebaseStorageManager.shared.pid = self.userDefaults.string(forKey: "pid")!
+//                FirebaseStorageManager.shared.createParticipantDocument()
 //
-//            if self.tests.contains(where: { String($0) == "Orientation Task"}) {
-//                TestOrder.sharedInstance.addTest(viewController: UserInputViewController(), at: 0)
-//                TestOrder.sharedInstance.addTest(viewController: StartViewController(), at: 1)
-//            } else {
-//                TestOrder.sharedInstance.addTest(viewController: StartViewController(), at: 0)
+//                let alertController = UIAlertController(title: "Participant_ID".localized(lang: self.language), message: self.userDefaults.string(forKey: "pid"), preferredStyle: UIAlertController.Style.alert)
+//
+//                self.present(alertController, animated: true, completion: nil)
+//
+//                let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+//                    alertController.dismiss(animated: true, completion: nil)
+//
+//                    if self.tests.contains(where: { String($0) == "Orientation Task"}) {
+//                        TestOrder.sharedInstance.addTest(viewController: UserInputViewController(), at: 0)
+//                        TestOrder.sharedInstance.addTest(viewController: StartViewController(), at: 1)
+//                    } else {
+//                        TestOrder.sharedInstance.addTest(viewController: StartViewController(), at: 0)
+//                    }
+//
+//
+//                    let navController = UINavigationController(rootViewController: TestOrder.sharedInstance.getTest(0))
+//
+//                    self.present(navController, animated: true, completion: nil)
+//                }
+//
+//                alertController.addAction(dismissAction)
 //            }
-//
-//            let navController = UINavigationController(rootViewController: TestOrder.sharedInstance.getTest(0))
-//
-//            self.present(navController, animated: true, completion: nil)
 //        }
-//
-//        alertController.addAction(dismissAction)
+        
+        if TestOrder.sharedInstance.getTests().count == 0 {
+            SVProgressHUD.showError(withStatus: "You have no test selected. Please choose a test!")
+        } else {
+            self.userDefaults.setValue("testing", forKey: "pid")
+
+            FirebaseStorageManager.shared.pid = self.userDefaults.string(forKey: "pid")!
+//            FirebaseStorageManager.shared.createParticipantDocument()
+
+            let alertController = UIAlertController(title: "Participant_ID".localized(lang: self.language), message: self.userDefaults.string(forKey: "pid"), preferredStyle: UIAlertController.Style.alert)
+
+            self.present(alertController, animated: true, completion: nil)
+
+            let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+                alertController.dismiss(animated: true, completion: nil)
+
+                if self.tests.contains(where: { String($0) == "Orientation Task"}) {
+                    TestOrder.sharedInstance.addTest(viewController: UserInputViewController(), at: 0)
+                    TestOrder.sharedInstance.addTest(viewController: StartViewController(), at: 1)
+                } else {
+                    TestOrder.sharedInstance.addTest(viewController: StartViewController(), at: 0)
+                }
+
+                let navController = UINavigationController(rootViewController: TestOrder.sharedInstance.getTest(0))
+
+                self.present(navController, animated: true, completion: nil)
+            }
+
+            alertController.addAction(dismissAction)
+        }
     }
 }

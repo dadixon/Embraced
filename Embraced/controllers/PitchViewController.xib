@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -83,7 +83,7 @@
                                     </constraints>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPp-9X-HUS">
-                                    <rect key="frame" x="362" y="8" width="29" height="21"/>
+                                    <rect key="frame" x="361.5" y="8" width="29" height="21"/>
                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -189,7 +189,7 @@ Please tap on START when you are ready.</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLv-Vx-Wwx">
-                    <rect key="frame" x="384.5" y="468" width="0.0" height="89"/>
+                    <rect key="frame" x="384" y="467.5" width="0.0" height="89"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="89" id="iDG-Ao-XkX"/>
                     </constraints>
@@ -198,7 +198,7 @@ Please tap on START when you are ready.</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="t9g-wb-MrD">
-                    <rect key="frame" x="249" y="827" width="271" height="29"/>
+                    <rect key="frame" x="248.5" y="827" width="271" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="271" id="rfP-O0-qab"/>
                     </constraints>
@@ -232,7 +232,7 @@ Tap on the button “SAME” to indicate that the melodies are the same.</string
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uU-dm-nhl">
-                    <rect key="frame" x="20" y="366" width="728" height="94"/>
+                    <rect key="frame" x="20" y="365.5" width="728" height="94"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="94" id="7h7-6A-gsr"/>
                     </constraints>
@@ -323,7 +323,7 @@ Please, tap the START button when you are ready to start.</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIU-ev-8c4">
-                    <rect key="frame" x="384.5" y="468" width="0.0" height="89"/>
+                    <rect key="frame" x="384" y="467.5" width="0.0" height="89"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="89" id="AQY-3i-p5N"/>
                     </constraints>
@@ -332,7 +332,7 @@ Please, tap the START button when you are ready to start.</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="ItZ-Vj-dpA">
-                    <rect key="frame" x="249" y="827" width="271" height="29"/>
+                    <rect key="frame" x="248.5" y="827" width="271" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="271" id="qqs-st-q9g"/>
                     </constraints>
@@ -355,7 +355,7 @@ When you are ready, tap on START button.</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJc-ET-pl0">
-                    <rect key="frame" x="360" y="674" width="49" height="38"/>
+                    <rect key="frame" x="359.5" y="674" width="49" height="38"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="38" id="N8b-KX-gig"/>
                         <constraint firstAttribute="width" constant="49" id="bZM-bj-oYJ"/>
@@ -366,7 +366,7 @@ When you are ready, tap on START button.</string>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi7-4I-Qtx">
-                    <rect key="frame" x="20" y="366" width="728" height="94"/>
+                    <rect key="frame" x="20" y="365.5" width="728" height="94"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="94" id="ljD-NY-C8j"/>
                     </constraints>
@@ -412,13 +412,13 @@ When you are ready, tap on START button.</string>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1r-WS-ZBd">
-                    <rect key="frame" x="368" y="468" width="33" height="89"/>
+                    <rect key="frame" x="367.5" y="467.5" width="33" height="89"/>
                     <fontDescription key="fontDescription" type="system" pointSize="74"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="Y38-Zx-0cO">
-                    <rect key="frame" x="249" y="827" width="271" height="29"/>
+                    <rect key="frame" x="248.5" y="827" width="271" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="271" id="qxz-1U-Zfo"/>
                     </constraints>
@@ -432,7 +432,7 @@ When you are ready, tap on START button.</string>
                     </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qB8-xk-w7x">
-                    <rect key="frame" x="20" y="368" width="728" height="0.0"/>
+                    <rect key="frame" x="20" y="367.5" width="728" height="0.0"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -473,7 +473,7 @@ When you are ready, tap on START button.</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IV-bi-xXS">
-                    <rect key="frame" x="384.5" y="468" width="0.0" height="89"/>
+                    <rect key="frame" x="384" y="467.5" width="0.0" height="89"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="89" id="mcP-H4-6qg"/>
                     </constraints>
@@ -495,7 +495,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="4sf-vH-XsI">
-                    <rect key="frame" x="249" y="827" width="271" height="29"/>
+                    <rect key="frame" x="248.5" y="827" width="271" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="271" id="Egs-CS-Vsb"/>
                     </constraints>
@@ -520,7 +520,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63d-zm-zEy">
-                    <rect key="frame" x="20" y="366" width="728" height="94"/>
+                    <rect key="frame" x="20" y="365.5" width="728" height="94"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="94" id="L6D-q0-lfm"/>
                     </constraints>
@@ -571,7 +571,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTY-n4-wSH">
-                    <rect key="frame" x="384.5" y="468" width="0.0" height="89"/>
+                    <rect key="frame" x="384" y="467.5" width="0.0" height="89"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="89" id="txC-GT-I5L"/>
                     </constraints>
@@ -593,7 +593,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-8L-wog">
-                    <rect key="frame" x="249" y="827" width="271" height="29"/>
+                    <rect key="frame" x="248.5" y="827" width="271" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="271" id="5ql-7D-IIy"/>
                     </constraints>
@@ -618,7 +618,7 @@ Tap on the button “DIFFERENT” to indicate that the melodies are different.</
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phw-l0-Pfh">
-                    <rect key="frame" x="20" y="366" width="728" height="94"/>
+                    <rect key="frame" x="20" y="365.5" width="728" height="94"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="94" id="3wv-f1-xDr"/>
                     </constraints>

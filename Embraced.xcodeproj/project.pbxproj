@@ -12,7 +12,7 @@
 		A42041F121E1D09E00021EDB /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041EF21E1D09E00021EDB /* InstructionsViewController.swift */; };
 		A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */; };
 		A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */; };
-		A42041F821E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F721E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift */; };
+		A42041F821E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F721E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift */; };
 		A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */; };
 		A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */; };
 		A4347FC11D7BC9E20033306A /* StroopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FBF1D7BC9E20033306A /* StroopViewController.swift */; };
@@ -63,6 +63,14 @@
 		A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */; };
 		A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */; };
 		A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */; };
+		A47E664422B262B200B5B7B5 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E664322B262B200B5B7B5 /* SideMenuViewController.swift */; };
+		A47E664622C07FF300B5B7B5 /* ParticipantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E664522C07FF300B5B7B5 /* ParticipantsTableViewController.swift */; };
+		A47E664822C0846E00B5B7B5 /* ParticipantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E664722C0846E00B5B7B5 /* ParticipantDTO.swift */; };
+		A47E664A22C095B800B5B7B5 /* DataDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E664922C095B800B5B7B5 /* DataDisplayViewController.swift */; };
+		A47E664C22C09CAE00B5B7B5 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E664B22C09CAE00B5B7B5 /* Participant.swift */; };
+		A47E664E22CFD0B100B5B7B5 /* MelodyRecognitionPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E664D22CFD0B100B5B7B5 /* MelodyRecognitionPracticeViewController.swift */; };
+		A47E665422CFD2F400B5B7B5 /* MelodyRecognitionInstructions2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E665322CFD2F400B5B7B5 /* MelodyRecognitionInstructions2ViewController.swift */; };
+		A47E665622CFD31C00B5B7B5 /* MelodyRecognitionTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E665522CFD31C00B5B7B5 /* MelodyRecognitionTaskViewController.swift */; };
 		A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */; };
 		A47EB6E41DA65FFB00A68AF6 /* FinishedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */; };
 		A47FF4AE211363AA00665E20 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47FF4AD211363AA00665E20 /* Constants.swift */; };
@@ -71,7 +79,6 @@
 		A489D6181E0B535A001F56FE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D6161E0B535A001F56FE /* SettingsViewController.swift */; };
 		A489D6191E0B535A001F56FE /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A489D6171E0B535A001F56FE /* SettingsViewController.xib */; };
 		A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D61A1E0BA255001F56FE /* AdminViewController.swift */; };
-		A489D61D1E0BA255001F56FE /* AdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A489D61B1E0BA255001F56FE /* AdminViewController.xib */; };
 		A48A12C221F740ED0044AF08 /* DoneStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */; };
 		A48A12C421F7414A0044AF08 /* CancellationDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C321F7414A0044AF08 /* CancellationDoneViewController.swift */; };
 		A48A12C621F74FE60044AF08 /* CancellationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C521F74FE60044AF08 /* CancellationModel.swift */; };
@@ -340,9 +347,10 @@
 		A4DF9F221E08FBC90084EAF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4DF9F241E08FBC90084EAF9 /* Localizable.strings */; };
 		A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */; };
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
-		A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */; };
 		A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */; };
 		A4E67AFB224B4D430002D127 /* WordListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E67AFA224B4D430002D127 /* WordListModel.swift */; };
+		A4EDC009229D3F25006B8C53 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EDC008229D3F25006B8C53 /* DashboardViewController.swift */; };
+		A4EDC00B229D4A69006B8C53 /* SelectTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EDC00A229D4A69006B8C53 /* SelectTestViewController.swift */; };
 		A4F067AF21E3E28A00ECEF6F /* TestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */; };
 		A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */; };
 		A4F810E52252ADBA001F9503 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F810E42252ADBA001F9503 /* DatabaseController.swift */; };
@@ -359,7 +367,7 @@
 		A42041EF21E1D09E00021EDB /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionInstructionsViewController.swift; sourceTree = "<group>"; };
 		A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveStepViewController.swift; sourceTree = "<group>"; };
-		A42041F721E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionExample1ViewController.swift; sourceTree = "<group>"; };
+		A42041F721E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionExamplesViewController.swift; sourceTree = "<group>"; };
 		A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigure2ViewController.swift; path = controllers/ReyComplexFigure2ViewController.swift; sourceTree = "<group>"; };
 		A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyComplexFigure2ViewController.xib; path = controllers/ReyComplexFigure2ViewController.xib; sourceTree = "<group>"; };
 		A4347FBF1D7BC9E20033306A /* StroopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StroopViewController.swift; path = controllers/StroopViewController.swift; sourceTree = "<group>"; };
@@ -410,6 +418,14 @@
 		A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOCAMMSETestViewController.swift; path = controllers/MOCAMMSETestViewController.swift; sourceTree = "<group>"; };
 		A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MOCAMMSETestViewController.xib; path = controllers/MOCAMMSETestViewController.xib; sourceTree = "<group>"; };
 		A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		A47E664322B262B200B5B7B5 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		A47E664522C07FF300B5B7B5 /* ParticipantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsTableViewController.swift; sourceTree = "<group>"; };
+		A47E664722C0846E00B5B7B5 /* ParticipantDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDTO.swift; sourceTree = "<group>"; };
+		A47E664922C095B800B5B7B5 /* DataDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDisplayViewController.swift; sourceTree = "<group>"; };
+		A47E664B22C09CAE00B5B7B5 /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
+		A47E664D22CFD0B100B5B7B5 /* MelodyRecognitionPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionPracticeViewController.swift; sourceTree = "<group>"; };
+		A47E665322CFD2F400B5B7B5 /* MelodyRecognitionInstructions2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionInstructions2ViewController.swift; sourceTree = "<group>"; };
+		A47E665522CFD31C00B5B7B5 /* MelodyRecognitionTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionTaskViewController.swift; sourceTree = "<group>"; };
 		A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishedViewController.swift; path = controllers/FinishedViewController.swift; sourceTree = "<group>"; };
 		A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinishedViewController.xib; path = controllers/FinishedViewController.xib; sourceTree = "<group>"; };
 		A47FF4AD211363AA00665E20 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -418,7 +434,6 @@
 		A489D6161E0B535A001F56FE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A489D6171E0B535A001F56FE /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		A489D61A1E0BA255001F56FE /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
-		A489D61B1E0BA255001F56FE /* AdminViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminViewController.xib; sourceTree = "<group>"; };
 		A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneStepViewController.swift; sourceTree = "<group>"; };
 		A48A12C321F7414A0044AF08 /* CancellationDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationDoneViewController.swift; sourceTree = "<group>"; };
 		A48A12C521F74FE60044AF08 /* CancellationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationModel.swift; sourceTree = "<group>"; };
@@ -694,9 +709,10 @@
 		A4DF9F251E08FBF60084EAF9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOrder.swift; sourceTree = "<group>"; };
 		A4E67AFA224B4D430002D127 /* WordListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListModel.swift; sourceTree = "<group>"; };
+		A4EDC008229D3F25006B8C53 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		A4EDC00A229D4A69006B8C53 /* SelectTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTestViewController.swift; sourceTree = "<group>"; };
 		A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfig.swift; sourceTree = "<group>"; };
 		A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionModel.swift; sourceTree = "<group>"; };
 		A4F810E42252ADBA001F9503 /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
@@ -756,7 +772,10 @@
 			isa = PBXGroup;
 			children = (
 				A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */,
-				A42041F721E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift */,
+				A42041F721E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift */,
+				A47E664D22CFD0B100B5B7B5 /* MelodyRecognitionPracticeViewController.swift */,
+				A47E665322CFD2F400B5B7B5 /* MelodyRecognitionInstructions2ViewController.swift */,
+				A47E665522CFD31C00B5B7B5 /* MelodyRecognitionTaskViewController.swift */,
 				A4969D1121E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift */,
 			);
 			name = MelodyRecognition;
@@ -808,6 +827,8 @@
 				A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */,
 				A48A12C521F74FE60044AF08 /* CancellationModel.swift */,
 				A4E67AFA224B4D430002D127 /* WordListModel.swift */,
+				A47E664722C0846E00B5B7B5 /* ParticipantDTO.swift */,
+				A47E664B22C09CAE00B5B7B5 /* Participant.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1093,6 +1114,7 @@
 		A48D60ED1FF6FF1A0042FBCA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */,
 				A48D60F21FF704D60042FBCA /* UserCollectionViewCell.swift */,
 				A48D60F31FF704D60042FBCA /* UserCollectionViewCell.xib */,
 				A4969D3221E926BE0063FF40 /* CancellationViewCell.swift */,
@@ -1106,13 +1128,14 @@
 			children = (
 				A4DDA8D1225E82360000395D /* WordList */,
 				A4969D1F21E7D7BF0063FF40 /* Cancellation */,
-				A4969D1521E545290063FF40 /* DigitSpan */,
 				A42041F921E1F1E500021EDB /* MelodyRecognition */,
+				A4969D1521E545290063FF40 /* DigitSpan */,
 				A4D904231D2384010092D6AA /* Customizations */,
 				A48B4DC41CF9E7C700878928 /* AppDelegate.swift */,
 				A48B4DC61CF9E7C700878928 /* ViewController.swift */,
+				A4EDC008229D3F25006B8C53 /* DashboardViewController.swift */,
+				A4EDC00A229D4A69006B8C53 /* SelectTestViewController.swift */,
 				A489D61A1E0BA255001F56FE /* AdminViewController.swift */,
-				A489D61B1E0BA255001F56FE /* AdminViewController.xib */,
 				A4C469A51E134B5900FDD5D5 /* UserViewController.swift */,
 				A4C469A61E134B5900FDD5D5 /* UserViewController.xib */,
 				A489D6161E0B535A001F56FE /* SettingsViewController.swift */,
@@ -1120,7 +1143,6 @@
 				A490D7C41D09162800D2B59D /* UserInputViewController.swift */,
 				A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */,
 				A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */,
-				A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */,
 				A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */,
 				A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */,
 				A4C72F031E6A1B4F00ADC405 /* AppsideTest */,
@@ -1136,6 +1158,9 @@
 				A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */,
 				A4969D1A21E67B960063FF40 /* AudioPlaybackViewController.swift */,
 				A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */,
+				A47E664322B262B200B5B7B5 /* SideMenuViewController.swift */,
+				A47E664522C07FF300B5B7B5 /* ParticipantsTableViewController.swift */,
+				A47E664922C095B800B5B7B5 /* DataDisplayViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1195,7 +1220,6 @@
 				A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */,
 				A4D9041D1D2380380092D6AA /* FrontViewController.swift */,
 				A4D904211D23810C0092D6AA /* EmbracedTextField.swift */,
-				A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */,
 				A46A2C671DD96FF0000AC66C /* APIWrapper.swift */,
 				A4AB688A1DE4BE9A0009808D /* DownloadOperation.swift */,
 				A4AB688C1DE4D4730009808D /* DownloadMangager.swift */,
@@ -1457,7 +1481,6 @@
 				A48A130421FA4C190044AF08 /* melodies 320ms orig(17).wav in Resources */,
 				A48A12CA21FA4B330044AF08 /* melodies 320ms diff(16).wav in Resources */,
 				A4CA156022031EBE00F6CF0A /* SPA-40.mp3 in Resources */,
-				A489D61D1E0BA255001F56FE /* AdminViewController.xib in Resources */,
 				A4C469A81E134B5900FDD5D5 /* UserViewController.xib in Resources */,
 				A48A12EE21FA4BEB0044AF08 /* melodies 320ms orig(82).wav in Resources */,
 				A48A130221FA4C130044AF08 /* melodies 320ms orig(40).wav in Resources */,
@@ -1547,7 +1570,6 @@
 				A4CA14A622031C1900F6CF0A /* SPA-BWD-09.mp3 in Resources */,
 				A4CA156D22031EBE00F6CF0A /* SPA-20.mp3 in Resources */,
 				A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */,
-				A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */,
 				A48A132721FA4C6F0044AF08 /* melodies 320ms diff(32).wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1687,6 +1709,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A47E664822C0846E00B5B7B5 /* ParticipantDTO.swift in Sources */,
+				A47E664A22C095B800B5B7B5 /* DataDisplayViewController.swift in Sources */,
 				A4FAB44A2256334500E6C68A /* NetworkManager.swift in Sources */,
 				A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */,
 				A48A12C421F7414A0044AF08 /* CancellationDoneViewController.swift in Sources */,
@@ -1702,14 +1726,18 @@
 				A4347FE31D7BCC170033306A /* MultipleErrandsViewController.swift in Sources */,
 				A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */,
 				A4AB688D1DE4D4730009808D /* DownloadMangager.swift in Sources */,
+				A47E664C22C09CAE00B5B7B5 /* Participant.swift in Sources */,
 				A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */,
 				A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */,
+				A4EDC009229D3F25006B8C53 /* DashboardViewController.swift in Sources */,
 				A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */,
 				A4347FD51D7BCABC0033306A /* PegboardViewController.swift in Sources */,
 				A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */,
 				A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */,
 				A4F810E52252ADBA001F9503 /* DatabaseController.swift in Sources */,
+				A47E665422CFD2F400B5B7B5 /* MelodyRecognitionInstructions2ViewController.swift in Sources */,
 				A489D6181E0B535A001F56FE /* SettingsViewController.swift in Sources */,
+				A4EDC00B229D4A69006B8C53 /* SelectTestViewController.swift in Sources */,
 				A460CE4521D0C72900E52F8B /* TestViewController.swift in Sources */,
 				A460CE4721D0C75E00E52F8B /* InstructionsStep.swift in Sources */,
 				A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */,
@@ -1724,6 +1752,7 @@
 				A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */,
 				A4347FD11D7BCA950033306A /* MatricesViewController.swift in Sources */,
 				A4F067AF21E3E28A00ECEF6F /* TestConfig.swift in Sources */,
+				A47E665622CFD31C00B5B7B5 /* MelodyRecognitionTaskViewController.swift in Sources */,
 				A42041F121E1D09E00021EDB /* InstructionsViewController.swift in Sources */,
 				A48D60F41FF704D60042FBCA /* UserCollectionViewCell.swift in Sources */,
 				A4969D3721F276210063FF40 /* CancellationBlockViewController.swift in Sources */,
@@ -1739,13 +1768,16 @@
 				A4AB688B1DE4BE9A0009808D /* DownloadOperation.swift in Sources */,
 				A4396F10223C142B009B1EDC /* FirebaseStorageManager.swift in Sources */,
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
+				A47E664E22CFD0B100B5B7B5 /* MelodyRecognitionPracticeViewController.swift in Sources */,
 				A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */,
 				A4DDA8D3225E828F0000395D /* WordListInstructionsViewController.swift in Sources */,
 				A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */,
+				A47E664622C07FF300B5B7B5 /* ParticipantsTableViewController.swift in Sources */,
 				A4969D2121E7D7E90063FF40 /* CancellationInstructionsViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
-				A42041F821E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift in Sources */,
+				A42041F821E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift in Sources */,
 				A46A2C681DD96FF0000AC66C /* APIWrapper.swift in Sources */,
+				A47E664422B262B200B5B7B5 /* SideMenuViewController.swift in Sources */,
 				A4969D2721E7DB2D0063FF40 /* CancellationInstructions3ViewController.swift in Sources */,
 				A46C14231D79AA7C0066EF37 /* ClockDrawingTestViewController.swift in Sources */,
 				A4347FC91D7BCA280033306A /* DigitalSpanViewController.swift in Sources */,
@@ -1850,7 +1882,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1902,7 +1934,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1922,12 +1954,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -1941,12 +1974,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

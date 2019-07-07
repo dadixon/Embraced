@@ -56,23 +56,31 @@ class CancellationBlockViewController: ActiveStepViewController {
         stimuliCollection.bottomAnchor.constraint(equalTo: startTest.topAnchor, constant: -16.0).isActive = true
         
         stimuliCollection.isHidden = true
+        nextBtn.isHidden = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        orientation = .landscapeLeft
+        rotateOrientation = .landscapeLeft
+        
         startTest.setTitle("Start Test", for: .normal)
         startTest.addTarget(self, action: #selector(showBoard), for: .touchUpInside)
         
-        nextBtn.isHidden = true
+        
         
         contentView.addSubview(startTest)
         
         startTest.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         startTest.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16.0).isActive = true
-        startTest.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
-        startTest.widthAnchor.constraint(equalToConstant: startTest.intrinsicContentSize.width + 30.0).isActive = true
+        startTest.heightAnchor.constraint(equalToConstant: 45.0).isActive = true
+        startTest.widthAnchor.constraint(equalToConstant: startTest.intrinsicContentSize.width + 100.0).isActive = true
         
+        contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16.0).isActive = true
+        nextBtn.removeFromSuperview()
+        
+        // To make more test, add more boards to this array
         stimulis = [
             ["5", "X", "N", "W", "A", "W", "V", "0", "Q", "N", "5", "9", "C", "2", "B", "Y", "V", "E", "5", "Q", "P", "8", "V", "9", "J", "9", "2", "7", "5", "2", "C", "A", "1", "C", "W", "9", "6", "R", "0", "D", "G", "R", "5", "6", "Q", "F", "L", "9", "8", "G", "9", "Y", "2", "Z", "T", "G", "5", "1", "H", "2"],
             ["B", "A", "1", "3", "R", "3", "Q", "6", "2", "9", "N", "W", "V", "W", "I", "H", "9", "5", "1", "5", "B", "9", "C", "9", "E", "V", "E", "S", "5", "0", "7", "F", "7", "L", "C", "V", "Q", "9", "T", "6", "W", "T", "5", "H", "H", "C", "C", "5", "B", "J", "5", "Z", "L", "X", "5", "T", "J", "8", "Y", "X"]]
@@ -141,7 +149,7 @@ extension CancellationBlockViewController: UICollectionViewDelegate {
                 // Add values to responses array
                 let response = Response(index: indexPath.row, value: collectionData[indexPath.row], time: Int((CFAbsoluteTimeGetCurrent() - currentTime!) * 1000))
                 responses.append(response)
-                CancellationModel.sharedInstance.blocks["block_\(index)"] = responses
+                CancellationModel.shared.blocks["block_\(index)"] = responses
                 
             }
         } else {

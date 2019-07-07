@@ -83,8 +83,7 @@ class AudioPlaybackViewController: ActiveStepViewController {
     }
     
     @objc func playPressed() {
-        if isPlaying {
-        } else {
+        if !isPlaying {
             playRecording()
         }
     }
@@ -107,11 +106,11 @@ class AudioPlaybackViewController: ActiveStepViewController {
         
         let session = AVAudioSession.sharedInstance()
         try! session.setActive(true)
-        if #available(iOS 10.0, *) {
+//        if #available(iOS 10.0, *) {
             try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
-        } else {
+//        } else {
             // Fallback on earlier versions
-        }
+//        }
         
         do {
             try audioRecorder = AVAudioRecorder(url: audioFilename, settings: settings)

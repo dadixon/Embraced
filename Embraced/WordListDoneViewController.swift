@@ -13,6 +13,7 @@ class WordListDoneViewController: DoneStepViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        orientation = .landscape
         // Do any additional setup after loading the view.
     }
     
