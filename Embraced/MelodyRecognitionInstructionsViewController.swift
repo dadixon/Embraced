@@ -15,14 +15,11 @@ class MelodyRecognitionInstructionsViewController: InstructionsViewController {
                 
         instructionsLabel.text = "pitch_intro".localized(lang: language)
         nextBtn.setTitle("Next".localized(lang: language), for: .normal)
-        
-        title = "Step 1 of 3"
-        
         nextBtn.addTarget(self, action: #selector(moveOn), for: .touchUpInside)
     }
     
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToExample1", sender: nil)
+        self.performSegue(withIdentifier: "moveToExamples", sender: nil)
     }
     
 

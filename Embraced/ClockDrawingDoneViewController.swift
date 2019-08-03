@@ -1,14 +1,14 @@
 //
-//  TestViewController.swift
+//  ClockDrawingDoneViewController.swift
 //  Embraced
 //
-//  Created by Domonique Dixon on 12/24/18.
-//  Copyright © 2018 Domonique Dixon. All rights reserved.
+//  Created by Domonique Dixon on 8/3/19.
+//  Copyright © 2019 Domonique Dixon. All rights reserved.
 //
 
 import UIKit
 
-class TestViewController: UIViewController {
+class ClockDrawingDoneViewController: DoneStepViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

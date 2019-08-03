@@ -26,15 +26,44 @@ class TestConfig {
     private init() {}
     
     private func buildTestList() {
-        print(testListName)
+        testList = []
+        
         for test in testListName {
             switch test {
-            case "Word List 1":
-                if let vc = UIStoryboard(name: "WordList", bundle: nil).instantiateViewController(withIdentifier: "WordListTest") as? WordListInstructionsViewController {
-                    self.testList.append(vc)
-                }
-            default:
-                continue
+                case "Melodies Recognition":
+                    if let vc = UIStoryboard(name: "MelodyRecognition", bundle: nil).instantiateViewController(withIdentifier: "MelodyRecognitionTest") as? MelodyRecognitionInstructionsViewController {
+                        self.testList.append(vc)
+                    }
+                case "Word List 1":
+                    if let vc = UIStoryboard(name: "WordList", bundle: nil).instantiateViewController(withIdentifier: "WordListTest") as? WordListInstructionsViewController {
+                        self.testList.append(vc)
+                    }
+                case "Cancellation Test":
+                    if let vc = UIStoryboard(name: "Cancellation", bundle: nil).instantiateViewController(withIdentifier: "CancellationTest") as? CancellationInstructionsViewController {
+                        self.testList.append(vc)
+                    }
+                case "Digit Span":
+                    if let vc = UIStoryboard(name: "DigitSpan", bundle: nil).instantiateViewController(withIdentifier: "DigitSpanTest") as? DigitSpanInstructionsViewController {
+                        self.testList.append(vc)
+                    }
+                case "Color-Word Stroop Test":
+                    if let vc = UIStoryboard(name: "Stroop", bundle: nil).instantiateViewController(withIdentifier: "StroopTest") as? StroopAudioTestViewController {
+                        self.testList.append(vc)
+                    }
+                case "Naming Test":
+                    if let vc = UIStoryboard(name: "NamingTask", bundle: nil).instantiateViewController(withIdentifier: "NamingTest") as? NamingTaskAudioTestViewController {
+                        self.testList.append(vc)
+                    }
+                case "Word List 2":
+                    if let vc = UIStoryboard(name: "WordList2", bundle: nil).instantiateViewController(withIdentifier: "WordList2Test") as? WordList2TaskViewController {
+                        self.testList.append(vc)
+                    }
+                case "Clock Drawing Test":
+                    if let vc = UIStoryboard(name: "ClockDrawing", bundle: nil).instantiateViewController(withIdentifier: "ClockDrawingTest") as? ClockDrawingInstructionsViewController {
+                        self.testList.append(vc)
+                    }
+                default:
+                    continue
             }
         }
     }

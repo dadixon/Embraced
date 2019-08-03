@@ -25,13 +25,12 @@ final class TestOrder {
     func setTests() {
         var tests = [String]()
         
-        if let test = userDefaults.array(forKey: "Tests") {
+        if let test = userDefaults.array(forKey: "Tests"), userDefaults.array(forKey: "Tests")?.count != 0 {
             tests = test as! [String]
-        }
-        
+            
         userDefaults.set(tests, forKey: "Tests")
         TestConfig.shared.testListName = tests
-        
+            
         for test in tests {
             switch test {
             case "Questionnaire":
@@ -40,16 +39,16 @@ final class TestOrder {
                 navigationTests.append(MOCAMMSETestViewController())
             case "Complex Figure 1":
                 navigationTests.append(ReyComplexFigureViewController())
-            case "Clock Drawing Test":
-                navigationTests.append(ClockDrawingTestViewController())
+//            case "Clock Drawing Test":
+//                navigationTests.append(ClockDrawingTestViewController())
             case "Complex Figure 2":
                 navigationTests.append(ReyComplexFigure2ViewController())
             case "Trail Making Test":
                 navigationTests.append(TrailMakingTestViewController())
-            case "Melodies Recognition":
-                navigationTests.append(PitchViewController())
-            case "Digit Span":
-                navigationTests.append(DigitalSpanViewController())
+//            case "Melodies Recognition":
+//                navigationTests.append(PitchViewController())
+//            case "Digit Span":
+//                navigationTests.append(DigitalSpanViewController())
             case "Complex Figure 3":
                 navigationTests.append(ReyComplexFigure3ViewController())
             case "Complex Figure 4":
@@ -61,21 +60,21 @@ final class TestOrder {
             case "Motor Tasks":
                 navigationTests.append(PegboardViewController())
             case "Word List 1":
-//                if TestConfig.shared.testList.count > 0 {
-//                    TestConfig.shared.testStartTime = CFAbsoluteTimeGetCurrent()
-                    //                    self.navigationController?.pushViewController(TestConfig.sharedInstance.testList[0], animated: true)
-//                    navigationTests.append(TestConfig.shared.testList[0])
-//                } else {
-                    navigationTests.append(WordListViewController())
-//                }
-            case "Color-Word Stroop Test":
-                navigationTests.append(StroopViewController())
-            case "Cancellation Test":
-                navigationTests.append(CancellationTestViewController())
-            case "Word List 2":
-                navigationTests.append(WordList2ViewController())
-            case "Naming Test":
-                navigationTests.append(NamingTaskViewController())
+                if TestConfig.shared.testList.count > 0 {
+                    TestConfig.shared.testStartTime = CFAbsoluteTimeGetCurrent()
+                    //self.navigationController?.pushViewController(TestConfig.sharedInstance.testList[0], animated: true)
+                    navigationTests.append(TestConfig.shared.testList[0])
+                } else {
+//                    navigationTests.append(WordListViewController())
+                }
+//            case "Color-Word Stroop Test":
+//                navigationTests.append(StroopViewController())
+//            case "Cancellation Test":
+//                navigationTests.append(CancellationTestViewController())
+//            case "Word List 2":
+//                navigationTests.append(WordList2ViewController())
+//            case "Naming Test":
+//                navigationTests.append(NamingTaskViewController())
             case "Comprehension Task":
                 navigationTests.append(ComprehensionViewController())
             case "Eyes Test":
@@ -85,7 +84,8 @@ final class TestOrder {
             }
         }
         
-        navigationTests.append(FinishedViewController())
+//        navigationTests.append(FinishedViewController())
+        }
     }
     
     func addTest(viewController: UIViewController, at: Int) {

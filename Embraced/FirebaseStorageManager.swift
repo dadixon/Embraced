@@ -17,6 +17,7 @@ class FirebaseStorageManager {
     static let shared = FirebaseStorageManager()
     private let db = Firestore.firestore()
     var pid: String?
+    var listener: ListenerRegistration?
     
     private init() {
         let settings = db.settings
@@ -84,6 +85,35 @@ class FirebaseStorageManager {
         } else {
             SVProgressHUD.showError(withStatus: "There is no ID for the participant.")
         }
+    }
+    
+    func fetchDocuments(completionHandler: @escaping (_ result: [String: Any], _ error: Error?) -> Void) {
+        listener = db.collection("participants").document("testing")
+            .addSnapshotListener { documentSnapshot, error in
+                guard let document = documentSnapshot else {
+                    print("Error fetching document: \(error!)")
+                    return
+                }
+                guard let data = document.data() else {
+                    print("Document data was empty.")
+                    return
+                }
+                
+                completionHandler(data, error)
+        }
+    }
+    
+    func getUserProperties(uid: String, completionHandler: @escaping (_ result: [String: Any], _ error: Error?) -> Void) {
+        db.collection("administrators").whereField("loginId", isEqualTo: uid)
+            .getDocuments() { (querySnapshot, err) in
+                for document in querySnapshot!.documents {
+                    completionHandler(document.data(), err)
+                }
+        }
+    }
+    
+    func removeListener() {
+        listener?.remove()
     }
     
     // Naming Task

@@ -10,22 +10,20 @@ import UIKit
 
 class ListenButton: UIButton {
 
+    private let _playImage = "listen2"
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        createBorder()
+        setup()
     }
     
     required override init(frame: CGRect) {
         super.init(frame: frame)
-        createBorder()
+        setup()
     }
     
-    func createBorder() {
-        self.setImage(UIImage(named: "speaker"), for: .normal)
-//        self.setTitle("Listen", for: .normal)
-        self.titleEdgeInsets = UIEdgeInsets.init(top: 150,left: -40,bottom: 0,right: 0)
-        self.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: 25, bottom: 0, right: 0)
-        self.setTitleColor(UIColor.black, for: .normal)
+    private func setup() {
+        setImage(UIImage(named: _playImage), for: .normal)
+        contentMode = .scaleToFill
     }
-
 }

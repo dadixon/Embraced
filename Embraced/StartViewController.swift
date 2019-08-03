@@ -13,12 +13,14 @@ class StartViewController: UIViewController {
 
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var welcomeText: UILabel!
-    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var nextBtn: NavigationButton!
     @IBOutlet weak var languagePicker: UIPickerView!
     
     let participant = UserDefaults.standard
     let APIUrl = "http://www.embracedapi.ugr.es/"
     var pickerData: [String:String] = [String:String]()
+    var componentArray = [String]()
+    var startBtnWidth: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,21 +28,35 @@ class StartViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.navigationController?.isNavigationBarHidden = true
         
-        welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "TesterLanguage")!)
-        welcomeText.text = "WELCOME_TEXT".localized(lang: participant.string(forKey: "TesterLanguage")!)
-        nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
+//        welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "TesterLanguage")!)
+//        welcomeText.text = "WELCOME_TEXT".localized(lang: participant.string(forKey: "TesterLanguage")!)
+//        nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
         
-        participant.setValue("en", forKey: "language")
-        DataManager.sharedInstance.language = "en"
-        DataManager.sharedInstance.updateData()
+        
+//        DataManager.sharedInstance.language = "en"
+//        DataManager.sharedInstance.updateData()
         
         languagePicker.delegate = self
         languagePicker.dataSource = self
         
         pickerData = ["English": "en", "Spanish": "es"]
+        componentArray = Array(pickerData.keys)
         
-        let token = participant.string(forKey: "token")!
-        StorageManager.sharedInstance.token = token
+        DataManager.sharedInstance.language = pickerData[componentArray[0]]!
+        DataManager.sharedInstance.updateData()
+        participant.setValue(pickerData[componentArray[0]]!, forKey: "language")
+        
+        welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: DataManager.sharedInstance.language)
+        welcomeText.text = "WELCOME_TEXT".localized(lang: DataManager.sharedInstance.language)
+        nextBtn.heightAnchor.constraint(equalToConstant: 45.0).isActive = true
+        nextBtn.setTitle("Start".localized(lang: DataManager.sharedInstance.language), for: .normal)
+        startBtnWidth = nextBtn.widthAnchor.constraint(equalToConstant: nextBtn.intrinsicContentSize.width + 100.0)
+        startBtnWidth?.isActive = true
+        
+        
+        
+//        let token = participant.string(forKey: "token")!
+//        StorageManager.sharedInstance.token = token
     }
 
     override var prefersStatusBarHidden : Bool {
@@ -52,22 +68,28 @@ class StartViewController: UIViewController {
     
     @IBAction func startTest(_ sender: Any) {
         // Save participant language
-        do {
-            let id = participant.string(forKey: "pid")!
-            
-            try StorageManager.sharedInstance.putToAPI(endpoint: "participant/update/", id: id, data: createPostObject())
-            
-            // Save test timer
-//            let date = Date()
-            let date = Date().millisecondsSince1970
-            participant.setValue(date, forKey: "StartDate")
-            
+//        do {
+//            let id = participant.string(forKey: "pid")!
+//
+//            try StorageManager.sharedInstance.putToAPI(endpoint: "participant/update/", id: id, data: createPostObject())
+//
+//            // Save test timer
+////            let date = Date()
+//            let date = Date().millisecondsSince1970
+//            participant.setValue(date, forKey: "StartDate")
+        
+        FirebaseStorageManager.shared.addDataToDocument(payload: [
+            "language": DataManager.sharedInstance.language
+            ])
+        
             AppDelegate.testPosition += 1
-            self.navigationController?.pushViewController(
-                TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
-        } catch let error {
-            print(error)
-        }
+        
+        TestConfig.shared.testStartTime = CFAbsoluteTimeGetCurrent()
+        self.navigationController?.pushViewController(TestConfig.shared.testList[0], animated: true)
+//                TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
+//        } catch let error {
+//            print(error)
+//        }
     }
  
     private func createPostObject() -> [String: Any] {
@@ -92,13 +114,10 @@ extension StartViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let componentArray = Array(pickerData.keys)
         return componentArray[row].localized(lang: participant.string(forKey: "language")!)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let componentArray = Array(pickerData.keys)
-        
         participant.setValue(pickerData[componentArray[row]]!, forKey: "language")
         DataManager.sharedInstance.language = pickerData[componentArray[row]]!
         DataManager.sharedInstance.updateData()
@@ -106,6 +125,7 @@ extension StartViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "language")!)
         welcomeText.text = "WELCOME_TEXT".localized(lang: participant.string(forKey: "language")!)
         nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "language")!), for: .normal)
+        startBtnWidth?.constant = nextBtn.intrinsicContentSize.width + 100.0
     }
 }
 

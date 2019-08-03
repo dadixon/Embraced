@@ -26,10 +26,23 @@ class DoneStepViewController: ActiveStepViewController {
     
     @objc func moveOn() {
         TestConfig.shared.testList.remove(at: 0)
+        TestConfig.testIndex += 1
         
         if TestConfig.shared.testList.count > 0 {
             navigationController?.pushViewController(TestConfig.shared.testList[0], animated: true)
         } else {
+            TestConfig.shared.testEndTime = CFAbsoluteTimeGetCurrent()
+            
+            TestConfig.testIndex = 1
+            TestConfig.shared.testList = [];
+            AppDelegate.position = 0
+            AppDelegate.testPosition = 0
+            FirebaseStorageManager.shared.addDataToDocument(payload: [
+                "time": Int((TestConfig.shared.testEndTime! - TestConfig.shared.testStartTime!) * 1000),
+            ])
+            
+            TestOrder.sharedInstance.clearTests()
+            
             self.dismiss(animated: true) {}
         }
     }

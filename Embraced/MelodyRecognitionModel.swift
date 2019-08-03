@@ -9,7 +9,7 @@
 import Foundation
 
 class MelodyRecognitionModel {
-    static let sharedInstance = MelodyRecognitionModel()
+    static let shared = MelodyRecognitionModel()
     
     var score: Int = 0
     var answers = [String: Any]()

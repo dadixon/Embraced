@@ -9,7 +9,7 @@
 import Foundation
 
 class CancellationModel {
-    static let sharedInstance = CancellationModel()
+    static let shared = CancellationModel()
     
     var blocks = [String: [Response]]()
     private var hits: Int = 0

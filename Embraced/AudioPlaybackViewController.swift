@@ -18,20 +18,16 @@ class AudioPlaybackViewController: ActiveStepViewController {
     var isRecording = false
     var isPlaying = false
     
-    let recordBtn: UIButton = {
-        var button = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    let recordBtn: RecordButton = {
+        var button = RecordButton(type: UIButton.ButtonType.custom) as RecordButton
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "record2"), for: .normal)
-        button.contentMode = .scaleToFill
         button.addTarget(self, action: #selector(recordPressed), for: .touchUpInside)
         return button
     }()
     
-    let playBtn: UIButton = {
-        var button = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    let playBtn: PlayButton = {
+        var button = PlayButton(type: UIButton.ButtonType.custom) as PlayButton
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "play2"), for: .normal)
-        button.contentMode = .scaleToFill
         button.addTarget(self, action: #selector(playPressed), for: .touchUpInside)
         return button
     }()
@@ -76,24 +72,26 @@ class AudioPlaybackViewController: ActiveStepViewController {
     
     @objc func recordPressed() {
         if isRecording {
+            recordBtn.btnRecord()
             finishRecording()
         } else {
+            recordBtn.btnStop()
+            playBtn.isEnabled = false
+            isRecording = true
             startRecording()
         }
     }
     
     @objc func playPressed() {
-        if isPlaying {
-        } else {
+        if !isPlaying {
+            playBtn.btnStop()
+            recordBtn.isEnabled = false
+            isPlaying = true
             playRecording()
         }
     }
     
     private func startRecording() {
-        recordBtn.setImage(UIImage(named: "stop"), for: .normal)
-        playBtn.isEnabled = false
-        isRecording = true
-        
         let audioFilename = Utility.getDocumentsDirectory().appendingPathComponent(fileName)
         
         let settings = [
@@ -107,11 +105,11 @@ class AudioPlaybackViewController: ActiveStepViewController {
         
         let session = AVAudioSession.sharedInstance()
         try! session.setActive(true)
-        if #available(iOS 10.0, *) {
-            try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
-        } else {
+//        if #available(iOS 10.0, *) {
+        try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
+//        } else {
             // Fallback on earlier versions
-        }
+//        }
         
         do {
             try audioRecorder = AVAudioRecorder(url: audioFilename, settings: settings)
@@ -130,16 +128,11 @@ class AudioPlaybackViewController: ActiveStepViewController {
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
         
-        recordBtn.setImage(UIImage(named: "record2"), for: .normal)
         playBtn.isEnabled = true
         isRecording = false
     }
     
     private func playRecording() {
-        recordBtn.isEnabled = false
-        isPlaying = true
-        playBtn.setImage(UIImage(named: "stop"), for: .normal)
-        
         let audioFilename = Utility.getDocumentsDirectory().appendingPathComponent(fileName)
         
         do {
@@ -152,7 +145,7 @@ class AudioPlaybackViewController: ActiveStepViewController {
     }
     private func finishedPlaying() {
         recordBtn.isEnabled = true
-        playBtn.setImage(UIImage(named: "play2"), for: .normal)
+        playBtn.btnPlay()
         playBtn.isEnabled = false
         isPlaying = false
     }

@@ -21,6 +21,7 @@ class CancellationPracticeViewController: ActiveStepViewController {
     private let sectionInsets = UIEdgeInsets(top: 0.0, left: 120.0, bottom: 0.0, right: 120.0)
     private let itemsPerRow: CGFloat = 20
     private var responses = [Int]()
+    private let BUTTON_PADDING: CGFloat = 100.0
     
     var stimulis = [[String]]()
     var isFirst = true
@@ -48,25 +49,32 @@ class CancellationPracticeViewController: ActiveStepViewController {
         stimuliCollection.bottomAnchor.constraint(equalTo: startTest.topAnchor, constant: -16.0).isActive = true
         
         stimuliCollection.isHidden = true
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        orientation = .landscapeLeft
+        rotateOrientation = .landscapeLeft
+        
         titleLabel.text = "Practice Testing"
         
         startTest.setTitle("Start Practice Test", for: .normal)
         startTest.addTarget(self, action: #selector(showBoard), for: .touchUpInside)
         
-        nextBtn.isHidden = true
+        
         
         contentView.addSubview(startTest)
         
         startTest.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         startTest.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16.0).isActive = true
-        startTest.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
-        startBtnWidth = startTest.widthAnchor.constraint(equalToConstant: startTest.intrinsicContentSize.width + 30.0)
+        startTest.heightAnchor.constraint(equalToConstant: 45.0).isActive = true
+        startBtnWidth = startTest.widthAnchor.constraint(equalToConstant: startTest.intrinsicContentSize.width + BUTTON_PADDING)
         startBtnWidth?.isActive = true
+        
+        contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16.0).isActive = true
+        nextBtn.removeFromSuperview()
         
         stimulis = [
             ["5", "X", "N", "W", "A", "W", "V", "0", "Q", "N", "5", "9", "C", "2", "B", "Y", "V", "E", "5", "Q", "P", "8", "V", "9", "J", "9", "2", "7", "5", "2", "C", "A", "1", "C", "W", "9", "6", "R", "0", "D", "G", "R", "5", "6", "Q", "F", "L", "9", "8", "G", "9", "Y", "2", "Z", "T", "G", "5", "1", "H", "2"],
@@ -84,13 +92,13 @@ class CancellationPracticeViewController: ActiveStepViewController {
             stimulis.remove(at: 0)
             isFirst = false
             startTest.setTitle("Click Here for the Second Practice Test", for: .normal)
-            startBtnWidth?.constant = startTest.intrinsicContentSize.width + 30.0
+            startBtnWidth?.constant = startTest.intrinsicContentSize.width + BUTTON_PADDING
         } else {
             refreshCollection(data: stimulis[0])
             stimulis.remove(at: 0)
             isFirst = true
             startTest.setTitle("I am done practicing", for: .normal)
-            startBtnWidth?.constant = startTest.intrinsicContentSize.width + 30.0
+            startBtnWidth?.constant = startTest.intrinsicContentSize.width + BUTTON_PADDING
             startTest.removeTarget(self, action: #selector(showBoard), for: .touchUpInside)
             startTest.addTarget(self, action: #selector(moveOn), for: .touchUpInside)
         }

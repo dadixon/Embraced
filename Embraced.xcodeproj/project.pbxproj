@@ -12,57 +12,62 @@
 		A42041F121E1D09E00021EDB /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041EF21E1D09E00021EDB /* InstructionsViewController.swift */; };
 		A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */; };
 		A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */; };
-		A42041F821E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F721E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift */; };
+		A42041F821E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F721E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift */; };
 		A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */; };
 		A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */; };
-		A4347FC11D7BC9E20033306A /* StroopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FBF1D7BC9E20033306A /* StroopViewController.swift */; };
-		A4347FC21D7BC9E20033306A /* StroopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FC01D7BC9E20033306A /* StroopViewController.xib */; };
 		A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FC31D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift */; };
 		A4347FC61D7BC9FC0033306A /* ReyComplexFigure3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FC41D7BC9FC0033306A /* ReyComplexFigure3ViewController.xib */; };
-		A4347FC91D7BCA280033306A /* DigitalSpanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FC71D7BCA280033306A /* DigitalSpanViewController.swift */; };
-		A4347FCA1D7BCA280033306A /* DigitalSpanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FC81D7BCA280033306A /* DigitalSpanViewController.xib */; };
 		A4347FCD1D7BCA570033306A /* ReyFigureComplex4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FCB1D7BCA570033306A /* ReyFigureComplex4ViewController.swift */; };
 		A4347FCE1D7BCA570033306A /* ReyFigureComplex4ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FCC1D7BCA570033306A /* ReyFigureComplex4ViewController.xib */; };
 		A4347FD11D7BCA950033306A /* MatricesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FCF1D7BCA950033306A /* MatricesViewController.swift */; };
 		A4347FD21D7BCA950033306A /* MatricesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FD01D7BCA950033306A /* MatricesViewController.xib */; };
 		A4347FD51D7BCABC0033306A /* PegboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FD31D7BCABC0033306A /* PegboardViewController.swift */; };
 		A4347FD61D7BCABC0033306A /* PegboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FD41D7BCABC0033306A /* PegboardViewController.xib */; };
-		A4347FD91D7BCAFB0033306A /* PitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FD71D7BCAFB0033306A /* PitchViewController.swift */; };
-		A4347FDA1D7BCAFB0033306A /* PitchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FD81D7BCAFB0033306A /* PitchViewController.xib */; };
-		A4347FDD1D7BCB260033306A /* WordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FDB1D7BCB260033306A /* WordListViewController.swift */; };
-		A4347FDE1D7BCB260033306A /* WordListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FDC1D7BCB260033306A /* WordListViewController.xib */; };
-		A4347FE01D7BCB800033306A /* NamingTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FDF1D7BCB800033306A /* NamingTaskViewController.xib */; };
 		A4347FE31D7BCC170033306A /* MultipleErrandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FE11D7BCC170033306A /* MultipleErrandsViewController.swift */; };
 		A4347FE41D7BCC170033306A /* MultipleErrandsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FE21D7BCC170033306A /* MultipleErrandsViewController.xib */; };
 		A4347FE71D7BCC4C0033306A /* ComprehensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FE51D7BCC4C0033306A /* ComprehensionViewController.swift */; };
 		A4347FE81D7BCC4C0033306A /* ComprehensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FE61D7BCC4C0033306A /* ComprehensionViewController.xib */; };
 		A4396F10223C142B009B1EDC /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4396F0F223C142B009B1EDC /* FirebaseStorageManager.swift */; };
-		A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */; };
 		A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669311E1631A600EA7E2E /* ListenButton.swift */; };
 		A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669331E16435C00EA7E2E /* PlayButton.swift */; };
 		A44669381E16457600EA7E2E /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669371E16457600EA7E2E /* RecordButton.swift */; };
 		A460CE4121D0C0E300E52F8B /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE3F21D0C0E300E52F8B /* CanvasViewController.swift */; };
 		A460CE4221D0C0E300E52F8B /* CanvasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A460CE4021D0C0E300E52F8B /* CanvasViewController.xib */; };
-		A460CE4521D0C72900E52F8B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE4421D0C72900E52F8B /* TestViewController.swift */; };
 		A460CE4721D0C75E00E52F8B /* InstructionsStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */; };
 		A460CE4921D0C77300E52F8B /* InstructionsStep.xib in Resources */ = {isa = PBXBuildFile; fileRef = A460CE4821D0C77300E52F8B /* InstructionsStep.xib */; };
 		A46A2C641DD66108000AC66C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46A2C631DD66108000AC66C /* SystemConfiguration.framework */; };
 		A46A2C681DD96FF0000AC66C /* APIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A2C671DD96FF0000AC66C /* APIWrapper.swift */; };
 		A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C140D1D798FC30066EF37 /* CPTViewController.swift */; };
 		A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C140E1D798FC30066EF37 /* CPTViewController.xib */; };
-		A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */; };
-		A46C14181D7999AF0066EF37 /* CancellationTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14161D7999AF0066EF37 /* CancellationTestViewController.xib */; };
 		A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14191D79A8870066EF37 /* EyeTestViewController.swift */; };
 		A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */; };
 		A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */; };
 		A46C14201D79AA110066EF37 /* ReyComplexFigureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C141E1D79AA110066EF37 /* ReyComplexFigureViewController.xib */; };
-		A46C14231D79AA7C0066EF37 /* ClockDrawingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14211D79AA7C0066EF37 /* ClockDrawingTestViewController.swift */; };
-		A46C14241D79AA7C0066EF37 /* ClockDrawingTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14221D79AA7C0066EF37 /* ClockDrawingTestViewController.xib */; };
 		A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */; };
 		A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */; };
 		A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */; };
 		A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */; };
 		A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */; };
+		A47E664422B262B200B5B7B5 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E664322B262B200B5B7B5 /* SideMenuViewController.swift */; };
+		A47E664622C07FF300B5B7B5 /* ParticipantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E664522C07FF300B5B7B5 /* ParticipantsTableViewController.swift */; };
+		A47E664822C0846E00B5B7B5 /* ParticipantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E664722C0846E00B5B7B5 /* ParticipantDTO.swift */; };
+		A47E664A22C095B800B5B7B5 /* DataDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E664922C095B800B5B7B5 /* DataDisplayViewController.swift */; };
+		A47E664C22C09CAE00B5B7B5 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E664B22C09CAE00B5B7B5 /* Participant.swift */; };
+		A47E664E22CFD0B100B5B7B5 /* MelodyRecognitionPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E664D22CFD0B100B5B7B5 /* MelodyRecognitionPracticeViewController.swift */; };
+		A47E665422CFD2F400B5B7B5 /* MelodyRecognitionInstructions2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E665322CFD2F400B5B7B5 /* MelodyRecognitionInstructions2ViewController.swift */; };
+		A47E665622CFD31C00B5B7B5 /* MelodyRecognitionTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E665522CFD31C00B5B7B5 /* MelodyRecognitionTaskViewController.swift */; };
+		A47E665822D1972B00B5B7B5 /* DigittSpanPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E665722D1972B00B5B7B5 /* DigittSpanPracticeViewController.swift */; };
+		A47E665A22D1975300B5B7B5 /* DigitSpanTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E665922D1975300B5B7B5 /* DigitSpanTaskViewController.swift */; };
+		A47E665C22D1976700B5B7B5 /* DigitSpanPractice2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E665B22D1976700B5B7B5 /* DigitSpanPractice2ViewController.swift */; };
+		A47E665E22D1978000B5B7B5 /* DigitSpanTask2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E665D22D1978000B5B7B5 /* DigitSpanTask2ViewController.swift */; };
+		A47E666022D1CE4F00B5B7B5 /* DigitSpanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E665F22D1CE4F00B5B7B5 /* DigitSpanModel.swift */; };
+		A47E666222D2B98900B5B7B5 /* ClockDrawing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47E666122D2B98900B5B7B5 /* ClockDrawing.storyboard */; };
+		A47E666522D2BB0000B5B7B5 /* Stroop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47E666422D2BB0000B5B7B5 /* Stroop.storyboard */; };
+		A47E666822D2BBD600B5B7B5 /* StroopAudioTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666722D2BBD600B5B7B5 /* StroopAudioTestViewController.swift */; };
+		A47E666A22D2BD5000B5B7B5 /* StroopPreTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666922D2BD5000B5B7B5 /* StroopPreTaskViewController.swift */; };
+		A47E666C22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666B22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift */; };
+		A47E666E22D2D7CE00B5B7B5 /* StroopTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666D22D2D7CE00B5B7B5 /* StroopTaskViewController.swift */; };
+		A47E667022D2D87900B5B7B5 /* StroopDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666F22D2D87900B5B7B5 /* StroopDoneViewController.swift */; };
 		A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */; };
 		A47EB6E41DA65FFB00A68AF6 /* FinishedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */; };
 		A47FF4AE211363AA00665E20 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47FF4AD211363AA00665E20 /* Constants.swift */; };
@@ -71,7 +76,6 @@
 		A489D6181E0B535A001F56FE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D6161E0B535A001F56FE /* SettingsViewController.swift */; };
 		A489D6191E0B535A001F56FE /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A489D6171E0B535A001F56FE /* SettingsViewController.xib */; };
 		A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D61A1E0BA255001F56FE /* AdminViewController.swift */; };
-		A489D61D1E0BA255001F56FE /* AdminViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A489D61B1E0BA255001F56FE /* AdminViewController.xib */; };
 		A48A12C221F740ED0044AF08 /* DoneStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */; };
 		A48A12C421F7414A0044AF08 /* CancellationDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C321F7414A0044AF08 /* CancellationDoneViewController.swift */; };
 		A48A12C621F74FE60044AF08 /* CancellationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C521F74FE60044AF08 /* CancellationModel.swift */; };
@@ -122,6 +126,14 @@
 		A48A132421FA4C680044AF08 /* melodies 320ms orig(27).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A132321FA4C680044AF08 /* melodies 320ms orig(27).wav */; };
 		A48A132721FA4C6F0044AF08 /* melodies 320ms diff(32).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A132521FA4C6F0044AF08 /* melodies 320ms diff(32).wav */; };
 		A48A132821FA4C6F0044AF08 /* melodies 320ms orig(32).wav in Resources */ = {isa = PBXBuildFile; fileRef = A48A132621FA4C6F0044AF08 /* melodies 320ms orig(32).wav */; };
+		A48B1AEF22EF3C58007A1E98 /* NamingTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48B1AEE22EF3C58007A1E98 /* NamingTask.storyboard */; };
+		A48B1AF222EF3CD4007A1E98 /* NamingTaskAudioTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B1AF122EF3CD4007A1E98 /* NamingTaskAudioTestViewController.swift */; };
+		A48B1AF422EF3F1F007A1E98 /* NamingTaskInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B1AF322EF3F1F007A1E98 /* NamingTaskInstructionsViewController.swift */; };
+		A48B1AF622EF40CD007A1E98 /* NamingTaskPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B1AF522EF40CD007A1E98 /* NamingTaskPracticeViewController.swift */; };
+		A48B1AF822EF40ED007A1E98 /* NamingTaskInstructions2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B1AF722EF40ED007A1E98 /* NamingTaskInstructions2ViewController.swift */; };
+		A48B1AFA22EF410A007A1E98 /* NamingTaskTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B1AF922EF410A007A1E98 /* NamingTaskTaskViewController.swift */; };
+		A48B1AFC22EF412C007A1E98 /* NamingTaskDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B1AFB22EF412C007A1E98 /* NamingTaskDoneViewController.swift */; };
+		A48B1AFE22EF444C007A1E98 /* NamingTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B1AFD22EF444C007A1E98 /* NamingTaskModel.swift */; };
 		A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC41CF9E7C700878928 /* AppDelegate.swift */; };
 		A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DC61CF9E7C700878928 /* ViewController.swift */; };
 		A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48B4DC81CF9E7C700878928 /* Main.storyboard */; };
@@ -160,6 +172,17 @@
 		A4969D3721F276210063FF40 /* CancellationBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D3621F276210063FF40 /* CancellationBlockViewController.swift */; };
 		A49C0F8B224C1D6D00094588 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A49C0F8A224C1D6C00094588 /* GoogleService-Info.plist */; };
 		A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */; };
+		A4A991D022EA9F1B00DE3B83 /* StroopInstructions2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A991CF22EA9F1B00DE3B83 /* StroopInstructions2ViewController.swift */; };
+		A4A991D222EAA13C00DE3B83 /* StroopInstructions3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A991D122EAA13C00DE3B83 /* StroopInstructions3ViewController.swift */; };
+		A4A991D422EAA19800DE3B83 /* StroopInstructions4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A991D322EAA19800DE3B83 /* StroopInstructions4ViewController.swift */; };
+		A4A991D622EAA1BC00DE3B83 /* StroopInstructions5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A991D522EAA1BC00DE3B83 /* StroopInstructions5ViewController.swift */; };
+		A4A991D822EAA2DE00DE3B83 /* StroopPreTask2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A991D722EAA2DE00DE3B83 /* StroopPreTask2ViewController.swift */; };
+		A4A991DA22EAA3A700DE3B83 /* StroopPreTask3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A991D922EAA3A700DE3B83 /* StroopPreTask3ViewController.swift */; };
+		A4A991DC22EAA3CC00DE3B83 /* StroopPreTask4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A991DB22EAA3CC00DE3B83 /* StroopPreTask4ViewController.swift */; };
+		A4A991DE22EAA45700DE3B83 /* StroopTask2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A991DD22EAA45700DE3B83 /* StroopTask2ViewController.swift */; };
+		A4A991E022EAA4AC00DE3B83 /* StroopTask3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A991DF22EAA4AC00DE3B83 /* StroopTask3ViewController.swift */; };
+		A4A991E222EAA50700DE3B83 /* StroopTask4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A991E122EAA50700DE3B83 /* StroopTask4ViewController.swift */; };
+		A4AAD21122E01C6A00D4D7CA /* StroopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AAD21022E01C6A00D4D7CA /* StroopModel.swift */; };
 		A4AB688B1DE4BE9A0009808D /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB688A1DE4BE9A0009808D /* DownloadOperation.swift */; };
 		A4AB688D1DE4D4730009808D /* DownloadMangager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AB688C1DE4D4730009808D /* DownloadMangager.swift */; };
 		A4AE36E31DFC545400727DFD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE36E21DFC545400727DFD /* WebViewController.swift */; };
@@ -337,18 +360,25 @@
 		A4DB0FB41DFB2CA1000811B6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */; };
 		A4DDA8D0225E72DF0000395D /* WordList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4DDA8CF225E72DF0000395D /* WordList.storyboard */; };
 		A4DDA8D3225E828F0000395D /* WordListInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DDA8D2225E828F0000395D /* WordListInstructionsViewController.swift */; };
+		A4DE7DA222F5DBDC009EEA17 /* WordList2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4DE7DA122F5DBDC009EEA17 /* WordList2.storyboard */; };
+		A4DE7DA522F5DD77009EEA17 /* WordList2TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DA422F5DD77009EEA17 /* WordList2TaskViewController.swift */; };
+		A4DE7DA722F5DD98009EEA17 /* WordList2RecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DA622F5DD98009EEA17 /* WordList2RecognitionViewController.swift */; };
+		A4DE7DA922F5DDB2009EEA17 /* WordList2DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DA822F5DDB2009EEA17 /* WordList2DoneViewController.swift */; };
+		A4DE7DAB22F61D49009EEA17 /* ClockDrawingInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DAA22F61D49009EEA17 /* ClockDrawingInstructionsViewController.swift */; };
+		A4DE7DAF22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DAE22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift */; };
+		A4DE7DB122F61DA9009EEA17 /* ClockDrawingTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DB022F61DA9009EEA17 /* ClockDrawingTaskViewController.swift */; };
+		A4DE7DB322F62539009EEA17 /* ClockDrawingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DB222F62539009EEA17 /* ClockDrawingModel.swift */; };
 		A4DF9F221E08FBC90084EAF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4DF9F241E08FBC90084EAF9 /* Localizable.strings */; };
 		A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */; };
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
-		A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */; };
 		A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */; };
 		A4E67AFB224B4D430002D127 /* WordListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E67AFA224B4D430002D127 /* WordListModel.swift */; };
+		A4EDC009229D3F25006B8C53 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EDC008229D3F25006B8C53 /* DashboardViewController.swift */; };
+		A4EDC00B229D4A69006B8C53 /* SelectTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EDC00A229D4A69006B8C53 /* SelectTestViewController.swift */; };
 		A4F067AF21E3E28A00ECEF6F /* TestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */; };
 		A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */; };
 		A4F810E52252ADBA001F9503 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F810E42252ADBA001F9503 /* DatabaseController.swift */; };
 		A4FAB44A2256334500E6C68A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAB4492256334500E6C68A /* NetworkManager.swift */; };
-		A4FC1E991DD2BE4500F19D95 /* WordList2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */; };
-		A4FC1E9A1DD2BE4500F19D95 /* WordList2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */; };
 		DD7D49BC9E47B49E27EB6157 /* Pods_Embraced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */; };
 /* End PBXBuildFile section */
 
@@ -359,57 +389,62 @@
 		A42041EF21E1D09E00021EDB /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionInstructionsViewController.swift; sourceTree = "<group>"; };
 		A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveStepViewController.swift; sourceTree = "<group>"; };
-		A42041F721E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionExample1ViewController.swift; sourceTree = "<group>"; };
+		A42041F721E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionExamplesViewController.swift; sourceTree = "<group>"; };
 		A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigure2ViewController.swift; path = controllers/ReyComplexFigure2ViewController.swift; sourceTree = "<group>"; };
 		A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyComplexFigure2ViewController.xib; path = controllers/ReyComplexFigure2ViewController.xib; sourceTree = "<group>"; };
-		A4347FBF1D7BC9E20033306A /* StroopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StroopViewController.swift; path = controllers/StroopViewController.swift; sourceTree = "<group>"; };
-		A4347FC01D7BC9E20033306A /* StroopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StroopViewController.xib; path = controllers/StroopViewController.xib; sourceTree = "<group>"; };
 		A4347FC31D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigure3ViewController.swift; path = controllers/ReyComplexFigure3ViewController.swift; sourceTree = "<group>"; };
 		A4347FC41D7BC9FC0033306A /* ReyComplexFigure3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyComplexFigure3ViewController.xib; path = controllers/ReyComplexFigure3ViewController.xib; sourceTree = "<group>"; };
-		A4347FC71D7BCA280033306A /* DigitalSpanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DigitalSpanViewController.swift; path = controllers/DigitalSpanViewController.swift; sourceTree = "<group>"; };
-		A4347FC81D7BCA280033306A /* DigitalSpanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DigitalSpanViewController.xib; path = controllers/DigitalSpanViewController.xib; sourceTree = "<group>"; };
 		A4347FCB1D7BCA570033306A /* ReyFigureComplex4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyFigureComplex4ViewController.swift; path = controllers/ReyFigureComplex4ViewController.swift; sourceTree = "<group>"; };
 		A4347FCC1D7BCA570033306A /* ReyFigureComplex4ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyFigureComplex4ViewController.xib; path = controllers/ReyFigureComplex4ViewController.xib; sourceTree = "<group>"; };
 		A4347FCF1D7BCA950033306A /* MatricesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MatricesViewController.swift; path = controllers/MatricesViewController.swift; sourceTree = "<group>"; };
 		A4347FD01D7BCA950033306A /* MatricesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MatricesViewController.xib; path = controllers/MatricesViewController.xib; sourceTree = "<group>"; };
 		A4347FD31D7BCABC0033306A /* PegboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PegboardViewController.swift; path = controllers/PegboardViewController.swift; sourceTree = "<group>"; };
 		A4347FD41D7BCABC0033306A /* PegboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PegboardViewController.xib; path = controllers/PegboardViewController.xib; sourceTree = "<group>"; };
-		A4347FD71D7BCAFB0033306A /* PitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PitchViewController.swift; path = controllers/PitchViewController.swift; sourceTree = "<group>"; };
-		A4347FD81D7BCAFB0033306A /* PitchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PitchViewController.xib; path = controllers/PitchViewController.xib; sourceTree = "<group>"; };
-		A4347FDB1D7BCB260033306A /* WordListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordListViewController.swift; path = controllers/WordListViewController.swift; sourceTree = "<group>"; };
-		A4347FDC1D7BCB260033306A /* WordListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordListViewController.xib; path = controllers/WordListViewController.xib; sourceTree = "<group>"; };
-		A4347FDF1D7BCB800033306A /* NamingTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NamingTaskViewController.xib; path = controllers/NamingTaskViewController.xib; sourceTree = "<group>"; };
 		A4347FE11D7BCC170033306A /* MultipleErrandsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultipleErrandsViewController.swift; path = controllers/MultipleErrandsViewController.swift; sourceTree = "<group>"; };
 		A4347FE21D7BCC170033306A /* MultipleErrandsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MultipleErrandsViewController.xib; path = controllers/MultipleErrandsViewController.xib; sourceTree = "<group>"; };
 		A4347FE51D7BCC4C0033306A /* ComprehensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComprehensionViewController.swift; path = controllers/ComprehensionViewController.swift; sourceTree = "<group>"; };
 		A4347FE61D7BCC4C0033306A /* ComprehensionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ComprehensionViewController.xib; path = controllers/ComprehensionViewController.xib; sourceTree = "<group>"; };
 		A4396F0F223C142B009B1EDC /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
-		A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NamingTaskViewController.swift; path = controllers/NamingTaskViewController.swift; sourceTree = "<group>"; };
 		A44669311E1631A600EA7E2E /* ListenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenButton.swift; sourceTree = "<group>"; };
 		A44669331E16435C00EA7E2E /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		A44669371E16457600EA7E2E /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		A460CE3F21D0C0E300E52F8B /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CanvasViewController.swift; path = controllers/CanvasViewController.swift; sourceTree = "<group>"; };
 		A460CE4021D0C0E300E52F8B /* CanvasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CanvasViewController.xib; path = controllers/CanvasViewController.xib; sourceTree = "<group>"; };
-		A460CE4421D0C72900E52F8B /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = controllers/TestViewController.swift; sourceTree = "<group>"; };
 		A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsStep.swift; sourceTree = "<group>"; };
 		A460CE4821D0C77300E52F8B /* InstructionsStep.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionsStep.xib; sourceTree = "<group>"; };
 		A46A2C631DD66108000AC66C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A46A2C671DD96FF0000AC66C /* APIWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIWrapper.swift; sourceTree = "<group>"; };
 		A46C140D1D798FC30066EF37 /* CPTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPTViewController.swift; path = controllers/CPTViewController.swift; sourceTree = "<group>"; };
 		A46C140E1D798FC30066EF37 /* CPTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPTViewController.xib; path = controllers/CPTViewController.xib; sourceTree = "<group>"; };
-		A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CancellationTestViewController.swift; path = controllers/CancellationTestViewController.swift; sourceTree = "<group>"; };
-		A46C14161D7999AF0066EF37 /* CancellationTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CancellationTestViewController.xib; path = controllers/CancellationTestViewController.xib; sourceTree = "<group>"; };
 		A46C14191D79A8870066EF37 /* EyeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EyeTestViewController.swift; path = controllers/EyeTestViewController.swift; sourceTree = "<group>"; };
 		A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EyeTestViewController.xib; path = controllers/EyeTestViewController.xib; sourceTree = "<group>"; };
 		A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigureViewController.swift; path = controllers/ReyComplexFigureViewController.swift; sourceTree = "<group>"; };
 		A46C141E1D79AA110066EF37 /* ReyComplexFigureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyComplexFigureViewController.xib; path = controllers/ReyComplexFigureViewController.xib; sourceTree = "<group>"; };
-		A46C14211D79AA7C0066EF37 /* ClockDrawingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockDrawingTestViewController.swift; path = controllers/ClockDrawingTestViewController.swift; sourceTree = "<group>"; };
-		A46C14221D79AA7C0066EF37 /* ClockDrawingTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClockDrawingTestViewController.xib; path = controllers/ClockDrawingTestViewController.xib; sourceTree = "<group>"; };
 		A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailMakingTestViewController.swift; path = controllers/TrailMakingTestViewController.swift; sourceTree = "<group>"; };
 		A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrailMakingTestViewController.xib; path = controllers/TrailMakingTestViewController.xib; sourceTree = "<group>"; };
 		A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOCAMMSETestViewController.swift; path = controllers/MOCAMMSETestViewController.swift; sourceTree = "<group>"; };
 		A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MOCAMMSETestViewController.xib; path = controllers/MOCAMMSETestViewController.xib; sourceTree = "<group>"; };
 		A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		A47E664322B262B200B5B7B5 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		A47E664522C07FF300B5B7B5 /* ParticipantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsTableViewController.swift; sourceTree = "<group>"; };
+		A47E664722C0846E00B5B7B5 /* ParticipantDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDTO.swift; sourceTree = "<group>"; };
+		A47E664922C095B800B5B7B5 /* DataDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDisplayViewController.swift; sourceTree = "<group>"; };
+		A47E664B22C09CAE00B5B7B5 /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
+		A47E664D22CFD0B100B5B7B5 /* MelodyRecognitionPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionPracticeViewController.swift; sourceTree = "<group>"; };
+		A47E665322CFD2F400B5B7B5 /* MelodyRecognitionInstructions2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionInstructions2ViewController.swift; sourceTree = "<group>"; };
+		A47E665522CFD31C00B5B7B5 /* MelodyRecognitionTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionTaskViewController.swift; sourceTree = "<group>"; };
+		A47E665722D1972B00B5B7B5 /* DigittSpanPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigittSpanPracticeViewController.swift; sourceTree = "<group>"; };
+		A47E665922D1975300B5B7B5 /* DigitSpanTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSpanTaskViewController.swift; sourceTree = "<group>"; };
+		A47E665B22D1976700B5B7B5 /* DigitSpanPractice2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSpanPractice2ViewController.swift; sourceTree = "<group>"; };
+		A47E665D22D1978000B5B7B5 /* DigitSpanTask2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSpanTask2ViewController.swift; sourceTree = "<group>"; };
+		A47E665F22D1CE4F00B5B7B5 /* DigitSpanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSpanModel.swift; sourceTree = "<group>"; };
+		A47E666122D2B98900B5B7B5 /* ClockDrawing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClockDrawing.storyboard; sourceTree = "<group>"; };
+		A47E666422D2BB0000B5B7B5 /* Stroop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Stroop.storyboard; sourceTree = "<group>"; };
+		A47E666722D2BBD600B5B7B5 /* StroopAudioTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopAudioTestViewController.swift; sourceTree = "<group>"; };
+		A47E666922D2BD5000B5B7B5 /* StroopPreTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopPreTaskViewController.swift; sourceTree = "<group>"; };
+		A47E666B22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopInstructionsViewController.swift; sourceTree = "<group>"; };
+		A47E666D22D2D7CE00B5B7B5 /* StroopTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopTaskViewController.swift; sourceTree = "<group>"; };
+		A47E666F22D2D87900B5B7B5 /* StroopDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopDoneViewController.swift; sourceTree = "<group>"; };
 		A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishedViewController.swift; path = controllers/FinishedViewController.swift; sourceTree = "<group>"; };
 		A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinishedViewController.xib; path = controllers/FinishedViewController.xib; sourceTree = "<group>"; };
 		A47FF4AD211363AA00665E20 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -418,7 +453,6 @@
 		A489D6161E0B535A001F56FE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A489D6171E0B535A001F56FE /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		A489D61A1E0BA255001F56FE /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
-		A489D61B1E0BA255001F56FE /* AdminViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminViewController.xib; sourceTree = "<group>"; };
 		A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneStepViewController.swift; sourceTree = "<group>"; };
 		A48A12C321F7414A0044AF08 /* CancellationDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationDoneViewController.swift; sourceTree = "<group>"; };
 		A48A12C521F74FE60044AF08 /* CancellationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationModel.swift; sourceTree = "<group>"; };
@@ -469,6 +503,14 @@
 		A48A132321FA4C680044AF08 /* melodies 320ms orig(27).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(27).wav"; sourceTree = "<group>"; };
 		A48A132521FA4C6F0044AF08 /* melodies 320ms diff(32).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms diff(32).wav"; sourceTree = "<group>"; };
 		A48A132621FA4C6F0044AF08 /* melodies 320ms orig(32).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melodies 320ms orig(32).wav"; sourceTree = "<group>"; };
+		A48B1AEE22EF3C58007A1E98 /* NamingTask.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NamingTask.storyboard; sourceTree = "<group>"; };
+		A48B1AF122EF3CD4007A1E98 /* NamingTaskAudioTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NamingTaskAudioTestViewController.swift; path = controllers/NamingTaskAudioTestViewController.swift; sourceTree = "<group>"; };
+		A48B1AF322EF3F1F007A1E98 /* NamingTaskInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingTaskInstructionsViewController.swift; sourceTree = "<group>"; };
+		A48B1AF522EF40CD007A1E98 /* NamingTaskPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingTaskPracticeViewController.swift; sourceTree = "<group>"; };
+		A48B1AF722EF40ED007A1E98 /* NamingTaskInstructions2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingTaskInstructions2ViewController.swift; sourceTree = "<group>"; };
+		A48B1AF922EF410A007A1E98 /* NamingTaskTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingTaskTaskViewController.swift; sourceTree = "<group>"; };
+		A48B1AFB22EF412C007A1E98 /* NamingTaskDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingTaskDoneViewController.swift; sourceTree = "<group>"; };
+		A48B1AFD22EF444C007A1E98 /* NamingTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingTaskModel.swift; sourceTree = "<group>"; };
 		A48B4DC11CF9E7C600878928 /* Embraced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embraced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48B4DC41CF9E7C700878928 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A48B4DC61CF9E7C700878928 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -510,6 +552,17 @@
 		A49C0F8A224C1D6C00094588 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4A30B551FA25C9D00F07AA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
+		A4A991CF22EA9F1B00DE3B83 /* StroopInstructions2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopInstructions2ViewController.swift; sourceTree = "<group>"; };
+		A4A991D122EAA13C00DE3B83 /* StroopInstructions3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopInstructions3ViewController.swift; sourceTree = "<group>"; };
+		A4A991D322EAA19800DE3B83 /* StroopInstructions4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopInstructions4ViewController.swift; sourceTree = "<group>"; };
+		A4A991D522EAA1BC00DE3B83 /* StroopInstructions5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopInstructions5ViewController.swift; sourceTree = "<group>"; };
+		A4A991D722EAA2DE00DE3B83 /* StroopPreTask2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopPreTask2ViewController.swift; sourceTree = "<group>"; };
+		A4A991D922EAA3A700DE3B83 /* StroopPreTask3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopPreTask3ViewController.swift; sourceTree = "<group>"; };
+		A4A991DB22EAA3CC00DE3B83 /* StroopPreTask4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopPreTask4ViewController.swift; sourceTree = "<group>"; };
+		A4A991DD22EAA45700DE3B83 /* StroopTask2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopTask2ViewController.swift; sourceTree = "<group>"; };
+		A4A991DF22EAA4AC00DE3B83 /* StroopTask3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopTask3ViewController.swift; sourceTree = "<group>"; };
+		A4A991E122EAA50700DE3B83 /* StroopTask4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopTask4ViewController.swift; sourceTree = "<group>"; };
+		A4AAD21022E01C6A00D4D7CA /* StroopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopModel.swift; sourceTree = "<group>"; };
 		A4AB688A1DE4BE9A0009808D /* DownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadOperation.swift; sourceTree = "<group>"; };
 		A4AB688C1DE4D4730009808D /* DownloadMangager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadMangager.swift; sourceTree = "<group>"; };
 		A4AE36E21DFC545400727DFD /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -690,19 +743,26 @@
 		A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A4DDA8CF225E72DF0000395D /* WordList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WordList.storyboard; sourceTree = "<group>"; };
 		A4DDA8D2225E828F0000395D /* WordListInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListInstructionsViewController.swift; sourceTree = "<group>"; };
+		A4DE7DA122F5DBDC009EEA17 /* WordList2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WordList2.storyboard; sourceTree = "<group>"; };
+		A4DE7DA422F5DD77009EEA17 /* WordList2TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList2TaskViewController.swift; sourceTree = "<group>"; };
+		A4DE7DA622F5DD98009EEA17 /* WordList2RecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList2RecognitionViewController.swift; sourceTree = "<group>"; };
+		A4DE7DA822F5DDB2009EEA17 /* WordList2DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList2DoneViewController.swift; sourceTree = "<group>"; };
+		A4DE7DAA22F61D49009EEA17 /* ClockDrawingInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDrawingInstructionsViewController.swift; sourceTree = "<group>"; };
+		A4DE7DAE22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDrawingDoneViewController.swift; sourceTree = "<group>"; };
+		A4DE7DB022F61DA9009EEA17 /* ClockDrawingTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDrawingTaskViewController.swift; sourceTree = "<group>"; };
+		A4DE7DB222F62539009EEA17 /* ClockDrawingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDrawingModel.swift; sourceTree = "<group>"; };
 		A4DF9F231E08FBC90084EAF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F251E08FBF60084EAF9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOrder.swift; sourceTree = "<group>"; };
 		A4E67AFA224B4D430002D127 /* WordListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListModel.swift; sourceTree = "<group>"; };
+		A4EDC008229D3F25006B8C53 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		A4EDC00A229D4A69006B8C53 /* SelectTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTestViewController.swift; sourceTree = "<group>"; };
 		A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfig.swift; sourceTree = "<group>"; };
 		A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionModel.swift; sourceTree = "<group>"; };
 		A4F810E42252ADBA001F9503 /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		A4FAB4492256334500E6C68A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordList2ViewController.swift; path = controllers/WordList2ViewController.swift; sourceTree = "<group>"; };
-		A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordList2ViewController.xib; path = controllers/WordList2ViewController.xib; sourceTree = "<group>"; };
 		B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.release.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.release.xcconfig"; sourceTree = "<group>"; };
 		EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Embraced.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -748,6 +808,10 @@
 				A4969D1321E544C10063FF40 /* DigitSpan.storyboard */,
 				A4969D2221E7D8F50063FF40 /* Cancellation.storyboard */,
 				A4DDA8CF225E72DF0000395D /* WordList.storyboard */,
+				A47E666122D2B98900B5B7B5 /* ClockDrawing.storyboard */,
+				A47E666422D2BB0000B5B7B5 /* Stroop.storyboard */,
+				A48B1AEE22EF3C58007A1E98 /* NamingTask.storyboard */,
+				A4DE7DA122F5DBDC009EEA17 /* WordList2.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -756,7 +820,10 @@
 			isa = PBXGroup;
 			children = (
 				A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */,
-				A42041F721E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift */,
+				A42041F721E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift */,
+				A47E664D22CFD0B100B5B7B5 /* MelodyRecognitionPracticeViewController.swift */,
+				A47E665322CFD2F400B5B7B5 /* MelodyRecognitionInstructions2ViewController.swift */,
+				A47E665522CFD31C00B5B7B5 /* MelodyRecognitionTaskViewController.swift */,
 				A4969D1121E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift */,
 			);
 			name = MelodyRecognition;
@@ -771,8 +838,6 @@
 				A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */,
 				A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */,
 				A46C141E1D79AA110066EF37 /* ReyComplexFigureViewController.xib */,
-				A46C14211D79AA7C0066EF37 /* ClockDrawingTestViewController.swift */,
-				A46C14221D79AA7C0066EF37 /* ClockDrawingTestViewController.xib */,
 				A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */,
 				A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */,
 				A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */,
@@ -787,8 +852,6 @@
 				A4347FD01D7BCA950033306A /* MatricesViewController.xib */,
 				A4347FD31D7BCABC0033306A /* PegboardViewController.swift */,
 				A4347FD41D7BCABC0033306A /* PegboardViewController.xib */,
-				A46C14151D7999AF0066EF37 /* CancellationTestViewController.swift */,
-				A46C14161D7999AF0066EF37 /* CancellationTestViewController.xib */,
 				A4347FE11D7BCC170033306A /* MultipleErrandsViewController.swift */,
 				A4347FE21D7BCC170033306A /* MultipleErrandsViewController.xib */,
 				A4347FE51D7BCC4C0033306A /* ComprehensionViewController.swift */,
@@ -808,8 +871,59 @@
 				A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */,
 				A48A12C521F74FE60044AF08 /* CancellationModel.swift */,
 				A4E67AFA224B4D430002D127 /* WordListModel.swift */,
+				A47E664722C0846E00B5B7B5 /* ParticipantDTO.swift */,
+				A47E664B22C09CAE00B5B7B5 /* Participant.swift */,
+				A47E665F22D1CE4F00B5B7B5 /* DigitSpanModel.swift */,
+				A4AAD21022E01C6A00D4D7CA /* StroopModel.swift */,
+				A48B1AFD22EF444C007A1E98 /* NamingTaskModel.swift */,
+				A4DE7DB222F62539009EEA17 /* ClockDrawingModel.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		A47E666322D2BAB100B5B7B5 /* ClockDrawing */ = {
+			isa = PBXGroup;
+			children = (
+				A4DE7DAA22F61D49009EEA17 /* ClockDrawingInstructionsViewController.swift */,
+				A4DE7DB022F61DA9009EEA17 /* ClockDrawingTaskViewController.swift */,
+				A4DE7DAE22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift */,
+			);
+			name = ClockDrawing;
+			sourceTree = "<group>";
+		};
+		A47E666622D2BBA300B5B7B5 /* Stroop */ = {
+			isa = PBXGroup;
+			children = (
+				A47E666722D2BBD600B5B7B5 /* StroopAudioTestViewController.swift */,
+				A47E666922D2BD5000B5B7B5 /* StroopPreTaskViewController.swift */,
+				A47E666B22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift */,
+				A47E666D22D2D7CE00B5B7B5 /* StroopTaskViewController.swift */,
+				A4A991CF22EA9F1B00DE3B83 /* StroopInstructions2ViewController.swift */,
+				A4A991D722EAA2DE00DE3B83 /* StroopPreTask2ViewController.swift */,
+				A4A991D122EAA13C00DE3B83 /* StroopInstructions3ViewController.swift */,
+				A4A991DD22EAA45700DE3B83 /* StroopTask2ViewController.swift */,
+				A4A991D922EAA3A700DE3B83 /* StroopPreTask3ViewController.swift */,
+				A4A991D322EAA19800DE3B83 /* StroopInstructions4ViewController.swift */,
+				A4A991DF22EAA4AC00DE3B83 /* StroopTask3ViewController.swift */,
+				A4A991DB22EAA3CC00DE3B83 /* StroopPreTask4ViewController.swift */,
+				A4A991D522EAA1BC00DE3B83 /* StroopInstructions5ViewController.swift */,
+				A4A991E122EAA50700DE3B83 /* StroopTask4ViewController.swift */,
+				A47E666F22D2D87900B5B7B5 /* StroopDoneViewController.swift */,
+			);
+			name = Stroop;
+			sourceTree = "<group>";
+		};
+		A48B1AF022EF3CA8007A1E98 /* NamingTask */ = {
+			isa = PBXGroup;
+			children = (
+				A48B1AF122EF3CD4007A1E98 /* NamingTaskAudioTestViewController.swift */,
+				A48B1AF322EF3F1F007A1E98 /* NamingTaskInstructionsViewController.swift */,
+				A48B1AF522EF40CD007A1E98 /* NamingTaskPracticeViewController.swift */,
+				A48B1AF722EF40ED007A1E98 /* NamingTaskInstructions2ViewController.swift */,
+				A48B1AF922EF410A007A1E98 /* NamingTaskTaskViewController.swift */,
+				A48B1AFB22EF412C007A1E98 /* NamingTaskDoneViewController.swift */,
+			);
+			name = NamingTask;
 			sourceTree = "<group>";
 		};
 		A48B4DB81CF9E7C600878928 = {
@@ -1093,10 +1207,15 @@
 		A48D60ED1FF6FF1A0042FBCA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A44669371E16457600EA7E2E /* RecordButton.swift */,
+				A44669331E16435C00EA7E2E /* PlayButton.swift */,
+				A44669311E1631A600EA7E2E /* ListenButton.swift */,
+				A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */,
 				A48D60F21FF704D60042FBCA /* UserCollectionViewCell.swift */,
 				A48D60F31FF704D60042FBCA /* UserCollectionViewCell.xib */,
 				A4969D3221E926BE0063FF40 /* CancellationViewCell.swift */,
 				A4969D3321E926BE0063FF40 /* CancellationViewCell.xib */,
+				A4D904211D23810C0092D6AA /* EmbracedTextField.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1104,15 +1223,20 @@
 		A490D7C11D0913C500D2B59D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4DE7DA322F5DD14009EEA17 /* WordList2 */,
+				A48B1AF022EF3CA8007A1E98 /* NamingTask */,
+				A47E666622D2BBA300B5B7B5 /* Stroop */,
+				A47E666322D2BAB100B5B7B5 /* ClockDrawing */,
 				A4DDA8D1225E82360000395D /* WordList */,
 				A4969D1F21E7D7BF0063FF40 /* Cancellation */,
-				A4969D1521E545290063FF40 /* DigitSpan */,
 				A42041F921E1F1E500021EDB /* MelodyRecognition */,
+				A4969D1521E545290063FF40 /* DigitSpan */,
 				A4D904231D2384010092D6AA /* Customizations */,
 				A48B4DC41CF9E7C700878928 /* AppDelegate.swift */,
 				A48B4DC61CF9E7C700878928 /* ViewController.swift */,
+				A4EDC008229D3F25006B8C53 /* DashboardViewController.swift */,
+				A4EDC00A229D4A69006B8C53 /* SelectTestViewController.swift */,
 				A489D61A1E0BA255001F56FE /* AdminViewController.swift */,
-				A489D61B1E0BA255001F56FE /* AdminViewController.xib */,
 				A4C469A51E134B5900FDD5D5 /* UserViewController.swift */,
 				A4C469A61E134B5900FDD5D5 /* UserViewController.xib */,
 				A489D6161E0B535A001F56FE /* SettingsViewController.swift */,
@@ -1120,22 +1244,22 @@
 				A490D7C41D09162800D2B59D /* UserInputViewController.swift */,
 				A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */,
 				A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */,
-				A4DFA8C61DC6AEE30056F05D /* StartViewController.xib */,
 				A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */,
 				A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */,
-				A4C72F031E6A1B4F00ADC405 /* AppsideTest */,
 				A42AB5C51D2DE0F4001387BB /* Test */,
 				A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */,
 				A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */,
 				A460CE3F21D0C0E300E52F8B /* CanvasViewController.swift */,
 				A460CE4021D0C0E300E52F8B /* CanvasViewController.xib */,
-				A460CE4421D0C72900E52F8B /* TestViewController.swift */,
 				A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */,
 				A460CE4821D0C77300E52F8B /* InstructionsStep.xib */,
 				A42041EF21E1D09E00021EDB /* InstructionsViewController.swift */,
 				A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */,
 				A4969D1A21E67B960063FF40 /* AudioPlaybackViewController.swift */,
 				A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */,
+				A47E664322B262B200B5B7B5 /* SideMenuViewController.swift */,
+				A47E664522C07FF300B5B7B5 /* ParticipantsTableViewController.swift */,
+				A47E664922C095B800B5B7B5 /* DataDisplayViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1144,6 +1268,10 @@
 			isa = PBXGroup;
 			children = (
 				A4969D1621E5454B0063FF40 /* DigitSpanInstructionsViewController.swift */,
+				A47E665722D1972B00B5B7B5 /* DigittSpanPracticeViewController.swift */,
+				A47E665922D1975300B5B7B5 /* DigitSpanTaskViewController.swift */,
+				A47E665B22D1976700B5B7B5 /* DigitSpanPractice2ViewController.swift */,
+				A47E665D22D1978000B5B7B5 /* DigitSpanTask2ViewController.swift */,
 				A4969D1821E545630063FF40 /* DigitSpanDoneViewController.swift */,
 			);
 			name = DigitSpan;
@@ -1152,6 +1280,7 @@
 		A4969D1C21E6979E0063FF40 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */,
 				A4969D1D21E697B50063FF40 /* Utility.swift */,
 			);
 			name = Helper;
@@ -1170,39 +1299,14 @@
 			name = Cancellation;
 			sourceTree = "<group>";
 		};
-		A4C72F031E6A1B4F00ADC405 /* AppsideTest */ = {
-			isa = PBXGroup;
-			children = (
-				A4347FD71D7BCAFB0033306A /* PitchViewController.swift */,
-				A4347FD81D7BCAFB0033306A /* PitchViewController.xib */,
-				A4347FC71D7BCA280033306A /* DigitalSpanViewController.swift */,
-				A4347FC81D7BCA280033306A /* DigitalSpanViewController.xib */,
-				A4347FDB1D7BCB260033306A /* WordListViewController.swift */,
-				A4347FDC1D7BCB260033306A /* WordListViewController.xib */,
-				A4347FBF1D7BC9E20033306A /* StroopViewController.swift */,
-				A4347FC01D7BC9E20033306A /* StroopViewController.xib */,
-				A4FC1E971DD2BE4500F19D95 /* WordList2ViewController.swift */,
-				A4FC1E981DD2BE4500F19D95 /* WordList2ViewController.xib */,
-				A43E98B11D506B29008F54C3 /* NamingTaskViewController.swift */,
-				A4347FDF1D7BCB800033306A /* NamingTaskViewController.xib */,
-			);
-			name = AppsideTest;
-			sourceTree = "<group>";
-		};
 		A4D904231D2384010092D6AA /* Customizations */ = {
 			isa = PBXGroup;
 			children = (
-				A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */,
 				A4D9041D1D2380380092D6AA /* FrontViewController.swift */,
-				A4D904211D23810C0092D6AA /* EmbracedTextField.swift */,
-				A4A8F8311DA4A1A8006F9FF3 /* NavigationButton.swift */,
 				A46A2C671DD96FF0000AC66C /* APIWrapper.swift */,
 				A4AB688A1DE4BE9A0009808D /* DownloadOperation.swift */,
 				A4AB688C1DE4D4730009808D /* DownloadMangager.swift */,
 				A4AE36E21DFC545400727DFD /* WebViewController.swift */,
-				A44669311E1631A600EA7E2E /* ListenButton.swift */,
-				A44669331E16435C00EA7E2E /* PlayButton.swift */,
-				A44669371E16457600EA7E2E /* RecordButton.swift */,
 				A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */,
 			);
 			name = Customizations;
@@ -1216,6 +1320,16 @@
 				A4D7C78F2269E394004BF326 /* WordListDoneViewController.swift */,
 			);
 			name = WordList;
+			sourceTree = "<group>";
+		};
+		A4DE7DA322F5DD14009EEA17 /* WordList2 */ = {
+			isa = PBXGroup;
+			children = (
+				A4DE7DA422F5DD77009EEA17 /* WordList2TaskViewController.swift */,
+				A4DE7DA622F5DD98009EEA17 /* WordList2RecognitionViewController.swift */,
+				A4DE7DA822F5DDB2009EEA17 /* WordList2DoneViewController.swift */,
+			);
+			name = WordList2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1266,7 +1380,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 				es,
@@ -1307,6 +1420,7 @@
 				A4C3288020815CD600DEC460 /* STROOP_ENG_TASK3.mp4 in Resources */,
 				A4CA155222031EBE00F6CF0A /* SPA-11.mp3 in Resources */,
 				A4CA147E22031BFC00F6CF0A /* ENG-FWD-10.mp3 in Resources */,
+				A4DE7DA222F5DBDC009EEA17 /* WordList2.storyboard in Resources */,
 				A4C3288120815CD600DEC460 /* STROOP_ENG_TASK4.mp4 in Resources */,
 				A4CA1582220324C100F6CF0A /* melodies 320ms orig(01).wav in Resources */,
 				A4CA14A122031C1900F6CF0A /* SPA-BWD-14.mp3 in Resources */,
@@ -1330,6 +1444,7 @@
 				A4CA151B22031E9D00F6CF0A /* ENG-21.mp3 in Resources */,
 				A4CA14A222031C1900F6CF0A /* SPA-BWD-07.mp3 in Resources */,
 				A4C3288520815CD600DEC460 /* STROOP_SPA_TASK4.mp4 in Resources */,
+				A48B1AEF22EF3C58007A1E98 /* NamingTask.storyboard in Resources */,
 				A48A12D421FA4BA00044AF08 /* melodies 320ms orig(68).wav in Resources */,
 				A48A131421FA4C450044AF08 /* melodies 320ms orig(90).wav in Resources */,
 				A460CE4921D0C77300E52F8B /* InstructionsStep.xib in Resources */,
@@ -1362,7 +1477,6 @@
 				A4347FE41D7BCC170033306A /* MultipleErrandsViewController.xib in Resources */,
 				A4CA147B22031BFC00F6CF0A /* ENG-FWD-02.mp3 in Resources */,
 				A4CA14BA22031C2500F6CF0A /* SPA-FWD-05.mp3 in Resources */,
-				A46C14181D7999AF0066EF37 /* CancellationTestViewController.xib in Resources */,
 				A4CA151D22031E9D00F6CF0A /* ENG-33.mp3 in Resources */,
 				A48D60F51FF704D60042FBCA /* UserCollectionViewCell.xib in Resources */,
 				A48A131721FA4C4C0044AF08 /* melodies 320ms diff(74).wav in Resources */,
@@ -1385,6 +1499,7 @@
 				A4CA155D22031EBE00F6CF0A /* SPA-02.mp3 in Resources */,
 				A48A131221FA4C3D0044AF08 /* melodies 320ms diff(06).wav in Resources */,
 				A4347FD61D7BCABC0033306A /* PegboardViewController.xib in Resources */,
+				A47E666222D2B98900B5B7B5 /* ClockDrawing.storyboard in Resources */,
 				A4CA14A422031C1900F6CF0A /* SPA-BWD-12.mp3 in Resources */,
 				A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */,
 				A4CA156822031EBE00F6CF0A /* SPA-34.mp3 in Resources */,
@@ -1399,7 +1514,6 @@
 				A4CA1584220324E300F6CF0A /* melodies 320ms orig(16).wav in Resources */,
 				A4CA157922031EBE00F6CF0A /* SPA-21.mp3 in Resources */,
 				A4CA14A322031C1900F6CF0A /* SPA-BWD-02.mp3 in Resources */,
-				A46C14241D79AA7C0066EF37 /* ClockDrawingTestViewController.xib in Resources */,
 				A4CA14C822031D9E00F6CF0A /* List B ENG.mp3 in Resources */,
 				A4CA147D22031BFC00F6CF0A /* ENG-FWD-03.mp3 in Resources */,
 				A48B4DD21CF9E7C700878928 /* LaunchScreen.storyboard in Resources */,
@@ -1428,7 +1542,6 @@
 				A4CA156B22031EBE00F6CF0A /* SPA-04.mp3 in Resources */,
 				A4CA152022031E9D00F6CF0A /* ENG-31.mp3 in Resources */,
 				A490D7D31D0919CB00D2B59D /* Roboto-BlackItalic.ttf in Resources */,
-				A4FC1E9A1DD2BE4500F19D95 /* WordList2ViewController.xib in Resources */,
 				A48A130621FA4C200044AF08 /* melodies 320ms orig(05).wav in Resources */,
 				A4CA14BE22031C2500F6CF0A /* SPA-FWD-01.mp3 in Resources */,
 				A4CA151922031E9D00F6CF0A /* ENG-18.mp3 in Resources */,
@@ -1442,7 +1555,6 @@
 				A48A130A21FA4C2C0044AF08 /* melodies 320ms orig(33).wav in Resources */,
 				A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */,
 				A4CA156522031EBE00F6CF0A /* SPA-22.mp3 in Resources */,
-				A4347FC21D7BC9E20033306A /* StroopViewController.xib in Resources */,
 				A4CA150222031E9D00F6CF0A /* ENG-19.mp3 in Resources */,
 				A4CA148122031BFC00F6CF0A /* ENG-FWD-04.mp3 in Resources */,
 				A48A130E21FA4C360044AF08 /* melodies 320ms diff(24).wav in Resources */,
@@ -1457,11 +1569,9 @@
 				A48A130421FA4C190044AF08 /* melodies 320ms orig(17).wav in Resources */,
 				A48A12CA21FA4B330044AF08 /* melodies 320ms diff(16).wav in Resources */,
 				A4CA156022031EBE00F6CF0A /* SPA-40.mp3 in Resources */,
-				A489D61D1E0BA255001F56FE /* AdminViewController.xib in Resources */,
 				A4C469A81E134B5900FDD5D5 /* UserViewController.xib in Resources */,
 				A48A12EE21FA4BEB0044AF08 /* melodies 320ms orig(82).wav in Resources */,
 				A48A130221FA4C130044AF08 /* melodies 320ms orig(40).wav in Resources */,
-				A4347FE01D7BCB800033306A /* NamingTaskViewController.xib in Resources */,
 				A4CA147F22031BFC00F6CF0A /* ENG-FWD-12.mp3 in Resources */,
 				A4CA148222031BFC00F6CF0A /* ENG-FWD-13.mp3 in Resources */,
 				A48A12D721FA4BAA0044AF08 /* melodies 320ms orig(21).wav in Resources */,
@@ -1511,9 +1621,9 @@
 				A4CA155C22031EBE00F6CF0A /* SPA-27.mp3 in Resources */,
 				A46C14201D79AA110066EF37 /* ReyComplexFigureViewController.xib in Resources */,
 				A4CA155B22031EBE00F6CF0A /* SPA-39.mp3 in Resources */,
-				A4347FDA1D7BCAFB0033306A /* PitchViewController.xib in Resources */,
 				A4CA155522031EBE00F6CF0A /* SPA-09.mp3 in Resources */,
 				A4CA14FA22031E9D00F6CF0A /* ENG-06.mp3 in Resources */,
+				A47E666522D2BB0000B5B7B5 /* Stroop.storyboard in Resources */,
 				A490D7D21D0919CB00D2B59D /* Roboto-Black.ttf in Resources */,
 				A4CA14F922031E9D00F6CF0A /* ENG-20.mp3 in Resources */,
 				A48A12F521FA4BFD0044AF08 /* melodies 320ms diff(51).wav in Resources */,
@@ -1522,7 +1632,6 @@
 				A4CA151C22031E9D00F6CF0A /* ENG-39.mp3 in Resources */,
 				A4CA146722031BEE00F6CF0A /* ENG-BWD-12.mp3 in Resources */,
 				A4CA14B922031C2500F6CF0A /* SPA-FWD-06.mp3 in Resources */,
-				A4347FDE1D7BCB260033306A /* WordListViewController.xib in Resources */,
 				A48A12FA21FA4C040044AF08 /* melodies 320ms orig(07).wav in Resources */,
 				A4CA148522031BFC00F6CF0A /* ENG-FWD-05.mp3 in Resources */,
 				A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */,
@@ -1531,7 +1640,6 @@
 				A4969D3521E926BE0063FF40 /* CancellationViewCell.xib in Resources */,
 				A41AE3C11DCA57150089231D /* Images.xcassets in Resources */,
 				A48A12EC21FA4BE50044AF08 /* melodies 320ms orig(89).wav in Resources */,
-				A4347FCA1D7BCA280033306A /* DigitalSpanViewController.xib in Resources */,
 				A4CA14C122031C2500F6CF0A /* SPA-FWD-08.mp3 in Resources */,
 				A4CA150A22031E9D00F6CF0A /* ENG-25.mp3 in Resources */,
 				A4CA151122031E9D00F6CF0A /* ENG-35.mp3 in Resources */,
@@ -1547,7 +1655,6 @@
 				A4CA14A622031C1900F6CF0A /* SPA-BWD-09.mp3 in Resources */,
 				A4CA156D22031EBE00F6CF0A /* SPA-20.mp3 in Resources */,
 				A4347FBE1D7BC9440033306A /* ReyComplexFigure2ViewController.xib in Resources */,
-				A4DFA8C81DC6AEE30056F05D /* StartViewController.xib in Resources */,
 				A48A132721FA4C6F0044AF08 /* melodies 320ms diff(32).wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1687,84 +1794,120 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A47E665E22D1978000B5B7B5 /* DigitSpanTask2ViewController.swift in Sources */,
+				A47E664822C0846E00B5B7B5 /* ParticipantDTO.swift in Sources */,
+				A47E664A22C095B800B5B7B5 /* DataDisplayViewController.swift in Sources */,
+				A47E666022D1CE4F00B5B7B5 /* DigitSpanModel.swift in Sources */,
 				A4FAB44A2256334500E6C68A /* NetworkManager.swift in Sources */,
 				A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */,
 				A48A12C421F7414A0044AF08 /* CancellationDoneViewController.swift in Sources */,
 				A4347FE71D7BCC4C0033306A /* ComprehensionViewController.swift in Sources */,
+				A4DE7DA722F5DD98009EEA17 /* WordList2RecognitionViewController.swift in Sources */,
+				A4A991D422EAA19800DE3B83 /* StroopInstructions4ViewController.swift in Sources */,
 				A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */,
+				A47E666E22D2D7CE00B5B7B5 /* StroopTaskViewController.swift in Sources */,
+				A47E666A22D2BD5000B5B7B5 /* StroopPreTaskViewController.swift in Sources */,
 				A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */,
-				A43E98B21D506B29008F54C3 /* NamingTaskViewController.swift in Sources */,
 				A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
+				A48B1AFA22EF410A007A1E98 /* NamingTaskTaskViewController.swift in Sources */,
+				A4DE7DA922F5DDB2009EEA17 /* WordList2DoneViewController.swift in Sources */,
 				A4969D1221E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift in Sources */,
 				A4D7C7902269E394004BF326 /* WordListDoneViewController.swift in Sources */,
-				A4FC1E991DD2BE4500F19D95 /* WordList2ViewController.swift in Sources */,
 				A4347FE31D7BCC170033306A /* MultipleErrandsViewController.swift in Sources */,
 				A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */,
 				A4AB688D1DE4D4730009808D /* DownloadMangager.swift in Sources */,
+				A47E664C22C09CAE00B5B7B5 /* Participant.swift in Sources */,
+				A4DE7DAF22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift in Sources */,
+				A4A991D822EAA2DE00DE3B83 /* StroopPreTask2ViewController.swift in Sources */,
 				A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */,
+				A48B1AF822EF40ED007A1E98 /* NamingTaskInstructions2ViewController.swift in Sources */,
 				A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */,
+				A4EDC009229D3F25006B8C53 /* DashboardViewController.swift in Sources */,
 				A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */,
 				A4347FD51D7BCABC0033306A /* PegboardViewController.swift in Sources */,
 				A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */,
 				A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */,
 				A4F810E52252ADBA001F9503 /* DatabaseController.swift in Sources */,
+				A47E665422CFD2F400B5B7B5 /* MelodyRecognitionInstructions2ViewController.swift in Sources */,
 				A489D6181E0B535A001F56FE /* SettingsViewController.swift in Sources */,
-				A460CE4521D0C72900E52F8B /* TestViewController.swift in Sources */,
+				A47E666822D2BBD600B5B7B5 /* StroopAudioTestViewController.swift in Sources */,
+				A4EDC00B229D4A69006B8C53 /* SelectTestViewController.swift in Sources */,
+				A47E665C22D1976700B5B7B5 /* DigitSpanPractice2ViewController.swift in Sources */,
 				A460CE4721D0C75E00E52F8B /* InstructionsStep.swift in Sources */,
 				A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */,
 				A4969D1721E5454B0063FF40 /* DigitSpanInstructionsViewController.swift in Sources */,
+				A4DE7DB322F62539009EEA17 /* ClockDrawingModel.swift in Sources */,
+				A4A991D622EAA1BC00DE3B83 /* StroopInstructions5ViewController.swift in Sources */,
 				A460CE4121D0C0E300E52F8B /* CanvasViewController.swift in Sources */,
 				A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */,
+				A4A991D222EAA13C00DE3B83 /* StroopInstructions3ViewController.swift in Sources */,
 				A48D60E81FF5AC4F0042FBCA /* LibraryAPI.swift in Sources */,
 				A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */,
 				A4969D1E21E697B50063FF40 /* Utility.swift in Sources */,
 				A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */,
 				A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */,
+				A4DE7DAB22F61D49009EEA17 /* ClockDrawingInstructionsViewController.swift in Sources */,
 				A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */,
+				A4A991D022EA9F1B00DE3B83 /* StroopInstructions2ViewController.swift in Sources */,
 				A4347FD11D7BCA950033306A /* MatricesViewController.swift in Sources */,
 				A4F067AF21E3E28A00ECEF6F /* TestConfig.swift in Sources */,
+				A47E667022D2D87900B5B7B5 /* StroopDoneViewController.swift in Sources */,
+				A4A991DC22EAA3CC00DE3B83 /* StroopPreTask4ViewController.swift in Sources */,
+				A47E665622CFD31C00B5B7B5 /* MelodyRecognitionTaskViewController.swift in Sources */,
+				A48B1AF222EF3CD4007A1E98 /* NamingTaskAudioTestViewController.swift in Sources */,
 				A42041F121E1D09E00021EDB /* InstructionsViewController.swift in Sources */,
 				A48D60F41FF704D60042FBCA /* UserCollectionViewCell.swift in Sources */,
 				A4969D3721F276210063FF40 /* CancellationBlockViewController.swift in Sources */,
+				A47E665A22D1975300B5B7B5 /* DigitSpanTaskViewController.swift in Sources */,
+				A48B1AFE22EF444C007A1E98 /* NamingTaskModel.swift in Sources */,
+				A4A991DE22EAA45700DE3B83 /* StroopTask2ViewController.swift in Sources */,
+				A4DE7DA522F5DD77009EEA17 /* WordList2TaskViewController.swift in Sources */,
 				A4D7C78E2269E1CD004BF326 /* WordListTrialsViewController.swift in Sources */,
 				A4347FCD1D7BCA570033306A /* ReyFigureComplex4ViewController.swift in Sources */,
 				A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */,
 				A4969D2521E7DA340063FF40 /* CancellationInstructions2ViewController.swift in Sources */,
 				A4969D1B21E67B960063FF40 /* AudioPlaybackViewController.swift in Sources */,
 				A4C469A71E134B5900FDD5D5 /* UserViewController.swift in Sources */,
-				A4347FDD1D7BCB260033306A /* WordListViewController.swift in Sources */,
 				A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */,
-				A4347FD91D7BCAFB0033306A /* PitchViewController.swift in Sources */,
 				A4AB688B1DE4BE9A0009808D /* DownloadOperation.swift in Sources */,
 				A4396F10223C142B009B1EDC /* FirebaseStorageManager.swift in Sources */,
+				A4A991E222EAA50700DE3B83 /* StroopTask4ViewController.swift in Sources */,
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
-				A46C14171D7999AF0066EF37 /* CancellationTestViewController.swift in Sources */,
+				A47E664E22CFD0B100B5B7B5 /* MelodyRecognitionPracticeViewController.swift in Sources */,
 				A4DDA8D3225E828F0000395D /* WordListInstructionsViewController.swift in Sources */,
 				A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */,
+				A4AAD21122E01C6A00D4D7CA /* StroopModel.swift in Sources */,
+				A47E664622C07FF300B5B7B5 /* ParticipantsTableViewController.swift in Sources */,
 				A4969D2121E7D7E90063FF40 /* CancellationInstructionsViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
-				A42041F821E1F11B00021EDB /* MelodyRecognitionExample1ViewController.swift in Sources */,
+				A42041F821E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift in Sources */,
+				A4A991DA22EAA3A700DE3B83 /* StroopPreTask3ViewController.swift in Sources */,
+				A48B1AF622EF40CD007A1E98 /* NamingTaskPracticeViewController.swift in Sources */,
 				A46A2C681DD96FF0000AC66C /* APIWrapper.swift in Sources */,
+				A48B1AF422EF3F1F007A1E98 /* NamingTaskInstructionsViewController.swift in Sources */,
+				A47E664422B262B200B5B7B5 /* SideMenuViewController.swift in Sources */,
 				A4969D2721E7DB2D0063FF40 /* CancellationInstructions3ViewController.swift in Sources */,
-				A46C14231D79AA7C0066EF37 /* ClockDrawingTestViewController.swift in Sources */,
-				A4347FC91D7BCA280033306A /* DigitalSpanViewController.swift in Sources */,
 				A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */,
+				A4A991E022EAA4AC00DE3B83 /* StroopTask3ViewController.swift in Sources */,
 				A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */,
 				A4969D2921E7F6B50063FF40 /* CancellationPracticeViewController.swift in Sources */,
 				A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */,
 				A4DB0FB41DFB2CA1000811B6 /* DataManager.swift in Sources */,
 				A48A12C621F74FE60044AF08 /* CancellationModel.swift in Sources */,
+				A47E666C22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift in Sources */,
 				A48A12C221F740ED0044AF08 /* DoneStepViewController.swift in Sources */,
 				A4BB08EC1D7EDFFA00B76C64 /* QuestionnaireViewController.swift in Sources */,
 				A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */,
 				A4E67AFB224B4D430002D127 /* WordListModel.swift in Sources */,
+				A47E665822D1972B00B5B7B5 /* DigittSpanPracticeViewController.swift in Sources */,
 				A4AE36E31DFC545400727DFD /* WebViewController.swift in Sources */,
+				A48B1AFC22EF412C007A1E98 /* NamingTaskDoneViewController.swift in Sources */,
 				A47FF4AE211363AA00665E20 /* Constants.swift in Sources */,
 				A44669381E16457600EA7E2E /* RecordButton.swift in Sources */,
 				A4969D1921E545630063FF40 /* DigitSpanDoneViewController.swift in Sources */,
 				A4969D3421E926BE0063FF40 /* CancellationViewCell.swift in Sources */,
-				A4347FC11D7BC9E20033306A /* StroopViewController.swift in Sources */,
+				A4DE7DB122F61DA9009EEA17 /* ClockDrawingTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1850,7 +1993,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1902,7 +2045,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1922,12 +2065,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -1941,12 +2085,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.embraced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
