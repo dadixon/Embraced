@@ -62,6 +62,10 @@ class TestConfig {
                     if let vc = UIStoryboard(name: "ClockDrawing", bundle: nil).instantiateViewController(withIdentifier: "ClockDrawingTest") as? ClockDrawingInstructionsViewController {
                         self.testList.append(vc)
                     }
+                case "Complex Figure 1":
+                    if let vc = UIStoryboard(name: "RCFT", bundle: nil).instantiateViewController(withIdentifier: "RCFTTest") as? RCFTInstructionsViewController {
+                        self.testList.append(vc)
+                    }
                 default:
                     continue
             }

@@ -119,3 +119,8 @@
 
 // Clock Drawing Test
 "clock_drawing_instructions" = "Now the objective is to draw a big circular clock with its hands in the correct positions.\nMake it large enough so that you can add the numbers too.\nDraw clock hands to make the clock read 10 past 11.\nWhen you have finished click 'Next' to continue ";
+
+// RCFT
+"rcft_1_instructions" = "In this task you are going to be asked to draw with your finger.\nBefore we proceed, please practice drawing with your finger in the sample screen.\nClick 'Next' to continue.";
+"rcft_1_instructions_2" = "Click Next Once you are done practicing.";
+"rcft_1_instructions_3" = "Now you will be shown a COMPLEX figure.\nPlease copy the figure with your finger on the blank space below the figure.\nPress 'DONE' when you finish copying the figure.";

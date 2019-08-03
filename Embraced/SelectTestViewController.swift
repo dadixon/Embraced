@@ -22,7 +22,7 @@ class SelectTestViewController: UIViewController {
     var tests = [
 //        "Questionnaire",
 //        "Orientation Task",
-//        "Complex Figure 1",
+        "Complex Figure 1",
         "Clock Drawing Test",
 //        "Complex Figure 2",
 //        "Trail Making Test",

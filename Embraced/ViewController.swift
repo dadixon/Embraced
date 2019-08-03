@@ -50,10 +50,9 @@ class ViewController: UIViewController {
             return
         }
         
-//        let email = "drocdix7@gmail.com" //self.usernameTextfield.text!
-//        let password = "dadixon" //self.passwordTextfield.text!
         let email = self.usernameTextfield.text!
         let password = self.passwordTextfield.text!
+        
         
         Auth.auth().signIn(withEmail: email,
                            password: password,
