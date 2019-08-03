@@ -23,6 +23,8 @@ class ClockDrawingTaskViewController: ActiveStepViewController {
     var documentPath: URL?
     let fileName = "clock.png"
     var saveImagePath: URL!
+    var start: CFAbsoluteTime!
+    var reactionTime: Int?
     
     let canvas: UIImageView = {
         var imageView = UIImageView()
@@ -48,6 +50,8 @@ class ClockDrawingTaskViewController: ActiveStepViewController {
         } catch let error as NSError {
             NSLog("Unable to create directory \(error.debugDescription)")
         }
+        
+        start = CFAbsoluteTimeGetCurrent()
     }
     
     private func setupViews() {
@@ -60,6 +64,10 @@ class ClockDrawingTaskViewController: ActiveStepViewController {
     }
     
     @objc func moveOn() {
+        let elapsed = CFAbsoluteTimeGetCurrent() - start
+        let mill = elapsed * 1000
+        reactionTime = Int(mill)
+        
         if let image = canvas.image {
             if let data = image.pngData() {
                 if let path = documentPath {
@@ -135,6 +143,7 @@ class ClockDrawingTaskViewController: ActiveStepViewController {
                 }
                 
                 ClockDrawingModel.shared.file = filePath
+                ClockDrawingModel.shared.time = self.reactionTime
                 
                 FirebaseStorageManager.shared.addDataToDocument(payload: [
                     "clockDrawing": ClockDrawingModel.shared.printModel()

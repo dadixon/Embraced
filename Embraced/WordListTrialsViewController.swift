@@ -322,7 +322,7 @@ class WordListTrialsViewController: ActiveStepViewController {
                     
                     // Delete file from device
                     Utility.deleteFile(filePath)
-                    SVProgressHUD.dismiss()()
+                    SVProgressHUD.dismiss()
 //                }
             }
         }

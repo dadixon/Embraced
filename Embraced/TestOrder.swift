@@ -39,8 +39,8 @@ final class TestOrder {
                 navigationTests.append(MOCAMMSETestViewController())
             case "Complex Figure 1":
                 navigationTests.append(ReyComplexFigureViewController())
-            case "Clock Drawing Test":
-                navigationTests.append(ClockDrawingTestViewController())
+//            case "Clock Drawing Test":
+//                navigationTests.append(ClockDrawingTestViewController())
             case "Complex Figure 2":
                 navigationTests.append(ReyComplexFigure2ViewController())
             case "Trail Making Test":
