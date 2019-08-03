@@ -29,11 +29,9 @@ class WordListTrialsViewController: ActiveStepViewController {
     var instructions2 = [String]()
     var documentPath: URL?
     
-    let playBtn: UIButton = {
-        var button = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    let playBtn: ListenButton = {
+        var button = ListenButton(type: UIButton.ButtonType.custom) as ListenButton
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "listen2"), for: .normal)
-        button.contentMode = .scaleToFill
         button.addTarget(self, action: #selector(playPressed), for: .touchUpInside)
         return button
     }()
@@ -47,11 +45,9 @@ class WordListTrialsViewController: ActiveStepViewController {
         return label
     }()
     
-    let recordBtn: UIButton = {
-        var button = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    let recordBtn: RecordButton = {
+        var button = RecordButton(type: UIButton.ButtonType.custom) as RecordButton
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "record2"), for: .normal)
-        button.contentMode = .scaleToFill
         button.addTarget(self, action: #selector(recordPressed), for: .touchUpInside)
         return button
     }()
@@ -181,6 +177,9 @@ class WordListTrialsViewController: ActiveStepViewController {
         if isRecording {
             finishRecording()
         } else {
+            recordBtn.btnStop()
+            playBtn.isEnabled = false
+            isRecording = true
             startRecording()
         }
     }
@@ -225,10 +224,6 @@ class WordListTrialsViewController: ActiveStepViewController {
     }
     
     private func startRecording() {
-        recordBtn.setImage(UIImage(named: "stop"), for: .normal)
-        playBtn.isEnabled = false
-        isRecording = true
-        
         if let path = documentPath {
             let audioFilename = path.appendingPathComponent(soundFileName)
             
@@ -267,7 +262,7 @@ class WordListTrialsViewController: ActiveStepViewController {
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
         
-        recordBtn.setImage(UIImage(named: "record2"), for: .normal)
+        recordBtn.btnRecord()
         isRecording = false
         
         externalStorage()
@@ -275,10 +270,8 @@ class WordListTrialsViewController: ActiveStepViewController {
     
     private func externalStorage() {
         let filePath = "\(FirebaseStorageManager.shared.pid!)/WordList/\(soundFileName)"
-//        let fileURL = getDocumentsDirectory().appendingPathComponent(filePath)
         
         if Utility.fileExist(filePath) {
-//            var jsonObject = [String: AnyObject]()
             let storage = Storage.storage()
             let storageRef = storage.reference()
             let participantRef = storageRef.child(filePath)
@@ -289,29 +282,34 @@ class WordListTrialsViewController: ActiveStepViewController {
                     SVProgressHUD.showError(withStatus: "An error has happened")
                 }
                 
-                participantRef.downloadURL { (url, error) in
-                    if error != nil {
-                        print("Error: \(error?.localizedDescription)")
-                    }
-                    guard let downloadURL = url else { return }
-                    
-                    // Deprecate
-//                    jsonObject = [
-//                        "name": "wordList\(index)" as AnyObject,
-//                        "audio": downloadURL.absoluteString as AnyObject
-//                    ]
-//
-//                    Alamofire.request(self.APIUrl + "api/wordlist/" + self.id, method: .post, parameters: jsonObject, encoding: JSONEncoding.default, headers: self.headers).responseJSON { response in
+//                participantRef.downloadURL { (url, error) in
+//                    if error != nil {
+//                        print("Error: \(error?.localizedDescription)")
 //                    }
-                    
+//                    guard let downloadURL = url else { return }
+                
                     switch (self.index) {
-                        case 1: WordListModel.shared.task_1 = filePath
-                        case 2: WordListModel.shared.task_2 = filePath
-                        case 3: WordListModel.shared.task_3 = filePath
-                        case 4: WordListModel.shared.task_4 = filePath
-                        case 5: WordListModel.shared.task_5 = filePath
-                        case 6: WordListModel.shared.interference = filePath
-                        case 7: WordListModel.shared.shortTerm = filePath //downloadURL.absoluteString
+                        case 1:
+                            WordListModel.shared.task_1 = filePath
+                            break
+                        case 2:
+                            WordListModel.shared.task_2 = filePath
+                            break
+                        case 3:
+                            WordListModel.shared.task_3 = filePath
+                            break
+                        case 4:
+                            WordListModel.shared.task_4 = filePath
+                            break
+                        case 5:
+                            WordListModel.shared.task_5 = filePath
+                            break
+                        case 6:
+                            WordListModel.shared.interference = filePath
+                            break
+                        case 7:
+                            WordListModel.shared.shortTerm = filePath
+                            break
                         default: break
                     }
                     
@@ -323,7 +321,7 @@ class WordListTrialsViewController: ActiveStepViewController {
                     
                     // Delete file from device
                     Utility.deleteFile(filePath)
-                }
+//                }
             }
         }
     }

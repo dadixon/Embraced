@@ -10,6 +10,7 @@ import Foundation
 
 class WordListModel {
     static let shared = WordListModel()
+    private let taskAnswers = [1, 3, 8, 11, 13, 14, 15, 16, 17, 26, 30, 33, 35, 38, 40, 41]
     
     var task_1: String?
     var task_2: String?
@@ -19,7 +20,11 @@ class WordListModel {
     var interference: String?
     var shortTerm: String?
     var longTerm: String?
-    var questions: [[String: Bool]]? = []
+    var answers = [String: Int]()
+    var hits: Int = 0
+    var commissions: Int = 0
+    var omissions: Int = 0
+    
     
     private init() {}
     
@@ -36,13 +41,40 @@ class WordListModel {
         rv["shortTerm"] = shortTerm
         rv["longTerm"] = longTerm
         
-        if let listQuestions = questions {
-            for question in listQuestions {
-                var keys = Array(question.keys)
-                rv[keys[0]] = question[keys[0]]
+        for (recName, recValue) in answers {
+            rv[recName] = recValue
+        }
+        
+        calculateScore()
+        
+        rv["hits"] = hits
+        rv["commissions"] = commissions
+        rv["omissions"] = omissions
+        
+        return rv
+    }
+    
+    private func calculateScore(){
+        for (recName, recValue) in answers {
+            let recNameArray = recName.components(separatedBy: "_")
+            let index = Int(recNameArray[1])
+            
+            if (recValue == 0 && taskAnswers.contains(index!) ||
+                recValue == 1 && !taskAnswers.contains(index!)) {
+                hits += 1
+            } else {
+                commissions += 1
             }
         }
         
-        return rv
+        if answers.count > 0 {
+            let totalActions = hits + commissions
+            
+            if totalActions < 44 {
+                omissions = 44 - totalActions
+            } else {
+                omissions = 0
+            }
+        }
     }
 }

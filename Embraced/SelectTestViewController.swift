@@ -27,17 +27,17 @@ class SelectTestViewController: UIViewController {
 //        "Complex Figure 2",
 //        "Trail Making Test",
         "Melodies Recognition",
-//        "Digit Span",
+        "Digit Span",
 //        "Complex Figure 3",
 //        "Complex Figure 4",
 //        "Matrices",
 //        "Continuous Performance Test",
 //        "Motor Tasks",
         "Word List 1",
-//        "Color-Word Stroop Test",
-        "Cancellation Test"
-//        "Word List 2",
-//        "Naming Test",
+        "Color-Word Stroop Test",
+        "Cancellation Test",
+        "Word List 2",
+        "Naming Test",
 //        "Comprehension Task",
 //        "Eyes Test"
     ]

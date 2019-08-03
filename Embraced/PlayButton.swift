@@ -10,22 +10,29 @@ import UIKit
 
 class PlayButton: UIButton {
 
+    private let _playImage = "play2"
+    private let _stopImage = "stop"
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        createBorder()
+        setup()
     }
     
     required override init(frame: CGRect) {
         super.init(frame: frame)
-        createBorder()
+        setup()
     }
     
-    func createBorder() {
-        self.setImage(UIImage(named: "play"), for: .normal)
-        self.setTitle("Play", for: .normal)
-        self.titleEdgeInsets = UIEdgeInsets.init(top: 150,left: -130,bottom: 0,right: 0)
-        self.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: 35, bottom: 0, right: 0)
-        self.setTitleColor(UIColor.black, for: .normal)
+    private func setup() {
+        setImage(UIImage(named: _playImage), for: .normal)
+        contentMode = .scaleToFill
     }
-
+    
+    func btnStop() {
+        setImage(UIImage(named: _stopImage), for: .normal)
+    }
+    
+    func btnPlay() {
+        setImage(UIImage(named: _playImage), for: .normal)
+    }
 }

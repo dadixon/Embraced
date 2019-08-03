@@ -37,11 +37,9 @@ class MelodyRecognitionPracticeViewController: ActiveStepViewController {
         return label
     }()
     
-    let playBtn: UIButton = {
-        var button = UIButton(type: UIButton.ButtonType.custom) as UIButton
+    let playBtn: ListenButton = {
+        var button = ListenButton(type: UIButton.ButtonType.custom) as ListenButton
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "listen2"), for: .normal)
-        button.contentMode = .scaleToFill
         button.addTarget(self, action: #selector(playPressed), for: .touchUpInside)
         return button
     }()
@@ -112,7 +110,7 @@ class MelodyRecognitionPracticeViewController: ActiveStepViewController {
     
     @objc func playPressed() {
         setUpSounds(practices[index])
-        self.playAudio(fileName: firstSoundPath)
+        playAudio(fileName: firstSoundPath)
         resetControls()
     }
     

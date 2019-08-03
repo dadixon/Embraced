@@ -42,6 +42,22 @@ class TestConfig {
                     if let vc = UIStoryboard(name: "Cancellation", bundle: nil).instantiateViewController(withIdentifier: "CancellationTest") as? CancellationInstructionsViewController {
                         self.testList.append(vc)
                     }
+                case "Digit Span":
+                    if let vc = UIStoryboard(name: "DigitSpan", bundle: nil).instantiateViewController(withIdentifier: "DigitSpanTest") as? DigitSpanInstructionsViewController {
+                        self.testList.append(vc)
+                    }
+                case "Color-Word Stroop Test":
+                    if let vc = UIStoryboard(name: "Stroop", bundle: nil).instantiateViewController(withIdentifier: "StroopTest") as? StroopAudioTestViewController {
+                        self.testList.append(vc)
+                    }
+                case "Naming Test":
+                    if let vc = UIStoryboard(name: "NamingTask", bundle: nil).instantiateViewController(withIdentifier: "NamingTest") as? NamingTaskAudioTestViewController {
+                        self.testList.append(vc)
+                    }
+                case "Word List 2":
+                    if let vc = UIStoryboard(name: "WordList2", bundle: nil).instantiateViewController(withIdentifier: "WordList2Test") as? WordList2TaskViewController {
+                        self.testList.append(vc)
+                    }
                 default:
                     continue
             }

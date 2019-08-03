@@ -87,6 +87,7 @@ class CancellationBlockViewController: ActiveStepViewController {
     }
     
     @objc func moveOn() {
+        timer.invalidate()
         self.performSegue(withIdentifier: "moveToDone", sender: nil)
     }
     

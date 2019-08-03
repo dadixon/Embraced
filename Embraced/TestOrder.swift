@@ -45,10 +45,10 @@ final class TestOrder {
                 navigationTests.append(ReyComplexFigure2ViewController())
             case "Trail Making Test":
                 navigationTests.append(TrailMakingTestViewController())
-            case "Melodies Recognition":
-                navigationTests.append(PitchViewController())
-            case "Digit Span":
-                navigationTests.append(DigitalSpanViewController())
+//            case "Melodies Recognition":
+//                navigationTests.append(PitchViewController())
+//            case "Digit Span":
+//                navigationTests.append(DigitalSpanViewController())
             case "Complex Figure 3":
                 navigationTests.append(ReyComplexFigure3ViewController())
             case "Complex Figure 4":
@@ -65,16 +65,16 @@ final class TestOrder {
                     //self.navigationController?.pushViewController(TestConfig.sharedInstance.testList[0], animated: true)
                     navigationTests.append(TestConfig.shared.testList[0])
                 } else {
-                    navigationTests.append(WordListViewController())
+//                    navigationTests.append(WordListViewController())
                 }
-            case "Color-Word Stroop Test":
-                navigationTests.append(StroopViewController())
-            case "Cancellation Test":
-                navigationTests.append(CancellationTestViewController())
-            case "Word List 2":
-                navigationTests.append(WordList2ViewController())
-            case "Naming Test":
-                navigationTests.append(NamingTaskViewController())
+//            case "Color-Word Stroop Test":
+//                navigationTests.append(StroopViewController())
+//            case "Cancellation Test":
+//                navigationTests.append(CancellationTestViewController())
+//            case "Word List 2":
+//                navigationTests.append(WordList2ViewController())
+//            case "Naming Test":
+//                navigationTests.append(NamingTaskViewController())
             case "Comprehension Task":
                 navigationTests.append(ComprehensionViewController())
             case "Eyes Test":
