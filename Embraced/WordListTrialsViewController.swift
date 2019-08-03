@@ -269,6 +269,7 @@ class WordListTrialsViewController: ActiveStepViewController {
     }
     
     private func externalStorage() {
+        SVProgressHUD.show()
         let filePath = "\(FirebaseStorageManager.shared.pid!)/WordList/\(soundFileName)"
         
         if Utility.fileExist(filePath) {
@@ -321,6 +322,7 @@ class WordListTrialsViewController: ActiveStepViewController {
                     
                     // Delete file from device
                     Utility.deleteFile(filePath)
+                    SVProgressHUD.dismiss()()
 //                }
             }
         }

@@ -58,6 +58,10 @@ class TestConfig {
                     if let vc = UIStoryboard(name: "WordList2", bundle: nil).instantiateViewController(withIdentifier: "WordList2Test") as? WordList2TaskViewController {
                         self.testList.append(vc)
                     }
+                case "Clock Drawing Test":
+                    if let vc = UIStoryboard(name: "ClockDrawing", bundle: nil).instantiateViewController(withIdentifier: "ClockDrawingTest") as? ClockDrawingInstructionsViewController {
+                        self.testList.append(vc)
+                    }
                 default:
                     continue
             }

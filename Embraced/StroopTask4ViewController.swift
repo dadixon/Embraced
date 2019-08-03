@@ -152,6 +152,7 @@ class StroopTask4ViewController: ActiveStepViewController {
     }
     
     private func externalStorage() {
+        SVProgressHUD.show()
         let filePath = "\(FirebaseStorageManager.shared.pid!)/\(TEST_NAME)/\(soundFileName)"
         
         if Utility.fileExist(filePath) {
@@ -175,6 +176,7 @@ class StroopTask4ViewController: ActiveStepViewController {
                 self.nextBtn.isHidden = false
                 
                 Utility.deleteFile(filePath)
+                SVProgressHUD.dismiss()
             }
         }
     }

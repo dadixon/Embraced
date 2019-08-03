@@ -43,8 +43,6 @@
 		A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */; };
 		A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */; };
 		A46C14201D79AA110066EF37 /* ReyComplexFigureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C141E1D79AA110066EF37 /* ReyComplexFigureViewController.xib */; };
-		A46C14231D79AA7C0066EF37 /* ClockDrawingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14211D79AA7C0066EF37 /* ClockDrawingTestViewController.swift */; };
-		A46C14241D79AA7C0066EF37 /* ClockDrawingTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14221D79AA7C0066EF37 /* ClockDrawingTestViewController.xib */; };
 		A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */; };
 		A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */; };
 		A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */; };
@@ -366,6 +364,10 @@
 		A4DE7DA522F5DD77009EEA17 /* WordList2TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DA422F5DD77009EEA17 /* WordList2TaskViewController.swift */; };
 		A4DE7DA722F5DD98009EEA17 /* WordList2RecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DA622F5DD98009EEA17 /* WordList2RecognitionViewController.swift */; };
 		A4DE7DA922F5DDB2009EEA17 /* WordList2DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DA822F5DDB2009EEA17 /* WordList2DoneViewController.swift */; };
+		A4DE7DAB22F61D49009EEA17 /* ClockDrawingInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DAA22F61D49009EEA17 /* ClockDrawingInstructionsViewController.swift */; };
+		A4DE7DAF22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DAE22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift */; };
+		A4DE7DB122F61DA9009EEA17 /* ClockDrawingTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DB022F61DA9009EEA17 /* ClockDrawingTaskViewController.swift */; };
+		A4DE7DB322F62539009EEA17 /* ClockDrawingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DB222F62539009EEA17 /* ClockDrawingModel.swift */; };
 		A4DF9F221E08FBC90084EAF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4DF9F241E08FBC90084EAF9 /* Localizable.strings */; };
 		A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */; };
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
@@ -418,8 +420,6 @@
 		A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EyeTestViewController.xib; path = controllers/EyeTestViewController.xib; sourceTree = "<group>"; };
 		A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigureViewController.swift; path = controllers/ReyComplexFigureViewController.swift; sourceTree = "<group>"; };
 		A46C141E1D79AA110066EF37 /* ReyComplexFigureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyComplexFigureViewController.xib; path = controllers/ReyComplexFigureViewController.xib; sourceTree = "<group>"; };
-		A46C14211D79AA7C0066EF37 /* ClockDrawingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockDrawingTestViewController.swift; path = controllers/ClockDrawingTestViewController.swift; sourceTree = "<group>"; };
-		A46C14221D79AA7C0066EF37 /* ClockDrawingTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ClockDrawingTestViewController.xib; path = controllers/ClockDrawingTestViewController.xib; sourceTree = "<group>"; };
 		A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailMakingTestViewController.swift; path = controllers/TrailMakingTestViewController.swift; sourceTree = "<group>"; };
 		A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrailMakingTestViewController.xib; path = controllers/TrailMakingTestViewController.xib; sourceTree = "<group>"; };
 		A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOCAMMSETestViewController.swift; path = controllers/MOCAMMSETestViewController.swift; sourceTree = "<group>"; };
@@ -747,6 +747,10 @@
 		A4DE7DA422F5DD77009EEA17 /* WordList2TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList2TaskViewController.swift; sourceTree = "<group>"; };
 		A4DE7DA622F5DD98009EEA17 /* WordList2RecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList2RecognitionViewController.swift; sourceTree = "<group>"; };
 		A4DE7DA822F5DDB2009EEA17 /* WordList2DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList2DoneViewController.swift; sourceTree = "<group>"; };
+		A4DE7DAA22F61D49009EEA17 /* ClockDrawingInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDrawingInstructionsViewController.swift; sourceTree = "<group>"; };
+		A4DE7DAE22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDrawingDoneViewController.swift; sourceTree = "<group>"; };
+		A4DE7DB022F61DA9009EEA17 /* ClockDrawingTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDrawingTaskViewController.swift; sourceTree = "<group>"; };
+		A4DE7DB222F62539009EEA17 /* ClockDrawingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDrawingModel.swift; sourceTree = "<group>"; };
 		A4DF9F231E08FBC90084EAF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F251E08FBF60084EAF9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -834,8 +838,6 @@
 				A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */,
 				A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */,
 				A46C141E1D79AA110066EF37 /* ReyComplexFigureViewController.xib */,
-				A46C14211D79AA7C0066EF37 /* ClockDrawingTestViewController.swift */,
-				A46C14221D79AA7C0066EF37 /* ClockDrawingTestViewController.xib */,
 				A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */,
 				A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */,
 				A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */,
@@ -874,6 +876,7 @@
 				A47E665F22D1CE4F00B5B7B5 /* DigitSpanModel.swift */,
 				A4AAD21022E01C6A00D4D7CA /* StroopModel.swift */,
 				A48B1AFD22EF444C007A1E98 /* NamingTaskModel.swift */,
+				A4DE7DB222F62539009EEA17 /* ClockDrawingModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -881,6 +884,9 @@
 		A47E666322D2BAB100B5B7B5 /* ClockDrawing */ = {
 			isa = PBXGroup;
 			children = (
+				A4DE7DAA22F61D49009EEA17 /* ClockDrawingInstructionsViewController.swift */,
+				A4DE7DB022F61DA9009EEA17 /* ClockDrawingTaskViewController.swift */,
+				A4DE7DAE22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift */,
 			);
 			name = ClockDrawing;
 			sourceTree = "<group>";
@@ -1508,7 +1514,6 @@
 				A4CA1584220324E300F6CF0A /* melodies 320ms orig(16).wav in Resources */,
 				A4CA157922031EBE00F6CF0A /* SPA-21.mp3 in Resources */,
 				A4CA14A322031C1900F6CF0A /* SPA-BWD-02.mp3 in Resources */,
-				A46C14241D79AA7C0066EF37 /* ClockDrawingTestViewController.xib in Resources */,
 				A4CA14C822031D9E00F6CF0A /* List B ENG.mp3 in Resources */,
 				A4CA147D22031BFC00F6CF0A /* ENG-FWD-03.mp3 in Resources */,
 				A48B4DD21CF9E7C700878928 /* LaunchScreen.storyboard in Resources */,
@@ -1813,6 +1818,7 @@
 				A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */,
 				A4AB688D1DE4D4730009808D /* DownloadMangager.swift in Sources */,
 				A47E664C22C09CAE00B5B7B5 /* Participant.swift in Sources */,
+				A4DE7DAF22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift in Sources */,
 				A4A991D822EAA2DE00DE3B83 /* StroopPreTask2ViewController.swift in Sources */,
 				A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */,
 				A48B1AF822EF40ED007A1E98 /* NamingTaskInstructions2ViewController.swift in Sources */,
@@ -1831,6 +1837,7 @@
 				A460CE4721D0C75E00E52F8B /* InstructionsStep.swift in Sources */,
 				A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */,
 				A4969D1721E5454B0063FF40 /* DigitSpanInstructionsViewController.swift in Sources */,
+				A4DE7DB322F62539009EEA17 /* ClockDrawingModel.swift in Sources */,
 				A4A991D622EAA1BC00DE3B83 /* StroopInstructions5ViewController.swift in Sources */,
 				A460CE4121D0C0E300E52F8B /* CanvasViewController.swift in Sources */,
 				A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */,
@@ -1840,6 +1847,7 @@
 				A4969D1E21E697B50063FF40 /* Utility.swift in Sources */,
 				A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */,
 				A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */,
+				A4DE7DAB22F61D49009EEA17 /* ClockDrawingInstructionsViewController.swift in Sources */,
 				A4347FBD1D7BC9440033306A /* ReyComplexFigure2ViewController.swift in Sources */,
 				A4A991D022EA9F1B00DE3B83 /* StroopInstructions2ViewController.swift in Sources */,
 				A4347FD11D7BCA950033306A /* MatricesViewController.swift in Sources */,
@@ -1880,7 +1888,6 @@
 				A48B1AF422EF3F1F007A1E98 /* NamingTaskInstructionsViewController.swift in Sources */,
 				A47E664422B262B200B5B7B5 /* SideMenuViewController.swift in Sources */,
 				A4969D2721E7DB2D0063FF40 /* CancellationInstructions3ViewController.swift in Sources */,
-				A46C14231D79AA7C0066EF37 /* ClockDrawingTestViewController.swift in Sources */,
 				A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */,
 				A4A991E022EAA4AC00DE3B83 /* StroopTask3ViewController.swift in Sources */,
 				A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */,
@@ -1900,6 +1907,7 @@
 				A44669381E16457600EA7E2E /* RecordButton.swift in Sources */,
 				A4969D1921E545630063FF40 /* DigitSpanDoneViewController.swift in Sources */,
 				A4969D3421E926BE0063FF40 /* CancellationViewCell.swift in Sources */,
+				A4DE7DB122F61DA9009EEA17 /* ClockDrawingTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

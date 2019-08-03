@@ -23,7 +23,7 @@ class SelectTestViewController: UIViewController {
 //        "Questionnaire",
 //        "Orientation Task",
 //        "Complex Figure 1",
-//        "Clock Drawing Test",
+        "Clock Drawing Test",
 //        "Complex Figure 2",
 //        "Trail Making Test",
         "Melodies Recognition",

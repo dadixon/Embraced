@@ -122,6 +122,7 @@ class WordList2TaskViewController: ActiveStepViewController {
     }
     
     private func externalStorage() {
+        SVProgressHUD.show()
         let filePath = "\(FirebaseStorageManager.shared.pid!)/\(TEST_NAME)/\(soundFileName)"
         
         if Utility.fileExist(filePath) {
@@ -144,6 +145,7 @@ class WordList2TaskViewController: ActiveStepViewController {
                 self.nextBtn.isHidden = false
                 
                 Utility.deleteFile(filePath)
+                SVProgressHUD.dismiss()
             }
         }
     }

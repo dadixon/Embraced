@@ -207,6 +207,7 @@ class DigitSpanTask2ViewController: ActiveStepViewController {
     }
     
     private func externalStorage() {
+        SVProgressHUD.show()
         let filePath = "\(FirebaseStorageManager.shared.pid!)/DigitSpan/\(soundFileName)"
         
         if Utility.fileExist(filePath) {
@@ -276,6 +277,7 @@ class DigitSpanTask2ViewController: ActiveStepViewController {
                 
                 // Delete file from device
                 Utility.deleteFile(filePath)
+                SVProgressHUD.dismiss()
             }
         }
     }

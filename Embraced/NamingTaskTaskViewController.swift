@@ -194,6 +194,7 @@ class NamingTaskTaskViewController: ActiveStepViewController {
     }
     
     private func externalStorage() {
+        SVProgressHUD.show()
         let filePath = "\(FirebaseStorageManager.shared.pid!)/\(TEST_NAME)/\(soundFileName)"
         
         if Utility.fileExist(filePath) {
@@ -262,6 +263,7 @@ class NamingTaskTaskViewController: ActiveStepViewController {
                 
                 self.isStoring = false
                 Utility.deleteFile(filePath)
+                SVProgressHUD.dismiss()
             }
         }
     }

@@ -46,7 +46,7 @@ class ViewController: UIViewController {
     
     @IBAction func login(_ sender: AnyObject) {        
         if ((usernameTextfield.text?.isEmpty)! || (passwordTextfield.text?.isEmpty)!) {
-            self.errorLabel.text = "UsernamePasswordEmpty".localized(lang: testerLanguage)
+            SVProgressHUD.showError(withStatus: "UsernamePasswordEmpty".localized(lang: testerLanguage))
             return
         }
         
