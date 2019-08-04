@@ -1,5 +1,5 @@
 //
-//  ClockDrawingTaskViewController.swift
+//  RCFTTaskViewController.swift
 //  Embraced
 //
 //  Created by Domonique Dixon on 8/3/19.
@@ -10,21 +10,29 @@ import UIKit
 import SVProgressHUD
 import FirebaseStorage
 
-class ClockDrawingTaskViewController: ActiveStepViewController {
+class RCFTTaskViewController: ActiveStepViewController {
 
-    let TEST_NAME = "ClockDrawing"
+    let TEST_NAME = "RCFT"
     var lastPoint = CGPoint.zero
     var red: CGFloat = 0.0
     var green: CGFloat = 0.0
     var blue: CGFloat = 0.0
-    var brushWidth: CGFloat = 10.0
+    var brushWidth: CGFloat = 3.0
     var opacity: CGFloat = 1.0
     var swiped = false
     var documentPath: URL?
-    let fileName = "clock.png"
+    let fileName = "rcft.png"
     var saveImagePath: URL!
     var start: CFAbsoluteTime!
     var reactionTime: Int?
+    
+    let figureImage: UIImageView = {
+        var imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        return imageView
+    }()
     
     let canvas: UIImageView = {
         var imageView = UIImageView()
@@ -37,11 +45,15 @@ class ClockDrawingTaskViewController: ActiveStepViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        orientation = .landscapeLeft
+        rotateOrientation = .landscapeLeft
+        
         nextBtn.setTitle("Next".localized(lang: language), for: .normal)
         nextBtn.addTarget(self, action: #selector(moveOn), for: .touchUpInside)
-        nextBtn.isHidden = true
         
         setupViews()
+        
+        figureImage.image = UIImage(named: "figure")
         
         documentPath = Utility.getDocumentsDirectory().appendingPathComponent("\(FirebaseStorageManager.shared.pid!)/\(TEST_NAME)")
         do
@@ -55,12 +67,23 @@ class ClockDrawingTaskViewController: ActiveStepViewController {
     }
     
     private func setupViews() {
+        contentView.addSubview(figureImage)
         contentView.addSubview(canvas)
         
+        contentView.topAnchor.constraint(equalTo: view.topAnchor, constant: 75.0).isActive = true
+        
+        figureImage.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        figureImage.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
+        figureImage.rightAnchor.constraint(equalTo: canvas.leftAnchor, constant: -16.0).isActive = true
+        figureImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        figureImage.widthAnchor.constraint(equalToConstant: (view.frame.width - 32.0)/3).isActive = true
+        
         canvas.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        canvas.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
+        canvas.leftAnchor.constraint(equalTo: figureImage.rightAnchor, constant: 16.0).isActive = true
         canvas.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         canvas.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        
+        print(view.frame.width)
     }
     
     @objc func moveOn() {
@@ -141,11 +164,11 @@ class ClockDrawingTaskViewController: ActiveStepViewController {
                     SVProgressHUD.showError(withStatus: "An error has happened")
                 }
                 
-                ClockDrawingModel.shared.file = filePath
-                ClockDrawingModel.shared.time = self.reactionTime
+                RCFTModel.shared.file_1 = filePath
+                RCFTModel.shared.time_1 = self.reactionTime
                 
                 FirebaseStorageManager.shared.addDataToDocument(payload: [
-                    "clockDrawing": ClockDrawingModel.shared.printModel()
+                    "rcft": RCFTModel.shared.printModel()
                 ])
                 
                 self.performSegue(withIdentifier: "moveToDone", sender: nil)

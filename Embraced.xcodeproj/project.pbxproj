@@ -368,6 +368,13 @@
 		A4DE7DAF22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DAE22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift */; };
 		A4DE7DB122F61DA9009EEA17 /* ClockDrawingTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DB022F61DA9009EEA17 /* ClockDrawingTaskViewController.swift */; };
 		A4DE7DB322F62539009EEA17 /* ClockDrawingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DB222F62539009EEA17 /* ClockDrawingModel.swift */; };
+		A4DE7DB522F63B34009EEA17 /* RCFT.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4DE7DB422F63B34009EEA17 /* RCFT.storyboard */; };
+		A4DE7DB722F63C77009EEA17 /* RCFTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DB622F63C77009EEA17 /* RCFTModel.swift */; };
+		A4DE7DBA22F63E92009EEA17 /* RCFTInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DB922F63E92009EEA17 /* RCFTInstructionsViewController.swift */; };
+		A4DE7DBC22F641F9009EEA17 /* RCFTPracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DBB22F641F9009EEA17 /* RCFTPracticeViewController.swift */; };
+		A4DE7DBE22F64401009EEA17 /* RCFTInstructions2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DBD22F64401009EEA17 /* RCFTInstructions2ViewController.swift */; };
+		A4DE7DC022F644BE009EEA17 /* RCFTTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DBF22F644BE009EEA17 /* RCFTTaskViewController.swift */; };
+		A4DE7DC222F644D0009EEA17 /* RCFTDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DC122F644D0009EEA17 /* RCFTDoneViewController.swift */; };
 		A4DF9F221E08FBC90084EAF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4DF9F241E08FBC90084EAF9 /* Localizable.strings */; };
 		A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */; };
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
@@ -751,6 +758,13 @@
 		A4DE7DAE22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDrawingDoneViewController.swift; sourceTree = "<group>"; };
 		A4DE7DB022F61DA9009EEA17 /* ClockDrawingTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDrawingTaskViewController.swift; sourceTree = "<group>"; };
 		A4DE7DB222F62539009EEA17 /* ClockDrawingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDrawingModel.swift; sourceTree = "<group>"; };
+		A4DE7DB422F63B34009EEA17 /* RCFT.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RCFT.storyboard; sourceTree = "<group>"; };
+		A4DE7DB622F63C77009EEA17 /* RCFTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFTModel.swift; sourceTree = "<group>"; };
+		A4DE7DB922F63E92009EEA17 /* RCFTInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFTInstructionsViewController.swift; sourceTree = "<group>"; };
+		A4DE7DBB22F641F9009EEA17 /* RCFTPracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFTPracticeViewController.swift; sourceTree = "<group>"; };
+		A4DE7DBD22F64401009EEA17 /* RCFTInstructions2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFTInstructions2ViewController.swift; sourceTree = "<group>"; };
+		A4DE7DBF22F644BE009EEA17 /* RCFTTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFTTaskViewController.swift; sourceTree = "<group>"; };
+		A4DE7DC122F644D0009EEA17 /* RCFTDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFTDoneViewController.swift; sourceTree = "<group>"; };
 		A4DF9F231E08FBC90084EAF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F251E08FBF60084EAF9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -812,6 +826,7 @@
 				A47E666422D2BB0000B5B7B5 /* Stroop.storyboard */,
 				A48B1AEE22EF3C58007A1E98 /* NamingTask.storyboard */,
 				A4DE7DA122F5DBDC009EEA17 /* WordList2.storyboard */,
+				A4DE7DB422F63B34009EEA17 /* RCFT.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -877,6 +892,7 @@
 				A4AAD21022E01C6A00D4D7CA /* StroopModel.swift */,
 				A48B1AFD22EF444C007A1E98 /* NamingTaskModel.swift */,
 				A4DE7DB222F62539009EEA17 /* ClockDrawingModel.swift */,
+				A4DE7DB622F63C77009EEA17 /* RCFTModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1223,6 +1239,7 @@
 		A490D7C11D0913C500D2B59D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4DE7DB822F63E64009EEA17 /* RCFT */,
 				A4DE7DA322F5DD14009EEA17 /* WordList2 */,
 				A48B1AF022EF3CA8007A1E98 /* NamingTask */,
 				A47E666622D2BBA300B5B7B5 /* Stroop */,
@@ -1330,6 +1347,18 @@
 				A4DE7DA822F5DDB2009EEA17 /* WordList2DoneViewController.swift */,
 			);
 			name = WordList2;
+			sourceTree = "<group>";
+		};
+		A4DE7DB822F63E64009EEA17 /* RCFT */ = {
+			isa = PBXGroup;
+			children = (
+				A4DE7DB922F63E92009EEA17 /* RCFTInstructionsViewController.swift */,
+				A4DE7DBB22F641F9009EEA17 /* RCFTPracticeViewController.swift */,
+				A4DE7DBD22F64401009EEA17 /* RCFTInstructions2ViewController.swift */,
+				A4DE7DBF22F644BE009EEA17 /* RCFTTaskViewController.swift */,
+				A4DE7DC122F644D0009EEA17 /* RCFTDoneViewController.swift */,
+			);
+			name = RCFT;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1590,6 +1619,7 @@
 				A4CA146C22031BEE00F6CF0A /* ENG-BWD-13.mp3 in Resources */,
 				A4CA156922031EBE00F6CF0A /* SPA-06.mp3 in Resources */,
 				A4CA146122031BEE00F6CF0A /* ENG-BWD-09.mp3 in Resources */,
+				A4DE7DB522F63B34009EEA17 /* RCFT.storyboard in Resources */,
 				A4CA150C22031E9D00F6CF0A /* ENG-03.mp3 in Resources */,
 				A4CA157622031EBE00F6CF0A /* SPA-32.mp3 in Resources */,
 				A4CA151022031E9D00F6CF0A /* ENG-02.mp3 in Resources */,
@@ -1835,6 +1865,7 @@
 				A4EDC00B229D4A69006B8C53 /* SelectTestViewController.swift in Sources */,
 				A47E665C22D1976700B5B7B5 /* DigitSpanPractice2ViewController.swift in Sources */,
 				A460CE4721D0C75E00E52F8B /* InstructionsStep.swift in Sources */,
+				A4DE7DBE22F64401009EEA17 /* RCFTInstructions2ViewController.swift in Sources */,
 				A4347FC51D7BC9FC0033306A /* ReyComplexFigure3ViewController.swift in Sources */,
 				A4969D1721E5454B0063FF40 /* DigitSpanInstructionsViewController.swift in Sources */,
 				A4DE7DB322F62539009EEA17 /* ClockDrawingModel.swift in Sources */,
@@ -1844,6 +1875,7 @@
 				A4A991D222EAA13C00DE3B83 /* StroopInstructions3ViewController.swift in Sources */,
 				A48D60E81FF5AC4F0042FBCA /* LibraryAPI.swift in Sources */,
 				A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */,
+				A4DE7DC222F644D0009EEA17 /* RCFTDoneViewController.swift in Sources */,
 				A4969D1E21E697B50063FF40 /* Utility.swift in Sources */,
 				A4D9041F1D2380380092D6AA /* FrontViewController.swift in Sources */,
 				A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */,
@@ -1860,6 +1892,8 @@
 				A48D60F41FF704D60042FBCA /* UserCollectionViewCell.swift in Sources */,
 				A4969D3721F276210063FF40 /* CancellationBlockViewController.swift in Sources */,
 				A47E665A22D1975300B5B7B5 /* DigitSpanTaskViewController.swift in Sources */,
+				A4DE7DBA22F63E92009EEA17 /* RCFTInstructionsViewController.swift in Sources */,
+				A4DE7DBC22F641F9009EEA17 /* RCFTPracticeViewController.swift in Sources */,
 				A48B1AFE22EF444C007A1E98 /* NamingTaskModel.swift in Sources */,
 				A4A991DE22EAA45700DE3B83 /* StroopTask2ViewController.swift in Sources */,
 				A4DE7DA522F5DD77009EEA17 /* WordList2TaskViewController.swift in Sources */,
@@ -1870,6 +1904,7 @@
 				A4969D1B21E67B960063FF40 /* AudioPlaybackViewController.swift in Sources */,
 				A4C469A71E134B5900FDD5D5 /* UserViewController.swift in Sources */,
 				A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */,
+				A4DE7DB722F63C77009EEA17 /* RCFTModel.swift in Sources */,
 				A4AB688B1DE4BE9A0009808D /* DownloadOperation.swift in Sources */,
 				A4396F10223C142B009B1EDC /* FirebaseStorageManager.swift in Sources */,
 				A4A991E222EAA50700DE3B83 /* StroopTask4ViewController.swift in Sources */,
@@ -1903,6 +1938,7 @@
 				A47E665822D1972B00B5B7B5 /* DigittSpanPracticeViewController.swift in Sources */,
 				A4AE36E31DFC545400727DFD /* WebViewController.swift in Sources */,
 				A48B1AFC22EF412C007A1E98 /* NamingTaskDoneViewController.swift in Sources */,
+				A4DE7DC022F644BE009EEA17 /* RCFTTaskViewController.swift in Sources */,
 				A47FF4AE211363AA00665E20 /* Constants.swift in Sources */,
 				A44669381E16457600EA7E2E /* RecordButton.swift in Sources */,
 				A4969D1921E545630063FF40 /* DigitSpanDoneViewController.swift in Sources */,
