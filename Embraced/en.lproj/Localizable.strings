@@ -130,3 +130,6 @@
 
 // RCFT 3
 "rcft_3_instructions" = "A short time ago you draw from memory a COMPLEX figure with your finger.\nNow please draw that COMPLEX figure from memory again";
+
+// Trail Making Test
+"trailMaking_instructions" = "In the next task you are going to see some numbers on the screen.\nBegin at number 1 and draw a line from 1 to 2, 2 to 3, 3 to 4 and so on, in ascending order, until you reach the end.\nDraw the lines as fast as you can without lifting your finger from the screen.\nClick 'Next' for a demonstration.";

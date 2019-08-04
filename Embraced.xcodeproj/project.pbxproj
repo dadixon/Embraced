@@ -378,6 +378,13 @@
 		A4DE7DD222F6617E009EEA17 /* RCFT3TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DD122F6617E009EEA17 /* RCFT3TaskViewController.swift */; };
 		A4DE7DD422F66191009EEA17 /* RCFT3DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DD322F66191009EEA17 /* RCFT3DoneViewController.swift */; };
 		A4DE7DD622F664CA009EEA17 /* TrailMaking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4DE7DD522F664CA009EEA17 /* TrailMaking.storyboard */; };
+		A4DE7DD922F6663B009EEA17 /* TrailMakingInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DD822F6663B009EEA17 /* TrailMakingInstructionsViewController.swift */; };
+		A4DE7DDB22F6665E009EEA17 /* TrailMakingVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DDA22F6665E009EEA17 /* TrailMakingVideoViewController.swift */; };
+		A4DE7DDD22F6667E009EEA17 /* TrailMakingTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DDC22F6667E009EEA17 /* TrailMakingTaskViewController.swift */; };
+		A4DE7DDF22F666A6009EEA17 /* TrailMakingInstructions2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DDE22F666A6009EEA17 /* TrailMakingInstructions2ViewController.swift */; };
+		A4DE7DE122F666C7009EEA17 /* TrailMakingVideo2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DE022F666C7009EEA17 /* TrailMakingVideo2ViewController.swift */; };
+		A4DE7DE322F666E6009EEA17 /* TrailMakingTask2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DE222F666E6009EEA17 /* TrailMakingTask2ViewController.swift */; };
+		A4DE7DE522F66703009EEA17 /* TrailMakingDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DE422F66703009EEA17 /* TrailMakingDoneViewController.swift */; };
 		A4DF9F221E08FBC90084EAF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4DF9F241E08FBC90084EAF9 /* Localizable.strings */; };
 		A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */; };
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
@@ -771,6 +778,13 @@
 		A4DE7DD122F6617E009EEA17 /* RCFT3TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFT3TaskViewController.swift; sourceTree = "<group>"; };
 		A4DE7DD322F66191009EEA17 /* RCFT3DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFT3DoneViewController.swift; sourceTree = "<group>"; };
 		A4DE7DD522F664CA009EEA17 /* TrailMaking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrailMaking.storyboard; sourceTree = "<group>"; };
+		A4DE7DD822F6663B009EEA17 /* TrailMakingInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMakingInstructionsViewController.swift; sourceTree = "<group>"; };
+		A4DE7DDA22F6665E009EEA17 /* TrailMakingVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMakingVideoViewController.swift; sourceTree = "<group>"; };
+		A4DE7DDC22F6667E009EEA17 /* TrailMakingTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMakingTaskViewController.swift; sourceTree = "<group>"; };
+		A4DE7DDE22F666A6009EEA17 /* TrailMakingInstructions2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMakingInstructions2ViewController.swift; sourceTree = "<group>"; };
+		A4DE7DE022F666C7009EEA17 /* TrailMakingVideo2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMakingVideo2ViewController.swift; sourceTree = "<group>"; };
+		A4DE7DE222F666E6009EEA17 /* TrailMakingTask2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMakingTask2ViewController.swift; sourceTree = "<group>"; };
+		A4DE7DE422F66703009EEA17 /* TrailMakingDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMakingDoneViewController.swift; sourceTree = "<group>"; };
 		A4DF9F231E08FBC90084EAF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F251E08FBF60084EAF9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -1242,6 +1256,7 @@
 		A490D7C11D0913C500D2B59D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4DE7DD722F665DE009EEA17 /* TrailMaking */,
 				A4DE7DCE22F6614E009EEA17 /* RCFT3 */,
 				A4DE7DC522F65D9C009EEA17 /* RCFT2 */,
 				A4DE7DB822F63E64009EEA17 /* RCFT */,
@@ -1384,6 +1399,20 @@
 				A4DE7DD322F66191009EEA17 /* RCFT3DoneViewController.swift */,
 			);
 			name = RCFT3;
+			sourceTree = "<group>";
+		};
+		A4DE7DD722F665DE009EEA17 /* TrailMaking */ = {
+			isa = PBXGroup;
+			children = (
+				A4DE7DD822F6663B009EEA17 /* TrailMakingInstructionsViewController.swift */,
+				A4DE7DDA22F6665E009EEA17 /* TrailMakingVideoViewController.swift */,
+				A4DE7DDC22F6667E009EEA17 /* TrailMakingTaskViewController.swift */,
+				A4DE7DDE22F666A6009EEA17 /* TrailMakingInstructions2ViewController.swift */,
+				A4DE7DE022F666C7009EEA17 /* TrailMakingVideo2ViewController.swift */,
+				A4DE7DE222F666E6009EEA17 /* TrailMakingTask2ViewController.swift */,
+				A4DE7DE422F66703009EEA17 /* TrailMakingDoneViewController.swift */,
+			);
+			name = TrailMaking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1875,7 +1904,9 @@
 				A4AB688D1DE4D4730009808D /* DownloadMangager.swift in Sources */,
 				A47E664C22C09CAE00B5B7B5 /* Participant.swift in Sources */,
 				A4DE7DAF22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift in Sources */,
+				A4DE7DE522F66703009EEA17 /* TrailMakingDoneViewController.swift in Sources */,
 				A4A991D822EAA2DE00DE3B83 /* StroopPreTask2ViewController.swift in Sources */,
+				A4DE7DE122F666C7009EEA17 /* TrailMakingVideo2ViewController.swift in Sources */,
 				A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */,
 				A48B1AF822EF40ED007A1E98 /* NamingTaskInstructions2ViewController.swift in Sources */,
 				A4DE7DC922F65DCE009EEA17 /* RCFT2TaskViewController.swift in Sources */,
@@ -1885,6 +1916,7 @@
 				A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */,
 				A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */,
 				A4F810E52252ADBA001F9503 /* DatabaseController.swift in Sources */,
+				A4DE7DDB22F6665E009EEA17 /* TrailMakingVideoViewController.swift in Sources */,
 				A47E665422CFD2F400B5B7B5 /* MelodyRecognitionInstructions2ViewController.swift in Sources */,
 				A489D6181E0B535A001F56FE /* SettingsViewController.swift in Sources */,
 				A47E666822D2BBD600B5B7B5 /* StroopAudioTestViewController.swift in Sources */,
@@ -1915,6 +1947,7 @@
 				A48B1AF222EF3CD4007A1E98 /* NamingTaskAudioTestViewController.swift in Sources */,
 				A42041F121E1D09E00021EDB /* InstructionsViewController.swift in Sources */,
 				A48D60F41FF704D60042FBCA /* UserCollectionViewCell.swift in Sources */,
+				A4DE7DE322F666E6009EEA17 /* TrailMakingTask2ViewController.swift in Sources */,
 				A4969D3721F276210063FF40 /* CancellationBlockViewController.swift in Sources */,
 				A47E665A22D1975300B5B7B5 /* DigitSpanTaskViewController.swift in Sources */,
 				A4DE7DBA22F63E92009EEA17 /* RCFTInstructionsViewController.swift in Sources */,
@@ -1925,6 +1958,7 @@
 				A4DE7DA522F5DD77009EEA17 /* WordList2TaskViewController.swift in Sources */,
 				A4D7C78E2269E1CD004BF326 /* WordListTrialsViewController.swift in Sources */,
 				A4347FCD1D7BCA570033306A /* ReyFigureComplex4ViewController.swift in Sources */,
+				A4DE7DDD22F6667E009EEA17 /* TrailMakingTaskViewController.swift in Sources */,
 				A4DE7DCB22F65DDF009EEA17 /* RCFT2DoneViewController.swift in Sources */,
 				A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */,
 				A4969D2521E7DA340063FF40 /* CancellationInstructions2ViewController.swift in Sources */,
@@ -1944,6 +1978,7 @@
 				A4969D2121E7D7E90063FF40 /* CancellationInstructionsViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
 				A42041F821E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift in Sources */,
+				A4DE7DDF22F666A6009EEA17 /* TrailMakingInstructions2ViewController.swift in Sources */,
 				A4A991DA22EAA3A700DE3B83 /* StroopPreTask3ViewController.swift in Sources */,
 				A48B1AF622EF40CD007A1E98 /* NamingTaskPracticeViewController.swift in Sources */,
 				A46A2C681DD96FF0000AC66C /* APIWrapper.swift in Sources */,
@@ -1954,6 +1989,7 @@
 				A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */,
 				A4A991E022EAA4AC00DE3B83 /* StroopTask3ViewController.swift in Sources */,
 				A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */,
+				A4DE7DD922F6663B009EEA17 /* TrailMakingInstructionsViewController.swift in Sources */,
 				A4969D2921E7F6B50063FF40 /* CancellationPracticeViewController.swift in Sources */,
 				A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */,
 				A4DB0FB41DFB2CA1000811B6 /* DataManager.swift in Sources */,

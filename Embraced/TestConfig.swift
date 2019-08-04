@@ -74,6 +74,10 @@ class TestConfig {
                     if let vc = UIStoryboard(name: "RCFT3", bundle: nil).instantiateViewController(withIdentifier: "RCFT3Test") as? RCFT3InstructionsViewController {
                         self.testList.append(vc)
                     }
+                case "Trail Making Test":
+                    if let vc = UIStoryboard(name: "TrailMaking", bundle: nil).instantiateViewController(withIdentifier: "TrailMakingTest") as? TrailMakingInstructionsViewController {
+                        self.testList.append(vc)
+                    }
                 default:
                     continue
             }
