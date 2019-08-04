@@ -127,3 +127,6 @@
 
 // RCFT 2
 "rcft_2_instructions" = "A few minutes ago you copied a COMPLEX figure. Now please draw the COMPLEX figure you drew before again, but this time from memory.\nClick 'Next' when you are done.";
+
+// RCFT 3
+"rcft_3_instructions" = "A short time ago you draw from memory a COMPLEX figure with your finger.\nNow please draw that COMPLEX figure from memory again";

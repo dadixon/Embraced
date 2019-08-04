@@ -28,7 +28,7 @@ class SelectTestViewController: UIViewController {
 //        "Trail Making Test",
         "Melodies Recognition",
         "Digit Span",
-//        "Complex Figure 3",
+        "Complex Figure 3",
 //        "Complex Figure 4",
 //        "Matrices",
 //        "Continuous Performance Test",
