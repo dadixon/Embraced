@@ -66,6 +66,10 @@ class TestConfig {
                     if let vc = UIStoryboard(name: "RCFT", bundle: nil).instantiateViewController(withIdentifier: "RCFTTest") as? RCFTInstructionsViewController {
                         self.testList.append(vc)
                     }
+                case "Complex Figure 2":
+                    if let vc = UIStoryboard(name: "RCFT2", bundle: nil).instantiateViewController(withIdentifier: "RCFT2Test") as? RCFT2InstructionsViewController {
+                        self.testList.append(vc)
+                    }
                 default:
                     continue
             }

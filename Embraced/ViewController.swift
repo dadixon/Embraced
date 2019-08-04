@@ -45,14 +45,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: AnyObject) {        
-        if ((usernameTextfield.text?.isEmpty)! || (passwordTextfield.text?.isEmpty)!) {
-            SVProgressHUD.showError(withStatus: "UsernamePasswordEmpty".localized(lang: testerLanguage))
-            return
-        }
+//        if ((usernameTextfield.text?.isEmpty)! || (passwordTextfield.text?.isEmpty)!) {
+//            SVProgressHUD.showError(withStatus: "UsernamePasswordEmpty".localized(lang: testerLanguage))
+//            return
+//        }
         
-        let email = self.usernameTextfield.text!
-        let password = self.passwordTextfield.text!
-        
+//        let email = self.usernameTextfield.text!
+//        let password = self.passwordTextfield.text!
+        let email = "drocdix7@gmail.com"
+        let password = "dadixon"
         
         Auth.auth().signIn(withEmail: email,
                            password: password,

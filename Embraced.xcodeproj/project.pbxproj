@@ -41,8 +41,6 @@
 		A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C140E1D798FC30066EF37 /* CPTViewController.xib */; };
 		A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14191D79A8870066EF37 /* EyeTestViewController.swift */; };
 		A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */; };
-		A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */; };
-		A46C14201D79AA110066EF37 /* ReyComplexFigureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C141E1D79AA110066EF37 /* ReyComplexFigureViewController.xib */; };
 		A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */; };
 		A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */; };
 		A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */; };
@@ -375,6 +373,10 @@
 		A4DE7DBE22F64401009EEA17 /* RCFTInstructions2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DBD22F64401009EEA17 /* RCFTInstructions2ViewController.swift */; };
 		A4DE7DC022F644BE009EEA17 /* RCFTTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DBF22F644BE009EEA17 /* RCFTTaskViewController.swift */; };
 		A4DE7DC222F644D0009EEA17 /* RCFTDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DC122F644D0009EEA17 /* RCFTDoneViewController.swift */; };
+		A4DE7DC422F65D4D009EEA17 /* RCFT2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4DE7DC322F65D4D009EEA17 /* RCFT2.storyboard */; };
+		A4DE7DC722F65DB5009EEA17 /* RCFT2InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DC622F65DB5009EEA17 /* RCFT2InstructionsViewController.swift */; };
+		A4DE7DC922F65DCE009EEA17 /* RCFT2TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DC822F65DCE009EEA17 /* RCFT2TaskViewController.swift */; };
+		A4DE7DCB22F65DDF009EEA17 /* RCFT2DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DCA22F65DDF009EEA17 /* RCFT2DoneViewController.swift */; };
 		A4DF9F221E08FBC90084EAF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4DF9F241E08FBC90084EAF9 /* Localizable.strings */; };
 		A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */; };
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
@@ -425,8 +427,6 @@
 		A46C140E1D798FC30066EF37 /* CPTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPTViewController.xib; path = controllers/CPTViewController.xib; sourceTree = "<group>"; };
 		A46C14191D79A8870066EF37 /* EyeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EyeTestViewController.swift; path = controllers/EyeTestViewController.swift; sourceTree = "<group>"; };
 		A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EyeTestViewController.xib; path = controllers/EyeTestViewController.xib; sourceTree = "<group>"; };
-		A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyComplexFigureViewController.swift; path = controllers/ReyComplexFigureViewController.swift; sourceTree = "<group>"; };
-		A46C141E1D79AA110066EF37 /* ReyComplexFigureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyComplexFigureViewController.xib; path = controllers/ReyComplexFigureViewController.xib; sourceTree = "<group>"; };
 		A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailMakingTestViewController.swift; path = controllers/TrailMakingTestViewController.swift; sourceTree = "<group>"; };
 		A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrailMakingTestViewController.xib; path = controllers/TrailMakingTestViewController.xib; sourceTree = "<group>"; };
 		A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOCAMMSETestViewController.swift; path = controllers/MOCAMMSETestViewController.swift; sourceTree = "<group>"; };
@@ -765,6 +765,10 @@
 		A4DE7DBD22F64401009EEA17 /* RCFTInstructions2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFTInstructions2ViewController.swift; sourceTree = "<group>"; };
 		A4DE7DBF22F644BE009EEA17 /* RCFTTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFTTaskViewController.swift; sourceTree = "<group>"; };
 		A4DE7DC122F644D0009EEA17 /* RCFTDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFTDoneViewController.swift; sourceTree = "<group>"; };
+		A4DE7DC322F65D4D009EEA17 /* RCFT2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RCFT2.storyboard; sourceTree = "<group>"; };
+		A4DE7DC622F65DB5009EEA17 /* RCFT2InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFT2InstructionsViewController.swift; sourceTree = "<group>"; };
+		A4DE7DC822F65DCE009EEA17 /* RCFT2TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFT2TaskViewController.swift; sourceTree = "<group>"; };
+		A4DE7DCA22F65DDF009EEA17 /* RCFT2DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFT2DoneViewController.swift; sourceTree = "<group>"; };
 		A4DF9F231E08FBC90084EAF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F251E08FBF60084EAF9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -827,6 +831,7 @@
 				A48B1AEE22EF3C58007A1E98 /* NamingTask.storyboard */,
 				A4DE7DA122F5DBDC009EEA17 /* WordList2.storyboard */,
 				A4DE7DB422F63B34009EEA17 /* RCFT.storyboard */,
+				A4DE7DC322F65D4D009EEA17 /* RCFT2.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -851,8 +856,6 @@
 				A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */,
 				A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */,
 				A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */,
-				A46C141D1D79AA110066EF37 /* ReyComplexFigureViewController.swift */,
-				A46C141E1D79AA110066EF37 /* ReyComplexFigureViewController.xib */,
 				A4347FBB1D7BC9440033306A /* ReyComplexFigure2ViewController.swift */,
 				A4347FBC1D7BC9440033306A /* ReyComplexFigure2ViewController.xib */,
 				A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */,
@@ -1239,6 +1242,7 @@
 		A490D7C11D0913C500D2B59D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4DE7DC522F65D9C009EEA17 /* RCFT2 */,
 				A4DE7DB822F63E64009EEA17 /* RCFT */,
 				A4DE7DA322F5DD14009EEA17 /* WordList2 */,
 				A48B1AF022EF3CA8007A1E98 /* NamingTask */,
@@ -1361,6 +1365,16 @@
 			name = RCFT;
 			sourceTree = "<group>";
 		};
+		A4DE7DC522F65D9C009EEA17 /* RCFT2 */ = {
+			isa = PBXGroup;
+			children = (
+				A4DE7DC622F65DB5009EEA17 /* RCFT2InstructionsViewController.swift */,
+				A4DE7DC822F65DCE009EEA17 /* RCFT2TaskViewController.swift */,
+				A4DE7DCA22F65DDF009EEA17 /* RCFT2DoneViewController.swift */,
+			);
+			name = RCFT2;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1468,6 +1482,7 @@
 				A4CA14C322031C2500F6CF0A /* SPA-FWD-11.mp3 in Resources */,
 				A4CA14A822031C1900F6CF0A /* SPA-BWD-13.mp3 in Resources */,
 				A4CA14BD22031C2500F6CF0A /* SPA-FWD-04.mp3 in Resources */,
+				A4DE7DC422F65D4D009EEA17 /* RCFT2.storyboard in Resources */,
 				A4C3288420815CD600DEC460 /* STROOP_SPA_TASK3.mp4 in Resources */,
 				A48A12DA21FA4BB80044AF08 /* melodies 320ms orig(26).wav in Resources */,
 				A4CA151B22031E9D00F6CF0A /* ENG-21.mp3 in Resources */,
@@ -1649,7 +1664,6 @@
 				A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */,
 				A4CA146222031BEE00F6CF0A /* ENG-BWD-10.mp3 in Resources */,
 				A4CA155C22031EBE00F6CF0A /* SPA-27.mp3 in Resources */,
-				A46C14201D79AA110066EF37 /* ReyComplexFigureViewController.xib in Resources */,
 				A4CA155B22031EBE00F6CF0A /* SPA-39.mp3 in Resources */,
 				A4CA155522031EBE00F6CF0A /* SPA-09.mp3 in Resources */,
 				A4CA14FA22031E9D00F6CF0A /* ENG-06.mp3 in Resources */,
@@ -1852,9 +1866,9 @@
 				A4A991D822EAA2DE00DE3B83 /* StroopPreTask2ViewController.swift in Sources */,
 				A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */,
 				A48B1AF822EF40ED007A1E98 /* NamingTaskInstructions2ViewController.swift in Sources */,
+				A4DE7DC922F65DCE009EEA17 /* RCFT2TaskViewController.swift in Sources */,
 				A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */,
 				A4EDC009229D3F25006B8C53 /* DashboardViewController.swift in Sources */,
-				A46C141F1D79AA110066EF37 /* ReyComplexFigureViewController.swift in Sources */,
 				A4347FD51D7BCABC0033306A /* PegboardViewController.swift in Sources */,
 				A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */,
 				A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */,
@@ -1894,11 +1908,13 @@
 				A47E665A22D1975300B5B7B5 /* DigitSpanTaskViewController.swift in Sources */,
 				A4DE7DBA22F63E92009EEA17 /* RCFTInstructionsViewController.swift in Sources */,
 				A4DE7DBC22F641F9009EEA17 /* RCFTPracticeViewController.swift in Sources */,
+				A4DE7DC722F65DB5009EEA17 /* RCFT2InstructionsViewController.swift in Sources */,
 				A48B1AFE22EF444C007A1E98 /* NamingTaskModel.swift in Sources */,
 				A4A991DE22EAA45700DE3B83 /* StroopTask2ViewController.swift in Sources */,
 				A4DE7DA522F5DD77009EEA17 /* WordList2TaskViewController.swift in Sources */,
 				A4D7C78E2269E1CD004BF326 /* WordListTrialsViewController.swift in Sources */,
 				A4347FCD1D7BCA570033306A /* ReyFigureComplex4ViewController.swift in Sources */,
+				A4DE7DCB22F65DDF009EEA17 /* RCFT2DoneViewController.swift in Sources */,
 				A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */,
 				A4969D2521E7DA340063FF40 /* CancellationInstructions2ViewController.swift in Sources */,
 				A4969D1B21E67B960063FF40 /* AudioPlaybackViewController.swift in Sources */,

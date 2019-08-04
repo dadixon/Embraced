@@ -124,3 +124,6 @@
 "rcft_1_instructions" = "In this task you are going to be asked to draw with your finger.\nBefore we proceed, please practice drawing with your finger in the sample screen.\nClick 'Next' to continue.";
 "rcft_1_instructions_2" = "Click Next Once you are done practicing.";
 "rcft_1_instructions_3" = "Now you will be shown a COMPLEX figure.\nPlease copy the figure with your finger on the blank space below the figure.\nPress 'DONE' when you finish copying the figure.";
+
+// RCFT 2
+"rcft_2_instructions" = "A few minutes ago you copied a COMPLEX figure. Now please draw the COMPLEX figure you drew before again, but this time from memory.\nClick 'Next' when you are done.";
