@@ -50,6 +50,7 @@ class ViewController: UIViewController {
             return
         }
         
+        
         let email = self.usernameTextfield.text!
         let password = self.passwordTextfield.text!
         

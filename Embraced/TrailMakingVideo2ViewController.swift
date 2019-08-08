@@ -7,17 +7,41 @@
 //
 
 import UIKit
+import YoutubePlayer_in_WKWebView
 
 class TrailMakingVideo2ViewController: ActiveStepViewController {
 
+    let videoView: WKYTPlayerView = {
+        var view = WKYTPlayerView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         orientation = .portrait
         rotateOrientation = .portrait
         
         nextBtn.setTitle("Next".localized(lang: language), for: .normal)
         nextBtn.addTarget(self, action: #selector(moveOn), for: .touchUpInside)
+        
+        setupViews()
+        
+        videoView.load(withVideoId: "uZcdjk-nWf8")
+    }
+    
+    private func setupViews() {
+        contentView.addSubview(videoView)
+        
+        contentView.topAnchor.constraint(equalTo: view.topAnchor, constant: 75.0).isActive = true
+        
+        videoView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        videoView.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
+        videoView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
+        videoView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        
+        contentView.layer.backgroundColor = UIColor.blue.cgColor
     }
     
     @objc func moveOn() {

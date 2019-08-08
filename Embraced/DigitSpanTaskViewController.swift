@@ -174,8 +174,6 @@ class DigitSpanTaskViewController: ActiveStepViewController {
         isRecording = false
         
         externalStorage()
-        
-        nextBtn.isHidden = false
     }
     
     private func playAudio(fileName: String) {
@@ -215,7 +213,7 @@ class DigitSpanTaskViewController: ActiveStepViewController {
             let storageRef = storage.reference()
             let participantRef = storageRef.child(filePath)
             
-            participantRef.putFile(from: recordedAudioURL, metadata: nil) { (metadata, error) in
+            let uploadTask = participantRef.putFile(from: recordedAudioURL, metadata: nil) { (metadata, error) in
                 if error != nil {
                     print("Error: \(error?.localizedDescription)")
                     SVProgressHUD.showError(withStatus: "An error has happened")
@@ -272,7 +270,9 @@ class DigitSpanTaskViewController: ActiveStepViewController {
                 FirebaseStorageManager.shared.addDataToDocument(payload: [
                     "digitSpan": DigitSpanModel.shared.printModel()
                 ])
-                
+            }
+            
+            uploadTask.observe(.success) { (snapshot) in
                 self.nextBtn.isHidden = false
                 
                 // Delete file from device

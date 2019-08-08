@@ -137,7 +137,7 @@ class RCFT3TaskViewController: ActiveStepViewController {
             let storageRef = storage.reference()
             let participantRef = storageRef.child(filePath)
             
-            participantRef.putFile(from: saveImagePath, metadata: nil) { (metadata, error) in
+            let uploadTask = participantRef.putFile(from: saveImagePath, metadata: nil) { (metadata, error) in
                 if error != nil {
                     print("Error: \(error?.localizedDescription)")
                     SVProgressHUD.showError(withStatus: "An error has happened")
@@ -149,7 +149,9 @@ class RCFT3TaskViewController: ActiveStepViewController {
                 FirebaseStorageManager.shared.addDataToDocument(payload: [
                     "rcft": RCFTModel.shared.printModel()
                 ])
-                
+            }
+            
+            uploadTask.observe(.success) { (snapshot) in
                 self.performSegue(withIdentifier: "moveToDone", sender: nil)
                 
                 Utility.deleteFile(filePath)

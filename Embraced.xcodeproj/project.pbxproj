@@ -385,6 +385,7 @@
 		A4DE7DE122F666C7009EEA17 /* TrailMakingVideo2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DE022F666C7009EEA17 /* TrailMakingVideo2ViewController.swift */; };
 		A4DE7DE322F666E6009EEA17 /* TrailMakingTask2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DE222F666E6009EEA17 /* TrailMakingTask2ViewController.swift */; };
 		A4DE7DE522F66703009EEA17 /* TrailMakingDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DE422F66703009EEA17 /* TrailMakingDoneViewController.swift */; };
+		A4DE7DE722F8D931009EEA17 /* TrailMakingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DE7DE622F8D931009EEA17 /* TrailMakingModel.swift */; };
 		A4DF9F221E08FBC90084EAF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4DF9F241E08FBC90084EAF9 /* Localizable.strings */; };
 		A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */; };
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
@@ -785,6 +786,7 @@
 		A4DE7DE022F666C7009EEA17 /* TrailMakingVideo2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMakingVideo2ViewController.swift; sourceTree = "<group>"; };
 		A4DE7DE222F666E6009EEA17 /* TrailMakingTask2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMakingTask2ViewController.swift; sourceTree = "<group>"; };
 		A4DE7DE422F66703009EEA17 /* TrailMakingDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMakingDoneViewController.swift; sourceTree = "<group>"; };
+		A4DE7DE622F8D931009EEA17 /* TrailMakingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMakingModel.swift; sourceTree = "<group>"; };
 		A4DF9F231E08FBC90084EAF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F251E08FBF60084EAF9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -910,6 +912,7 @@
 				A48B1AFD22EF444C007A1E98 /* NamingTaskModel.swift */,
 				A4DE7DB222F62539009EEA17 /* ClockDrawingModel.swift */,
 				A4DE7DB622F63C77009EEA17 /* RCFTModel.swift */,
+				A4DE7DE622F8D931009EEA17 /* TrailMakingModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1811,6 +1814,7 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/YoutubePlayer-in-WKWebView/YoutubePlayer_in_WKWebView.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -1828,6 +1832,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YoutubePlayer_in_WKWebView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -1888,6 +1893,7 @@
 				A4347FE71D7BCC4C0033306A /* ComprehensionViewController.swift in Sources */,
 				A4DE7DA722F5DD98009EEA17 /* WordList2RecognitionViewController.swift in Sources */,
 				A4A991D422EAA19800DE3B83 /* StroopInstructions4ViewController.swift in Sources */,
+				A4DE7DE722F8D931009EEA17 /* TrailMakingModel.swift in Sources */,
 				A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */,
 				A47E666E22D2D7CE00B5B7B5 /* StroopTaskViewController.swift in Sources */,
 				A47E666A22D2BD5000B5B7B5 /* StroopPreTaskViewController.swift in Sources */,

@@ -115,6 +115,7 @@ PODS:
   - Protobuf (3.6.1)
   - ReachabilitySwift (4.3.0)
   - SVProgressHUD (2.2.5)
+  - YoutubePlayer-in-WKWebView (0.3.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
@@ -127,6 +128,7 @@ DEPENDENCIES:
   - JWTDecode (~> 2.1)
   - ReachabilitySwift
   - SVProgressHUD
+  - YoutubePlayer-in-WKWebView (~> 0.3.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -152,6 +154,7 @@ SPEC REPOS:
     - Protobuf
     - ReachabilitySwift
     - SVProgressHUD
+    - YoutubePlayer-in-WKWebView
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -186,7 +189,8 @@ SPEC CHECKSUMS:
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  YoutubePlayer-in-WKWebView: 86f6b4c04797296071585b92724f3904d0273f12
 
-PODFILE CHECKSUM: 1d5a8b6ef3e3f50e9daec8dd1fe4a82415be2b24
+PODFILE CHECKSUM: 3435c1c39d482eb60dde89633600870f3ad45991
 
 COCOAPODS: 1.5.3

@@ -130,7 +130,7 @@ class WordList2TaskViewController: ActiveStepViewController {
             let storageRef = storage.reference()
             let participantRef = storageRef.child(filePath)
             
-            participantRef.putFile(from: recordedAudioURL, metadata: nil) { (metadata, error) in
+            let uploadTask = participantRef.putFile(from: recordedAudioURL, metadata: nil) { (metadata, error) in
                 if error != nil {
                     print("Error: \(error?.localizedDescription)")
                     SVProgressHUD.showError(withStatus: "An error has happened")
@@ -141,7 +141,9 @@ class WordList2TaskViewController: ActiveStepViewController {
                 FirebaseStorageManager.shared.addDataToDocument(payload: [
                     "wordList": WordListModel.shared.printModel()
                     ])
-                
+            }
+            
+            uploadTask.observe(.success) { (snapshot) in
                 self.nextBtn.isHidden = false
                 
                 Utility.deleteFile(filePath)

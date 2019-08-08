@@ -81,6 +81,13 @@ class DigittSpanPracticeViewController: ActiveStepViewController {
     }
     
     @objc func moveOn() {
+        if isPlaying {
+            audioRecorder.stop()
+            audioRecorder = nil
+            let audioSession = AVAudioSession.sharedInstance()
+            try! audioSession.setActive(false)
+        }
+        
         self.performSegue(withIdentifier: "moveToTask", sender: nil)
     }
     

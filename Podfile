@@ -16,4 +16,5 @@ target 'Embraced' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
   pod 'CountdownView'
+  pod 'YoutubePlayer-in-WKWebView', '~> 0.3.0'
 end

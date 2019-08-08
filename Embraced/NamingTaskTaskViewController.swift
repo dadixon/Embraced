@@ -202,7 +202,7 @@ class NamingTaskTaskViewController: ActiveStepViewController {
             let storageRef = storage.reference()
             let participantRef = storageRef.child(filePath)
             
-            participantRef.putFile(from: recordedAudioURL, metadata: nil) { (metadata, error) in
+            let uploadTask = participantRef.putFile(from: recordedAudioURL, metadata: nil) { (metadata, error) in
                 if error != nil {
                     print("Error: \(error?.localizedDescription)")
                     SVProgressHUD.showError(withStatus: "An error has happened")
@@ -256,7 +256,9 @@ class NamingTaskTaskViewController: ActiveStepViewController {
                 FirebaseStorageManager.shared.addDataToDocument(payload: [
                     "naming": NamingTaskModel.shared.printModel()
                 ])
-                
+            }
+            
+            uploadTask.observe(.success) { (snapshot) in
                 if !self.isStoring {
                     self.nextBtn.isHidden = false
                 }

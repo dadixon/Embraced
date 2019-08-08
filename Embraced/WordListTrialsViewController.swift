@@ -277,53 +277,49 @@ class WordListTrialsViewController: ActiveStepViewController {
             let storageRef = storage.reference()
             let participantRef = storageRef.child(filePath)
             
-            participantRef.putFile(from: recordedAudioURL, metadata: nil) { (metadata, error) in
+            let uploadTask = participantRef.putFile(from: recordedAudioURL, metadata: nil) { (metadata, error) in
                 if error != nil {
                     print("Error: \(error?.localizedDescription)")
                     SVProgressHUD.showError(withStatus: "An error has happened")
                 }
                 
-//                participantRef.downloadURL { (url, error) in
-//                    if error != nil {
-//                        print("Error: \(error?.localizedDescription)")
-//                    }
-//                    guard let downloadURL = url else { return }
+                switch (self.index) {
+                    case 1:
+                        WordListModel.shared.task_1 = filePath
+                        break
+                    case 2:
+                        WordListModel.shared.task_2 = filePath
+                        break
+                    case 3:
+                        WordListModel.shared.task_3 = filePath
+                        break
+                    case 4:
+                        WordListModel.shared.task_4 = filePath
+                        break
+                    case 5:
+                        WordListModel.shared.task_5 = filePath
+                        break
+                    case 6:
+                        WordListModel.shared.interference = filePath
+                        break
+                    case 7:
+                        WordListModel.shared.shortTerm = filePath
+                        break
+                    default: break
+                }
                 
-                    switch (self.index) {
-                        case 1:
-                            WordListModel.shared.task_1 = filePath
-                            break
-                        case 2:
-                            WordListModel.shared.task_2 = filePath
-                            break
-                        case 3:
-                            WordListModel.shared.task_3 = filePath
-                            break
-                        case 4:
-                            WordListModel.shared.task_4 = filePath
-                            break
-                        case 5:
-                            WordListModel.shared.task_5 = filePath
-                            break
-                        case 6:
-                            WordListModel.shared.interference = filePath
-                            break
-                        case 7:
-                            WordListModel.shared.shortTerm = filePath
-                            break
-                        default: break
-                    }
-                    
-                    FirebaseStorageManager.shared.addDataToDocument(payload: [
-                        "wordList": WordListModel.shared.printModel()
-                    ])
-                    
-                    self.nextBtn.isHidden = false
-                    
-                    // Delete file from device
-                    Utility.deleteFile(filePath)
-                    SVProgressHUD.dismiss()
-//                }
+                FirebaseStorageManager.shared.addDataToDocument(payload: [
+                    "wordList": WordListModel.shared.printModel()
+                ])
+
+            }
+            
+            uploadTask.observe(.success) { (snapshot) in
+                self.nextBtn.isHidden = false
+                
+                // Delete file from device
+                Utility.deleteFile(filePath)
+                SVProgressHUD.dismiss()
             }
         }
     }
