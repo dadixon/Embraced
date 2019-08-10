@@ -16,7 +16,7 @@ class TrailMakingInstructions2ViewController: InstructionsViewController {
         orientation = .portrait
         rotateOrientation = .portrait
         
-        instructionsLabel.text = "trailMaking_instructions_3".localized(lang: language)
+        instructionsLabel.text = "trailMaking_instructions_2".localized(lang: language)
         
         nextBtn.setTitle("Next".localized(lang: language), for: .normal)
         nextBtn.addTarget(self, action: #selector(moveOn), for: .touchUpInside)

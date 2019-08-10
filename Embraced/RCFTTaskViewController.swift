@@ -154,29 +154,26 @@ class RCFTTaskViewController: ActiveStepViewController {
         let filePath = "\(FirebaseStorageManager.shared.pid!)/\(TEST_NAME)/\(fileName)"
         
         if Utility.fileExist(filePath) {
-            let storage = Storage.storage()
-            let storageRef = storage.reference()
-            let participantRef = storageRef.child(filePath)
-            
-            let uploadTask = participantRef.putFile(from: saveImagePath, metadata: nil) { (metadata, error) in
+            FirebaseStorageManager.shared.externalStorage(filePath: filePath, fileUrl: saveImagePath) { (uploadTask, error) in
                 if error != nil {
-                    print("Error: \(error?.localizedDescription)")
-                    SVProgressHUD.showError(withStatus: "An error has happened")
+                    SVProgressHUD.showError(withStatus: error?.localizedDescription)
                 }
                 
-                RCFTModel.shared.file_1 = filePath
-                RCFTModel.shared.time_1 = self.reactionTime
-                
-                FirebaseStorageManager.shared.addDataToDocument(payload: [
-                    "rcft": RCFTModel.shared.printModel()
-                ])
-            }
-            
-            uploadTask.observe(.success) { (snapshot) in
-                self.performSegue(withIdentifier: "moveToDone", sender: nil)
-                
-                Utility.deleteFile(filePath)
-                SVProgressHUD.dismiss()
+                if let task = uploadTask {
+                    task.observe(.success, handler: { (snapshot) in
+                        RCFTModel.shared.file_1 = filePath
+                        RCFTModel.shared.time_1 = self.reactionTime
+                        
+                        FirebaseStorageManager.shared.addDataToDocument(payload: [
+                            "rcft": RCFTModel.shared.printModel()
+                        ])
+                        
+                        Utility.deleteFile(filePath)
+                        SVProgressHUD.dismiss()
+                        
+                        self.performSegue(withIdentifier: "moveToDone", sender: nil)
+                    })
+                }
             }
         }
     }

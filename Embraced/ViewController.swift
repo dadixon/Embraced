@@ -49,21 +49,19 @@ class ViewController: UIViewController {
             SVProgressHUD.showError(withStatus: "UsernamePasswordEmpty".localized(lang: testerLanguage))
             return
         }
-        
-        
+
+
         let email = self.usernameTextfield.text!
         let password = self.passwordTextfield.text!
         
         
-        Auth.auth().signIn(withEmail: email,
-                           password: password,
-                           completion: { (user, error) in
-                            if error != nil {
-                                print(error)
-                                SVProgressHUD.showError(withStatus: error?.localizedDescription)
-                            } else {
-                                self.performSegue(withIdentifier: "moveToHome", sender: nil)
-                            }
+        
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+            if error != nil {
+                SVProgressHUD.showError(withStatus: error?.localizedDescription)
+            } else {
+                self.performSegue(withIdentifier: "moveToHome", sender: nil)
+            }
                             
         })
         

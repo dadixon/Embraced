@@ -211,73 +211,44 @@ class DigitSpanTask2ViewController: ActiveStepViewController {
         let filePath = "\(FirebaseStorageManager.shared.pid!)/DigitSpan/\(soundFileName)"
         
         if Utility.fileExist(filePath) {
-            let storage = Storage.storage()
-            let storageRef = storage.reference()
-            let participantRef = storageRef.child(filePath)
-            
-            participantRef.putFile(from: recordedAudioURL, metadata: nil) { (metadata, error) in
+            FirebaseStorageManager.shared.externalStorage(filePath: filePath, fileUrl: recordedAudioURL) { (uploadTask, error) in
                 if error != nil {
-                    print("Error: \(error?.localizedDescription)")
-                    SVProgressHUD.showError(withStatus: "An error has happened")
+                    SVProgressHUD.showError(withStatus: error?.localizedDescription)
                 }
                 
-                switch (self.index) {
-                case 0:
-                    DigitSpanModel.shared.DSBWD_1_file = filePath
-                    break
-                case 1:
-                    DigitSpanModel.shared.DSBWD_2_file = filePath
-                    break
-                case 2:
-                    DigitSpanModel.shared.DSBWD_3_file = filePath
-                    break
-                case 3:
-                    DigitSpanModel.shared.DSBWD_4_file = filePath
-                    break
-                case 4:
-                    DigitSpanModel.shared.DSBWD_5_file = filePath
-                    break
-                case 5:
-                    DigitSpanModel.shared.DSBWD_6_file = filePath
-                    break
-                case 6:
-                    DigitSpanModel.shared.DSBWD_7_file = filePath
-                    break
-                case 7:
-                    DigitSpanModel.shared.DSBWD_8_file = filePath
-                    break
-                case 8:
-                    DigitSpanModel.shared.DSBWD_9_file = filePath
-                    break
-                case 9:
-                    DigitSpanModel.shared.DSBWD_10_file = filePath
-                    break
-                case 10:
-                    DigitSpanModel.shared.DSBWD_11_file = filePath
-                    break
-                case 11:
-                    DigitSpanModel.shared.DSBWD_12_file = filePath
-                    break
-                case 12:
-                    DigitSpanModel.shared.DSBWD_13_file = filePath
-                    break
-                case 13:
-                    DigitSpanModel.shared.DSBWD_14_file = filePath
-                    break
-                default:
-                    break
+                if let task = uploadTask {
+                    task.observe(.success, handler: { (snaphot) in
+                        switch (self.index) {
+                        case 0: DigitSpanModel.shared.DSBWD_1_file = filePath
+                        case 1: DigitSpanModel.shared.DSBWD_2_file = filePath
+                        case 2: DigitSpanModel.shared.DSBWD_3_file = filePath
+                        case 3: DigitSpanModel.shared.DSBWD_4_file = filePath
+                        case 4: DigitSpanModel.shared.DSBWD_5_file = filePath
+                        case 5: DigitSpanModel.shared.DSBWD_6_file = filePath
+                        case 6: DigitSpanModel.shared.DSBWD_7_file = filePath
+                        case 7: DigitSpanModel.shared.DSBWD_8_file = filePath
+                        case 8: DigitSpanModel.shared.DSBWD_9_file = filePath
+                        case 9: DigitSpanModel.shared.DSBWD_10_file = filePath
+                        case 10: DigitSpanModel.shared.DSBWD_11_file = filePath
+                        case 11: DigitSpanModel.shared.DSBWD_12_file = filePath
+                        case 12: DigitSpanModel.shared.DSBWD_13_file = filePath
+                        case 13: DigitSpanModel.shared.DSBWD_14_file = filePath
+                        default:
+                            break
+                        }
+                        
+                        
+                        FirebaseStorageManager.shared.addDataToDocument(payload: [
+                            "digitSpan": DigitSpanModel.shared.printModel()
+                            ])
+                        
+                        self.nextBtn.isHidden = false
+                        
+                        // Delete file from device
+                        Utility.deleteFile(filePath)
+                        SVProgressHUD.dismiss()
+                    })
                 }
-                
-                
-                FirebaseStorageManager.shared.addDataToDocument(payload: [
-                    "digitSpan": DigitSpanModel.shared.printModel()
-                    ])
-                
-                self.nextBtn.isHidden = false
-                
-                // Delete file from device
-                Utility.deleteFile(filePath)
-                SVProgressHUD.dismiss()
             }
         }
     }

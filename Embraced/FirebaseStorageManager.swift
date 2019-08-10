@@ -115,59 +115,19 @@ class FirebaseStorageManager {
     func removeListener() {
         listener?.remove()
     }
-    
-    // Naming Task
-    func storeNamingTask(data: [String: AnyObject]) {
-//        guard let index = data["index"] else {
-//            return
-//        }
-//
-//        guard let name = data["name"] else {
-//            return
-//        }
-//
-//        guard let audioFile = data["audio"] else {
-//            return
-//        }
-//
-//        if let pid = userDefaults.string(forKey: "pid") {
-//            let storage = Storage.storage()
-//            let storageRef = storage.reference()
-//            let participantRef = storageRef.child("\(userDefaults.string(forKey: "pid")!)namingTask/\(name).m4a")
-//
-//            let uploadTask = participantRef.putFile(from: audioFile as! URL, metadata: nil) { (metadata, error) in
-//                if error != nil {
-//                    print("Error: \(error?.localizedDescription)")
-//                }
-//
-//                participantRef.downloadURL { (url, error) in
-//                    guard let downloadURL = url else {
-//                        // Uh-oh, an error occurred!
-//                        print("Error: \(error?.localizedDescription)")
-//                        return
-//                    }
-//
-//                    if self.namingTaskID != nil {
-//                        let childUpdates = ["participants/\(self.userDefaults.string(forKey: "pid")!)/naming_task/Stimuli_\(index)": downloadURL.absoluteString]
-//                        self.ref.updateChildValues(childUpdates)
-//                    } else {
-//                        var payload: [String: Any] = [
-//                            "Created": [".sv": "timestamp"]
-//                        ]
-//
-//                        payload["Stimuli_\(index)"] = downloadURL.absoluteString
-//                        payload["Stimuli_\(index)_Score"] = ""
-//
-//                        self.namingTaskID = pid
-//                        self.ref.child("participants/\(self.userDefaults.string(forKey: "pid")!)/naming_task").setValue(payload) { (error, ref) -> Void in
-//                            if error != nil {
-//                                print("Error: \(error?.localizedDescription)")
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
+
+    func externalStorage(filePath: String, fileUrl: URL, completionHandler:@escaping (StorageUploadTask?, Error?) -> Void) {
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let participantRef = storageRef.child(filePath)
+        
+        let uploadTask = participantRef.putFile(from: fileUrl, metadata: nil) { (metadata, error) in
+            if error != nil {
+                completionHandler(nil, error)
+            }
+        }
+        
+        completionHandler(uploadTask, nil)
     }
 
     let testPayload = [

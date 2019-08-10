@@ -156,29 +156,26 @@ class StroopTaskViewController: ActiveStepViewController {
         let filePath = "\(FirebaseStorageManager.shared.pid!)/\(TEST_NAME)/\(soundFileName)"
         
         if Utility.fileExist(filePath) {
-            let storage = Storage.storage()
-            let storageRef = storage.reference()
-            let participantRef = storageRef.child(filePath)
-            
-            let uploadTask = participantRef.putFile(from: recordedAudioURL, metadata: nil) { (metadata, error) in
+            FirebaseStorageManager.shared.externalStorage(filePath: filePath, fileUrl: recordedAudioURL) { (uploadTask, error) in
                 if error != nil {
-                    print("Error: \(error?.localizedDescription)")
-                    SVProgressHUD.showError(withStatus: "An error has happened")
+                    SVProgressHUD.showError(withStatus: error?.localizedDescription)
                 }
-
-                StroopModel.shared.file_1 = filePath
-                StroopModel.shared.rt_1 = self.reactionTime
                 
-                FirebaseStorageManager.shared.addDataToDocument(payload: [
-                    "stroop": StroopModel.shared.printModel()
-                ])
-            }
-            
-            uploadTask.observe(.success) { (snapshot) in
-                self.nextBtn.isHidden = false
-                
-                Utility.deleteFile(filePath)
-                SVProgressHUD.dismiss()
+                if let task = uploadTask {
+                    task.observe(.success, handler: { (snapshot) in
+                        StroopModel.shared.file_1 = filePath
+                        StroopModel.shared.rt_1 = self.reactionTime
+                        
+                        FirebaseStorageManager.shared.addDataToDocument(payload: [
+                            "stroop": StroopModel.shared.printModel()
+                        ])
+                        
+                        self.nextBtn.isHidden = false
+                        
+                        Utility.deleteFile(filePath)
+                        SVProgressHUD.dismiss()
+                    })
+                }
             }
         }
     }
