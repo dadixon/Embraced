@@ -37,8 +37,6 @@
 		A46C14101D798FC30066EF37 /* CPTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C140E1D798FC30066EF37 /* CPTViewController.xib */; };
 		A46C141B1D79A8870066EF37 /* EyeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14191D79A8870066EF37 /* EyeTestViewController.swift */; };
 		A46C141C1D79A8870066EF37 /* EyeTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */; };
-		A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */; };
-		A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */; };
 		A46C142B1D79AB3F0066EF37 /* MOCAMMSETestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */; };
 		A46C142C1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */; };
 		A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */; };
@@ -432,8 +430,6 @@
 		A46C140E1D798FC30066EF37 /* CPTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPTViewController.xib; path = controllers/CPTViewController.xib; sourceTree = "<group>"; };
 		A46C14191D79A8870066EF37 /* EyeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EyeTestViewController.swift; path = controllers/EyeTestViewController.swift; sourceTree = "<group>"; };
 		A46C141A1D79A8870066EF37 /* EyeTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EyeTestViewController.xib; path = controllers/EyeTestViewController.xib; sourceTree = "<group>"; };
-		A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailMakingTestViewController.swift; path = controllers/TrailMakingTestViewController.swift; sourceTree = "<group>"; };
-		A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrailMakingTestViewController.xib; path = controllers/TrailMakingTestViewController.xib; sourceTree = "<group>"; };
 		A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MOCAMMSETestViewController.swift; path = controllers/MOCAMMSETestViewController.swift; sourceTree = "<group>"; };
 		A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MOCAMMSETestViewController.xib; path = controllers/MOCAMMSETestViewController.xib; sourceTree = "<group>"; };
 		A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -876,8 +872,6 @@
 				A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */,
 				A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */,
 				A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */,
-				A46C14251D79AACD0066EF37 /* TrailMakingTestViewController.swift */,
-				A46C14261D79AACD0066EF37 /* TrailMakingTestViewController.xib */,
 				A4347FCB1D7BCA570033306A /* ReyFigureComplex4ViewController.swift */,
 				A4347FCC1D7BCA570033306A /* ReyFigureComplex4ViewController.xib */,
 				A46C140D1D798FC30066EF37 /* CPTViewController.swift */,
@@ -1705,7 +1699,6 @@
 				A4CA149B22031C1900F6CF0A /* SPA-BWD-01.mp3 in Resources */,
 				A48A12D321FA4BA00044AF08 /* melodies 320ms diff(68).wav in Resources */,
 				A4347FE81D7BCC4C0033306A /* ComprehensionViewController.xib in Resources */,
-				A46C14281D79AACD0066EF37 /* TrailMakingTestViewController.xib in Resources */,
 				A4CA146222031BEE00F6CF0A /* ENG-BWD-10.mp3 in Resources */,
 				A4CA155C22031EBE00F6CF0A /* SPA-27.mp3 in Resources */,
 				A4CA155B22031EBE00F6CF0A /* SPA-39.mp3 in Resources */,
@@ -1970,7 +1963,6 @@
 				A4969D2521E7DA340063FF40 /* CancellationInstructions2ViewController.swift in Sources */,
 				A4969D1B21E67B960063FF40 /* AudioPlaybackViewController.swift in Sources */,
 				A4C469A71E134B5900FDD5D5 /* UserViewController.swift in Sources */,
-				A46C14271D79AACD0066EF37 /* TrailMakingTestViewController.swift in Sources */,
 				A4DE7DB722F63C77009EEA17 /* RCFTModel.swift in Sources */,
 				A4AB688B1DE4BE9A0009808D /* DownloadOperation.swift in Sources */,
 				A4396F10223C142B009B1EDC /* FirebaseStorageManager.swift in Sources */,

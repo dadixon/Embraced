@@ -46,7 +46,7 @@ class TrailMakingTask2ViewController: ActiveStepViewController {
         
         setupViews()
         
-        canvas.image = UIImage(named: "figure")
+        canvas.image = UIImage(named: "task2")
         
         documentPath = Utility.getDocumentsDirectory().appendingPathComponent("\(FirebaseStorageManager.shared.pid!)/\(TEST_NAME)")
         do
