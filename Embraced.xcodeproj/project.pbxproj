@@ -13,8 +13,6 @@
 		A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */; };
 		A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */; };
 		A42041F821E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F721E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift */; };
-		A4347FCD1D7BCA570033306A /* ReyFigureComplex4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FCB1D7BCA570033306A /* ReyFigureComplex4ViewController.swift */; };
-		A4347FCE1D7BCA570033306A /* ReyFigureComplex4ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FCC1D7BCA570033306A /* ReyFigureComplex4ViewController.xib */; };
 		A4347FD11D7BCA950033306A /* MatricesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FCF1D7BCA950033306A /* MatricesViewController.swift */; };
 		A4347FD21D7BCA950033306A /* MatricesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4347FD01D7BCA950033306A /* MatricesViewController.xib */; };
 		A4347FD51D7BCABC0033306A /* PegboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4347FD31D7BCABC0033306A /* PegboardViewController.swift */; };
@@ -27,8 +25,6 @@
 		A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669311E1631A600EA7E2E /* ListenButton.swift */; };
 		A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669331E16435C00EA7E2E /* PlayButton.swift */; };
 		A44669381E16457600EA7E2E /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669371E16457600EA7E2E /* RecordButton.swift */; };
-		A460CE4121D0C0E300E52F8B /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE3F21D0C0E300E52F8B /* CanvasViewController.swift */; };
-		A460CE4221D0C0E300E52F8B /* CanvasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A460CE4021D0C0E300E52F8B /* CanvasViewController.xib */; };
 		A460CE4721D0C75E00E52F8B /* InstructionsStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */; };
 		A460CE4921D0C77300E52F8B /* InstructionsStep.xib in Resources */ = {isa = PBXBuildFile; fileRef = A460CE4821D0C77300E52F8B /* InstructionsStep.xib */; };
 		A46A2C641DD66108000AC66C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46A2C631DD66108000AC66C /* SystemConfiguration.framework */; };
@@ -60,8 +56,6 @@
 		A47E666C22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666B22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift */; };
 		A47E666E22D2D7CE00B5B7B5 /* StroopTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666D22D2D7CE00B5B7B5 /* StroopTaskViewController.swift */; };
 		A47E667022D2D87900B5B7B5 /* StroopDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666F22D2D87900B5B7B5 /* StroopDoneViewController.swift */; };
-		A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */; };
-		A47EB6E41DA65FFB00A68AF6 /* FinishedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */; };
 		A47FF4AE211363AA00665E20 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47FF4AD211363AA00665E20 /* Constants.swift */; };
 		A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */; };
 		A4828EB71F967ED700406F19 /* LoadingScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */; };
@@ -132,6 +126,7 @@
 		A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A48B4DCB1CF9E7C700878928 /* Embraced.xcdatamodeld */; };
 		A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A48B4DCE1CF9E7C700878928 /* Assets.xcassets */; };
 		A48B4DD21CF9E7C700878928 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A48B4DD01CF9E7C700878928 /* LaunchScreen.storyboard */; };
+		A48BA73B230D506F00C0D34B /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48BA73A230D506F00C0D34B /* CanvasView.swift */; };
 		A48D60E81FF5AC4F0042FBCA /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48D60E71FF5AC4F0042FBCA /* LibraryAPI.swift */; };
 		A48D60F41FF704D60042FBCA /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48D60F21FF704D60042FBCA /* UserCollectionViewCell.swift */; };
 		A48D60F51FF704D60042FBCA /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48D60F31FF704D60042FBCA /* UserCollectionViewCell.xib */; };
@@ -148,6 +143,10 @@
 		A490D7DB1D0919CB00D2B59D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */; };
 		A490D7DC1D0919CB00D2B59D /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */; };
 		A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */; };
+		A49172F623107EBF004BDC80 /* RCFT4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49172F523107EBF004BDC80 /* RCFT4.storyboard */; };
+		A49172F82310800B004BDC80 /* RCFT4InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49172F72310800B004BDC80 /* RCFT4InstructionsViewController.swift */; };
+		A49172FA2310804C004BDC80 /* RCFT4DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49172F92310804C004BDC80 /* RCFT4DoneViewController.swift */; };
+		A49172FC23108098004BDC80 /* RCFT4TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49172FB23108098004BDC80 /* RCFT4TaskViewController.swift */; };
 		A4969D1221E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1121E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift */; };
 		A4969D1421E544C10063FF40 /* DigitSpan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4969D1321E544C10063FF40 /* DigitSpan.storyboard */; };
 		A4969D1721E5454B0063FF40 /* DigitSpanInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1621E5454B0063FF40 /* DigitSpanInstructionsViewController.swift */; };
@@ -406,8 +405,6 @@
 		A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionInstructionsViewController.swift; sourceTree = "<group>"; };
 		A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveStepViewController.swift; sourceTree = "<group>"; };
 		A42041F721E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionExamplesViewController.swift; sourceTree = "<group>"; };
-		A4347FCB1D7BCA570033306A /* ReyFigureComplex4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReyFigureComplex4ViewController.swift; path = controllers/ReyFigureComplex4ViewController.swift; sourceTree = "<group>"; };
-		A4347FCC1D7BCA570033306A /* ReyFigureComplex4ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReyFigureComplex4ViewController.xib; path = controllers/ReyFigureComplex4ViewController.xib; sourceTree = "<group>"; };
 		A4347FCF1D7BCA950033306A /* MatricesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MatricesViewController.swift; path = controllers/MatricesViewController.swift; sourceTree = "<group>"; };
 		A4347FD01D7BCA950033306A /* MatricesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MatricesViewController.xib; path = controllers/MatricesViewController.xib; sourceTree = "<group>"; };
 		A4347FD31D7BCABC0033306A /* PegboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PegboardViewController.swift; path = controllers/PegboardViewController.swift; sourceTree = "<group>"; };
@@ -420,8 +417,6 @@
 		A44669311E1631A600EA7E2E /* ListenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenButton.swift; sourceTree = "<group>"; };
 		A44669331E16435C00EA7E2E /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		A44669371E16457600EA7E2E /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
-		A460CE3F21D0C0E300E52F8B /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CanvasViewController.swift; path = controllers/CanvasViewController.swift; sourceTree = "<group>"; };
-		A460CE4021D0C0E300E52F8B /* CanvasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CanvasViewController.xib; path = controllers/CanvasViewController.xib; sourceTree = "<group>"; };
 		A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsStep.swift; sourceTree = "<group>"; };
 		A460CE4821D0C77300E52F8B /* InstructionsStep.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionsStep.xib; sourceTree = "<group>"; };
 		A46A2C631DD66108000AC66C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -453,8 +448,6 @@
 		A47E666B22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopInstructionsViewController.swift; sourceTree = "<group>"; };
 		A47E666D22D2D7CE00B5B7B5 /* StroopTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopTaskViewController.swift; sourceTree = "<group>"; };
 		A47E666F22D2D87900B5B7B5 /* StroopDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopDoneViewController.swift; sourceTree = "<group>"; };
-		A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishedViewController.swift; path = controllers/FinishedViewController.swift; sourceTree = "<group>"; };
-		A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinishedViewController.xib; path = controllers/FinishedViewController.xib; sourceTree = "<group>"; };
 		A47FF4AD211363AA00665E20 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadingScreenViewController.swift; path = controllers/LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoadingScreenViewController.xib; path = controllers/LoadingScreenViewController.xib; sourceTree = "<group>"; };
@@ -527,6 +520,7 @@
 		A48B4DCE1CF9E7C700878928 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A48B4DD11CF9E7C700878928 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A48B4DD31CF9E7C700878928 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A48BA73A230D506F00C0D34B /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		A48D60E71FF5AC4F0042FBCA /* LibraryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
 		A48D60F21FF704D60042FBCA /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
 		A48D60F31FF704D60042FBCA /* UserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -543,6 +537,10 @@
 		A490D7CF1D0919CB00D2B59D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		A490D7D01D0919CB00D2B59D /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		A490D7D11D0919CB00D2B59D /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		A49172F523107EBF004BDC80 /* RCFT4.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RCFT4.storyboard; sourceTree = "<group>"; };
+		A49172F72310800B004BDC80 /* RCFT4InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFT4InstructionsViewController.swift; sourceTree = "<group>"; };
+		A49172F92310804C004BDC80 /* RCFT4DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFT4DoneViewController.swift; sourceTree = "<group>"; };
+		A49172FB23108098004BDC80 /* RCFT4TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFT4TaskViewController.swift; sourceTree = "<group>"; };
 		A4969D1121E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionDoneViewController.swift; sourceTree = "<group>"; };
 		A4969D1321E544C10063FF40 /* DigitSpan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DigitSpan.storyboard; sourceTree = "<group>"; };
 		A4969D1621E5454B0063FF40 /* DigitSpanInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSpanInstructionsViewController.swift; sourceTree = "<group>"; };
@@ -848,6 +846,7 @@
 				A4DE7DC322F65D4D009EEA17 /* RCFT2.storyboard */,
 				A4DE7DCC22F660F3009EEA17 /* RCFT3.storyboard */,
 				A4DE7DD522F664CA009EEA17 /* TrailMaking.storyboard */,
+				A49172F523107EBF004BDC80 /* RCFT4.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -872,8 +871,6 @@
 				A4BB08EB1D7EDFFA00B76C64 /* QuestionnaireViewController.xib */,
 				A46C14291D79AB3F0066EF37 /* MOCAMMSETestViewController.swift */,
 				A46C142A1D79AB3F0066EF37 /* MOCAMMSETestViewController.xib */,
-				A4347FCB1D7BCA570033306A /* ReyFigureComplex4ViewController.swift */,
-				A4347FCC1D7BCA570033306A /* ReyFigureComplex4ViewController.xib */,
 				A46C140D1D798FC30066EF37 /* CPTViewController.swift */,
 				A46C140E1D798FC30066EF37 /* CPTViewController.xib */,
 				A4347FCF1D7BCA950033306A /* MatricesViewController.swift */,
@@ -1246,6 +1243,7 @@
 				A4969D3221E926BE0063FF40 /* CancellationViewCell.swift */,
 				A4969D3321E926BE0063FF40 /* CancellationViewCell.xib */,
 				A4D904211D23810C0092D6AA /* EmbracedTextField.swift */,
+				A48BA73A230D506F00C0D34B /* CanvasView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1253,6 +1251,7 @@
 		A490D7C11D0913C500D2B59D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A49172F423107C9B004BDC80 /* RCFT4 */,
 				A4DE7DD722F665DE009EEA17 /* TrailMaking */,
 				A4DE7DCE22F6614E009EEA17 /* RCFT3 */,
 				A4DE7DC522F65D9C009EEA17 /* RCFT2 */,
@@ -1281,10 +1280,6 @@
 				A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */,
 				A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */,
 				A42AB5C51D2DE0F4001387BB /* Test */,
-				A47EB6E11DA65FFB00A68AF6 /* FinishedViewController.swift */,
-				A47EB6E21DA65FFB00A68AF6 /* FinishedViewController.xib */,
-				A460CE3F21D0C0E300E52F8B /* CanvasViewController.swift */,
-				A460CE4021D0C0E300E52F8B /* CanvasViewController.xib */,
 				A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */,
 				A460CE4821D0C77300E52F8B /* InstructionsStep.xib */,
 				A42041EF21E1D09E00021EDB /* InstructionsViewController.swift */,
@@ -1296,6 +1291,16 @@
 				A47E664922C095B800B5B7B5 /* DataDisplayViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A49172F423107C9B004BDC80 /* RCFT4 */ = {
+			isa = PBXGroup;
+			children = (
+				A49172F72310800B004BDC80 /* RCFT4InstructionsViewController.swift */,
+				A49172FB23108098004BDC80 /* RCFT4TaskViewController.swift */,
+				A49172F92310804C004BDC80 /* RCFT4DoneViewController.swift */,
+			);
+			name = RCFT4;
 			sourceTree = "<group>";
 		};
 		A4969D1521E545290063FF40 /* DigitSpan */ = {
@@ -1588,7 +1593,6 @@
 				A490D7D71D0919CB00D2B59D /* Roboto-Light.ttf in Resources */,
 				A4CA156422031EBE00F6CF0A /* SPA-08.mp3 in Resources */,
 				A4DF9F221E08FBC90084EAF9 /* Localizable.strings in Resources */,
-				A4347FCE1D7BCA570033306A /* ReyFigureComplex4ViewController.xib in Resources */,
 				A4CA148C22031C0600F6CF0A /* SPA-PRACTICE-BWD.mp3 in Resources */,
 				A4CA157022031EBE00F6CF0A /* SPA-36.mp3 in Resources */,
 				A4CA146422031BEE00F6CF0A /* ENG-BWD-11.mp3 in Resources */,
@@ -1615,7 +1619,6 @@
 				A4CA156F22031EBE00F6CF0A /* SPA-23.mp3 in Resources */,
 				A490D7D51D0919CB00D2B59D /* Roboto-BoldItalic.ttf in Resources */,
 				A4CA156322031EBE00F6CF0A /* SPA-43.mp3 in Resources */,
-				A47EB6E41DA65FFB00A68AF6 /* FinishedViewController.xib in Resources */,
 				A4CA151622031E9D00F6CF0A /* ENG-04.mp3 in Resources */,
 				A48A131E21FA4C590044AF08 /* melodies 320ms orig(54).wav in Resources */,
 				A4CA14CC22031DB400F6CF0A /* List B SPA.mp3 in Resources */,
@@ -1644,7 +1647,6 @@
 				A4CA147C22031BFC00F6CF0A /* ENG-FWD-08.mp3 in Resources */,
 				A4DE7DCD22F660F3009EEA17 /* RCFT3.storyboard in Resources */,
 				A48A12FE21FA4C0A0044AF08 /* melodies 320ms orig(85).wav in Resources */,
-				A460CE4221D0C0E300E52F8B /* CanvasViewController.xib in Resources */,
 				A4CA146022031BEE00F6CF0A /* ENG-BWD-04.mp3 in Resources */,
 				A4CA155E22031EBE00F6CF0A /* SPA-35.mp3 in Resources */,
 				A4CA150122031E9D00F6CF0A /* ENG-12.mp3 in Resources */,
@@ -1715,6 +1717,7 @@
 				A4CA14B922031C2500F6CF0A /* SPA-FWD-06.mp3 in Resources */,
 				A48A12FA21FA4C040044AF08 /* melodies 320ms orig(07).wav in Resources */,
 				A4CA148522031BFC00F6CF0A /* ENG-FWD-05.mp3 in Resources */,
+				A49172F623107EBF004BDC80 /* RCFT4.storyboard in Resources */,
 				A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */,
 				A42041EE21E1CFC800021EDB /* MelodyRecognition.storyboard in Resources */,
 				A4CA157522031EBE00F6CF0A /* SPA-01.mp3 in Resources */,
@@ -1913,6 +1916,7 @@
 				A4EDC009229D3F25006B8C53 /* DashboardViewController.swift in Sources */,
 				A4347FD51D7BCABC0033306A /* PegboardViewController.swift in Sources */,
 				A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */,
+				A48BA73B230D506F00C0D34B /* CanvasView.swift in Sources */,
 				A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */,
 				A4F810E52252ADBA001F9503 /* DatabaseController.swift in Sources */,
 				A4DE7DDB22F6665E009EEA17 /* TrailMakingVideoViewController.swift in Sources */,
@@ -1926,8 +1930,6 @@
 				A4969D1721E5454B0063FF40 /* DigitSpanInstructionsViewController.swift in Sources */,
 				A4DE7DB322F62539009EEA17 /* ClockDrawingModel.swift in Sources */,
 				A4A991D622EAA1BC00DE3B83 /* StroopInstructions5ViewController.swift in Sources */,
-				A460CE4121D0C0E300E52F8B /* CanvasViewController.swift in Sources */,
-				A47EB6E31DA65FFB00A68AF6 /* FinishedViewController.swift in Sources */,
 				A4A991D222EAA13C00DE3B83 /* StroopInstructions3ViewController.swift in Sources */,
 				A4DE7DD422F66191009EEA17 /* RCFT3DoneViewController.swift in Sources */,
 				A48D60E81FF5AC4F0042FBCA /* LibraryAPI.swift in Sources */,
@@ -1956,7 +1958,6 @@
 				A4A991DE22EAA45700DE3B83 /* StroopTask2ViewController.swift in Sources */,
 				A4DE7DA522F5DD77009EEA17 /* WordList2TaskViewController.swift in Sources */,
 				A4D7C78E2269E1CD004BF326 /* WordListTrialsViewController.swift in Sources */,
-				A4347FCD1D7BCA570033306A /* ReyFigureComplex4ViewController.swift in Sources */,
 				A4DE7DDD22F6667E009EEA17 /* TrailMakingTaskViewController.swift in Sources */,
 				A4DE7DCB22F65DDF009EEA17 /* RCFT2DoneViewController.swift in Sources */,
 				A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */,
@@ -1978,6 +1979,7 @@
 				A42041F821E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift in Sources */,
 				A4DE7DDF22F666A6009EEA17 /* TrailMakingInstructions2ViewController.swift in Sources */,
 				A4A991DA22EAA3A700DE3B83 /* StroopPreTask3ViewController.swift in Sources */,
+				A49172FC23108098004BDC80 /* RCFT4TaskViewController.swift in Sources */,
 				A48B1AF622EF40CD007A1E98 /* NamingTaskPracticeViewController.swift in Sources */,
 				A46A2C681DD96FF0000AC66C /* APIWrapper.swift in Sources */,
 				A48B1AF422EF3F1F007A1E98 /* NamingTaskInstructionsViewController.swift in Sources */,
@@ -1990,6 +1992,7 @@
 				A4DE7DD922F6663B009EEA17 /* TrailMakingInstructionsViewController.swift in Sources */,
 				A4969D2921E7F6B50063FF40 /* CancellationPracticeViewController.swift in Sources */,
 				A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */,
+				A49172F82310800B004BDC80 /* RCFT4InstructionsViewController.swift in Sources */,
 				A4DB0FB41DFB2CA1000811B6 /* DataManager.swift in Sources */,
 				A48A12C621F74FE60044AF08 /* CancellationModel.swift in Sources */,
 				A47E666C22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift in Sources */,
@@ -2000,6 +2003,7 @@
 				A47E665822D1972B00B5B7B5 /* DigittSpanPracticeViewController.swift in Sources */,
 				A4AE36E31DFC545400727DFD /* WebViewController.swift in Sources */,
 				A48B1AFC22EF412C007A1E98 /* NamingTaskDoneViewController.swift in Sources */,
+				A49172FA2310804C004BDC80 /* RCFT4DoneViewController.swift in Sources */,
 				A4DE7DC022F644BE009EEA17 /* RCFTTaskViewController.swift in Sources */,
 				A47FF4AE211363AA00665E20 /* Constants.swift in Sources */,
 				A44669381E16457600EA7E2E /* RecordButton.swift in Sources */,

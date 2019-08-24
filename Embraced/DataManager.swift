@@ -33,6 +33,7 @@ class DataManager {
     var stroopVideos = [String]()
     var namingTaskPractice = [String]()
     var namingTaskTask = [String]()
+    var rcftTasks = [String]()
     
     func updateData() {
         switch language {
@@ -215,6 +216,33 @@ class DataManager {
             "List A ENG.mp3",
             "List B ENG.mp3"
         ]
+        
+        rcftTasks = [
+            "RCFT1",
+            "RCFT2",
+            "RCFT3",
+            "RCFT4",
+            "RCFT5",
+            "RCFT6",
+            "RCFT7",
+            "RCFT8",
+            "RCFT9",
+            "RCFT10",
+            "RCFT11",
+            "RCFT12",
+            "RCFT13",
+            "RCFT14",
+            "RCFT15",
+            "RCFT16",
+            "RCFT17",
+            "RCFT18",
+            "RCFT19",
+            "RCFT20",
+            "RCFT21",
+            "RCFT22",
+            "RCFT23",
+            "RCFT24"
+        ]
     }
     
     private func setEsData() {
@@ -386,6 +414,33 @@ class DataManager {
         wordListTasks = [
             "List A SPA.mp3",
             "List B SPA.mp3"
+        ]
+        
+        rcftTasks = [
+            "RCFT1",
+            "RCFT2",
+            "RCFT3",
+            "RCFT4",
+            "RCFT5",
+            "RCFT6",
+            "RCFT7",
+            "RCFT8",
+            "RCFT9",
+            "RCFT10",
+            "RCFT11",
+            "RCFT12",
+            "RCFT13",
+            "RCFT14",
+            "RCFT15",
+            "RCFT16",
+            "RCFT17",
+            "RCFT18",
+            "RCFT19",
+            "RCFT20",
+            "RCFT21",
+            "RCFT22",
+            "RCFT23",
+            "RCFT24"
         ]
     }
 }

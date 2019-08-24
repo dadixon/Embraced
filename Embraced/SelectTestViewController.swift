@@ -29,7 +29,7 @@ class SelectTestViewController: UIViewController {
         "Melodies Recognition",
         "Digit Span",
         "Complex Figure 3",
-//        "Complex Figure 4",
+        "Complex Figure 4",
 //        "Matrices",
 //        "Continuous Performance Test",
 //        "Motor Tasks",

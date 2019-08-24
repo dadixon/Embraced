@@ -131,6 +131,9 @@
 // RCFT 3
 "rcft_3_instructions" = "A short time ago you draw from memory a COMPLEX figure with your finger.\nNow please draw that COMPLEX figure from memory again";
 
+// RCFT 4
+"rcft_4_instructions" = "Some of the designs that you are going to see now are part of the larger figure that you copied earlier and some of them are not.\nPlease press ‘yes’ when the design shown was part of the larger figure and ‘no’ when it was not part of the larger figure.\nThe designs are facing the same direction as in the original, complete design.\nPlease press 'Forward' to continue.";
+
 // Trail Making Test
 "trailMaking_instructions" = "In the next task you are going to see some numbers on the screen.\nBegin at number 1 and draw a line from 1 to 2, 2 to 3, 3 to 4 and so on, in ascending order, until you reach the end.\nDraw the lines as fast as you can without lifting your finger from the screen.\nClick 'Next' for a demonstration.";
 "trailMaking_task_instructions" = "When you are complete, click the forward button";

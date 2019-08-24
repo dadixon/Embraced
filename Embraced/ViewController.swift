@@ -54,6 +54,8 @@ class ViewController: UIViewController {
         let email = self.usernameTextfield.text!
         let password = self.passwordTextfield.text!
         
+       
+        
         
         
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
