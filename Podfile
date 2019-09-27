@@ -6,7 +6,6 @@ target 'Embraced' do
   use_frameworks!
 
   # Pods for Embraced
-  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'Alamofire', '~> 4.5' # Deprecate
   pod 'JWTDecode', '~> 2.1' # Deprecate
   pod 'ReachabilitySwift'

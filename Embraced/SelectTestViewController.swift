@@ -38,7 +38,7 @@ class SelectTestViewController: UIViewController {
         "Cancellation Test",
         "Word List 2",
         "Naming Test",
-//        "Comprehension Task",
+        "Comprehension Task"
 //        "Eyes Test"
     ]
     

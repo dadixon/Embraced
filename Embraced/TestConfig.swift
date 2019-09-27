@@ -82,6 +82,10 @@ class TestConfig {
                     if let vc = UIStoryboard(name: "RCFT4", bundle: nil).instantiateViewController(withIdentifier: "RCFT4Test") as? RCFT4InstructionsViewController {
                         self.testList.append(vc)
                     }
+                case "Comprehension Task":
+                    if let vc = UIStoryboard(name: "Comprehension", bundle: nil).instantiateViewController(withIdentifier: "ComprehensionTest") as? ComprehensionTaskViewController {
+                        self.testList.append(vc)
+                    }
                 default:
                     continue
             }

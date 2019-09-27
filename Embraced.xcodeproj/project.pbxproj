@@ -147,6 +147,10 @@
 		A49172F82310800B004BDC80 /* RCFT4InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49172F72310800B004BDC80 /* RCFT4InstructionsViewController.swift */; };
 		A49172FA2310804C004BDC80 /* RCFT4DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49172F92310804C004BDC80 /* RCFT4DoneViewController.swift */; };
 		A49172FC23108098004BDC80 /* RCFT4TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49172FB23108098004BDC80 /* RCFT4TaskViewController.swift */; };
+		A49172FE2310BF92004BDC80 /* Comprehension.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A49172FD2310BF92004BDC80 /* Comprehension.storyboard */; };
+		A49173012310C020004BDC80 /* ComprehensionTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49173002310C020004BDC80 /* ComprehensionTaskViewController.swift */; };
+		A49173042310D1BB004BDC80 /* ComprehensionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49173022310D1BB004BDC80 /* ComprehensionCollectionViewCell.swift */; };
+		A49173052310D1BB004BDC80 /* ComprehensionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49173032310D1BB004BDC80 /* ComprehensionCollectionViewCell.xib */; };
 		A4969D1221E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1121E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift */; };
 		A4969D1421E544C10063FF40 /* DigitSpan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4969D1321E544C10063FF40 /* DigitSpan.storyboard */; };
 		A4969D1721E5454B0063FF40 /* DigitSpanInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1621E5454B0063FF40 /* DigitSpanInstructionsViewController.swift */; };
@@ -541,6 +545,10 @@
 		A49172F72310800B004BDC80 /* RCFT4InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFT4InstructionsViewController.swift; sourceTree = "<group>"; };
 		A49172F92310804C004BDC80 /* RCFT4DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFT4DoneViewController.swift; sourceTree = "<group>"; };
 		A49172FB23108098004BDC80 /* RCFT4TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCFT4TaskViewController.swift; sourceTree = "<group>"; };
+		A49172FD2310BF92004BDC80 /* Comprehension.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Comprehension.storyboard; sourceTree = "<group>"; };
+		A49173002310C020004BDC80 /* ComprehensionTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprehensionTaskViewController.swift; sourceTree = "<group>"; };
+		A49173022310D1BB004BDC80 /* ComprehensionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprehensionCollectionViewCell.swift; sourceTree = "<group>"; };
+		A49173032310D1BB004BDC80 /* ComprehensionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComprehensionCollectionViewCell.xib; sourceTree = "<group>"; };
 		A4969D1121E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionDoneViewController.swift; sourceTree = "<group>"; };
 		A4969D1321E544C10063FF40 /* DigitSpan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DigitSpan.storyboard; sourceTree = "<group>"; };
 		A4969D1621E5454B0063FF40 /* DigitSpanInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSpanInstructionsViewController.swift; sourceTree = "<group>"; };
@@ -847,6 +855,7 @@
 				A4DE7DCC22F660F3009EEA17 /* RCFT3.storyboard */,
 				A4DE7DD522F664CA009EEA17 /* TrailMaking.storyboard */,
 				A49172F523107EBF004BDC80 /* RCFT4.storyboard */,
+				A49172FD2310BF92004BDC80 /* Comprehension.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -1244,6 +1253,8 @@
 				A4969D3321E926BE0063FF40 /* CancellationViewCell.xib */,
 				A4D904211D23810C0092D6AA /* EmbracedTextField.swift */,
 				A48BA73A230D506F00C0D34B /* CanvasView.swift */,
+				A49173022310D1BB004BDC80 /* ComprehensionCollectionViewCell.swift */,
+				A49173032310D1BB004BDC80 /* ComprehensionCollectionViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1251,6 +1262,7 @@
 		A490D7C11D0913C500D2B59D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A49172FF2310BFFB004BDC80 /* Comprehension */,
 				A49172F423107C9B004BDC80 /* RCFT4 */,
 				A4DE7DD722F665DE009EEA17 /* TrailMaking */,
 				A4DE7DCE22F6614E009EEA17 /* RCFT3 */,
@@ -1301,6 +1313,14 @@
 				A49172F92310804C004BDC80 /* RCFT4DoneViewController.swift */,
 			);
 			name = RCFT4;
+			sourceTree = "<group>";
+		};
+		A49172FF2310BFFB004BDC80 /* Comprehension */ = {
+			isa = PBXGroup;
+			children = (
+				A49173002310C020004BDC80 /* ComprehensionTaskViewController.swift */,
+			);
+			name = Comprehension;
 			sourceTree = "<group>";
 		};
 		A4969D1521E545290063FF40 /* DigitSpan */ = {
@@ -1614,6 +1634,7 @@
 				A4CA157722031EBE00F6CF0A /* SPA-44.mp3 in Resources */,
 				A4CA14B822031C2500F6CF0A /* SPA-FWD-07.mp3 in Resources */,
 				A4CA155822031EBE00F6CF0A /* SPA-24.mp3 in Resources */,
+				A49173052310D1BB004BDC80 /* ComprehensionCollectionViewCell.xib in Resources */,
 				A4CA150022031E9D00F6CF0A /* ENG-13.mp3 in Resources */,
 				A4CA14BB22031C2500F6CF0A /* SPA-FWD-02.mp3 in Resources */,
 				A4CA156F22031EBE00F6CF0A /* SPA-23.mp3 in Resources */,
@@ -1717,6 +1738,7 @@
 				A4CA14B922031C2500F6CF0A /* SPA-FWD-06.mp3 in Resources */,
 				A48A12FA21FA4C040044AF08 /* melodies 320ms orig(07).wav in Resources */,
 				A4CA148522031BFC00F6CF0A /* ENG-FWD-05.mp3 in Resources */,
+				A49172FE2310BF92004BDC80 /* Comprehension.storyboard in Resources */,
 				A49172F623107EBF004BDC80 /* RCFT4.storyboard in Resources */,
 				A48B4DCA1CF9E7C700878928 /* Main.storyboard in Resources */,
 				A42041EE21E1CFC800021EDB /* MelodyRecognition.storyboard in Resources */,
@@ -1802,7 +1824,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Embraced/Pods-Embraced-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
-				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/CountdownView/CountdownView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -1820,7 +1841,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountdownView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -1903,6 +1923,7 @@
 				A4D7C7902269E394004BF326 /* WordListDoneViewController.swift in Sources */,
 				A4347FE31D7BCC170033306A /* MultipleErrandsViewController.swift in Sources */,
 				A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */,
+				A49173012310C020004BDC80 /* ComprehensionTaskViewController.swift in Sources */,
 				A4AB688D1DE4D4730009808D /* DownloadMangager.swift in Sources */,
 				A47E664C22C09CAE00B5B7B5 /* Participant.swift in Sources */,
 				A4DE7DAF22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift in Sources */,
@@ -2009,6 +2030,7 @@
 				A44669381E16457600EA7E2E /* RecordButton.swift in Sources */,
 				A4969D1921E545630063FF40 /* DigitSpanDoneViewController.swift in Sources */,
 				A4969D3421E926BE0063FF40 /* CancellationViewCell.swift in Sources */,
+				A49173042310D1BB004BDC80 /* ComprehensionCollectionViewCell.swift in Sources */,
 				A4DE7DB122F61DA9009EEA17 /* ClockDrawingTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

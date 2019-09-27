@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-import ChameleonFramework
+//import ChameleonFramework
 
 class LoadingScreenViewController: UIViewController {
 
@@ -48,7 +48,7 @@ class LoadingScreenViewController: UIViewController {
 
         self.navigationController?.isNavigationBarHidden = true
         
-        view.backgroundColor = UIColor(gradientStyle: UIGradientStyle.topToBottom, withFrame: view.frame, andColors: [UIColor(hexString:"6c7070")!, UIColor(hexString:"a5b09c")!])
+//        view.backgroundColor = UIColor(gradientStyle: UIGradientStyle.topToBottom, withFrame: view.frame, andColors: [UIColor(hexString:"6c7070")!, UIColor(hexString:"a5b09c")!])
     }
     
     override func viewWillAppear(_ animated: Bool) {
