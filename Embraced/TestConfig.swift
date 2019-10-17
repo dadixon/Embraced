@@ -83,7 +83,7 @@ class TestConfig {
                         self.testList.append(vc)
                     }
                 case "Comprehension Task":
-                    if let vc = UIStoryboard(name: "Comprehension", bundle: nil).instantiateViewController(withIdentifier: "ComprehensionTest") as? ComprehensionTaskViewController {
+                    if let vc = UIStoryboard(name: "Comprehension", bundle: nil).instantiateViewController(withIdentifier: "ComprehensionTest") as? ComprehensionTaskInstructionViewController {
                         self.testList.append(vc)
                     }
                 default:

@@ -64,6 +64,56 @@ class Utility {
             print("An error took place: \(error)")
         }
     }
+    
+    static func drawSquare(color: CGColor, canvasSize: Double, shapeSize: Double) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: canvasSize, height: canvasSize))
+        
+        let img = renderer.image { ctx in
+            let rect = CGRect(x: ((canvasSize - shapeSize) / 2), y: ((canvasSize - shapeSize) / 2), width: shapeSize, height: shapeSize)
+            
+            ctx.cgContext.setStrokeColor(UIColor.clear.cgColor)
+            ctx.cgContext.setFillColor(color)
+            
+            ctx.cgContext.addRect(rect)
+            ctx.cgContext.drawPath(using: .fillStroke)
+            
+        }
+        
+        return img
+    }
+    
+    static func drawCircle(color: CGColor, canvasSize: Double, shapeSize: Double) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: canvasSize, height: canvasSize))
+        
+        let img = renderer.image { ctx in
+            let rect = CGRect(x: ((canvasSize - shapeSize) / 2), y: ((canvasSize - shapeSize) / 2), width: shapeSize, height: shapeSize)
+            
+            ctx.cgContext.setStrokeColor(UIColor.clear.cgColor)
+            ctx.cgContext.setFillColor(color)
+            
+            ctx.cgContext.addEllipse(in: rect)
+            ctx.cgContext.drawPath(using: .fillStroke)
+        }
+        
+        return img
+    }
+    
+    static func drawTriangle(color: CGColor, canvasSize: Double, shapeSize: Double) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: canvasSize, height: canvasSize))
+        
+        let img = renderer.image { ctx in
+            let top = (canvasSize / 2)
+            ctx.cgContext.beginPath()
+            ctx.cgContext.move(to: CGPoint(x: top, y: top - (shapeSize / 3)))
+            ctx.cgContext.addLine(to: CGPoint(x: top + shapeSize / 2.5, y: top + shapeSize / 3))
+            ctx.cgContext.addLine(to: CGPoint(x: top - shapeSize / 2.5, y: top + shapeSize / 3))
+            ctx.cgContext.closePath()
+            ctx.cgContext.setFillColor(color)
+            ctx.cgContext.fillPath()
+        }
+        
+        return img
+    }
 }
 
 struct AppUtility {

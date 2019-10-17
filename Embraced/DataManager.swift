@@ -34,6 +34,7 @@ class DataManager {
     var namingTaskPractice = [String]()
     var namingTaskTask = [String]()
     var rcftTasks = [String]()
+    var comprehensionSounds = [String]()
     
     func updateData() {
         switch language {
@@ -243,6 +244,30 @@ class DataManager {
             "RCFT23",
             "RCFT24"
         ]
+        
+        comprehensionSounds = [
+            "TOKEN-ENG-01.mp3",
+            "TOKEN-ENG-02.mp3",
+            "TOKEN-ENG-03.mp3",
+            "TOKEN-ENG-04.mp3",
+            "TOKEN-ENG-05.mp3",
+            "TOKEN-ENG-06.mp3",
+            "TOKEN-ENG-07.mp3",
+            "TOKEN-ENG-08.mp3",
+            "TOKEN-ENG-09.mp3",
+            "TOKEN-ENG-10.mp3",
+            "TOKEN-ENG-11.mp3",
+            "TOKEN-ENG-12.mp3",
+            "TOKEN-ENG-13.mp3",
+            "TOKEN-ENG-14.mp3",
+            "TOKEN-ENG-15.mp3",
+            "TOKEN-ENG-16.mp3",
+            "TOKEN-ENG-17.mp3",
+            "TOKEN-ENG-18.mp3",
+            "TOKEN-ENG-19.mp3",
+            "TOKEN-ENG-20.mp3",
+            "TOKEN-ENG-21.mp3"
+        ]
     }
     
     private func setEsData() {
@@ -441,6 +466,30 @@ class DataManager {
             "RCFT22",
             "RCFT23",
             "RCFT24"
+        ]
+        
+        comprehensionSounds = [
+            "TOKEN-SPA-01.mp3",
+            "TOKEN-SPA-02.mp3",
+            "TOKEN-SPA-03.mp3",
+            "TOKEN-SPA-04.mp3",
+            "TOKEN-SPA-05.mp3",
+            "TOKEN-SPA-06.mp3",
+            "TOKEN-SPA-07.mp3",
+            "TOKEN-SPA-08.mp3",
+            "TOKEN-SPA-09.mp3",
+            "TOKEN-SPA-10.mp3",
+            "TOKEN-SPA-11.mp3",
+            "TOKEN-SPA-12.mp3",
+            "TOKEN-SPA-13.mp3",
+            "TOKEN-SPA-14.mp3",
+            "TOKEN-SPA-15.mp3",
+            "TOKEN-SPA-16.mp3",
+            "TOKEN-SPA-17.mp3",
+            "TOKEN-SPA-18.mp3",
+            "TOKEN-SPA-19.mp3",
+            "TOKEN-SPA-20.mp3",
+            "TOKEN-SPA-21.mp3"
         ]
     }
 }

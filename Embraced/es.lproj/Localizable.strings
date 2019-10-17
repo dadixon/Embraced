@@ -136,3 +136,8 @@
 "trailMaking_instructions" = "In the next task you are going to see some numbers on the screen.\nBegin at number 1 and draw a line from 1 to 2, 2 to 3, 3 to 4 and so on, in ascending order, until you reach the end.\nDraw the lines as fast as you can without lifting your finger from the screen.\nClick 'Next' for a demonstration.";
 "trailMaking_task_instructions" = "When you are complete, click the forward button";
 "trailMaking_instructions_2" = "On the next page you will see some numbers and letters on the screen.\nBegin at number 1 and draw a line from 1 to A, A to 2, 2 to B, B to 3, 3 to C so on, in order, until you reach the circle marked “end”.\nDraw the lines as fast as you can without lifting your finger from the screen.\nRemember, first you have a number, then a letter, then a number, then a letter, and so on.\nDraw the lines as fast as you can.\nClick 'Next' for a demonstration.";
+
+// Comprehension
+"comprehension_instructions" = "Ahora usted va a ver diferentes formas de distintos tamaños y colores en la pantalla.\nEscuchará instrucciones para tocar una o más de estas formas.\nPor favor, escuche atentamente estas instrucciones porque solo las oirá una vez.";
+"comprehension_audio_button" = "Pulse aquí para oír la siguiente instrucción";
+

@@ -27,6 +27,51 @@
 		A44669381E16457600EA7E2E /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669371E16457600EA7E2E /* RecordButton.swift */; };
 		A460CE4721D0C75E00E52F8B /* InstructionsStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */; };
 		A460CE4921D0C77300E52F8B /* InstructionsStep.xib in Resources */ = {isa = PBXBuildFile; fileRef = A460CE4821D0C77300E52F8B /* InstructionsStep.xib */; };
+		A4681DBA2355FB8E006E5761 /* TOKEN-ENG-02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DA52355FB86006E5761 /* TOKEN-ENG-02.mp3 */; };
+		A4681DBB2355FB8E006E5761 /* TOKEN-ENG-12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DA62355FB86006E5761 /* TOKEN-ENG-12.mp3 */; };
+		A4681DBC2355FB8E006E5761 /* TOKEN-ENG-10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DA72355FB86006E5761 /* TOKEN-ENG-10.mp3 */; };
+		A4681DBD2355FB8E006E5761 /* TOKEN-ENG-07.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DA82355FB87006E5761 /* TOKEN-ENG-07.mp3 */; };
+		A4681DBE2355FB8E006E5761 /* TOKEN-ENG-05.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DA92355FB87006E5761 /* TOKEN-ENG-05.mp3 */; };
+		A4681DBF2355FB8E006E5761 /* TOKEN-ENG-17.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DAA2355FB88006E5761 /* TOKEN-ENG-17.mp3 */; };
+		A4681DC02355FB8E006E5761 /* TOKEN-ENG-06.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DAB2355FB88006E5761 /* TOKEN-ENG-06.mp3 */; };
+		A4681DC12355FB8E006E5761 /* TOKEN-ENG-01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DAC2355FB88006E5761 /* TOKEN-ENG-01.mp3 */; };
+		A4681DC22355FB8E006E5761 /* TOKEN-ENG-11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DAD2355FB89006E5761 /* TOKEN-ENG-11.mp3 */; };
+		A4681DC32355FB8E006E5761 /* TOKEN-ENG-14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DAE2355FB89006E5761 /* TOKEN-ENG-14.mp3 */; };
+		A4681DC42355FB8E006E5761 /* TOKEN-ENG-15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DAF2355FB89006E5761 /* TOKEN-ENG-15.mp3 */; };
+		A4681DC52355FB8E006E5761 /* TOKEN-ENG-18.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DB02355FB8A006E5761 /* TOKEN-ENG-18.mp3 */; };
+		A4681DC62355FB8E006E5761 /* TOKEN-ENG-08.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DB12355FB8A006E5761 /* TOKEN-ENG-08.mp3 */; };
+		A4681DC72355FB8E006E5761 /* TOKEN-ENG-13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DB22355FB8B006E5761 /* TOKEN-ENG-13.mp3 */; };
+		A4681DC82355FB8E006E5761 /* TOKEN-ENG-19.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DB32355FB8B006E5761 /* TOKEN-ENG-19.mp3 */; };
+		A4681DC92355FB8E006E5761 /* TOKEN-ENG-20.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DB42355FB8B006E5761 /* TOKEN-ENG-20.mp3 */; };
+		A4681DCA2355FB8E006E5761 /* TOKEN-ENG-04.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DB52355FB8C006E5761 /* TOKEN-ENG-04.mp3 */; };
+		A4681DCB2355FB8E006E5761 /* TOKEN-ENG-03.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DB62355FB8C006E5761 /* TOKEN-ENG-03.mp3 */; };
+		A4681DCC2355FB8E006E5761 /* TOKEN-ENG-21.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DB72355FB8D006E5761 /* TOKEN-ENG-21.mp3 */; };
+		A4681DCD2355FB8E006E5761 /* TOKEN-ENG-09.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DB82355FB8D006E5761 /* TOKEN-ENG-09.mp3 */; };
+		A4681DCE2355FB8E006E5761 /* TOKEN-ENG-16.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DB92355FB8D006E5761 /* TOKEN-ENG-16.mp3 */; };
+		A4681DE42355FBA1006E5761 /* TOKEN-SPA-17.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DCF2355FB99006E5761 /* TOKEN-SPA-17.mp3 */; };
+		A4681DE52355FBA1006E5761 /* TOKEN-SPA-13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DD02355FB9A006E5761 /* TOKEN-SPA-13.mp3 */; };
+		A4681DE62355FBA1006E5761 /* TOKEN-SPA-01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DD12355FB9A006E5761 /* TOKEN-SPA-01.mp3 */; };
+		A4681DE72355FBA1006E5761 /* TOKEN-SPA-16.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DD22355FB9B006E5761 /* TOKEN-SPA-16.mp3 */; };
+		A4681DE82355FBA1006E5761 /* TOKEN-SPA-19.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DD32355FB9B006E5761 /* TOKEN-SPA-19.mp3 */; };
+		A4681DE92355FBA1006E5761 /* TOKEN-SPA-04.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DD42355FB9B006E5761 /* TOKEN-SPA-04.mp3 */; };
+		A4681DEA2355FBA1006E5761 /* TOKEN-SPA-08.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DD52355FB9C006E5761 /* TOKEN-SPA-08.mp3 */; };
+		A4681DEB2355FBA1006E5761 /* TOKEN-SPA-20.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DD62355FB9C006E5761 /* TOKEN-SPA-20.mp3 */; };
+		A4681DEC2355FBA1006E5761 /* TOKEN-SPA-10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DD72355FB9D006E5761 /* TOKEN-SPA-10.mp3 */; };
+		A4681DED2355FBA1006E5761 /* TOKEN-SPA-02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DD82355FB9D006E5761 /* TOKEN-SPA-02.mp3 */; };
+		A4681DEE2355FBA1006E5761 /* TOKEN-SPA-11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DD92355FB9D006E5761 /* TOKEN-SPA-11.mp3 */; };
+		A4681DEF2355FBA1006E5761 /* TOKEN-SPA-21.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DDA2355FB9E006E5761 /* TOKEN-SPA-21.mp3 */; };
+		A4681DF02355FBA1006E5761 /* TOKEN-SPA-09.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DDB2355FB9E006E5761 /* TOKEN-SPA-09.mp3 */; };
+		A4681DF12355FBA1006E5761 /* TOKEN-SPA-12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DDC2355FB9F006E5761 /* TOKEN-SPA-12.mp3 */; };
+		A4681DF22355FBA1006E5761 /* TOKEN-SPA-07.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DDD2355FB9F006E5761 /* TOKEN-SPA-07.mp3 */; };
+		A4681DF32355FBA1006E5761 /* TOKEN-SPA-06.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DDE2355FB9F006E5761 /* TOKEN-SPA-06.mp3 */; };
+		A4681DF42355FBA1006E5761 /* TOKEN-SPA-03.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DDF2355FBA0006E5761 /* TOKEN-SPA-03.mp3 */; };
+		A4681DF52355FBA1006E5761 /* TOKEN-SPA-05.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DE02355FBA0006E5761 /* TOKEN-SPA-05.mp3 */; };
+		A4681DF62355FBA1006E5761 /* TOKEN-SPA-18.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DE12355FBA0006E5761 /* TOKEN-SPA-18.mp3 */; };
+		A4681DF72355FBA1006E5761 /* TOKEN-SPA-14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DE22355FBA1006E5761 /* TOKEN-SPA-14.mp3 */; };
+		A4681DF82355FBA1006E5761 /* TOKEN-SPA-15.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DE32355FBA1006E5761 /* TOKEN-SPA-15.mp3 */; };
+		A4681DFA23587928006E5761 /* ComprehensionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4681DF923587928006E5761 /* ComprehensionModel.swift */; };
+		A4681DFC23589595006E5761 /* ComprehensionTaskDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4681DFB23589595006E5761 /* ComprehensionTaskDoneViewController.swift */; };
+		A4681DFE235898B3006E5761 /* ComprehensionTaskInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4681DFD235898B3006E5761 /* ComprehensionTaskInstructionViewController.swift */; };
 		A46A2C641DD66108000AC66C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46A2C631DD66108000AC66C /* SystemConfiguration.framework */; };
 		A46A2C681DD96FF0000AC66C /* APIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A2C671DD96FF0000AC66C /* APIWrapper.swift */; };
 		A46C140F1D798FC30066EF37 /* CPTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46C140D1D798FC30066EF37 /* CPTViewController.swift */; };
@@ -423,6 +468,51 @@
 		A44669371E16457600EA7E2E /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		A460CE4621D0C75E00E52F8B /* InstructionsStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsStep.swift; sourceTree = "<group>"; };
 		A460CE4821D0C77300E52F8B /* InstructionsStep.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionsStep.xib; sourceTree = "<group>"; };
+		A4681DA52355FB86006E5761 /* TOKEN-ENG-02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-02.mp3"; sourceTree = "<group>"; };
+		A4681DA62355FB86006E5761 /* TOKEN-ENG-12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-12.mp3"; sourceTree = "<group>"; };
+		A4681DA72355FB86006E5761 /* TOKEN-ENG-10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-10.mp3"; sourceTree = "<group>"; };
+		A4681DA82355FB87006E5761 /* TOKEN-ENG-07.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-07.mp3"; sourceTree = "<group>"; };
+		A4681DA92355FB87006E5761 /* TOKEN-ENG-05.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-05.mp3"; sourceTree = "<group>"; };
+		A4681DAA2355FB88006E5761 /* TOKEN-ENG-17.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-17.mp3"; sourceTree = "<group>"; };
+		A4681DAB2355FB88006E5761 /* TOKEN-ENG-06.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-06.mp3"; sourceTree = "<group>"; };
+		A4681DAC2355FB88006E5761 /* TOKEN-ENG-01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-01.mp3"; sourceTree = "<group>"; };
+		A4681DAD2355FB89006E5761 /* TOKEN-ENG-11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-11.mp3"; sourceTree = "<group>"; };
+		A4681DAE2355FB89006E5761 /* TOKEN-ENG-14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-14.mp3"; sourceTree = "<group>"; };
+		A4681DAF2355FB89006E5761 /* TOKEN-ENG-15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-15.mp3"; sourceTree = "<group>"; };
+		A4681DB02355FB8A006E5761 /* TOKEN-ENG-18.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-18.mp3"; sourceTree = "<group>"; };
+		A4681DB12355FB8A006E5761 /* TOKEN-ENG-08.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-08.mp3"; sourceTree = "<group>"; };
+		A4681DB22355FB8B006E5761 /* TOKEN-ENG-13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-13.mp3"; sourceTree = "<group>"; };
+		A4681DB32355FB8B006E5761 /* TOKEN-ENG-19.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-19.mp3"; sourceTree = "<group>"; };
+		A4681DB42355FB8B006E5761 /* TOKEN-ENG-20.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-20.mp3"; sourceTree = "<group>"; };
+		A4681DB52355FB8C006E5761 /* TOKEN-ENG-04.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-04.mp3"; sourceTree = "<group>"; };
+		A4681DB62355FB8C006E5761 /* TOKEN-ENG-03.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-03.mp3"; sourceTree = "<group>"; };
+		A4681DB72355FB8D006E5761 /* TOKEN-ENG-21.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-21.mp3"; sourceTree = "<group>"; };
+		A4681DB82355FB8D006E5761 /* TOKEN-ENG-09.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-09.mp3"; sourceTree = "<group>"; };
+		A4681DB92355FB8D006E5761 /* TOKEN-ENG-16.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-ENG-16.mp3"; sourceTree = "<group>"; };
+		A4681DCF2355FB99006E5761 /* TOKEN-SPA-17.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-17.mp3"; sourceTree = "<group>"; };
+		A4681DD02355FB9A006E5761 /* TOKEN-SPA-13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-13.mp3"; sourceTree = "<group>"; };
+		A4681DD12355FB9A006E5761 /* TOKEN-SPA-01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-01.mp3"; sourceTree = "<group>"; };
+		A4681DD22355FB9B006E5761 /* TOKEN-SPA-16.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-16.mp3"; sourceTree = "<group>"; };
+		A4681DD32355FB9B006E5761 /* TOKEN-SPA-19.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-19.mp3"; sourceTree = "<group>"; };
+		A4681DD42355FB9B006E5761 /* TOKEN-SPA-04.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-04.mp3"; sourceTree = "<group>"; };
+		A4681DD52355FB9C006E5761 /* TOKEN-SPA-08.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-08.mp3"; sourceTree = "<group>"; };
+		A4681DD62355FB9C006E5761 /* TOKEN-SPA-20.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-20.mp3"; sourceTree = "<group>"; };
+		A4681DD72355FB9D006E5761 /* TOKEN-SPA-10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-10.mp3"; sourceTree = "<group>"; };
+		A4681DD82355FB9D006E5761 /* TOKEN-SPA-02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-02.mp3"; sourceTree = "<group>"; };
+		A4681DD92355FB9D006E5761 /* TOKEN-SPA-11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-11.mp3"; sourceTree = "<group>"; };
+		A4681DDA2355FB9E006E5761 /* TOKEN-SPA-21.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-21.mp3"; sourceTree = "<group>"; };
+		A4681DDB2355FB9E006E5761 /* TOKEN-SPA-09.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-09.mp3"; sourceTree = "<group>"; };
+		A4681DDC2355FB9F006E5761 /* TOKEN-SPA-12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-12.mp3"; sourceTree = "<group>"; };
+		A4681DDD2355FB9F006E5761 /* TOKEN-SPA-07.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-07.mp3"; sourceTree = "<group>"; };
+		A4681DDE2355FB9F006E5761 /* TOKEN-SPA-06.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-06.mp3"; sourceTree = "<group>"; };
+		A4681DDF2355FBA0006E5761 /* TOKEN-SPA-03.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-03.mp3"; sourceTree = "<group>"; };
+		A4681DE02355FBA0006E5761 /* TOKEN-SPA-05.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-05.mp3"; sourceTree = "<group>"; };
+		A4681DE12355FBA0006E5761 /* TOKEN-SPA-18.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-18.mp3"; sourceTree = "<group>"; };
+		A4681DE22355FBA1006E5761 /* TOKEN-SPA-14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-14.mp3"; sourceTree = "<group>"; };
+		A4681DE32355FBA1006E5761 /* TOKEN-SPA-15.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "TOKEN-SPA-15.mp3"; sourceTree = "<group>"; };
+		A4681DF923587928006E5761 /* ComprehensionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprehensionModel.swift; sourceTree = "<group>"; };
+		A4681DFB23589595006E5761 /* ComprehensionTaskDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprehensionTaskDoneViewController.swift; sourceTree = "<group>"; };
+		A4681DFD235898B3006E5761 /* ComprehensionTaskInstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprehensionTaskInstructionViewController.swift; sourceTree = "<group>"; };
 		A46A2C631DD66108000AC66C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A46A2C671DD96FF0000AC66C /* APIWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIWrapper.swift; sourceTree = "<group>"; };
 		A46C140D1D798FC30066EF37 /* CPTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPTViewController.swift; path = controllers/CPTViewController.swift; sourceTree = "<group>"; };
@@ -913,6 +1003,7 @@
 				A4DE7DB222F62539009EEA17 /* ClockDrawingModel.swift */,
 				A4DE7DB622F63C77009EEA17 /* RCFTModel.swift */,
 				A4DE7DE622F8D931009EEA17 /* TrailMakingModel.swift */,
+				A4681DF923587928006E5761 /* ComprehensionModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1003,6 +1094,48 @@
 		A48B4DD91CF9EEAB00878928 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A4681DD12355FB9A006E5761 /* TOKEN-SPA-01.mp3 */,
+				A4681DD82355FB9D006E5761 /* TOKEN-SPA-02.mp3 */,
+				A4681DDF2355FBA0006E5761 /* TOKEN-SPA-03.mp3 */,
+				A4681DD42355FB9B006E5761 /* TOKEN-SPA-04.mp3 */,
+				A4681DE02355FBA0006E5761 /* TOKEN-SPA-05.mp3 */,
+				A4681DDE2355FB9F006E5761 /* TOKEN-SPA-06.mp3 */,
+				A4681DDD2355FB9F006E5761 /* TOKEN-SPA-07.mp3 */,
+				A4681DD52355FB9C006E5761 /* TOKEN-SPA-08.mp3 */,
+				A4681DDB2355FB9E006E5761 /* TOKEN-SPA-09.mp3 */,
+				A4681DD72355FB9D006E5761 /* TOKEN-SPA-10.mp3 */,
+				A4681DD92355FB9D006E5761 /* TOKEN-SPA-11.mp3 */,
+				A4681DDC2355FB9F006E5761 /* TOKEN-SPA-12.mp3 */,
+				A4681DD02355FB9A006E5761 /* TOKEN-SPA-13.mp3 */,
+				A4681DE22355FBA1006E5761 /* TOKEN-SPA-14.mp3 */,
+				A4681DE32355FBA1006E5761 /* TOKEN-SPA-15.mp3 */,
+				A4681DD22355FB9B006E5761 /* TOKEN-SPA-16.mp3 */,
+				A4681DCF2355FB99006E5761 /* TOKEN-SPA-17.mp3 */,
+				A4681DE12355FBA0006E5761 /* TOKEN-SPA-18.mp3 */,
+				A4681DD32355FB9B006E5761 /* TOKEN-SPA-19.mp3 */,
+				A4681DD62355FB9C006E5761 /* TOKEN-SPA-20.mp3 */,
+				A4681DDA2355FB9E006E5761 /* TOKEN-SPA-21.mp3 */,
+				A4681DAC2355FB88006E5761 /* TOKEN-ENG-01.mp3 */,
+				A4681DA52355FB86006E5761 /* TOKEN-ENG-02.mp3 */,
+				A4681DB62355FB8C006E5761 /* TOKEN-ENG-03.mp3 */,
+				A4681DB52355FB8C006E5761 /* TOKEN-ENG-04.mp3 */,
+				A4681DA92355FB87006E5761 /* TOKEN-ENG-05.mp3 */,
+				A4681DAB2355FB88006E5761 /* TOKEN-ENG-06.mp3 */,
+				A4681DA82355FB87006E5761 /* TOKEN-ENG-07.mp3 */,
+				A4681DB12355FB8A006E5761 /* TOKEN-ENG-08.mp3 */,
+				A4681DB82355FB8D006E5761 /* TOKEN-ENG-09.mp3 */,
+				A4681DA72355FB86006E5761 /* TOKEN-ENG-10.mp3 */,
+				A4681DAD2355FB89006E5761 /* TOKEN-ENG-11.mp3 */,
+				A4681DA62355FB86006E5761 /* TOKEN-ENG-12.mp3 */,
+				A4681DB22355FB8B006E5761 /* TOKEN-ENG-13.mp3 */,
+				A4681DAE2355FB89006E5761 /* TOKEN-ENG-14.mp3 */,
+				A4681DAF2355FB89006E5761 /* TOKEN-ENG-15.mp3 */,
+				A4681DB92355FB8D006E5761 /* TOKEN-ENG-16.mp3 */,
+				A4681DAA2355FB88006E5761 /* TOKEN-ENG-17.mp3 */,
+				A4681DB02355FB8A006E5761 /* TOKEN-ENG-18.mp3 */,
+				A4681DB32355FB8B006E5761 /* TOKEN-ENG-19.mp3 */,
+				A4681DB42355FB8B006E5761 /* TOKEN-ENG-20.mp3 */,
+				A4681DB72355FB8D006E5761 /* TOKEN-ENG-21.mp3 */,
 				A4CA1583220324E300F6CF0A /* melodies 320ms orig(16).wav */,
 				A4CA1581220324C100F6CF0A /* melodies 320ms orig(01).wav */,
 				A48A130521FA4C200044AF08 /* melodies 320ms orig(05).wav */,
@@ -1318,7 +1451,9 @@
 		A49172FF2310BFFB004BDC80 /* Comprehension */ = {
 			isa = PBXGroup;
 			children = (
+				A4681DFD235898B3006E5761 /* ComprehensionTaskInstructionViewController.swift */,
 				A49173002310C020004BDC80 /* ComprehensionTaskViewController.swift */,
+				A4681DFB23589595006E5761 /* ComprehensionTaskDoneViewController.swift */,
 			);
 			name = Comprehension;
 			sourceTree = "<group>";
@@ -1505,11 +1640,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4CA152322031E9D00F6CF0A /* ENG-40.mp3 in Resources */,
+				A4681DC02355FB8E006E5761 /* TOKEN-ENG-06.mp3 in Resources */,
 				A48A12F221FA4BF60044AF08 /* melodies 320ms orig(66).wav in Resources */,
 				A4CA14A522031C1900F6CF0A /* SPA-BWD-06.mp3 in Resources */,
+				A4681DC92355FB8E006E5761 /* TOKEN-ENG-20.mp3 in Resources */,
+				A4681DE42355FBA1006E5761 /* TOKEN-SPA-17.mp3 in Resources */,
 				A4CA14CB22031DB400F6CF0A /* List A SPA.mp3 in Resources */,
 				A4CA149E22031C1900F6CF0A /* SPA-BWD-11.mp3 in Resources */,
 				A4CA146B22031BEE00F6CF0A /* ENG-BWD-07.mp3 in Resources */,
+				A4681DF42355FBA1006E5761 /* TOKEN-SPA-03.mp3 in Resources */,
 				A4CA150322031E9D00F6CF0A /* ENG-26.mp3 in Resources */,
 				A4C3287E20815CD600DEC460 /* STROOP_ENG_TASK1.mp4 in Resources */,
 				A4CA150622031E9D00F6CF0A /* ENG-08.mp3 in Resources */,
@@ -1520,22 +1659,29 @@
 				A4C3287F20815CD600DEC460 /* STROOP_ENG_TASK2.mp4 in Resources */,
 				A4CA150522031E9D00F6CF0A /* ENG-36.mp3 in Resources */,
 				A48A132421FA4C680044AF08 /* melodies 320ms orig(27).wav in Resources */,
+				A4681DC42355FB8E006E5761 /* TOKEN-ENG-15.mp3 in Resources */,
 				A4CA148722031BFC00F6CF0A /* ENG-FWD-09.mp3 in Resources */,
 				A4CA157C22031EBE00F6CF0A /* SPA-25.mp3 in Resources */,
 				A4C3288020815CD600DEC460 /* STROOP_ENG_TASK3.mp4 in Resources */,
 				A4CA155222031EBE00F6CF0A /* SPA-11.mp3 in Resources */,
+				A4681DF12355FBA1006E5761 /* TOKEN-SPA-12.mp3 in Resources */,
+				A4681DEF2355FBA1006E5761 /* TOKEN-SPA-21.mp3 in Resources */,
 				A4CA147E22031BFC00F6CF0A /* ENG-FWD-10.mp3 in Resources */,
 				A4DE7DA222F5DBDC009EEA17 /* WordList2.storyboard in Resources */,
+				A4681DE72355FBA1006E5761 /* TOKEN-SPA-16.mp3 in Resources */,
 				A4C3288120815CD600DEC460 /* STROOP_ENG_TASK4.mp4 in Resources */,
 				A4CA1582220324C100F6CF0A /* melodies 320ms orig(01).wav in Resources */,
 				A4CA14A122031C1900F6CF0A /* SPA-BWD-14.mp3 in Resources */,
 				A4CA149D22031C1900F6CF0A /* SPA-BWD-08.mp3 in Resources */,
 				A4CA14FF22031E9D00F6CF0A /* ENG-32.mp3 in Resources */,
+				A4681DF82355FBA1006E5761 /* TOKEN-SPA-15.mp3 in Resources */,
 				A4CA151F22031E9D00F6CF0A /* ENG-38.mp3 in Resources */,
+				A4681DF72355FBA1006E5761 /* TOKEN-SPA-14.mp3 in Resources */,
 				A4C3288220815CD600DEC460 /* STROOP_SPA_TASK1.mp4 in Resources */,
 				A4CA146622031BEE00F6CF0A /* ENG-BWD-06.mp3 in Resources */,
 				A4C3288320815CD600DEC460 /* STROOP_SPA_TASK2.mp4 in Resources */,
 				A4CA156A22031EBE00F6CF0A /* SPA-41.mp3 in Resources */,
+				A4681DF22355FBA1006E5761 /* TOKEN-SPA-07.mp3 in Resources */,
 				A48A12E121FA4BC80044AF08 /* melodies 320ms orig(44).wav in Resources */,
 				A48A12E221FA4BC80044AF08 /* melodies 320ms diff(44).wav in Resources */,
 				A4CA150922031E9D00F6CF0A /* ENG-01.mp3 in Resources */,
@@ -1544,29 +1690,35 @@
 				A4CA14C322031C2500F6CF0A /* SPA-FWD-11.mp3 in Resources */,
 				A4CA14A822031C1900F6CF0A /* SPA-BWD-13.mp3 in Resources */,
 				A4CA14BD22031C2500F6CF0A /* SPA-FWD-04.mp3 in Resources */,
+				A4681DEB2355FBA1006E5761 /* TOKEN-SPA-20.mp3 in Resources */,
 				A4DE7DC422F65D4D009EEA17 /* RCFT2.storyboard in Resources */,
 				A4C3288420815CD600DEC460 /* STROOP_SPA_TASK3.mp4 in Resources */,
 				A48A12DA21FA4BB80044AF08 /* melodies 320ms orig(26).wav in Resources */,
 				A4CA151B22031E9D00F6CF0A /* ENG-21.mp3 in Resources */,
 				A4CA14A222031C1900F6CF0A /* SPA-BWD-07.mp3 in Resources */,
+				A4681DE52355FBA1006E5761 /* TOKEN-SPA-13.mp3 in Resources */,
 				A4C3288520815CD600DEC460 /* STROOP_SPA_TASK4.mp4 in Resources */,
 				A48B1AEF22EF3C58007A1E98 /* NamingTask.storyboard in Resources */,
 				A48A12D421FA4BA00044AF08 /* melodies 320ms orig(68).wav in Resources */,
 				A48A131421FA4C450044AF08 /* melodies 320ms orig(90).wav in Resources */,
 				A460CE4921D0C77300E52F8B /* InstructionsStep.xib in Resources */,
 				A4CA14C422031C2500F6CF0A /* SPA-FWD-13.mp3 in Resources */,
+				A4681DE92355FBA1006E5761 /* TOKEN-SPA-04.mp3 in Resources */,
 				A4CA14A022031C1900F6CF0A /* SPA-BWD-04.mp3 in Resources */,
 				A490D7D41D0919CB00D2B59D /* Roboto-Bold.ttf in Resources */,
 				A4CA150E22031E9D00F6CF0A /* ENG-22.mp3 in Resources */,
 				A4CA151E22031E9D00F6CF0A /* ENG-42.mp3 in Resources */,
+				A4681DCC2355FB8E006E5761 /* TOKEN-ENG-21.mp3 in Resources */,
 				A490D7D81D0919CB00D2B59D /* Roboto-LightItalic.ttf in Resources */,
 				A48A12DE21FA4BC00044AF08 /* melodies 320ms orig(62).wav in Resources */,
 				A4CA151522031E9D00F6CF0A /* ENG-14.mp3 in Resources */,
 				A4CA156222031EBE00F6CF0A /* SPA-05.mp3 in Resources */,
+				A4681DBF2355FB8E006E5761 /* TOKEN-ENG-17.mp3 in Resources */,
 				A4CA152222031E9D00F6CF0A /* ENG-30.mp3 in Resources */,
 				A4CA150722031E9D00F6CF0A /* ENG-34.mp3 in Resources */,
 				A4CA14A722031C1900F6CF0A /* SPA-BWD-10.mp3 in Resources */,
 				A4CA157322031EBE00F6CF0A /* SPA-14.mp3 in Resources */,
+				A4681DF02355FBA1006E5761 /* TOKEN-SPA-09.mp3 in Resources */,
 				A4CA151A22031E9D00F6CF0A /* ENG-11.mp3 in Resources */,
 				A4CA146A22031BEE00F6CF0A /* ENG-BWD-08.mp3 in Resources */,
 				A4CA14C222031C2500F6CF0A /* SPA-FWD-12.mp3 in Resources */,
@@ -1578,12 +1730,14 @@
 				A490D7DA1D0919CB00D2B59D /* Roboto-MediumItalic.ttf in Resources */,
 				A48A12E521FA4BD10044AF08 /* melodies 320ms orig(52).wav in Resources */,
 				A48A12CD21FA4B450044AF08 /* melodies 320ms orig(61).wav in Resources */,
+				A4681DE82355FBA1006E5761 /* TOKEN-SPA-19.mp3 in Resources */,
 				A4CA146922031BEE00F6CF0A /* ENG-BWD-03.mp3 in Resources */,
 				A490D7D61D0919CB00D2B59D /* Roboto-Italic.ttf in Resources */,
 				A4347FE41D7BCC170033306A /* MultipleErrandsViewController.xib in Resources */,
 				A4CA147B22031BFC00F6CF0A /* ENG-FWD-02.mp3 in Resources */,
 				A4CA14BA22031C2500F6CF0A /* SPA-FWD-05.mp3 in Resources */,
 				A4CA151D22031E9D00F6CF0A /* ENG-33.mp3 in Resources */,
+				A4681DC72355FB8E006E5761 /* TOKEN-ENG-13.mp3 in Resources */,
 				A4DE7DD622F664CA009EEA17 /* TrailMaking.storyboard in Resources */,
 				A48D60F51FF704D60042FBCA /* UserCollectionViewCell.xib in Resources */,
 				A48A131721FA4C4C0044AF08 /* melodies 320ms diff(74).wav in Resources */,
@@ -1591,13 +1745,16 @@
 				A4CA148622031BFC00F6CF0A /* ENG-FWD-01.mp3 in Resources */,
 				A4CA149C22031C1900F6CF0A /* SPA-BWD-05.mp3 in Resources */,
 				A4969D1421E544C10063FF40 /* DigitSpan.storyboard in Resources */,
+				A4681DF62355FBA1006E5761 /* TOKEN-SPA-18.mp3 in Resources */,
 				A48A12F121FA4BF60044AF08 /* melodies 320ms diff(66).wav in Resources */,
 				A4CA157E220321E100F6CF0A /* ENG-PRACTICE-BWD.mp3 in Resources */,
 				A48A132821FA4C6F0044AF08 /* melodies 320ms orig(32).wav in Resources */,
 				A48A12EA21FA4BDE0044AF08 /* melodies 320ms orig(91).wav in Resources */,
 				A48A12F921FA4C040044AF08 /* melodies 320ms diff(07).wav in Resources */,
 				A4CA155322031EBE00F6CF0A /* SPA-12.mp3 in Resources */,
+				A4681DE62355FBA1006E5761 /* TOKEN-SPA-01.mp3 in Resources */,
 				A48A12CE21FA4B450044AF08 /* melodies 320ms diff(61).wav in Resources */,
+				A4681DCE2355FB8E006E5761 /* TOKEN-ENG-16.mp3 in Resources */,
 				A4CA156C22031EBE00F6CF0A /* SPA-13.mp3 in Resources */,
 				A4CA14FE22031E9D00F6CF0A /* ENG-28.mp3 in Resources */,
 				A4CA14FD22031E9D00F6CF0A /* ENG-27.mp3 in Resources */,
@@ -1619,6 +1776,7 @@
 				A4CA14C722031D9E00F6CF0A /* List A ENG.mp3 in Resources */,
 				A4CA1584220324E300F6CF0A /* melodies 320ms orig(16).wav in Resources */,
 				A4CA157922031EBE00F6CF0A /* SPA-21.mp3 in Resources */,
+				A4681DC52355FB8E006E5761 /* TOKEN-ENG-18.mp3 in Resources */,
 				A4CA14A322031C1900F6CF0A /* SPA-BWD-02.mp3 in Resources */,
 				A4CA14C822031D9E00F6CF0A /* List B ENG.mp3 in Resources */,
 				A4CA147D22031BFC00F6CF0A /* ENG-FWD-03.mp3 in Resources */,
@@ -1628,6 +1786,7 @@
 				A4CA146522031BEE00F6CF0A /* ENG-BWD-01.mp3 in Resources */,
 				A4CA145F22031BEE00F6CF0A /* ENG-BWD-02.mp3 in Resources */,
 				A4CA157122031EBE00F6CF0A /* SPA-42.mp3 in Resources */,
+				A4681DCB2355FB8E006E5761 /* TOKEN-ENG-03.mp3 in Resources */,
 				A4CA14FB22031E9D00F6CF0A /* ENG-17.mp3 in Resources */,
 				A4828EB71F967ED700406F19 /* LoadingScreenViewController.xib in Resources */,
 				A4CA156622031EBE00F6CF0A /* SPA-18.mp3 in Resources */,
@@ -1635,18 +1794,24 @@
 				A4CA14B822031C2500F6CF0A /* SPA-FWD-07.mp3 in Resources */,
 				A4CA155822031EBE00F6CF0A /* SPA-24.mp3 in Resources */,
 				A49173052310D1BB004BDC80 /* ComprehensionCollectionViewCell.xib in Resources */,
+				A4681DC22355FB8E006E5761 /* TOKEN-ENG-11.mp3 in Resources */,
 				A4CA150022031E9D00F6CF0A /* ENG-13.mp3 in Resources */,
 				A4CA14BB22031C2500F6CF0A /* SPA-FWD-02.mp3 in Resources */,
+				A4681DBA2355FB8E006E5761 /* TOKEN-ENG-02.mp3 in Resources */,
 				A4CA156F22031EBE00F6CF0A /* SPA-23.mp3 in Resources */,
 				A490D7D51D0919CB00D2B59D /* Roboto-BoldItalic.ttf in Resources */,
+				A4681DBE2355FB8E006E5761 /* TOKEN-ENG-05.mp3 in Resources */,
 				A4CA156322031EBE00F6CF0A /* SPA-43.mp3 in Resources */,
 				A4CA151622031E9D00F6CF0A /* ENG-04.mp3 in Resources */,
 				A48A131E21FA4C590044AF08 /* melodies 320ms orig(54).wav in Resources */,
 				A4CA14CC22031DB400F6CF0A /* List B SPA.mp3 in Resources */,
+				A4681DEC2355FBA1006E5761 /* TOKEN-SPA-10.mp3 in Resources */,
+				A4681DBC2355FB8E006E5761 /* TOKEN-ENG-10.mp3 in Resources */,
 				A4CA148B22031C0600F6CF0A /* SPA-PRACTICE-FWD.mp3 in Resources */,
 				A4CA156B22031EBE00F6CF0A /* SPA-04.mp3 in Resources */,
 				A4CA152022031E9D00F6CF0A /* ENG-31.mp3 in Resources */,
 				A490D7D31D0919CB00D2B59D /* Roboto-BlackItalic.ttf in Resources */,
+				A4681DEE2355FBA1006E5761 /* TOKEN-SPA-11.mp3 in Resources */,
 				A48A130621FA4C200044AF08 /* melodies 320ms orig(05).wav in Resources */,
 				A4CA14BE22031C2500F6CF0A /* SPA-FWD-01.mp3 in Resources */,
 				A4CA151922031E9D00F6CF0A /* ENG-18.mp3 in Resources */,
@@ -1668,6 +1833,7 @@
 				A4CA147C22031BFC00F6CF0A /* ENG-FWD-08.mp3 in Resources */,
 				A4DE7DCD22F660F3009EEA17 /* RCFT3.storyboard in Resources */,
 				A48A12FE21FA4C0A0044AF08 /* melodies 320ms orig(85).wav in Resources */,
+				A4681DC82355FB8E006E5761 /* TOKEN-ENG-19.mp3 in Resources */,
 				A4CA146022031BEE00F6CF0A /* ENG-BWD-04.mp3 in Resources */,
 				A4CA155E22031EBE00F6CF0A /* SPA-35.mp3 in Resources */,
 				A4CA150122031E9D00F6CF0A /* ENG-12.mp3 in Resources */,
@@ -1678,8 +1844,10 @@
 				A48A12EE21FA4BEB0044AF08 /* melodies 320ms orig(82).wav in Resources */,
 				A48A130221FA4C130044AF08 /* melodies 320ms orig(40).wav in Resources */,
 				A4CA147F22031BFC00F6CF0A /* ENG-FWD-12.mp3 in Resources */,
+				A4681DEA2355FBA1006E5761 /* TOKEN-SPA-08.mp3 in Resources */,
 				A4CA148222031BFC00F6CF0A /* ENG-FWD-13.mp3 in Resources */,
 				A48A12D721FA4BAA0044AF08 /* melodies 320ms orig(21).wav in Resources */,
+				A4681DCA2355FB8E006E5761 /* TOKEN-ENG-04.mp3 in Resources */,
 				A48A131A21FA4C520044AF08 /* melodies 320ms orig(60).wav in Resources */,
 				A4CA14C022031C2500F6CF0A /* SPA-FWD-14.mp3 in Resources */,
 				A48A12DD21FA4BC00044AF08 /* melodies 320ms diff(62).wav in Resources */,
@@ -1701,6 +1869,7 @@
 				A4CA151022031E9D00F6CF0A /* ENG-02.mp3 in Resources */,
 				A4CA146322031BEE00F6CF0A /* ENG-BWD-05.mp3 in Resources */,
 				A4CA150B22031E9D00F6CF0A /* ENG-24.mp3 in Resources */,
+				A4681DC62355FB8E006E5761 /* TOKEN-ENG-08.mp3 in Resources */,
 				A4CA151222031E9D00F6CF0A /* ENG-16.mp3 in Resources */,
 				A48B4DCF1CF9E7C700878928 /* Assets.xcassets in Resources */,
 				A4CA148422031BFC00F6CF0A /* ENG-FWD-07.mp3 in Resources */,
@@ -1709,6 +1878,7 @@
 				A490D7D91D0919CB00D2B59D /* Roboto-Medium.ttf in Resources */,
 				A4CA155922031EBE00F6CF0A /* SPA-19.mp3 in Resources */,
 				A4969D2321E7D8F50063FF40 /* Cancellation.storyboard in Resources */,
+				A4681DC12355FB8E006E5761 /* TOKEN-ENG-01.mp3 in Resources */,
 				A4CA157A22031EBE00F6CF0A /* SPA-07.mp3 in Resources */,
 				A48A131121FA4C3D0044AF08 /* melodies 320ms orig(06).wav in Resources */,
 				A48A132221FA4C620044AF08 /* melodies 320ms orig(45).wav in Resources */,
@@ -1716,18 +1886,25 @@
 				A4CA149F22031C1900F6CF0A /* SPA-BWD-03.mp3 in Resources */,
 				A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */,
 				A4CA150F22031E9D00F6CF0A /* ENG-10.mp3 in Resources */,
+				A4681DBD2355FB8E006E5761 /* TOKEN-ENG-07.mp3 in Resources */,
+				A4681DED2355FBA1006E5761 /* TOKEN-SPA-02.mp3 in Resources */,
 				A4CA14BF22031C2500F6CF0A /* SPA-FWD-10.mp3 in Resources */,
 				A4CA157222031EBE00F6CF0A /* SPA-15.mp3 in Resources */,
 				A4CA157822031EBE00F6CF0A /* SPA-10.mp3 in Resources */,
 				A4CA149B22031C1900F6CF0A /* SPA-BWD-01.mp3 in Resources */,
 				A48A12D321FA4BA00044AF08 /* melodies 320ms diff(68).wav in Resources */,
 				A4347FE81D7BCC4C0033306A /* ComprehensionViewController.xib in Resources */,
+				A4681DC32355FB8E006E5761 /* TOKEN-ENG-14.mp3 in Resources */,
 				A4CA146222031BEE00F6CF0A /* ENG-BWD-10.mp3 in Resources */,
 				A4CA155C22031EBE00F6CF0A /* SPA-27.mp3 in Resources */,
+				A4681DCD2355FB8E006E5761 /* TOKEN-ENG-09.mp3 in Resources */,
 				A4CA155B22031EBE00F6CF0A /* SPA-39.mp3 in Resources */,
 				A4CA155522031EBE00F6CF0A /* SPA-09.mp3 in Resources */,
+				A4681DF52355FBA1006E5761 /* TOKEN-SPA-05.mp3 in Resources */,
+				A4681DF32355FBA1006E5761 /* TOKEN-SPA-06.mp3 in Resources */,
 				A4CA14FA22031E9D00F6CF0A /* ENG-06.mp3 in Resources */,
 				A47E666522D2BB0000B5B7B5 /* Stroop.storyboard in Resources */,
+				A4681DBB2355FB8E006E5761 /* TOKEN-ENG-12.mp3 in Resources */,
 				A490D7D21D0919CB00D2B59D /* Roboto-Black.ttf in Resources */,
 				A4CA14F922031E9D00F6CF0A /* ENG-20.mp3 in Resources */,
 				A48A12F521FA4BFD0044AF08 /* melodies 320ms diff(51).wav in Resources */,
@@ -1933,6 +2110,7 @@
 				A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */,
 				A48B1AF822EF40ED007A1E98 /* NamingTaskInstructions2ViewController.swift in Sources */,
 				A4DE7DC922F65DCE009EEA17 /* RCFT2TaskViewController.swift in Sources */,
+				A4681DFC23589595006E5761 /* ComprehensionTaskDoneViewController.swift in Sources */,
 				A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */,
 				A4EDC009229D3F25006B8C53 /* DashboardViewController.swift in Sources */,
 				A4347FD51D7BCABC0033306A /* PegboardViewController.swift in Sources */,
@@ -1987,6 +2165,7 @@
 				A4C469A71E134B5900FDD5D5 /* UserViewController.swift in Sources */,
 				A4DE7DB722F63C77009EEA17 /* RCFTModel.swift in Sources */,
 				A4AB688B1DE4BE9A0009808D /* DownloadOperation.swift in Sources */,
+				A4681DFE235898B3006E5761 /* ComprehensionTaskInstructionViewController.swift in Sources */,
 				A4396F10223C142B009B1EDC /* FirebaseStorageManager.swift in Sources */,
 				A4A991E222EAA50700DE3B83 /* StroopTask4ViewController.swift in Sources */,
 				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
@@ -1997,6 +2176,7 @@
 				A47E664622C07FF300B5B7B5 /* ParticipantsTableViewController.swift in Sources */,
 				A4969D2121E7D7E90063FF40 /* CancellationInstructionsViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
+				A4681DFA23587928006E5761 /* ComprehensionModel.swift in Sources */,
 				A42041F821E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift in Sources */,
 				A4DE7DDF22F666A6009EEA17 /* TrailMakingInstructions2ViewController.swift in Sources */,
 				A4A991DA22EAA3A700DE3B83 /* StroopPreTask3ViewController.swift in Sources */,
