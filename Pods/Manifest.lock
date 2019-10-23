@@ -1,12 +1,10 @@
 PODS:
-  - Alamofire (4.8.0)
   - BoringSSL (10.0.6):
     - BoringSSL/Implementation (= 10.0.6)
     - BoringSSL/Interface (= 10.0.6)
   - BoringSSL/Implementation (10.0.6):
     - BoringSSL/Interface (= 10.0.6)
   - BoringSSL/Interface (10.0.6)
-  - CountdownView (0.1.2)
   - Firebase/Auth (5.15.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.2.0)
@@ -102,7 +100,6 @@ PODS:
     - nanopb (~> 0.3)
   - gRPC-Core/Interface (1.14.0)
   - GTMSessionFetcher/Core (1.2.1)
-  - JWTDecode (2.2.0)
   - leveldb-library (1.20)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
@@ -115,22 +112,17 @@ PODS:
   - YoutubePlayer-in-WKWebView (0.3.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.5)
-  - CountdownView
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
   - Firebase/Storage
-  - JWTDecode (~> 2.1)
   - ReachabilitySwift
   - SVProgressHUD
   - YoutubePlayer-in-WKWebView (~> 0.3.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Alamofire
     - BoringSSL
-    - CountdownView
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -144,7 +136,6 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
-    - JWTDecode
     - leveldb-library
     - nanopb
     - Protobuf
@@ -153,9 +144,7 @@ SPEC REPOS:
     - YoutubePlayer-in-WKWebView
 
 SPEC CHECKSUMS:
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
-  CountdownView: 0f0f5cb346ca5d99342703c834d89598ca1893bd
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
   FirebaseAuth: 02e969ff430e156d99d4cb842d77b806b71ad7bb
@@ -169,7 +158,6 @@ SPEC CHECKSUMS:
   "gRPC-C++": 19eec1ffd34de29453f5fab5b4697ad0f240ad51
   gRPC-Core: f4836515817c0eb479aeeb9cc27c91c4ba62a9f6
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
-  JWTDecode: 85a405ab16d5473e99bd89ded1d535090ebd6a0e
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
@@ -177,6 +165,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   YoutubePlayer-in-WKWebView: 86f6b4c04797296071585b92724f3904d0273f12
 
-PODFILE CHECKSUM: f1d0776d08109a56a331c26c80a9ee73ae3566fe
+PODFILE CHECKSUM: 69ab3e007c3c3c517869ae8de0751c2382c9ac70
 
 COCOAPODS: 1.5.3

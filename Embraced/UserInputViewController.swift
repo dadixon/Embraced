@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class UserInputViewController: UIViewController {
 
@@ -89,21 +88,6 @@ class UserInputViewController: UIViewController {
             "floor": floorTextField.text!
         ]
 
-        let token = userDefaults.string(forKey: "token")!
-        let pid = userDefaults.string(forKey: "pid")!
-        let headers: HTTPHeaders = [
-            "x-access-token": token
-        ]
-        
-        Alamofire.request(APIUrl + "api/moca/new/" + pid, method: .post, parameters: jsonObject, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            
-            let statusCode = response.response?.statusCode
-            
-            if statusCode == 200 {
-                AppDelegate.testPosition += 1
-                self.navigationController?.pushViewController(TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
-            }
-        }
     }
     
     private func formatWeekday(_ day: Int) -> String {

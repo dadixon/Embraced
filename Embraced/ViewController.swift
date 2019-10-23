@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import JWTDecode
 import Reachability
 import SVProgressHUD
 import Firebase
