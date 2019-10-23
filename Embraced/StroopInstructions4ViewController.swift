@@ -1,5 +1,5 @@
 //
-//  StroopInstructions2ViewController.swift
+//  StroopInstructions4ViewController.swift
 //  Embraced
 //
 //  Created by Domonique Dixon on 7/25/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StroopInstructions2ViewController: InstructionsViewController {
+class StroopInstructions4ViewController: InstructionsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,14 +16,14 @@ class StroopInstructions2ViewController: InstructionsViewController {
         orientation = .landscapeLeft
         rotateOrientation = .landscapeLeft
         
-        instructionsLabel.text = "stroop_practice_instruction2".localized(lang: language)
+        instructionsLabel.text = "stroop_ptask".localized(lang: language)
         
-        nextBtn.setTitle("Next".localized(lang: language), for: .normal)
+        nextBtn.setTitle("Start".localized(lang: language), for: .normal)
         nextBtn.addTarget(self, action: #selector(moveOn), for: .touchUpInside)
     }
     
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToPreTask2", sender: nil)
+        self.performSegue(withIdentifier: "moveToTask3", sender: nil)
     }
 
 }
