@@ -24,12 +24,12 @@ class SelectTestViewController: UIViewController {
 //        "Orientation Task",
         "Complex Figure 1",
         "Clock Drawing Test",
-//        "Complex Figure 2",
-//        "Trail Making Test",
+        "Complex Figure 2",
+        "Trail Making Test",
         "Melodies Recognition",
         "Digit Span",
-//        "Complex Figure 3",
-//        "Complex Figure 4",
+        "Complex Figure 3",
+        "Complex Figure 4",
 //        "Matrices",
 //        "Continuous Performance Test",
 //        "Motor Tasks",
@@ -38,7 +38,7 @@ class SelectTestViewController: UIViewController {
         "Cancellation Test",
         "Word List 2",
         "Naming Test",
-//        "Comprehension Task",
+        "Comprehension Task"
 //        "Eyes Test"
     ]
     
@@ -52,6 +52,7 @@ class SelectTestViewController: UIViewController {
         
         testTableView.delegate = self
         testTableView.dataSource = self
+        testTableView.tableFooterView = UIView()
         
         SVProgressHUD.setDefaultStyle(.dark)
     }
@@ -95,6 +96,7 @@ class SelectTestViewController: UIViewController {
         let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
             alertController.dismiss(animated: true, completion: nil)
             
+            // TODO: If Moca test is selected, show the moca test inputs
             self.performSegue(withIdentifier: "moveToLanguages", sender: self)
         }
         

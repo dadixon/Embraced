@@ -17,6 +17,7 @@ class RCFTModel {
     var time_1: Int?
     var time_2: Int?
     var time_3: Int?
+    var answers = [String: Bool]()
     
     private init() {}
     
@@ -29,6 +30,10 @@ class RCFTModel {
         rv["RCFT_file_2"] = file_2
         rv["RCFT_time_3"] = time_3
         rv["RCFT_file_3"] = file_3
+        
+        for answer in answers {
+            rv["RCFT_question_\(answer.key)"] = answer.value
+        }
         
         return rv
     }

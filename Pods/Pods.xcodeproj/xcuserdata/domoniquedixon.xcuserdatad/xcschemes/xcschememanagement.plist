@@ -4,22 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>BoringSSL.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ChameleonFramework.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>CountdownView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -59,11 +44,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>JWTDecode.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Embraced.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -80,6 +60,11 @@
 			<false/>
 		</dict>
 		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>YoutubePlayer-in-WKWebView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

@@ -112,3 +112,32 @@
 "naming_practice_instruction1" = "A continuación le vamos a mostrar una serie de imágenes y usted tendrá que reconocerlas y nombrar cada dibujo en alto.\nGrabará su respuesta en este dispositivo.\nPor favor, practique cómo se graba su voz con el botón de micrófono que tiene abajo";
 "naming_practice_instruction2" = "Se le mostrarán las figuras de una en una. Si no sabe el nombre el el tiempo permitido, tendrá la opción de saltar a la siguiente imagen\n\nComenzaremos con algunos ejemplos\nPulse COMENZAR cuando esté preparado";
 "naming_task_instruction" = "Ahora comenzaremos la tarea.\nPor favor, pulse COMENZAR cuando esté preparado";
+
+// Cancellation Test
+"cancellation_instructions_1" = "The objective now is to identify specific numbers hidden in a block of characters.\nWork through the lines, from left to right. When you see a 5 or a 9, click on it and it will be marked. If you click something incorrect, it cannot be changed.";
+"cancellation_instructions_2" = "The goal is to cross out every 5 and 9 that you see hidden in the lines as fast as you can, without committing any errors.\nYou cannot work backwards (towards the left); you must continue moving forwards (left to right) at all times, even if you realize later that you missed something.\nYou will have 15 seconds for each block.";
+"cancellation_instructions_3" = "There will be a 3 second countdown before each block of characters appears.\nAfter 15 seconds, the screen will clear and another 3 second countdown will begin.\nWe will start with a sample\nWhen you are ready, tap the button START to start the task";
+
+// Clock Drawing Test
+"clock_drawing_instructions" = "Now the objective is to draw a big circular clock with its hands in the correct positions.\nMake it large enough so that you can add the numbers too.\nDraw clock hands to make the clock read 10 past 11.\nWhen you have finished click 'Next' to continue ";
+
+// RCFT
+"rcft_1_instructions" = "In this task you are going to be asked to draw with your finger.\nBefore we proceed, please practice drawing with your finger in the sample screen.\nClick 'Next' to continue.";
+"rcft_1_instructions_2" = "Click Next Once you are done practicing.";
+"rcft_1_instructions_3" = "Now you will be shown a COMPLEX figure.\nPlease copy the figure with your finger on the blank space below the figure.\nPress 'DONE' when you finish copying the figure.";
+
+// RCFT 2
+"rcft_2_instructions" = "A few minutes ago you copied a COMPLEX figure. Now please draw the COMPLEX figure you drew before again, but this time from memory.\nClick 'Next' when you are done.";
+
+// RCFT 3
+"rcft_3_instructions" = "A short time ago you draw from memory a COMPLEX figure with your finger.\nNow please draw that COMPLEX figure from memory again";
+
+// Trail Making Test
+"trailMaking_instructions" = "In the next task you are going to see some numbers on the screen.\nBegin at number 1 and draw a line from 1 to 2, 2 to 3, 3 to 4 and so on, in ascending order, until you reach the end.\nDraw the lines as fast as you can without lifting your finger from the screen.\nClick 'Next' for a demonstration.";
+"trailMaking_task_instructions" = "When you are complete, click the forward button";
+"trailMaking_instructions_2" = "On the next page you will see some numbers and letters on the screen.\nBegin at number 1 and draw a line from 1 to A, A to 2, 2 to B, B to 3, 3 to C so on, in order, until you reach the circle marked “end”.\nDraw the lines as fast as you can without lifting your finger from the screen.\nRemember, first you have a number, then a letter, then a number, then a letter, and so on.\nDraw the lines as fast as you can.\nClick 'Next' for a demonstration.";
+
+// Comprehension
+"comprehension_instructions" = "Ahora usted va a ver diferentes formas de distintos tamaños y colores en la pantalla.\nEscuchará instrucciones para tocar una o más de estas formas.\nPor favor, escuche atentamente estas instrucciones porque solo las oirá una vez.";
+"comprehension_audio_button" = "Pulse aquí para oír la siguiente instrucción";
+

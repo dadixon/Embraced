@@ -66,6 +66,26 @@ class TestConfig {
                     if let vc = UIStoryboard(name: "RCFT", bundle: nil).instantiateViewController(withIdentifier: "RCFTTest") as? RCFTInstructionsViewController {
                         self.testList.append(vc)
                     }
+                case "Complex Figure 2":
+                    if let vc = UIStoryboard(name: "RCFT2", bundle: nil).instantiateViewController(withIdentifier: "RCFT2Test") as? RCFT2InstructionsViewController {
+                        self.testList.append(vc)
+                    }
+                case "Complex Figure 3":
+                    if let vc = UIStoryboard(name: "RCFT3", bundle: nil).instantiateViewController(withIdentifier: "RCFT3Test") as? RCFT3InstructionsViewController {
+                        self.testList.append(vc)
+                    }
+                case "Trail Making Test":
+                    if let vc = UIStoryboard(name: "TrailMaking", bundle: nil).instantiateViewController(withIdentifier: "TrailMakingTest") as? TrailMakingInstructionsViewController {
+                        self.testList.append(vc)
+                    }
+                case "Complex Figure 4":
+                    if let vc = UIStoryboard(name: "RCFT4", bundle: nil).instantiateViewController(withIdentifier: "RCFT4Test") as? RCFT4InstructionsViewController {
+                        self.testList.append(vc)
+                    }
+                case "Comprehension Task":
+                    if let vc = UIStoryboard(name: "Comprehension", bundle: nil).instantiateViewController(withIdentifier: "ComprehensionTest") as? ComprehensionTaskInstructionViewController {
+                        self.testList.append(vc)
+                    }
                 default:
                     continue
             }

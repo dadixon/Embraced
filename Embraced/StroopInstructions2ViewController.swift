@@ -8,23 +8,22 @@
 
 import UIKit
 
-class StroopInstructions2ViewController: UIViewController {
+class StroopInstructions2ViewController: InstructionsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        orientation = .landscapeLeft
+        rotateOrientation = .landscapeLeft
+        
+        instructionsLabel.text = "stroop_practice_instruction2".localized(lang: language)
+        
+        nextBtn.setTitle("Next".localized(lang: language), for: .normal)
+        nextBtn.addTarget(self, action: #selector(moveOn), for: .touchUpInside)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func moveOn() {
+        self.performSegue(withIdentifier: "moveToPreTask2", sender: nil)
     }
-    */
 
 }

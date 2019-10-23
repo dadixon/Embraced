@@ -41,12 +41,10 @@ class NetworkManager: NSObject {
         case .none:
 //            SVProgressHUD.showInfo(withStatus: "No internet connection")
             print("No internet connection")
-            break
         default:
 //            SVProgressHUD.showInfo(withStatus: "Internet Available")
             print("Internet Available")
             StorageManager.sharedInstance.pushStoredFiles()
-            break
         }
     }
     

@@ -126,26 +126,25 @@ class WordList2TaskViewController: ActiveStepViewController {
         let filePath = "\(FirebaseStorageManager.shared.pid!)/\(TEST_NAME)/\(soundFileName)"
         
         if Utility.fileExist(filePath) {
-            let storage = Storage.storage()
-            let storageRef = storage.reference()
-            let participantRef = storageRef.child(filePath)
-            
-            participantRef.putFile(from: recordedAudioURL, metadata: nil) { (metadata, error) in
+            FirebaseStorageManager.shared.externalStorage(filePath: filePath, fileUrl: recordedAudioURL) { (uploadTask, error) in
                 if error != nil {
-                    print("Error: \(error?.localizedDescription)")
-                    SVProgressHUD.showError(withStatus: "An error has happened")
+                    SVProgressHUD.showError(withStatus: error?.localizedDescription)
                 }
                 
-                WordListModel.shared.longTerm = filePath
-                
-                FirebaseStorageManager.shared.addDataToDocument(payload: [
-                    "wordList": WordListModel.shared.printModel()
-                    ])
-                
-                self.nextBtn.isHidden = false
-                
-                Utility.deleteFile(filePath)
-                SVProgressHUD.dismiss()
+                if let task = uploadTask {
+                    task.observe(.success, handler: { (snapshot) in
+                        WordListModel.shared.longTerm = filePath
+                        
+                        FirebaseStorageManager.shared.addDataToDocument(payload: [
+                            "wordList": WordListModel.shared.printModel()
+                        ])
+                        
+                        self.nextBtn.isHidden = false
+                        
+                        Utility.deleteFile(filePath)
+                        SVProgressHUD.dismiss()
+                    })
+                }
             }
         }
     }

@@ -9,7 +9,6 @@
 import UIKit
 import AVFoundation
 import SVProgressHUD
-import FirebaseStorage
 
 class NamingTaskTaskViewController: ActiveStepViewController {
 
@@ -198,72 +197,51 @@ class NamingTaskTaskViewController: ActiveStepViewController {
         let filePath = "\(FirebaseStorageManager.shared.pid!)/\(TEST_NAME)/\(soundFileName)"
         
         if Utility.fileExist(filePath) {
-            let storage = Storage.storage()
-            let storageRef = storage.reference()
-            let participantRef = storageRef.child(filePath)
-            
-            participantRef.putFile(from: recordedAudioURL, metadata: nil) { (metadata, error) in
+            FirebaseStorageManager.shared.externalStorage(filePath: filePath, fileUrl: recordedAudioURL) { (uploadTask, error) in
                 if error != nil {
-                    print("Error: \(error?.localizedDescription)")
-                    SVProgressHUD.showError(withStatus: "An error has happened")
+                    SVProgressHUD.showError(withStatus: error?.localizedDescription)
                 }
                 
-                switch(self.index) {
-                    case 0: NamingTaskModel.shared.file_1 = filePath
+                if let task = uploadTask {
+                    task.observe(.success, handler: { snapshot in
+                        switch(self.index) {
+                        case 0: NamingTaskModel.shared.file_1 = filePath
+                        case 1: NamingTaskModel.shared.file_2 = filePath
+                        case 2: NamingTaskModel.shared.file_3 = filePath
+                        case 3: NamingTaskModel.shared.file_4 = filePath
+                        case 4: NamingTaskModel.shared.file_5 = filePath
+                        case 5: NamingTaskModel.shared.file_6 = filePath
+                        case 6: NamingTaskModel.shared.file_7 = filePath
+                        case 7: NamingTaskModel.shared.file_8 = filePath
+                        case 8: NamingTaskModel.shared.file_9 = filePath
+                        case 9: NamingTaskModel.shared.file_10 = filePath
+                        case 10: NamingTaskModel.shared.file_11 = filePath
+                        case 11: NamingTaskModel.shared.file_12 = filePath
+                        case 12: NamingTaskModel.shared.file_13 = filePath
+                        case 13: NamingTaskModel.shared.file_14 = filePath
+                        case 14: NamingTaskModel.shared.file_15 = filePath
+                        case 15: NamingTaskModel.shared.file_16 = filePath
+                        case 16: NamingTaskModel.shared.file_17 = filePath
+                        case 17: NamingTaskModel.shared.file_18 = filePath
+                        case 18: NamingTaskModel.shared.file_19 = filePath
+                        case 19: NamingTaskModel.shared.file_20 = filePath
+                        default:
                             break
-                    case 1: NamingTaskModel.shared.file_2 = filePath
-                            break
-                    case 2: NamingTaskModel.shared.file_3 = filePath
-                            break
-                    case 3: NamingTaskModel.shared.file_4 = filePath
-                            break
-                    case 4: NamingTaskModel.shared.file_5 = filePath
-                            break
-                    case 5: NamingTaskModel.shared.file_6 = filePath
-                            break
-                    case 6: NamingTaskModel.shared.file_7 = filePath
-                            break
-                    case 7: NamingTaskModel.shared.file_8 = filePath
-                            break
-                    case 8: NamingTaskModel.shared.file_9 = filePath
-                            break
-                    case 9: NamingTaskModel.shared.file_10 = filePath
-                            break
-                    case 10: NamingTaskModel.shared.file_11 = filePath
-                            break
-                    case 11: NamingTaskModel.shared.file_12 = filePath
-                            break
-                    case 12: NamingTaskModel.shared.file_13 = filePath
-                            break
-                    case 13: NamingTaskModel.shared.file_14 = filePath
-                            break
-                    case 14: NamingTaskModel.shared.file_15 = filePath
-                            break
-                    case 15: NamingTaskModel.shared.file_16 = filePath
-                            break
-                    case 16: NamingTaskModel.shared.file_17 = filePath
-                            break
-                    case 17: NamingTaskModel.shared.file_18 = filePath
-                            break
-                    case 18: NamingTaskModel.shared.file_19 = filePath
-                            break
-                    case 19: NamingTaskModel.shared.file_20 = filePath
-                            break
-                default:
-                    break
+                        }
+                        
+                        FirebaseStorageManager.shared.addDataToDocument(payload: [
+                            "naming": NamingTaskModel.shared.printModel()
+                        ])
+                        
+                        if !self.isStoring {
+                            self.nextBtn.isHidden = false
+                        }
+                        
+                        self.isStoring = false
+                        Utility.deleteFile(filePath)
+                        SVProgressHUD.dismiss()
+                    })
                 }
-
-                FirebaseStorageManager.shared.addDataToDocument(payload: [
-                    "naming": NamingTaskModel.shared.printModel()
-                ])
-                
-                if !self.isStoring {
-                    self.nextBtn.isHidden = false
-                }
-                
-                self.isStoring = false
-                Utility.deleteFile(filePath)
-                SVProgressHUD.dismiss()
             }
         }
     }
