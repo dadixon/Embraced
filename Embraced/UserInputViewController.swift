@@ -18,7 +18,6 @@ class UserInputViewController: UIViewController {
     @IBOutlet weak var submitBtn: UIButton!
     
     let userDefaults = UserDefaults.standard
-    let APIUrl = "http://www.embracedapi.ugr.es/"
     
     fileprivate func setBottomBorder(_ textfield: UITextField) {
         let border = CALayer()

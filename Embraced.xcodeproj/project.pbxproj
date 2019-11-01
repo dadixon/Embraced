@@ -84,7 +84,6 @@
 		A47E666C22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666B22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift */; };
 		A47E666E22D2D7CE00B5B7B5 /* StroopTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666D22D2D7CE00B5B7B5 /* StroopTaskViewController.swift */; };
 		A47E667022D2D87900B5B7B5 /* StroopDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666F22D2D87900B5B7B5 /* StroopDoneViewController.swift */; };
-		A47FF4AE211363AA00665E20 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47FF4AD211363AA00665E20 /* Constants.swift */; };
 		A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */; };
 		A4828EB71F967ED700406F19 /* LoadingScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */; };
 		A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D61A1E0BA255001F56FE /* AdminViewController.swift */; };
@@ -498,7 +497,6 @@
 		A47E666B22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopInstructionsViewController.swift; sourceTree = "<group>"; };
 		A47E666D22D2D7CE00B5B7B5 /* StroopTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopTaskViewController.swift; sourceTree = "<group>"; };
 		A47E666F22D2D87900B5B7B5 /* StroopDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopDoneViewController.swift; sourceTree = "<group>"; };
-		A47FF4AD211363AA00665E20 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadingScreenViewController.swift; path = controllers/LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoadingScreenViewController.xib; path = controllers/LoadingScreenViewController.xib; sourceTree = "<group>"; };
 		A489D61A1E0BA255001F56FE /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
@@ -934,7 +932,6 @@
 			isa = PBXGroup;
 			children = (
 				A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */,
-				A47FF4AD211363AA00665E20 /* Constants.swift */,
 				A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */,
 				A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */,
 				A48A12C521F74FE60044AF08 /* CancellationModel.swift */,
@@ -2100,7 +2097,6 @@
 				A48B1AFC22EF412C007A1E98 /* NamingTaskDoneViewController.swift in Sources */,
 				A49172FA2310804C004BDC80 /* RCFT4DoneViewController.swift in Sources */,
 				A4DE7DC022F644BE009EEA17 /* RCFTTaskViewController.swift in Sources */,
-				A47FF4AE211363AA00665E20 /* Constants.swift in Sources */,
 				A44669381E16457600EA7E2E /* RecordButton.swift in Sources */,
 				A4969D1921E545630063FF40 /* DigitSpanDoneViewController.swift in Sources */,
 				A4969D3421E926BE0063FF40 /* CancellationViewCell.swift in Sources */,

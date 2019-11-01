@@ -16,7 +16,6 @@ class StartViewController: UIViewController {
     @IBOutlet weak var languagePicker: UIPickerView!
     
     let participant = UserDefaults.standard
-    let APIUrl = "http://www.embracedapi.ugr.es/"
     var pickerData: [String:String] = [String:String]()
     var componentArray = [String]()
     var startBtnWidth: NSLayoutConstraint?
@@ -26,14 +25,6 @@ class StartViewController: UIViewController {
 
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.navigationController?.isNavigationBarHidden = true
-        
-//        welcomeLabel.text = "WELCOME_TO_EMBRACED_PROJECT".localized(lang: participant.string(forKey: "TesterLanguage")!)
-//        welcomeText.text = "WELCOME_TEXT".localized(lang: participant.string(forKey: "TesterLanguage")!)
-//        nextBtn.setTitle("Start".localized(lang: participant.string(forKey: "TesterLanguage")!), for: .normal)
-        
-        
-//        DataManager.sharedInstance.language = "en"
-//        DataManager.sharedInstance.updateData()
         
         languagePicker.delegate = self
         languagePicker.dataSource = self
@@ -51,11 +42,6 @@ class StartViewController: UIViewController {
         nextBtn.setTitle("Start".localized(lang: DataManager.sharedInstance.language), for: .normal)
         startBtnWidth = nextBtn.widthAnchor.constraint(equalToConstant: nextBtn.intrinsicContentSize.width + 100.0)
         startBtnWidth?.isActive = true
-        
-        
-        
-//        let token = participant.string(forKey: "token")!
-//        StorageManager.sharedInstance.token = token
     }
 
     override var prefersStatusBarHidden : Bool {
@@ -66,17 +52,6 @@ class StartViewController: UIViewController {
     // MARK: - Navigation
     
     @IBAction func startTest(_ sender: Any) {
-        // Save participant language
-//        do {
-//            let id = participant.string(forKey: "pid")!
-//
-//            try StorageManager.sharedInstance.putToAPI(endpoint: "participant/update/", id: id, data: createPostObject())
-//
-//            // Save test timer
-////            let date = Date()
-//            let date = Date().millisecondsSince1970
-//            participant.setValue(date, forKey: "StartDate")
-        
         FirebaseStorageManager.shared.addDataToDocument(payload: [
             "language": DataManager.sharedInstance.language
             ])
@@ -89,17 +64,6 @@ class StartViewController: UIViewController {
 //        } catch let error {
 //            print(error)
 //        }
-    }
- 
-    private func createPostObject() -> [String: Any] {
-        var jsonObject = [String: Any]()
-        
-        // Gather data for post
-        jsonObject = [
-            "language": participant.string(forKey: "language")!
-        ]
-        
-        return jsonObject
     }
 }
 
