@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Motor Instructions View Controller-->
+        <scene sceneID="tQe-Ys-bIx">
+            <objects>
+                <viewController storyboardIdentifier="MotorTest" id="09Q-Ni-sNj" customClass="MotorInstructionsViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cPZ-kN-P40">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="MR9-PN-KPN"/>
+                    </view>
+                    <connections>
+                        <segue destination="5ML-e2-0DR" kind="show" identifier="moveToTask" id="CTv-Ga-MRs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWL-4N-El9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-549" y="135"/>
+        </scene>
+        <!--Motor Task View Controller-->
+        <scene sceneID="Z7l-gO-jAz">
+            <objects>
+                <viewController id="5ML-e2-0DR" customClass="MotorTaskViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FY1-FM-59e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="yKv-AE-x45"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3wH-Sw-caR"/>
+                    <connections>
+                        <segue destination="dZc-iC-8zC" kind="show" identifier="moveToTask2" id="f8l-FQ-Hu9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HyO-z9-1cF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162" y="133"/>
+        </scene>
+        <!--Motor Task2 View Controller-->
+        <scene sceneID="wZg-cM-WQY">
+            <objects>
+                <viewController id="dZc-iC-8zC" customClass="MotorTask2ViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ldR-Tq-nj9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Lsn-3D-s60"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eot-5e-GwI"/>
+                    <connections>
+                        <segue destination="i4g-Rz-eaO" kind="show" identifier="moveToInstructions2" id="FJB-k9-OLZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NU8-wt-RCm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900" y="133"/>
+        </scene>
+        <!--Motor Instructions2 View Controller-->
+        <scene sceneID="vLg-pb-TRv">
+            <objects>
+                <viewController id="i4g-Rz-eaO" customClass="MotorInstructions2ViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2FL-kl-VcN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="zvh-z3-pvb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fhK-g5-YcY"/>
+                    <connections>
+                        <segue destination="2VX-6D-Kia" kind="show" identifier="moveToTask3" id="5bB-ij-Van"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SAt-PJ-cGW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1659" y="130"/>
+        </scene>
+        <!--Motor Task3 View Controller-->
+        <scene sceneID="wKb-fd-cla">
+            <objects>
+                <viewController id="2VX-6D-Kia" customClass="MotorTask3ViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EpT-Jg-hSm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6VM-Pz-jhI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2wl-d5-zJP"/>
+                    <connections>
+                        <segue destination="wkj-9D-XXJ" kind="show" identifier="moveToTask4" id="Qhd-zw-CdO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VWg-V7-hCK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2407" y="130"/>
+        </scene>
+        <!--Motor Task4 View Controller-->
+        <scene sceneID="FYx-Ok-O7y">
+            <objects>
+                <viewController id="wkj-9D-XXJ" customClass="MotorTask4ViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rOb-DN-8Mv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="xVR-og-YRj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fwi-cA-9a7"/>
+                    <connections>
+                        <segue destination="Ug3-GF-icm" kind="show" identifier="moveToInstructions3" id="LwJ-G8-wQK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jeh-Vk-H9Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3155" y="133"/>
+        </scene>
+        <!--Motor Instructions3 View Controller-->
+        <scene sceneID="6Lz-9K-sIE">
+            <objects>
+                <viewController id="Ug3-GF-icm" customClass="MotorInstructions3ViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K0x-9O-Rfe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="dXn-47-daO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3F9-M4-21h"/>
+                    <connections>
+                        <segue destination="806-6m-t5R" kind="show" identifier="moveToTask5" id="bcd-wh-iNz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cYA-aH-RxX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3903" y="133"/>
+        </scene>
+        <!--Motor Task5 View Controller-->
+        <scene sceneID="g4y-Xs-x1c">
+            <objects>
+                <viewController id="806-6m-t5R" customClass="MotorTask5ViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QAu-4k-yvT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Nay-TZ-a7r"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SoP-gg-oBZ"/>
+                    <connections>
+                        <segue destination="vZL-DU-FKK" kind="show" identifier="moveToTask6" id="UW2-Lq-Fsx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b57-mj-pUw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4662" y="127"/>
+        </scene>
+        <!--Motor Task6 View Controller-->
+        <scene sceneID="9qB-pY-Fck">
+            <objects>
+                <viewController id="vZL-DU-FKK" customClass="MotorTask6ViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P0i-ZR-8Up">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="eMv-wR-BRK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="f45-sn-ERL"/>
+                    <connections>
+                        <segue destination="5kT-FE-DC3" kind="show" identifier="moveToDone" id="8BO-ll-DdE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eJ8-rb-BAq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5410" y="127"/>
+        </scene>
+        <!--Motor Done View Controller-->
+        <scene sceneID="MJX-ed-LGm">
+            <objects>
+                <viewController id="5kT-FE-DC3" customClass="MotorDoneViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P84-nT-kOR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hbg-YM-Qcp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7sZ-kq-btt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VZq-CD-E4R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6175" y="127"/>
+        </scene>
+    </scenes>
+</document>

@@ -32,7 +32,7 @@ class SelectTestViewController: UIViewController {
         "Complex Figure 4",
 //        "Matrices",
 //        "Continuous Performance Test",
-//        "Motor Tasks",
+        "Motor Tasks",
         "Word List 1",
         "Color-Word Stroop Test",
         "Cancellation Test",
