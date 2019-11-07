@@ -13,6 +13,10 @@
 		A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */; };
 		A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */; };
 		A42041F821E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F721E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift */; };
+		A43781852373597400EC5717 /* MotorInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43781842373597400EC5717 /* MotorInstructionsViewController.swift */; };
+		A43781872373598B00EC5717 /* MotorInstructions2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43781862373598B00EC5717 /* MotorInstructions2ViewController.swift */; };
+		A4378189237359A200EC5717 /* MotorInstructions3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4378188237359A200EC5717 /* MotorInstructions3ViewController.swift */; };
+		A437818B237359BF00EC5717 /* MotorDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A437818A237359BF00EC5717 /* MotorDoneViewController.swift */; };
 		A4396F10223C142B009B1EDC /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4396F0F223C142B009B1EDC /* FirebaseStorageManager.swift */; };
 		A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669311E1631A600EA7E2E /* ListenButton.swift */; };
 		A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669331E16435C00EA7E2E /* PlayButton.swift */; };
@@ -64,6 +68,12 @@
 		A4681DFE235898B3006E5761 /* ComprehensionTaskInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4681DFD235898B3006E5761 /* ComprehensionTaskInstructionViewController.swift */; };
 		A46A2C641DD66108000AC66C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46A2C631DD66108000AC66C /* SystemConfiguration.framework */; };
 		A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */; };
+		A472B8C12371AC0A009D8E91 /* MotorTask2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472B8C02371AC0A009D8E91 /* MotorTask2ViewController.swift */; };
+		A472B8C32371ACA1009D8E91 /* MotorTask3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472B8C22371ACA1009D8E91 /* MotorTask3ViewController.swift */; };
+		A472B8C52371ACE4009D8E91 /* MotorTask4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472B8C42371ACE4009D8E91 /* MotorTask4ViewController.swift */; };
+		A472B8C72371ACF5009D8E91 /* MotorTask5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472B8C62371ACF5009D8E91 /* MotorTask5ViewController.swift */; };
+		A472B8C92371AD0A009D8E91 /* MotorTask6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472B8C82371AD0A009D8E91 /* MotorTask6ViewController.swift */; };
+		A472B8CB2373318F009D8E91 /* MotorTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472B8CA2373318F009D8E91 /* MotorTapView.swift */; };
 		A47E664422B262B200B5B7B5 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E664322B262B200B5B7B5 /* SideMenuViewController.swift */; };
 		A47E664622C07FF300B5B7B5 /* ParticipantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E664522C07FF300B5B7B5 /* ParticipantsTableViewController.swift */; };
 		A47E664822C0846E00B5B7B5 /* ParticipantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E664722C0846E00B5B7B5 /* ParticipantDTO.swift */; };
@@ -409,6 +419,11 @@
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
 		A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */; };
 		A4E67AFB224B4D430002D127 /* WordListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E67AFA224B4D430002D127 /* WordListModel.swift */; };
+		A4EC5EB1236C6C9200F68002 /* MotorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC5EB0236C6C9200F68002 /* MotorModel.swift */; };
+		A4EC5EB3236C70F900F68002 /* TestModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC5EB2236C70F900F68002 /* TestModelProtocol.swift */; };
+		A4EC5EB6236C73F000F68002 /* Motor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4EC5EB5236C73F000F68002 /* Motor.storyboard */; };
+		A4EC5EB9236C751A00F68002 /* MotorTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC5EB8236C751A00F68002 /* MotorTaskViewController.swift */; };
+		A4EC5EBB236CB2C500F68002 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4EC5EBA236CB2C500F68002 /* GoogleService-Info.plist */; };
 		A4EDC009229D3F25006B8C53 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EDC008229D3F25006B8C53 /* DashboardViewController.swift */; };
 		A4EDC00B229D4A69006B8C53 /* SelectTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EDC00A229D4A69006B8C53 /* SelectTestViewController.swift */; };
 		A4F067AF21E3E28A00ECEF6F /* TestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */; };
@@ -426,6 +441,10 @@
 		A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionInstructionsViewController.swift; sourceTree = "<group>"; };
 		A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveStepViewController.swift; sourceTree = "<group>"; };
 		A42041F721E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionExamplesViewController.swift; sourceTree = "<group>"; };
+		A43781842373597400EC5717 /* MotorInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorInstructionsViewController.swift; sourceTree = "<group>"; };
+		A43781862373598B00EC5717 /* MotorInstructions2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorInstructions2ViewController.swift; sourceTree = "<group>"; };
+		A4378188237359A200EC5717 /* MotorInstructions3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorInstructions3ViewController.swift; sourceTree = "<group>"; };
+		A437818A237359BF00EC5717 /* MotorDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorDoneViewController.swift; sourceTree = "<group>"; };
 		A4396F0F223C142B009B1EDC /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
 		A44669311E1631A600EA7E2E /* ListenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenButton.swift; sourceTree = "<group>"; };
 		A44669331E16435C00EA7E2E /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
@@ -477,6 +496,12 @@
 		A4681DFD235898B3006E5761 /* ComprehensionTaskInstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprehensionTaskInstructionViewController.swift; sourceTree = "<group>"; };
 		A46A2C631DD66108000AC66C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		A472B8C02371AC0A009D8E91 /* MotorTask2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorTask2ViewController.swift; sourceTree = "<group>"; };
+		A472B8C22371ACA1009D8E91 /* MotorTask3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorTask3ViewController.swift; sourceTree = "<group>"; };
+		A472B8C42371ACE4009D8E91 /* MotorTask4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorTask4ViewController.swift; sourceTree = "<group>"; };
+		A472B8C62371ACF5009D8E91 /* MotorTask5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorTask5ViewController.swift; sourceTree = "<group>"; };
+		A472B8C82371AD0A009D8E91 /* MotorTask6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorTask6ViewController.swift; sourceTree = "<group>"; };
+		A472B8CA2373318F009D8E91 /* MotorTapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorTapView.swift; sourceTree = "<group>"; };
 		A47E664322B262B200B5B7B5 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		A47E664522C07FF300B5B7B5 /* ParticipantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsTableViewController.swift; sourceTree = "<group>"; };
 		A47E664722C0846E00B5B7B5 /* ParticipantDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantDTO.swift; sourceTree = "<group>"; };
@@ -829,6 +854,11 @@
 		A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOrder.swift; sourceTree = "<group>"; };
 		A4E67AFA224B4D430002D127 /* WordListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListModel.swift; sourceTree = "<group>"; };
+		A4EC5EB0236C6C9200F68002 /* MotorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorModel.swift; sourceTree = "<group>"; };
+		A4EC5EB2236C70F900F68002 /* TestModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModelProtocol.swift; sourceTree = "<group>"; };
+		A4EC5EB5236C73F000F68002 /* Motor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Motor.storyboard; sourceTree = "<group>"; };
+		A4EC5EB8236C751A00F68002 /* MotorTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorTaskViewController.swift; sourceTree = "<group>"; };
+		A4EC5EBA236CB2C500F68002 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4EDC008229D3F25006B8C53 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		A4EDC00A229D4A69006B8C53 /* SelectTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTestViewController.swift; sourceTree = "<group>"; };
 		A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfig.swift; sourceTree = "<group>"; };
@@ -890,6 +920,7 @@
 				A4DE7DD522F664CA009EEA17 /* TrailMaking.storyboard */,
 				A49172F523107EBF004BDC80 /* RCFT4.storyboard */,
 				A49172FD2310BF92004BDC80 /* Comprehension.storyboard */,
+				A4EC5EB5236C73F000F68002 /* Motor.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -910,6 +941,7 @@
 		A42AB5C51D2DE0F4001387BB /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				A4EC5EB7236C745600F68002 /* Motor */,
 				A49172FF2310BFFB004BDC80 /* Comprehension */,
 				A49172F423107C9B004BDC80 /* RCFT4 */,
 				A4DE7DD722F665DE009EEA17 /* TrailMaking */,
@@ -931,20 +963,11 @@
 		A4476ED71D13B1A5002722B4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A4EC5EB4236C72CD00F68002 /* TestModels */,
 				A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */,
 				A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */,
-				A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */,
-				A48A12C521F74FE60044AF08 /* CancellationModel.swift */,
-				A4E67AFA224B4D430002D127 /* WordListModel.swift */,
 				A47E664722C0846E00B5B7B5 /* ParticipantDTO.swift */,
 				A47E664B22C09CAE00B5B7B5 /* Participant.swift */,
-				A47E665F22D1CE4F00B5B7B5 /* DigitSpanModel.swift */,
-				A4AAD21022E01C6A00D4D7CA /* StroopModel.swift */,
-				A48B1AFD22EF444C007A1E98 /* NamingTaskModel.swift */,
-				A4DE7DB222F62539009EEA17 /* ClockDrawingModel.swift */,
-				A4DE7DB622F63C77009EEA17 /* RCFTModel.swift */,
-				A4DE7DE622F8D931009EEA17 /* TrailMakingModel.swift */,
-				A4681DF923587928006E5761 /* ComprehensionModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1047,6 +1070,7 @@
 				A4DF9F241E08FBC90084EAF9 /* Localizable.strings */,
 				A48B4DD31CF9E7C700878928 /* Info.plist */,
 				A49C0F8A224C1D6C00094588 /* GoogleService-Info.plist */,
+				A4EC5EBA236CB2C500F68002 /* GoogleService-Info.plist */,
 				A48B4DCB1CF9E7C700878928 /* Embraced.xcdatamodeld */,
 				A41AE3C01DCA57150089231D /* Images.xcassets */,
 			);
@@ -1351,6 +1375,7 @@
 				A49173022310D1BB004BDC80 /* ComprehensionCollectionViewCell.swift */,
 				A49173032310D1BB004BDC80 /* ComprehensionCollectionViewCell.xib */,
 				A48DF976236096F3007B0CC2 /* CountdownView.swift */,
+				A472B8CA2373318F009D8E91 /* MotorTapView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1494,6 +1519,42 @@
 				A4DE7DE422F66703009EEA17 /* TrailMakingDoneViewController.swift */,
 			);
 			name = TrailMaking;
+			sourceTree = "<group>";
+		};
+		A4EC5EB4236C72CD00F68002 /* TestModels */ = {
+			isa = PBXGroup;
+			children = (
+				A4EC5EB2236C70F900F68002 /* TestModelProtocol.swift */,
+				A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */,
+				A48A12C521F74FE60044AF08 /* CancellationModel.swift */,
+				A4E67AFA224B4D430002D127 /* WordListModel.swift */,
+				A47E665F22D1CE4F00B5B7B5 /* DigitSpanModel.swift */,
+				A4AAD21022E01C6A00D4D7CA /* StroopModel.swift */,
+				A48B1AFD22EF444C007A1E98 /* NamingTaskModel.swift */,
+				A4DE7DB222F62539009EEA17 /* ClockDrawingModel.swift */,
+				A4DE7DB622F63C77009EEA17 /* RCFTModel.swift */,
+				A4DE7DE622F8D931009EEA17 /* TrailMakingModel.swift */,
+				A4681DF923587928006E5761 /* ComprehensionModel.swift */,
+				A4EC5EB0236C6C9200F68002 /* MotorModel.swift */,
+			);
+			name = TestModels;
+			sourceTree = "<group>";
+		};
+		A4EC5EB7236C745600F68002 /* Motor */ = {
+			isa = PBXGroup;
+			children = (
+				A43781842373597400EC5717 /* MotorInstructionsViewController.swift */,
+				A4EC5EB8236C751A00F68002 /* MotorTaskViewController.swift */,
+				A472B8C02371AC0A009D8E91 /* MotorTask2ViewController.swift */,
+				A43781862373598B00EC5717 /* MotorInstructions2ViewController.swift */,
+				A472B8C22371ACA1009D8E91 /* MotorTask3ViewController.swift */,
+				A472B8C42371ACE4009D8E91 /* MotorTask4ViewController.swift */,
+				A4378188237359A200EC5717 /* MotorInstructions3ViewController.swift */,
+				A472B8C62371ACF5009D8E91 /* MotorTask5ViewController.swift */,
+				A472B8C82371AD0A009D8E91 /* MotorTask6ViewController.swift */,
+				A437818A237359BF00EC5717 /* MotorDoneViewController.swift */,
+			);
+			name = Motor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1665,6 +1726,7 @@
 				A4CA148622031BFC00F6CF0A /* ENG-FWD-01.mp3 in Resources */,
 				A4CA149C22031C1900F6CF0A /* SPA-BWD-05.mp3 in Resources */,
 				A4969D1421E544C10063FF40 /* DigitSpan.storyboard in Resources */,
+				A4EC5EB6236C73F000F68002 /* Motor.storyboard in Resources */,
 				A4681DF62355FBA1006E5761 /* TOKEN-SPA-18.mp3 in Resources */,
 				A48A12F121FA4BF60044AF08 /* melodies 320ms diff(66).wav in Resources */,
 				A4CA157E220321E100F6CF0A /* ENG-PRACTICE-BWD.mp3 in Resources */,
@@ -1769,6 +1831,7 @@
 				A48A12DD21FA4BC00044AF08 /* melodies 320ms diff(62).wav in Resources */,
 				A4CA157B22031EBE00F6CF0A /* SPA-29.mp3 in Resources */,
 				A48A12E621FA4BD10044AF08 /* melodies 320ms diff(52).wav in Resources */,
+				A4EC5EBB236CB2C500F68002 /* GoogleService-Info.plist in Resources */,
 				A48A12F621FA4BFD0044AF08 /* melodies 320ms orig(51).wav in Resources */,
 				A48A132121FA4C620044AF08 /* melodies 320ms diff(45).wav in Resources */,
 				A48A130D21FA4C360044AF08 /* melodies 320ms orig(24).wav in Resources */,
@@ -1984,16 +2047,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				A47E665E22D1978000B5B7B5 /* DigitSpanTask2ViewController.swift in Sources */,
+				A4378189237359A200EC5717 /* MotorInstructions3ViewController.swift in Sources */,
 				A47E664822C0846E00B5B7B5 /* ParticipantDTO.swift in Sources */,
 				A47E664A22C095B800B5B7B5 /* DataDisplayViewController.swift in Sources */,
 				A47E666022D1CE4F00B5B7B5 /* DigitSpanModel.swift in Sources */,
 				A4FAB44A2256334500E6C68A /* NetworkManager.swift in Sources */,
+				A4EC5EB9236C751A00F68002 /* MotorTaskViewController.swift in Sources */,
+				A472B8C92371AD0A009D8E91 /* MotorTask6ViewController.swift in Sources */,
 				A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */,
 				A48A12C421F7414A0044AF08 /* CancellationDoneViewController.swift in Sources */,
 				A4DE7DA722F5DD98009EEA17 /* WordList2RecognitionViewController.swift in Sources */,
 				A4A991D422EAA19800DE3B83 /* StroopInstructions4ViewController.swift in Sources */,
 				A4DE7DE722F8D931009EEA17 /* TrailMakingModel.swift in Sources */,
 				A47E666E22D2D7CE00B5B7B5 /* StroopTaskViewController.swift in Sources */,
+				A472B8C52371ACE4009D8E91 /* MotorTask4ViewController.swift in Sources */,
 				A47E666A22D2BD5000B5B7B5 /* StroopPreTaskViewController.swift in Sources */,
 				A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
@@ -2004,6 +2071,8 @@
 				A4D7C7902269E394004BF326 /* WordListDoneViewController.swift in Sources */,
 				A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */,
 				A49173012310C020004BDC80 /* ComprehensionTaskViewController.swift in Sources */,
+				A43781872373598B00EC5717 /* MotorInstructions2ViewController.swift in Sources */,
+				A437818B237359BF00EC5717 /* MotorDoneViewController.swift in Sources */,
 				A47E664C22C09CAE00B5B7B5 /* Participant.swift in Sources */,
 				A4DE7DAF22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift in Sources */,
 				A4DE7DE522F66703009EEA17 /* TrailMakingDoneViewController.swift in Sources */,
@@ -2014,6 +2083,7 @@
 				A4DE7DC922F65DCE009EEA17 /* RCFT2TaskViewController.swift in Sources */,
 				A4681DFC23589595006E5761 /* ComprehensionTaskDoneViewController.swift in Sources */,
 				A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */,
+				A472B8C72371ACF5009D8E91 /* MotorTask5ViewController.swift in Sources */,
 				A4EDC009229D3F25006B8C53 /* DashboardViewController.swift in Sources */,
 				A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */,
 				A48BA73B230D506F00C0D34B /* CanvasView.swift in Sources */,
@@ -2041,10 +2111,12 @@
 				A4A991DC22EAA3CC00DE3B83 /* StroopPreTask4ViewController.swift in Sources */,
 				A47E665622CFD31C00B5B7B5 /* MelodyRecognitionTaskViewController.swift in Sources */,
 				A48B1AF222EF3CD4007A1E98 /* NamingTaskAudioTestViewController.swift in Sources */,
+				A472B8CB2373318F009D8E91 /* MotorTapView.swift in Sources */,
 				A42041F121E1D09E00021EDB /* InstructionsViewController.swift in Sources */,
 				A48D60F41FF704D60042FBCA /* UserCollectionViewCell.swift in Sources */,
 				A4DE7DE322F666E6009EEA17 /* TrailMakingTask2ViewController.swift in Sources */,
 				A4969D3721F276210063FF40 /* CancellationBlockViewController.swift in Sources */,
+				A472B8C12371AC0A009D8E91 /* MotorTask2ViewController.swift in Sources */,
 				A47E665A22D1975300B5B7B5 /* DigitSpanTaskViewController.swift in Sources */,
 				A4DE7DBA22F63E92009EEA17 /* RCFTInstructionsViewController.swift in Sources */,
 				A4DE7DBC22F641F9009EEA17 /* RCFTPracticeViewController.swift in Sources */,
@@ -2057,6 +2129,7 @@
 				A4DE7DDD22F6667E009EEA17 /* TrailMakingTaskViewController.swift in Sources */,
 				A4DE7DCB22F65DDF009EEA17 /* RCFT2DoneViewController.swift in Sources */,
 				A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */,
+				A43781852373597400EC5717 /* MotorInstructionsViewController.swift in Sources */,
 				A4969D2521E7DA340063FF40 /* CancellationInstructions2ViewController.swift in Sources */,
 				A4969D1B21E67B960063FF40 /* AudioPlaybackViewController.swift in Sources */,
 				A4DE7DB722F63C77009EEA17 /* RCFTModel.swift in Sources */,
@@ -2068,6 +2141,7 @@
 				A4DDA8D3225E828F0000395D /* WordListInstructionsViewController.swift in Sources */,
 				A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */,
 				A4AAD21122E01C6A00D4D7CA /* StroopModel.swift in Sources */,
+				A4EC5EB1236C6C9200F68002 /* MotorModel.swift in Sources */,
 				A47E664622C07FF300B5B7B5 /* ParticipantsTableViewController.swift in Sources */,
 				A4969D2121E7D7E90063FF40 /* CancellationInstructionsViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
@@ -2075,6 +2149,7 @@
 				A42041F821E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift in Sources */,
 				A4DE7DDF22F666A6009EEA17 /* TrailMakingInstructions2ViewController.swift in Sources */,
 				A4A991DA22EAA3A700DE3B83 /* StroopPreTask3ViewController.swift in Sources */,
+				A472B8C32371ACA1009D8E91 /* MotorTask3ViewController.swift in Sources */,
 				A49172FC23108098004BDC80 /* RCFT4TaskViewController.swift in Sources */,
 				A48B1AF622EF40CD007A1E98 /* NamingTaskPracticeViewController.swift in Sources */,
 				A48B1AF422EF3F1F007A1E98 /* NamingTaskInstructionsViewController.swift in Sources */,
@@ -2085,6 +2160,7 @@
 				A4A991E022EAA4AC00DE3B83 /* StroopTask3ViewController.swift in Sources */,
 				A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */,
 				A4DE7DD922F6663B009EEA17 /* TrailMakingInstructionsViewController.swift in Sources */,
+				A4EC5EB3236C70F900F68002 /* TestModelProtocol.swift in Sources */,
 				A4969D2921E7F6B50063FF40 /* CancellationPracticeViewController.swift in Sources */,
 				A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */,
 				A49172F82310800B004BDC80 /* RCFT4InstructionsViewController.swift in Sources */,
@@ -2257,7 +2333,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -2278,7 +2354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
