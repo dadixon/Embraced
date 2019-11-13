@@ -86,6 +86,10 @@ class TestConfig {
                     if let vc = UIStoryboard(name: "Comprehension", bundle: nil).instantiateViewController(withIdentifier: "ComprehensionTest") as? ComprehensionTaskInstructionViewController {
                         self.testList.append(vc)
                     }
+                case "Eyes Test":
+                    if let vc = UIStoryboard(name: "Eyes", bundle: nil).instantiateViewController(withIdentifier: "EyesTest") as? EyesTaskInstructionViewController {
+                        self.testList.append(vc)
+                    }
                 default:
                     continue
             }

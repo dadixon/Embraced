@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RCFTModel {
+class RCFTModel: TestModelProtocol {
     static let shared = RCFTModel()
     
     var file_1: String?
@@ -21,7 +21,7 @@ class RCFTModel {
     
     private init() {}
     
-    func printModel() -> [String: Any] {
+    func getModel() -> [String: Any] {
         var rv = [String: Any]()
         
         rv["RCFT_time_1"] = time_1
@@ -36,5 +36,15 @@ class RCFTModel {
         }
         
         return rv
+    }
+    
+    func reset() {
+        file_1 = ""
+        file_2 = ""
+        file_3 = ""
+        time_1 = 0
+        time_2 = 0
+        time_3 = 0
+        answers = [String: Bool]()
     }
 }

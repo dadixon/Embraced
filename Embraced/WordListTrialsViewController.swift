@@ -292,7 +292,7 @@ class WordListTrialsViewController: ActiveStepViewController {
                         }
                         
                         FirebaseStorageManager.shared.addDataToDocument(payload: [
-                            "wordList": WordListModel.shared.printModel()
+                            "wordList": WordListModel.shared.getModel()
                         ])
                         
                         self.nextBtn.isHidden = false

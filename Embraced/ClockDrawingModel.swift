@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ClockDrawingModel {
+class ClockDrawingModel: TestModelProtocol {
     static let shared = ClockDrawingModel()
     
     var file: String?
@@ -16,12 +16,17 @@ class ClockDrawingModel {
     
     private init() {}
     
-    func printModel() -> [String: Any] {
+    func getModel() -> [String: Any] {
         var rv = [String: Any]()
         
         rv["CLOCK_file"] = file
         rv["CLOCK_time"] = time
 
         return rv
+    }
+    
+    func reset() {
+        file = ""
+        time = 0
     }
 }

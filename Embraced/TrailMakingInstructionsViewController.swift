@@ -15,7 +15,7 @@ class TrailMakingInstructionsViewController: InstructionsViewController {
 
         orientation = .portrait
         rotateOrientation = .portrait
-        
+                
         instructionsLabel.text = "trailMaking_instructions".localized(lang: language)
         
         nextBtn.setTitle("Next".localized(lang: language), for: .normal)

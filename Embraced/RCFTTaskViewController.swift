@@ -114,7 +114,7 @@ class RCFTTaskViewController: ActiveStepViewController {
                         RCFTModel.shared.time_1 = self.reactionTime
                         
                         FirebaseStorageManager.shared.addDataToDocument(payload: [
-                            "rcft": RCFTModel.shared.printModel()
+                            "rcft": RCFTModel.shared.getModel()
                         ])
                         
                         Utility.deleteFile(filePath)

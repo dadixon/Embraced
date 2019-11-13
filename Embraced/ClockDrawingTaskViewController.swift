@@ -90,7 +90,7 @@ class ClockDrawingTaskViewController: ActiveStepViewController {
                         ClockDrawingModel.shared.time = self.reactionTime
                         
                         FirebaseStorageManager.shared.addDataToDocument(payload: [
-                            "clockDrawing": ClockDrawingModel.shared.printModel()
+                            "clockDrawing": ClockDrawingModel.shared.getModel()
                             ])
                         
                         self.performSegue(withIdentifier: "moveToDone", sender: nil)

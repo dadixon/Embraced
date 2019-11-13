@@ -167,7 +167,7 @@ class StroopTask3ViewController: ActiveStepViewController {
                         StroopModel.shared.rt_3 = self.reactionTime
                         
                         FirebaseStorageManager.shared.addDataToDocument(payload: [
-                            "stroop": StroopModel.shared.printModel()
+                            "stroop": StroopModel.shared.getModel()
                             ])
                         
                         self.nextBtn.isHidden = false

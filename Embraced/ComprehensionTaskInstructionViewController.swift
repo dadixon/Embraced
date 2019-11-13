@@ -15,7 +15,7 @@ class ComprehensionTaskInstructionViewController: InstructionsViewController {
 
         orientation = .portrait
         rotateOrientation = .portrait
-        
+                
         instructionsLabel.text = "comprehension_instructions".localized(lang: language)
         
         nextBtn.setTitle("Next".localized(lang: language), for: .normal)

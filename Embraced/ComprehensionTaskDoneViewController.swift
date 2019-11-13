@@ -17,7 +17,7 @@ class ComprehensionTaskDoneViewController: DoneStepViewController {
         rotateOrientation = .portrait
         
         FirebaseStorageManager.shared.addDataToDocument(payload: [
-            "comprehension": ComprehensionModel.shared.printModel()
+            "comprehension": ComprehensionModel.shared.getModel()
         ])
     }
 

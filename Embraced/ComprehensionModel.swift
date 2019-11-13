@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ComprehensionModel {
+class ComprehensionModel: TestModelProtocol {
     static let shared = ComprehensionModel()
     
     var answers = [String: [Int]]()
@@ -16,7 +16,7 @@ class ComprehensionModel {
         
     private init() {}
     
-    func printModel() -> [String: Any] {
+    func getModel() -> [String: Any] {
         var rv = [String: Any]()
         
         for answer in answers {
@@ -31,6 +31,11 @@ class ComprehensionModel {
         rv["COMPREHENSION_total"] = calculateCorrectAnswers()
         
         return rv
+    }
+    
+    func reset() {
+        answers = [String: [Int]]()
+        reactionTimes = [String: Int]()
     }
     
     private func calculateAverage() -> Double {

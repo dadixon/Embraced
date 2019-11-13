@@ -18,14 +18,14 @@ class Utility {
     
     static func fileExist(_ filename: String) -> Bool {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        let url = NSURL(fileURLWithPath: path)
-        let filePath = url.appendingPathComponent(filename)?.path
+        let url = URL(fileURLWithPath: path)
+        let filePath = url.appendingPathComponent(filename).path
         let fileManager = FileManager.default
-        if fileManager.fileExists(atPath: filePath!) {
-            print("FILE \(filename) AVAILABLE")
+        if fileManager.fileExists(atPath: filePath) {
+//            print("FILE \(filename) AVAILABLE")
             return true
         } else {
-            print("FILE \(filename) NOT AVAILABLE")
+//            print("FILE \(filename) NOT AVAILABLE")
         }
         
         return false

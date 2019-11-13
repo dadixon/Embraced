@@ -15,7 +15,7 @@ class RCFT3InstructionsViewController: InstructionsViewController {
 
         orientation = .landscapeLeft
         rotateOrientation = .landscapeLeft
-        
+                
         instructionsLabel.text = "rcft_3_instructions".localized(lang: language)
         
         nextBtn.setTitle("Next".localized(lang: language), for: .normal)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TrailMakingModel {
+class TrailMakingModel: TestModelProtocol {
     static let shared = TrailMakingModel()
     
     var file_1: String?
@@ -18,7 +18,7 @@ class TrailMakingModel {
     
     private init() {}
     
-    func printModel() -> [String: Any] {
+    func getModel() -> [String: Any] {
         var rv = [String: Any]()
         
         rv["TMTA_file_1"] = file_1
@@ -27,5 +27,12 @@ class TrailMakingModel {
         rv["TMTA_time_2"] = time_2
         
         return rv
+    }
+    
+    func reset() {
+        file_1 = ""
+        file_2 = ""
+        time_1 = 0
+        time_2 = 0
     }
 }

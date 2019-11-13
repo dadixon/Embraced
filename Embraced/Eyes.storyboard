@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Eyes Task Instruction View Controller-->
+        <scene sceneID="v4O-J4-Z6Y">
+            <objects>
+                <viewController storyboardIdentifier="EyesTest" id="Bsf-TN-xWB" customClass="EyesTaskInstructionViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vmJ-2V-ML1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="c2e-ZN-1Ep"/>
+                    </view>
+                    <connections>
+                        <segue destination="D2p-XO-BrT" kind="show" identifier="moveToTask" id="Km9-Mq-3bi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3h0-Pu-pY8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1186" y="147"/>
+        </scene>
+        <!--Eyes Task View Controller-->
+        <scene sceneID="uD9-5n-FvC">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="D2p-XO-BrT" customClass="EyesTaskViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CYW-k2-DKI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fMR-iu-eDu"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mbk-Vt-1uo"/>
+                    <connections>
+                        <segue destination="Rdb-YV-rJa" kind="show" identifier="moveToDone" id="2pr-JY-uEJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vWF-9c-Teu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-488" y="146"/>
+        </scene>
+        <!--Eyes Task Done View Controller-->
+        <scene sceneID="9Ur-ri-Ym3">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Rdb-YV-rJa" customClass="EyesTaskDoneViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZLu-if-Um1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hlv-8j-o8K"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zYg-0D-jZ2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TXO-eC-GLY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="194" y="146"/>
+        </scene>
+    </scenes>
+</document>

@@ -204,33 +204,10 @@ class NamingTaskTaskViewController: ActiveStepViewController {
                 
                 if let task = uploadTask {
                     task.observe(.success, handler: { snapshot in
-                        switch(self.index) {
-                        case 0: NamingTaskModel.shared.file_1 = filePath
-                        case 1: NamingTaskModel.shared.file_2 = filePath
-                        case 2: NamingTaskModel.shared.file_3 = filePath
-                        case 3: NamingTaskModel.shared.file_4 = filePath
-                        case 4: NamingTaskModel.shared.file_5 = filePath
-                        case 5: NamingTaskModel.shared.file_6 = filePath
-                        case 6: NamingTaskModel.shared.file_7 = filePath
-                        case 7: NamingTaskModel.shared.file_8 = filePath
-                        case 8: NamingTaskModel.shared.file_9 = filePath
-                        case 9: NamingTaskModel.shared.file_10 = filePath
-                        case 10: NamingTaskModel.shared.file_11 = filePath
-                        case 11: NamingTaskModel.shared.file_12 = filePath
-                        case 12: NamingTaskModel.shared.file_13 = filePath
-                        case 13: NamingTaskModel.shared.file_14 = filePath
-                        case 14: NamingTaskModel.shared.file_15 = filePath
-                        case 15: NamingTaskModel.shared.file_16 = filePath
-                        case 16: NamingTaskModel.shared.file_17 = filePath
-                        case 17: NamingTaskModel.shared.file_18 = filePath
-                        case 18: NamingTaskModel.shared.file_19 = filePath
-                        case 19: NamingTaskModel.shared.file_20 = filePath
-                        default:
-                            break
-                        }
+                        NamingTaskModel.shared.files.append([self.index + 1: filePath])
                         
                         FirebaseStorageManager.shared.addDataToDocument(payload: [
-                            "naming": NamingTaskModel.shared.printModel()
+                            "naming": NamingTaskModel.shared.getModel()
                         ])
                         
                         if !self.isStoring {
