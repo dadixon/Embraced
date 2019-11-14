@@ -31,4 +31,9 @@ class MotorModel: TestModelProtocol {
         
         return rv
     }
+    
+    func reset() {
+        dominants = [String: String]()
+        nondominants = [String: String]()
+    }
 }

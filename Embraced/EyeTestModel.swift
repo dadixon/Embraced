@@ -2,7 +2,7 @@
 //  EyeTestModel.swift
 //  Embraced
 //
-//  Created by Domonique Dixon on 11/13/19.
+//  Created by Domonique Dixon on 11/14/19.
 //  Copyright © 2019 Domonique Dixon. All rights reserved.
 //
 
@@ -16,6 +16,7 @@ class EyeTestModel: TestModelProtocol {
     private let answerKey = [
         4, 1, 3, 3, 4, 3, 1, 1, 4, 4, 1, 4, 1, 4, 4, 4, 1, 4, 3, 3, 1, 2, 1, 4, 1, 3, 4, 2, 3, 4, 1, 3, 4, 1, 4, 1, 1
     ]
+    
     private var totalCorrect = 0
     
     private init() {}

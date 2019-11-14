@@ -13,6 +13,9 @@
 		A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */; };
 		A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */; };
 		A42041F821E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F721E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift */; };
+		A43623DD237DB17B002AFB21 /* EyeTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43623DC237DB17B002AFB21 /* EyeTestModel.swift */; };
+		A43623E0237DB40C002AFB21 /* TestModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43623DF237DB40C002AFB21 /* TestModelProtocol.swift */; };
+		A43623E2237DB6F7002AFB21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A43623E1237DB6F7002AFB21 /* GoogleService-Info.plist */; };
 		A43781852373597400EC5717 /* MotorInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43781842373597400EC5717 /* MotorInstructionsViewController.swift */; };
 		A43781872373598B00EC5717 /* MotorInstructions2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43781862373598B00EC5717 /* MotorInstructions2ViewController.swift */; };
 		A4378189237359A200EC5717 /* MotorInstructions3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4378188237359A200EC5717 /* MotorInstructions3ViewController.swift */; };
@@ -23,12 +26,9 @@
 		A44669381E16457600EA7E2E /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669371E16457600EA7E2E /* RecordButton.swift */; };
 		A46230192379EE90000F8ABC /* Eyes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A46230182379EE90000F8ABC /* Eyes.storyboard */; };
 		A462301C2379EF09000F8ABC /* EyesTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A462301B2379EF09000F8ABC /* EyesTaskViewController.swift */; };
-		A462301E2379F1E8000F8ABC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A462301D2379F1E8000F8ABC /* GoogleService-Info.plist */; };
 		A4623021237B37BC000F8ABC /* EyesTestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A462301F237B37BC000F8ABC /* EyesTestCollectionViewCell.swift */; };
 		A4623022237B37BC000F8ABC /* EyesTestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4623020237B37BC000F8ABC /* EyesTestCollectionViewCell.xib */; };
-		A4623026237C4014000F8ABC /* EyeTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4623025237C4014000F8ABC /* EyeTestModel.swift */; };
 		A4623028237C49F2000F8ABC /* EyesTaskDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4623027237C49F2000F8ABC /* EyesTaskDoneViewController.swift */; };
-		A462302A237C5E90000F8ABC /* TestModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4623029237C5E90000F8ABC /* TestModelProtocol.swift */; };
 		A462302D237C99B6000F8ABC /* EyesTaskInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A462302C237C99B6000F8ABC /* EyesTaskInstructionViewController.swift */; };
 		A4681DBA2355FB8E006E5761 /* TOKEN-ENG-02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DA52355FB86006E5761 /* TOKEN-ENG-02.mp3 */; };
 		A4681DBB2355FB8E006E5761 /* TOKEN-ENG-12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DA62355FB86006E5761 /* TOKEN-ENG-12.mp3 */; };
@@ -428,10 +428,8 @@
 		A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */; };
 		A4E67AFB224B4D430002D127 /* WordListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E67AFA224B4D430002D127 /* WordListModel.swift */; };
 		A4EC5EB1236C6C9200F68002 /* MotorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC5EB0236C6C9200F68002 /* MotorModel.swift */; };
-		A4EC5EB3236C70F900F68002 /* TestModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC5EB2236C70F900F68002 /* TestModelProtocol.swift */; };
 		A4EC5EB6236C73F000F68002 /* Motor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4EC5EB5236C73F000F68002 /* Motor.storyboard */; };
 		A4EC5EB9236C751A00F68002 /* MotorTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC5EB8236C751A00F68002 /* MotorTaskViewController.swift */; };
-		A4EC5EBB236CB2C500F68002 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4EC5EBA236CB2C500F68002 /* GoogleService-Info.plist */; };
 		A4EDC009229D3F25006B8C53 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EDC008229D3F25006B8C53 /* DashboardViewController.swift */; };
 		A4EDC00B229D4A69006B8C53 /* SelectTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EDC00A229D4A69006B8C53 /* SelectTestViewController.swift */; };
 		A4F067AF21E3E28A00ECEF6F /* TestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */; };
@@ -449,6 +447,9 @@
 		A42041F321E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionInstructionsViewController.swift; sourceTree = "<group>"; };
 		A42041F521E1EFE100021EDB /* ActiveStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveStepViewController.swift; sourceTree = "<group>"; };
 		A42041F721E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionExamplesViewController.swift; sourceTree = "<group>"; };
+		A43623DC237DB17B002AFB21 /* EyeTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTestModel.swift; sourceTree = "<group>"; };
+		A43623DF237DB40C002AFB21 /* TestModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModelProtocol.swift; sourceTree = "<group>"; };
+		A43623E1237DB6F7002AFB21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A43781842373597400EC5717 /* MotorInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorInstructionsViewController.swift; sourceTree = "<group>"; };
 		A43781862373598B00EC5717 /* MotorInstructions2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorInstructions2ViewController.swift; sourceTree = "<group>"; };
 		A4378188237359A200EC5717 /* MotorInstructions3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorInstructions3ViewController.swift; sourceTree = "<group>"; };
@@ -459,7 +460,6 @@
 		A44669371E16457600EA7E2E /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		A46230182379EE90000F8ABC /* Eyes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Eyes.storyboard; sourceTree = "<group>"; };
 		A462301B2379EF09000F8ABC /* EyesTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyesTaskViewController.swift; sourceTree = "<group>"; };
-		A462301D2379F1E8000F8ABC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A462301F237B37BC000F8ABC /* EyesTestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyesTestCollectionViewCell.swift; sourceTree = "<group>"; };
 		A4623020237B37BC000F8ABC /* EyesTestCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EyesTestCollectionViewCell.xib; sourceTree = "<group>"; };
 		A4623025237C4014000F8ABC /* EyeTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTestModel.swift; sourceTree = "<group>"; };
@@ -871,7 +871,6 @@
 		A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOrder.swift; sourceTree = "<group>"; };
 		A4E67AFA224B4D430002D127 /* WordListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListModel.swift; sourceTree = "<group>"; };
 		A4EC5EB0236C6C9200F68002 /* MotorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorModel.swift; sourceTree = "<group>"; };
-		A4EC5EB2236C70F900F68002 /* TestModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModelProtocol.swift; sourceTree = "<group>"; };
 		A4EC5EB5236C73F000F68002 /* Motor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Motor.storyboard; sourceTree = "<group>"; };
 		A4EC5EB8236C751A00F68002 /* MotorTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorTaskViewController.swift; sourceTree = "<group>"; };
 		A4EC5EBA236CB2C500F68002 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -978,6 +977,16 @@
 			name = Test;
 			sourceTree = "<group>";
 		};
+		A43623D7237DABF6002AFB21 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				A4623025237C4014000F8ABC /* EyeTestModel.swift */,
+				A4623029237C5E90000F8ABC /* TestModelProtocol.swift */,
+				A4EC5EBA236CB2C500F68002 /* GoogleService-Info.plist */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		A4476ED71D13B1A5002722B4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1019,25 +1028,6 @@
 				A4623027237C49F2000F8ABC /* EyesTaskDoneViewController.swift */,
 			);
 			name = EyesTest;
-			sourceTree = "<group>";
-		};
-		A462302B237C7478000F8ABC /* TestModels */ = {
-			isa = PBXGroup;
-			children = (
-				A4623029237C5E90000F8ABC /* TestModelProtocol.swift */,
-				A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */,
-				A48A12C521F74FE60044AF08 /* CancellationModel.swift */,
-				A4E67AFA224B4D430002D127 /* WordListModel.swift */,
-				A47E665F22D1CE4F00B5B7B5 /* DigitSpanModel.swift */,
-				A4AAD21022E01C6A00D4D7CA /* StroopModel.swift */,
-				A48B1AFD22EF444C007A1E98 /* NamingTaskModel.swift */,
-				A4DE7DB222F62539009EEA17 /* ClockDrawingModel.swift */,
-				A4DE7DB622F63C77009EEA17 /* RCFTModel.swift */,
-				A4DE7DE622F8D931009EEA17 /* TrailMakingModel.swift */,
-				A4681DF923587928006E5761 /* ComprehensionModel.swift */,
-				A4623025237C4014000F8ABC /* EyeTestModel.swift */,
-			);
-			name = TestModels;
 			sourceTree = "<group>";
 		};
 		A47E666322D2BAB100B5B7B5 /* ClockDrawing */ = {
@@ -1092,6 +1082,7 @@
 				A48B4DC21CF9E7C600878928 /* Products */,
 				9F664F21C975BFC088CC91BB /* Pods */,
 				A191B101E7F37A99531AAB47 /* Frameworks */,
+				A43623D7237DABF6002AFB21 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1116,7 +1107,7 @@
 				A48B4DCE1CF9E7C700878928 /* Assets.xcassets */,
 				A4DF9F241E08FBC90084EAF9 /* Localizable.strings */,
 				A48B4DD31CF9E7C700878928 /* Info.plist */,
-				A462301D2379F1E8000F8ABC /* GoogleService-Info.plist */,
+				A43623E1237DB6F7002AFB21 /* GoogleService-Info.plist */,
 				A48B4DCB1CF9E7C700878928 /* Embraced.xcdatamodeld */,
 				A41AE3C01DCA57150089231D /* Images.xcassets */,
 			);
@@ -1572,7 +1563,7 @@
 		A4EC5EB4236C72CD00F68002 /* TestModels */ = {
 			isa = PBXGroup;
 			children = (
-				A4EC5EB2236C70F900F68002 /* TestModelProtocol.swift */,
+				A43623DF237DB40C002AFB21 /* TestModelProtocol.swift */,
 				A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */,
 				A48A12C521F74FE60044AF08 /* CancellationModel.swift */,
 				A4E67AFA224B4D430002D127 /* WordListModel.swift */,
@@ -1584,6 +1575,7 @@
 				A4DE7DE622F8D931009EEA17 /* TrailMakingModel.swift */,
 				A4681DF923587928006E5761 /* ComprehensionModel.swift */,
 				A4EC5EB0236C6C9200F68002 /* MotorModel.swift */,
+				A43623DC237DB17B002AFB21 /* EyeTestModel.swift */,
 			);
 			name = TestModels;
 			sourceTree = "<group>";
@@ -1709,6 +1701,7 @@
 				A4CA14FF22031E9D00F6CF0A /* ENG-32.mp3 in Resources */,
 				A4681DF82355FBA1006E5761 /* TOKEN-SPA-15.mp3 in Resources */,
 				A4CA151F22031E9D00F6CF0A /* ENG-38.mp3 in Resources */,
+				A43623E2237DB6F7002AFB21 /* GoogleService-Info.plist in Resources */,
 				A4681DF72355FBA1006E5761 /* TOKEN-SPA-14.mp3 in Resources */,
 				A4C3288220815CD600DEC460 /* STROOP_SPA_TASK1.mp4 in Resources */,
 				A4CA146622031BEE00F6CF0A /* ENG-BWD-06.mp3 in Resources */,
@@ -1880,7 +1873,6 @@
 				A48A12DD21FA4BC00044AF08 /* melodies 320ms diff(62).wav in Resources */,
 				A4CA157B22031EBE00F6CF0A /* SPA-29.mp3 in Resources */,
 				A48A12E621FA4BD10044AF08 /* melodies 320ms diff(52).wav in Resources */,
-				A4EC5EBB236CB2C500F68002 /* GoogleService-Info.plist in Resources */,
 				A48A12F621FA4BFD0044AF08 /* melodies 320ms orig(51).wav in Resources */,
 				A48A132121FA4C620044AF08 /* melodies 320ms diff(45).wav in Resources */,
 				A48A130D21FA4C360044AF08 /* melodies 320ms orig(24).wav in Resources */,
@@ -1890,7 +1882,6 @@
 				A4CA146C22031BEE00F6CF0A /* ENG-BWD-13.mp3 in Resources */,
 				A4CA156922031EBE00F6CF0A /* SPA-06.mp3 in Resources */,
 				A4CA146122031BEE00F6CF0A /* ENG-BWD-09.mp3 in Resources */,
-				A462301E2379F1E8000F8ABC /* GoogleService-Info.plist in Resources */,
 				A4DE7DB522F63B34009EEA17 /* RCFT.storyboard in Resources */,
 				A4CA150C22031E9D00F6CF0A /* ENG-03.mp3 in Resources */,
 				A4CA157622031EBE00F6CF0A /* SPA-32.mp3 in Resources */,
@@ -2106,12 +2097,12 @@
 				A472B8C92371AD0A009D8E91 /* MotorTask6ViewController.swift in Sources */,
 				A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */,
 				A48A12C421F7414A0044AF08 /* CancellationDoneViewController.swift in Sources */,
-				A4623026237C4014000F8ABC /* EyeTestModel.swift in Sources */,
 				A4DE7DA722F5DD98009EEA17 /* WordList2RecognitionViewController.swift in Sources */,
 				A4A991D422EAA19800DE3B83 /* StroopInstructions4ViewController.swift in Sources */,
 				A4DE7DE722F8D931009EEA17 /* TrailMakingModel.swift in Sources */,
 				A47E666E22D2D7CE00B5B7B5 /* StroopTaskViewController.swift in Sources */,
 				A472B8C52371ACE4009D8E91 /* MotorTask4ViewController.swift in Sources */,
+				A43623E0237DB40C002AFB21 /* TestModelProtocol.swift in Sources */,
 				A47E666A22D2BD5000B5B7B5 /* StroopPreTaskViewController.swift in Sources */,
 				A48B4DC71CF9E7C700878928 /* ViewController.swift in Sources */,
 				A48B4DCD1CF9E7C700878928 /* Embraced.xcdatamodeld in Sources */,
@@ -2133,6 +2124,7 @@
 				A48B1AF822EF40ED007A1E98 /* NamingTaskInstructions2ViewController.swift in Sources */,
 				A4DE7DC922F65DCE009EEA17 /* RCFT2TaskViewController.swift in Sources */,
 				A4681DFC23589595006E5761 /* ComprehensionTaskDoneViewController.swift in Sources */,
+				A43623DD237DB17B002AFB21 /* EyeTestModel.swift in Sources */,
 				A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */,
 				A472B8C72371ACF5009D8E91 /* MotorTask5ViewController.swift in Sources */,
 				A4EDC009229D3F25006B8C53 /* DashboardViewController.swift in Sources */,
@@ -2180,7 +2172,6 @@
 				A4A991DE22EAA45700DE3B83 /* StroopTask2ViewController.swift in Sources */,
 				A4DE7DA522F5DD77009EEA17 /* WordList2TaskViewController.swift in Sources */,
 				A4D7C78E2269E1CD004BF326 /* WordListTrialsViewController.swift in Sources */,
-				A462302A237C5E90000F8ABC /* TestModelProtocol.swift in Sources */,
 				A4DE7DDD22F6667E009EEA17 /* TrailMakingTaskViewController.swift in Sources */,
 				A4DE7DCB22F65DDF009EEA17 /* RCFT2DoneViewController.swift in Sources */,
 				A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */,
@@ -2216,7 +2207,6 @@
 				A4A991E022EAA4AC00DE3B83 /* StroopTask3ViewController.swift in Sources */,
 				A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */,
 				A4DE7DD922F6663B009EEA17 /* TrailMakingInstructionsViewController.swift in Sources */,
-				A4EC5EB3236C70F900F68002 /* TestModelProtocol.swift in Sources */,
 				A4969D2921E7F6B50063FF40 /* CancellationPracticeViewController.swift in Sources */,
 				A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */,
 				A49172F82310800B004BDC80 /* RCFT4InstructionsViewController.swift in Sources */,
@@ -2389,7 +2379,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 34;
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -2410,7 +2400,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 34;
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
