@@ -9,6 +9,10 @@
 import Foundation
 
 class ClockDrawingModel: TestModelProtocol {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> master
     static let shared = ClockDrawingModel()
     
     var file: String?
@@ -16,7 +20,11 @@ class ClockDrawingModel: TestModelProtocol {
     
     private init() {}
     
+<<<<<<< HEAD
     func getModel() -> [String: Any] {
+=======
+    func getModel() -> [String : Any] {
+>>>>>>> master
         var rv = [String: Any]()
         
         rv["CLOCK_file"] = file

@@ -936,8 +936,8 @@
 				A4DE7DD522F664CA009EEA17 /* TrailMaking.storyboard */,
 				A49172F523107EBF004BDC80 /* RCFT4.storyboard */,
 				A49172FD2310BF92004BDC80 /* Comprehension.storyboard */,
-				A4EC5EB5236C73F000F68002 /* Motor.storyboard */,
 				A46230182379EE90000F8ABC /* Eyes.storyboard */,
+				A4EC5EB5236C73F000F68002 /* Motor.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -958,8 +958,8 @@
 		A42AB5C51D2DE0F4001387BB /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				A4EC5EB7236C745600F68002 /* Motor */,
 				A462301A2379EEE0000F8ABC /* EyesTest */,
+				A4EC5EB7236C745600F68002 /* Motor */,
 				A49172FF2310BFFB004BDC80 /* Comprehension */,
 				A49172F423107C9B004BDC80 /* RCFT4 */,
 				A4DE7DD722F665DE009EEA17 /* TrailMaking */,
@@ -981,11 +981,11 @@
 		A4476ED71D13B1A5002722B4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A462302B237C7478000F8ABC /* TestModels */,
+				A4EC5EB4236C72CD00F68002 /* TestModels */,
 				A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */,
 				A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */,
-				A47E664B22C09CAE00B5B7B5 /* Participant.swift */,
 				A47E664722C0846E00B5B7B5 /* ParticipantDTO.swift */,
+				A47E664B22C09CAE00B5B7B5 /* Participant.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -2389,7 +2389,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -2410,7 +2410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 32;
+				CURRENT_PROJECT_VERSION = 33;
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;

@@ -147,7 +147,6 @@
 "motor_nondominant" = "Por favor, use solo su mano NO-DOMINANTE";
 "motor_instructions" = "En esta tarea usted va a ver un laberinto.\nSu objetivo será dibujar una línea continua a través de este laberinto pasando su dedo por las aberturas y sin tocar o pasar por encima de ninguna línea.\nEmpiece en la estrella y continúe a lo largo del laberinto tan lejos como pueda llegar.\nTendrá 15 segundos para llegar tan lejos como pueda.";
 "motor_2_instructions" = "En esta tarea usted va a ver muchos cuadrados.\nSu objetivo será tocar TRES VECES en cada cuadrado.\nEmpiece en el lado izquierdo de cada una de las líneas de cuadrados y muévase hacia la derecha.\nHágalo tan rápido como pueda.\nTendrá 15 segundos para llegar tan lejos como pueda.";
-
 "motor_3_instructions" = "En esta tarea usted va a ver muchos cuadrados.\nSu objetivo será tocar UNA SOLA VEZ en cada cuadrado.\nSiga la dirección marcada por las flechas y marque cada uno de los cuadrados conforme vaya avanzando.\nHágalo tan rápido como pueda.\nTendrá 15 segundos para llegar tan lejos como pueda.";
 
 // Eye Test
