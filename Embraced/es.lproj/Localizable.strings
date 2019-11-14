@@ -142,7 +142,13 @@
 "comprehension_instructions" = "Ahora usted va a ver diferentes formas de distintos tamaños y colores en la pantalla.\nEscuchará instrucciones para tocar una o más de estas formas.\nPor favor, escuche atentamente estas instrucciones porque solo las oirá una vez.";
 "comprehension_audio_button" = "Pulse aquí para oír la siguiente instrucción";
 
-<<<<<<< HEAD
+// Motor
+"motor_dominant" = "Por favor, use solo su mano DOMINANTE";
+"motor_nondominant" = "Por favor, use solo su mano NO-DOMINANTE";
+"motor_instructions" = "En esta tarea usted va a ver un laberinto.\nSu objetivo será dibujar una línea continua a través de este laberinto pasando su dedo por las aberturas y sin tocar o pasar por encima de ninguna línea.\nEmpiece en la estrella y continúe a lo largo del laberinto tan lejos como pueda llegar.\nTendrá 15 segundos para llegar tan lejos como pueda.";
+"motor_2_instructions" = "En esta tarea usted va a ver muchos cuadrados.\nSu objetivo será tocar TRES VECES en cada cuadrado.\nEmpiece en el lado izquierdo de cada una de las líneas de cuadrados y muévase hacia la derecha.\nHágalo tan rápido como pueda.\nTendrá 15 segundos para llegar tan lejos como pueda.";
+"motor_3_instructions" = "En esta tarea usted va a ver muchos cuadrados.\nSu objetivo será tocar UNA SOLA VEZ en cada cuadrado.\nSiga la dirección marcada por las flechas y marque cada uno de los cuadrados conforme vaya avanzando.\nHágalo tan rápido como pueda.\nTendrá 15 segundos para llegar tan lejos como pueda.";
+
 // Eye Test
 "accusing" = "ACCUSING";
 "accusing_def" = "blaming";
@@ -432,13 +438,3 @@
 "worried" = "WORRIED";
 "worried_def" = "anxious, fretful, troubled";
 "worried_example" = "When her cat went missing, the girl was very worried.";
-=======
-// Motor
-"motor_dominant" = "Por favor, use solo su mano DOMINANTE";
-"motor_nondominant" = "Por favor, use solo su mano NO-DOMINANTE";
-"motor_instructions" = "En esta tarea usted va a ver un laberinto.\nSu objetivo será dibujar una línea continua a través de este laberinto pasando su dedo por las aberturas y sin tocar o pasar por encima de ninguna línea.\nEmpiece en la estrella y continúe a lo largo del laberinto tan lejos como pueda llegar.\nTendrá 15 segundos para llegar tan lejos como pueda.";
-"motor_2_instructions" = "En esta tarea usted va a ver muchos cuadrados.\nSu objetivo será tocar TRES VECES en cada cuadrado.\nEmpiece en el lado izquierdo de cada una de las líneas de cuadrados y muévase hacia la derecha.\nHágalo tan rápido como pueda.\nTendrá 15 segundos para llegar tan lejos como pueda.";
-
-"motor_3_instructions" = "En esta tarea usted va a ver muchos cuadrados.\nSu objetivo será tocar UNA SOLA VEZ en cada cuadrado.\nSiga la dirección marcada por las flechas y marque cada uno de los cuadrados conforme vaya avanzando.\nHágalo tan rápido como pueda.\nTendrá 15 segundos para llegar tan lejos como pueda.";
-
->>>>>>> master

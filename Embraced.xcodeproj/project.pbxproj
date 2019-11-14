@@ -936,11 +936,8 @@
 				A4DE7DD522F664CA009EEA17 /* TrailMaking.storyboard */,
 				A49172F523107EBF004BDC80 /* RCFT4.storyboard */,
 				A49172FD2310BF92004BDC80 /* Comprehension.storyboard */,
-<<<<<<< HEAD
 				A46230182379EE90000F8ABC /* Eyes.storyboard */,
-=======
 				A4EC5EB5236C73F000F68002 /* Motor.storyboard */,
->>>>>>> master
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -961,11 +958,8 @@
 		A42AB5C51D2DE0F4001387BB /* Test */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				A462301A2379EEE0000F8ABC /* EyesTest */,
-=======
 				A4EC5EB7236C745600F68002 /* Motor */,
->>>>>>> master
 				A49172FF2310BFFB004BDC80 /* Comprehension */,
 				A49172F423107C9B004BDC80 /* RCFT4 */,
 				A4DE7DD722F665DE009EEA17 /* TrailMaking */,
@@ -987,19 +981,11 @@
 		A4476ED71D13B1A5002722B4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				A462302B237C7478000F8ABC /* TestModels */,
-				A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */,
-				A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */,
-				A47E664B22C09CAE00B5B7B5 /* Participant.swift */,
-				A47E664722C0846E00B5B7B5 /* ParticipantDTO.swift */,
-=======
 				A4EC5EB4236C72CD00F68002 /* TestModels */,
 				A4DB0FB31DFB2CA1000811B6 /* DataManager.swift */,
 				A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */,
 				A47E664722C0846E00B5B7B5 /* ParticipantDTO.swift */,
 				A47E664B22C09CAE00B5B7B5 /* Participant.swift */,
->>>>>>> master
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1130,12 +1116,7 @@
 				A48B4DCE1CF9E7C700878928 /* Assets.xcassets */,
 				A4DF9F241E08FBC90084EAF9 /* Localizable.strings */,
 				A48B4DD31CF9E7C700878928 /* Info.plist */,
-<<<<<<< HEAD
 				A462301D2379F1E8000F8ABC /* GoogleService-Info.plist */,
-=======
-				A49C0F8A224C1D6C00094588 /* GoogleService-Info.plist */,
-				A4EC5EBA236CB2C500F68002 /* GoogleService-Info.plist */,
->>>>>>> master
 				A48B4DCB1CF9E7C700878928 /* Embraced.xcdatamodeld */,
 				A41AE3C01DCA57150089231D /* Images.xcassets */,
 			);
@@ -1440,12 +1421,9 @@
 				A49173022310D1BB004BDC80 /* ComprehensionCollectionViewCell.swift */,
 				A49173032310D1BB004BDC80 /* ComprehensionCollectionViewCell.xib */,
 				A48DF976236096F3007B0CC2 /* CountdownView.swift */,
-<<<<<<< HEAD
+				A472B8CA2373318F009D8E91 /* MotorTapView.swift */,
 				A462301F237B37BC000F8ABC /* EyesTestCollectionViewCell.swift */,
 				A4623020237B37BC000F8ABC /* EyesTestCollectionViewCell.xib */,
-=======
-				A472B8CA2373318F009D8E91 /* MotorTapView.swift */,
->>>>>>> master
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -2411,11 +2389,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-<<<<<<< HEAD
 				CURRENT_PROJECT_VERSION = 33;
-=======
-				CURRENT_PROJECT_VERSION = 32;
->>>>>>> master
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -2436,11 +2410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-<<<<<<< HEAD
 				CURRENT_PROJECT_VERSION = 33;
-=======
-				CURRENT_PROJECT_VERSION = 32;
->>>>>>> master
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
