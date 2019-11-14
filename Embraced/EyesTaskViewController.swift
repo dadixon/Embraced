@@ -152,7 +152,6 @@ extension EyesTaskViewController: UICollectionViewDelegate {
         selectedAnswersIndexPath = indexPath
         nextBtn.isHidden = false
         
-        print(selectedAnswer)
         return true
     }
     
