@@ -60,6 +60,7 @@
 "WrongUsernamePassword" = "Wrong username and password";
 "English" = "English";
 "Spanish" = "Español";
+"second(s)" = "second(s)";
 
 "WELCOME_TEXT" = "We are going to be asking you some questions about yourself.\nPlease remember that you are free to skip any question that may bother you, although we kindly ask you to complete as much of this questionnaire as possible.\nThank you for your participation";
 "AUDIO_VIEW_CONTROLLER_INSTRUCTIONS" = "Please, practice how to record your voice using the START and DONE buttons below.";
@@ -143,6 +144,7 @@
 "comprehension_instructions" = "Next, you will see different shapes of different sizes and colors on the screen.\nYou will hear instructions to touch one or more of those shapes.\nPlease listen carefully as the instructions will not be repeated";
 "comprehension_audio_button" = "Click here for the Question";
 
+<<<<<<< HEAD
 // Eye Test
 "eyeTask_instructions" = "In the next task you will be seeing different images of eyes sets.\nFor each set of eyes, please choose which word best describes what the person in the picture is thinking or feeling.\nYou may feel that more than one word is applicable but please choose just one word, the word that you consider to be most suitable.\nBefore making your choice, make sure that you have read all 4 words.\nYou should try to do the task as quickly as possible but you will not be timed.\nIf you really do not know what a word means please check the information button.";
 "accusing" = "ACCUSING";
@@ -433,3 +435,11 @@
 "worried" = "WORRIED";
 "worried_def" = "anxious, fretful, troubled";
 "worried_example" = "When her cat went missing, the girl was very worried.";
+=======
+// Motor
+"motor_dominant" = "Please only use your DOMINANT hand";
+"motor_nondominant" = "Please only use your NON-DOMINANT hand";
+"motor_instructions" = "In this task you will see a maze.\nYour goal will be to draw a continuous line through this maze passing through the openings and without crossing or touching any line.\nBegin at the STAR and continue through the maze as far as you can.\nYou have 15 seconds to get as far as you can.";
+"motor_2_instructions" = "In this task you will see several squares.\nYour goal will be to tap with your finger THREE TIMES in each square.\nStart on the left side of each row of squares and move towards the right.\nDo this as quickly as you can.\nYou have 15 seconds to get as far as you can.";
+"motor_3_instructions" = "In this task you will see several squares.\nYour goal will be to tap with your finger ONLY ONCE in each square.\nFollow the arrows and tap each square as you go.\nDo this as quickly as you can.\nYou have 15 seconds to get as far as you can.";
+>>>>>>> master

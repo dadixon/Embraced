@@ -502,7 +502,7 @@ Thank you for your participation</string>
         <!--View Controller-->
         <scene sceneID="CFD-Ok-qu8">
             <objects>
-                <viewController id="Vj3-kp-PDD" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Vj3-kp-PDD" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="24x-oU-bWq"/>
                         <viewControllerLayoutGuide type="bottom" id="SXO-f1-eJq"/>
@@ -564,7 +564,7 @@ Thank you for your participation</string>
                                 <rect key="frame" x="0.0" y="28" width="375" height="51.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uhe-iS-i5y" id="tQt-up-6QH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

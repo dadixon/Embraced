@@ -31,6 +31,9 @@ class ClockDrawingTaskViewController: ActiveStepViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        orientation = .portrait
+        rotateOrientation = .portrait
+        
         nextBtn.setTitle("Next".localized(lang: language), for: .normal)
         nextBtn.addTarget(self, action: #selector(moveOn), for: .touchUpInside)
         nextBtn.isHidden = true
@@ -91,7 +94,11 @@ class ClockDrawingTaskViewController: ActiveStepViewController {
                         
                         FirebaseStorageManager.shared.addDataToDocument(payload: [
                             "clockDrawing": ClockDrawingModel.shared.getModel()
+<<<<<<< HEAD
                             ])
+=======
+                        ])
+>>>>>>> master
                         
                         self.performSegue(withIdentifier: "moveToDone", sender: nil)
                         

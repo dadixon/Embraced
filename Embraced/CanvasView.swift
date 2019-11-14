@@ -10,13 +10,15 @@ import UIKit
 
 class CanvasView: UIImageView {
 
-    var lastPoint = CGPoint.zero
+    private var lastPoint = CGPoint.zero
+    private var swiped = false
+    
     var red: CGFloat = 0.0
     var green: CGFloat = 0.0
     var blue: CGFloat = 0.0
     var brushWidth: CGFloat = 10.0
     var opacity: CGFloat = 1.0
-    var swiped = false
+    
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         swiped = false
