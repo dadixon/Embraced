@@ -17,7 +17,7 @@ class WordList2DoneViewController: DoneStepViewController {
         rotateOrientation = .landscapeLeft
         
         FirebaseStorageManager.shared.addDataToDocument(payload: [
-            "wordList": WordListModel.shared.printModel()
+            "wordList": WordListModel.shared.getModel()
         ])
     }
 

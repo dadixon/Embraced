@@ -8,7 +8,7 @@
 
 import Foundation
 
-class WordListModel {
+class WordListModel: TestModelProtocol {
     static let shared = WordListModel()
     private let taskAnswers = [1, 3, 8, 11, 13, 14, 15, 16, 17, 26, 30, 33, 35, 38, 40, 41]
     
@@ -28,7 +28,7 @@ class WordListModel {
     
     private init() {}
     
-    func printModel() -> [String: Any] {
+    func getModel() -> [String: Any] {
         var rv = [String: Any]()
         
         rv["task_1"] = task_1
@@ -52,6 +52,21 @@ class WordListModel {
         rv["omissions"] = omissions
         
         return rv
+    }
+    
+    func reset() {
+        task_1 = ""
+        task_2 = ""
+        task_3 = ""
+        task_4 = ""
+        task_5 = ""
+        interference = ""
+        shortTerm = ""
+        longTerm = ""
+        answers = [String: Int]()
+        hits = 0
+        commissions = 0
+        omissions = 0
     }
     
     private func calculateScore(){

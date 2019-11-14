@@ -14,7 +14,7 @@ class MelodyRecognitionDoneViewController: DoneStepViewController {
         super.viewDidLoad()
         
         FirebaseStorageManager.shared.addDataToDocument(payload: [
-            "melodyRecognition": MelodyRecognitionModel.shared.printModel()
+            "melodyRecognition": MelodyRecognitionModel.shared.getModel()
         ])
     }
 }

@@ -98,7 +98,7 @@ class TrailMakingTaskViewController: ActiveStepViewController {
                         TrailMakingModel.shared.time_1 = self.reactionTime
                         
                         FirebaseStorageManager.shared.addDataToDocument(payload: [
-                            "trailMaking": TrailMakingModel.shared.printModel()
+                            "trailMaking": TrailMakingModel.shared.getModel()
                         ])
                         
                         Utility.deleteFile(filePath)

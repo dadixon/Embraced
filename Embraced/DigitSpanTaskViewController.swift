@@ -217,28 +217,10 @@ class DigitSpanTaskViewController: ActiveStepViewController {
                 
                 if let task = uploadTask {
                     task.observe(.success, handler: { snapshot in
-                        switch (self.index) {
-                        case 0: DigitSpanModel.shared.DSFWD_1_file = filePath
-                        case 1: DigitSpanModel.shared.DSFWD_2_file = filePath
-                        case 2: DigitSpanModel.shared.DSFWD_3_file = filePath
-                        case 3: DigitSpanModel.shared.DSFWD_4_file = filePath
-                        case 4: DigitSpanModel.shared.DSFWD_5_file = filePath
-                        case 5: DigitSpanModel.shared.DSFWD_6_file = filePath
-                        case 6: DigitSpanModel.shared.DSFWD_7_file = filePath
-                        case 7: DigitSpanModel.shared.DSFWD_8_file = filePath
-                        case 8: DigitSpanModel.shared.DSFWD_9_file = filePath
-                        case 9: DigitSpanModel.shared.DSFWD_10_file = filePath
-                        case 10: DigitSpanModel.shared.DSFWD_11_file = filePath
-                        case 11: DigitSpanModel.shared.DSFWD_12_file = filePath
-                        case 12: DigitSpanModel.shared.DSFWD_13_file = filePath
-                        case 13: DigitSpanModel.shared.DSFWD_14_file = filePath
-                        default:
-                            break
-                        }
-                        
+                        DigitSpanModel.shared.forwards.append([self.index + 1: filePath])
                         
                         FirebaseStorageManager.shared.addDataToDocument(payload: [
-                            "digitSpan": DigitSpanModel.shared.printModel()
+                            "digitSpan": DigitSpanModel.shared.getModel()
                         ])
                         
                         self.nextBtn.isHidden = false

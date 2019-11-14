@@ -136,7 +136,7 @@ class WordList2TaskViewController: ActiveStepViewController {
                         WordListModel.shared.longTerm = filePath
                         
                         FirebaseStorageManager.shared.addDataToDocument(payload: [
-                            "wordList": WordListModel.shared.printModel()
+                            "wordList": WordListModel.shared.getModel()
                         ])
                         
                         self.nextBtn.isHidden = false
