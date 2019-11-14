@@ -36,7 +36,6 @@ class ClockDrawingTaskViewController: ActiveStepViewController {
         
         nextBtn.setTitle("Next".localized(lang: language), for: .normal)
         nextBtn.addTarget(self, action: #selector(moveOn), for: .touchUpInside)
-        nextBtn.isHidden = true
         
         setupViews()
         

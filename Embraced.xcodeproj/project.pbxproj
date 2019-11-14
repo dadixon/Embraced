@@ -103,8 +103,6 @@
 		A47E666C22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666B22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift */; };
 		A47E666E22D2D7CE00B5B7B5 /* StroopTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666D22D2D7CE00B5B7B5 /* StroopTaskViewController.swift */; };
 		A47E667022D2D87900B5B7B5 /* StroopDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666F22D2D87900B5B7B5 /* StroopDoneViewController.swift */; };
-		A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */; };
-		A4828EB71F967ED700406F19 /* LoadingScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */; };
 		A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D61A1E0BA255001F56FE /* AdminViewController.swift */; };
 		A48A12C221F740ED0044AF08 /* DoneStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */; };
 		A48A12C421F7414A0044AF08 /* CancellationDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C321F7414A0044AF08 /* CancellationDoneViewController.swift */; };
@@ -425,7 +423,6 @@
 		A4DF9F221E08FBC90084EAF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4DF9F241E08FBC90084EAF9 /* Localizable.strings */; };
 		A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */; };
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
-		A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */; };
 		A4E67AFB224B4D430002D127 /* WordListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E67AFA224B4D430002D127 /* WordListModel.swift */; };
 		A4EC5EB1236C6C9200F68002 /* MotorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC5EB0236C6C9200F68002 /* MotorModel.swift */; };
 		A4EC5EB6236C73F000F68002 /* Motor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4EC5EB5236C73F000F68002 /* Motor.storyboard */; };
@@ -539,8 +536,6 @@
 		A47E666B22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopInstructionsViewController.swift; sourceTree = "<group>"; };
 		A47E666D22D2D7CE00B5B7B5 /* StroopTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopTaskViewController.swift; sourceTree = "<group>"; };
 		A47E666F22D2D87900B5B7B5 /* StroopDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopDoneViewController.swift; sourceTree = "<group>"; };
-		A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadingScreenViewController.swift; path = controllers/LoadingScreenViewController.swift; sourceTree = "<group>"; };
-		A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoadingScreenViewController.xib; path = controllers/LoadingScreenViewController.xib; sourceTree = "<group>"; };
 		A489D61A1E0BA255001F56FE /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneStepViewController.swift; sourceTree = "<group>"; };
 		A48A12C321F7414A0044AF08 /* CancellationDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationDoneViewController.swift; sourceTree = "<group>"; };
@@ -868,7 +863,6 @@
 		A4DF9F251E08FBF60084EAF9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOrder.swift; sourceTree = "<group>"; };
 		A4E67AFA224B4D430002D127 /* WordListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListModel.swift; sourceTree = "<group>"; };
 		A4EC5EB0236C6C9200F68002 /* MotorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorModel.swift; sourceTree = "<group>"; };
 		A4EC5EB5236C73F000F68002 /* Motor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Motor.storyboard; sourceTree = "<group>"; };
@@ -1387,10 +1381,9 @@
 		A48D60E61FF5AC3B0042FBCA /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */,
-				A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */,
 				A4396F0F223C142B009B1EDC /* FirebaseStorageManager.swift */,
 				A4F810E42252ADBA001F9503 /* DatabaseController.swift */,
+				A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */,
 				A4FAB4492256334500E6C68A /* NetworkManager.swift */,
 			);
 			name = API;
@@ -1433,8 +1426,6 @@
 				A490D7C41D09162800D2B59D /* UserInputViewController.swift */,
 				A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */,
 				A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */,
-				A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */,
-				A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1809,7 +1800,6 @@
 				A4CA157122031EBE00F6CF0A /* SPA-42.mp3 in Resources */,
 				A4681DCB2355FB8E006E5761 /* TOKEN-ENG-03.mp3 in Resources */,
 				A4CA14FB22031E9D00F6CF0A /* ENG-17.mp3 in Resources */,
-				A4828EB71F967ED700406F19 /* LoadingScreenViewController.xib in Resources */,
 				A4CA156622031EBE00F6CF0A /* SPA-18.mp3 in Resources */,
 				A4CA157722031EBE00F6CF0A /* SPA-44.mp3 in Resources */,
 				A4CA14B822031C2500F6CF0A /* SPA-FWD-07.mp3 in Resources */,
@@ -2130,7 +2120,6 @@
 				A4EDC009229D3F25006B8C53 /* DashboardViewController.swift in Sources */,
 				A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */,
 				A48BA73B230D506F00C0D34B /* CanvasView.swift in Sources */,
-				A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */,
 				A4F810E52252ADBA001F9503 /* DatabaseController.swift in Sources */,
 				A4DE7DDB22F6665E009EEA17 /* TrailMakingVideoViewController.swift in Sources */,
 				A47E665422CFD2F400B5B7B5 /* MelodyRecognitionInstructions2ViewController.swift in Sources */,
@@ -2203,7 +2192,6 @@
 				A4DE7DD222F6617E009EEA17 /* RCFT3TaskViewController.swift in Sources */,
 				A47E664422B262B200B5B7B5 /* SideMenuViewController.swift in Sources */,
 				A4969D2721E7DB2D0063FF40 /* CancellationInstructions3ViewController.swift in Sources */,
-				A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */,
 				A4A991E022EAA4AC00DE3B83 /* StroopTask3ViewController.swift in Sources */,
 				A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */,
 				A4DE7DD922F6663B009EEA17 /* TrailMakingInstructionsViewController.swift in Sources */,
