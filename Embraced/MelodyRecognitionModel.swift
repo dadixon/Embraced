@@ -8,19 +8,24 @@
 
 import Foundation
 
-class MelodyRecognitionModel {
+class MelodyRecognitionModel: TestModelProtocol {
     static let shared = MelodyRecognitionModel()
     
-    var score: Int = 0
+    private var score: Int = 0
     var answers = [String: Any]()
     
     private init() {}
     
-    func printModel() -> [String: Any] {
+    func getModel() -> [String: Any] {
         calculateScore()
         answers["score"] = score
         
         return answers
+    }
+    
+    func reset() {
+        score = 0
+        answers = [String: Any]()
     }
     
     private func calculateScore(){

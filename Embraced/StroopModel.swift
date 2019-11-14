@@ -8,7 +8,7 @@
 
 import Foundation
 
-class StroopModel {
+class StroopModel: TestModelProtocol {
     static let shared = StroopModel()
     
     var file_1: String?
@@ -22,7 +22,7 @@ class StroopModel {
     
     private init() {}
     
-    func printModel() -> [String: Any] {
+    func getModel() -> [String: Any] {
         var rv = [String: Any]()
         
         rv["STROOP1_file"] = file_1
@@ -35,5 +35,16 @@ class StroopModel {
         rv["STROOP4_RT"] = rt_4
         
         return rv
+    }
+    
+    func reset() {
+        file_1 = ""
+        file_2 = ""
+        file_3 = ""
+        file_4 = ""
+        rt_1 = 0
+        rt_2 = 0
+        rt_3 = 0
+        rt_4 = 0
     }
 }

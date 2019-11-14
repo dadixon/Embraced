@@ -17,7 +17,7 @@ class CancellationDoneViewController: DoneStepViewController {
         rotateOrientation = .landscapeLeft
         
         FirebaseStorageManager.shared.addDataToDocument(payload: [
-            "cancellation": CancellationModel.shared.printModel()
+            "cancellation": CancellationModel.shared.getModel()
         ])
     }
 }

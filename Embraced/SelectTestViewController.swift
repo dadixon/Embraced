@@ -38,8 +38,8 @@ class SelectTestViewController: UIViewController {
         "Cancellation Test",
         "Word List 2",
         "Naming Test",
-        "Comprehension Task"
-//        "Eyes Test"
+        "Comprehension Task",
+        "Eyes Test"
     ]
     
     override func viewDidLoad() {

@@ -35,6 +35,8 @@ class DataManager {
     var namingTaskTask = [String]()
     var rcftTasks = [String]()
     var comprehensionSounds = [String]()
+    var eyesTestImages = [String]()
+    var eyesTestChoices = [[EyeAnswerInfo]]()
     
     func updateData() {
         switch language {
@@ -268,6 +270,269 @@ class DataManager {
             "TOKEN-ENG-20.mp3",
             "TOKEN-ENG-21.mp3"
         ]
+        
+        eyesTestImages = [
+            "0.jpg",
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.jpg",
+            "6.jpg",
+            "7.jpg",
+            "8.jpg",
+            "9.jpg",
+            "10.jpg",
+            "11.jpg",
+            "12.jpg",
+            "13.jpg",
+            "14.jpg",
+            "15.jpg",
+            "16.jpg",
+            "17.jpg",
+            "18.jpg",
+            "19.jpg",
+            "20.jpg",
+            "21.jpg",
+            "22.jpg",
+            "23.jpg",
+            "24.jpg",
+            "25.jpg",
+            "26.jpg",
+            "27.jpg",
+            "28.jpg",
+            "29.jpg",
+            "30.jpg",
+            "31.jpg",
+            "32.jpg",
+            "33.jpg",
+            "34.jpg",
+            "35.jpg",
+            "36.jpg"
+        ]
+        
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "hateful".localized(lang: language), definition: "hateful_def".localized(lang: language), example: "hateful_example".localized(lang: language)),
+            EyeAnswerInfo(title: "jealous".localized(lang: language), definition: "jealous_def".localized(lang: language), example: "jealous_example".localized(lang: language)),
+            EyeAnswerInfo(title: "arrogant".localized(lang: language), definition: "arrogant_def".localized(lang: language), example: "arrogant_example".localized(lang: language)),
+            EyeAnswerInfo(title: "panicked".localized(lang: language), definition: "panicked_def".localized(lang: language), example: "panicked_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "playful".localized(lang: language), definition: "playful_def".localized(lang: language), example: "playful_example".localized(lang: language)),
+            EyeAnswerInfo(title: "comforting".localized(lang: language), definition: "comforting_def".localized(lang: language), example: "comforting_example".localized(lang: language)),
+            EyeAnswerInfo(title: "irritated".localized(lang: language), definition: "irritated_def".localized(lang: language), example: "irritated_example".localized(lang: language)),
+            EyeAnswerInfo(title: "bored".localized(lang: language), definition: "bored_def".localized(lang: language), example: "bored_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "arrogant".localized(lang: language), definition: "arrogant_def".localized(lang: language), example: "arrogant_example".localized(lang: language)),
+            EyeAnswerInfo(title: "annoyed".localized(lang: language), definition: "annoyed_def".localized(lang: language), example: "annoyed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "upset".localized(lang: language), definition: "upset_def".localized(lang: language), example: "upset_example".localized(lang: language)),
+            EyeAnswerInfo(title: "terrified".localized(lang: language), definition: "terrified_def".localized(lang: language), example: "terrified_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "convinced".localized(lang: language), definition: "convinced_def".localized(lang: language), example: "convinced_example".localized(lang: language)),
+            EyeAnswerInfo(title: "flustered".localized(lang: language), definition: "flustered_def".localized(lang: language), example: "flustered_example".localized(lang: language)),
+            EyeAnswerInfo(title: "desire".localized(lang: language), definition: "desire_def".localized(lang: language), example: "desire_example".localized(lang: language)),
+            EyeAnswerInfo(title: "joking".localized(lang: language), definition: "joking_def".localized(lang: language), example: "joking_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "amused".localized(lang: language), definition: "amused_def".localized(lang: language), example: "amused_example".localized(lang: language)),
+            EyeAnswerInfo(title: "relaxed".localized(lang: language), definition: "relaxed_def".localized(lang: language), example: "relaxed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "joking".localized(lang: language), definition: "joking_def".localized(lang: language), example: "joking_example".localized(lang: language)),
+            EyeAnswerInfo(title: "insisting".localized(lang: language), definition: "insisting_def".localized(lang: language), example: "insisting_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "friendly".localized(lang: language), definition: "friendly_def".localized(lang: language), example: "friendly_example".localized(lang: language)),
+            EyeAnswerInfo(title: "irritated".localized(lang: language), definition: "irritated_def".localized(lang: language), example: "irritated_example".localized(lang: language)),
+            EyeAnswerInfo(title: "worried".localized(lang: language), definition: "worried_def".localized(lang: language), example: "worried_example".localized(lang: language)),
+            EyeAnswerInfo(title: "sarcastic".localized(lang: language), definition: "sarcastic_def".localized(lang: language), example: "sarcastic_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "fantasizing".localized(lang: language), definition: "fantasizing_def".localized(lang: language), example: "fantasizing_example".localized(lang: language)),
+            EyeAnswerInfo(title: "alarmed".localized(lang: language), definition: "alarmed_def".localized(lang: language), example: "alarmed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "aghast".localized(lang: language), definition: "aghast_def".localized(lang: language), example: "aghast_example".localized(lang: language)),
+            EyeAnswerInfo(title: "impatient".localized(lang: language), definition: "impatient_def".localized(lang: language), example: "impatient_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "uneasy".localized(lang: language), definition: "uneasy_def".localized(lang: language), example: "uneasy_example".localized(lang: language)),
+            EyeAnswerInfo(title: "friendly".localized(lang: language), definition: "friendly_def".localized(lang: language), example: "friendly_example".localized(lang: language)),
+            EyeAnswerInfo(title: "apologetic".localized(lang: language), definition: "apologetic_def".localized(lang: language), example: "apologetic_example".localized(lang: language)),
+            EyeAnswerInfo(title: "dispirited".localized(lang: language), definition: "dispirited_def".localized(lang: language), example: "dispirited_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "excited".localized(lang: language), definition: "excited_def".localized(lang: language), example: "excited_example".localized(lang: language)),
+            EyeAnswerInfo(title: "relieved".localized(lang: language), definition: "relieved_def".localized(lang: language), example: "relieved_example".localized(lang: language)),
+            EyeAnswerInfo(title: "shy".localized(lang: language), definition: "shy_def".localized(lang: language), example: "shy_example".localized(lang: language)),
+            EyeAnswerInfo(title: "despondent".localized(lang: language), definition: "despondent_def".localized(lang: language), example: "despondent_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "annoyed".localized(lang: language), definition: "annoyed_def".localized(lang: language), example: "annoyed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "hostile".localized(lang: language), definition: "hostile_def".localized(lang: language), example: "hostile_example".localized(lang: language)),
+            EyeAnswerInfo(title: "horrified".localized(lang: language), definition: "horrified_def".localized(lang: language), example: "horrified_example".localized(lang: language)),
+            EyeAnswerInfo(title: "preoccupied".localized(lang: language), definition: "preoccupied_def".localized(lang: language), example: "preoccupied_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "cautious".localized(lang: language), definition: "cautious_def".localized(lang: language), example: "cautious_example".localized(lang: language)),
+            EyeAnswerInfo(title: "bored".localized(lang: language), definition: "bored_def".localized(lang: language), example: "bored_example".localized(lang: language)),
+            EyeAnswerInfo(title: "aghast".localized(lang: language), definition: "aghast_def".localized(lang: language), example: "aghast_example".localized(lang: language)),
+            EyeAnswerInfo(title: "insisting".localized(lang: language), definition: "insisting_def".localized(lang: language), example: "insisting_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "terrified".localized(lang: language), definition: "terrified_def".localized(lang: language), example: "terrified_example".localized(lang: language)),
+            EyeAnswerInfo(title: "flirtatious".localized(lang: language), definition: "flirtatious_def".localized(lang: language), example: "flirtatious_example".localized(lang: language)),
+            EyeAnswerInfo(title: "amused".localized(lang: language), definition: "amused_def".localized(lang: language), example: "amused_example".localized(lang: language)),
+            EyeAnswerInfo(title: "regretful".localized(lang: language), definition: "regretful_def".localized(lang: language), example: "regretful_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "skeptical".localized(lang: language), definition: "skeptical_def".localized(lang: language), example: "skeptical_example".localized(lang: language)),
+            EyeAnswerInfo(title: "embarrassed".localized(lang: language), definition: "embarrassed_def".localized(lang: language), example: "embarrassed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "dispirited".localized(lang: language), definition: "dispirited_def".localized(lang: language), example: "dispirited_example".localized(lang: language)),
+            EyeAnswerInfo(title: "indifferent".localized(lang: language), definition: "indifferent_def".localized(lang: language), example: "indifferent_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "shy".localized(lang: language), definition: "shy_def".localized(lang: language), example: "shy_example".localized(lang: language)),
+            EyeAnswerInfo(title: "decisive".localized(lang: language), definition: "decisive_def".localized(lang: language), example: "decisive_example".localized(lang: language)),
+            EyeAnswerInfo(title: "threatening".localized(lang: language), definition: "threatening_def".localized(lang: language), example: "threatening_example".localized(lang: language)),
+            EyeAnswerInfo(title: "anticipating".localized(lang: language), definition: "anticipating_def".localized(lang: language), example: "anticipating_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "irritated".localized(lang: language), definition: "irritated_def".localized(lang: language), example: "irritated_example".localized(lang: language)),
+            EyeAnswerInfo(title: "disappointed".localized(lang: language), definition: "disappointed_def".localized(lang: language), example: "disappointed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "depressed".localized(lang: language), definition: "depressed_def".localized(lang: language), example: "depressed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "accusing".localized(lang: language), definition: "accusing_def".localized(lang: language), example: "accusing_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "encouraging".localized(lang: language), definition: "encouraging_def".localized(lang: language), example: "encouraging_example".localized(lang: language)),
+            EyeAnswerInfo(title: "amused".localized(lang: language), definition: "amused_def".localized(lang: language), example: "amused_example".localized(lang: language)),
+            EyeAnswerInfo(title: "flustered".localized(lang: language), definition: "flustered_def".localized(lang: language), example: "flustered_example".localized(lang: language)),
+            EyeAnswerInfo(title: "contemplative".localized(lang: language), definition: "contemplative_def".localized(lang: language), example: "contemplative_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "thoughtful".localized(lang: language), definition: "hateful_def".localized(lang: language), example: "hateful_example".localized(lang: language)),
+            EyeAnswerInfo(title: "irritated".localized(lang: language), definition: "irritated_def".localized(lang: language), example: "irritated_example".localized(lang: language)),
+            EyeAnswerInfo(title: "encouraging".localized(lang: language), definition: "encouraging_def".localized(lang: language), example: "encouraging_example".localized(lang: language)),
+            EyeAnswerInfo(title: "sympathetic".localized(lang: language), definition: "sympathetic_def".localized(lang: language), example: "sympathetic_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "playful".localized(lang: language), definition: "playful_def".localized(lang: language), example: "playful_example".localized(lang: language)),
+            EyeAnswerInfo(title: "affectionate".localized(lang: language), definition: "affectionate_def".localized(lang: language), example: "affectionate_example".localized(lang: language)),
+            EyeAnswerInfo(title: "aghast".localized(lang: language), definition: "aghast_def".localized(lang: language), example: "aghast_example".localized(lang: language)),
+            EyeAnswerInfo(title: "doubtful".localized(lang: language), definition: "doubtful_def".localized(lang: language), example: "doubtful_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "amused".localized(lang: language), definition: "amused_def".localized(lang: language), example: "amused_example".localized(lang: language)),
+            EyeAnswerInfo(title: "bored".localized(lang: language), definition: "bored_def".localized(lang: language), example: "bored_example".localized(lang: language)),
+            EyeAnswerInfo(title: "decisive".localized(lang: language), definition: "decisive_def".localized(lang: language), example: "decisive_example".localized(lang: language)),
+            EyeAnswerInfo(title: "aghast".localized(lang: language), definition: "aghast_def".localized(lang: language), example: "aghast_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "arrogant".localized(lang: language), definition: "arrogant_def".localized(lang: language), example: "arrogant_example".localized(lang: language)),
+            EyeAnswerInfo(title: "grateful".localized(lang: language), definition: "grateful_def".localized(lang: language), example: "grateful_example".localized(lang: language)),
+            EyeAnswerInfo(title: "tentative".localized(lang: language), definition: "tentative_def".localized(lang: language), example: "tentative_example".localized(lang: language)),
+            EyeAnswerInfo(title: "sarcastic".localized(lang: language), definition: "sarcastic_def".localized(lang: language), example: "sarcastic_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "friendly".localized(lang: language), definition: "friendly_def".localized(lang: language), example: "friendly_example".localized(lang: language)),
+            EyeAnswerInfo(title: "horrified".localized(lang: language), definition: "horrified_def".localized(lang: language), example: "horrified_example".localized(lang: language)),
+            EyeAnswerInfo(title: "guilty".localized(lang: language), definition: "guilty_def".localized(lang: language), example: "guilty_example".localized(lang: language)),
+            EyeAnswerInfo(title: "dominant".localized(lang: language), definition: "dominant_def".localized(lang: language), example: "dominant_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "panicked".localized(lang: language), definition: "panicked_def".localized(lang: language), example: "panicked_example".localized(lang: language)),
+            EyeAnswerInfo(title: "fantasizing".localized(lang: language), definition: "fantasizing_def".localized(lang: language), example: "fantasizing_example".localized(lang: language)),
+            EyeAnswerInfo(title: "confused".localized(lang: language), definition: "confused_def".localized(lang: language), example: "confused_example".localized(lang: language)),
+            EyeAnswerInfo(title: "embarrassed".localized(lang: language), definition: "embarrassed_def".localized(lang: language), example: "embarrassed_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "preoccupied".localized(lang: language), definition: "preoccupied_def".localized(lang: language), example: "preoccupied_example".localized(lang: language)),
+            EyeAnswerInfo(title: "insisting".localized(lang: language), definition: "insisting_def".localized(lang: language), example: "insisting_example".localized(lang: language)),
+            EyeAnswerInfo(title: "imploring".localized(lang: language), definition: "imploring_def".localized(lang: language), example: "imploring_example".localized(lang: language)),
+            EyeAnswerInfo(title: "grateful".localized(lang: language), definition: "grateful_def".localized(lang: language), example: "grateful_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "curious".localized(lang: language), definition: "curious_def".localized(lang: language), example: "curious_example".localized(lang: language)),
+            EyeAnswerInfo(title: "apologetic".localized(lang: language), definition: "apologetic_def".localized(lang: language), example: "apologetic_example".localized(lang: language)),
+            EyeAnswerInfo(title: "contended".localized(lang: language), definition: "contended_def".localized(lang: language), example: "contended_example".localized(lang: language)),
+            EyeAnswerInfo(title: "defiant".localized(lang: language), definition: "defiant_def".localized(lang: language), example: "defiant_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "pensive".localized(lang: language), definition: "pensive_def".localized(lang: language), example: "pensive_example".localized(lang: language)),
+            EyeAnswerInfo(title: "irritated".localized(lang: language), definition: "irritated_def".localized(lang: language), example: "irritated_example".localized(lang: language)),
+            EyeAnswerInfo(title: "excited".localized(lang: language), definition: "excited_def".localized(lang: language), example: "excited_example".localized(lang: language)),
+            EyeAnswerInfo(title: "hostile".localized(lang: language), definition: "hostile_def".localized(lang: language), example: "hostile_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "incredulous".localized(lang: language), definition: "incredulous_def".localized(lang: language), example: "incredulous_example".localized(lang: language)),
+            EyeAnswerInfo(title: "panicked".localized(lang: language), definition: "panicked_def".localized(lang: language), example: "panicked_example".localized(lang: language)),
+            EyeAnswerInfo(title: "interested".localized(lang: language), definition: "interested_def".localized(lang: language), example: "interested_example".localized(lang: language)),
+            EyeAnswerInfo(title: "despondent".localized(lang: language), definition: "despondent_def".localized(lang: language), example: "despondent_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "alarmed".localized(lang: language), definition: "alarmed_def".localized(lang: language), example: "alarmed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "anxious".localized(lang: language), definition: "anxious_def".localized(lang: language), example: "anxious_example".localized(lang: language)),
+            EyeAnswerInfo(title: "shy".localized(lang: language), definition: "shy_def".localized(lang: language), example: "shy_example".localized(lang: language)),
+            EyeAnswerInfo(title: "hostile".localized(lang: language), definition: "hostile_def".localized(lang: language), example: "hostile_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "arrogant".localized(lang: language), definition: "arrogant_def".localized(lang: language), example: "arrogant_example".localized(lang: language)),
+            EyeAnswerInfo(title: "cautious".localized(lang: language), definition: "cautious_def".localized(lang: language), example: "cautious_example".localized(lang: language)),
+            EyeAnswerInfo(title: "reassuring".localized(lang: language), definition: "reassuring_def".localized(lang: language), example: "reassuring_example".localized(lang: language)),
+            EyeAnswerInfo(title: "joking".localized(lang: language), definition: "joking_def".localized(lang: language), example: "joking_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "affectionate".localized(lang: language), definition: "affectionate_def".localized(lang: language), example: "affectionate_example".localized(lang: language)),
+            EyeAnswerInfo(title: "joking".localized(lang: language), definition: "joking_def".localized(lang: language), example: "joking_example".localized(lang: language)),
+            EyeAnswerInfo(title: "interested".localized(lang: language), definition: "interested_def".localized(lang: language), example: "interested_example".localized(lang: language)),
+            EyeAnswerInfo(title: "contented".localized(lang: language), definition: "contented_def".localized(lang: language), example: "contented_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "impatient".localized(lang: language), definition: "impatient_def".localized(lang: language), example: "impatient_example".localized(lang: language)),
+            EyeAnswerInfo(title: "aghast".localized(lang: language), definition: "aghast_def".localized(lang: language), example: "aghast_example".localized(lang: language)),
+            EyeAnswerInfo(title: "irritated".localized(lang: language), definition: "irritated_def".localized(lang: language), example: "irritated_example".localized(lang: language)),
+            EyeAnswerInfo(title: "reflective".localized(lang: language), definition: "reflective_def".localized(lang: language), example: "reflective_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "flirtatious".localized(lang: language), definition: "flirtatious_def".localized(lang: language), example: "flirtatious_example".localized(lang: language)),
+            EyeAnswerInfo(title: "disappointed".localized(lang: language), definition: "disappointed_def".localized(lang: language), example: "disappointed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "hostile".localized(lang: language), definition: "hostile_def".localized(lang: language), example: "hostile_example".localized(lang: language)),
+            EyeAnswerInfo(title: "grateful".localized(lang: language), definition: "grateful_def".localized(lang: language), example: "grateful_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "joking".localized(lang: language), definition: "joking_def".localized(lang: language), example: "joking_example".localized(lang: language)),
+            EyeAnswerInfo(title: "ashamed".localized(lang: language), definition: "ashamed_def".localized(lang: language), example: "ashamed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "confident".localized(lang: language), definition: "confident_def".localized(lang: language), example: "confident_example".localized(lang: language)),
+            EyeAnswerInfo(title: "dispirited".localized(lang: language), definition: "dispirited_def".localized(lang: language), example: "dispirited_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "ashamed".localized(lang: language), definition: "ashamed_def".localized(lang: language), example: "ashamed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "bewildered".localized(lang: language), definition: "bewildered_def".localized(lang: language), example: "bewildered_example".localized(lang: language)),
+            EyeAnswerInfo(title: "alarmed".localized(lang: language), definition: "alarmed_def".localized(lang: language), example: "alarmed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "serious".localized(lang: language), definition: "serious_def".localized(lang: language), example: "serious_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "concerned".localized(lang: language), definition: "concerned_def".localized(lang: language), example: "concerned_example".localized(lang: language)),
+            EyeAnswerInfo(title: "embarrassed".localized(lang: language), definition: "embarrassed_def".localized(lang: language), example: "embarrassed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "guilty".localized(lang: language), definition: "guilty_def".localized(lang: language), example: "guilty_example".localized(lang: language)),
+            EyeAnswerInfo(title: "fantasizing".localized(lang: language), definition: "fantasizing_def".localized(lang: language), example: "fantasizing_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "aghast".localized(lang: language), definition: "aghast_def".localized(lang: language), example: "aghast_example".localized(lang: language)),
+            EyeAnswerInfo(title: "baffled".localized(lang: language), definition: "baffled_def".localized(lang: language), example: "baffled_example".localized(lang: language)),
+            EyeAnswerInfo(title: "terrified".localized(lang: language), definition: "terrified_def".localized(lang: language), example: "terrified_example".localized(lang: language)),
+            EyeAnswerInfo(title: "distrustful".localized(lang: language), definition: "distrustful_def".localized(lang: language), example: "distrustful_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "nervous".localized(lang: language), definition: "nervous_def".localized(lang: language), example: "nervous_example".localized(lang: language)),
+            EyeAnswerInfo(title: "contemplative".localized(lang: language), definition: "contemplative_def".localized(lang: language), example: "contemplative_example".localized(lang: language)),
+            EyeAnswerInfo(title: "insisting".localized(lang: language), definition: "insisting_def".localized(lang: language), example: "insisting_example".localized(lang: language)),
+            EyeAnswerInfo(title: "puzzled".localized(lang: language), definition: "puzzled_def".localized(lang: language), example: "puzzled_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "suspicious".localized(lang: language), definition: "suspicious_def".localized(lang: language), example: "suspicious_example".localized(lang: language)),
+            EyeAnswerInfo(title: "nervous".localized(lang: language), definition: "nervous_def".localized(lang: language), example: "nervous_example".localized(lang: language)),
+            EyeAnswerInfo(title: "ashamed".localized(lang: language), definition: "ashamed_def".localized(lang: language), example: "ashamed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "indecisive".localized(lang: language), definition: "indecisive_def".localized(lang: language), example: "indecisive_example".localized(lang: language))
+        ])
     }
     
     private func setEsData() {
@@ -491,5 +756,268 @@ class DataManager {
             "TOKEN-SPA-20.mp3",
             "TOKEN-SPA-21.mp3"
         ]
+        
+        eyesTestImages = [
+            "0.jpg",
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
+            "4.jpg",
+            "5.jpg",
+            "6.jpg",
+            "7.jpg",
+            "8.jpg",
+            "9.jpg",
+            "10.jpg",
+            "11.jpg",
+            "12.jpg",
+            "13.jpg",
+            "14.jpg",
+            "15.jpg",
+            "16.jpg",
+            "17.jpg",
+            "18.jpg",
+            "19.jpg",
+            "20.jpg",
+            "21.jpg",
+            "22.jpg",
+            "23.jpg",
+            "24.jpg",
+            "25.jpg",
+            "26.jpg",
+            "27.jpg",
+            "28.jpg",
+            "29.jpg",
+            "30.jpg",
+            "31.jpg",
+            "32.jpg",
+            "33.jpg",
+            "34.jpg",
+            "35.jpg",
+            "36.jpg"
+        ]
+        
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "hateful".localized(lang: language), definition: "hateful_def".localized(lang: language), example: "hateful_example".localized(lang: language)),
+            EyeAnswerInfo(title: "jealous".localized(lang: language), definition: "jealous_def".localized(lang: language), example: "jealous_example".localized(lang: language)),
+            EyeAnswerInfo(title: "arrogant".localized(lang: language), definition: "arrogant_def".localized(lang: language), example: "arrogant_example".localized(lang: language)),
+            EyeAnswerInfo(title: "panicked".localized(lang: language), definition: "panicked_def".localized(lang: language), example: "panicked_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "playful".localized(lang: language), definition: "playful_def".localized(lang: language), example: "playful_example".localized(lang: language)),
+            EyeAnswerInfo(title: "comforting".localized(lang: language), definition: "comforting_def".localized(lang: language), example: "comforting_example".localized(lang: language)),
+            EyeAnswerInfo(title: "irritated".localized(lang: language), definition: "irritated_def".localized(lang: language), example: "irritated_example".localized(lang: language)),
+            EyeAnswerInfo(title: "bored".localized(lang: language), definition: "bored_def".localized(lang: language), example: "bored_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "arrogant".localized(lang: language), definition: "arrogant_def".localized(lang: language), example: "arrogant_example".localized(lang: language)),
+            EyeAnswerInfo(title: "annoyed".localized(lang: language), definition: "annoyed_def".localized(lang: language), example: "annoyed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "upset".localized(lang: language), definition: "upset_def".localized(lang: language), example: "upset_example".localized(lang: language)),
+            EyeAnswerInfo(title: "terrified".localized(lang: language), definition: "terrified_def".localized(lang: language), example: "terrified_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "convinced".localized(lang: language), definition: "convinced_def".localized(lang: language), example: "convinced_example".localized(lang: language)),
+            EyeAnswerInfo(title: "flustered".localized(lang: language), definition: "flustered_def".localized(lang: language), example: "flustered_example".localized(lang: language)),
+            EyeAnswerInfo(title: "desire".localized(lang: language), definition: "desire_def".localized(lang: language), example: "desire_example".localized(lang: language)),
+            EyeAnswerInfo(title: "joking".localized(lang: language), definition: "joking_def".localized(lang: language), example: "joking_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "amused".localized(lang: language), definition: "amused_def".localized(lang: language), example: "amused_example".localized(lang: language)),
+            EyeAnswerInfo(title: "relaxed".localized(lang: language), definition: "relaxed_def".localized(lang: language), example: "relaxed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "joking".localized(lang: language), definition: "joking_def".localized(lang: language), example: "joking_example".localized(lang: language)),
+            EyeAnswerInfo(title: "insisting".localized(lang: language), definition: "insisting_def".localized(lang: language), example: "insisting_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "friendly".localized(lang: language), definition: "friendly_def".localized(lang: language), example: "friendly_example".localized(lang: language)),
+            EyeAnswerInfo(title: "irritated".localized(lang: language), definition: "irritated_def".localized(lang: language), example: "irritated_example".localized(lang: language)),
+            EyeAnswerInfo(title: "worried".localized(lang: language), definition: "worried_def".localized(lang: language), example: "worried_example".localized(lang: language)),
+            EyeAnswerInfo(title: "sarcastic".localized(lang: language), definition: "sarcastic_def".localized(lang: language), example: "sarcastic_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "fantasizing".localized(lang: language), definition: "fantasizing_def".localized(lang: language), example: "fantasizing_example".localized(lang: language)),
+            EyeAnswerInfo(title: "alarmed".localized(lang: language), definition: "alarmed_def".localized(lang: language), example: "alarmed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "aghast".localized(lang: language), definition: "aghast_def".localized(lang: language), example: "aghast_example".localized(lang: language)),
+            EyeAnswerInfo(title: "impatient".localized(lang: language), definition: "impatient_def".localized(lang: language), example: "impatient_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "uneasy".localized(lang: language), definition: "uneasy_def".localized(lang: language), example: "uneasy_example".localized(lang: language)),
+            EyeAnswerInfo(title: "friendly".localized(lang: language), definition: "friendly_def".localized(lang: language), example: "friendly_example".localized(lang: language)),
+            EyeAnswerInfo(title: "apologetic".localized(lang: language), definition: "apologetic_def".localized(lang: language), example: "apologetic_example".localized(lang: language)),
+            EyeAnswerInfo(title: "dispirited".localized(lang: language), definition: "dispirited_def".localized(lang: language), example: "dispirited_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "excited".localized(lang: language), definition: "excited_def".localized(lang: language), example: "excited_example".localized(lang: language)),
+            EyeAnswerInfo(title: "relieved".localized(lang: language), definition: "relieved_def".localized(lang: language), example: "relieved_example".localized(lang: language)),
+            EyeAnswerInfo(title: "shy".localized(lang: language), definition: "shy_def".localized(lang: language), example: "shy_example".localized(lang: language)),
+            EyeAnswerInfo(title: "despondent".localized(lang: language), definition: "despondent_def".localized(lang: language), example: "despondent_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "annoyed".localized(lang: language), definition: "annoyed_def".localized(lang: language), example: "annoyed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "hostile".localized(lang: language), definition: "hostile_def".localized(lang: language), example: "hostile_example".localized(lang: language)),
+            EyeAnswerInfo(title: "horrified".localized(lang: language), definition: "horrified_def".localized(lang: language), example: "horrified_example".localized(lang: language)),
+            EyeAnswerInfo(title: "preoccupied".localized(lang: language), definition: "preoccupied_def".localized(lang: language), example: "preoccupied_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "cautious".localized(lang: language), definition: "cautious_def".localized(lang: language), example: "cautious_example".localized(lang: language)),
+            EyeAnswerInfo(title: "bored".localized(lang: language), definition: "bored_def".localized(lang: language), example: "bored_example".localized(lang: language)),
+            EyeAnswerInfo(title: "aghast".localized(lang: language), definition: "aghast_def".localized(lang: language), example: "aghast_example".localized(lang: language)),
+            EyeAnswerInfo(title: "insisting".localized(lang: language), definition: "insisting_def".localized(lang: language), example: "insisting_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "terrified".localized(lang: language), definition: "terrified_def".localized(lang: language), example: "terrified_example".localized(lang: language)),
+            EyeAnswerInfo(title: "flirtatious".localized(lang: language), definition: "flirtatious_def".localized(lang: language), example: "flirtatious_example".localized(lang: language)),
+            EyeAnswerInfo(title: "amused".localized(lang: language), definition: "amused_def".localized(lang: language), example: "amused_example".localized(lang: language)),
+            EyeAnswerInfo(title: "regretful".localized(lang: language), definition: "regretful_def".localized(lang: language), example: "regretful_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "skeptical".localized(lang: language), definition: "skeptical_def".localized(lang: language), example: "skeptical_example".localized(lang: language)),
+            EyeAnswerInfo(title: "embarrassed".localized(lang: language), definition: "embarrassed_def".localized(lang: language), example: "embarrassed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "dispirited".localized(lang: language), definition: "dispirited_def".localized(lang: language), example: "dispirited_example".localized(lang: language)),
+            EyeAnswerInfo(title: "indifferent".localized(lang: language), definition: "indifferent_def".localized(lang: language), example: "indifferent_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "shy".localized(lang: language), definition: "shy_def".localized(lang: language), example: "shy_example".localized(lang: language)),
+            EyeAnswerInfo(title: "decisive".localized(lang: language), definition: "decisive_def".localized(lang: language), example: "decisive_example".localized(lang: language)),
+            EyeAnswerInfo(title: "threatening".localized(lang: language), definition: "threatening_def".localized(lang: language), example: "threatening_example".localized(lang: language)),
+            EyeAnswerInfo(title: "anticipating".localized(lang: language), definition: "anticipating_def".localized(lang: language), example: "anticipating_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "irritated".localized(lang: language), definition: "irritated_def".localized(lang: language), example: "irritated_example".localized(lang: language)),
+            EyeAnswerInfo(title: "disappointed".localized(lang: language), definition: "disappointed_def".localized(lang: language), example: "disappointed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "depressed".localized(lang: language), definition: "depressed_def".localized(lang: language), example: "depressed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "accusing".localized(lang: language), definition: "accusing_def".localized(lang: language), example: "accusing_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "encouraging".localized(lang: language), definition: "encouraging_def".localized(lang: language), example: "encouraging_example".localized(lang: language)),
+            EyeAnswerInfo(title: "amused".localized(lang: language), definition: "amused_def".localized(lang: language), example: "amused_example".localized(lang: language)),
+            EyeAnswerInfo(title: "flustered".localized(lang: language), definition: "flustered_def".localized(lang: language), example: "flustered_example".localized(lang: language)),
+            EyeAnswerInfo(title: "contemplative".localized(lang: language), definition: "contemplative_def".localized(lang: language), example: "contemplative_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "thoughtful".localized(lang: language), definition: "hateful_def".localized(lang: language), example: "hateful_example".localized(lang: language)),
+            EyeAnswerInfo(title: "irritated".localized(lang: language), definition: "irritated_def".localized(lang: language), example: "irritated_example".localized(lang: language)),
+            EyeAnswerInfo(title: "encouraging".localized(lang: language), definition: "encouraging_def".localized(lang: language), example: "encouraging_example".localized(lang: language)),
+            EyeAnswerInfo(title: "sympathetic".localized(lang: language), definition: "sympathetic_def".localized(lang: language), example: "sympathetic_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "playful".localized(lang: language), definition: "playful_def".localized(lang: language), example: "playful_example".localized(lang: language)),
+            EyeAnswerInfo(title: "affectionate".localized(lang: language), definition: "affectionate_def".localized(lang: language), example: "affectionate_example".localized(lang: language)),
+            EyeAnswerInfo(title: "aghast".localized(lang: language), definition: "aghast_def".localized(lang: language), example: "aghast_example".localized(lang: language)),
+            EyeAnswerInfo(title: "doubtful".localized(lang: language), definition: "doubtful_def".localized(lang: language), example: "doubtful_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "amused".localized(lang: language), definition: "amused_def".localized(lang: language), example: "amused_example".localized(lang: language)),
+            EyeAnswerInfo(title: "bored".localized(lang: language), definition: "bored_def".localized(lang: language), example: "bored_example".localized(lang: language)),
+            EyeAnswerInfo(title: "decisive".localized(lang: language), definition: "decisive_def".localized(lang: language), example: "decisive_example".localized(lang: language)),
+            EyeAnswerInfo(title: "aghast".localized(lang: language), definition: "aghast_def".localized(lang: language), example: "aghast_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "arrogant".localized(lang: language), definition: "arrogant_def".localized(lang: language), example: "arrogant_example".localized(lang: language)),
+            EyeAnswerInfo(title: "grateful".localized(lang: language), definition: "grateful_def".localized(lang: language), example: "grateful_example".localized(lang: language)),
+            EyeAnswerInfo(title: "tentative".localized(lang: language), definition: "tentative_def".localized(lang: language), example: "tentative_example".localized(lang: language)),
+            EyeAnswerInfo(title: "sarcastic".localized(lang: language), definition: "sarcastic_def".localized(lang: language), example: "sarcastic_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "friendly".localized(lang: language), definition: "friendly_def".localized(lang: language), example: "friendly_example".localized(lang: language)),
+            EyeAnswerInfo(title: "horrified".localized(lang: language), definition: "horrified_def".localized(lang: language), example: "horrified_example".localized(lang: language)),
+            EyeAnswerInfo(title: "guilty".localized(lang: language), definition: "guilty_def".localized(lang: language), example: "guilty_example".localized(lang: language)),
+            EyeAnswerInfo(title: "dominant".localized(lang: language), definition: "dominant_def".localized(lang: language), example: "dominant_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "panicked".localized(lang: language), definition: "panicked_def".localized(lang: language), example: "panicked_example".localized(lang: language)),
+            EyeAnswerInfo(title: "fantasizing".localized(lang: language), definition: "fantasizing_def".localized(lang: language), example: "fantasizing_example".localized(lang: language)),
+            EyeAnswerInfo(title: "confused".localized(lang: language), definition: "confused_def".localized(lang: language), example: "confused_example".localized(lang: language)),
+            EyeAnswerInfo(title: "embarrassed".localized(lang: language), definition: "embarrassed_def".localized(lang: language), example: "embarrassed_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "preoccupied".localized(lang: language), definition: "preoccupied_def".localized(lang: language), example: "preoccupied_example".localized(lang: language)),
+            EyeAnswerInfo(title: "insisting".localized(lang: language), definition: "insisting_def".localized(lang: language), example: "insisting_example".localized(lang: language)),
+            EyeAnswerInfo(title: "imploring".localized(lang: language), definition: "imploring_def".localized(lang: language), example: "imploring_example".localized(lang: language)),
+            EyeAnswerInfo(title: "grateful".localized(lang: language), definition: "grateful_def".localized(lang: language), example: "grateful_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "curious".localized(lang: language), definition: "curious_def".localized(lang: language), example: "curious_example".localized(lang: language)),
+            EyeAnswerInfo(title: "apologetic".localized(lang: language), definition: "apologetic_def".localized(lang: language), example: "apologetic_example".localized(lang: language)),
+            EyeAnswerInfo(title: "contended".localized(lang: language), definition: "contended_def".localized(lang: language), example: "contended_example".localized(lang: language)),
+            EyeAnswerInfo(title: "defiant".localized(lang: language), definition: "defiant_def".localized(lang: language), example: "defiant_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "pensive".localized(lang: language), definition: "pensive_def".localized(lang: language), example: "pensive_example".localized(lang: language)),
+            EyeAnswerInfo(title: "irritated".localized(lang: language), definition: "irritated_def".localized(lang: language), example: "irritated_example".localized(lang: language)),
+            EyeAnswerInfo(title: "excited".localized(lang: language), definition: "excited_def".localized(lang: language), example: "excited_example".localized(lang: language)),
+            EyeAnswerInfo(title: "hostile".localized(lang: language), definition: "hostile_def".localized(lang: language), example: "hostile_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "incredulous".localized(lang: language), definition: "incredulous_def".localized(lang: language), example: "incredulous_example".localized(lang: language)),
+            EyeAnswerInfo(title: "panicked".localized(lang: language), definition: "panicked_def".localized(lang: language), example: "panicked_example".localized(lang: language)),
+            EyeAnswerInfo(title: "interested".localized(lang: language), definition: "interested_def".localized(lang: language), example: "interested_example".localized(lang: language)),
+            EyeAnswerInfo(title: "despondent".localized(lang: language), definition: "despondent_def".localized(lang: language), example: "despondent_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "alarmed".localized(lang: language), definition: "alarmed_def".localized(lang: language), example: "alarmed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "anxious".localized(lang: language), definition: "anxious_def".localized(lang: language), example: "anxious_example".localized(lang: language)),
+            EyeAnswerInfo(title: "shy".localized(lang: language), definition: "shy_def".localized(lang: language), example: "shy_example".localized(lang: language)),
+            EyeAnswerInfo(title: "hostile".localized(lang: language), definition: "hostile_def".localized(lang: language), example: "hostile_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "arrogant".localized(lang: language), definition: "arrogant_def".localized(lang: language), example: "arrogant_example".localized(lang: language)),
+            EyeAnswerInfo(title: "cautious".localized(lang: language), definition: "cautious_def".localized(lang: language), example: "cautious_example".localized(lang: language)),
+            EyeAnswerInfo(title: "reassuring".localized(lang: language), definition: "reassuring_def".localized(lang: language), example: "reassuring_example".localized(lang: language)),
+            EyeAnswerInfo(title: "joking".localized(lang: language), definition: "joking_def".localized(lang: language), example: "joking_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "affectionate".localized(lang: language), definition: "affectionate_def".localized(lang: language), example: "affectionate_example".localized(lang: language)),
+            EyeAnswerInfo(title: "joking".localized(lang: language), definition: "joking_def".localized(lang: language), example: "joking_example".localized(lang: language)),
+            EyeAnswerInfo(title: "interested".localized(lang: language), definition: "interested_def".localized(lang: language), example: "interested_example".localized(lang: language)),
+            EyeAnswerInfo(title: "contented".localized(lang: language), definition: "contented_def".localized(lang: language), example: "contented_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "impatient".localized(lang: language), definition: "impatient_def".localized(lang: language), example: "impatient_example".localized(lang: language)),
+            EyeAnswerInfo(title: "aghast".localized(lang: language), definition: "aghast_def".localized(lang: language), example: "aghast_example".localized(lang: language)),
+            EyeAnswerInfo(title: "irritated".localized(lang: language), definition: "irritated_def".localized(lang: language), example: "irritated_example".localized(lang: language)),
+            EyeAnswerInfo(title: "reflective".localized(lang: language), definition: "reflective_def".localized(lang: language), example: "reflective_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "flirtatious".localized(lang: language), definition: "flirtatious_def".localized(lang: language), example: "flirtatious_example".localized(lang: language)),
+            EyeAnswerInfo(title: "disappointed".localized(lang: language), definition: "disappointed_def".localized(lang: language), example: "disappointed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "hostile".localized(lang: language), definition: "hostile_def".localized(lang: language), example: "hostile_example".localized(lang: language)),
+            EyeAnswerInfo(title: "grateful".localized(lang: language), definition: "grateful_def".localized(lang: language), example: "grateful_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "joking".localized(lang: language), definition: "joking_def".localized(lang: language), example: "joking_example".localized(lang: language)),
+            EyeAnswerInfo(title: "ashamed".localized(lang: language), definition: "ashamed_def".localized(lang: language), example: "ashamed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "confident".localized(lang: language), definition: "confident_def".localized(lang: language), example: "confident_example".localized(lang: language)),
+            EyeAnswerInfo(title: "dispirited".localized(lang: language), definition: "dispirited_def".localized(lang: language), example: "dispirited_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "ashamed".localized(lang: language), definition: "ashamed_def".localized(lang: language), example: "ashamed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "bewildered".localized(lang: language), definition: "bewildered_def".localized(lang: language), example: "bewildered_example".localized(lang: language)),
+            EyeAnswerInfo(title: "alarmed".localized(lang: language), definition: "alarmed_def".localized(lang: language), example: "alarmed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "serious".localized(lang: language), definition: "serious_def".localized(lang: language), example: "serious_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "concerned".localized(lang: language), definition: "concerned_def".localized(lang: language), example: "concerned_example".localized(lang: language)),
+            EyeAnswerInfo(title: "embarrassed".localized(lang: language), definition: "embarrassed_def".localized(lang: language), example: "embarrassed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "guilty".localized(lang: language), definition: "guilty_def".localized(lang: language), example: "guilty_example".localized(lang: language)),
+            EyeAnswerInfo(title: "fantasizing".localized(lang: language), definition: "fantasizing_def".localized(lang: language), example: "fantasizing_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "aghast".localized(lang: language), definition: "aghast_def".localized(lang: language), example: "aghast_example".localized(lang: language)),
+            EyeAnswerInfo(title: "baffled".localized(lang: language), definition: "baffled_def".localized(lang: language), example: "baffled_example".localized(lang: language)),
+            EyeAnswerInfo(title: "terrified".localized(lang: language), definition: "terrified_def".localized(lang: language), example: "terrified_example".localized(lang: language)),
+            EyeAnswerInfo(title: "distrustful".localized(lang: language), definition: "distrustful_def".localized(lang: language), example: "distrustful_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "nervous".localized(lang: language), definition: "nervous_def".localized(lang: language), example: "nervous_example".localized(lang: language)),
+            EyeAnswerInfo(title: "contemplative".localized(lang: language), definition: "contemplative_def".localized(lang: language), example: "contemplative_example".localized(lang: language)),
+            EyeAnswerInfo(title: "insisting".localized(lang: language), definition: "insisting_def".localized(lang: language), example: "insisting_example".localized(lang: language)),
+            EyeAnswerInfo(title: "puzzled".localized(lang: language), definition: "puzzled_def".localized(lang: language), example: "puzzled_example".localized(lang: language))
+        ])
+        eyesTestChoices.append([
+            EyeAnswerInfo(title: "suspicious".localized(lang: language), definition: "suspicious_def".localized(lang: language), example: "suspicious_example".localized(lang: language)),
+            EyeAnswerInfo(title: "nervous".localized(lang: language), definition: "nervous_def".localized(lang: language), example: "nervous_example".localized(lang: language)),
+            EyeAnswerInfo(title: "ashamed".localized(lang: language), definition: "ashamed_def".localized(lang: language), example: "ashamed_example".localized(lang: language)),
+            EyeAnswerInfo(title: "indecisive".localized(lang: language), definition: "indecisive_def".localized(lang: language), example: "indecisive_example".localized(lang: language))
+        ])
     }
 }

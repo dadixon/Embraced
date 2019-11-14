@@ -112,6 +112,40 @@ class FirebaseStorageManager {
         }
     }
     
+    func getFile(fileName: String, test: String, lang: String) {
+        let storage = Storage.storage()
+        var path = ""
+        
+        if lang == "" {
+            path = "media/\(test)/\(fileName)"
+        } else {
+            path = "media/\(test)/\(lang)/\(fileName)"
+        }
+
+        // If file is already on the device, do not download it again
+        if !Utility.fileExist(path) {
+            let mediaRef = storage.reference(withPath: path)
+            let documentPath = Utility.getDocumentsDirectory().appendingPathComponent(path)
+            
+            do
+            {
+                try FileManager.default.createDirectory(atPath: documentPath.path, withIntermediateDirectories: true, attributes: nil)
+            } catch let error as NSError {
+                print("Unable to create directory \(error.debugDescription)")
+            }
+            
+            let localURL = URL(string: documentPath.absoluteString)!
+            
+            _ = mediaRef.write(toFile: localURL) { url, error in
+              if let error = error {
+                print(error.localizedDescription)
+              } else {
+                print("\(path) downloaded")
+              }
+            }
+        }
+    }
+    
     func removeListener() {
         listener?.remove()
     }

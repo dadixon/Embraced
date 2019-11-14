@@ -59,11 +59,29 @@ class StartViewController: UIViewController {
             AppDelegate.testPosition += 1
         
         TestConfig.shared.testStartTime = CFAbsoluteTimeGetCurrent()
+        
+        // Load media here before test if needed
+        
+        if TestConfig.shared.testListName.contains("Eyes Test") {
+            for name in DataManager.sharedInstance.eyesTestImages {
+                FirebaseStorageManager.shared.getFile(fileName: name, test: "eyesTest", lang: "")
+            }
+        }
+        
+        // Reset all test models
+        MelodyRecognitionModel.shared.reset()
+        CancellationModel.shared.reset()
+        WordListModel.shared.reset()
+        DigitSpanModel.shared.reset()
+        StroopModel.shared.reset()
+        NamingTaskModel.shared.reset()
+        ClockDrawingModel.shared.reset()
+        RCFTModel.shared.reset()
+        TrailMakingModel.shared.reset()
+        ComprehensionModel.shared.reset()
+        EyeTestModel.shared.reset()
+        
         self.navigationController?.pushViewController(TestConfig.shared.testList[0], animated: true)
-//                TestOrder.sharedInstance.getTest(AppDelegate.testPosition), animated: true)
-//        } catch let error {
-//            print(error)
-//        }
     }
 }
 

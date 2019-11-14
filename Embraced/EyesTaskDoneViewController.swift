@@ -1,14 +1,14 @@
 //
-//  RCFT4DoneViewController.swift
+//  EyesTaskDoneViewController.swift
 //  Embraced
 //
-//  Created by Domonique Dixon on 8/23/19.
+//  Created by Domonique Dixon on 11/13/19.
 //  Copyright © 2019 Domonique Dixon. All rights reserved.
 //
 
 import UIKit
 
-class RCFT4DoneViewController: DoneStepViewController {
+class EyesTaskDoneViewController: DoneStepViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +17,7 @@ class RCFT4DoneViewController: DoneStepViewController {
         rotateOrientation = .portrait
         
         FirebaseStorageManager.shared.addDataToDocument(payload: [
-            "rcft": RCFTModel.shared.getModel()
+            "eyeTest" : EyeTestModel.shared.getModel()
         ])
     }
 }

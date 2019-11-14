@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CancellationModel {
+class CancellationModel: TestModelProtocol {
     static let shared = CancellationModel()
     
     var blocks = [String: [Response]]()
@@ -23,7 +23,7 @@ class CancellationModel {
     
     private init() {}
     
-    func printModel() -> [String: Any] {
+    func getModel() -> [String: Any] {
         var rv = [String: Any]()
         
         reset(all: true)
@@ -43,6 +43,18 @@ class CancellationModel {
         rv["totalBackwards"] = totalBackwards
         
         return rv
+    }
+    
+    func reset() {
+        blocks = [String: [Response]]()
+        hits = 0
+        omissions = 0
+        commissions = 0
+        backwards = 0
+        totalHits = 0
+        totalOmissions = 0
+        totalCommissions = 0
+        totalBackwards = 0
     }
     
     private func calculateScores(block: [Response]) {
