@@ -441,3 +441,6 @@
 "worried" = "WORRIED";
 "worried_def" = "anxious, fretful, troubled";
 "worried_example" = "When her cat went missing, the girl was very worried.";
+
+// Matrices
+matricesTask_instructions = "You will be shown a pattern with a piece missing.\nLook at the pattern and think what piece is needed to complete the pattern correctly, both along and down. Then find and tap the right piece out of the options shown below.\nTry your best, but if you are unsure and would like to skip, click Next.";

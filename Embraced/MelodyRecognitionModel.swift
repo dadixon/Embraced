@@ -28,7 +28,7 @@ class MelodyRecognitionModel: TestModelProtocol {
         answers = [String: Any]()
     }
     
-    private func calculateScore(){
+    private func calculateScore() {
         for answer in answers {
             if answer.value as! String == "c" {
                 score += 1
