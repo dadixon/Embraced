@@ -54,9 +54,9 @@ class StartViewController: UIViewController {
     @IBAction func startTest(_ sender: Any) {
         FirebaseStorageManager.shared.addDataToDocument(payload: [
             "language": DataManager.sharedInstance.language
-            ])
+        ])
         
-            AppDelegate.testPosition += 1
+        AppDelegate.testPosition += 1
         
         TestConfig.shared.testStartTime = CFAbsoluteTimeGetCurrent()
         
@@ -65,6 +65,16 @@ class StartViewController: UIViewController {
         if TestConfig.shared.testListName.contains("Eyes Test") {
             for name in DataManager.sharedInstance.eyesTestImages {
                 FirebaseStorageManager.shared.getFile(fileName: name, test: "eyesTest", lang: "")
+            }
+        }
+        
+        if TestConfig.shared.testListName.contains("Matrices") {
+            for task in DataManager.sharedInstance.matricesStimuli {
+                FirebaseStorageManager.shared.getFile(fileName: task.displayImageName, test: "matrices", lang: "")
+                
+                for choice in task.choices {
+                    FirebaseStorageManager.shared.getFile(fileName: choice, test: "matrices", lang: "")
+                }
             }
         }
         
@@ -80,6 +90,7 @@ class StartViewController: UIViewController {
         TrailMakingModel.shared.reset()
         ComprehensionModel.shared.reset()
         EyeTestModel.shared.reset()
+        MatricesModel.shared.reset()
         
         self.navigationController?.pushViewController(TestConfig.shared.testList[0], animated: true)
     }

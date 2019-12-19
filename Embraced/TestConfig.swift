@@ -94,8 +94,8 @@ class TestConfig {
                     if let vc = UIStoryboard(name: "Eyes", bundle: nil).instantiateViewController(withIdentifier: "EyesTest") as? EyesTaskInstructionViewController {
                         self.testList.append(vc)
                     }
-                case "Motor Tasks":
-                    if let vc = UIStoryboard(name: "Motor", bundle: nil).instantiateViewController(withIdentifier: "MotorTest") as? MotorInstructionsViewController {
+                case "Matrices":
+                    if let vc = UIStoryboard(name: "Matrices", bundle: nil).instantiateViewController(withIdentifier: "MatricesTest") as? MatricesInstructionsViewController {
                         self.testList.append(vc)
                     }
                 default:

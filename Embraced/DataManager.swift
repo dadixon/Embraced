@@ -37,6 +37,7 @@ class DataManager {
     var comprehensionSounds = [String]()
     var eyesTestImages = [String]()
     var eyesTestChoices = [[EyeAnswerInfo]]()
+    var matricesStimuli = [MatricesTask]()
     
     func updateData() {
         switch language {
@@ -533,6 +534,17 @@ class DataManager {
             EyeAnswerInfo(title: "ashamed".localized(lang: language), definition: "ashamed_def".localized(lang: language), example: "ashamed_example".localized(lang: language)),
             EyeAnswerInfo(title: "indecisive".localized(lang: language), definition: "indecisive_def".localized(lang: language), example: "indecisive_example".localized(lang: language))
         ])
+        
+        matricesStimuli = [
+            MatricesTask(key: "A1", displayImageName: "A1.png", choices: [
+                "A1-1.png",
+                "A1-2.png",
+                "A1-3.png",
+                "A1-4.png",
+                "A1-5.png",
+                "A1-6.png"
+            ])
+        ]
     }
     
     private func setEsData() {
@@ -1019,5 +1031,16 @@ class DataManager {
             EyeAnswerInfo(title: "ashamed".localized(lang: language), definition: "ashamed_def".localized(lang: language), example: "ashamed_example".localized(lang: language)),
             EyeAnswerInfo(title: "indecisive".localized(lang: language), definition: "indecisive_def".localized(lang: language), example: "indecisive_example".localized(lang: language))
         ])
+        
+        matricesStimuli = [
+            MatricesTask(key: "A1", displayImageName: "A1.png", choices: [
+                "A1-1.png",
+                "A1-2.png",
+                "A1-3.png",
+                "A1-4.png",
+                "A1-5.png",
+                "A1-6.png"
+            ])
+        ]
     }
 }

@@ -43,7 +43,9 @@ class EyesTaskViewController: ActiveStepViewController {
         
         EyeTestModel.shared.answers = [Int]()
         
-        getImage()
+        if let imagePaths = imagePath {
+            taskImageView.image = Utility.getImage(path: "eyesTest/\(imagePaths[index])")
+        }
         
         nextBtn.setTitle("Next".localized(lang: language), for: .normal)
         nextBtn.addTarget(self, action: #selector(moveOn), for: .touchUpInside)
@@ -57,9 +59,7 @@ class EyesTaskViewController: ActiveStepViewController {
         stimuliCollection.backgroundColor = .white
         stimuliCollection.dataSource = self
         stimuliCollection.delegate = self
-        
-        stimuliCollection.register(UINib(nibName: "EyesTestCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "EyesTestCell")
-
+        stimuliCollection.register(EyesTestCollectionViewCell.self, forCellWithReuseIdentifier: "EyesTestCell")
         stimuliCollection.translatesAutoresizingMaskIntoConstraints = false
         
         setupView()
@@ -82,19 +82,6 @@ class EyesTaskViewController: ActiveStepViewController {
         stimuliCollection.allowsMultipleSelection = false
     }
     
-    private func getImage() {
-        if let imagePaths = imagePath {
-            let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-
-            if path != "" {
-                let imageURL = URL(fileURLWithPath: path).appendingPathComponent("media/eyesTest/\(imagePaths[index])")
-                let image = UIImage(contentsOfFile: imageURL.path)
-               
-                taskImageView.image = image
-            }
-        }
-    }
-    
     @objc func moveOn() {
         index += 1
         
@@ -103,7 +90,9 @@ class EyesTaskViewController: ActiveStepViewController {
         if index >= choices.count {
             self.performSegue(withIdentifier: "moveToDone", sender: nil)
         } else {
-            getImage()
+            if let imagePaths = imagePath {
+                taskImageView.image = Utility.getImage(path: "eyesTest/\(imagePaths[index])")
+            }
             stimuliCollection.reloadData()
         }
     }

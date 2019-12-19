@@ -40,9 +40,7 @@ class DoneStepViewController: ActiveStepViewController {
             FirebaseStorageManager.shared.addDataToDocument(payload: [
                 "time": Int((TestConfig.shared.testEndTime! - TestConfig.shared.testStartTime!) * 1000),
             ])
-            
-            TestOrder.sharedInstance.clearTests()
-            
+                        
             self.dismiss(animated: true) {}
         }
     }

@@ -21,6 +21,15 @@ class ViewController: UIViewController {
     
     let userDefaults = UserDefaults.standard
     var testerLanguage = ""
+    var user: User!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        Auth.auth().addStateDidChangeListener({ (auth, user) in
+            if let _ = user  {
+                self.performSegue(withIdentifier: "moveToHome", sender: nil)
+            }
+        })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

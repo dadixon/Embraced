@@ -27,7 +27,6 @@
 		A46230192379EE90000F8ABC /* Eyes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A46230182379EE90000F8ABC /* Eyes.storyboard */; };
 		A462301C2379EF09000F8ABC /* EyesTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A462301B2379EF09000F8ABC /* EyesTaskViewController.swift */; };
 		A4623021237B37BC000F8ABC /* EyesTestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A462301F237B37BC000F8ABC /* EyesTestCollectionViewCell.swift */; };
-		A4623022237B37BC000F8ABC /* EyesTestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4623020237B37BC000F8ABC /* EyesTestCollectionViewCell.xib */; };
 		A4623028237C49F2000F8ABC /* EyesTaskDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4623027237C49F2000F8ABC /* EyesTaskDoneViewController.swift */; };
 		A462302D237C99B6000F8ABC /* EyesTaskInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A462302C237C99B6000F8ABC /* EyesTaskInstructionViewController.swift */; };
 		A4681DBA2355FB8E006E5761 /* TOKEN-ENG-02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4681DA52355FB86006E5761 /* TOKEN-ENG-02.mp3 */; };
@@ -76,6 +75,13 @@
 		A4681DFC23589595006E5761 /* ComprehensionTaskDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4681DFB23589595006E5761 /* ComprehensionTaskDoneViewController.swift */; };
 		A4681DFE235898B3006E5761 /* ComprehensionTaskInstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4681DFD235898B3006E5761 /* ComprehensionTaskInstructionViewController.swift */; };
 		A46A2C641DD66108000AC66C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46A2C631DD66108000AC66C /* SystemConfiguration.framework */; };
+		A46CCEFF239DF05E00093C31 /* MatricesTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46CCEFE239DF05E00093C31 /* MatricesTaskViewController.swift */; };
+		A46CCF01239DF08C00093C31 /* Matrices.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A46CCF00239DF08C00093C31 /* Matrices.storyboard */; };
+		A46CCF03239DF98A00093C31 /* MatricesTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46CCF02239DF98A00093C31 /* MatricesTask.swift */; };
+		A46CCF05239DFD7B00093C31 /* MatriceCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46CCF04239DFD7B00093C31 /* MatriceCollectionCell.swift */; };
+		A46CCF0723A2AA1800093C31 /* MatricesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46CCF0623A2AA1800093C31 /* MatricesModel.swift */; };
+		A46CCF0923A2BAB800093C31 /* MatricesDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46CCF0823A2BAB800093C31 /* MatricesDoneViewController.swift */; };
+		A46CCF0B23A2D2DA00093C31 /* MatricesInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46CCF0A23A2D2DA00093C31 /* MatricesInstructionsViewController.swift */; };
 		A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */; };
 		A472B8C12371AC0A009D8E91 /* MotorTask2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472B8C02371AC0A009D8E91 /* MotorTask2ViewController.swift */; };
 		A472B8C32371ACA1009D8E91 /* MotorTask3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472B8C22371ACA1009D8E91 /* MotorTask3ViewController.swift */; };
@@ -103,8 +109,6 @@
 		A47E666C22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666B22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift */; };
 		A47E666E22D2D7CE00B5B7B5 /* StroopTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666D22D2D7CE00B5B7B5 /* StroopTaskViewController.swift */; };
 		A47E667022D2D87900B5B7B5 /* StroopDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E666F22D2D87900B5B7B5 /* StroopDoneViewController.swift */; };
-		A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */; };
-		A4828EB71F967ED700406F19 /* LoadingScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */; };
 		A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A489D61A1E0BA255001F56FE /* AdminViewController.swift */; };
 		A48A12C221F740ED0044AF08 /* DoneStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */; };
 		A48A12C421F7414A0044AF08 /* CancellationDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A12C321F7414A0044AF08 /* CancellationDoneViewController.swift */; };
@@ -174,7 +178,6 @@
 		A48D60F41FF704D60042FBCA /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48D60F21FF704D60042FBCA /* UserCollectionViewCell.swift */; };
 		A48D60F51FF704D60042FBCA /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48D60F31FF704D60042FBCA /* UserCollectionViewCell.xib */; };
 		A48DF977236096F3007B0CC2 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DF976236096F3007B0CC2 /* CountdownView.swift */; };
-		A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A490D7C41D09162800D2B59D /* UserInputViewController.swift */; };
 		A490D7D21D0919CB00D2B59D /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7C61D0919CB00D2B59D /* Roboto-Black.ttf */; };
 		A490D7D31D0919CB00D2B59D /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7C71D0919CB00D2B59D /* Roboto-BlackItalic.ttf */; };
 		A490D7D41D0919CB00D2B59D /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A490D7C81D0919CB00D2B59D /* Roboto-Bold.ttf */; };
@@ -221,7 +224,6 @@
 		A4A991E022EAA4AC00DE3B83 /* StroopTask3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A991DF22EAA4AC00DE3B83 /* StroopTask3ViewController.swift */; };
 		A4A991E222EAA50700DE3B83 /* StroopTask4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A991E122EAA50700DE3B83 /* StroopTask4ViewController.swift */; };
 		A4AAD21122E01C6A00D4D7CA /* StroopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AAD21022E01C6A00D4D7CA /* StroopModel.swift */; };
-		A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */; };
 		A4C3287E20815CD600DEC460 /* STROOP_ENG_TASK1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287920815B5600DEC460 /* STROOP_ENG_TASK1.mp4 */; };
 		A4C3287F20815CD600DEC460 /* STROOP_ENG_TASK2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287A20815B5D00DEC460 /* STROOP_ENG_TASK2.mp4 */; };
 		A4C3288020815CD600DEC460 /* STROOP_ENG_TASK3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287B20815B6400DEC460 /* STROOP_ENG_TASK3.mp4 */; };
@@ -425,7 +427,6 @@
 		A4DF9F221E08FBC90084EAF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A4DF9F241E08FBC90084EAF9 /* Localizable.strings */; };
 		A4DF9F271E08FEFA0084EAF9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */; };
 		A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */; };
-		A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */; };
 		A4E67AFB224B4D430002D127 /* WordListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E67AFA224B4D430002D127 /* WordListModel.swift */; };
 		A4EC5EB1236C6C9200F68002 /* MotorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EC5EB0236C6C9200F68002 /* MotorModel.swift */; };
 		A4EC5EB6236C73F000F68002 /* Motor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4EC5EB5236C73F000F68002 /* Motor.storyboard */; };
@@ -461,7 +462,6 @@
 		A46230182379EE90000F8ABC /* Eyes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Eyes.storyboard; sourceTree = "<group>"; };
 		A462301B2379EF09000F8ABC /* EyesTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyesTaskViewController.swift; sourceTree = "<group>"; };
 		A462301F237B37BC000F8ABC /* EyesTestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyesTestCollectionViewCell.swift; sourceTree = "<group>"; };
-		A4623020237B37BC000F8ABC /* EyesTestCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EyesTestCollectionViewCell.xib; sourceTree = "<group>"; };
 		A4623025237C4014000F8ABC /* EyeTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTestModel.swift; sourceTree = "<group>"; };
 		A4623027237C49F2000F8ABC /* EyesTaskDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyesTaskDoneViewController.swift; sourceTree = "<group>"; };
 		A4623029237C5E90000F8ABC /* TestModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModelProtocol.swift; sourceTree = "<group>"; };
@@ -512,6 +512,13 @@
 		A4681DFB23589595006E5761 /* ComprehensionTaskDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprehensionTaskDoneViewController.swift; sourceTree = "<group>"; };
 		A4681DFD235898B3006E5761 /* ComprehensionTaskInstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprehensionTaskInstructionViewController.swift; sourceTree = "<group>"; };
 		A46A2C631DD66108000AC66C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A46CCEFE239DF05E00093C31 /* MatricesTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatricesTaskViewController.swift; sourceTree = "<group>"; };
+		A46CCF00239DF08C00093C31 /* Matrices.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Matrices.storyboard; sourceTree = "<group>"; };
+		A46CCF02239DF98A00093C31 /* MatricesTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatricesTask.swift; sourceTree = "<group>"; };
+		A46CCF04239DFD7B00093C31 /* MatriceCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatriceCollectionCell.swift; sourceTree = "<group>"; };
+		A46CCF0623A2AA1800093C31 /* MatricesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatricesModel.swift; sourceTree = "<group>"; };
+		A46CCF0823A2BAB800093C31 /* MatricesDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatricesDoneViewController.swift; sourceTree = "<group>"; };
+		A46CCF0A23A2D2DA00093C31 /* MatricesInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatricesInstructionsViewController.swift; sourceTree = "<group>"; };
 		A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		A472B8C02371AC0A009D8E91 /* MotorTask2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorTask2ViewController.swift; sourceTree = "<group>"; };
 		A472B8C22371ACA1009D8E91 /* MotorTask3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorTask3ViewController.swift; sourceTree = "<group>"; };
@@ -539,8 +546,6 @@
 		A47E666B22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopInstructionsViewController.swift; sourceTree = "<group>"; };
 		A47E666D22D2D7CE00B5B7B5 /* StroopTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopTaskViewController.swift; sourceTree = "<group>"; };
 		A47E666F22D2D87900B5B7B5 /* StroopDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopDoneViewController.swift; sourceTree = "<group>"; };
-		A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadingScreenViewController.swift; path = controllers/LoadingScreenViewController.swift; sourceTree = "<group>"; };
-		A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoadingScreenViewController.xib; path = controllers/LoadingScreenViewController.xib; sourceTree = "<group>"; };
 		A489D61A1E0BA255001F56FE /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		A48A12C121F740ED0044AF08 /* DoneStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneStepViewController.swift; sourceTree = "<group>"; };
 		A48A12C321F7414A0044AF08 /* CancellationDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellationDoneViewController.swift; sourceTree = "<group>"; };
@@ -612,7 +617,6 @@
 		A48D60F21FF704D60042FBCA /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
 		A48D60F31FF704D60042FBCA /* UserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCollectionViewCell.xib; sourceTree = "<group>"; };
 		A48DF976236096F3007B0CC2 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
-		A490D7C41D09162800D2B59D /* UserInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputViewController.swift; sourceTree = "<group>"; };
 		A490D7C61D0919CB00D2B59D /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		A490D7C71D0919CB00D2B59D /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		A490D7C81D0919CB00D2B59D /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -662,7 +666,6 @@
 		A4AAD21022E01C6A00D4D7CA /* StroopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopModel.swift; sourceTree = "<group>"; };
 		A4AE36E61DFC9EA600727DFD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		A4AE36E71DFC9EA600727DFD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInputViewController.xib; sourceTree = "<group>"; };
 		A4C3287620815B4200DEC460 /* STROOP_SPA_TASK2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_SPA_TASK2.mp4; path = Assets.xcassets/Stroop/STROOP_SPA_TASK2.dataset/STROOP_SPA_TASK2.mp4; sourceTree = "<group>"; };
 		A4C3287720815B4900DEC460 /* STROOP_SPA_TASK3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_SPA_TASK3.mp4; path = Assets.xcassets/Stroop/STROOP_SPA_TASK3.dataset/STROOP_SPA_TASK3.mp4; sourceTree = "<group>"; };
 		A4C3287820815B4F00DEC460 /* STROOP_SPA_TASK4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_SPA_TASK4.mp4; path = Assets.xcassets/Stroop/STROOP_SPA_TASK4.dataset/STROOP_SPA_TASK4.mp4; sourceTree = "<group>"; };
@@ -868,7 +871,6 @@
 		A4DF9F251E08FBF60084EAF9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A4DF9F261E08FEFA0084EAF9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOrder.swift; sourceTree = "<group>"; };
 		A4E67AFA224B4D430002D127 /* WordListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListModel.swift; sourceTree = "<group>"; };
 		A4EC5EB0236C6C9200F68002 /* MotorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorModel.swift; sourceTree = "<group>"; };
 		A4EC5EB5236C73F000F68002 /* Motor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Motor.storyboard; sourceTree = "<group>"; };
@@ -937,6 +939,7 @@
 				A49172FD2310BF92004BDC80 /* Comprehension.storyboard */,
 				A46230182379EE90000F8ABC /* Eyes.storyboard */,
 				A4EC5EB5236C73F000F68002 /* Motor.storyboard */,
+				A46CCF00239DF08C00093C31 /* Matrices.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -957,6 +960,7 @@
 		A42AB5C51D2DE0F4001387BB /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				A46CCEFD239DEF7800093C31 /* Matrices */,
 				A462301A2379EEE0000F8ABC /* EyesTest */,
 				A4EC5EB7236C745600F68002 /* Motor */,
 				A49172FF2310BFFB004BDC80 /* Comprehension */,
@@ -995,6 +999,7 @@
 				A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */,
 				A47E664722C0846E00B5B7B5 /* ParticipantDTO.swift */,
 				A47E664B22C09CAE00B5B7B5 /* Participant.swift */,
+				A46CCF02239DF98A00093C31 /* MatricesTask.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1028,6 +1033,16 @@
 				A4623027237C49F2000F8ABC /* EyesTaskDoneViewController.swift */,
 			);
 			name = EyesTest;
+			sourceTree = "<group>";
+		};
+		A46CCEFD239DEF7800093C31 /* Matrices */ = {
+			isa = PBXGroup;
+			children = (
+				A46CCF0A23A2D2DA00093C31 /* MatricesInstructionsViewController.swift */,
+				A46CCEFE239DF05E00093C31 /* MatricesTaskViewController.swift */,
+				A46CCF0823A2BAB800093C31 /* MatricesDoneViewController.swift */,
+			);
+			name = Matrices;
 			sourceTree = "<group>";
 		};
 		A47E666322D2BAB100B5B7B5 /* ClockDrawing */ = {
@@ -1387,10 +1402,9 @@
 		A48D60E61FF5AC3B0042FBCA /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A4E5B54A1FBC4B3C00FAB073 /* TestOrder.swift */,
-				A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */,
 				A4396F0F223C142B009B1EDC /* FirebaseStorageManager.swift */,
 				A4F810E42252ADBA001F9503 /* DatabaseController.swift */,
+				A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */,
 				A4FAB4492256334500E6C68A /* NetworkManager.swift */,
 			);
 			name = API;
@@ -1414,7 +1428,7 @@
 				A48DF976236096F3007B0CC2 /* CountdownView.swift */,
 				A472B8CA2373318F009D8E91 /* MotorTapView.swift */,
 				A462301F237B37BC000F8ABC /* EyesTestCollectionViewCell.swift */,
-				A4623020237B37BC000F8ABC /* EyesTestCollectionViewCell.xib */,
+				A46CCF04239DFD7B00093C31 /* MatriceCollectionCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1427,14 +1441,10 @@
 				A42AB5C51D2DE0F4001387BB /* Test */,
 				A48B4DC41CF9E7C700878928 /* AppDelegate.swift */,
 				A48B4DC61CF9E7C700878928 /* ViewController.swift */,
+				A489D61A1E0BA255001F56FE /* AdminViewController.swift */,
 				A4EDC008229D3F25006B8C53 /* DashboardViewController.swift */,
 				A4EDC00A229D4A69006B8C53 /* SelectTestViewController.swift */,
-				A489D61A1E0BA255001F56FE /* AdminViewController.swift */,
-				A490D7C41D09162800D2B59D /* UserInputViewController.swift */,
-				A4BB08EE1D82550900B76C64 /* UserInputViewController.xib */,
 				A4DFA8C51DC6AEE30056F05D /* StartViewController.swift */,
-				A4828EB41F967ED700406F19 /* LoadingScreenViewController.swift */,
-				A4828EB51F967ED700406F19 /* LoadingScreenViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1576,6 +1586,7 @@
 				A4681DF923587928006E5761 /* ComprehensionModel.swift */,
 				A4EC5EB0236C6C9200F68002 /* MotorModel.swift */,
 				A43623DC237DB17B002AFB21 /* EyeTestModel.swift */,
+				A46CCF0623A2AA1800093C31 /* MatricesModel.swift */,
 			);
 			name = TestModels;
 			sourceTree = "<group>";
@@ -1666,6 +1677,7 @@
 			files = (
 				A4CA152322031E9D00F6CF0A /* ENG-40.mp3 in Resources */,
 				A4681DC02355FB8E006E5761 /* TOKEN-ENG-06.mp3 in Resources */,
+				A46CCF01239DF08C00093C31 /* Matrices.storyboard in Resources */,
 				A48A12F221FA4BF60044AF08 /* melodies 320ms orig(66).wav in Resources */,
 				A4CA14A522031C1900F6CF0A /* SPA-BWD-06.mp3 in Resources */,
 				A4681DC92355FB8E006E5761 /* TOKEN-ENG-20.mp3 in Resources */,
@@ -1809,7 +1821,6 @@
 				A4CA157122031EBE00F6CF0A /* SPA-42.mp3 in Resources */,
 				A4681DCB2355FB8E006E5761 /* TOKEN-ENG-03.mp3 in Resources */,
 				A4CA14FB22031E9D00F6CF0A /* ENG-17.mp3 in Resources */,
-				A4828EB71F967ED700406F19 /* LoadingScreenViewController.xib in Resources */,
 				A4CA156622031EBE00F6CF0A /* SPA-18.mp3 in Resources */,
 				A4CA157722031EBE00F6CF0A /* SPA-44.mp3 in Resources */,
 				A4CA14B822031C2500F6CF0A /* SPA-FWD-07.mp3 in Resources */,
@@ -1905,7 +1916,6 @@
 				A4CA149F22031C1900F6CF0A /* SPA-BWD-03.mp3 in Resources */,
 				A490D7DD1D0919CB00D2B59D /* Roboto-ThinItalic.ttf in Resources */,
 				A4CA150F22031E9D00F6CF0A /* ENG-10.mp3 in Resources */,
-				A4623022237B37BC000F8ABC /* EyesTestCollectionViewCell.xib in Resources */,
 				A4681DBD2355FB8E006E5761 /* TOKEN-ENG-07.mp3 in Resources */,
 				A4681DED2355FBA1006E5761 /* TOKEN-SPA-02.mp3 in Resources */,
 				A4CA14BF22031C2500F6CF0A /* SPA-FWD-10.mp3 in Resources */,
@@ -1949,7 +1959,6 @@
 				A4CA148822031BFC00F6CF0A /* ENG-FWD-06.mp3 in Resources */,
 				A4CA14BC22031C2500F6CF0A /* SPA-FWD-09.mp3 in Resources */,
 				A4CA155F22031EBE00F6CF0A /* SPA-37.mp3 in Resources */,
-				A4BB08EF1D82550900B76C64 /* UserInputViewController.xib in Resources */,
 				A4CA151722031E9D00F6CF0A /* ENG-07.mp3 in Resources */,
 				A4CA156722031EBE00F6CF0A /* SPA-30.mp3 in Resources */,
 				A4CA14A622031C1900F6CF0A /* SPA-BWD-09.mp3 in Resources */,
@@ -2112,7 +2121,9 @@
 				A4969D1221E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift in Sources */,
 				A4D7C7902269E394004BF326 /* WordListDoneViewController.swift in Sources */,
 				A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */,
+				A46CCF05239DFD7B00093C31 /* MatriceCollectionCell.swift in Sources */,
 				A49173012310C020004BDC80 /* ComprehensionTaskViewController.swift in Sources */,
+				A46CCEFF239DF05E00093C31 /* MatricesTaskViewController.swift in Sources */,
 				A43781872373598B00EC5717 /* MotorInstructions2ViewController.swift in Sources */,
 				A437818B237359BF00EC5717 /* MotorDoneViewController.swift in Sources */,
 				A47E664C22C09CAE00B5B7B5 /* Participant.swift in Sources */,
@@ -2130,7 +2141,6 @@
 				A4EDC009229D3F25006B8C53 /* DashboardViewController.swift in Sources */,
 				A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */,
 				A48BA73B230D506F00C0D34B /* CanvasView.swift in Sources */,
-				A4828EB61F967ED700406F19 /* LoadingScreenViewController.swift in Sources */,
 				A4F810E52252ADBA001F9503 /* DatabaseController.swift in Sources */,
 				A4DE7DDB22F6665E009EEA17 /* TrailMakingVideoViewController.swift in Sources */,
 				A47E665422CFD2F400B5B7B5 /* MelodyRecognitionInstructions2ViewController.swift in Sources */,
@@ -2145,6 +2155,7 @@
 				A4DE7DD422F66191009EEA17 /* RCFT3DoneViewController.swift in Sources */,
 				A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */,
 				A4DE7DC222F644D0009EEA17 /* RCFTDoneViewController.swift in Sources */,
+				A46CCF0723A2AA1800093C31 /* MatricesModel.swift in Sources */,
 				A4969D1E21E697B50063FF40 /* Utility.swift in Sources */,
 				A4DFA8C71DC6AEE30056F05D /* StartViewController.swift in Sources */,
 				A4DE7DAB22F61D49009EEA17 /* ClockDrawingInstructionsViewController.swift in Sources */,
@@ -2159,6 +2170,7 @@
 				A472B8CB2373318F009D8E91 /* MotorTapView.swift in Sources */,
 				A42041F121E1D09E00021EDB /* InstructionsViewController.swift in Sources */,
 				A48D60F41FF704D60042FBCA /* UserCollectionViewCell.swift in Sources */,
+				A46CCF0B23A2D2DA00093C31 /* MatricesInstructionsViewController.swift in Sources */,
 				A4DE7DE322F666E6009EEA17 /* TrailMakingTask2ViewController.swift in Sources */,
 				A4969D3721F276210063FF40 /* CancellationBlockViewController.swift in Sources */,
 				A472B8C12371AC0A009D8E91 /* MotorTask2ViewController.swift in Sources */,
@@ -2166,6 +2178,7 @@
 				A4DE7DBA22F63E92009EEA17 /* RCFTInstructionsViewController.swift in Sources */,
 				A4DE7DBC22F641F9009EEA17 /* RCFTPracticeViewController.swift in Sources */,
 				A4DE7DC722F65DB5009EEA17 /* RCFT2InstructionsViewController.swift in Sources */,
+				A46CCF03239DF98A00093C31 /* MatricesTask.swift in Sources */,
 				A4623021237B37BC000F8ABC /* EyesTestCollectionViewCell.swift in Sources */,
 				A48DF977236096F3007B0CC2 /* CountdownView.swift in Sources */,
 				A48B1AFE22EF444C007A1E98 /* NamingTaskModel.swift in Sources */,
@@ -2182,12 +2195,12 @@
 				A4681DFE235898B3006E5761 /* ComprehensionTaskInstructionViewController.swift in Sources */,
 				A4396F10223C142B009B1EDC /* FirebaseStorageManager.swift in Sources */,
 				A4A991E222EAA50700DE3B83 /* StroopTask4ViewController.swift in Sources */,
-				A490D7C51D09162800D2B59D /* UserInputViewController.swift in Sources */,
 				A47E664E22CFD0B100B5B7B5 /* MelodyRecognitionPracticeViewController.swift in Sources */,
 				A4DDA8D3225E828F0000395D /* WordListInstructionsViewController.swift in Sources */,
 				A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */,
 				A4AAD21122E01C6A00D4D7CA /* StroopModel.swift in Sources */,
 				A4EC5EB1236C6C9200F68002 /* MotorModel.swift in Sources */,
+				A46CCF0923A2BAB800093C31 /* MatricesDoneViewController.swift in Sources */,
 				A47E664622C07FF300B5B7B5 /* ParticipantsTableViewController.swift in Sources */,
 				A4969D2121E7D7E90063FF40 /* CancellationInstructionsViewController.swift in Sources */,
 				A48B4DC51CF9E7C700878928 /* AppDelegate.swift in Sources */,
@@ -2203,7 +2216,6 @@
 				A4DE7DD222F6617E009EEA17 /* RCFT3TaskViewController.swift in Sources */,
 				A47E664422B262B200B5B7B5 /* SideMenuViewController.swift in Sources */,
 				A4969D2721E7DB2D0063FF40 /* CancellationInstructions3ViewController.swift in Sources */,
-				A4E5B54B1FBC4B3C00FAB073 /* TestOrder.swift in Sources */,
 				A4A991E022EAA4AC00DE3B83 /* StroopTask3ViewController.swift in Sources */,
 				A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */,
 				A4DE7DD922F6663B009EEA17 /* TrailMakingInstructionsViewController.swift in Sources */,

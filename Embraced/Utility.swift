@@ -114,6 +114,20 @@ class Utility {
         
         return img
     }
+    
+    static func getImage(path: String) -> UIImage {
+        let imagePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+
+        if imagePath != "" {
+            let imageURL = URL(fileURLWithPath: imagePath).appendingPathComponent("media/\(path)")
+            
+            if let image = UIImage(contentsOfFile: imageURL.path) {
+                return image
+            }
+        }
+        
+        return UIImage()
+    }
 }
 
 struct AppUtility {
