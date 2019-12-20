@@ -224,6 +224,12 @@
 		A4A991E022EAA4AC00DE3B83 /* StroopTask3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A991DF22EAA4AC00DE3B83 /* StroopTask3ViewController.swift */; };
 		A4A991E222EAA50700DE3B83 /* StroopTask4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A991E122EAA50700DE3B83 /* StroopTask4ViewController.swift */; };
 		A4AAD21122E01C6A00D4D7CA /* StroopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AAD21022E01C6A00D4D7CA /* StroopModel.swift */; };
+		A4B9DBF123AB83B600234E07 /* CPTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9DBF023AB83B600234E07 /* CPTModel.swift */; };
+		A4B9DBF323AB8C6F00234E07 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9DBF223AB8C6F00234E07 /* Response.swift */; };
+		A4B9DBF523AB90E000234E07 /* CPTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9DBF423AB90E000234E07 /* CPTResponse.swift */; };
+		A4B9DBF723ACD41A00234E07 /* CPT.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B9DBF623ACD41A00234E07 /* CPT.storyboard */; };
+		A4B9DBFA23ACD45700234E07 /* CPTTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9DBF923ACD45700234E07 /* CPTTaskViewController.swift */; };
+		A4B9DBFC23ACDA8300234E07 /* CPTCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9DBFB23ACDA8300234E07 /* CPTCollectionCell.swift */; };
 		A4C3287E20815CD600DEC460 /* STROOP_ENG_TASK1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287920815B5600DEC460 /* STROOP_ENG_TASK1.mp4 */; };
 		A4C3287F20815CD600DEC460 /* STROOP_ENG_TASK2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287A20815B5D00DEC460 /* STROOP_ENG_TASK2.mp4 */; };
 		A4C3288020815CD600DEC460 /* STROOP_ENG_TASK3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A4C3287B20815B6400DEC460 /* STROOP_ENG_TASK3.mp4 */; };
@@ -666,6 +672,12 @@
 		A4AAD21022E01C6A00D4D7CA /* StroopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopModel.swift; sourceTree = "<group>"; };
 		A4AE36E61DFC9EA600727DFD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		A4AE36E71DFC9EA600727DFD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A4B9DBF023AB83B600234E07 /* CPTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTModel.swift; sourceTree = "<group>"; };
+		A4B9DBF223AB8C6F00234E07 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		A4B9DBF423AB90E000234E07 /* CPTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTResponse.swift; sourceTree = "<group>"; };
+		A4B9DBF623ACD41A00234E07 /* CPT.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CPT.storyboard; sourceTree = "<group>"; };
+		A4B9DBF923ACD45700234E07 /* CPTTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTTaskViewController.swift; sourceTree = "<group>"; };
+		A4B9DBFB23ACDA8300234E07 /* CPTCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTCollectionCell.swift; sourceTree = "<group>"; };
 		A4C3287620815B4200DEC460 /* STROOP_SPA_TASK2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_SPA_TASK2.mp4; path = Assets.xcassets/Stroop/STROOP_SPA_TASK2.dataset/STROOP_SPA_TASK2.mp4; sourceTree = "<group>"; };
 		A4C3287720815B4900DEC460 /* STROOP_SPA_TASK3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_SPA_TASK3.mp4; path = Assets.xcassets/Stroop/STROOP_SPA_TASK3.dataset/STROOP_SPA_TASK3.mp4; sourceTree = "<group>"; };
 		A4C3287820815B4F00DEC460 /* STROOP_SPA_TASK4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = STROOP_SPA_TASK4.mp4; path = Assets.xcassets/Stroop/STROOP_SPA_TASK4.dataset/STROOP_SPA_TASK4.mp4; sourceTree = "<group>"; };
@@ -940,6 +952,7 @@
 				A46230182379EE90000F8ABC /* Eyes.storyboard */,
 				A4EC5EB5236C73F000F68002 /* Motor.storyboard */,
 				A46CCF00239DF08C00093C31 /* Matrices.storyboard */,
+				A4B9DBF623ACD41A00234E07 /* CPT.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -960,6 +973,7 @@
 		A42AB5C51D2DE0F4001387BB /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				A4B9DBF823ACD42E00234E07 /* CPT */,
 				A46CCEFD239DEF7800093C31 /* Matrices */,
 				A462301A2379EEE0000F8ABC /* EyesTest */,
 				A4EC5EB7236C745600F68002 /* Motor */,
@@ -1000,6 +1014,8 @@
 				A47E664722C0846E00B5B7B5 /* ParticipantDTO.swift */,
 				A47E664B22C09CAE00B5B7B5 /* Participant.swift */,
 				A46CCF02239DF98A00093C31 /* MatricesTask.swift */,
+				A4B9DBF223AB8C6F00234E07 /* Response.swift */,
+				A4B9DBF423AB90E000234E07 /* CPTResponse.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1429,6 +1445,7 @@
 				A472B8CA2373318F009D8E91 /* MotorTapView.swift */,
 				A462301F237B37BC000F8ABC /* EyesTestCollectionViewCell.swift */,
 				A46CCF04239DFD7B00093C31 /* MatriceCollectionCell.swift */,
+				A4B9DBFB23ACDA8300234E07 /* CPTCollectionCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1502,6 +1519,14 @@
 				A48A12C321F7414A0044AF08 /* CancellationDoneViewController.swift */,
 			);
 			name = Cancellation;
+			sourceTree = "<group>";
+		};
+		A4B9DBF823ACD42E00234E07 /* CPT */ = {
+			isa = PBXGroup;
+			children = (
+				A4B9DBF923ACD45700234E07 /* CPTTaskViewController.swift */,
+			);
+			name = CPT;
 			sourceTree = "<group>";
 		};
 		A4DDA8D1225E82360000395D /* WordList */ = {
@@ -1587,6 +1612,7 @@
 				A4EC5EB0236C6C9200F68002 /* MotorModel.swift */,
 				A43623DC237DB17B002AFB21 /* EyeTestModel.swift */,
 				A46CCF0623A2AA1800093C31 /* MatricesModel.swift */,
+				A4B9DBF023AB83B600234E07 /* CPTModel.swift */,
 			);
 			name = TestModels;
 			sourceTree = "<group>";
@@ -1723,6 +1749,7 @@
 				A48A12E121FA4BC80044AF08 /* melodies 320ms orig(44).wav in Resources */,
 				A48A12E221FA4BC80044AF08 /* melodies 320ms diff(44).wav in Resources */,
 				A4CA150922031E9D00F6CF0A /* ENG-01.mp3 in Resources */,
+				A4B9DBF723ACD41A00234E07 /* CPT.storyboard in Resources */,
 				A4CA155622031EBE00F6CF0A /* SPA-26.mp3 in Resources */,
 				A4CA156122031EBE00F6CF0A /* SPA-17.mp3 in Resources */,
 				A4CA14C322031C2500F6CF0A /* SPA-FWD-11.mp3 in Resources */,
@@ -2099,6 +2126,7 @@
 				A47E665E22D1978000B5B7B5 /* DigitSpanTask2ViewController.swift in Sources */,
 				A4378189237359A200EC5717 /* MotorInstructions3ViewController.swift in Sources */,
 				A47E664822C0846E00B5B7B5 /* ParticipantDTO.swift in Sources */,
+				A4B9DBF523AB90E000234E07 /* CPTResponse.swift in Sources */,
 				A47E664A22C095B800B5B7B5 /* DataDisplayViewController.swift in Sources */,
 				A47E666022D1CE4F00B5B7B5 /* DigitSpanModel.swift in Sources */,
 				A4FAB44A2256334500E6C68A /* NetworkManager.swift in Sources */,
@@ -2126,6 +2154,7 @@
 				A46CCEFF239DF05E00093C31 /* MatricesTaskViewController.swift in Sources */,
 				A43781872373598B00EC5717 /* MotorInstructions2ViewController.swift in Sources */,
 				A437818B237359BF00EC5717 /* MotorDoneViewController.swift in Sources */,
+				A4B9DBFA23ACD45700234E07 /* CPTTaskViewController.swift in Sources */,
 				A47E664C22C09CAE00B5B7B5 /* Participant.swift in Sources */,
 				A4DE7DAF22F61D7F009EEA17 /* ClockDrawingDoneViewController.swift in Sources */,
 				A4DE7DE522F66703009EEA17 /* TrailMakingDoneViewController.swift in Sources */,
@@ -2177,6 +2206,7 @@
 				A47E665A22D1975300B5B7B5 /* DigitSpanTaskViewController.swift in Sources */,
 				A4DE7DBA22F63E92009EEA17 /* RCFTInstructionsViewController.swift in Sources */,
 				A4DE7DBC22F641F9009EEA17 /* RCFTPracticeViewController.swift in Sources */,
+				A4B9DBF123AB83B600234E07 /* CPTModel.swift in Sources */,
 				A4DE7DC722F65DB5009EEA17 /* RCFT2InstructionsViewController.swift in Sources */,
 				A46CCF03239DF98A00093C31 /* MatricesTask.swift in Sources */,
 				A4623021237B37BC000F8ABC /* EyesTestCollectionViewCell.swift in Sources */,
@@ -2199,6 +2229,7 @@
 				A4DDA8D3225E828F0000395D /* WordListInstructionsViewController.swift in Sources */,
 				A42041F421E1D5D400021EDB /* MelodyRecognitionInstructionsViewController.swift in Sources */,
 				A4AAD21122E01C6A00D4D7CA /* StroopModel.swift in Sources */,
+				A4B9DBF323AB8C6F00234E07 /* Response.swift in Sources */,
 				A4EC5EB1236C6C9200F68002 /* MotorModel.swift in Sources */,
 				A46CCF0923A2BAB800093C31 /* MatricesDoneViewController.swift in Sources */,
 				A47E664622C07FF300B5B7B5 /* ParticipantsTableViewController.swift in Sources */,
@@ -2225,6 +2256,7 @@
 				A4DB0FB41DFB2CA1000811B6 /* DataManager.swift in Sources */,
 				A48A12C621F74FE60044AF08 /* CancellationModel.swift in Sources */,
 				A47E666C22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift in Sources */,
+				A4B9DBFC23ACDA8300234E07 /* CPTCollectionCell.swift in Sources */,
 				A48A12C221F740ED0044AF08 /* DoneStepViewController.swift in Sources */,
 				A4E67AFB224B4D430002D127 /* WordListModel.swift in Sources */,
 				A47E665822D1972B00B5B7B5 /* DigittSpanPracticeViewController.swift in Sources */,
@@ -2391,7 +2423,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -2412,7 +2444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;

@@ -98,6 +98,10 @@ class TestConfig {
                     if let vc = UIStoryboard(name: "Matrices", bundle: nil).instantiateViewController(withIdentifier: "MatricesTest") as? MatricesInstructionsViewController {
                         self.testList.append(vc)
                     }
+                case "Continuous Performance Test":
+                    if let vc = UIStoryboard(name: "CPT", bundle: nil).instantiateViewController(withIdentifier: "CPTTest") as? CPTTaskViewController {
+                        self.testList.append(vc)
+                    }
                 default:
                     continue
             }

@@ -8,12 +8,6 @@
 
 import UIKit
 
-struct Response {
-    var index: Int
-    var value: String
-    var time: Int
-}
-
 class CancellationBlockViewController: ActiveStepViewController {
 
     var stimuliCollection: UICollectionView!
