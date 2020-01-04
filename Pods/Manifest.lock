@@ -107,7 +107,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.6.1)
-  - ReachabilitySwift (4.3.0)
+  - ReachabilitySwift (4.3.1)
   - SVProgressHUD (2.2.5)
   - YoutubePlayer-in-WKWebView (0.3.1)
 
@@ -116,12 +116,12 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Firestore
   - Firebase/Storage
-  - ReachabilitySwift
+  - ReachabilitySwift (~> 4)
   - SVProgressHUD
   - YoutubePlayer-in-WKWebView (~> 0.3.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - BoringSSL
     - Firebase
     - FirebaseAnalytics
@@ -139,9 +139,10 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
-    - ReachabilitySwift
     - SVProgressHUD
     - YoutubePlayer-in-WKWebView
+  trunk:
+    - ReachabilitySwift
 
 SPEC CHECKSUMS:
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
@@ -161,10 +162,10 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
-  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   YoutubePlayer-in-WKWebView: 86f6b4c04797296071585b92724f3904d0273f12
 
-PODFILE CHECKSUM: 69ab3e007c3c3c517869ae8de0751c2382c9ac70
+PODFILE CHECKSUM: ec246ad49c691e56b923597717bf54e2d7a3a5b5
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
