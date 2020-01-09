@@ -9,7 +9,6 @@
 import Foundation
 
 class CPTModel: TestModelProtocol {
-    static let shared = CPTModel()
     
     var blocks = [String: [CPTResponse]]()
     private var hits: Int = 0
@@ -18,7 +17,7 @@ class CPTModel: TestModelProtocol {
     private var average: Double = 0.0
     private var median: Double = 0.0
     
-    private init() {}
+    init() {}
     
     func getModel() -> [String : Any] {
         var rv = [String: Any]()

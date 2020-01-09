@@ -18,10 +18,29 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="bia-7F-OT9"/>
                     </view>
+                    <connections>
+                        <segue destination="hpu-QG-Ytd" kind="show" identifier="moveToDone" id="1Eb-XW-Buc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DD5-Qh-Ucn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128" y="141"/>
+        </scene>
+        <!--Done Step View Controller-->
+        <scene sceneID="B5a-UX-5g9">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="hpu-QG-Ytd" customClass="DoneStepViewController" customModule="Embraced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yCx-rY-iCc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Mpw-Cg-GJb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4c8-hC-aBX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kdb-Ox-wqB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828" y="141"/>
         </scene>
     </scenes>
 </document>

@@ -198,6 +198,7 @@
 		A49173012310C020004BDC80 /* ComprehensionTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49173002310C020004BDC80 /* ComprehensionTaskViewController.swift */; };
 		A49173042310D1BB004BDC80 /* ComprehensionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49173022310D1BB004BDC80 /* ComprehensionCollectionViewCell.swift */; };
 		A49173052310D1BB004BDC80 /* ComprehensionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49173032310D1BB004BDC80 /* ComprehensionCollectionViewCell.xib */; };
+		A4943F0423BFD3EB0057803A /* CPTDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4943F0323BFD3EB0057803A /* CPTDoneViewController.swift */; };
 		A4969D1221E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1121E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift */; };
 		A4969D1421E544C10063FF40 /* DigitSpan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4969D1321E544C10063FF40 /* DigitSpan.storyboard */; };
 		A4969D1721E5454B0063FF40 /* DigitSpanInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4969D1621E5454B0063FF40 /* DigitSpanInstructionsViewController.swift */; };
@@ -643,6 +644,7 @@
 		A49173002310C020004BDC80 /* ComprehensionTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprehensionTaskViewController.swift; sourceTree = "<group>"; };
 		A49173022310D1BB004BDC80 /* ComprehensionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprehensionCollectionViewCell.swift; sourceTree = "<group>"; };
 		A49173032310D1BB004BDC80 /* ComprehensionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComprehensionCollectionViewCell.xib; sourceTree = "<group>"; };
+		A4943F0323BFD3EB0057803A /* CPTDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTDoneViewController.swift; sourceTree = "<group>"; };
 		A4969D1121E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionDoneViewController.swift; sourceTree = "<group>"; };
 		A4969D1321E544C10063FF40 /* DigitSpan.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DigitSpan.storyboard; sourceTree = "<group>"; };
 		A4969D1621E5454B0063FF40 /* DigitSpanInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitSpanInstructionsViewController.swift; sourceTree = "<group>"; };
@@ -1525,6 +1527,7 @@
 			isa = PBXGroup;
 			children = (
 				A4B9DBF923ACD45700234E07 /* CPTTaskViewController.swift */,
+				A4943F0323BFD3EB0057803A /* CPTDoneViewController.swift */,
 			);
 			name = CPT;
 			sourceTree = "<group>";
@@ -2131,6 +2134,7 @@
 				A47E666022D1CE4F00B5B7B5 /* DigitSpanModel.swift in Sources */,
 				A4FAB44A2256334500E6C68A /* NetworkManager.swift in Sources */,
 				A4EC5EB9236C751A00F68002 /* MotorTaskViewController.swift in Sources */,
+				A4943F0423BFD3EB0057803A /* CPTDoneViewController.swift in Sources */,
 				A472B8C92371AD0A009D8E91 /* MotorTask6ViewController.swift in Sources */,
 				A42041F621E1EFE100021EDB /* ActiveStepViewController.swift in Sources */,
 				A48A12C421F7414A0044AF08 /* CancellationDoneViewController.swift in Sources */,
