@@ -24,6 +24,7 @@
 		A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669311E1631A600EA7E2E /* ListenButton.swift */; };
 		A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669331E16435C00EA7E2E /* PlayButton.swift */; };
 		A44669381E16457600EA7E2E /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669371E16457600EA7E2E /* RecordButton.swift */; };
+		A4562E5B23C7732D0049CA17 /* MatricesInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4562E5A23C7732D0049CA17 /* MatricesInstructionsViewController.swift */; };
 		A46230192379EE90000F8ABC /* Eyes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A46230182379EE90000F8ABC /* Eyes.storyboard */; };
 		A462301C2379EF09000F8ABC /* EyesTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A462301B2379EF09000F8ABC /* EyesTaskViewController.swift */; };
 		A4623021237B37BC000F8ABC /* EyesTestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A462301F237B37BC000F8ABC /* EyesTestCollectionViewCell.swift */; };
@@ -81,7 +82,6 @@
 		A46CCF05239DFD7B00093C31 /* MatriceCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46CCF04239DFD7B00093C31 /* MatriceCollectionCell.swift */; };
 		A46CCF0723A2AA1800093C31 /* MatricesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46CCF0623A2AA1800093C31 /* MatricesModel.swift */; };
 		A46CCF0923A2BAB800093C31 /* MatricesDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46CCF0823A2BAB800093C31 /* MatricesDoneViewController.swift */; };
-		A46CCF0B23A2D2DA00093C31 /* MatricesInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46CCF0A23A2D2DA00093C31 /* MatricesInstructionsViewController.swift */; };
 		A46FEC0A2097A7EB00AB7EA5 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */; };
 		A472B8C12371AC0A009D8E91 /* MotorTask2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472B8C02371AC0A009D8E91 /* MotorTask2ViewController.swift */; };
 		A472B8C32371ACA1009D8E91 /* MotorTask3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472B8C22371ACA1009D8E91 /* MotorTask3ViewController.swift */; };
@@ -459,6 +459,7 @@
 		A44669311E1631A600EA7E2E /* ListenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenButton.swift; sourceTree = "<group>"; };
 		A44669331E16435C00EA7E2E /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		A44669371E16457600EA7E2E /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		A4562E5A23C7732D0049CA17 /* MatricesInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatricesInstructionsViewController.swift; sourceTree = "<group>"; };
 		A46230182379EE90000F8ABC /* Eyes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Eyes.storyboard; sourceTree = "<group>"; };
 		A462301B2379EF09000F8ABC /* EyesTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyesTaskViewController.swift; sourceTree = "<group>"; };
 		A462301F237B37BC000F8ABC /* EyesTestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyesTestCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -518,7 +519,6 @@
 		A46CCF04239DFD7B00093C31 /* MatriceCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatriceCollectionCell.swift; sourceTree = "<group>"; };
 		A46CCF0623A2AA1800093C31 /* MatricesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatricesModel.swift; sourceTree = "<group>"; };
 		A46CCF0823A2BAB800093C31 /* MatricesDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatricesDoneViewController.swift; sourceTree = "<group>"; };
-		A46CCF0A23A2D2DA00093C31 /* MatricesInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatricesInstructionsViewController.swift; sourceTree = "<group>"; };
 		A46FEC092097A7EB00AB7EA5 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		A472B8C02371AC0A009D8E91 /* MotorTask2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorTask2ViewController.swift; sourceTree = "<group>"; };
 		A472B8C22371ACA1009D8E91 /* MotorTask3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorTask3ViewController.swift; sourceTree = "<group>"; };
@@ -1038,7 +1038,7 @@
 		A46CCEFD239DEF7800093C31 /* Matrices */ = {
 			isa = PBXGroup;
 			children = (
-				A46CCF0A23A2D2DA00093C31 /* MatricesInstructionsViewController.swift */,
+				A4562E5A23C7732D0049CA17 /* MatricesInstructionsViewController.swift */,
 				A46CCEFE239DF05E00093C31 /* MatricesTaskViewController.swift */,
 				A46CCF0823A2BAB800093C31 /* MatricesDoneViewController.swift */,
 			);
@@ -2123,6 +2123,7 @@
 				A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */,
 				A46CCF05239DFD7B00093C31 /* MatriceCollectionCell.swift in Sources */,
 				A49173012310C020004BDC80 /* ComprehensionTaskViewController.swift in Sources */,
+				A4562E5B23C7732D0049CA17 /* MatricesInstructionsViewController.swift in Sources */,
 				A46CCEFF239DF05E00093C31 /* MatricesTaskViewController.swift in Sources */,
 				A43781872373598B00EC5717 /* MotorInstructions2ViewController.swift in Sources */,
 				A437818B237359BF00EC5717 /* MotorDoneViewController.swift in Sources */,
@@ -2170,7 +2171,6 @@
 				A472B8CB2373318F009D8E91 /* MotorTapView.swift in Sources */,
 				A42041F121E1D09E00021EDB /* InstructionsViewController.swift in Sources */,
 				A48D60F41FF704D60042FBCA /* UserCollectionViewCell.swift in Sources */,
-				A46CCF0B23A2D2DA00093C31 /* MatricesInstructionsViewController.swift in Sources */,
 				A4DE7DE322F666E6009EEA17 /* TrailMakingTask2ViewController.swift in Sources */,
 				A4969D3721F276210063FF40 /* CancellationBlockViewController.swift in Sources */,
 				A472B8C12371AC0A009D8E91 /* MotorTask2ViewController.swift in Sources */,

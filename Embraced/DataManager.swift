@@ -543,6 +543,94 @@ class DataManager {
                 "A1-4.png",
                 "A1-5.png",
                 "A1-6.png"
+            ]),
+            MatricesTask(key: "A2", displayImageName: "A2.png", choices: [
+                "A2-1.png",
+                "A2-2.png",
+                "A2-3.png",
+                "A2-4.png",
+                "A2-5.png",
+                "A2-6.png"
+            ]),
+            MatricesTask(key: "A3", displayImageName: "A3.png", choices: [
+                "A3-1.png",
+                "A3-2.png",
+                "A3-3.png",
+                "A3-4.png",
+                "A3-5.png",
+                "A3-6.png"
+            ]),
+            MatricesTask(key: "A4", displayImageName: "A4.png", choices: [
+                "A4-1.png",
+                "A4-2.png",
+                "A4-3.png",
+                "A4-4.png",
+                "A4-5.png",
+                "A4-6.png"
+            ]),
+            MatricesTask(key: "A5", displayImageName: "A5.png", choices: [
+                "A5-1.png",
+                "A5-2.png",
+                "A5-3.png",
+                "A5-4.png",
+                "A5-5.png",
+                "A5-6.png"
+            ]),
+            MatricesTask(key: "A6", displayImageName: "A6.png", choices: [
+                "A6-1.png",
+                "A6-2.png",
+                "A6-3.png",
+                "A6-4.png",
+                "A6-5.png",
+                "A6-6.png"
+            ]),
+            MatricesTask(key: "A7", displayImageName: "A7.png", choices: [
+                "A7-1.png",
+                "A7-2.png",
+                "A7-3.png",
+                "A7-4.png",
+                "A7-5.png",
+                "A7-6.png"
+            ]),
+            MatricesTask(key: "A8", displayImageName: "A8.png", choices: [
+                "A8-1.png",
+                "A8-2.png",
+                "A8-3.png",
+                "A8-4.png",
+                "A8-5.png",
+                "A8-6.png"
+            ]),
+            MatricesTask(key: "A9", displayImageName: "A9.png", choices: [
+                "A9-1.png",
+                "A9-2.png",
+                "A9-3.png",
+                "A9-4.png",
+                "A9-5.png",
+                "A9-6.png"
+            ]),
+            MatricesTask(key: "A10", displayImageName: "A10.png", choices: [
+                "A10-1.png",
+                "A10-2.png",
+                "A10-3.png",
+                "A10-4.png",
+                "A10-5.png",
+                "A10-6.png"
+            ]),
+            MatricesTask(key: "A11", displayImageName: "A11.png", choices: [
+                "A11-1.png",
+                "A11-2.png",
+                "A11-3.png",
+                "A11-4.png",
+                "A11-5.png",
+                "A11-6.png"
+            ]),
+            MatricesTask(key: "A12", displayImageName: "A12.png", choices: [
+                "A12-1.png",
+                "A12-2.png",
+                "A12-3.png",
+                "A12-4.png",
+                "A12-5.png",
+                "A12-6.png"
             ])
         ]
     }
@@ -1040,6 +1128,94 @@ class DataManager {
                 "A1-4.png",
                 "A1-5.png",
                 "A1-6.png"
+            ]),
+            MatricesTask(key: "A2", displayImageName: "A2.png", choices: [
+                "A2-1.png",
+                "A2-2.png",
+                "A2-3.png",
+                "A2-4.png",
+                "A2-5.png",
+                "A2-6.png"
+            ]),
+            MatricesTask(key: "A3", displayImageName: "A3.png", choices: [
+                "A3-1.png",
+                "A3-2.png",
+                "A3-3.png",
+                "A3-4.png",
+                "A3-5.png",
+                "A3-6.png"
+            ]),
+            MatricesTask(key: "A4", displayImageName: "A4.png", choices: [
+                "A4-1.png",
+                "A4-2.png",
+                "A4-3.png",
+                "A4-4.png",
+                "A4-5.png",
+                "A4-6.png"
+            ]),
+            MatricesTask(key: "A5", displayImageName: "A5.png", choices: [
+                "A5-1.png",
+                "A5-2.png",
+                "A5-3.png",
+                "A5-4.png",
+                "A5-5.png",
+                "A5-6.png"
+            ]),
+            MatricesTask(key: "A6", displayImageName: "A6.png", choices: [
+                "A6-1.png",
+                "A6-2.png",
+                "A6-3.png",
+                "A6-4.png",
+                "A6-5.png",
+                "A6-6.png"
+            ]),
+            MatricesTask(key: "A7", displayImageName: "A7.png", choices: [
+                "A7-1.png",
+                "A7-2.png",
+                "A7-3.png",
+                "A7-4.png",
+                "A7-5.png",
+                "A7-6.png"
+            ]),
+            MatricesTask(key: "A8", displayImageName: "A8.png", choices: [
+                "A8-1.png",
+                "A8-2.png",
+                "A8-3.png",
+                "A8-4.png",
+                "A8-5.png",
+                "A8-6.png"
+            ]),
+            MatricesTask(key: "A9", displayImageName: "A9.png", choices: [
+                "A9-1.png",
+                "A9-2.png",
+                "A9-3.png",
+                "A9-4.png",
+                "A9-5.png",
+                "A9-6.png"
+            ]),
+            MatricesTask(key: "A10", displayImageName: "A10.png", choices: [
+                "A10-1.png",
+                "A10-2.png",
+                "A10-3.png",
+                "A10-4.png",
+                "A10-5.png",
+                "A10-6.png"
+            ]),
+            MatricesTask(key: "A11", displayImageName: "A11.png", choices: [
+                "A11-1.png",
+                "A11-2.png",
+                "A11-3.png",
+                "A11-4.png",
+                "A11-5.png",
+                "A11-6.png"
+            ]),
+            MatricesTask(key: "A12", displayImageName: "A12.png", choices: [
+                "A12-1.png",
+                "A12-2.png",
+                "A12-3.png",
+                "A12-4.png",
+                "A12-5.png",
+                "A12-6.png"
             ])
         ]
     }

@@ -51,18 +51,22 @@ class MatricesTaskViewController: ActiveStepViewController {
     }
     
     private func setupView() {
-        contentView.addSubview(taskImageView)
-        contentView.addSubview(stimuliCollection)
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        taskImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        taskImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 32.0).isActive = true
-        taskImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -32.0).isActive = true
-        taskImageView.heightAnchor.constraint(equalToConstant: 480).isActive = true
-
-        stimuliCollection.topAnchor.constraint(equalTo: taskImageView.bottomAnchor, constant: 32.0).isActive = true
-        stimuliCollection.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
-        stimuliCollection.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
-        stimuliCollection.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16.0).isActive = true
+        contentView.addSubview(stackView)
+        contentView.topAnchor.constraint(equalTo: view.topAnchor, constant: 75.0).isActive = true
+                
+        stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16.0).isActive = true
+        stackView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16.0).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0.0).isActive = true
+        stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16.0).isActive = true
+        
+        stackView.addArrangedSubview(taskImageView)
+        stackView.addArrangedSubview(stimuliCollection)
         
         stimuliCollection.allowsMultipleSelection = false
     }
@@ -113,18 +117,10 @@ extension MatricesTaskViewController: UICollectionViewDataSource {
 extension MatricesTaskViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let sixCountSize = 220.0
-        let eightCountSize = 180.0
+        let width = taskImageView.frame.width / (CGFloat(taskChoices[index].choices.count) / 2.0)
+        let height = (taskImageView.frame.height / 2) - 10
         
-        if taskChoices[index].choices.count == 6 {
-            return CGSize(width: sixCountSize, height: sixCountSize)
-        }
-        
-        if taskChoices[index].choices.count == 8 {
-            return CGSize(width: eightCountSize, height: eightCountSize)
-        }
-        
-        return CGSize()
+        return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
