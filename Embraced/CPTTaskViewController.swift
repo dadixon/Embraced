@@ -16,7 +16,7 @@ class CPTTaskViewController: ActiveStepViewController {
     private var blockIndex = 0
     private var taskIndex = 0
     private let BLOCK_COUNT = 3
-    private let STIMULI = 10
+    private let STIMULI = 100
     private let STIMULI_TIMEOUT = 1.5
     private let LETTER_LENGTH = 0.75
     private let BLOCK_TIMEOUT = 3.0
@@ -34,12 +34,6 @@ class CPTTaskViewController: ActiveStepViewController {
         orientation = .portrait
         rotateOrientation = .portrait
         
-        taskChoices = [
-            ["A", "B", "C"],
-            ["D", "E", "F"],
-            ["G", "H", "I"]
-        ]
-        
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         
         stimuliCollection = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -56,7 +50,10 @@ class CPTTaskViewController: ActiveStepViewController {
         
         setupView()
         
-        createBlock(stimuliCount: STIMULI)
+        for _ in 0..<BLOCK_COUNT {
+            taskChoices.append(createBlock(stimuliCount: STIMULI))
+        }
+        
     }
     
     private func setupView() {
@@ -69,30 +66,60 @@ class CPTTaskViewController: ActiveStepViewController {
         stimuliCollection.allowsMultipleSelection = false
     }
     
-    private func createBlock(stimuliCount: Int) {
-        let numberOfStimuli = TARGET_PERCENT / 100 * STIMULI
-        var blockString = randomString(length: stimuliCount)
-        print("\(blockString)")
+    private func createBlock(stimuliCount: Int) -> [Character] {
+        let numberOfStimuli = Int(CGFloat(TARGET_PERCENT) / CGFloat(100) * CGFloat(STIMULI))
+        var blockString = buildBlock()
+        var randomIndexes = Set<Int>()
         
         while true {
-            if !blockString.contains("XA") {
+            if blockString.contains("XA") {
+                blockString = buildBlock()
+            } else {
                 break
             }
         }
-        print("\(blockString)")
-        print("\(numberOfStimuli)")
+                
+        while randomIndexes.count < numberOfStimuli * 3 {
+            let randomIndex = Int.random(in: 0 ..< blockString.count - 1)
+            
+            if !randomIndexes.contains(randomIndex - 1) &&
+                !randomIndexes.contains(randomIndex) &&
+                !randomIndexes.contains(randomIndex + 1) {
+                randomIndexes.insert(randomIndex - 1)
+                randomIndexes.insert(randomIndex)
+                randomIndexes.insert(randomIndex + 1)
+            
+                let start = blockString.index(blockString.startIndex, offsetBy: randomIndex)
+                let end = blockString.index(blockString.startIndex, offsetBy: randomIndex + 2)
+                let myRange = start..<end
+
+                blockString.replaceSubrange(myRange, with: ["X", "A"])
+            }
+        }
         
-        let start = blockString.index(blockString.startIndex, offsetBy: 1)
-        let end = blockString.index(blockString.startIndex, offsetBy: 3)
-        let myRange = start..<end
-        
-        blockString.replaceSubrange(myRange, with: ["X", "A"])
-        print("\(blockString)")
+        return Array(blockString)
     }
     
-    func randomString(length: Int) -> String {
+    private func randomString(length: Int, start: Int) -> String {
       let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
       return String((0..<length).map{ _ in letters.randomElement()! })
+    }
+    
+    private func buildBlock() -> String {
+        var blockString = ""
+        
+        for _ in 0..<STIMULI {
+            var char = randomString(length: 1, start: 0)
+            
+            if char == "A" {
+                if blockString.last == "X" {
+                    char = randomString(length: 1, start: 1)
+                }
+            }
+            blockString += char
+        }
+        
+        return blockString
     }
     
     @objc private func startTest() {
