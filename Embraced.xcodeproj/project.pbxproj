@@ -15,7 +15,6 @@
 		A42041F821E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42041F721E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift */; };
 		A43623DD237DB17B002AFB21 /* EyeTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43623DC237DB17B002AFB21 /* EyeTestModel.swift */; };
 		A43623E0237DB40C002AFB21 /* TestModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43623DF237DB40C002AFB21 /* TestModelProtocol.swift */; };
-		A43623E2237DB6F7002AFB21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A43623E1237DB6F7002AFB21 /* GoogleService-Info.plist */; };
 		A43781852373597400EC5717 /* MotorInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43781842373597400EC5717 /* MotorInstructionsViewController.swift */; };
 		A43781872373598B00EC5717 /* MotorInstructions2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43781862373598B00EC5717 /* MotorInstructions2ViewController.swift */; };
 		A4378189237359A200EC5717 /* MotorInstructions3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4378188237359A200EC5717 /* MotorInstructions3ViewController.swift */; };
@@ -442,6 +441,7 @@
 		A4EDC00B229D4A69006B8C53 /* SelectTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EDC00A229D4A69006B8C53 /* SelectTestViewController.swift */; };
 		A4F067AF21E3E28A00ECEF6F /* TestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */; };
 		A4F067B121E3E5A100ECEF6F /* MelodyRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */; };
+		A4F5244423E0B46900600B3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4F5244323E0B46900600B3B /* GoogleService-Info.plist */; };
 		A4F810E52252ADBA001F9503 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F810E42252ADBA001F9503 /* DatabaseController.swift */; };
 		A4FAB44A2256334500E6C68A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FAB4492256334500E6C68A /* NetworkManager.swift */; };
 		DD7D49BC9E47B49E27EB6157 /* Pods_Embraced.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA38C79360DDC24DE307CBD /* Pods_Embraced.framework */; };
@@ -457,7 +457,6 @@
 		A42041F721E1F11B00021EDB /* MelodyRecognitionExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionExamplesViewController.swift; sourceTree = "<group>"; };
 		A43623DC237DB17B002AFB21 /* EyeTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTestModel.swift; sourceTree = "<group>"; };
 		A43623DF237DB40C002AFB21 /* TestModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModelProtocol.swift; sourceTree = "<group>"; };
-		A43623E1237DB6F7002AFB21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A43781842373597400EC5717 /* MotorInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorInstructionsViewController.swift; sourceTree = "<group>"; };
 		A43781862373598B00EC5717 /* MotorInstructions2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorInstructions2ViewController.swift; sourceTree = "<group>"; };
 		A4378188237359A200EC5717 /* MotorInstructions3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorInstructions3ViewController.swift; sourceTree = "<group>"; };
@@ -894,6 +893,7 @@
 		A4EDC00A229D4A69006B8C53 /* SelectTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTestViewController.swift; sourceTree = "<group>"; };
 		A4F067AE21E3E28A00ECEF6F /* TestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfig.swift; sourceTree = "<group>"; };
 		A4F067B021E3E5A100ECEF6F /* MelodyRecognitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyRecognitionModel.swift; sourceTree = "<group>"; };
+		A4F5244323E0B46900600B3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4F810E42252ADBA001F9503 /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		A4FAB4492256334500E6C68A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B5F21EB22F35905D9339A600 /* Pods-Embraced.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Embraced.release.xcconfig"; path = "Pods/Target Support Files/Pods-Embraced/Pods-Embraced.release.xcconfig"; sourceTree = "<group>"; };
@@ -1140,8 +1140,8 @@
 				A48B4DCE1CF9E7C700878928 /* Assets.xcassets */,
 				A4DF9F241E08FBC90084EAF9 /* Localizable.strings */,
 				A48B4DD31CF9E7C700878928 /* Info.plist */,
-				A43623E1237DB6F7002AFB21 /* GoogleService-Info.plist */,
 				A48B4DCB1CF9E7C700878928 /* Embraced.xcdatamodeld */,
+				A4F5244323E0B46900600B3B /* GoogleService-Info.plist */,
 				A41AE3C01DCA57150089231D /* Images.xcassets */,
 			);
 			path = Embraced;
@@ -1742,7 +1742,6 @@
 				A4CA14FF22031E9D00F6CF0A /* ENG-32.mp3 in Resources */,
 				A4681DF82355FBA1006E5761 /* TOKEN-SPA-15.mp3 in Resources */,
 				A4CA151F22031E9D00F6CF0A /* ENG-38.mp3 in Resources */,
-				A43623E2237DB6F7002AFB21 /* GoogleService-Info.plist in Resources */,
 				A4681DF72355FBA1006E5761 /* TOKEN-SPA-14.mp3 in Resources */,
 				A4C3288220815CD600DEC460 /* STROOP_SPA_TASK1.mp4 in Resources */,
 				A4CA146622031BEE00F6CF0A /* ENG-BWD-06.mp3 in Resources */,
@@ -1912,6 +1911,7 @@
 				A48A131A21FA4C520044AF08 /* melodies 320ms orig(60).wav in Resources */,
 				A4CA14C022031C2500F6CF0A /* SPA-FWD-14.mp3 in Resources */,
 				A48A12DD21FA4BC00044AF08 /* melodies 320ms diff(62).wav in Resources */,
+				A4F5244423E0B46900600B3B /* GoogleService-Info.plist in Resources */,
 				A4CA157B22031EBE00F6CF0A /* SPA-29.mp3 in Resources */,
 				A48A12E621FA4BD10044AF08 /* melodies 320ms diff(52).wav in Resources */,
 				A48A12F621FA4BFD0044AF08 /* melodies 320ms orig(51).wav in Resources */,
@@ -2427,7 +2427,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -2448,7 +2448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 36;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_TEAM = PUVE8AV9GJ;
 				INFOPLIST_FILE = Embraced/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
