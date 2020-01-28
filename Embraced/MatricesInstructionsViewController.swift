@@ -25,5 +25,4 @@ class MatricesInstructionsViewController: InstructionsViewController {
     @objc func moveOn() {
         self.performSegue(withIdentifier: "moveToTask", sender: nil)
     }
-
 }

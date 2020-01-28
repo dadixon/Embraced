@@ -40,7 +40,7 @@ class MatriceCollectionCell: UICollectionViewCell {
         fatalError("Interface Builder is not supported!")
     }
     
-    func setupView() {
+    private func setupView() {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
