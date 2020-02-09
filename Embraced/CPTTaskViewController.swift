@@ -162,7 +162,9 @@ class CPTTaskViewController: ActiveStepViewController {
         FirebaseStorageManager.shared.addDataToDocument(payload: [
             "cptTest" : cptModel.getModel()
         ])
-        performSegue(withIdentifier: "moveToDone", sender: nil)
+//        performSegue(withIdentifier: "moveToDone", sender: nil)
+        let vc = CPTDoneViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -88,7 +88,9 @@ class DigittSpanPracticeViewController: ActiveStepViewController {
             try! audioSession.setActive(false)
         }
         
-        self.performSegue(withIdentifier: "moveToTask", sender: nil)
+//        self.performSegue(withIdentifier: "moveToTask", sender: nil)
+        let vc = DigitSpanTaskViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func recordPressed() {

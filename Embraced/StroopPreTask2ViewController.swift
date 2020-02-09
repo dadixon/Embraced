@@ -95,7 +95,9 @@ class StroopPreTask2ViewController: ActiveStepViewController, AVPlayerViewContro
         player.pause()
         videoLayer.player = nil
         
-        self.performSegue(withIdentifier: "moveToInstructions3", sender: nil)
+//        self.performSegue(withIdentifier: "moveToInstructions3", sender: nil)
+        let vc = StroopInstructions3ViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

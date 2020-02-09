@@ -23,7 +23,9 @@ class TrailMakingInstructionsViewController: InstructionsViewController {
     }
     
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToVideo", sender: nil)
+//        self.performSegue(withIdentifier: "moveToVideo", sender: nil)
+        let vc = TrailMakingVideoViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

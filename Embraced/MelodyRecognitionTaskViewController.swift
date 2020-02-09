@@ -54,7 +54,7 @@ class MelodyRecognitionTaskViewController: ActiveStepViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+                
         contentView.addSubview(audioCountLabel)
         contentView.addSubview(confirmationLabel)
         contentView.addSubview(playBtn)
@@ -117,7 +117,9 @@ class MelodyRecognitionTaskViewController: ActiveStepViewController {
         index += 1
         
         if index == tasks.count {
-            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+//            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+            let vc = MelodyRecognitionDoneViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         } else {
             initialSetup()
         }

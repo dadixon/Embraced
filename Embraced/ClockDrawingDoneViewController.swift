@@ -12,7 +12,7 @@ class ClockDrawingDoneViewController: DoneStepViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         orientation = .portrait
         rotateOrientation = .portrait
     }

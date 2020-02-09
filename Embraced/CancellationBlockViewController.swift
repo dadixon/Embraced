@@ -92,7 +92,9 @@ class CancellationBlockViewController: ActiveStepViewController {
     
     @objc func moveOn() {
         timer.invalidate()
-        self.performSegue(withIdentifier: "moveToDone", sender: nil)
+//        self.performSegue(withIdentifier: "moveToDone", sender: nil)
+        let vc = CancellationDoneViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func showBoard() {
@@ -112,7 +114,9 @@ class CancellationBlockViewController: ActiveStepViewController {
         self.currentTime = CFAbsoluteTimeGetCurrent()
         if self.index == self.stimulis.count {
             timer.invalidate()
-            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+//            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+            let vc = CancellationDoneViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         } else {
             self.refreshCollection(data: self.stimulis[self.index])
             self.index += 1

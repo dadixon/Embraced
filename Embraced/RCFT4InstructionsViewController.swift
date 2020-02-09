@@ -23,7 +23,9 @@ class RCFT4InstructionsViewController: InstructionsViewController {
     }
     
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToTask", sender: nil)
+//        self.performSegue(withIdentifier: "moveToTask", sender: nil)
+        let vc = RCFT4TaskViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

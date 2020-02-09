@@ -23,6 +23,8 @@ class MatricesInstructionsViewController: InstructionsViewController {
     }
         
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToTask", sender: nil)
+//        self.performSegue(withIdentifier: "moveToTask", sender: nil)
+        let vc = MatricesTaskViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

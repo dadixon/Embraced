@@ -98,7 +98,9 @@ class RCFT2TaskViewController: ActiveStepViewController {
                         Utility.deleteFile(filePath)
                         SVProgressHUD.dismiss()
                         
-                        self.performSegue(withIdentifier: "moveToDone", sender: nil)
+//                        self.performSegue(withIdentifier: "moveToDone", sender: nil)
+                        let vc = RCFT2DoneViewController()
+                        self.navigationController?.pushViewController(vc, animated: true)
                     })
                 }
             }

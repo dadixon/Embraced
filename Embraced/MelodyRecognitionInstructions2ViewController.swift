@@ -12,7 +12,7 @@ class MelodyRecognitionInstructions2ViewController: InstructionsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         instructionsLabel.text = "pitch_instructions".localized(lang: language)
         nextBtn.setTitle("Start".localized(lang: language), for: .normal)
         nextBtn.addTarget(self, action: #selector(moveOn), for: .touchUpInside)
@@ -20,7 +20,9 @@ class MelodyRecognitionInstructions2ViewController: InstructionsViewController {
     
 
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToTask", sender: nil)
+//        self.performSegue(withIdentifier: "moveToTask", sender: nil)
+        let vc = MelodyRecognitionTaskViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

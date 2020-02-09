@@ -48,7 +48,9 @@ class InstructionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Step \(TestConfig.testIndex) of \(TestConfig.shared.testList.count)"
+        view.backgroundColor = UIColor.white
+        
+        title = "Step \(TestConfig.testIndex) of \(TestConfig.testListCount)"
         
         language = userDefaults.string(forKey: "language")!
         

@@ -99,7 +99,9 @@ class StroopTaskViewController: ActiveStepViewController {
     }
     
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToInstructions2", sender: nil)
+//        self.performSegue(withIdentifier: "moveToInstructions2", sender: nil)
+        let vc = StroopInstructions2ViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     private func startRecording() {

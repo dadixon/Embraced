@@ -143,7 +143,9 @@ class NamingTaskTaskViewController: ActiveStepViewController {
         if index < imagePath!.count {
             setState()
         } else {
-            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+//            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+            let vc = NamingTaskDoneViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

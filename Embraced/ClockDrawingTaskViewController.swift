@@ -95,7 +95,10 @@ class ClockDrawingTaskViewController: ActiveStepViewController {
                             "clockDrawing": ClockDrawingModel.shared.getModel()
                         ])
                         
-                        self.performSegue(withIdentifier: "moveToDone", sender: nil)
+//                        self.performSegue(withIdentifier: "moveToDone", sender: nil)
+                        let vc = ClockDrawingDoneViewController()
+                        
+                        self.navigationController?.pushViewController(vc, animated: true)
                         
                         Utility.deleteFile(filePath)
                         SVProgressHUD.dismiss()

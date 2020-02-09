@@ -135,7 +135,9 @@ class WordList2RecognitionViewController: ActiveStepViewController {
         index += 1
         
         if index == tasks.count {
-            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+//            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+            let vc = WordList2DoneViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         } else {
             setState()
         }

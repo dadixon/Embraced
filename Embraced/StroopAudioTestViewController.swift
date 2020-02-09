@@ -24,7 +24,9 @@ class StroopAudioTestViewController: AudioPlaybackViewController {
     }
     
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToPreTask", sender: nil)
+//        self.performSegue(withIdentifier: "moveToPreTask", sender: nil)
+        let vc = StroopPreTaskViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }
