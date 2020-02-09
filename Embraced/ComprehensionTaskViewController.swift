@@ -164,7 +164,9 @@ class ComprehensionTaskViewController: ActiveStepViewController {
             stimuliCollection.reloadData()
             startTest()
         } else {
-            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+//            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+            let vc = ComprehensionTaskDoneViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

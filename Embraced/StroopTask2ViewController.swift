@@ -99,7 +99,9 @@ class StroopTask2ViewController: ActiveStepViewController {
     }
     
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToPreTask3", sender: nil)
+//        self.performSegue(withIdentifier: "moveToPreTask3", sender: nil)
+        let vc = StroopPreTask3ViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func startRecording() {

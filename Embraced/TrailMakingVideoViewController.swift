@@ -45,7 +45,9 @@ class TrailMakingVideoViewController: ActiveStepViewController {
     }
     
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToTask", sender: nil)
+//        self.performSegue(withIdentifier: "moveToTask", sender: nil)
+        let vc = TrailMakingTaskViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

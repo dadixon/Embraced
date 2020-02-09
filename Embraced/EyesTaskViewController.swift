@@ -88,7 +88,9 @@ class EyesTaskViewController: ActiveStepViewController {
         EyeTestModel.shared.answers.append(selectedAnswer)
         
         if index >= choices.count {
-            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+//            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+            let vc = EyesTaskDoneViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         } else {
             if let imagePaths = imagePath {
                 taskImageView.image = Utility.getImage(path: "eyesTest/\(imagePaths[index])")

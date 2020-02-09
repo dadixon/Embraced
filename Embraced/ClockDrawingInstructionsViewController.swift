@@ -13,6 +13,8 @@ class ClockDrawingInstructionsViewController: InstructionsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor.white
+        
         orientation = .portrait
         rotateOrientation = .portrait
         
@@ -23,7 +25,10 @@ class ClockDrawingInstructionsViewController: InstructionsViewController {
     }
     
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToTask", sender: nil)
+//        self.performSegue(withIdentifier: "moveToTask", sender: nil)
+        let vc = ClockDrawingTaskViewController()
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

@@ -143,7 +143,9 @@ class MotorTaskViewController: ActiveStepViewController {
                             "motorTask": MotorModel.shared.getModel()
                         ])
                         
-                        self.performSegue(withIdentifier: "moveToTask2", sender: nil)
+//                        self.performSegue(withIdentifier: "moveToTask2", sender: nil)
+                        let vc = MotorTask2ViewController()
+                        self.navigationController?.pushViewController(vc, animated: true)
                         
                         Utility.deleteFile(filePath)
                         SVProgressHUD.dismiss()

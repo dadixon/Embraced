@@ -43,6 +43,8 @@ class RCFTPracticeViewController: ActiveStepViewController {
     }
     
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToInstructions", sender: nil)
+//        self.performSegue(withIdentifier: "moveToInstructions", sender: nil)
+        let vc = RCFTInstructions2ViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

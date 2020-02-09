@@ -188,7 +188,9 @@ class WordListTrialsViewController: ActiveStepViewController {
         index += 1
         
         if index == 8 {
-            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+//            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+            let vc = WordListDoneViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         } else {
             initialSetup()
         }

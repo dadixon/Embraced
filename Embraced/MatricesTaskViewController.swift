@@ -56,6 +56,7 @@ class MatricesTaskViewController: ActiveStepViewController {
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.spacing = 16.0
         
         contentView.addSubview(stackView)
         contentView.topAnchor.constraint(equalTo: view.topAnchor, constant: 75.0).isActive = true
@@ -82,7 +83,9 @@ class MatricesTaskViewController: ActiveStepViewController {
         index += 1
         
         if index >= taskChoices.count {
-            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+//            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+            let vc = MatricesDoneViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         } else {
             taskImageView.image = Utility.getImage(path: "matrices/\(taskChoices[index].displayImageName)")
             stimuliCollection.reloadData()

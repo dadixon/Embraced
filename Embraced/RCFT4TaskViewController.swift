@@ -83,7 +83,9 @@ class RCFT4TaskViewController: ActiveStepViewController {
         index += 1
         
         if index == tasks.count {
-            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+//            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+            let vc = RCFT4DoneViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         } else {
             initialSetup()
         }

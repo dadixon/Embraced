@@ -23,7 +23,9 @@ class StroopInstructions2ViewController: InstructionsViewController {
     }
     
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToPreTask2", sender: nil)
+//        self.performSegue(withIdentifier: "moveToPreTask2", sender: nil)
+        let vc = StroopPreTask2ViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

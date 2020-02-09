@@ -126,7 +126,9 @@ class DigitSpanTask2ViewController: ActiveStepViewController {
         index += 1
         
         if index == soundPaths.count {
-            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+//            self.performSegue(withIdentifier: "moveToDone", sender: nil)
+            let vc = DigitSpanDoneViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         } else {
             initialSetup()
         }

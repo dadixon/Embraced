@@ -55,6 +55,8 @@ class MelodyRecognitionPracticeViewController: ActiveStepViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        view.backgroundColor = UIColor.white
+        
         contentView.addSubview(audioCountLabel)
         contentView.addSubview(confirmationLabel)
         contentView.addSubview(playBtn)
@@ -118,7 +120,9 @@ class MelodyRecognitionPracticeViewController: ActiveStepViewController {
         index += 1
         
         if index == practices.count {
-            self.performSegue(withIdentifier: "moveToInstructions2", sender: nil)
+//            self.performSegue(withIdentifier: "moveToInstructions2", sender: nil)
+            let vc = MelodyRecognitionInstructions2ViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         } else {
             initialSetup()
         }

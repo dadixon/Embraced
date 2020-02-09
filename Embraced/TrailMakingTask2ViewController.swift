@@ -104,7 +104,9 @@ class TrailMakingTask2ViewController: ActiveStepViewController {
                         Utility.deleteFile(filePath)
                         SVProgressHUD.dismiss()
                         
-                        self.performSegue(withIdentifier: "moveToDone", sender: nil)
+//                        self.performSegue(withIdentifier: "moveToDone", sender: nil)
+                        let vc = TrailMakingDoneViewController()
+                        self.navigationController?.pushViewController(vc, animated: true)
                     })
                 }
             }

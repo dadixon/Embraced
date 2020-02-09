@@ -82,7 +82,9 @@ class CancellationPracticeViewController: ActiveStepViewController {
     }
     
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToBlocks", sender: nil)
+//        self.performSegue(withIdentifier: "moveToBlocks", sender: nil)
+        let vc = CancellationBlockViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     @objc func showBoard() {

@@ -51,6 +51,7 @@ class ClockDrawingTaskViewController: ActiveStepViewController {
     }
     
     private func setupViews() {
+        view.backgroundColor = UIColor.white
         contentView.addSubview(canvas)
         
         canvas.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
@@ -95,7 +96,10 @@ class ClockDrawingTaskViewController: ActiveStepViewController {
                             "clockDrawing": ClockDrawingModel.shared.getModel()
                         ])
                         
-                        self.performSegue(withIdentifier: "moveToDone", sender: nil)
+//                        self.performSegue(withIdentifier: "moveToDone", sender: nil)
+                        let vc = ClockDrawingDoneViewController()
+                        
+                        self.navigationController?.pushViewController(vc, animated: true)
                         
                         Utility.deleteFile(filePath)
                         SVProgressHUD.dismiss()

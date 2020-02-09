@@ -23,6 +23,8 @@ class MotorInstructions3ViewController: InstructionsViewController {
     }
     
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToTask5", sender: nil)
+//        self.performSegue(withIdentifier: "moveToTask5", sender: nil)
+        let vc = MotorTask5ViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

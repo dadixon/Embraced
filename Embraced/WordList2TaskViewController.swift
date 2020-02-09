@@ -63,7 +63,9 @@ class WordList2TaskViewController: ActiveStepViewController {
     }
     
     @objc func moveOn() {
-        self.performSegue(withIdentifier: "moveToRecognition", sender: nil)
+//        self.performSegue(withIdentifier: "moveToRecognition", sender: nil)
+        let vc = WordList2RecognitionViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     @objc func recordPressed() {
