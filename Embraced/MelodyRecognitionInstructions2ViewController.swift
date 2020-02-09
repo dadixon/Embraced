@@ -12,8 +12,6 @@ class MelodyRecognitionInstructions2ViewController: InstructionsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = UIColor.white
         
         instructionsLabel.text = "pitch_instructions".localized(lang: language)
         nextBtn.setTitle("Start".localized(lang: language), for: .normal)

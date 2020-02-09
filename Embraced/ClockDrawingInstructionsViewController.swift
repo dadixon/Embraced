@@ -12,8 +12,6 @@ class ClockDrawingInstructionsViewController: InstructionsViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = UIColor.white
         
         orientation = .portrait
         rotateOrientation = .portrait

@@ -51,7 +51,6 @@ class ClockDrawingTaskViewController: ActiveStepViewController {
     }
     
     private func setupViews() {
-        view.backgroundColor = UIColor.white
         contentView.addSubview(canvas)
         
         canvas.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true

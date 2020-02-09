@@ -54,9 +54,7 @@ class MelodyRecognitionPracticeViewController: ActiveStepViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        view.backgroundColor = UIColor.white
-        
+                
         contentView.addSubview(audioCountLabel)
         contentView.addSubview(confirmationLabel)
         contentView.addSubview(playBtn)
