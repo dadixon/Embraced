@@ -62,21 +62,21 @@ class StartViewController: UIViewController {
         
         // Load media here before test if needed
         
-        if TestConfig.shared.testListName.contains("Eyes Test") {
-            for name in DataManager.sharedInstance.eyesTestImages {
-                FirebaseStorageManager.shared.getFile(fileName: name, test: "eyesTest", lang: "")
-            }
-        }
-        
-        if TestConfig.shared.testListName.contains("Matrices") {
-            for task in DataManager.sharedInstance.matricesStimuli {
-                FirebaseStorageManager.shared.getFile(fileName: task.displayImageName, test: "matrices", lang: "")
-                
-                for choice in task.choices {
-                    FirebaseStorageManager.shared.getFile(fileName: choice, test: "matrices", lang: "")
-                }
-            }
-        }
+//        if TestConfig.shared.testListName.contains("Eyes Test") {
+//            for name in DataManager.sharedInstance.eyesTestImages {
+//                FirebaseStorageManager.shared.getFile(fileName: name, test: "eyesTest", lang: "")
+//            }
+//        }
+//
+//        if TestConfig.shared.testListName.contains("Matrices") {
+//            for task in DataManager.sharedInstance.matricesStimuli {
+//                FirebaseStorageManager.shared.getFile(fileName: task.displayImageName, test: "matrices", lang: "")
+//
+//                for choice in task.choices {
+//                    FirebaseStorageManager.shared.getFile(fileName: choice, test: "matrices", lang: "")
+//                }
+//            }
+//        }
         
         // Reset all test models
         MelodyRecognitionModel.shared.reset()

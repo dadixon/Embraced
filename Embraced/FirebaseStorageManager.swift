@@ -112,7 +112,7 @@ class FirebaseStorageManager {
         }
     }
     
-    func getFile(fileName: String, test: String, lang: String) {
+    func getFile(fileName: String, test: String, lang: String, completionHandler: @escaping (Double, Error?) -> Void) {
         let storage = Storage.storage()
         var path = ""
         
@@ -136,14 +136,19 @@ class FirebaseStorageManager {
             
             let localURL = URL(string: documentPath.absoluteString)!
             
-            _ = mediaRef.write(toFile: localURL) { url, error in
+            let downloadTask = mediaRef.write(toFile: localURL) { url, error in
               if let error = error {
                 print(error.localizedDescription)
               } else {
                 print("\(path) downloaded")
               }
             }
+            
+            let observer = downloadTask.observe(.success) { (snapshot) in
+                completionHandler(1.0, nil)
+            }
         }
+        completionHandler(1.0, nil)
     }
     
     func removeListener() {

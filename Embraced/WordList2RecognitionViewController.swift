@@ -85,7 +85,7 @@ class WordList2RecognitionViewController: ActiveStepViewController {
     }
     
     private func setState() {
-        soundPath = tasks[index]
+        soundPath = "wordlist/\(language)/\(tasks[index])"
         playBtn.isEnabled = true
         answerSegment.isHidden = true
         answerSegment.selectedSegmentIndex = UISegmentedControl.noSegment
@@ -94,25 +94,21 @@ class WordList2RecognitionViewController: ActiveStepViewController {
     }
     
     private func playAudio(fileName: String) {
-        let fileNameArray = fileName.components(separatedBy: ".")
+        let filePath = Utility.getAudio(path: fileName)
         
-        if let dirPath = Bundle.main.path(forResource: fileNameArray[0], ofType: fileNameArray[1]) {
-            let filePath = URL(fileURLWithPath: dirPath)
-            
-            do {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-            }
-            catch {
-                // report for an error
-            }
-            
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: filePath)
-                audioPlayer.delegate = self
-                audioPlayer.play()
-            } catch {
-                print("No Audio")
-            }
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        }
+        catch {
+            // report for an error
+        }
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: filePath)
+            audioPlayer.delegate = self
+            audioPlayer.play()
+        } catch {
+            print("No Audio")
         }
     }
     

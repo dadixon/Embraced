@@ -128,6 +128,18 @@ class Utility {
         
         return UIImage()
     }
+    
+    static func getAudio(path: String) -> URL {
+        let audioPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+
+        if audioPath != "" {
+            let audioURL = URL(fileURLWithPath: audioPath).appendingPathComponent("media/\(path)")
+            
+            return audioURL
+        }
+        
+        return URL(fileURLWithPath: "")
+    }
 }
 
 struct AppUtility {

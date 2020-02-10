@@ -68,7 +68,7 @@ class RCFT4TaskViewController: ActiveStepViewController {
         answerSegment.isEnabled = true
         answerSegment.selectedSegmentIndex = UISegmentedControl.noSegment
         
-        taskImageView.image = UIImage(named: tasks[index])
+        taskImageView.image = Utility.getImage(path: "rcft/\(tasks[index])") //UIImage(named: tasks[index])
     }
     
     private func answerCheck() {

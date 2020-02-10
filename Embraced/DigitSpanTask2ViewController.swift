@@ -115,7 +115,7 @@ class DigitSpanTask2ViewController: ActiveStepViewController {
     
     @objc func playPressed() {
         if !isPlaying {
-            fileName = soundPaths[index]
+            fileName = "digitSpan/\(language)/\(soundPaths[index])"
             playAudio(fileName: fileName)
             playBtn.isEnabled = false
             recordBtn.isEnabled = false
@@ -126,7 +126,6 @@ class DigitSpanTask2ViewController: ActiveStepViewController {
         index += 1
         
         if index == soundPaths.count {
-//            self.performSegue(withIdentifier: "moveToDone", sender: nil)
             let vc = DigitSpanDoneViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         } else {
@@ -181,25 +180,21 @@ class DigitSpanTask2ViewController: ActiveStepViewController {
     }
     
     private func playAudio(fileName: String) {
-        let fileNameArray = fileName.components(separatedBy: ".")
+        let filePath = Utility.getAudio(path: fileName)
         
-        if let dirPath = Bundle.main.path(forResource: fileNameArray[0], ofType: fileNameArray[1]) {
-            let filePath = URL(fileURLWithPath: dirPath)
-            
-            do {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-            }
-            catch {
-                // report for an error
-            }
-            
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: filePath)
-                audioPlayer.delegate = self
-                audioPlayer.play()
-            } catch {
-                print("No Audio")
-            }
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        }
+        catch {
+            // report for an error
+        }
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: filePath)
+            audioPlayer.delegate = self
+            audioPlayer.play()
+        } catch {
+            print("No Audio")
         }
     }
     

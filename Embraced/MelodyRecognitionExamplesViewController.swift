@@ -168,35 +168,31 @@ class MelodyRecognitionExamplesViewController: ActiveStepViewController {
     }
     
     private func playAudio(fileName: String) {
-        let fileNameArray = fileName.components(separatedBy: ".")
+        let filePath = Utility.getAudio(path: fileName)
         
-        if let dirPath = Bundle.main.path(forResource: fileNameArray[0], ofType: fileNameArray[1]) {
-            let filePath = URL(fileURLWithPath: dirPath)
-            
-            do {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-            }
-            catch {
-                // report for an error
-            }
-            
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: filePath)
-                audioPlayer.delegate = self
-                audioPlayer.play()
-            } catch {
-                print("No Audio")
-            }
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        }
+        catch {
+            // report for an error
+        }
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: filePath)
+            audioPlayer.delegate = self
+            audioPlayer.play()
+        } catch {
+            print("No Audio")
         }
     }
     
     private func setUpSounds(_ sounds: [String]) {
         if sounds.count > 1 {
-            firstSoundPath = sounds[0]
-            secondSoundPath = sounds[1]
+            firstSoundPath = "pitch/\(sounds[0])"
+            secondSoundPath = "pitch/\(sounds[1])"
         } else {
-            firstSoundPath = sounds[0]
-            secondSoundPath = sounds[0]
+            firstSoundPath = "pitch/\(sounds[0])"
+            secondSoundPath = "pitch/\(sounds[0])"
         }
     }
     

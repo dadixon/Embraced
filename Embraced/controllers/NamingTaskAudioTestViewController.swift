@@ -24,7 +24,6 @@ class NamingTaskAudioTestViewController: AudioPlaybackViewController {
     }
     
     @objc func moveOn() {
-//        self.performSegue(withIdentifier: "moveToInstructions", sender: nil)
         let vc = NamingTaskInstructionsViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

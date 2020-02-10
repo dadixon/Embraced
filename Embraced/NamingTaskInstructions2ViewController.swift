@@ -23,7 +23,6 @@ class NamingTaskInstructions2ViewController: InstructionsViewController {
     }
     
     @objc func moveOn() {
-//        self.performSegue(withIdentifier: "moveToTask", sender: nil)
         let vc = NamingTaskTaskViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
