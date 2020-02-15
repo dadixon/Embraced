@@ -122,33 +122,29 @@ class FirebaseStorageManager {
             path = "media/\(test)/\(lang)/\(fileName)"
         }
 
-        // If file is already on the device, do not download it again
-        if !Utility.fileExist(path) {
-            let mediaRef = storage.reference(withPath: path)
-            let documentPath = Utility.getDocumentsDirectory().appendingPathComponent(path)
-            
-            do
-            {
-                try FileManager.default.createDirectory(atPath: documentPath.path, withIntermediateDirectories: true, attributes: nil)
-            } catch let error as NSError {
-                print("Unable to create directory \(error.debugDescription)")
-            }
-            
-            let localURL = URL(string: documentPath.absoluteString)!
-            
-            let downloadTask = mediaRef.write(toFile: localURL) { url, error in
-              if let error = error {
-                print(error.localizedDescription)
-              } else {
-                print("\(path) downloaded")
-              }
-            }
-            
-            let observer = downloadTask.observe(.success) { (snapshot) in
-                completionHandler(1.0, nil)
-            }
+        let mediaRef = storage.reference(withPath: path)
+        let documentPath = Utility.getDocumentsDirectory().appendingPathComponent(path)
+        
+        do
+        {
+            try FileManager.default.createDirectory(atPath: documentPath.path, withIntermediateDirectories: true, attributes: nil)
+        } catch let error as NSError {
+            print("Unable to create directory \(error.debugDescription)")
         }
-        completionHandler(1.0, nil)
+        
+        let localURL = URL(string: documentPath.absoluteString)!
+        
+        let downloadTask = mediaRef.write(toFile: localURL) { url, error in
+          if let error = error {
+            print(error.localizedDescription)
+          } else {
+            print("\(path) downloaded")
+          }
+        }
+        
+        let _ = downloadTask.observe(.success) { (snapshot) in
+            completionHandler(1.0, nil)
+        }
     }
     
     func removeListener() {

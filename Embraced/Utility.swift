@@ -126,7 +126,7 @@ class Utility {
             }
         }
         
-        return UIImage()
+        return UIImage() 
     }
     
     static func getAudio(path: String) -> URL {
@@ -139,6 +139,29 @@ class Utility {
         }
         
         return URL(fileURLWithPath: "")
+    }
+    
+    static func getDownloadList(files: [TestFiles]) -> [TestFiles] {
+        var rv = [TestFiles]()
+        
+        for file in files {
+            for name in file.data {
+                var path = ""
+                
+                if file.lang == "" {
+                    path = "media/\(file.name)/\(name)"
+                } else {
+                    path = "media/\(file.name)/\(file.lang)/\(name)"
+                }
+                
+                if !Utility.fileExist(path) {
+                    rv.append(file)
+                    break
+                }
+            }
+        }
+        
+        return rv
     }
 }
 

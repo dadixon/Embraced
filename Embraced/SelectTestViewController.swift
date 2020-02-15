@@ -78,31 +78,32 @@ class SelectTestViewController: UIViewController {
 
     private func downloadFiles() {
         let downloadFiles = [
-            TestFiles(name: "eyesTest", data: eyesFiles(), lang: ""),
-            TestFiles(name: "matrices", data: matriceFiles(), lang: ""),
-            TestFiles(name: "rcft", data: rcftFiles(), lang: ""),
-            TestFiles(name: "pitch", data: pitchFiles(), lang: ""),
-            TestFiles(name: "digitSpan", data: digitSpanFiles(lang: "en"), lang: "en"),
-            TestFiles(name: "digitSpan", data: digitSpanFiles(lang: "es"), lang: "es"),
-            TestFiles(name: "stroop", data: stroopFiles(lang: "en"), lang: "en"),
-            TestFiles(name: "stroop", data: stroopFiles(lang: "es"), lang: "es"),
-            TestFiles(name: "namingTask", data: namingTaskFiles(), lang: ""),
-            TestFiles(name: "wordlist", data: wordlistFiles(lang: "en"), lang: "en"),
-            TestFiles(name: "wordlist", data: wordlistFiles(lang: "es"), lang: "es"),
-            TestFiles(name: "comprehension", data: comprehensionFiles(lang: "en"), lang: "en"),
-            TestFiles(name: "comprehension", data: comprehensionFiles(lang: "es"), lang: "es"),
-            TestFiles(name: "motorTask", data: motorTaskFiles(), lang: ""),
-            TestFiles(name: "trailMaking", data: trailMakingFiles(), lang: "")
+            TestFiles(name: "eyesTest", data: DataManager.sharedInstance.eyesFiles(), lang: ""),
+            TestFiles(name: "matrices", data: DataManager.sharedInstance.matriceFiles(), lang: ""),
+            TestFiles(name: "rcft", data: DataManager.sharedInstance.rcftFiles(), lang: ""),
+            TestFiles(name: "pitch", data: DataManager.sharedInstance.pitchFiles(), lang: ""),
+            TestFiles(name: "digitSpan", data: DataManager.sharedInstance.digitSpanFiles(lang: "en"), lang: "en"),
+            TestFiles(name: "digitSpan", data: DataManager.sharedInstance.digitSpanFiles(lang: "es"), lang: "es"),
+            TestFiles(name: "stroop", data: DataManager.sharedInstance.stroopFiles(lang: "en"), lang: "en"),
+            TestFiles(name: "stroop", data: DataManager.sharedInstance.stroopFiles(lang: "es"), lang: "es"),
+            TestFiles(name: "namingTask", data: DataManager.sharedInstance.namingTaskFiles(), lang: ""),
+            TestFiles(name: "wordlist", data: DataManager.sharedInstance.wordlistFiles(lang: "en"), lang: "en"),
+            TestFiles(name: "wordlist", data: DataManager.sharedInstance.wordlistFiles(lang: "es"), lang: "es"),
+            TestFiles(name: "comprehension", data: DataManager.sharedInstance.comprehensionFiles(lang: "en"), lang: "en"),
+            TestFiles(name: "comprehension", data: DataManager.sharedInstance.comprehensionFiles(lang: "es"), lang: "es"),
+            TestFiles(name: "motorTask", data: DataManager.sharedInstance.motorTaskFiles(), lang: ""),
+            TestFiles(name: "trailMaking", data: DataManager.sharedInstance.trailMakingFiles(), lang: "")
         ]
         
         var totalPercentage = 0.0
         var totalFilesCount = 0
+        let totalFiles = Utility.getDownloadList(files: downloadFiles)
         
-        for files in downloadFiles {
+        for files in totalFiles {
             totalFilesCount += files.data.count
         }
                 
-        for testFiles in downloadFiles {
+        for testFiles in totalFiles {
             for name in testFiles.data {
                 FirebaseStorageManager.shared.getFile(fileName: name, test: testFiles.name, lang: testFiles.lang) { (percentComplete, error) in
                     
@@ -120,113 +121,6 @@ class SelectTestViewController: UIViewController {
                 }
             }
         }
-    }
-    
-    private func motorTaskFiles() -> [String] {
-        return DataManager.sharedInstance.motorTask
-    }
-    
-    private func trailMakingFiles() -> [String] {
-        return DataManager.sharedInstance.trailMaking
-    }
-    
-    private func comprehensionFiles(lang: String) -> [String] {
-        DataManager.sharedInstance.language = lang
-        DataManager.sharedInstance.updateData()
-        
-        return DataManager.sharedInstance.comprehensionSounds
-    }
-    
-    private func wordlistFiles(lang: String) -> [String] {
-        var wordlistFiles = [String]()
-        
-        DataManager.sharedInstance.language = lang
-        DataManager.sharedInstance.updateData()
-        
-        wordlistFiles += DataManager.sharedInstance.wordListTasks
-        wordlistFiles += DataManager.sharedInstance.wordListRecognitions
-        
-        return wordlistFiles
-    }
-    
-    private func namingTaskFiles() -> [String] {
-        var namingTaskFiles = [String]()
-        
-        namingTaskFiles += DataManager.sharedInstance.namingTaskPractice
-        namingTaskFiles += DataManager.sharedInstance.namingTaskTask
-        
-        return namingTaskFiles
-    }
-    
-    private func stroopFiles(lang: String) -> [String] {
-        var stroopFiles = [String]()
-        
-        DataManager.sharedInstance.language = lang
-        DataManager.sharedInstance.updateData()
-        
-        stroopFiles += DataManager.sharedInstance.stroopVideos
-        stroopFiles += DataManager.sharedInstance.stroopTasks
-        
-        return stroopFiles
-    }
-    
-    private func digitSpanFiles(lang: String) -> [String] {
-        var digitSpan = [String]()
-        
-        DataManager.sharedInstance.language = lang
-        DataManager.sharedInstance.updateData()
-
-        digitSpan.append(DataManager.sharedInstance.digitalSpanForwardPractice)
-        digitSpan.append(DataManager.sharedInstance.digitalSpanBackwardPractice)
-        digitSpan += DataManager.sharedInstance.digitalSpanForward
-        digitSpan += DataManager.sharedInstance.digitalSpanBackward
-        
-        return digitSpan
-    }
-    
-    private func pitchFiles() -> [String] {
-        var pitchFiles = [String]()
-        
-        for file in DataManager.sharedInstance.pitchExamples {
-            pitchFiles += file
-        }
-        
-        for file in DataManager.sharedInstance.pitchPractices {
-            pitchFiles += file
-        }
-        
-        for file in DataManager.sharedInstance.pitchTasks {
-            pitchFiles += file
-        }
-        
-        return pitchFiles
-    }
-    
-    private func eyesFiles() -> [String] {
-        return DataManager.sharedInstance.eyesTestImages
-    }
-    
-    private func matriceFiles() -> [String] {
-        var matricesFiles = [String]()
-        
-        for task in DataManager.sharedInstance.matricesStimuli {
-            matricesFiles.append(task.displayImageName)
-            
-            for choice in task.choices {
-                matricesFiles.append(choice)
-            }
-        }
-        
-        return matricesFiles
-    }
-    
-    private func rcftFiles() -> [String] {
-        var rcftFiles = [String]()
-        
-        rcftFiles = DataManager.sharedInstance.rcftTasks
-        rcftFiles.append(DataManager.sharedInstance.rcftFigure)
-        
-        return rcftFiles
     }
     
     private func buildTestList() {

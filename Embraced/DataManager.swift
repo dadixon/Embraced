@@ -633,6 +633,113 @@ class DataManager {
         }
     }
     
+    func motorTaskFiles() -> [String] {
+        return DataManager.sharedInstance.motorTask
+    }
+    
+    func trailMakingFiles() -> [String] {
+        return DataManager.sharedInstance.trailMaking
+    }
+    
+    func comprehensionFiles(lang: String) -> [String] {
+        DataManager.sharedInstance.language = lang
+        DataManager.sharedInstance.updateData()
+        
+        return DataManager.sharedInstance.comprehensionSounds
+    }
+    
+    func wordlistFiles(lang: String) -> [String] {
+        var wordlistFiles = [String]()
+        
+        DataManager.sharedInstance.language = lang
+        DataManager.sharedInstance.updateData()
+        
+        wordlistFiles += DataManager.sharedInstance.wordListTasks
+        wordlistFiles += DataManager.sharedInstance.wordListRecognitions
+        
+        return wordlistFiles
+    }
+    
+    func namingTaskFiles() -> [String] {
+        var namingTaskFiles = [String]()
+        
+        namingTaskFiles += DataManager.sharedInstance.namingTaskPractice
+        namingTaskFiles += DataManager.sharedInstance.namingTaskTask
+        
+        return namingTaskFiles
+    }
+    
+    func stroopFiles(lang: String) -> [String] {
+        var stroopFiles = [String]()
+        
+        DataManager.sharedInstance.language = lang
+        DataManager.sharedInstance.updateData()
+        
+        stroopFiles += DataManager.sharedInstance.stroopVideos
+        stroopFiles += DataManager.sharedInstance.stroopTasks
+        
+        return stroopFiles
+    }
+    
+    func digitSpanFiles(lang: String) -> [String] {
+        var digitSpan = [String]()
+        
+        DataManager.sharedInstance.language = lang
+        DataManager.sharedInstance.updateData()
+
+        digitSpan.append(DataManager.sharedInstance.digitalSpanForwardPractice)
+        digitSpan.append(DataManager.sharedInstance.digitalSpanBackwardPractice)
+        digitSpan += DataManager.sharedInstance.digitalSpanForward
+        digitSpan += DataManager.sharedInstance.digitalSpanBackward
+        
+        return digitSpan
+    }
+    
+    func pitchFiles() -> [String] {
+        var pitchFiles = [String]()
+        
+        for file in DataManager.sharedInstance.pitchExamples {
+            pitchFiles += file
+        }
+        
+        for file in DataManager.sharedInstance.pitchPractices {
+            pitchFiles += file
+        }
+        
+        for file in DataManager.sharedInstance.pitchTasks {
+            pitchFiles += file
+        }
+        
+        return pitchFiles
+    }
+    
+    func eyesFiles() -> [String] {
+        return DataManager.sharedInstance.eyesTestImages
+    }
+    
+    func matriceFiles() -> [String] {
+        var matricesFiles = [String]()
+        
+        for task in DataManager.sharedInstance.matricesStimuli {
+            matricesFiles.append(task.displayImageName)
+            
+            for choice in task.choices {
+                matricesFiles.append(choice)
+            }
+        }
+        
+        return matricesFiles
+    }
+    
+    func rcftFiles() -> [String] {
+        var rcftFiles = [String]()
+        
+        rcftFiles = DataManager.sharedInstance.rcftTasks
+        rcftFiles.append(DataManager.sharedInstance.rcftFigure)
+        
+        return rcftFiles
+    }
+    
     private func setEnData() {
         digitalSpanForwardPractice = "ENG-PRACTICE-FWD.mp3"
         digitalSpanForward = [
