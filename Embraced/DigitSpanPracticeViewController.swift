@@ -1,5 +1,5 @@
 //
-//  DigittSpanPracticeViewController.swift
+//  DigitSpanPracticeViewController.swift
 //  Embraced
 //
 //  Created by Domonique Dixon on 7/6/19.
@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class DigittSpanPracticeViewController: ActiveStepViewController {
+class DigitSpanPracticeViewController: ActiveStepViewController {
 
     var soundPath = String()
     var audioPlayer: AVAudioPlayer!
@@ -176,7 +176,7 @@ class DigittSpanPracticeViewController: ActiveStepViewController {
     }
 }
 
-extension DigittSpanPracticeViewController: AVAudioRecorderDelegate {
+extension DigitSpanPracticeViewController: AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
             recordBtn.isEnabled = true
@@ -186,7 +186,7 @@ extension DigittSpanPracticeViewController: AVAudioRecorderDelegate {
     }
 }
 
-extension DigittSpanPracticeViewController: AVAudioPlayerDelegate {
+extension DigitSpanPracticeViewController: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
             finishedPlaying()

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Reachability
 import SVProgressHUD
 import Firebase
 

@@ -22,8 +22,7 @@ class CancellationInstructionsViewController: InstructionsViewController {
     }
     
     @objc func moveOn() {
-//        self.performSegue(withIdentifier: "moveToInstructions2", sender: nil)
-        let vc = CancellationInstructionsViewController()
+        let vc = CancellationInstructions2ViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

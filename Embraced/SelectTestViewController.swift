@@ -26,7 +26,7 @@ class SelectTestViewController: UIViewController {
     var language = String()
     var selectedTests = [String]()
     var tests = [
-//        "Questionnaire",
+        "Questionnaire",
 //        "Orientation Task",
         "Complex Figure 1",
         "Clock Drawing Test",
