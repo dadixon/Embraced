@@ -58,7 +58,7 @@ class StroopTask4ViewController: ActiveStepViewController {
         imagePath = DataManager.sharedInstance.stroopTasks[1]
         
         if let imageP = imagePath {
-            taskImageView.image = UIImage(named: imageP)
+            taskImageView.image = Utility.getImage(path: "stroop/\(language)/\(imageP)")
         }
         
         documentPath = Utility.getDocumentsDirectory().appendingPathComponent("\(FirebaseStorageManager.shared.pid!)/\(TEST_NAME)")

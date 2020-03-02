@@ -68,17 +68,13 @@ class StroopPreTask2ViewController: ActiveStepViewController, AVPlayerViewContro
     }
     
     @objc func previewPressed() {
-        playVideoFile(filename: videoPath)
+        playVideoFile(fileName: "stroop/\(language)/\(videoPath)")
     }
     
-    private func playVideoFile(filename: String) {
-        guard let path = Bundle.main.path(forResource: filename, ofType: nil) else {
-            return
-        }
+    private func playVideoFile(fileName: String) {
+        let filePath = Utility.getAudio(path: fileName)
         
-        let url = URL(fileURLWithPath: path)
-        
-        player = AVPlayer(url: url)
+        player = AVPlayer(url: filePath)
         player.actionAtItemEnd = .none
         
         playerController.delegate = self

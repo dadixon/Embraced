@@ -48,7 +48,7 @@ class RCFTTaskViewController: ActiveStepViewController {
         
         setupViews()
         
-        figureImage.image = UIImage(named: "figure")
+        figureImage.image = Utility.getImage(path: "rcft/\(DataManager.sharedInstance.rcftFigure)")
         
         documentPath = Utility.getDocumentsDirectory().appendingPathComponent("\(FirebaseStorageManager.shared.pid!)/\(TEST_NAME)")
         do

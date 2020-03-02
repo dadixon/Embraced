@@ -23,7 +23,6 @@ class ComprehensionTaskInstructionViewController: InstructionsViewController {
     }
         
     @objc func moveOn() {
-//        self.performSegue(withIdentifier: "moveToTask", sender: nil)
         let vc = ComprehensionTaskViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

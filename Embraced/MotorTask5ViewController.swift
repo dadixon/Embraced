@@ -56,7 +56,7 @@ class MotorTask5ViewController: ActiveStepViewController {
         timerLabel.text = "\(totalSeconds) " + SECONDS
         canvas.isHidden = true
         
-        canvas.image = UIImage(named: "Punteado")
+        canvas.image = Utility.getImage(path: "motorTask/\(DataManager.sharedInstance.motorTask[1])")
         
         documentPath = Utility.getDocumentsDirectory().appendingPathComponent("\(FirebaseStorageManager.shared.pid!)/\(TEST_NAME)")
         do
@@ -161,7 +161,6 @@ class MotorTask5ViewController: ActiveStepViewController {
                             "motorTask": MotorModel.shared.getModel()
                         ])
                         
-//                        self.performSegue(withIdentifier: "moveToTask6", sender: nil)
                         let vc = MotorTask6ViewController()
                         self.navigationController?.pushViewController(vc, animated: true)
                         

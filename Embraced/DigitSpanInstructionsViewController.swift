@@ -23,8 +23,7 @@ class DigitSpanInstructionsViewController: AudioPlaybackViewController {
     }
     
     @objc func moveOn() {
-//        self.performSegue(withIdentifier: "moveToPractice", sender: nil)
-        let vc = DigittSpanPracticeViewController()
+        let vc = DigitSpanPracticeViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

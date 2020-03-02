@@ -58,7 +58,7 @@ class StroopTask2ViewController: ActiveStepViewController {
         imagePath = DataManager.sharedInstance.stroopTasks[index]
         
         if let imageP = imagePath {
-            taskImageView.image = UIImage(named: imageP)
+            taskImageView.image = Utility.getImage(path: "stroop/\(language)/\(imageP)")
         }
         
         documentPath = Utility.getDocumentsDirectory().appendingPathComponent("\(FirebaseStorageManager.shared.pid!)/\(TEST_NAME)")
@@ -99,7 +99,6 @@ class StroopTask2ViewController: ActiveStepViewController {
     }
     
     @objc func moveOn() {
-//        self.performSegue(withIdentifier: "moveToPreTask3", sender: nil)
         let vc = StroopPreTask3ViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

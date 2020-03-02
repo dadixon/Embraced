@@ -31,6 +31,9 @@ class TestConfig {
         
         for test in testListName {
             switch test {
+                case "Questionnaire":
+                    let vc = MonthViewController()
+                    self.testList.append(vc)
                 case "Melodies Recognition":
                     let vc = MelodyRecognitionInstructionsViewController()
                     self.testList.append(vc)

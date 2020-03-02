@@ -6,11 +6,11 @@ target 'Embraced' do
   use_frameworks!
 
   # Pods for Embraced
-  pod 'ReachabilitySwift'
   pod 'SVProgressHUD'
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
   pod 'YoutubePlayer-in-WKWebView', '~> 0.3.0'
+  pod 'Eureka', '~> 5.2'
 end

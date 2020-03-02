@@ -40,7 +40,7 @@ class TrailMakingTask2ViewController: ActiveStepViewController {
         
         setupViews()
         
-        canvas.image = UIImage(named: "task2")
+        canvas.image = Utility.getImage(path: "trailMaking/\(DataManager.sharedInstance.trailMaking[1])")
         
         documentPath = Utility.getDocumentsDirectory().appendingPathComponent("\(FirebaseStorageManager.shared.pid!)/\(TEST_NAME)")
         do
@@ -104,7 +104,6 @@ class TrailMakingTask2ViewController: ActiveStepViewController {
                         Utility.deleteFile(filePath)
                         SVProgressHUD.dismiss()
                         
-//                        self.performSegue(withIdentifier: "moveToDone", sender: nil)
                         let vc = TrailMakingDoneViewController()
                         self.navigationController?.pushViewController(vc, animated: true)
                     })

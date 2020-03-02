@@ -24,7 +24,6 @@ class WordListInstructionsViewController: AudioPlaybackViewController {
     }
     
     @objc func moveOn() {
-//        self.performSegue(withIdentifier: "moveToTrials", sender: nil)
         let vc = WordListTrialsViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

@@ -22,7 +22,7 @@ class DigitSpanPractice2ViewController: ActiveStepViewController {
         nextBtn.setTitle("Next".localized(lang: language), for: .normal)
         nextBtn.addTarget(self, action: #selector(moveOn), for: .touchUpInside)
         
-        backwardPractice = DataManager.sharedInstance.digitalSpanBackwardPractice
+        backwardPractice = "digitSpan/\(language)/\(DataManager.sharedInstance.digitalSpanBackwardPractice)"
     }
     
     @objc func moveOn() {

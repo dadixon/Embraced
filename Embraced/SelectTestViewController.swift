@@ -9,6 +9,12 @@
 import UIKit
 import SVProgressHUD
 
+struct TestFiles {
+    var name: String
+    var data: [String]
+    var lang: String
+}
+
 class SelectTestViewController: UIViewController {
     
     @IBOutlet weak var selectAllBtn: UIButton!
@@ -20,7 +26,7 @@ class SelectTestViewController: UIViewController {
     var language = String()
     var selectedTests = [String]()
     var tests = [
-//        "Questionnaire",
+        "Questionnaire",
 //        "Orientation Task",
         "Complex Figure 1",
         "Clock Drawing Test",
@@ -55,6 +61,10 @@ class SelectTestViewController: UIViewController {
         testTableView.tableFooterView = UIView()
         
         SVProgressHUD.setDefaultStyle(.dark)
+        
+        DataManager.sharedInstance.updateData()
+        
+        downloadFiles()
     }
     
     private func setupNav() {
@@ -66,6 +76,53 @@ class SelectTestViewController: UIViewController {
         startBtn.title = "Start Test"
     }
 
+    private func downloadFiles() {
+        let downloadFiles = [
+            TestFiles(name: "eyesTest", data: DataManager.sharedInstance.eyesFiles(), lang: ""),
+            TestFiles(name: "matrices", data: DataManager.sharedInstance.matriceFiles(), lang: ""),
+            TestFiles(name: "rcft", data: DataManager.sharedInstance.rcftFiles(), lang: ""),
+            TestFiles(name: "pitch", data: DataManager.sharedInstance.pitchFiles(), lang: ""),
+            TestFiles(name: "digitSpan", data: DataManager.sharedInstance.digitSpanFiles(lang: "en"), lang: "en"),
+            TestFiles(name: "digitSpan", data: DataManager.sharedInstance.digitSpanFiles(lang: "es"), lang: "es"),
+            TestFiles(name: "stroop", data: DataManager.sharedInstance.stroopFiles(lang: "en"), lang: "en"),
+            TestFiles(name: "stroop", data: DataManager.sharedInstance.stroopFiles(lang: "es"), lang: "es"),
+            TestFiles(name: "namingTask", data: DataManager.sharedInstance.namingTaskFiles(), lang: ""),
+            TestFiles(name: "wordlist", data: DataManager.sharedInstance.wordlistFiles(lang: "en"), lang: "en"),
+            TestFiles(name: "wordlist", data: DataManager.sharedInstance.wordlistFiles(lang: "es"), lang: "es"),
+            TestFiles(name: "comprehension", data: DataManager.sharedInstance.comprehensionFiles(lang: "en"), lang: "en"),
+            TestFiles(name: "comprehension", data: DataManager.sharedInstance.comprehensionFiles(lang: "es"), lang: "es"),
+            TestFiles(name: "motorTask", data: DataManager.sharedInstance.motorTaskFiles(), lang: ""),
+            TestFiles(name: "trailMaking", data: DataManager.sharedInstance.trailMakingFiles(), lang: "")
+        ]
+        
+        var totalPercentage = 0.0
+        var totalFilesCount = 0
+        let totalFiles = Utility.getDownloadList(files: downloadFiles)
+        
+        for files in totalFiles {
+            totalFilesCount += files.data.count
+        }
+                
+        for testFiles in totalFiles {
+            for name in testFiles.data {
+                FirebaseStorageManager.shared.getFile(fileName: name, test: testFiles.name, lang: testFiles.lang) { (percentComplete, error) in
+                    
+                    if percentComplete == 1.0 {
+                        totalPercentage += percentComplete
+
+                        let percentage = Float(totalPercentage * 100.0) / Float(totalFilesCount) / 100.0
+                        SVProgressHUD.showProgress(percentage, status: "Loading...")
+                        
+                        if Int(totalPercentage) == totalFilesCount {
+                            SVProgressHUD.dismiss()
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    
     private func buildTestList() {
         TestConfig.shared.testListName = selectedTests
     }

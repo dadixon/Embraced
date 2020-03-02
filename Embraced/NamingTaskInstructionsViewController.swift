@@ -24,7 +24,6 @@ class NamingTaskInstructionsViewController: InstructionsViewController {
     }
     
     @objc func moveOn() {
-//        self.performSegue(withIdentifier: "moveToPractice", sender: nil)
         let vc = NamingTaskPracticeViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

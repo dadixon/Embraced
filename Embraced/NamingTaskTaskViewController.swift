@@ -89,7 +89,7 @@ class NamingTaskTaskViewController: ActiveStepViewController {
     private func setState() {
         if let imageP = imagePath {
             var runCount = 0
-            taskImageView.image = UIImage(named: imageP[index])
+            taskImageView.image = Utility.getImage(path: "namingTask/\(imageP[index])")
             recordBtn.btnRecord()
             recordBtn.isEnabled = true
             self.nextBtn.isHidden = true
@@ -143,7 +143,6 @@ class NamingTaskTaskViewController: ActiveStepViewController {
         if index < imagePath!.count {
             setState()
         } else {
-//            self.performSegue(withIdentifier: "moveToDone", sender: nil)
             let vc = NamingTaskDoneViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }

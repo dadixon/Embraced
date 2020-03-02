@@ -81,7 +81,6 @@ class NamingTaskPracticeViewController: ActiveStepViewController {
         if index < imagePath!.count {
             setState()
         } else {
-//            self.performSegue(withIdentifier: "moveToInstructions2", sender: nil)
             let vc = NamingTaskInstructions2ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -89,7 +88,7 @@ class NamingTaskPracticeViewController: ActiveStepViewController {
     
     private func setState() {
         if let imageP = imagePath {
-            taskImageView.image = UIImage(named: imageP[index])
+            taskImageView.image = Utility.getImage(path: "namingTask/\(imageP[index])")
             recordBtn.btnRecord()
         }
     }

@@ -162,9 +162,9 @@ class WordListTrialsViewController: ActiveStepViewController {
         if !isPlaying {
             CountdownView.show(countdownFrom: 3.0, spin: true, animation: .fadeIn, autoHide: true) {
                 if self.index < 6 {
-                    self.fileName = self.trials[0]
+                    self.fileName = "wordlist/\(self.language)/\(self.trials[0])"
                 } else {
-                    self.fileName = self.trials[1]
+                    self.fileName = "wordlist/\(self.language)/\(self.trials[1])"
                 }
                 self.playAudio(fileName: self.fileName)
                 self.isPlaying = true
@@ -188,7 +188,6 @@ class WordListTrialsViewController: ActiveStepViewController {
         index += 1
         
         if index == 8 {
-//            self.performSegue(withIdentifier: "moveToDone", sender: nil)
             let vc = WordListDoneViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         } else {
@@ -197,25 +196,21 @@ class WordListTrialsViewController: ActiveStepViewController {
     }
     
     private func playAudio(fileName: String) {
-        let fileNameArray = fileName.components(separatedBy: ".")
+        let filePath = Utility.getAudio(path: fileName)
         
-        if let dirPath = Bundle.main.path(forResource: fileNameArray[0], ofType: fileNameArray[1]) {
-            let filePath = URL(fileURLWithPath: dirPath)
-            
-            do {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-            }
-            catch {
-                // report for an error
-            }
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        }
+        catch {
+            // report for an error
+        }
         
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: filePath)
-                audioPlayer.delegate = self
-                audioPlayer.play()
-            } catch {
-                print("No Audio")
-            }
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: filePath)
+            audioPlayer.delegate = self
+            audioPlayer.play()
+        } catch {
+            print("No Audio")
         }
     }
     
