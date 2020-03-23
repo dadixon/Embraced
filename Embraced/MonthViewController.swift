@@ -14,15 +14,18 @@ class MonthViewController: FormViewController {
     let userDefaults = UserDefaults.standard
     var language = String()
     var months: [String] = []
+    var dataModel = QuestionnaireModel.shared
+//
+//    Assessment date and time (automatic)
+//    Date of birth: Year, Month, day
+//    Age (automatic when DOB entered)
+//    Gender: Male (1)/Female (2)/ Other (3)
+
     
-//    let answersTableView: UITableView = {
-//        var tableView = UITableView()
-//        tableView.translatesAutoresizingMaskIntoConstraints = false
-//        tableView.register(LabelTableViewCell.self, forCellReuseIdentifier: "LabelCell")
-//        tableView.backgroundColor = .white
-//        tableView.tableFooterView = UIView()
-//        return tableView
-//    }()
+    struct FormItems {
+        static let birthDate = "birthDate"
+        static let gender = "gender"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,98 +33,42 @@ class MonthViewController: FormViewController {
         title = "Step \(TestConfig.testIndex) of \(TestConfig.testListCount)"
         self.navigationController?.isNavigationBarHidden = false
         navigationItem.hidesBackButton = true
+        navigationItem.setRightBarButton(UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(moveOn)), animated: true)
         
         language = userDefaults.string(forKey: "language")!
         
-//        months = [
-//            "January",
-//            "February",
-//            "March",
-//            "April",
-//            "May",
-//            "June",
-//            "July",
-//            "August",
-//            "September",
-//            "October",
-//            "November",
-//            "December"
-//        ]
-//
-//        answersTableView.delegate = self
-//        answersTableView.dataSource = self
-//
-//        setupViews()
+        let genders = ["Male", "Female", "Other"]
         
-        form +++ Section("Section1")
-            <<< TextRow(){ row in
-                row.title = "Text Row"
-                row.placeholder = "Enter text here"
+        form
+            +++ Section("General")
+            <<< DateRow(FormItems.birthDate) {
+                $0.title = "Birth date"
+                $0.value = Date()   
             }
-            <<< PhoneRow(){
-                $0.title = "Phone Row"
-                $0.placeholder = "And numbers here"
-            }
-        +++ Section("Section2")
-            <<< DateRow(){
-                $0.title = "Date Row"
-                $0.value = Date(timeIntervalSinceReferenceDate: 0)
-            }
-//        +++ SelectableSection<ListCheckRow<String>>("Where do you live", selectionType: .singleSelection(enableDeselection: true))
-//
-//        let continents = ["Africa", "Antarctica", "Asia", "Australia", "Europe", "North America", "South America"]
-//        for option in continents {
-//            form.last! <<< ListCheckRow<String>(option){ listRow in
-//                listRow.title = option
-//                listRow.selectableValue = option
-//                listRow.value = nil
-//            }
-//        }
-//
-        +++ Section("Initial")
-            <<< PushRow<String>() {
-                $0.title = "Month of Birth:"
-                $0.options = ["Jan", "Feb", "Mar"]
-                $0.selectorTitle = "selectorTitle"
-            }.onChange { row in
-                print(row.value ?? "No Value")
-                
-            
-            }
+            <<< PushRow<String>(FormItems.gender) {
+                $0.title = "Gender"
+                $0.options = genders
+                $0.value = dataModel.gender
+                $0.selectorTitle = "Gender"
+                $0.onChange { (row) in
+                    if let value = row.value {
+                        self.dataModel.gender = value
+                    }
+                    self.tableView.reloadData()
+                }
+                }.onPresent { from, to in
+                    to.dismissOnSelection = false
+                    to.dismissOnChange = false
+                }
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
-
     
-//    func setupViews() {
-//        view.addSubview(answersTableView)
-//
-//        NSLayoutConstraint.activate([
-//            answersTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-//            answersTableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
-//            answersTableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
-//            answersTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
-//        ])
-//    }
+    @objc func moveOn() {
+        print(form.values())
+        
+        
+    }
 }
-
-//extension MonthViewController: UITableViewDelegate {
-//
-//}
-//
-//extension MonthViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return months.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
-//        cell.textLabel?.text = months[indexPath.row]
-//
-//        return cell
-//    }
-//
-//
-//}
