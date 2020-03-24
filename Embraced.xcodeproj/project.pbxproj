@@ -24,6 +24,10 @@
 		A44669321E1631A600EA7E2E /* ListenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669311E1631A600EA7E2E /* ListenButton.swift */; };
 		A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669331E16435C00EA7E2E /* PlayButton.swift */; };
 		A44669381E16457600EA7E2E /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44669371E16457600EA7E2E /* RecordButton.swift */; };
+		A44A88E7242A13060092BF3A /* MoCAAdminQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44A88E6242A13060092BF3A /* MoCAAdminQuestionsViewController.swift */; };
+		A44A88EA242A1E870092BF3A /* MoCAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44A88E9242A1E870092BF3A /* MoCAViewController.swift */; };
+		A44A88EC242A2F6F0092BF3A /* MoCATaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44A88EB242A2F6F0092BF3A /* MoCATaskViewController.swift */; };
+		A44A88EE242A31620092BF3A /* MoCATask2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44A88ED242A31620092BF3A /* MoCATask2ViewController.swift */; };
 		A4562E5B23C7732D0049CA17 /* MatricesInstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4562E5A23C7732D0049CA17 /* MatricesInstructionsViewController.swift */; };
 		A462301C2379EF09000F8ABC /* EyesTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A462301B2379EF09000F8ABC /* EyesTaskViewController.swift */; };
 		A4623021237B37BC000F8ABC /* EyesTestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A462301F237B37BC000F8ABC /* EyesTestCollectionViewCell.swift */; };
@@ -133,6 +137,7 @@
 		A4B9DBF523AB90E000234E07 /* CPTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9DBF423AB90E000234E07 /* CPTResponse.swift */; };
 		A4B9DBFA23ACD45700234E07 /* CPTTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9DBF923ACD45700234E07 /* CPTTaskViewController.swift */; };
 		A4B9DBFC23ACDA8300234E07 /* CPTCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B9DBFB23ACDA8300234E07 /* CPTCollectionCell.swift */; };
+		A4CEDAA5242A0522002A347E /* MoCAModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CEDAA4242A0522002A347E /* MoCAModel.swift */; };
 		A4D7C78E2269E1CD004BF326 /* WordListTrialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7C78D2269E1CD004BF326 /* WordListTrialsViewController.swift */; };
 		A4D7C7902269E394004BF326 /* WordListDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D7C78F2269E394004BF326 /* WordListDoneViewController.swift */; };
 		A4D904221D23810C0092D6AA /* EmbracedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D904211D23810C0092D6AA /* EmbracedTextField.swift */; };
@@ -200,6 +205,10 @@
 		A44669311E1631A600EA7E2E /* ListenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListenButton.swift; sourceTree = "<group>"; };
 		A44669331E16435C00EA7E2E /* PlayButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
 		A44669371E16457600EA7E2E /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		A44A88E6242A13060092BF3A /* MoCAAdminQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoCAAdminQuestionsViewController.swift; sourceTree = "<group>"; };
+		A44A88E9242A1E870092BF3A /* MoCAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoCAViewController.swift; sourceTree = "<group>"; };
+		A44A88EB242A2F6F0092BF3A /* MoCATaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoCATaskViewController.swift; sourceTree = "<group>"; };
+		A44A88ED242A31620092BF3A /* MoCATask2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoCATask2ViewController.swift; sourceTree = "<group>"; };
 		A4562E5A23C7732D0049CA17 /* MatricesInstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatricesInstructionsViewController.swift; sourceTree = "<group>"; };
 		A462301B2379EF09000F8ABC /* EyesTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyesTaskViewController.swift; sourceTree = "<group>"; };
 		A462301F237B37BC000F8ABC /* EyesTestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyesTestCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -317,6 +326,7 @@
 		A4B9DBF923ACD45700234E07 /* CPTTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTTaskViewController.swift; sourceTree = "<group>"; };
 		A4B9DBFB23ACDA8300234E07 /* CPTCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTCollectionCell.swift; sourceTree = "<group>"; };
 		A4C469A31E13409400FDD5D5 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
+		A4CEDAA4242A0522002A347E /* MoCAModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoCAModel.swift; sourceTree = "<group>"; };
 		A4D7C78D2269E1CD004BF326 /* WordListTrialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListTrialsViewController.swift; sourceTree = "<group>"; };
 		A4D7C78F2269E394004BF326 /* WordListDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListDoneViewController.swift; sourceTree = "<group>"; };
 		A4D904211D23810C0092D6AA /* EmbracedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbracedTextField.swift; sourceTree = "<group>"; };
@@ -470,6 +480,10 @@
 		A443DB5424054709006D510A /* MoCA */ = {
 			isa = PBXGroup;
 			children = (
+				A44A88E6242A13060092BF3A /* MoCAAdminQuestionsViewController.swift */,
+				A44A88E9242A1E870092BF3A /* MoCAViewController.swift */,
+				A44A88EB242A2F6F0092BF3A /* MoCATaskViewController.swift */,
+				A44A88ED242A31620092BF3A /* MoCATask2ViewController.swift */,
 			);
 			name = MoCA;
 			sourceTree = "<group>";
@@ -834,6 +848,7 @@
 				A46CCF0623A2AA1800093C31 /* MatricesModel.swift */,
 				A4B9DBF023AB83B600234E07 /* CPTModel.swift */,
 				A464C6A3240E0DA200687C24 /* QuestionnaireModel.swift */,
+				A4CEDAA4242A0522002A347E /* MoCAModel.swift */,
 			);
 			name = TestModels;
 			sourceTree = "<group>";
@@ -1101,11 +1116,13 @@
 				A4DE7DD022F66169009EEA17 /* RCFT3InstructionsViewController.swift in Sources */,
 				A4969D1221E5406B0063FF40 /* MelodyRecognitionDoneViewController.swift in Sources */,
 				A4D7C7902269E394004BF326 /* WordListDoneViewController.swift in Sources */,
+				A44A88E7242A13060092BF3A /* MoCAAdminQuestionsViewController.swift in Sources */,
 				A44669341E16435C00EA7E2E /* PlayButton.swift in Sources */,
 				A46CCF05239DFD7B00093C31 /* MatriceCollectionCell.swift in Sources */,
 				A49173012310C020004BDC80 /* ComprehensionTaskViewController.swift in Sources */,
 				A4562E5B23C7732D0049CA17 /* MatricesInstructionsViewController.swift in Sources */,
 				A46CCEFF239DF05E00093C31 /* MatricesTaskViewController.swift in Sources */,
+				A4CEDAA5242A0522002A347E /* MoCAModel.swift in Sources */,
 				A43781872373598B00EC5717 /* MotorInstructions2ViewController.swift in Sources */,
 				A437818B237359BF00EC5717 /* MotorDoneViewController.swift in Sources */,
 				A4B9DBFA23ACD45700234E07 /* CPTTaskViewController.swift in Sources */,
@@ -1137,6 +1154,7 @@
 				A4A991D222EAA13C00DE3B83 /* StroopInstructions3ViewController.swift in Sources */,
 				A4DE7DD422F66191009EEA17 /* RCFT3DoneViewController.swift in Sources */,
 				A489D61C1E0BA255001F56FE /* AdminViewController.swift in Sources */,
+				A44A88EE242A31620092BF3A /* MoCATask2ViewController.swift in Sources */,
 				A4DE7DC222F644D0009EEA17 /* RCFTDoneViewController.swift in Sources */,
 				A46CCF0723A2AA1800093C31 /* MatricesModel.swift in Sources */,
 				A4969D1E21E697B50063FF40 /* Utility.swift in Sources */,
@@ -1209,8 +1227,10 @@
 				A4969D2921E7F6B50063FF40 /* CancellationPracticeViewController.swift in Sources */,
 				A4A8F8321DA4A1A8006F9FF3 /* NavigationButton.swift in Sources */,
 				A49172F82310800B004BDC80 /* RCFT4InstructionsViewController.swift in Sources */,
+				A44A88EC242A2F6F0092BF3A /* MoCATaskViewController.swift in Sources */,
 				A4DB0FB41DFB2CA1000811B6 /* DataManager.swift in Sources */,
 				A48A12C621F74FE60044AF08 /* CancellationModel.swift in Sources */,
+				A44A88EA242A1E870092BF3A /* MoCAViewController.swift in Sources */,
 				A47E666C22D2D61A00B5B7B5 /* StroopInstructionsViewController.swift in Sources */,
 				A4B9DBFC23ACDA8300234E07 /* CPTCollectionCell.swift in Sources */,
 				A48A12C221F740ED0044AF08 /* DoneStepViewController.swift in Sources */,

@@ -26,8 +26,8 @@ class SelectTestViewController: UIViewController {
     var language = String()
     var selectedTests = [String]()
     var tests = [
-        "Questionnaire",
-//        "Orientation Task",
+//        "Questionnaire",
+        "Orientation Task",
         "Complex Figure 1",
         "Clock Drawing Test",
         "Complex Figure 2",
@@ -153,8 +153,12 @@ class SelectTestViewController: UIViewController {
         let dismissAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
             alertController.dismiss(animated: true, completion: nil)
             
-            // TODO: If Moca test is selected, show the moca test inputs
-            self.performSegue(withIdentifier: "moveToLanguages", sender: self)
+            if TestConfig.shared.testListName.contains("Orientation Task") {
+                let vc = MoCAAdminQuestionsViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                self.performSegue(withIdentifier: "moveToLanguages", sender: self)
+            }
         }
         
         alertController.addAction(dismissAction)
