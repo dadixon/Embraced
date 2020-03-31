@@ -26,54 +26,56 @@ class MoCATask2ViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Current Location"
-        self.navigationController?.isNavigationBarHidden = false
-        navigationItem.hidesBackButton = true
-        navigationItem.setRightBarButton(UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(moveOn)), animated: true)
-        
         language = userDefaults.string(forKey: "language")!
         
+        title = "moca_current_location_title".localized(lang: language)
+        self.navigationController?.isNavigationBarHidden = false
+        navigationItem.hidesBackButton = true
+        navigationItem.setRightBarButton(UIBarButtonItem(title: "Next".localized(lang: language), style: .done, target: self, action: #selector(moveOn)), animated: true)
+                
         form
-            +++ Section("What country are you in?")
+            +++ Section("moca_country".localized(lang: language))
                 <<< TextRow(FormItems.country){ row in
-                    row.title = "Country"
-                    row.placeholder = "Enter country here"
+                    row.title = "moca_country_title".localized(lang: language)
+                    row.placeholder = "enter_text".localized(lang: language)
                 }
-            +++ Section("What county are you in?")
+            +++ Section("moca_county".localized(lang: language))
                 <<< TextRow(FormItems.county){ row in
-                    row.title = "County"
-                    row.placeholder = "Enter county here"
+                    row.title = "moca_county_title".localized(lang: language)
+                    row.placeholder = "enter_text".localized(lang: language)
                 }
-            +++ Section("What city or town are you in?")
+            +++ Section("moca_city".localized(lang: language))
                 <<< TextRow(FormItems.city){ row in
-                    row.title = "City"
-                    row.placeholder = "Enter city or town here"
+                    row.title = "moca_city_title".localized(lang: language)
+                    row.placeholder = "enter_text".localized(lang: language)
                 }
-            +++ Section("What type of site or location are you in?")
+            +++ Section("moca_location".localized(lang: language))
                 <<< TextRow(FormItems.location){ row in
-                    row.title = "Location"
-                    row.placeholder = "Enter location here"
+                    row.title = "moca_location_title".localized(lang: language)
+                    row.placeholder = "enter_text".localized(lang: language)
                 }
-            +++ Section("What floor are you on?")
+            +++ Section("moca_floor".localized(lang: language))
                 <<< TextRow(FormItems.floor){ row in
-                    row.title = "Floor"
-                    row.placeholder = "Enter floor here"
+                    row.title = "moca_floor_title".localized(lang: language)
+                    row.placeholder = "enter_text".localized(lang: language)
                 }
     }
     
     @objc func moveOn() {
-        print(form.values())
-        // Save data
+        if form.validate().count == 0 {
+            let values = form.values()
         
-        
-        
-        
-//        let vc = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "startTest") as? StartViewController)!
-//        let nvc = UINavigationController(rootViewController: vc)
-//
-//        self.present(nvc, animated: true) {
-//
-//        }
-    }
+            dataModel.date = Date()
+            dataModel.userCountry = values["year"] as? String
+            dataModel.userCounty = values["county"] as? String
+            dataModel.userCity = values["city"] as? String
+            dataModel.userLocation = values["location"] as? String
+            dataModel.userFloor = values["floor"] as? String
 
+            FirebaseStorageManager.shared.addDataToDocument(payload: ["moca": dataModel.getModel()])
+        
+            let vc = MoCADoneViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

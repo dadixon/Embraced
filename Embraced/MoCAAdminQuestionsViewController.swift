@@ -112,16 +112,18 @@ class MoCAAdminQuestionsViewController: FormViewController {
             dataModel.realCity = values["city"] as? String
             dataModel.realLocation = values["location"] as? String
             dataModel.realFloor = values["floor"] as? String
-            
+
             FirebaseStorageManager.shared.addDataToDocument(payload: ["moca": dataModel.getModel()])
+            
+            let vc = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "startTest") as? StartViewController)!
+            let nvc = UINavigationController(rootViewController: vc)
+            
+            self.present(nvc, animated: true) {
+                self.navigationController?.popViewController(animated: false)
+            }
         }
         
-//        let vc = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "startTest") as? StartViewController)!
-//        let nvc = UINavigationController(rootViewController: vc)
-//
-//        self.present(nvc, animated: true) {
-//
-//        }
+        
     }
 
 }

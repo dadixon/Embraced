@@ -61,6 +61,8 @@
 "English" = "English";
 "Spanish" = "Español";
 "second(s)" = "second(s)";
+"select_one" = "Select One";
+"enter_text" = "Enter text here";
 
 "WELCOME_TEXT" = "We are going to be asking you some questions about yourself.\nPlease remember that you are free to skip any question that may bother you, although we kindly ask you to complete as much of this questionnaire as possible.\nThank you for your participation";
 "AUDIO_VIEW_CONTROLLER_INSTRUCTIONS" = "Please, practice how to record your voice using the START and DONE buttons below.";
@@ -443,4 +445,52 @@
 "worried_example" = "When her cat went missing, the girl was very worried.";
 
 // Matrices
-matricesTask_instructions = "You will be shown a pattern with a piece missing.\nLook at the pattern and think what piece is needed to complete the pattern correctly, both along and down. Then find and tap the right piece out of the options shown below.\nTry your best, but if you are unsure and would like to skip, click Next.";
+"matricesTask_instructions" = "You will be shown a pattern with a piece missing.\nLook at the pattern and think what piece is needed to complete the pattern correctly, both along and down. Then find and tap the right piece out of the options shown below.\nTry your best, but if you are unsure and would like to skip, click Next.";
+
+// MoCA_MMSE
+"moca_instructions" = "Next, I am going to ask you a few questions regarding today’s date.\nClick forward to continue";
+"moca_current_time_title" = "Current Time";
+"moca_year" = "What is the year? ie: 1999";
+"moca_year_placeholder" = "Enter year here";
+"moca_month" = "What is the month?";
+"moca_date" = "What is the date?";
+"moca_day" = "What day is it today?";
+"moca_time" = "What time is it approximately?";
+"moca_instructions_2" = "Now I am going to ask you a few questions regarding our current location.";
+"moca_current_location_title" = "Current Location";
+"moca_country" = "What country are you in?";
+"moca_county" = "What county are you in?";
+"moca_city" = "What city or town are you in?";
+"moca_location" = "What type of site or location are you in?";
+"moca_floor" = "What floor are you on?";
+"moca_hour_title" = "Hours";
+"moca_minute_title" = "Minutes";
+"moca_month_title" = "Month";
+"moca_year_title" = "Year";
+"moca_day_title" = "Day";
+"moca_date_title" = "Date";
+"moca_country_title" = "Country";
+"moca_county_title" = "County";
+"moca_city_title" = "City";
+"moca_location_title" = "Location";
+"moca_floor_title" = "Floor";
+"moca_weekday_title" = "Weekday";
+"moca_monday" = "Monday";
+"moca_tuesday" = "Tuesday";
+"moca_wednesday" = "Wednesday";
+"moca_thursday" = "Thursday";
+"moca_friday" = "Friday";
+"moca_saturday" = "Saturday";
+"moca_sunday" = "Sunday";
+"moca_january" = "January";
+"moca_february" = "February";
+"moca_march" = "March";
+"moca_april" = "April";
+"moca_may" = "May";
+"moca_june" = "June";
+"moca_july" = "July";
+"moca_august" = "August";
+"moca_september" = "September";
+"moca_october" = "October";
+"moca_november" = "November";
+"moca_december" = "December";

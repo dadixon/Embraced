@@ -62,6 +62,8 @@
 "English" = "English";
 "Spanish" = "Español";
 "second(s)" = "segundo(s)";
+"select_one" = "Seleccione uno";
+"enter_text" = "Introducir texto aquí";
 
 "WELCOME_TEXT" = "Vamos a hacerle algunas preguntas acerca de usted.\nPor favor, recuerde que es libre de no contestar aquellas preguntas que le molesten pero le rogamos encarecidamente que trate de completar este cuestionario al máximo posible.\nGracias por su participación.";
 
@@ -441,3 +443,51 @@
 
 // Matrices
 matricesTask_instructions = "You will be shown a pattern with a piece missing.\nLook at the pattern and think what piece is needed to complete the pattern correctly, both along and down. Then find and tap the right piece out of the options shown below.\nTry your best, but if you are unsure and would like to skip, click Next.";
+
+// MoCA_MMSE
+"moca_instructions" = "A continuación vamos a hacerle algunas preguntas acerca de la fecha de hoy.\nPulse 'Seguir' para continuar.";
+"moca_current_time_title" = "Tiempo actual";
+"moca_year" = "¿En qué año estamos? p.e.: 1999";
+"moca_year_placeholder" = "Ingrese el año aquí";
+"moca_month" = "¿En qué mes?";
+"moca_date" = "¿Qué día del mes es?";
+"moca_day" = "¿Qué día de la semana es hoy?";
+"moca_time" = "¿Qué hora es aproximadamente?";
+"moca_instructions_2" = "Ahora vamos a hacerle algunas preguntas acerca de dónde estamos.";
+"moca_current_location_title" = "Ubicación actual";
+"moca_country" = "¿En qué país estamos?";
+"moca_county" = "¿En qué condado estamos?";
+"moca_city" = "¿En qué ciudad estamos?";
+"moca_location" = "¿En qué lugar estamos (edificio)?";
+"moca_floor" = "¿En qué planta estamos?";
+"moca_hour_title" = "Hora";
+"moca_minute_title" = "Minutos";
+"moca_month_title" = "Mes";
+"moca_year_title" = "Año";
+"moca_day_title" = "Día";
+"moca_date_title" = "Date";
+"moca_country_title" = "País";
+"moca_county_title" = "Condado";
+"moca_city_title" = "Ciudad";
+"moca_location_title" = "Ubicación";
+"moca_floor_title" = "Suelo";
+"moca_weekday_title" = "Día laborable";
+"moca_monday" = "Lunes";
+"moca_tuesday" = "Martes";
+"moca_wednesday" = "Miércoles";
+"moca_thursday" = "Jueves";
+"moca_friday" = "Viernes";
+"moca_saturday" = "Sábado";
+"moca_sunday" = "Domingo";
+"moca_january" = "Enero";
+"moca_february" = "Febrero";
+"moca_march" = "Marzo";
+"moca_april" = "Abril";
+"moca_may" = "Mayo";
+"moca_june" = "Junio";
+"moca_july" = "Julio";
+"moca_august" = "Agosto";
+"moca_september" = "Septiembre";
+"moca_october" = "Octubre";
+"moca_november" = "Noviembre";
+"moca_december" = "Diciembre";
