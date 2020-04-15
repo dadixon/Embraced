@@ -34,6 +34,9 @@ class TestConfig {
                 case "Questionnaire":
                     let vc = MonthViewController()
                     self.testList.append(vc)
+                case "Orientation Task":
+                    let vc = MoCAInstructionsViewController()
+                    self.testList.append(vc)
                 case "Melodies Recognition":
                     let vc = MelodyRecognitionInstructionsViewController()
                     self.testList.append(vc)

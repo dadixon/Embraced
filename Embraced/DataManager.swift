@@ -589,6 +589,356 @@ class DataManager {
                 "C1-6.png",
                 "C1-7.png",
                 "C1-8.png"
+            ]),
+            MatricesTask(key: "C2", displayImageName: "C2.png", choices: [
+                "C2-1.png",
+                "C2-2.png",
+                "C2-3.png",
+                "C2-4.png",
+                "C2-5.png",
+                "C2-6.png",
+                "C2-7.png",
+                "C2-8.png"
+            ]),
+            MatricesTask(key: "C3", displayImageName: "C3.png", choices: [
+                "C3-1.png",
+                "C3-2.png",
+                "C3-3.png",
+                "C3-4.png",
+                "C3-5.png",
+                "C3-6.png",
+                "C3-7.png",
+                "C3-8.png"
+            ]),
+            MatricesTask(key: "C4", displayImageName: "C4.png", choices: [
+                "C4-1.png",
+                "C4-2.png",
+                "C4-3.png",
+                "C4-4.png",
+                "C4-5.png",
+                "C4-6.png",
+                "C4-7.png",
+                "C4-8.png"
+            ]),
+            MatricesTask(key: "C5", displayImageName: "C5.png", choices: [
+                "C5-1.png",
+                "C5-2.png",
+                "C5-3.png",
+                "C5-4.png",
+                "C5-5.png",
+                "C5-6.png",
+                "C5-7.png",
+                "C5-8.png"
+            ]),
+            MatricesTask(key: "C6", displayImageName: "C6.png", choices: [
+                "C6-1.png",
+                "C6-2.png",
+                "C6-3.png",
+                "C6-4.png",
+                "C6-5.png",
+                "C6-6.png",
+                "C6-7.png",
+                "C6-8.png"
+            ]),
+            MatricesTask(key: "C7", displayImageName: "C7.png", choices: [
+                "C7-1.png",
+                "C7-2.png",
+                "C7-3.png",
+                "C7-4.png",
+                "C7-5.png",
+                "C7-6.png",
+                "C7-7.png",
+                "C7-8.png"
+            ]),
+            MatricesTask(key: "C8", displayImageName: "C8.png", choices: [
+                "C8-1.png",
+                "C8-2.png",
+                "C8-3.png",
+                "C8-4.png",
+                "C8-5.png",
+                "C8-6.png",
+                "C8-7.png",
+                "C8-8.png"
+            ]),
+            MatricesTask(key: "C9", displayImageName: "C9.png", choices: [
+                "C9-1.png",
+                "C9-2.png",
+                "C9-3.png",
+                "C9-4.png",
+                "C9-5.png",
+                "C9-6.png",
+                "C9-7.png",
+                "C9-8.png"
+            ]),
+            MatricesTask(key: "C10", displayImageName: "C10.png", choices: [
+                "C10-1.png",
+                "C10-2.png",
+                "C10-3.png",
+                "C10-4.png",
+                "C10-5.png",
+                "C10-6.png",
+                "C10-7.png",
+                "C10-8.png"
+            ]),
+            MatricesTask(key: "C11", displayImageName: "C11.png", choices: [
+                "C11-1.png",
+                "C11-2.png",
+                "C11-3.png",
+                "C11-4.png",
+                "C11-5.png",
+                "C11-6.png",
+                "C11-7.png",
+                "C11-8.png"
+            ]),
+            MatricesTask(key: "C12", displayImageName: "C12.png", choices: [
+                "C12-1.png",
+                "C12-2.png",
+                "C12-3.png",
+                "C12-4.png",
+                "C12-5.png",
+                "C12-6.png",
+                "C12-7.png",
+                "C12-8.png"
+            ]),
+            MatricesTask(key: "D1", displayImageName: "D1.png", choices: [
+                "D1-1.png",
+                "D1-2.png",
+                "D1-3.png",
+                "D1-4.png",
+                "D1-5.png",
+                "D1-6.png",
+                "D1-7.png",
+                "D1-8.png"
+            ]),
+            MatricesTask(key: "D2", displayImageName: "D2.png", choices: [
+                "D2-1.png",
+                "D2-2.png",
+                "D2-3.png",
+                "D2-4.png",
+                "D2-5.png",
+                "D2-6.png",
+                "D2-7.png",
+                "D2-8.png"
+            ]),
+            MatricesTask(key: "D3", displayImageName: "D3.png", choices: [
+                "D3-1.png",
+                "D3-2.png",
+                "D3-3.png",
+                "D3-4.png",
+                "D3-5.png",
+                "D3-6.png",
+                "D3-7.png",
+                "D3-8.png"
+            ]),
+            MatricesTask(key: "D4", displayImageName: "D4.png", choices: [
+                "D4-1.png",
+                "D4-2.png",
+                "D4-3.png",
+                "D4-4.png",
+                "D4-5.png",
+                "D4-6.png",
+                "D4-7.png",
+                "D4-8.png"
+            ]),
+            MatricesTask(key: "D5", displayImageName: "D5.png", choices: [
+                "D5-1.png",
+                "D5-2.png",
+                "D5-3.png",
+                "D5-4.png",
+                "D5-5.png",
+                "D5-6.png",
+                "D5-7.png",
+                "D5-8.png"
+            ]),
+            MatricesTask(key: "D6", displayImageName: "D6.png", choices: [
+                "D6-1.png",
+                "D6-2.png",
+                "D6-3.png",
+                "D6-4.png",
+                "D6-5.png",
+                "D6-6.png",
+                "D6-7.png",
+                "D6-8.png"
+            ]),
+            MatricesTask(key: "D7", displayImageName: "D7.png", choices: [
+                "D7-1.png",
+                "D7-2.png",
+                "D7-3.png",
+                "D7-4.png",
+                "D7-5.png",
+                "D7-6.png",
+                "D7-7.png",
+                "D7-8.png"
+            ]),
+            MatricesTask(key: "D8", displayImageName: "D8.png", choices: [
+                "D8-1.png",
+                "D8-2.png",
+                "D8-3.png",
+                "D8-4.png",
+                "D8-5.png",
+                "D8-6.png",
+                "D8-7.png",
+                "D8-8.png"
+            ]),
+            MatricesTask(key: "D9", displayImageName: "D9.png", choices: [
+                "D9-1.png",
+                "D9-2.png",
+                "D9-3.png",
+                "D9-4.png",
+                "D9-5.png",
+                "D9-6.png",
+                "D9-7.png",
+                "D9-8.png"
+            ]),
+            MatricesTask(key: "D10", displayImageName: "D10.png", choices: [
+                "D10-1.png",
+                "D10-2.png",
+                "D10-3.png",
+                "D10-4.png",
+                "D10-5.png",
+                "D10-6.png",
+                "D10-7.png",
+                "D10-8.png"
+            ]),
+            MatricesTask(key: "D11", displayImageName: "D11.png", choices: [
+                "D11-1.png",
+                "D11-2.png",
+                "D11-3.png",
+                "D11-4.png",
+                "D11-5.png",
+                "D11-6.png",
+                "D11-7.png",
+                "D11-8.png"
+            ]),
+            MatricesTask(key: "D12", displayImageName: "D12.png", choices: [
+                "D12-1.png",
+                "D12-2.png",
+                "D12-3.png",
+                "D12-4.png",
+                "D12-5.png",
+                "D12-6.png",
+                "D12-7.png",
+                "D12-8.png"
+            ]),
+            MatricesTask(key: "E1", displayImageName: "E1.png", choices: [
+                "E1-1.png",
+                "E1-2.png",
+                "E1-3.png",
+                "E1-4.png",
+                "E1-5.png",
+                "E1-6.png",
+                "E1-7.png",
+                "E1-8.png"
+            ]),
+            MatricesTask(key: "E2", displayImageName: "E2.png", choices: [
+                "E2-1.png",
+                "E2-2.png",
+                "E2-3.png",
+                "E2-4.png",
+                "E2-5.png",
+                "E2-6.png",
+                "E2-7.png",
+                "E2-8.png"
+            ]),
+            MatricesTask(key: "E3", displayImageName: "E3.png", choices: [
+                "E3-1.png",
+                "E3-2.png",
+                "E3-3.png",
+                "E3-4.png",
+                "E3-5.png",
+                "E3-6.png",
+                "E3-7.png",
+                "E3-8.png"
+            ]),
+            MatricesTask(key: "E4", displayImageName: "E4.png", choices: [
+                "E4-1.png",
+                "E4-2.png",
+                "E4-3.png",
+                "E4-4.png",
+                "E4-5.png",
+                "E4-6.png",
+                "E4-7.png",
+                "E4-8.png"
+            ]),
+            MatricesTask(key: "E5", displayImageName: "E5.png", choices: [
+                "E5-1.png",
+                "E5-2.png",
+                "E5-3.png",
+                "E5-4.png",
+                "E5-5.png",
+                "E5-6.png",
+                "E5-7.png",
+                "E5-8.png"
+            ]),
+            MatricesTask(key: "E6", displayImageName: "E6.png", choices: [
+                "E6-1.png",
+                "E6-2.png",
+                "E6-3.png",
+                "E6-4.png",
+                "E6-5.png",
+                "E6-6.png",
+                "E6-7.png",
+                "E6-8.png"
+            ]),
+            MatricesTask(key: "E7", displayImageName: "E7.png", choices: [
+                "E7-1.png",
+                "E7-2.png",
+                "E7-3.png",
+                "E7-4.png",
+                "E7-5.png",
+                "E7-6.png",
+                "E7-7.png",
+                "E7-8.png"
+            ]),
+            MatricesTask(key: "E8", displayImageName: "E8.png", choices: [
+                "E8-1.png",
+                "E8-2.png",
+                "E8-3.png",
+                "E8-4.png",
+                "E8-5.png",
+                "E8-6.png",
+                "E8-7.png",
+                "E8-8.png"
+            ]),
+            MatricesTask(key: "E9", displayImageName: "E9.png", choices: [
+                "E9-1.png",
+                "E9-2.png",
+                "E9-3.png",
+                "E9-4.png",
+                "E9-5.png",
+                "E9-6.png",
+                "E9-7.png",
+                "E9-8.png"
+            ]),
+            MatricesTask(key: "E10", displayImageName: "E10.png", choices: [
+                "E10-1.png",
+                "E10-2.png",
+                "E10-3.png",
+                "E10-4.png",
+                "E10-5.png",
+                "E10-6.png",
+                "E10-7.png",
+                "E10-8.png"
+            ]),
+            MatricesTask(key: "E11", displayImageName: "E11.png", choices: [
+                "E11-1.png",
+                "E11-2.png",
+                "E11-3.png",
+                "E11-4.png",
+                "E11-5.png",
+                "E11-6.png",
+                "E11-7.png",
+                "E11-8.png"
+            ]),
+            MatricesTask(key: "E12", displayImageName: "E12.png", choices: [
+                "E12-1.png",
+                "E12-2.png",
+                "E12-3.png",
+                "E12-4.png",
+                "E12-5.png",
+                "E12-6.png",
+                "E12-7.png",
+                "E12-8.png"
             ])
         ]
         
